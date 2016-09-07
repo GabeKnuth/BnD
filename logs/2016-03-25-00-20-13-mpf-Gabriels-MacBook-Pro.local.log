@@ -1,0 +1,31 @@
+2016-03-25 00:20:13,780 : INFO : Machine : Mission Pinball Framework v0.30.0.dev700
+2016-03-25 00:20:13,780 : INFO : Machine : Loading config from original files
+2016-03-25 00:20:13,842 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-25 00:20:13,986 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-25 00:20:13,992 : INFO : FAST : Configuring FAST hardware.
+2016-03-25 00:20:13,992 : INFO : Machine : Loading core modules...
+2016-03-25 00:20:14,179 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-25 00:20:14,180 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-25 00:20:15,697 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:20:15,698 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-25 00:20:17,216 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:20:17,232 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:20:17,248 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:20:17,263 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-25 00:20:17,349 : INFO : DeviceManager : Loading devices...
+2016-03-25 00:20:17,402 : INFO : FAST : Received SA: 01,00,0B,00000400002D0000020100
+2016-03-25 00:20:17,414 : INFO : Machine : Loading plugins...
+2016-03-25 00:20:17,433 : INFO : SwitchController : Dumping current active switches
+2016-03-25 00:20:17,433 : INFO : SwitchController : Active Switch|s_troughenter
+2016-03-25 00:20:17,433 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-03-25 00:20:17,433 : INFO : FAST : Received SA: 01,00,0B,00000400002D0000020100
+2016-03-25 00:20:17,434 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-03-25 00:20:17,434 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-25 00:20:17,435 : INFO : Mode Controller : | attract : 10                        |
+2016-03-25 00:20:17,435 : INFO : Mode Controller : +-------------------------------------+
+2016-03-25 00:20:19,568 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:20:20,327 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:20:20,923 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:20:21,565 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:20:23,765 : INFO : Machine : Actual MPF loop rate: 68.35 Hz
+2016-03-25 00:20:23,766 : INFO : root : MPF run loop ended.

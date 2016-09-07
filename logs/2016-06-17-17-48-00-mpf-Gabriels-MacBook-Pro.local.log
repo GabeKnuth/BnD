@@ -1,0 +1,49 @@
+2016-06-17 17:48:00,887 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1800
+2016-06-17 17:48:00,888 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-06-17 17:48:01,103 : INFO : Machine : Loading config from original files
+2016-06-17 17:48:01,154 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-06-17 17:48:01,270 : ERROR : root : YAML error found in file /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml. Line 911, Position 2
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/file_interfaces/yaml_interface.py", line 304, in load
+    config = YamlInterface.process(f, round_trip)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/file_interfaces/yaml_interface.py", line 334, in process
+    return Util.keys_to_lower(yaml.load(data_string, Loader=MpfLoader))
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/main.py", line 75, in load
+    return loader.get_single_data()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/constructor.py", line 57, in get_single_data
+    node = self.get_single_node()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 46, in get_single_node
+    document = self.compose_document()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 66, in compose_document
+    node = self.compose_node(None, None)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 97, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 149, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/parser_.py", line 118, in check_event
+    self.current_event = self.state()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/parser_.py", line 504, in parse_block_mapping_key
+    token.start_mark)
+ruamel.yaml.parser_.ParserError: while parsing a block mapping
+  in "/Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml", line 31, column 1
+expected <block end>, but found '<block mapping start>'
+  in "/Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml", line 911, column 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 100, in __init__
+    self._load_config()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 286, in _load_config
+    self._load_config_from_files()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 305, in _load_config_from_files
+    config_type='machine'))
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/config_processor.py", line 57, in load_config_file
+    config = FileManager.load(filename, verify_version, halt_on_error)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/file_manager.py", line 155, in load
+    round_trip)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/file_interfaces/yaml_interface.py", line 313, in load
+    "Position {}".format(filename, mark.line + 1, mark.column + 1))
+ValueError: YAML error found in file /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml. Line 911, Position 2

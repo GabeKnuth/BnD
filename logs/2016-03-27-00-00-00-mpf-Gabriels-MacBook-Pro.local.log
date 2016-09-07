@@ -1,0 +1,45 @@
+2016-03-27 00:00:00,980 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-27 00:00:00,981 : INFO : Machine : Loading config from original files
+2016-03-27 00:00:01,081 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-27 00:00:01,262 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-27 00:00:01,268 : INFO : FAST : Configuring FAST hardware.
+2016-03-27 00:00:01,269 : INFO : Machine : Loading core modules...
+2016-03-27 00:00:01,470 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-27 00:00:01,470 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-27 00:00:02,988 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-27 00:00:02,989 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-27 00:00:04,506 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-27 00:00:04,523 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-27 00:00:04,539 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-27 00:00:04,554 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-27 00:00:04,640 : INFO : DeviceManager : Loading devices...
+2016-03-27 00:00:04,694 : INFO : FAST : Received SA: 01,00,0B,00002400002D00001F0100
+2016-03-27 00:00:04,697 : ERROR : YAML Interface : Config file /Users/gabe/Dropbox/Pinball/Gabe/bnd/modes/base/config/base.yaml is version 0. MPF 0.30.0.dev801 requires version 4
+2016-03-27 00:00:04,697 : ERROR : YAML Interface : Use the Config File Migrator to automatically migrate your config file to the latest version.
+2016-03-27 00:00:04,697 : ERROR : YAML Interface : Migration tool: https://missionpinball.com/docs/tools/config-file-migrator/
+2016-03-27 00:00:04,697 : ERROR : YAML Interface : More info on config version 4: https://missionpinball.com/docs/configuration-file-reference/important-config-file-concepts/config_version/config-version-4/
+2016-03-27 00:00:04,697 : ERROR : root : Config file version mismatch: /Users/gabe/Dropbox/Pinball/Gabe/bnd/modes/base/config/base.yaml
+Traceback (most recent call last):
+  File "/Users/gabe/pinball/mpf30/mpf/commands/core.py", line 133, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 111, in __init__
+    self._run_init_phases()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 129, in _run_init_phases
+    self.events.process_event_queue()
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 477, in process_event_queue
+    **event[3])
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 412, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Users/gabe/pinball/mpf30/mpf/core/mode_controller.py", line 88, in _load_modes
+    self.machine.modes[mode] = self._load_mode(mode.lower())
+  File "/Users/gabe/pinball/mpf30/mpf/core/mode_controller.py", line 172, in _load_mode
+    config = self._load_mode_config(mode_string)
+  File "/Users/gabe/pinball/mpf30/mpf/core/mode_controller.py", line 139, in _load_mode_config
+    ConfigProcessor.load_config_file(mode_config_file))
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_processor.py", line 95, in load_config_file
+    config = FileManager.load(filename, verify_version, halt_on_error)
+  File "/Users/gabe/pinball/mpf30/mpf/core/file_manager.py", line 155, in load
+    round_trip)
+  File "/Users/gabe/pinball/mpf30/mpf/file_interfaces/yaml_interface.py", line 295, in load
+    raise ValueError("Config file version mismatch: {}".format(filename))
+ValueError: Config file version mismatch: /Users/gabe/Dropbox/Pinball/Gabe/bnd/modes/base/config/base.yaml

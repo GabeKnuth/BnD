@@ -1,0 +1,37 @@
+2016-03-25 00:14:20,720 : INFO : Machine : Mission Pinball Framework v0.30.0.dev700
+2016-03-25 00:14:20,721 : INFO : Machine : Loading config from original files
+2016-03-25 00:14:20,777 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-25 00:14:20,909 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-25 00:14:20,914 : INFO : FAST : Configuring FAST hardware.
+2016-03-25 00:14:20,914 : INFO : Machine : Loading core modules...
+2016-03-25 00:14:21,096 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-25 00:14:21,097 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-25 00:14:22,614 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:14:22,615 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-25 00:14:24,132 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:14:24,149 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:14:24,164 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:14:24,180 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-25 00:14:24,266 : INFO : DeviceManager : Loading devices...
+2016-03-25 00:14:24,275 : ERROR : ConfigProcessor : Your config contains a value for the setting "coils:c_trougheject:pulse", but this is not a valid setting name.
+2016-03-25 00:14:24,275 : ERROR : root : Your config contains a value for the setting "coils:c_trougheject:pulse", but this is not a valid setting name.
+Traceback (most recent call last):
+  File "/Users/gabe/pinball/mpf30/mpf/commands/core.py", line 135, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 111, in __init__
+    self._run_init_phases()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 127, in _run_init_phases
+    self.events.process_event_queue()
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 477, in process_event_queue
+    **event[3])
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 412, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 60, in _load_device_modules
+    self.load_devices_config(validate=True)
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 106, in load_devices_config
+    device_cls.config_section, config[device_name], device_name)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1100, in validate_config
+    validation_failure_info)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1238, in check_for_invalid_sections
+    'setting "' + path_string + '", but this is not a valid '
+AssertionError: Your config contains a value for the setting "coils:c_trougheject:pulse", but this is not a valid setting name.

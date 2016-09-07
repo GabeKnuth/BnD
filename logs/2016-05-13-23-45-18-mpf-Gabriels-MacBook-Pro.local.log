@@ -1,0 +1,118 @@
+2016-05-13 23:45:18,098 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1482
+2016-05-13 23:45:18,098 : DEBUG : Machine : Command line arguments: {'logfile': 'logs/2016-05-13-23-45-18-mpf-Gabriels-MacBook-Pro.local.log', 'create_config_cache': True, 'pause': False, 'no_load_cache': False, 'configfile': ['config'], 'loglevel': 10, 'mpfconfigfile': '/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/mpfconfig.yaml', 'bcp': False, 'force_platform': None, 'consoleloglevel': True}
+2016-05-13 23:45:18,098 : DEBUG : Machine : MPF path: /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf
+2016-05-13 23:45:18,098 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-13 23:45:18,099 : DEBUG : Machine : Command line arguments: {'logfile': 'logs/2016-05-13-23-45-18-mpf-Gabriels-MacBook-Pro.local.log', 'create_config_cache': True, 'pause': False, 'no_load_cache': False, 'configfile': ['config'], 'loglevel': 10, 'mpfconfigfile': '/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/mpfconfig.yaml', 'bcp': False, 'force_platform': None, 'consoleloglevel': True}
+2016-05-13 23:45:18,099 : DEBUG : Machine : Python version: 3.5.0
+2016-05-13 23:45:18,099 : DEBUG : Machine : Platform: darwin
+2016-05-13 23:45:18,099 : DEBUG : Machine : Python executable location: /Applications/MPF.app/Contents/Resources/python
+2016-05-13 23:45:18,099 : DEBUG : Machine : 32-bit Python? False
+2016-05-13 23:45:18,099 : DEBUG : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-13 23:45:18,318 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-13 23:45:18,318 : DEBUG : Clock : Starting clock (maximum frames per second=30.0)
+2016-05-13 23:45:18,319 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-13 23:45:18,319 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method MachineController._check_crash_queue of <mpf.core.machine.MachineController object at 0x11115aef0>>, timeout=1, priority=1)
+2016-05-13 23:45:18,322 : DEBUG : Pololu Maestro : Configuring template hardware interface.
+2016-05-13 23:45:18,325 : INFO : FAST : Configuring FAST hardware.
+2016-05-13 23:45:18,325 : DEBUG : Machine : Setting default platform to 'fast'
+2016-05-13 23:45:18,326 : INFO : Machine : Loading core modules...
+2016-05-13 23:45:18,326 : DEBUG : Machine : Loading 'mpf.core.events.EventManager' core module
+2016-05-13 23:45:18,326 : DEBUG : Machine : Loading 'mpf.core.mode_controller.ModeController' core module
+2016-05-13 23:45:18,328 : DEBUG : Events : Registered ModeController._load_modes as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-13 23:45:18,328 : DEBUG : Events : Registered ModeController._ball_ending as a handler for 'ball_ending', priority: 0, kwargs: {}
+2016-05-13 23:45:18,328 : DEBUG : Events : Registered ModeController._ball_starting as a handler for 'ball_starting', priority: 0, kwargs: {}
+2016-05-13 23:45:18,329 : DEBUG : Events : Registered ModeController._player_added as a handler for 'player_add_success', priority: 0, kwargs: {}
+2016-05-13 23:45:18,329 : DEBUG : Events : Registered ModeController._player_turn_start as a handler for 'player_turn_start', priority: 1000000, kwargs: {}
+2016-05-13 23:45:18,329 : DEBUG : Events : Registered ModeController._player_turn_stop as a handler for 'player_turn_stop', priority: 1000000, kwargs: {}
+2016-05-13 23:45:18,329 : DEBUG : Machine : Loading 'mpf.core.config_processor.ConfigProcessor' core module
+2016-05-13 23:45:18,329 : DEBUG : Machine : Loading 'mpf.core.shot_profile_manager.ShotProfileManager' core module
+2016-05-13 23:45:18,330 : DEBUG : ShotProfileManager : Registering Shot Profile: 'default'
+2016-05-13 23:45:18,330 : DEBUG : ShotProfileManager : Processed 'default' profile configuration: {'state_names_to_not_rotate': [], 'show_when_disabled': False, 'loop': False, 'block': True, 'states': [{'priority': 0, 'show_tokens': {}, 'hold': True, 'reset': True, 'loops': -1, 'speed': 1.0, 'start_step': 1, 'action': 'play', 'sync_ms': 0, 'name': 'unlit', 'show': 'off', 'manual_advance': False, 'key': None}, {'priority': 0, 'show_tokens': {}, 'hold': True, 'reset': True, 'loops': -1, 'speed': 1.0, 'start_step': 1, 'action': 'play', 'sync_ms': 0, 'name': 'lit', 'show': 'on', 'manual_advance': False, 'key': None}], 'state_names_to_rotate': [], 'hold': None, 'player_variable': '%_default', 'advance_on_hit': True, 'show': None, 'rotation_pattern': deque(['right'])}
+2016-05-13 23:45:18,331 : DEBUG : Mode Controller : Registering <bound method ShotProfileManager.mode_start_for_shots of <mpf.core.shot_profile_manager.ShotProfileManager object at 0x111200f98>> as a mode start method. Config section: shots, priority: 0, kwargs: {}
+2016-05-13 23:45:18,331 : DEBUG : Mode Controller : Registering <bound method ShotProfileManager.mode_start_for_shot_groups of <mpf.core.shot_profile_manager.ShotProfileManager object at 0x111200f98>> as a mode start method. Config section: shot_groups, priority: 0, kwargs: {}
+2016-05-13 23:45:18,331 : DEBUG : Events : Registered ShotProfileManager._player_turn_start as a handler for 'player_turn_start', priority: 1000000, kwargs: {}
+2016-05-13 23:45:18,331 : DEBUG : Events : Registered ShotProfileManager._player_turn_stop as a handler for 'player_turn_stop', priority: 0, kwargs: {}
+2016-05-13 23:45:18,331 : DEBUG : Machine : Loading 'mpf.core.device_manager.DeviceManager' core module
+2016-05-13 23:45:18,331 : DEBUG : Events : Registered DeviceManager._load_device_modules as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-13 23:45:18,331 : DEBUG : Events : Registered DeviceManager.create_machinewide_device_control_events as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-13 23:45:18,332 : DEBUG : Events : Registered DeviceManager.create_collection_control_events as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-13 23:45:18,332 : DEBUG : Machine : Loading 'mpf.core.switch_controller.SwitchController' core module
+2016-05-13 23:45:18,332 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method SwitchController._tick of <mpf.core.switch_controller.SwitchController object at 0x11120c5c0>>, timeout=0, priority=1000)
+2016-05-13 23:45:18,332 : DEBUG : Events : Registered SwitchController._initialize_switches as a handler for 'init_phase_2', priority: 1000, kwargs: {}
+2016-05-13 23:45:18,332 : DEBUG : Events : Registered SwitchController.log_active_switches as a handler for 'machine_reset_phase_3', priority: 1, kwargs: {}
+2016-05-13 23:45:18,333 : DEBUG : Machine : Loading 'mpf.core.ball_controller.BallController' core module
+2016-05-13 23:45:18,333 : DEBUG : BallController : Loading the BallController
+2016-05-13 23:45:18,333 : DEBUG : Events : Registered BallController.request_to_start_game as a handler for 'request_to_start_game', priority: 1, kwargs: {}
+2016-05-13 23:45:18,333 : DEBUG : Events : Registered BallController._initialize as a handler for 'machine_reset_phase_2', priority: 1, kwargs: {}
+2016-05-13 23:45:18,333 : DEBUG : Events : Registered BallController._init2 as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-13 23:45:18,334 : DEBUG : Machine : Loading 'mpf.core.assets.AssetManager' core module
+2016-05-13 23:45:18,334 : DEBUG : AssetManager : Initializing...
+2016-05-13 23:45:18,335 : DEBUG : Mode Controller : Registering <bound method AssetManager._load_mode_assets of <mpf.core.assets.AssetManager object at 0x11120ccc0>> as a mode start method. Config section: None, priority: 0, kwargs: {}
+2016-05-13 23:45:18,335 : DEBUG : Events : Registered AssetManager._create_assets as a handler for 'init_phase_3', priority: 1, kwargs: {}
+2016-05-13 23:45:18,335 : DEBUG : Events : Registered AssetManager._bcp_client_asset_load as a handler for 'assets_to_load', priority: 1, kwargs: {}
+2016-05-13 23:45:18,335 : DEBUG : Machine : Loading 'mpf.core.show_controller.ShowController' core module
+2016-05-13 23:45:18,337 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method ShowController._tick of <mpf.core.show_controller.ShowController object at 0x111212b38>>, timeout=0, priority=1)
+2016-05-13 23:45:18,337 : DEBUG : Events : Registered ShowController._initialize as a handler for 'init_phase_3', priority: 1, kwargs: {}
+2016-05-13 23:45:18,337 : DEBUG : Machine : Loading 'mpf.core.bcp.BCP' core module
+2016-05-13 23:45:18,337 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'ball_started', priority: 1, kwargs: {'name': 'ball_started'}
+2016-05-13 23:45:18,338 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'ball_ended', priority: 1, kwargs: {'name': 'ball_ended'}
+2016-05-13 23:45:18,338 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'player_add_success', priority: 1, kwargs: {'name': 'player_add_success'}
+2016-05-13 23:45:18,338 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'clear', priority: 1, kwargs: {'command': 'trigger', 'params': {'name': 'clear', 'key': '%key'}}
+2016-05-13 23:45:18,338 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'player_turn_start', priority: 1, kwargs: {'command': 'player_turn_start', 'params': {'player_num': '%number'}}
+2016-05-13 23:45:18,338 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'ball_started', priority: 1, kwargs: {'command': 'ball_start', 'params': {'ball': '%ball', 'player_num': '%player'}}
+2016-05-13 23:45:18,338 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'ball_ending', priority: 1, kwargs: {'command': 'ball_end'}
+2016-05-13 23:45:18,339 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'player_score', priority: 1, kwargs: {'name': 'player_score'}
+2016-05-13 23:45:18,339 : DEBUG : Events : Registered BCP._setup_dmds as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-13 23:45:18,339 : DEBUG : Events : Registered BCP._setup_bcp_connections as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-13 23:45:18,339 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method BCP.get_bcp_messages of <BCP Module>>, timeout=0, priority=1)
+2016-05-13 23:45:18,339 : DEBUG : Events : Registered BCP.bcp_player_added as a handler for 'player_add_success', priority: 1, kwargs: {}
+2016-05-13 23:45:18,339 : DEBUG : Events : Registered BCP.bcp_reset as a handler for 'machine_reset_phase_1', priority: 1, kwargs: {}
+2016-05-13 23:45:18,339 : DEBUG : Events : Registered BCP.increase_volume as a handler for 'increase_volume', priority: 1, kwargs: {}
+2016-05-13 23:45:18,339 : DEBUG : Events : Registered BCP.decrease_volume as a handler for 'decrease_volume', priority: 1, kwargs: {}
+2016-05-13 23:45:18,340 : DEBUG : Events : Registered BCP.enable_volume_keys as a handler for 'enable_volume_keys', priority: 1, kwargs: {}
+2016-05-13 23:45:18,340 : DEBUG : Events : Registered BCP.disable_volume_keys as a handler for 'disable_volume_keys', priority: 1, kwargs: {}
+2016-05-13 23:45:18,340 : DEBUG : Events : Registered BCP.get_led_coordinates as a handler for 'bcp_get_led_coordinates', priority: 1, kwargs: {}
+2016-05-13 23:45:18,340 : DEBUG : Mode Controller : Registering <bound method BCP.bcp_mode_start of <BCP Module>> as a mode start method. Config section: mode, priority: 0, kwargs: {}
+2016-05-13 23:45:18,340 : DEBUG : Machine : Loading 'mpf.core.logic_blocks.LogicBlocks' core module
+2016-05-13 23:45:18,341 : DEBUG : Mode Controller : Registering <bound method LogicBlocks._process_config of <mpf.core.logic_blocks.LogicBlocks object at 0x11121aa20>> as a mode start method. Config section: logic_blocks, priority: 0, kwargs: {}
+2016-05-13 23:45:18,341 : DEBUG : Events : Registered LogicBlocks._create_player_logic_blocks as a handler for 'player_add_success', priority: 1, kwargs: {}
+2016-05-13 23:45:18,341 : DEBUG : Events : Registered LogicBlocks.player_turn_start as a handler for 'player_turn_start', priority: 1, kwargs: {}
+2016-05-13 23:45:18,341 : DEBUG : Events : Registered LogicBlocks.player_turn_stop as a handler for 'player_turn_stop', priority: 1, kwargs: {}
+2016-05-13 23:45:18,341 : DEBUG : Machine : Loading 'mpf.core.scoring.ScoreController' core module
+2016-05-13 23:45:18,342 : DEBUG : Score : Loading the Score Controller
+2016-05-13 23:45:18,342 : DEBUG : Mode Controller : Registering <bound method ScoreController.mode_start of <mpf.core.scoring.ScoreController object at 0x11121c780>> as a mode start method. Config section: scoring, priority: 0, kwargs: {}
+2016-05-13 23:45:18,342 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-05-13 23:45:18,342 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-05-13 23:45:19,844 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141C'
+2016-05-13 23:45:19,859 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141C'
+2016-05-13 23:45:19,860 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:45:19,861 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-05-13 23:45:21,362 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141B'
+2016-05-13 23:45:21,378 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141B'
+2016-05-13 23:45:21,378 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:45:21,379 : DEBUG : FAST : Querying FAST IO boards...
+2016-05-13 23:45:21,394 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:45:21,411 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:45:21,411 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-05-13 23:45:21,444 : ERROR : root : [Errno 16] could not open port /dev/tty.usbmodem00153811: [Errno 16] Resource busy: '/dev/tty.usbmodem00153811'
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialposix.py", line 291, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 16] Resource busy: '/dev/tty.usbmodem00153811'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 120, in __init__
+    self._initialize_platforms()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 178, in _initialize_platforms
+    platform.initialize()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/pololu_maestro.py", line 41, in initialize
+    self.serial = serial.Serial(self.platform.config['port'])
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialutil.py", line 180, in __init__
+    self.open()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialposix.py", line 294, in open
+    raise SerialException(msg.errno, "could not open port %s: %s" % (self._port, msg))
+serial.serialutil.SerialException: [Errno 16] could not open port /dev/tty.usbmodem00153811: [Errno 16] Resource busy: '/dev/tty.usbmodem00153811'

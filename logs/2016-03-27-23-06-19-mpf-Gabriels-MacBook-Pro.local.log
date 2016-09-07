@@ -1,0 +1,115 @@
+2016-03-27 23:06:19,377 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-27 23:06:19,378 : INFO : Machine : Loading cached config: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-27 23:06:19,387 : INFO : FAST : Configuring FAST hardware.
+2016-03-27 23:06:19,387 : INFO : Machine : Loading core modules...
+2016-03-27 23:06:19,629 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-27 23:06:19,629 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-27 23:06:21,146 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-27 23:06:21,148 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-27 23:06:22,665 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-27 23:06:22,682 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-27 23:06:22,698 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-27 23:06:22,713 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-27 23:06:22,800 : INFO : DeviceManager : Loading devices...
+2016-03-27 23:06:22,853 : INFO : FAST : Received SA: 01,00,0B,00002400002D00001F0100
+2016-03-27 23:06:22,869 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-27 23:06:22,870 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-27 23:06:22,872 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-27 23:06:22,872 : INFO : Machine : Loading plugins...
+2016-03-27 23:06:22,888 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-27 23:06:22,889 : INFO : SwitchController : Dumping current active switches
+2016-03-27 23:06:22,890 : INFO : SwitchController : Active Switch|s_troughenter
+2016-03-27 23:06:22,891 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-03-27 23:06:22,891 : INFO : SwitchController : Active Switch|s_droptarget1
+2016-03-27 23:06:22,891 : INFO : SwitchController : Active Switch|s_droptarget4
+2016-03-27 23:06:22,891 : INFO : SwitchController : Active Switch|s_droptarget3
+2016-03-27 23:06:22,891 : INFO : SwitchController : Active Switch|s_droptarget5
+2016-03-27 23:06:22,892 : INFO : SwitchController : Active Switch|s_drain
+2016-03-27 23:06:22,892 : INFO : FAST : Received SA: 01,00,0B,00002400002D00001F0100
+2016-03-27 23:06:22,893 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-03-27 23:06:22,894 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-27 23:06:22,894 : INFO : Mode Controller : | attract : 10                        |
+2016-03-27 23:06:22,894 : INFO : Mode Controller : +-------------------------------------+
+2016-03-27 23:07:01,401 : INFO : SwitchController : <<<<< switch: s_start, State:1 >>>>>
+2016-03-27 23:07:01,567 : INFO : SwitchController : <<<<< switch: s_start, State:0 >>>>>
+2016-03-27 23:07:01,567 : INFO : Mode.game : Mode Starting. Priority: 20
+2016-03-27 23:07:01,568 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-27 23:07:01,568 : INFO : Mode Controller : +-------------------------------------+
+2016-03-27 23:07:01,568 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-27 23:07:01,569 : INFO : Mode Controller : | game : 20                           |
+2016-03-27 23:07:01,569 : INFO : Mode Controller : +-------------------------------------+
+2016-03-27 23:07:01,570 : INFO : Mode.game : Player added successfully. Total players: 1
+2016-03-27 23:07:01,570 : INFO : Mode.game : ***************************************************
+2016-03-27 23:07:01,571 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-27 23:07:01,571 : INFO : Mode.game : **                                               **
+2016-03-27 23:07:01,571 : INFO : Mode.game : **    Player: 1    Ball: 1   Score: 0            **
+2016-03-27 23:07:01,572 : INFO : Mode.game : **                                               **
+2016-03-27 23:07:01,572 : INFO : Mode.game : ***************************************************
+2016-03-27 23:07:01,572 : INFO : Mode.game : ***************************************************
+2016-03-27 23:07:01,572 : INFO : Mode.base : Mode Starting. Priority: 100
+2016-03-27 23:07:01,574 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-27 23:07:01,575 : INFO : Mode Controller : | base : 100                          |
+2016-03-27 23:07:01,575 : INFO : Mode Controller : | game : 20                           |
+2016-03-27 23:07:01,575 : INFO : Mode Controller : +-------------------------------------+
+2016-03-27 23:07:02,395 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:1 >>>>>
+2016-03-27 23:07:02,590 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-03-27 23:07:02,952 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-27 23:07:03,004 : INFO : SwitchController : <<<<< switch: s_drain, State:0 >>>>>
+2016-03-27 23:07:03,134 : INFO : SwitchController : <<<<< switch: s_troughenter, State:1 >>>>>
+2016-03-27 23:07:42,692 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:0 >>>>>
+2016-03-27 23:07:46,992 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:1 >>>>>
+2016-03-27 23:07:47,048 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:0 >>>>>
+2016-03-27 23:07:47,582 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:1 >>>>>
+2016-03-27 23:07:48,300 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:0 >>>>>
+2016-03-27 23:07:52,601 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:1 >>>>>
+2016-03-27 23:07:52,672 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:0 >>>>>
+2016-03-27 23:07:53,195 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:1 >>>>>
+2016-03-27 23:07:58,317 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:0 >>>>>
+2016-03-27 23:08:00,967 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:1 >>>>>
+2016-03-27 23:08:01,052 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:0 >>>>>
+2016-03-27 23:08:01,636 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:1 >>>>>
+2016-03-27 23:08:08,312 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:0 >>>>>
+2016-03-27 23:08:09,417 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:1 >>>>>
+2016-03-27 23:08:09,460 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:0 >>>>>
+2016-03-27 23:08:09,983 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:1 >>>>>
+2016-03-27 23:08:10,028 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:0 >>>>>
+2016-03-27 23:08:12,278 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:1 >>>>>
+2016-03-27 23:08:12,377 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:0 >>>>>
+2016-03-27 23:08:12,998 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:1 >>>>>
+2016-03-27 23:08:18,337 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:0 >>>>>
+2016-03-27 23:08:21,447 : INFO : SwitchController : <<<<< switch: s_drain, State:1 >>>>>
+2016-03-27 23:08:21,959 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-27 23:08:21,960 : INFO : Mode Controller : | game : 20                           |
+2016-03-27 23:08:21,960 : INFO : Mode Controller : +-------------------------------------+
+2016-03-27 23:08:21,963 : INFO : Mode.game : ***************************************************
+2016-03-27 23:08:21,963 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-27 23:08:21,963 : INFO : Mode.game : **                                               **
+2016-03-27 23:08:21,964 : INFO : Mode.game : **    Player: 1    Ball: 2   Score: 0            **
+2016-03-27 23:08:21,964 : INFO : Mode.game : **                                               **
+2016-03-27 23:08:21,964 : INFO : Mode.game : ***************************************************
+2016-03-27 23:08:21,964 : INFO : Mode.game : ***************************************************
+2016-03-27 23:08:21,965 : INFO : Mode.base : Mode Starting. Priority: 100
+2016-03-27 23:08:21,968 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-27 23:08:21,969 : INFO : Mode Controller : | base : 100                          |
+2016-03-27 23:08:21,969 : INFO : Mode Controller : | game : 20                           |
+2016-03-27 23:08:21,970 : INFO : Mode Controller : +-------------------------------------+
+2016-03-27 23:08:22,854 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:1 >>>>>
+2016-03-27 23:08:22,983 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-03-27 23:08:23,369 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-27 23:08:23,456 : INFO : SwitchController : <<<<< switch: s_drain, State:0 >>>>>
+2016-03-27 23:08:23,512 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:0 >>>>>
+2016-03-27 23:08:23,598 : INFO : SwitchController : <<<<< switch: s_troughenter, State:1 >>>>>
+2016-03-27 23:08:27,142 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:1 >>>>>
+2016-03-27 23:08:27,181 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:0 >>>>>
+2016-03-27 23:08:29,668 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:1 >>>>>
+2016-03-27 23:08:29,764 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:0 >>>>>
+2016-03-27 23:08:30,376 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:1 >>>>>
+2016-03-27 23:08:31,130 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:0 >>>>>
+2016-03-27 23:08:33,260 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:1 >>>>>
+2016-03-27 23:08:33,332 : INFO : SwitchController : <<<<< switch: s_toprightstandup, State:0 >>>>>
+2016-03-27 23:08:35,164 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:1 >>>>>
+2016-03-27 23:08:35,260 : INFO : SwitchController : <<<<< switch: s_subwayopto, State:0 >>>>>
+2016-03-27 23:08:35,864 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:1 >>>>>
+2016-03-27 23:08:41,128 : INFO : SwitchController : <<<<< switch: s_lowervukopto, State:0 >>>>>
+2016-03-27 23:08:44,096 : INFO : Machine : Actual MPF loop rate: 68.57 Hz
+2016-03-27 23:08:44,096 : INFO : root : MPF run loop ended.

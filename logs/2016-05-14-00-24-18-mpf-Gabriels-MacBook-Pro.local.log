@@ -1,0 +1,1014 @@
+2016-05-14 00:24:18,038 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1482
+2016-05-14 00:24:18,038 : DEBUG : Machine : Command line arguments: {'configfile': ['config'], 'no_load_cache': False, 'loglevel': 10, 'pause': False, 'mpfconfigfile': '/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/mpfconfig.yaml', 'consoleloglevel': True, 'force_platform': None, 'logfile': 'logs/2016-05-14-00-24-18-mpf-Gabriels-MacBook-Pro.local.log', 'create_config_cache': True, 'bcp': False}
+2016-05-14 00:24:18,038 : DEBUG : Machine : MPF path: /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf
+2016-05-14 00:24:18,038 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-14 00:24:18,038 : DEBUG : Machine : Command line arguments: {'configfile': ['config'], 'no_load_cache': False, 'loglevel': 10, 'pause': False, 'mpfconfigfile': '/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/mpfconfig.yaml', 'consoleloglevel': True, 'force_platform': None, 'logfile': 'logs/2016-05-14-00-24-18-mpf-Gabriels-MacBook-Pro.local.log', 'create_config_cache': True, 'bcp': False}
+2016-05-14 00:24:18,039 : DEBUG : Machine : Python version: 3.5.0
+2016-05-14 00:24:18,039 : DEBUG : Machine : Platform: darwin
+2016-05-14 00:24:18,039 : DEBUG : Machine : Python executable location: /Applications/MPF.app/Contents/Resources/python
+2016-05-14 00:24:18,039 : DEBUG : Machine : 32-bit Python? False
+2016-05-14 00:24:18,039 : DEBUG : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-14 00:24:18,268 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-14 00:24:18,270 : DEBUG : Clock : Starting clock (maximum frames per second=30.0)
+2016-05-14 00:24:18,270 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-14 00:24:18,270 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method MachineController._check_crash_queue of <mpf.core.machine.MachineController object at 0x101f72ef0>>, timeout=1, priority=1)
+2016-05-14 00:24:18,284 : DEBUG : Pololu Maestro : Configuring template hardware interface.
+2016-05-14 00:24:18,301 : INFO : FAST : Configuring FAST hardware.
+2016-05-14 00:24:18,301 : DEBUG : Machine : Setting default platform to 'fast'
+2016-05-14 00:24:18,301 : INFO : Machine : Loading core modules...
+2016-05-14 00:24:18,301 : DEBUG : Machine : Loading 'mpf.core.events.EventManager' core module
+2016-05-14 00:24:18,305 : DEBUG : Machine : Loading 'mpf.core.mode_controller.ModeController' core module
+2016-05-14 00:24:18,308 : DEBUG : Events : Registered ModeController._load_modes as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-14 00:24:18,308 : DEBUG : Events : Registered ModeController._ball_ending as a handler for 'ball_ending', priority: 0, kwargs: {}
+2016-05-14 00:24:18,308 : DEBUG : Events : Registered ModeController._ball_starting as a handler for 'ball_starting', priority: 0, kwargs: {}
+2016-05-14 00:24:18,308 : DEBUG : Events : Registered ModeController._player_added as a handler for 'player_add_success', priority: 0, kwargs: {}
+2016-05-14 00:24:18,309 : DEBUG : Events : Registered ModeController._player_turn_start as a handler for 'player_turn_start', priority: 1000000, kwargs: {}
+2016-05-14 00:24:18,309 : DEBUG : Events : Registered ModeController._player_turn_stop as a handler for 'player_turn_stop', priority: 1000000, kwargs: {}
+2016-05-14 00:24:18,309 : DEBUG : Machine : Loading 'mpf.core.config_processor.ConfigProcessor' core module
+2016-05-14 00:24:18,309 : DEBUG : Machine : Loading 'mpf.core.shot_profile_manager.ShotProfileManager' core module
+2016-05-14 00:24:18,312 : DEBUG : ShotProfileManager : Registering Shot Profile: 'default'
+2016-05-14 00:24:18,312 : DEBUG : ShotProfileManager : Processed 'default' profile configuration: {'block': True, 'player_variable': '%_default', 'rotation_pattern': deque(['right']), 'show': None, 'hold': None, 'loop': False, 'state_names_to_rotate': [], 'advance_on_hit': True, 'state_names_to_not_rotate': [], 'states': [{'key': None, 'priority': 0, 'name': 'unlit', 'show_tokens': {}, 'loops': -1, 'reset': True, 'show': 'off', 'hold': True, 'manual_advance': False, 'sync_ms': 0, 'action': 'play', 'start_step': 1, 'speed': 1.0}, {'key': None, 'priority': 0, 'name': 'lit', 'show_tokens': {}, 'loops': -1, 'reset': True, 'show': 'on', 'hold': True, 'manual_advance': False, 'sync_ms': 0, 'action': 'play', 'start_step': 1, 'speed': 1.0}], 'show_when_disabled': False}
+2016-05-14 00:24:18,313 : DEBUG : Mode Controller : Registering <bound method ShotProfileManager.mode_start_for_shots of <mpf.core.shot_profile_manager.ShotProfileManager object at 0x102017d68>> as a mode start method. Config section: shots, priority: 0, kwargs: {}
+2016-05-14 00:24:18,313 : DEBUG : Mode Controller : Registering <bound method ShotProfileManager.mode_start_for_shot_groups of <mpf.core.shot_profile_manager.ShotProfileManager object at 0x102017d68>> as a mode start method. Config section: shot_groups, priority: 0, kwargs: {}
+2016-05-14 00:24:18,313 : DEBUG : Events : Registered ShotProfileManager._player_turn_start as a handler for 'player_turn_start', priority: 1000000, kwargs: {}
+2016-05-14 00:24:18,314 : DEBUG : Events : Registered ShotProfileManager._player_turn_stop as a handler for 'player_turn_stop', priority: 0, kwargs: {}
+2016-05-14 00:24:18,314 : DEBUG : Machine : Loading 'mpf.core.device_manager.DeviceManager' core module
+2016-05-14 00:24:18,314 : DEBUG : Events : Registered DeviceManager._load_device_modules as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:18,314 : DEBUG : Events : Registered DeviceManager.create_machinewide_device_control_events as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-14 00:24:18,314 : DEBUG : Events : Registered DeviceManager.create_collection_control_events as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-14 00:24:18,314 : DEBUG : Machine : Loading 'mpf.core.switch_controller.SwitchController' core module
+2016-05-14 00:24:18,317 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method SwitchController._tick of <mpf.core.switch_controller.SwitchController object at 0x102023d30>>, timeout=0, priority=1000)
+2016-05-14 00:24:18,317 : DEBUG : Events : Registered SwitchController._initialize_switches as a handler for 'init_phase_2', priority: 1000, kwargs: {}
+2016-05-14 00:24:18,317 : DEBUG : Events : Registered SwitchController.log_active_switches as a handler for 'machine_reset_phase_3', priority: 1, kwargs: {}
+2016-05-14 00:24:18,317 : DEBUG : Machine : Loading 'mpf.core.ball_controller.BallController' core module
+2016-05-14 00:24:18,319 : DEBUG : BallController : Loading the BallController
+2016-05-14 00:24:18,319 : DEBUG : Events : Registered BallController.request_to_start_game as a handler for 'request_to_start_game', priority: 1, kwargs: {}
+2016-05-14 00:24:18,319 : DEBUG : Events : Registered BallController._initialize as a handler for 'machine_reset_phase_2', priority: 1, kwargs: {}
+2016-05-14 00:24:18,319 : DEBUG : Events : Registered BallController._init2 as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-14 00:24:18,319 : DEBUG : Machine : Loading 'mpf.core.assets.AssetManager' core module
+2016-05-14 00:24:18,321 : DEBUG : AssetManager : Initializing...
+2016-05-14 00:24:18,322 : DEBUG : Mode Controller : Registering <bound method AssetManager._load_mode_assets of <mpf.core.assets.AssetManager object at 0x102023160>> as a mode start method. Config section: None, priority: 0, kwargs: {}
+2016-05-14 00:24:18,322 : DEBUG : Events : Registered AssetManager._create_assets as a handler for 'init_phase_3', priority: 1, kwargs: {}
+2016-05-14 00:24:18,322 : DEBUG : Events : Registered AssetManager._bcp_client_asset_load as a handler for 'assets_to_load', priority: 1, kwargs: {}
+2016-05-14 00:24:18,322 : DEBUG : Machine : Loading 'mpf.core.show_controller.ShowController' core module
+2016-05-14 00:24:18,329 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method ShowController._tick of <mpf.core.show_controller.ShowController object at 0x102029940>>, timeout=0, priority=1)
+2016-05-14 00:24:18,330 : DEBUG : Events : Registered ShowController._initialize as a handler for 'init_phase_3', priority: 1, kwargs: {}
+2016-05-14 00:24:18,330 : DEBUG : Machine : Loading 'mpf.core.bcp.BCP' core module
+2016-05-14 00:24:18,331 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'ball_started', priority: 1, kwargs: {'name': 'ball_started'}
+2016-05-14 00:24:18,331 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'ball_ended', priority: 1, kwargs: {'name': 'ball_ended'}
+2016-05-14 00:24:18,331 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'player_add_success', priority: 1, kwargs: {'name': 'player_add_success'}
+2016-05-14 00:24:18,331 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'player_turn_start', priority: 1, kwargs: {'params': {'player_num': '%number'}, 'command': 'player_turn_start'}
+2016-05-14 00:24:18,332 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'clear', priority: 1, kwargs: {'params': {'name': 'clear', 'key': '%key'}, 'command': 'trigger'}
+2016-05-14 00:24:18,332 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'ball_started', priority: 1, kwargs: {'params': {'player_num': '%player', 'ball': '%ball'}, 'command': 'ball_start'}
+2016-05-14 00:24:18,332 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'ball_ending', priority: 1, kwargs: {'command': 'ball_end'}
+2016-05-14 00:24:18,332 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'player_score', priority: 1, kwargs: {'name': 'player_score'}
+2016-05-14 00:24:18,332 : DEBUG : Events : Registered BCP._setup_dmds as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:18,332 : DEBUG : Events : Registered BCP._setup_bcp_connections as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-05-14 00:24:18,332 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method BCP.get_bcp_messages of <BCP Module>>, timeout=0, priority=1)
+2016-05-14 00:24:18,333 : DEBUG : Events : Registered BCP.bcp_player_added as a handler for 'player_add_success', priority: 1, kwargs: {}
+2016-05-14 00:24:18,333 : DEBUG : Events : Registered BCP.bcp_reset as a handler for 'machine_reset_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:18,333 : DEBUG : Events : Registered BCP.increase_volume as a handler for 'increase_volume', priority: 1, kwargs: {}
+2016-05-14 00:24:18,333 : DEBUG : Events : Registered BCP.decrease_volume as a handler for 'decrease_volume', priority: 1, kwargs: {}
+2016-05-14 00:24:18,333 : DEBUG : Events : Registered BCP.enable_volume_keys as a handler for 'enable_volume_keys', priority: 1, kwargs: {}
+2016-05-14 00:24:18,333 : DEBUG : Events : Registered BCP.disable_volume_keys as a handler for 'disable_volume_keys', priority: 1, kwargs: {}
+2016-05-14 00:24:18,333 : DEBUG : Events : Registered BCP.get_led_coordinates as a handler for 'bcp_get_led_coordinates', priority: 1, kwargs: {}
+2016-05-14 00:24:18,334 : DEBUG : Mode Controller : Registering <bound method BCP.bcp_mode_start of <BCP Module>> as a mode start method. Config section: mode, priority: 0, kwargs: {}
+2016-05-14 00:24:18,334 : DEBUG : Machine : Loading 'mpf.core.logic_blocks.LogicBlocks' core module
+2016-05-14 00:24:18,336 : DEBUG : Mode Controller : Registering <bound method LogicBlocks._process_config of <mpf.core.logic_blocks.LogicBlocks object at 0x102031a58>> as a mode start method. Config section: logic_blocks, priority: 0, kwargs: {}
+2016-05-14 00:24:18,337 : DEBUG : Events : Registered LogicBlocks._create_player_logic_blocks as a handler for 'player_add_success', priority: 1, kwargs: {}
+2016-05-14 00:24:18,337 : DEBUG : Events : Registered LogicBlocks.player_turn_start as a handler for 'player_turn_start', priority: 1, kwargs: {}
+2016-05-14 00:24:18,337 : DEBUG : Events : Registered LogicBlocks.player_turn_stop as a handler for 'player_turn_stop', priority: 1, kwargs: {}
+2016-05-14 00:24:18,337 : DEBUG : Machine : Loading 'mpf.core.scoring.ScoreController' core module
+2016-05-14 00:24:18,343 : DEBUG : Score : Loading the Score Controller
+2016-05-14 00:24:18,344 : DEBUG : Mode Controller : Registering <bound method ScoreController.mode_start of <mpf.core.scoring.ScoreController object at 0x102035198>> as a mode start method. Config section: scoring, priority: 0, kwargs: {}
+2016-05-14 00:24:18,344 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-05-14 00:24:18,344 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-05-14 00:24:19,846 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141C'
+2016-05-14 00:24:19,861 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141C'
+2016-05-14 00:24:19,862 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-14 00:24:19,862 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-05-14 00:24:21,365 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141B'
+2016-05-14 00:24:21,380 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141B'
+2016-05-14 00:24:21,381 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-14 00:24:21,382 : DEBUG : FAST : Querying FAST IO boards...
+2016-05-14 00:24:21,398 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-14 00:24:21,412 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-14 00:24:21,413 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-05-14 00:24:21,456 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,456 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,457 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,457 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,458 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,459 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,459 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,459 : DEBUG : Events : Registered ShowPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,460 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,460 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,461 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,462 : DEBUG : Events : Registered LightPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,462 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,462 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,463 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,463 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,464 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,464 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,465 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,466 : DEBUG : Events : Registered LedPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,466 : DEBUG : Machine : Registering Plugin Config Players
+2016-05-14 00:24:21,466 : DEBUG : Machine : Registering sound_player = mpfmc.config_players.sound_player:register_with_mpf
+2016-05-14 00:24:21,470 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,470 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,471 : DEBUG : Machine : Registering slide_player = mpfmc.config_players.slide_player:register_with_mpf
+2016-05-14 00:24:21,472 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,472 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,472 : DEBUG : Machine : Registering widget_player = mpfmc.config_players.widget_player:register_with_mpf
+2016-05-14 00:24:21,474 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-05-14 00:24:21,474 : DEBUG : Events : Registered ConfigPlayer.clear as a handler for 'clear', priority: 1, kwargs: {}
+2016-05-14 00:24:21,474 : DEBUG : Events : Registered MachineController.power_off as a handler for 'shutdown', priority: 1, kwargs: {}
+2016-05-14 00:24:21,474 : DEBUG : Events : Registered MachineController.power_off as a handler for 'sw_shutdown', priority: 1, kwargs: {}
+2016-05-14 00:24:21,475 : DEBUG : Events : Registered MachineController.stop as a handler for 'quit', priority: 1, kwargs: {}
+2016-05-14 00:24:21,475 : DEBUG : Events : Registered MachineController.stop as a handler for 'sw_quit', priority: 1, kwargs: {}
+2016-05-14 00:24:21,475 : DEBUG : DataInterface : Loading machine_vars from /Users/gabe/Dropbox/Pinball/Gabe/bnd/data/machine_vars.yaml
+2016-05-14 00:24:21,475 : DEBUG : YAML File Interface : Loading file: /Users/gabe/Dropbox/Pinball/Gabe/bnd/data/machine_vars.yaml
+2016-05-14 00:24:21,476 : DEBUG : Machine : Setting machine_var 'player1_score' to: 0, (prior: 0, change: 0)
+2016-05-14 00:24:21,477 : DEBUG : Events : ^^^^ Posted event 'machine_var_player1_score'. Type: None, Callback: None, Args: {'value': 0, 'prev_value': 0, 'change': 0}
+2016-05-14 00:24:21,477 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,477 : DEBUG : Events : machine_var_player1_score, None, None, {'value': 0, 'prev_value': 0, 'change': 0}
+2016-05-14 00:24:21,477 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,477 : DEBUG : Events : ^^^^ Posted event 'init_phase_1'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,477 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,478 : DEBUG : Events : machine_var_player1_score, None, None, {'value': 0, 'prev_value': 0, 'change': 0}
+2016-05-14 00:24:21,478 : DEBUG : Events : init_phase_1, None, None, {}
+2016-05-14 00:24:21,478 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,478 : DEBUG : Events : ^^^^ Processing event 'machine_var_player1_score'. Type: None, Callback: None, Args: {'value': 0, 'prev_value': 0, 'change': 0}
+2016-05-14 00:24:21,478 : DEBUG : Events : vvvv Finished event 'machine_var_player1_score'. Type: None. Callback: None. Args: {'value': 0, 'prev_value': 0, 'change': 0}
+2016-05-14 00:24:21,478 : DEBUG : Events : ^^^^ Processing event 'init_phase_1'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,478 : DEBUG : Events : DeviceManager._load_device_modules (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,478 : INFO : DeviceManager : Loading devices...
+2016-05-14 00:24:21,484 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method Led.update_leds of <class 'mpf.devices.led.Led'>>, timeout=0, priority=-100)
+2016-05-14 00:24:21,488 : DEBUG : Events : Registered BallSearch.request_to_start_game as a handler for 'request_to_start_game', priority: 1, kwargs: {}
+2016-05-14 00:24:21,513 : DEBUG : coil.c_leftflippermain : Enabling debug logging
+2016-05-14 00:24:21,513 : DEBUG : coil.c_leftflippermain : Configuring device with settings: '{'number': '0', 'connection': 'auto', 'pulse_events': {}, 'enable_events': {}, 'allow_enable': False, 'label': '%', 'recycle': False, 'pulse_ms': 25, 'tags': [], 'hold_power32': None, 'pulse_power': None, 'pulse_power32': None, 'platform': None, 'hold_power': None, 'hold_pwm_mask': None, 'pulse_pwm_mask': None, 'recycle_ms': None, 'disable_events': {}, 'debug': True}'
+2016-05-14 00:24:21,513 : DEBUG : coil.c_rightflippermain : Enabling debug logging
+2016-05-14 00:24:21,513 : DEBUG : coil.c_rightflippermain : Configuring device with settings: '{'number': '3', 'connection': 'auto', 'pulse_events': {}, 'enable_events': {}, 'allow_enable': False, 'label': '%', 'recycle': False, 'pulse_ms': 25, 'tags': [], 'hold_power32': None, 'pulse_power': None, 'pulse_power32': None, 'platform': None, 'hold_power': None, 'hold_pwm_mask': None, 'pulse_pwm_mask': None, 'recycle_ms': None, 'disable_events': {}, 'debug': True}'
+2016-05-14 00:24:21,513 : DEBUG : coil.c_trougheject : Enabling debug logging
+2016-05-14 00:24:21,513 : DEBUG : coil.c_trougheject : Configuring device with settings: '{'number': '6', 'connection': 'auto', 'pulse_events': {}, 'enable_events': {}, 'allow_enable': True, 'label': '%', 'recycle': False, 'pulse_ms': 1000, 'tags': [], 'hold_power32': None, 'pulse_power': None, 'pulse_power32': None, 'platform': None, 'hold_power': None, 'hold_pwm_mask': None, 'pulse_pwm_mask': None, 'recycle_ms': None, 'disable_events': {}, 'debug': True}'
+2016-05-14 00:24:21,514 : DEBUG : coil.c_upperrightflipperhold : Enabling debug logging
+2016-05-14 00:24:21,514 : DEBUG : coil.c_upperrightflipperhold : Configuring device with settings: '{'number': '25', 'connection': 'auto', 'pulse_events': {}, 'enable_events': {}, 'allow_enable': False, 'label': '%', 'recycle': False, 'pulse_ms': None, 'tags': [], 'hold_power32': None, 'pulse_power': None, 'pulse_power32': None, 'platform': None, 'hold_power': None, 'hold_pwm_mask': None, 'pulse_pwm_mask': None, 'recycle_ms': None, 'disable_events': {}, 'debug': True}'
+2016-05-14 00:24:21,514 : DEBUG : coil.c_upperrightflippermain : Enabling debug logging
+2016-05-14 00:24:21,514 : DEBUG : coil.c_upperrightflippermain : Configuring device with settings: '{'number': '29', 'connection': 'auto', 'pulse_events': {}, 'enable_events': {}, 'allow_enable': False, 'label': '%', 'recycle': False, 'pulse_ms': 20, 'tags': [], 'hold_power32': None, 'pulse_power': None, 'pulse_power32': None, 'platform': None, 'hold_power': None, 'hold_pwm_mask': None, 'pulse_pwm_mask': None, 'recycle_ms': None, 'disable_events': {}, 'debug': True}'
+2016-05-14 00:24:21,515 : DEBUG : ball_device.bd_trough : Enabling debug logging
+2016-05-14 00:24:21,515 : DEBUG : ball_device.bd_trough : Configuring device with settings: '{'request_ball_events': [], 'ball_missing_timeouts': [], 'entrance_switch': <switch.s_troughenter>, 'confirm_eject_event': None, 'player_controlled_eject_event': None, 'eject_coil_retry_pulse': None, 'ball_search_order': 100, 'entrance_count_delay': 500, 'hold_switches': [], 'entrance_events': {}, 'mechanical_eject': False, 'hold_events': {}, 'eject_coil_jam_pulse': None, 'hold_coil_release_time': 1000, 'eject_all_events': {}, 'debug': True, 'entrance_switch_full_timeout': 3000, 'ball_missing_target': <playfield.playfield>, 'exit_count_delay': 500, 'ball_capacity': 3, 'jam_switch': None, 'label': '%', 'confirm_eject_type': 'target', 'eject_timeouts': [], 'auto_fire_on_unexpected_ball': True, 'confirm_eject_switch': None, 'max_eject_attempts': 0, 'eject_events': {}, 'ball_switches': [], 'hold_coil': None, 'eject_targets': [<ball_device.bd_plunger>, <playfield.playfield>], 'tags': ['trough', 'home'], 'eject_coil': <coil.c_trougheject>, 'target_on_unexpected_ball': None, 'captures_from': <playfield.playfield>}'
+2016-05-14 00:24:21,516 : DEBUG : ball_device.bd_drain : Enabling debug logging
+2016-05-14 00:24:21,516 : DEBUG : ball_device.bd_drain : Configuring device with settings: '{'request_ball_events': [], 'ball_missing_timeouts': [], 'entrance_switch': None, 'confirm_eject_event': None, 'player_controlled_eject_event': None, 'eject_coil_retry_pulse': None, 'ball_search_order': 100, 'entrance_count_delay': 500, 'hold_switches': [], 'entrance_events': {}, 'mechanical_eject': False, 'hold_events': {}, 'eject_coil_jam_pulse': None, 'hold_coil_release_time': 1000, 'eject_all_events': {}, 'debug': True, 'entrance_switch_full_timeout': 0, 'exit_count_delay': 500, 'ball_capacity': None, 'ball_switches': [<switch.s_drain>], 'jam_switch': None, 'label': '%', 'confirm_eject_type': 'target', 'eject_timeouts': [], 'auto_fire_on_unexpected_ball': True, 'confirm_eject_switch': None, 'max_eject_attempts': 0, 'eject_events': {}, 'ball_missing_target': <playfield.playfield>, 'hold_coil': None, 'eject_targets': [<ball_device.bd_trough>, <ball_device.bd_plunger>, <playfield.playfield>], 'tags': ['drain'], 'eject_coil': <coil.c_draineject>, 'target_on_unexpected_ball': None, 'captures_from': <playfield.playfield>}'
+2016-05-14 00:24:21,517 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,517 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,518 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,518 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,518 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,518 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,519 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,519 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,519 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,519 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,520 : DEBUG : coil.c_leftflippermain : Platform Driver: <Platform.FAST>
+2016-05-14 00:24:21,520 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,520 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,520 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,520 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,521 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,521 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,521 : DEBUG : coil.c_rightflippermain : Platform Driver: <Platform.FAST>
+2016-05-14 00:24:21,521 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,521 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,522 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,522 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,522 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,522 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,522 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,523 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,523 : DEBUG : coil.c_trougheject : Platform Driver: <Platform.FAST>
+2016-05-14 00:24:21,523 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,523 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,523 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,524 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,524 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,524 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,524 : DEBUG : coil.c_upperrightflipperhold : Platform Driver: <Platform.FAST>
+2016-05-14 00:24:21,525 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,525 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,525 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,525 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,526 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,526 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,526 : DEBUG : coil.c_upperrightflippermain : Platform Driver: <Platform.FAST>
+2016-05-14 00:24:21,526 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,526 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,527 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,527 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,527 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,528 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,528 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,528 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,528 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,529 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,529 : DEBUG : FASTDriver : Driver Settings: {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,529 : DEBUG : FASTDriver : Resetting driver {'config_cmd': 'DN:', 'trigger_cmd': 'TN:'}
+2016-05-14 00:24:21,530 : DEBUG : FAST : FAST Switch hardware tuple: ('4F', 1)
+2016-05-14 00:24:21,530 : DEBUG : FAST : FAST Switch hardware tuple: ('19', 1)
+2016-05-14 00:24:21,530 : DEBUG : FAST : FAST Switch hardware tuple: ('13', 1)
+2016-05-14 00:24:21,530 : DEBUG : FAST : FAST Switch hardware tuple: ('15', 1)
+2016-05-14 00:24:21,530 : DEBUG : FAST : FAST Switch hardware tuple: ('29', 1)
+2016-05-14 00:24:21,531 : DEBUG : FAST : FAST Switch hardware tuple: ('2A', 1)
+2016-05-14 00:24:21,531 : DEBUG : FAST : FAST Switch hardware tuple: ('2F', 1)
+2016-05-14 00:24:21,531 : DEBUG : FAST : FAST Switch hardware tuple: ('2E', 1)
+2016-05-14 00:24:21,531 : DEBUG : FAST : FAST Switch hardware tuple: ('4D', 1)
+2016-05-14 00:24:21,531 : DEBUG : FAST : FAST Switch hardware tuple: ('14', 1)
+2016-05-14 00:24:21,532 : DEBUG : FAST : FAST Switch hardware tuple: ('16', 1)
+2016-05-14 00:24:21,532 : DEBUG : FAST : FAST Switch hardware tuple: ('28', 1)
+2016-05-14 00:24:21,532 : DEBUG : FAST : FAST Switch hardware tuple: ('44', 1)
+2016-05-14 00:24:21,532 : DEBUG : FAST : FAST Switch hardware tuple: ('4A', 1)
+2016-05-14 00:24:21,532 : DEBUG : FAST : FAST Switch hardware tuple: ('4C', 1)
+2016-05-14 00:24:21,533 : DEBUG : FAST : FAST Switch hardware tuple: ('2C', 1)
+2016-05-14 00:24:21,533 : DEBUG : FAST : FAST Switch hardware tuple: ('11', 1)
+2016-05-14 00:24:21,533 : DEBUG : FAST : FAST Switch hardware tuple: ('00', 1)
+2016-05-14 00:24:21,533 : DEBUG : FAST : FAST Switch hardware tuple: ('12', 1)
+2016-05-14 00:24:21,534 : DEBUG : FAST : FAST Switch hardware tuple: ('1B', 1)
+2016-05-14 00:24:21,534 : DEBUG : FAST : FAST Switch hardware tuple: ('02', 1)
+2016-05-14 00:24:21,534 : DEBUG : FAST : FAST Switch hardware tuple: ('2B', 1)
+2016-05-14 00:24:21,534 : DEBUG : FAST : FAST Switch hardware tuple: ('42', 1)
+2016-05-14 00:24:21,535 : DEBUG : FAST : FAST Switch hardware tuple: ('04', 1)
+2016-05-14 00:24:21,535 : DEBUG : FAST : FAST Switch hardware tuple: ('4E', 1)
+2016-05-14 00:24:21,535 : DEBUG : FAST : FAST Switch hardware tuple: ('4B', 1)
+2016-05-14 00:24:21,535 : DEBUG : FAST : FAST Switch hardware tuple: ('2D', 1)
+2016-05-14 00:24:21,535 : DEBUG : FAST : FAST Switch hardware tuple: ('41', 1)
+2016-05-14 00:24:21,535 : DEBUG : FAST : FAST Switch hardware tuple: ('45', 1)
+2016-05-14 00:24:21,536 : DEBUG : FAST : FAST Switch hardware tuple: ('03', 1)
+2016-05-14 00:24:21,536 : DEBUG : FAST : FAST Switch hardware tuple: ('43', 1)
+2016-05-14 00:24:21,536 : DEBUG : FAST : FAST Switch hardware tuple: ('18', 1)
+2016-05-14 00:24:21,536 : DEBUG : FAST : FAST Switch hardware tuple: ('49', 1)
+2016-05-14 00:24:21,537 : DEBUG : FAST : FAST Switch hardware tuple: ('1A', 1)
+2016-05-14 00:24:21,537 : DEBUG : FAST : FAST Switch hardware tuple: ('40', 1)
+2016-05-14 00:24:21,537 : DEBUG : FAST : FAST Switch hardware tuple: ('10', 1)
+2016-05-14 00:24:21,538 : DEBUG : FAST : FAST Switch hardware tuple: ('48', 1)
+2016-05-14 00:24:21,538 : DEBUG : FAST : FAST Switch hardware tuple: ('01', 1)
+2016-05-14 00:24:21,538 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method HardwarePlatform.update_leds of <Platform.FAST>>, timeout=0, priority=1)
+2016-05-14 00:24:21,538 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 59
+2016-05-14 00:24:21,539 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 95
+2016-05-14 00:24:21,539 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 51
+2016-05-14 00:24:21,539 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 47
+2016-05-14 00:24:21,539 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 48
+2016-05-14 00:24:21,539 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 82
+2016-05-14 00:24:21,540 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 8D
+2016-05-14 00:24:21,540 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 41
+2016-05-14 00:24:21,540 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 66
+2016-05-14 00:24:21,541 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 81
+2016-05-14 00:24:21,541 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 6F
+2016-05-14 00:24:21,541 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 69
+2016-05-14 00:24:21,542 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 4E
+2016-05-14 00:24:21,543 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 4C
+2016-05-14 00:24:21,544 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 85
+2016-05-14 00:24:21,544 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 58
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 50
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 62
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 67
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 54
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 64
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 6C
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 60
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 93
+2016-05-14 00:24:21,545 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 89
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 57
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 52
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 4B
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 53
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 5D
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 4F
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 87
+2016-05-14 00:24:21,546 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 92
+2016-05-14 00:24:21,547 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 8F
+2016-05-14 00:24:21,547 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 49
+2016-05-14 00:24:21,547 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 90
+2016-05-14 00:24:21,547 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 56
+2016-05-14 00:24:21,547 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 6D
+2016-05-14 00:24:21,547 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 65
+2016-05-14 00:24:21,547 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 42
+2016-05-14 00:24:21,548 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 83
+2016-05-14 00:24:21,548 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 68
+2016-05-14 00:24:21,548 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 86
+2016-05-14 00:24:21,548 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 80
+2016-05-14 00:24:21,548 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 46
+2016-05-14 00:24:21,548 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 44
+2016-05-14 00:24:21,548 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 8C
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 4A
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 43
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 5E
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 6B
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 84
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 94
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 5A
+2016-05-14 00:24:21,549 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 5C
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 91
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 4D
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 55
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 6E
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 88
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 8B
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 63
+2016-05-14 00:24:21,550 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 61
+2016-05-14 00:24:21,551 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 8E
+2016-05-14 00:24:21,551 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 5B
+2016-05-14 00:24:21,552 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 5F
+2016-05-14 00:24:21,552 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 8A
+2016-05-14 00:24:21,552 : DEBUG : FASTLED : Creating FAST RGB LED at hardware address: 6A
+2016-05-14 00:24:21,553 : DEBUG : SwitchController : Registering switch handler: s_troughenter, <bound method BallDevice._entrance_switch_handler of <ball_device.bd_trough>>, state: 1, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,554 : DEBUG : SwitchController : Registering switch handler: s_troughenter, <bound method BallDevice._entrance_switch_full_handler of <ball_device.bd_trough>>, state: 1, ms: 3000, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,554 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_bd_plunger_ok_to_receive', priority: 1, kwargs: {'target': <ball_device.bd_plunger>}
+2016-05-14 00:24:21,554 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_playfield_ok_to_receive', priority: 1, kwargs: {'target': <playfield.playfield>}
+2016-05-14 00:24:21,554 : DEBUG : ball_device.bd_trough : EVENT: bd_drain to bd_trough
+2016-05-14 00:24:21,555 : DEBUG : Events : Registered BallDevice._source_device_eject_failed as a handler for 'balldevice_bd_drain_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,555 : DEBUG : Events : Registered BallDevice._source_device_eject_attempt as a handler for 'balldevice_bd_drain_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,555 : DEBUG : Events : Registered BallDevice._source_device_ball_lost as a handler for 'balldevice_bd_drain_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,555 : DEBUG : Events : Registered BallDevice._source_device_balls_available as a handler for 'balldevice_balls_available', priority: 1, kwargs: {}
+2016-05-14 00:24:21,555 : DEBUG : Events : Registered BallDevice._initialize_phase_4 as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,555 : DEBUG : SwitchController : Registering switch handler: s_plungerlane, <bound method BallDevice._switch_changed of <ball_device.bd_plunger>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,555 : DEBUG : SwitchController : Registering switch handler: s_plungerlane, <bound method BallDevice._switch_changed of <ball_device.bd_plunger>>, state: 0, ms: 1000, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,557 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_playfield_ok_to_receive', priority: 1, kwargs: {'target': <playfield.playfield>}
+2016-05-14 00:24:21,557 : DEBUG : Events : Registered BallDevice._source_device_eject_failed as a handler for 'balldevice_bd_trough_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,557 : DEBUG : Events : Registered BallDevice._source_device_eject_attempt as a handler for 'balldevice_bd_trough_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,558 : DEBUG : Events : Registered BallDevice._source_device_ball_lost as a handler for 'balldevice_bd_trough_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,558 : DEBUG : Events : Registered BallDevice._source_device_balls_available as a handler for 'balldevice_balls_available', priority: 1, kwargs: {}
+2016-05-14 00:24:21,558 : DEBUG : Events : Registered BallDevice._source_device_eject_failed as a handler for 'balldevice_bd_drain_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,559 : DEBUG : Events : Registered BallDevice._source_device_eject_attempt as a handler for 'balldevice_bd_drain_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,559 : DEBUG : Events : Registered BallDevice._source_device_ball_lost as a handler for 'balldevice_bd_drain_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,559 : DEBUG : Events : Registered BallDevice._source_device_balls_available as a handler for 'balldevice_balls_available', priority: 1, kwargs: {}
+2016-05-14 00:24:21,559 : DEBUG : Events : Registered BallDevice._initialize_phase_4 as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,559 : DEBUG : SwitchController : Registering switch handler: s_lowervukopto, <bound method BallDevice._switch_changed of <ball_device.bd_lower_vuk>>, state: 1, ms: 600, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,560 : DEBUG : SwitchController : Registering switch handler: s_lowervukopto, <bound method BallDevice._switch_changed of <ball_device.bd_lower_vuk>>, state: 0, ms: 800, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,560 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_playfield_ok_to_receive', priority: 1, kwargs: {'target': <playfield.playfield>}
+2016-05-14 00:24:21,561 : DEBUG : Events : Registered BallDevice._initialize_phase_4 as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,561 : DEBUG : SwitchController : Registering switch handler: s_topkicker, <bound method BallDevice._switch_changed of <ball_device.bd_top_kicker>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,561 : DEBUG : SwitchController : Registering switch handler: s_topkicker, <bound method BallDevice._switch_changed of <ball_device.bd_top_kicker>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,561 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_playfield_ok_to_receive', priority: 1, kwargs: {'target': <playfield.playfield>}
+2016-05-14 00:24:21,561 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_bd_top_right_vuk_ok_to_receive', priority: 1, kwargs: {'target': <ball_device.bd_top_right_vuk>}
+2016-05-14 00:24:21,561 : DEBUG : Events : Registered BallDevice._initialize_phase_4 as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,562 : DEBUG : SwitchController : Registering switch handler: s_toprightvuk, <bound method BallDevice._switch_changed of <ball_device.bd_top_right_vuk>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,562 : DEBUG : SwitchController : Registering switch handler: s_toprightvuk, <bound method BallDevice._switch_changed of <ball_device.bd_top_right_vuk>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,562 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_playfield_ok_to_receive', priority: 1, kwargs: {'target': <playfield.playfield>}
+2016-05-14 00:24:21,562 : DEBUG : Events : Registered BallDevice._source_device_eject_failed as a handler for 'balldevice_bd_top_kicker_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,562 : DEBUG : Events : Registered BallDevice._source_device_eject_attempt as a handler for 'balldevice_bd_top_kicker_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,562 : DEBUG : Events : Registered BallDevice._source_device_ball_lost as a handler for 'balldevice_bd_top_kicker_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,562 : DEBUG : Events : Registered BallDevice._source_device_balls_available as a handler for 'balldevice_balls_available', priority: 1, kwargs: {}
+2016-05-14 00:24:21,563 : DEBUG : Events : Registered BallDevice._initialize_phase_4 as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,563 : DEBUG : SwitchController : Registering switch handler: s_drain, <bound method BallDevice._switch_changed of <ball_device.bd_drain>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,563 : DEBUG : SwitchController : Registering switch handler: s_drain, <bound method BallDevice._switch_changed of <ball_device.bd_drain>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,563 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_bd_trough_ok_to_receive', priority: 1, kwargs: {'target': <ball_device.bd_trough>}
+2016-05-14 00:24:21,563 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_bd_plunger_ok_to_receive', priority: 1, kwargs: {'target': <ball_device.bd_plunger>}
+2016-05-14 00:24:21,563 : DEBUG : Events : Registered BallDevice._target_ready as a handler for 'balldevice_playfield_ok_to_receive', priority: 1, kwargs: {'target': <playfield.playfield>}
+2016-05-14 00:24:21,563 : DEBUG : Events : Registered BallDevice._initialize_phase_4 as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,564 : DEBUG : Events : Registered Playfield._source_device_eject_success as a handler for 'balldevice_bd_trough_ball_eject_success', priority: 1, kwargs: {}
+2016-05-14 00:24:21,564 : DEBUG : Events : Registered Playfield._source_device_ball_lost as a handler for 'balldevice_bd_trough_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,564 : DEBUG : Events : Registered Playfield._source_device_eject_failed as a handler for 'balldevice_bd_trough_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,564 : DEBUG : Events : Registered Playfield._source_device_eject_attempt as a handler for 'balldevice_bd_trough_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,564 : DEBUG : Events : Registered Playfield._source_device_eject_success as a handler for 'balldevice_bd_plunger_ball_eject_success', priority: 1, kwargs: {}
+2016-05-14 00:24:21,564 : DEBUG : Events : Registered Playfield._source_device_ball_lost as a handler for 'balldevice_bd_plunger_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,564 : DEBUG : Events : Registered Playfield._source_device_eject_failed as a handler for 'balldevice_bd_plunger_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,565 : DEBUG : Events : Registered Playfield._source_device_eject_attempt as a handler for 'balldevice_bd_plunger_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,565 : DEBUG : Events : Registered Playfield._source_device_eject_success as a handler for 'balldevice_bd_lower_vuk_ball_eject_success', priority: 1, kwargs: {}
+2016-05-14 00:24:21,565 : DEBUG : Events : Registered Playfield._source_device_ball_lost as a handler for 'balldevice_bd_lower_vuk_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,565 : DEBUG : Events : Registered Playfield._source_device_eject_failed as a handler for 'balldevice_bd_lower_vuk_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,566 : DEBUG : Events : Registered Playfield._source_device_eject_attempt as a handler for 'balldevice_bd_lower_vuk_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,566 : DEBUG : Events : Registered Playfield._source_device_eject_success as a handler for 'balldevice_bd_top_right_vuk_ball_eject_success', priority: 1, kwargs: {}
+2016-05-14 00:24:21,567 : DEBUG : Events : Registered Playfield._source_device_ball_lost as a handler for 'balldevice_bd_top_right_vuk_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,567 : DEBUG : Events : Registered Playfield._source_device_eject_failed as a handler for 'balldevice_bd_top_right_vuk_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,567 : DEBUG : Events : Registered Playfield._source_device_eject_attempt as a handler for 'balldevice_bd_top_right_vuk_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,568 : DEBUG : Events : Registered Playfield._source_device_eject_success as a handler for 'balldevice_bd_top_kicker_ball_eject_success', priority: 1, kwargs: {}
+2016-05-14 00:24:21,568 : DEBUG : Events : Registered Playfield._source_device_ball_lost as a handler for 'balldevice_bd_top_kicker_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,568 : DEBUG : Events : Registered Playfield._source_device_eject_failed as a handler for 'balldevice_bd_top_kicker_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,569 : DEBUG : Events : Registered Playfield._source_device_eject_attempt as a handler for 'balldevice_bd_top_kicker_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,569 : DEBUG : Events : Registered Playfield._source_device_eject_success as a handler for 'balldevice_bd_drain_ball_eject_success', priority: 1, kwargs: {}
+2016-05-14 00:24:21,569 : DEBUG : Events : Registered Playfield._source_device_ball_lost as a handler for 'balldevice_bd_drain_ball_lost', priority: 1, kwargs: {}
+2016-05-14 00:24:21,570 : DEBUG : Events : Registered Playfield._source_device_eject_failed as a handler for 'balldevice_bd_drain_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,570 : DEBUG : Events : Registered Playfield._source_device_eject_attempt as a handler for 'balldevice_bd_drain_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,570 : DEBUG : Events : Registered Playfield._ball_removed_handler as a handler for 'balldevice_captured_from_playfield', priority: 1, kwargs: {}
+2016-05-14 00:24:21,570 : DEBUG : Events : Registered Playfield.playfield_switch_hit as a handler for 'sw_playfield_active', priority: 1, kwargs: {}
+2016-05-14 00:24:21,570 : DEBUG : Events : Registered DropTarget._update_state_from_switch as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,570 : DEBUG : Events : Registered DropTarget._register_switch_handlers as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,571 : DEBUG : Events : Registered DropTarget._update_state_from_switch as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,571 : DEBUG : Events : Registered DropTarget._register_switch_handlers as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,571 : DEBUG : Events : Registered DropTarget._update_state_from_switch as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,571 : DEBUG : Events : Registered DropTarget._register_switch_handlers as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,571 : DEBUG : Events : Registered DropTarget._update_state_from_switch as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,571 : DEBUG : Events : Registered DropTarget._register_switch_handlers as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,572 : DEBUG : Events : Registered DropTarget._update_state_from_switch as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,572 : DEBUG : Events : Registered DropTarget._register_switch_handlers as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,572 : DEBUG : Events : ^^^^ Posted event 'drop_targets_up'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,572 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,572 : DEBUG : Events : drop_targets_up, None, None, {}
+2016-05-14 00:24:21,572 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,573 : DEBUG : Events : Registered Diverter._feeder_eject_attempt as a handler for 'balldevice_playfield_ball_eject_attempt', priority: 1, kwargs: {}
+2016-05-14 00:24:21,573 : DEBUG : Events : Registered Diverter._feeder_eject_count_decrease as a handler for 'balldevice_playfield_ball_eject_failed', priority: 1, kwargs: {}
+2016-05-14 00:24:21,573 : DEBUG : Events : Registered Diverter._feeder_eject_count_decrease as a handler for 'balldevice_playfield_ball_eject_success', priority: 1, kwargs: {}
+2016-05-14 00:24:21,573 : DEBUG : Events : Registered Diverter._register_switches as a handler for 'init_phase_3', priority: 1, kwargs: {}
+2016-05-14 00:24:21,573 : DEBUG : Events : Registered Servo._position_event as a handler for 's_rightbanktop_active', priority: 1, kwargs: {'position': 0.0}
+2016-05-14 00:24:21,574 : DEBUG : Events : Registered Servo._position_event as a handler for 's_rightbankbottom_active', priority: 1, kwargs: {'position': 1.0}
+2016-05-14 00:24:21,574 : DEBUG : Events : BCP._setup_dmds (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,574 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,574 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.coils> as a mode start method. Config section: coil_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,574 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,574 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.gis> as a mode start method. Config section: gi_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,574 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,575 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.flashers> as a mode start method. Config section: flasher_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,575 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,575 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.shows> as a mode start method. Config section: show_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,575 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,575 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.triggers> as a mode start method. Config section: trigger_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,575 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,575 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.lights> as a mode start method. Config section: light_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,575 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,576 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.random_events> as a mode start method. Config section: random_event_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,576 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,576 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.events> as a mode start method. Config section: event_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,576 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,576 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.bcp> as a mode start method. Config section: bcp_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,576 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,576 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of ConfigPlayer.leds> as a mode start method. Config section: led_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,577 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,577 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of PluginPlayer.sounds> as a mode start method. Config section: sound_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,577 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,577 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of PluginPlayer.slides> as a mode start method. Config section: slide_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,577 : DEBUG : Events : ConfigPlayer._initialize (priority: 1) responding to event 'init_phase_1' with args {}
+2016-05-14 00:24:21,577 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.mode_start of PluginPlayer.widgets> as a mode start method. Config section: widget_player, priority: 0, kwargs: {}
+2016-05-14 00:24:21,577 : DEBUG : Events : vvvv Finished event 'init_phase_1'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,577 : DEBUG : Events : ^^^^ Processing event 'drop_targets_up'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,577 : DEBUG : Events : vvvv Finished event 'drop_targets_up'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,578 : DEBUG : Events : ^^^^ Posted event 'init_phase_2'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,578 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,578 : DEBUG : Events : init_phase_2, None, None, {}
+2016-05-14 00:24:21,578 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,578 : DEBUG : Events : ^^^^ Processing event 'init_phase_2'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,578 : DEBUG : Events : SwitchController._initialize_switches (priority: 1000) responding to event 'init_phase_2' with args {}
+2016-05-14 00:24:21,578 : WARNING : FAST : Received unknown serial command? NN:07,                ,00.00,00,00,00,00,00,00,00,00. (This is ok to ignore for now while the FAST platform is in development)
+2016-05-14 00:24:21,591 : DEBUG : FAST : Received SA: 01,00,0B,00000000002D00001F0100
+2016-05-14 00:24:21,592 : DEBUG : Events : ModeController._load_modes (priority: 1) responding to event 'init_phase_2' with args {}
+2016-05-14 00:24:21,592 : DEBUG : Mode Controller : Found MPF Mode folders: {'attract': 'attract', 'game': 'game', 'credits': 'credits', 'high_score': 'high_score', 'tilt': 'tilt'}
+2016-05-14 00:24:21,594 : DEBUG : Mode Controller : Found Machine-specific Mode folders: {'hilo': 'hilo', 'light_hilo': 'light_hilo', 'jukebox_hurryup': 'jukebox_hurryup', 'base': 'base'}
+2016-05-14 00:24:21,594 : DEBUG : Mode Controller : Processing mode: attract
+2016-05-14 00:24:21,595 : DEBUG : YAML File Interface : Loading file: /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/modes/attract/config/attract.yaml
+2016-05-14 00:24:21,598 : DEBUG : Mode Controller : Loading config from /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/modes/attract/config/attract.yaml
+2016-05-14 00:24:21,600 : DEBUG : Mode.attract : Scanning config for mode-based devices
+2016-05-14 00:24:21,601 : DEBUG : Events : Registered Mode.start as a handler for 'game_ended', priority: 10, kwargs: {}
+2016-05-14 00:24:21,601 : DEBUG : Events : Registered Mode.start as a handler for 'reset_complete', priority: 10, kwargs: {}
+2016-05-14 00:24:21,601 : DEBUG : Mode Controller : Loaded code from mpf.modes.attract.code.attract
+2016-05-14 00:24:21,601 : DEBUG : Mode Controller : Processing mode: game
+2016-05-14 00:24:21,602 : DEBUG : YAML File Interface : Loading file: /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/modes/game/config/game.yaml
+2016-05-14 00:24:21,603 : DEBUG : Mode Controller : Loading config from /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/modes/game/config/game.yaml
+2016-05-14 00:24:21,605 : DEBUG : Mode.game : Scanning config for mode-based devices
+2016-05-14 00:24:21,605 : DEBUG : Events : Registered Mode.start as a handler for 'game_start', priority: 20, kwargs: {}
+2016-05-14 00:24:21,605 : DEBUG : Mode Controller : Loaded code from mpf.modes.game.code.game
+2016-05-14 00:24:21,605 : DEBUG : Mode Controller : Processing mode: base
+2016-05-14 00:24:21,606 : DEBUG : YAML File Interface : Loading file: /Users/gabe/Dropbox/Pinball/Gabe/bnd/modes/base/config/base.yaml
+2016-05-14 00:24:21,609 : DEBUG : Mode Controller : Loading config from /Users/gabe/Dropbox/Pinball/Gabe/bnd/modes/base/config/base.yaml
+2016-05-14 00:24:21,611 : DEBUG : Mode.base : Scanning config for mode-based devices
+2016-05-14 00:24:21,611 : DEBUG : Events : Registered Mode.start as a handler for 'ball_starting', priority: 100, kwargs: {}
+2016-05-14 00:24:21,611 : DEBUG : Events : Registered Base.jukebox_manager as a handler for 'jukebox_hit', priority: 1, kwargs: {'mode': <Mode.base>}
+2016-05-14 00:24:21,611 : DEBUG : Mode Controller : Loaded code from modes.base.code.base
+2016-05-14 00:24:21,611 : DEBUG : Events : DeviceManager.create_machinewide_device_control_events (priority: 1) responding to event 'init_phase_2' with args {}
+2016-05-14 00:24:21,612 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.top_kicking_target>>}
+2016-05-14 00:24:21,612 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.top_kicking_target>>}
+2016-05-14 00:24:21,613 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.bottom_kicking_target>>}
+2016-05-14 00:24:21,613 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.bottom_kicking_target>>}
+2016-05-14 00:24:21,613 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.test_rule2>>}
+2016-05-14 00:24:21,613 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.test_rule2>>}
+2016-05-14 00:24:21,613 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.right_pop>>}
+2016-05-14 00:24:21,614 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.right_pop>>}
+2016-05-14 00:24:21,614 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.test_rule>>}
+2016-05-14 00:24:21,614 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.test_rule>>}
+2016-05-14 00:24:21,614 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.bottom_pop>>}
+2016-05-14 00:24:21,614 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.bottom_pop>>}
+2016-05-14 00:24:21,615 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.right_sling>>}
+2016-05-14 00:24:21,615 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.right_sling>>}
+2016-05-14 00:24:21,616 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.left_pop>>}
+2016-05-14 00:24:21,616 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.left_pop>>}
+2016-05-14 00:24:21,617 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.disable of <autofire.left_sling>>}
+2016-05-14 00:24:21,617 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.left_sling>>}
+2016-05-14 00:24:21,618 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_bottom>>}
+2016-05-14 00:24:21,618 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_bottom>>}
+2016-05-14 00:24:21,618 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'knockdown_right', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.knockdown of <drop_target.dt_bottom>>}
+2016-05-14 00:24:21,619 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'knockdown_both', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.knockdown of <drop_target.dt_bottom>>}
+2016-05-14 00:24:21,619 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_bottom_center>>}
+2016-05-14 00:24:21,619 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_bottom_center>>}
+2016-05-14 00:24:21,619 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'knockdown_both', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.knockdown of <drop_target.dt_bottom_center>>}
+2016-05-14 00:24:21,619 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'knockdown_left', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.knockdown of <drop_target.dt_bottom_center>>}
+2016-05-14 00:24:21,620 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_top>>}
+2016-05-14 00:24:21,620 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_top>>}
+2016-05-14 00:24:21,620 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_top_center>>}
+2016-05-14 00:24:21,620 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_top_center>>}
+2016-05-14 00:24:21,620 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_center>>}
+2016-05-14 00:24:21,620 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_center>>}
+2016-05-14 00:24:21,621 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'reset_drop_targets', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTargetBank.reset of <drop_target_bank.drop_targets>>}
+2016-05-14 00:24:21,621 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTargetBank.reset of <drop_target_bank.drop_targets>>}
+2016-05-14 00:24:21,621 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Flipper.disable of <flipper.right_flipper>>}
+2016-05-14 00:24:21,621 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Flipper.enable of <flipper.right_flipper>>}
+2016-05-14 00:24:21,621 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ending', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Flipper.disable of <flipper.upper_right_flipper>>}
+2016-05-14 00:24:21,622 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_starting', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Flipper.enable of <flipper.upper_right_flipper>>}
+2016-05-14 00:24:21,622 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'ball_ended', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Diverter.disable of <diverter.d_diverter>>}
+2016-05-14 00:24:21,622 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'enable_diverter', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Diverter.enable of <diverter.d_diverter>>}
+2016-05-14 00:24:21,622 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'machine_reset_phase_3', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Diverter.reset of <diverter.d_diverter>>}
+2016-05-14 00:24:21,622 : DEBUG : Events : Registered DeviceManager._control_event_handler as a handler for 'reset_jukebox', priority: 0, kwargs: {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Servo.reset of <servo.jukebox_servo>>}
+2016-05-14 00:24:21,622 : DEBUG : Events : DeviceManager.create_collection_control_events (priority: 1) responding to event 'init_phase_2' with args {}
+2016-05-14 00:24:21,623 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'gi_enable', priority: 1, kwargs: {'method': 'enable', 'collection': 'gi'}
+2016-05-14 00:24:21,623 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'gi_disable', priority: 1, kwargs: {'method': 'disable', 'collection': 'gi'}
+2016-05-14 00:24:21,623 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'ball_devices_stop', priority: 1, kwargs: {'method': 'stop', 'collection': 'ball_devices'}
+2016-05-14 00:24:21,623 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'ball_devices_eject_all', priority: 1, kwargs: {'method': 'eject_all', 'collection': 'ball_devices'}
+2016-05-14 00:24:21,623 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'lights_off', priority: 1, kwargs: {'method': 'off', 'collection': 'lights'}
+2016-05-14 00:24:21,623 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'coils_disable', priority: 1, kwargs: {'method': 'disable', 'collection': 'coils'}
+2016-05-14 00:24:21,623 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'leds_off', priority: 1, kwargs: {'method': 'off', 'collection': 'leds'}
+2016-05-14 00:24:21,624 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'flippers_enable', priority: 1, kwargs: {'method': 'enable', 'collection': 'flippers'}
+2016-05-14 00:24:21,624 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'flippers_disable', priority: 1, kwargs: {'method': 'disable', 'collection': 'flippers'}
+2016-05-14 00:24:21,624 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'autofires_enable', priority: 1, kwargs: {'method': 'enable', 'collection': 'autofires'}
+2016-05-14 00:24:21,624 : DEBUG : Events : Registered DeviceManager._collection_control_event_handler as a handler for 'autofires_disable', priority: 1, kwargs: {'method': 'disable', 'collection': 'autofires'}
+2016-05-14 00:24:21,624 : DEBUG : Events : BallController._init2 (priority: 1) responding to event 'init_phase_2' with args {}
+2016-05-14 00:24:21,624 : DEBUG : SwitchController : Registering switch handler: s_plungerlane, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,624 : DEBUG : SwitchController : Registering switch handler: s_plungerlane, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 1000, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,625 : DEBUG : SwitchController : Registering switch handler: s_plungerlane, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,625 : DEBUG : SwitchController : Registering switch handler: s_plungerlane, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 1000, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,625 : DEBUG : SwitchController : Registering switch handler: s_lowervukopto, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 600, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,625 : DEBUG : SwitchController : Registering switch handler: s_lowervukopto, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 800, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,625 : DEBUG : SwitchController : Registering switch handler: s_lowervukopto, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 600, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,625 : DEBUG : SwitchController : Registering switch handler: s_lowervukopto, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 800, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,625 : DEBUG : SwitchController : Registering switch handler: s_toprightvuk, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,626 : DEBUG : SwitchController : Registering switch handler: s_toprightvuk, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,626 : DEBUG : SwitchController : Registering switch handler: s_toprightvuk, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,626 : DEBUG : SwitchController : Registering switch handler: s_toprightvuk, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,626 : DEBUG : SwitchController : Registering switch handler: s_topkicker, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,626 : DEBUG : SwitchController : Registering switch handler: s_topkicker, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,626 : DEBUG : SwitchController : Registering switch handler: s_topkicker, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,627 : DEBUG : SwitchController : Registering switch handler: s_topkicker, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,627 : DEBUG : SwitchController : Registering switch handler: s_drain, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,628 : DEBUG : SwitchController : Registering switch handler: s_drain, <bound method BallController._update_num_balls_known of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,628 : DEBUG : SwitchController : Registering switch handler: s_drain, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 1, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,628 : DEBUG : SwitchController : Registering switch handler: s_drain, <bound method BallController._correct_playfield_count of <mpf.core.ball_controller.BallController object at 0x102023518>>, state: 0, ms: 500, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,628 : DEBUG : Events : Registered BallController._correct_playfield_count as a handler for 'playfield_ball_count_change', priority: 1, kwargs: {}
+2016-05-14 00:24:21,628 : DEBUG : BallController : Counting Balls
+2016-05-14 00:24:21,628 : DEBUG : Events : BCP._setup_bcp_connections (priority: 1) responding to event 'init_phase_2' with args {}
+2016-05-14 00:24:21,628 : DEBUG : Events : vvvv Finished event 'init_phase_2'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,628 : INFO : Machine : Loading plugins...
+2016-05-14 00:24:21,629 : DEBUG : Machine : Loading 'mpf.plugins.auditor.Auditor' plugin
+2016-05-14 00:24:21,630 : DEBUG : DataInterface : Loading audits from /Users/gabe/Dropbox/Pinball/Gabe/bnd/data/audits.yaml
+2016-05-14 00:24:21,630 : DEBUG : YAML File Interface : Loading file: /Users/gabe/Dropbox/Pinball/Gabe/bnd/data/audits.yaml
+2016-05-14 00:24:21,645 : DEBUG : Events : Registered Auditor._initialize as a handler for 'init_phase_4', priority: 1, kwargs: {}
+2016-05-14 00:24:21,645 : DEBUG : Machine : Loading 'mpf.plugins.info_lights.InfoLights' plugin
+2016-05-14 00:24:21,646 : DEBUG : Machine : "info_lights:" section not found in machine configuration, so the Info Lights plugin will not be used.
+2016-05-14 00:24:21,647 : DEBUG : Machine : Loading 'mpf.plugins.osc.OSC' plugin
+2016-05-14 00:24:21,648 : DEBUG : Machine : "OSC:" section not found in the machine configuration, so the OSC plugin will not be used.
+2016-05-14 00:24:21,648 : DEBUG : Machine : Loading 'mpf.plugins.switch_player.SwitchPlayer' plugin
+2016-05-14 00:24:21,649 : DEBUG : Machine : "switch_player:" section not found in machine configuration, so the Switch Playerplugin will not be used.
+2016-05-14 00:24:21,650 : DEBUG : Events : ^^^^ Posted event 'init_phase_3'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,650 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,651 : DEBUG : Events : init_phase_3, None, None, {}
+2016-05-14 00:24:21,651 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,651 : DEBUG : Events : ^^^^ Processing event 'init_phase_3'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,652 : DEBUG : Events : AssetManager._create_assets (priority: 1) responding to event 'init_phase_3' with args {}
+2016-05-14 00:24:21,652 : DEBUG : AssetManager : Processing assets from base folder: /Users/gabe/Dropbox/Pinball/Gabe/bnd/shows
+2016-05-14 00:24:21,652 : DEBUG : AssetManager : Processing assets from base folder: /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/modes/attract/shows
+2016-05-14 00:24:21,653 : DEBUG : AssetManager : Processing assets from base folder: /Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/modes/game/shows
+2016-05-14 00:24:21,653 : DEBUG : AssetManager : Processing assets from base folder: /Users/gabe/Dropbox/Pinball/Gabe/bnd/modes/base/shows
+2016-05-14 00:24:21,653 : DEBUG : Machine : Clearing boot hold assets. Holds remaining: {'init'}
+2016-05-14 00:24:21,653 : DEBUG : Events : ShowController._initialize (priority: 1) responding to event 'init_phase_3' with args {}
+2016-05-14 00:24:21,654 : DEBUG : ShowController : Loading Show None
+2016-05-14 00:24:21,655 : DEBUG : ShowController : Loading Show None
+2016-05-14 00:24:21,656 : DEBUG : ShowController : Loading Show None
+2016-05-14 00:24:21,657 : DEBUG : ShowController : Loading Show None
+2016-05-14 00:24:21,658 : DEBUG : Events : Diverter._register_switches (priority: 1) responding to event 'init_phase_3' with args {}
+2016-05-14 00:24:21,658 : DEBUG : Events : vvvv Finished event 'init_phase_3'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,658 : DEBUG : Events : ^^^^ Posted event 'init_phase_4'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,658 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,658 : DEBUG : Events : init_phase_4, None, None, {}
+2016-05-14 00:24:21,658 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,658 : DEBUG : Events : ^^^^ Processing event 'init_phase_4'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,658 : DEBUG : Events : BallDevice._initialize_phase_4 (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,659 : DEBUG : ball_device.bd_trough : Counting balls
+2016-05-14 00:24:21,659 : DEBUG : ball_device.bd_trough : Switching to state idle
+2016-05-14 00:24:21,659 : DEBUG : ball_device.bd_trough : Counting balls
+2016-05-14 00:24:21,659 : DEBUG : Events : ^^^^ Posted event 'balldevice_bd_trough_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 3}
+2016-05-14 00:24:21,659 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,659 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,659 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,659 : DEBUG : Events : BallDevice._initialize_phase_4 (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,660 : DEBUG : ball_device.bd_plunger : Switching to state idle
+2016-05-14 00:24:21,660 : DEBUG : Events : ^^^^ Posted event 'balldevice_bd_plunger_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,660 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,660 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,660 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,660 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,660 : DEBUG : Events : BallDevice._initialize_phase_4 (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,660 : DEBUG : ball_device.bd_lower_vuk : Switching to state idle
+2016-05-14 00:24:21,661 : DEBUG : Events : ^^^^ Posted event 'balldevice_bd_lower_vuk_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,661 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,661 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,661 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,661 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,661 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,661 : DEBUG : Events : BallDevice._initialize_phase_4 (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,662 : DEBUG : ball_device.bd_top_kicker : Switching to state idle
+2016-05-14 00:24:21,662 : DEBUG : Events : ^^^^ Posted event 'balldevice_bd_top_kicker_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,662 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,662 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,662 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,662 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,662 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,662 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,663 : DEBUG : Events : BallDevice._initialize_phase_4 (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,663 : DEBUG : ball_device.bd_top_right_vuk : Switching to state idle
+2016-05-14 00:24:21,663 : DEBUG : Events : ^^^^ Posted event 'balldevice_bd_top_right_vuk_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,663 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,663 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,663 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,663 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,663 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,664 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,664 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,664 : DEBUG : Events : BallDevice._initialize_phase_4 (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,664 : DEBUG : ball_device.bd_drain : Counting balls
+2016-05-14 00:24:21,664 : DEBUG : ball_device.bd_drain : Confirmed inactive switch: s_drain
+2016-05-14 00:24:21,664 : DEBUG : ball_device.bd_drain : Counted 0 balls
+2016-05-14 00:24:21,664 : DEBUG : ball_device.bd_drain : Switching to state idle
+2016-05-14 00:24:21,665 : DEBUG : ball_device.bd_drain : Counting balls
+2016-05-14 00:24:21,665 : DEBUG : ball_device.bd_drain : Confirmed inactive switch: s_drain
+2016-05-14 00:24:21,665 : DEBUG : ball_device.bd_drain : Counted 0 balls
+2016-05-14 00:24:21,665 : DEBUG : Events : ^^^^ Posted event 'balldevice_bd_drain_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,665 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,665 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,665 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,665 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,665 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,665 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,665 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,666 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,666 : DEBUG : Events : DropTarget._update_state_from_switch (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,669 : DEBUG : Events : ^^^^ Posted event 'dt_bottom_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,669 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,669 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,669 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,669 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,669 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,669 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,669 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,669 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,670 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,670 : DEBUG : Events : ^^^^ Posted event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 1}
+2016-05-14 00:24:21,670 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,670 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,670 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,670 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,670 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,670 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,670 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,671 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,671 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,671 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,671 : DEBUG : Events : DropTarget._register_switch_handlers (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,671 : DEBUG : SwitchController : Registering switch handler: s_droptarget5, <bound method DropTarget._update_state_from_switch of <drop_target.dt_bottom>>, state: 0, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,671 : DEBUG : SwitchController : Registering switch handler: s_droptarget5, <bound method DropTarget._update_state_from_switch of <drop_target.dt_bottom>>, state: 1, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,671 : DEBUG : Events : DropTarget._update_state_from_switch (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,671 : DEBUG : Events : ^^^^ Posted event 'dt_bottom_center_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,672 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,672 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,672 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,672 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,672 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,672 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,672 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,672 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,672 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,672 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,672 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,672 : DEBUG : Events : ^^^^ Posted event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 2}
+2016-05-14 00:24:21,673 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,673 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,673 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,673 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,673 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,673 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,673 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,673 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,673 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,673 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,673 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 2}
+2016-05-14 00:24:21,673 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,674 : DEBUG : Events : DropTarget._register_switch_handlers (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,674 : DEBUG : SwitchController : Registering switch handler: s_droptarget4, <bound method DropTarget._update_state_from_switch of <drop_target.dt_bottom_center>>, state: 0, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,674 : DEBUG : SwitchController : Registering switch handler: s_droptarget4, <bound method DropTarget._update_state_from_switch of <drop_target.dt_bottom_center>>, state: 1, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,674 : DEBUG : Events : DropTarget._update_state_from_switch (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,674 : DEBUG : Events : ^^^^ Posted event 'dt_top_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,674 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,674 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,674 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,674 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,674 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,675 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,675 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,675 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,675 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,675 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,675 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 2}
+2016-05-14 00:24:21,675 : DEBUG : Events : dt_top_down, None, None, {}
+2016-05-14 00:24:21,675 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,675 : DEBUG : Events : ^^^^ Posted event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 3}
+2016-05-14 00:24:21,675 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,675 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,675 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,676 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,676 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,676 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,676 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,676 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,676 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,676 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,676 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 2}
+2016-05-14 00:24:21,676 : DEBUG : Events : dt_top_down, None, None, {}
+2016-05-14 00:24:21,676 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 3}
+2016-05-14 00:24:21,676 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,676 : DEBUG : Events : DropTarget._register_switch_handlers (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,677 : DEBUG : SwitchController : Registering switch handler: s_droptarget1, <bound method DropTarget._update_state_from_switch of <drop_target.dt_top>>, state: 0, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,677 : DEBUG : SwitchController : Registering switch handler: s_droptarget1, <bound method DropTarget._update_state_from_switch of <drop_target.dt_top>>, state: 1, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,677 : DEBUG : Events : DropTarget._update_state_from_switch (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,677 : DEBUG : Events : ^^^^ Posted event 'dt_top_center_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,677 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,677 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,677 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,677 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,677 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,677 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,677 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,678 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,678 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,678 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,678 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 2}
+2016-05-14 00:24:21,678 : DEBUG : Events : dt_top_down, None, None, {}
+2016-05-14 00:24:21,678 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 3}
+2016-05-14 00:24:21,678 : DEBUG : Events : dt_top_center_down, None, None, {}
+2016-05-14 00:24:21,678 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,678 : DEBUG : Events : ^^^^ Posted event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 4}
+2016-05-14 00:24:21,678 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,678 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,678 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,679 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,679 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,679 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,679 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,679 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,679 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,679 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,679 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 2}
+2016-05-14 00:24:21,679 : DEBUG : Events : dt_top_down, None, None, {}
+2016-05-14 00:24:21,679 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 3}
+2016-05-14 00:24:21,679 : DEBUG : Events : dt_top_center_down, None, None, {}
+2016-05-14 00:24:21,679 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 4}
+2016-05-14 00:24:21,679 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,680 : DEBUG : Events : DropTarget._register_switch_handlers (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,680 : DEBUG : SwitchController : Registering switch handler: s_droptarget2, <bound method DropTarget._update_state_from_switch of <drop_target.dt_top_center>>, state: 0, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,680 : DEBUG : SwitchController : Registering switch handler: s_droptarget2, <bound method DropTarget._update_state_from_switch of <drop_target.dt_top_center>>, state: 1, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,680 : DEBUG : Events : DropTarget._update_state_from_switch (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,680 : DEBUG : Events : ^^^^ Posted event 'dt_center_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,680 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,680 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,680 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,680 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,680 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,681 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,681 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,681 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,681 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,681 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,681 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 2}
+2016-05-14 00:24:21,681 : DEBUG : Events : dt_top_down, None, None, {}
+2016-05-14 00:24:21,681 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 3}
+2016-05-14 00:24:21,681 : DEBUG : Events : dt_top_center_down, None, None, {}
+2016-05-14 00:24:21,681 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 4}
+2016-05-14 00:24:21,681 : DEBUG : Events : dt_center_down, None, None, {}
+2016-05-14 00:24:21,681 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,682 : DEBUG : Events : ^^^^ Posted event 'drop_targets_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,682 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,682 : DEBUG : Events : balldevice_bd_trough_ok_to_receive, None, None, {'balls': 3}
+2016-05-14 00:24:21,682 : DEBUG : Events : balldevice_bd_plunger_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,682 : DEBUG : Events : balldevice_bd_lower_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,682 : DEBUG : Events : balldevice_bd_top_kicker_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,682 : DEBUG : Events : balldevice_bd_top_right_vuk_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,682 : DEBUG : Events : balldevice_bd_drain_ok_to_receive, None, None, {'balls': 1}
+2016-05-14 00:24:21,682 : DEBUG : Events : dt_bottom_down, None, None, {}
+2016-05-14 00:24:21,682 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 1}
+2016-05-14 00:24:21,682 : DEBUG : Events : dt_bottom_center_down, None, None, {}
+2016-05-14 00:24:21,683 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 2}
+2016-05-14 00:24:21,683 : DEBUG : Events : dt_top_down, None, None, {}
+2016-05-14 00:24:21,683 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 3}
+2016-05-14 00:24:21,683 : DEBUG : Events : dt_top_center_down, None, None, {}
+2016-05-14 00:24:21,683 : DEBUG : Events : drop_targets_mixed, None, None, {'down': 4}
+2016-05-14 00:24:21,683 : DEBUG : Events : dt_center_down, None, None, {}
+2016-05-14 00:24:21,683 : DEBUG : Events : drop_targets_down, None, None, {}
+2016-05-14 00:24:21,683 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,684 : DEBUG : Events : DropTarget._register_switch_handlers (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,684 : DEBUG : SwitchController : Registering switch handler: s_droptarget3, <bound method DropTarget._update_state_from_switch of <drop_target.dt_center>>, state: 0, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,684 : DEBUG : SwitchController : Registering switch handler: s_droptarget3, <bound method DropTarget._update_state_from_switch of <drop_target.dt_center>>, state: 1, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,684 : DEBUG : Events : Auditor._initialize (priority: 1) responding to event 'init_phase_4' with args {}
+2016-05-14 00:24:21,684 : DEBUG : Events : Registered Auditor.enable as a handler for 'game_starting', priority: 1, kwargs: {}
+2016-05-14 00:24:21,684 : DEBUG : Events : Registered Auditor.disable as a handler for 'game_ended', priority: 1, kwargs: {}
+2016-05-14 00:24:21,685 : DEBUG : Events : Registered Auditor.audit_player as a handler for 'game_ending', priority: 1, kwargs: {}
+2016-05-14 00:24:21,685 : DEBUG : Events : vvvv Finished event 'init_phase_4'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,685 : DEBUG : Events : ^^^^ Processing event 'balldevice_bd_trough_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 3}
+2016-05-14 00:24:21,685 : DEBUG : Events : BallDevice._target_ready (priority: 1) responding to event 'balldevice_bd_trough_ok_to_receive' with args {'target': <ball_device.bd_trough>, 'balls': 3}
+2016-05-14 00:24:21,685 : DEBUG : Events : vvvv Finished event 'balldevice_bd_trough_ok_to_receive'. Type: None. Callback: None. Args: {'balls': 3}
+2016-05-14 00:24:21,685 : DEBUG : Events : ^^^^ Processing event 'balldevice_bd_plunger_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,686 : DEBUG : Events : BallDevice._target_ready (priority: 1) responding to event 'balldevice_bd_plunger_ok_to_receive' with args {'target': <ball_device.bd_plunger>, 'balls': 1}
+2016-05-14 00:24:21,686 : DEBUG : Events : BallDevice._target_ready (priority: 1) responding to event 'balldevice_bd_plunger_ok_to_receive' with args {'target': <ball_device.bd_plunger>, 'balls': 1}
+2016-05-14 00:24:21,686 : DEBUG : Events : vvvv Finished event 'balldevice_bd_plunger_ok_to_receive'. Type: None. Callback: None. Args: {'balls': 1}
+2016-05-14 00:24:21,686 : DEBUG : Events : ^^^^ Processing event 'balldevice_bd_lower_vuk_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : vvvv Finished event 'balldevice_bd_lower_vuk_ok_to_receive'. Type: None. Callback: None. Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : ^^^^ Processing event 'balldevice_bd_top_kicker_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : vvvv Finished event 'balldevice_bd_top_kicker_ok_to_receive'. Type: None. Callback: None. Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : ^^^^ Processing event 'balldevice_bd_top_right_vuk_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : BallDevice._target_ready (priority: 1) responding to event 'balldevice_bd_top_right_vuk_ok_to_receive' with args {'target': <ball_device.bd_top_right_vuk>, 'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : vvvv Finished event 'balldevice_bd_top_right_vuk_ok_to_receive'. Type: None. Callback: None. Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : ^^^^ Processing event 'balldevice_bd_drain_ok_to_receive'. Type: None, Callback: None, Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : vvvv Finished event 'balldevice_bd_drain_ok_to_receive'. Type: None. Callback: None. Args: {'balls': 1}
+2016-05-14 00:24:21,687 : DEBUG : Events : ^^^^ Processing event 'dt_bottom_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,687 : DEBUG : Events : vvvv Finished event 'dt_bottom_down'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,688 : DEBUG : Events : ^^^^ Processing event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 1}
+2016-05-14 00:24:21,688 : DEBUG : Events : vvvv Finished event 'drop_targets_mixed'. Type: None. Callback: None. Args: {'down': 1}
+2016-05-14 00:24:21,688 : DEBUG : Events : ^^^^ Processing event 'dt_bottom_center_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,688 : DEBUG : Events : vvvv Finished event 'dt_bottom_center_down'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,688 : DEBUG : Events : ^^^^ Processing event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 2}
+2016-05-14 00:24:21,688 : DEBUG : Events : vvvv Finished event 'drop_targets_mixed'. Type: None. Callback: None. Args: {'down': 2}
+2016-05-14 00:24:21,688 : DEBUG : Events : ^^^^ Processing event 'dt_top_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,688 : DEBUG : Events : vvvv Finished event 'dt_top_down'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,688 : DEBUG : Events : ^^^^ Processing event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 3}
+2016-05-14 00:24:21,688 : DEBUG : Events : vvvv Finished event 'drop_targets_mixed'. Type: None. Callback: None. Args: {'down': 3}
+2016-05-14 00:24:21,688 : DEBUG : Events : ^^^^ Processing event 'dt_top_center_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,688 : DEBUG : Events : vvvv Finished event 'dt_top_center_down'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,689 : DEBUG : Events : ^^^^ Processing event 'drop_targets_mixed'. Type: None, Callback: None, Args: {'down': 4}
+2016-05-14 00:24:21,689 : DEBUG : Events : vvvv Finished event 'drop_targets_mixed'. Type: None. Callback: None. Args: {'down': 4}
+2016-05-14 00:24:21,689 : DEBUG : Events : ^^^^ Processing event 'dt_center_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,689 : DEBUG : Events : vvvv Finished event 'dt_center_down'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,689 : DEBUG : Events : ^^^^ Processing event 'drop_targets_down'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,689 : DEBUG : Events : vvvv Finished event 'drop_targets_down'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,689 : DEBUG : Events : ^^^^ Posted event 'init_phase_5'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,689 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,689 : DEBUG : Events : init_phase_5, None, None, {}
+2016-05-14 00:24:21,689 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,689 : DEBUG : Events : ^^^^ Processing event 'init_phase_5'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,690 : DEBUG : Events : vvvv Finished event 'init_phase_5'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,690 : DEBUG : Machine : Clearing boot hold init. Holds remaining: set()
+2016-05-14 00:24:21,690 : DEBUG : Machine : Resetting...
+2016-05-14 00:24:21,690 : DEBUG : Events : ^^^^ Posted event 'machine_reset_phase_1'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,690 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,690 : DEBUG : Events : machine_reset_phase_1, None, None, {}
+2016-05-14 00:24:21,690 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,690 : DEBUG : Events : ^^^^ Processing event 'machine_reset_phase_1'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,690 : DEBUG : Events : BCP.bcp_reset (priority: 1) responding to event 'machine_reset_phase_1' with args {}
+2016-05-14 00:24:21,690 : DEBUG : Events : vvvv Finished event 'machine_reset_phase_1'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,690 : DEBUG : Events : ^^^^ Posted event 'machine_reset_phase_2'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,690 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,691 : DEBUG : Events : machine_reset_phase_2, None, None, {}
+2016-05-14 00:24:21,691 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,691 : DEBUG : Events : ^^^^ Processing event 'machine_reset_phase_2'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,691 : DEBUG : Events : BallController._initialize (priority: 1) responding to event 'machine_reset_phase_2' with args {}
+2016-05-14 00:24:21,691 : DEBUG : Events : Registered BallController._ball_drained_handler as a handler for 'balldevice_bd_drain_ball_enter', priority: 1, kwargs: {}
+2016-05-14 00:24:21,691 : DEBUG : Events : vvvv Finished event 'machine_reset_phase_2'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,691 : DEBUG : Events : ^^^^ Posted event 'machine_reset_phase_3'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,691 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,691 : DEBUG : Events : machine_reset_phase_3, None, None, {}
+2016-05-14 00:24:21,691 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,691 : DEBUG : Events : ^^^^ Processing event 'machine_reset_phase_3'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,692 : DEBUG : Events : SwitchController.log_active_switches (priority: 1) responding to event 'machine_reset_phase_3' with args {}
+2016-05-14 00:24:21,692 : INFO : SwitchController : Dumping current active switches
+2016-05-14 00:24:21,692 : INFO : SwitchController : Active Switch|s_droptarget5
+2016-05-14 00:24:21,692 : INFO : SwitchController : Active Switch|s_droptarget3
+2016-05-14 00:24:21,692 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-05-14 00:24:21,692 : INFO : SwitchController : Active Switch|s_droptarget4
+2016-05-14 00:24:21,692 : INFO : SwitchController : Active Switch|s_droptarget1
+2016-05-14 00:24:21,692 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.test_rule2>>}
+2016-05-14 00:24:21,692 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method AutofireCoil.enable of <autofire.test_rule2>>,
+2016-05-14 00:24:21,692 : DEBUG : autofire.test_rule2 : Enabling
+2016-05-14 00:24:21,692 : DEBUG : FAST : Setting Pulse on hit and release HW Rule. Switch: ('16', 1),Driver: 06
+2016-05-14 00:24:21,693 : DEBUG : FAST : Writing hardware rule: DN:06,01,16,10,00,ff,00,00,FF
+2016-05-14 00:24:21,693 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method AutofireCoil.enable of <autofire.test_rule>>}
+2016-05-14 00:24:21,693 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method AutofireCoil.enable of <autofire.test_rule>>,
+2016-05-14 00:24:21,693 : DEBUG : autofire.test_rule : Enabling
+2016-05-14 00:24:21,693 : DEBUG : FAST : Setting Pulse on hit and release HW Rule. Switch: ('14', 1),Driver: 07
+2016-05-14 00:24:21,694 : DEBUG : FAST : Writing hardware rule: DN:07,01,14,10,3C,ff,00,00,78
+2016-05-14 00:24:21,694 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_bottom>>}
+2016-05-14 00:24:21,694 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method DropTarget.reset of <drop_target.dt_bottom>>,
+2016-05-14 00:24:21,694 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_bottom_center>>}
+2016-05-14 00:24:21,694 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method DropTarget.reset of <drop_target.dt_bottom_center>>,
+2016-05-14 00:24:21,694 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_top>>}
+2016-05-14 00:24:21,694 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method DropTarget.reset of <drop_target.dt_top>>,
+2016-05-14 00:24:21,695 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_top_center>>}
+2016-05-14 00:24:21,695 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method DropTarget.reset of <drop_target.dt_top_center>>,
+2016-05-14 00:24:21,695 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method DropTarget.reset of <drop_target.dt_center>>}
+2016-05-14 00:24:21,695 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method DropTarget.reset of <drop_target.dt_center>>,
+2016-05-14 00:24:21,695 : DEBUG : Events : DeviceManager._control_event_handler (priority: 0) responding to event 'machine_reset_phase_3' with args {'delay_mgr': <mpf.core.delays.DelayManager object at 0x101f72630>, 'ms_delay': 0, 'callback': <bound method Diverter.reset of <diverter.d_diverter>>}
+2016-05-14 00:24:21,695 : DEBUG : DeviceManager : _control_event_handler: mode: None, callback: <bound method Diverter.reset of <diverter.d_diverter>>,
+2016-05-14 00:24:21,695 : DEBUG : diverter.d_diverter : Deactivating Diverter
+2016-05-14 00:24:21,695 : DEBUG : DelayManager : Removing delay: 'deactivate_timed'
+2016-05-14 00:24:21,696 : DEBUG : Events : ^^^^ Posted event 'diverter_d_diverter_deactivating'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,696 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,696 : DEBUG : Events : diverter_d_diverter_deactivating, None, None, {}
+2016-05-14 00:24:21,696 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,696 : DEBUG : coil.c_diverter : Disabling Driver
+2016-05-14 00:24:21,696 : DEBUG : DelayManager : Removing delay: 'c_diverter_timed_enable'
+2016-05-14 00:24:21,696 : DEBUG : FASTDriver : Sending Disable Command: TN:0C,02
+2016-05-14 00:24:21,696 : DEBUG : Events : vvvv Finished event 'machine_reset_phase_3'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,696 : DEBUG : Events : ^^^^ Processing event 'diverter_d_diverter_deactivating'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,697 : DEBUG : Events : vvvv Finished event 'diverter_d_diverter_deactivating'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,697 : DEBUG : Machine : Reset Complete
+2016-05-14 00:24:21,697 : DEBUG : Machine : Reset Complete
+2016-05-14 00:24:21,697 : DEBUG : Events : ^^^^ Posted event 'reset_complete'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,697 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,697 : DEBUG : Events : reset_complete, None, None, {}
+2016-05-14 00:24:21,697 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,697 : DEBUG : Machine : Starting the main run loop.
+2016-05-14 00:24:21,698 : DEBUG : Events : ^^^^ Processing event 'reset_complete'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,698 : DEBUG : Events : Mode.start (priority: 10) responding to event 'reset_complete' with args {}
+2016-05-14 00:24:21,698 : DEBUG : Mode.attract : Received request to start
+2016-05-14 00:24:21,698 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-05-14 00:24:21,698 : DEBUG : Mode.attract : Registering mode_stop handlers
+2016-05-14 00:24:21,698 : DEBUG : Events : Registered Mode.stop as a handler for 'game_start', priority: 11, kwargs: {'mode': <Mode.attract>}
+2016-05-14 00:24:21,698 : DEBUG : Mode.attract : Calling mode_start handlers
+2016-05-14 00:24:21,698 : DEBUG : Mode.attract : Scanning mode-based config for device control_events
+2016-05-14 00:24:21,699 : DEBUG : Events : ^^^^ Posted event 'mode_attract_starting'. Type: queue, Callback: <bound method Mode._started of <Mode.attract>>, Args: {}
+2016-05-14 00:24:21,699 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,699 : DEBUG : Events : mode_attract_starting, queue, <bound method Mode._started of <Mode.attract>>, {}
+2016-05-14 00:24:21,699 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,699 : DEBUG : Events : vvvv Finished event 'reset_complete'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,699 : DEBUG : Events : ^^^^ Processing event 'mode_attract_starting'. Type: queue, Callback: <bound method Mode._started of <Mode.attract>>, Args: {}
+2016-05-14 00:24:21,699 : DEBUG : Events : vvvv Finished event 'mode_attract_starting'. Type: queue. Callback: <bound method Mode._started of <Mode.attract>>. Args: {}
+2016-05-14 00:24:21,699 : DEBUG : Mode.attract : Mode Started. Priority: 10
+2016-05-14 00:24:21,699 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-05-14 00:24:21,699 : INFO : Mode Controller : | attract : 10                        |
+2016-05-14 00:24:21,700 : INFO : Mode Controller : +-------------------------------------+
+2016-05-14 00:24:21,700 : DEBUG : Events : ^^^^ Posted event 'mode_attract_started'. Type: None, Callback: <bound method Mode._mode_started_callback of <Mode.attract>>, Args: {}
+2016-05-14 00:24:21,700 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,700 : DEBUG : Events : mode_attract_started, None, <bound method Mode._mode_started_callback of <Mode.attract>>, {}
+2016-05-14 00:24:21,700 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,700 : DEBUG : Events : ^^^^ Processing event 'mode_attract_started'. Type: None, Callback: <bound method Mode._mode_started_callback of <Mode.attract>>, Args: {}
+2016-05-14 00:24:21,701 : DEBUG : Events : vvvv Finished event 'mode_attract_started'. Type: None. Callback: <bound method Mode._mode_started_callback of <Mode.attract>>. Args: {}
+2016-05-14 00:24:21,701 : DEBUG : SwitchController : Registering switch handler: s_start, <bound method Attract.start_button_pressed of <Mode.attract>>, state: 1, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,701 : DEBUG : SwitchController : Registering switch handler: s_start, <bound method Attract.start_button_released of <Mode.attract>>, state: 0, ms: 0, info: False, cb_kwargs: {}
+2016-05-14 00:24:21,701 : DEBUG : BallController : Collecting all balls to devices with tags '['home', 'trough']'
+2016-05-14 00:24:21,701 : DEBUG : BallController : Ejecting all balls from: set()
+2016-05-14 00:24:21,701 : DEBUG : BallController : All balls are collected
+2016-05-14 00:24:21,702 : DEBUG : Events : ^^^^ Posted event 'collecting_balls_complete'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,702 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,702 : DEBUG : Events : collecting_balls_complete, None, None, {}
+2016-05-14 00:24:21,702 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,702 : DEBUG : Events : ^^^^ Posted event 'enable_volume_keys'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,702 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:21,702 : DEBUG : Events : collecting_balls_complete, None, None, {}
+2016-05-14 00:24:21,702 : DEBUG : Events : enable_volume_keys, None, None, {}
+2016-05-14 00:24:21,702 : DEBUG : Events : =========================================
+2016-05-14 00:24:21,702 : DEBUG : Mode.attract : Mode Start process complete.
+2016-05-14 00:24:21,702 : DEBUG : Events : ^^^^ Processing event 'collecting_balls_complete'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,702 : DEBUG : Events : vvvv Finished event 'collecting_balls_complete'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,703 : DEBUG : Events : ^^^^ Processing event 'enable_volume_keys'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:21,703 : DEBUG : Events : BCP.enable_volume_keys (priority: 1) responding to event 'enable_volume_keys' with args {}
+2016-05-14 00:24:21,703 : DEBUG : Events : vvvv Finished event 'enable_volume_keys'. Type: None. Callback: None. Args: {}
+2016-05-14 00:24:21,734 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-05-14 00:24:26,257 : DEBUG : SwitchController : Processing switch. Name: s_rightbanktop, state: 1, logical: False,
+2016-05-14 00:24:26,257 : INFO : SwitchController : <<<<< switch: s_rightbanktop, State:1 >>>>>
+2016-05-14 00:24:26,257 : DEBUG : Events : ^^^^ Posted event 's_rightbanktop_active'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:26,257 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:26,257 : DEBUG : Events : s_rightbanktop_active, None, None, {}
+2016-05-14 00:24:26,257 : DEBUG : Events : =========================================
+2016-05-14 00:24:26,257 : DEBUG : Events : ^^^^ Posted event 'sw_playfield_active'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:26,258 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-05-14 00:24:26,258 : DEBUG : Events : s_rightbanktop_active, None, None, {}
+2016-05-14 00:24:26,258 : DEBUG : Events : sw_playfield_active, None, None, {}
+2016-05-14 00:24:26,258 : DEBUG : Events : =========================================
+2016-05-14 00:24:26,258 : DEBUG : Events : ^^^^ Processing event 's_rightbanktop_active'. Type: None, Callback: None, Args: {}
+2016-05-14 00:24:26,258 : DEBUG : Events : Servo._position_event (priority: 1) responding to event 's_rightbanktop_active' with args {'position': 0.0}
+2016-05-14 00:24:26,259 : ERROR : root : unicode strings are not supported, please encode to bytes: 'ª\x0c\x04\x00P\x04'
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 552, in run
+    self._run_loop()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 576, in _run_loop
+    self.process_frame()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 591, in process_frame
+    self.events.process_event_queue()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 482, in process_event_queue
+    **event[3])
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 417, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/devices/servo.py", line 30, in _position_event
+    self.go_to_position(position)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/devices/servo.py", line 38, in go_to_position
+    self.platform.servo_go_to_position(self.config['number'], position)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/pololu_maestro.py", line 76, in servo_go_to_position
+    self.serial.write(cmd)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialposix.py", line 518, in write
+    d = to_bytes(data)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialutil.py", line 58, in to_bytes
+    raise TypeError('unicode strings are not supported, please encode to bytes: %r' % (seq,))
+TypeError: unicode strings are not supported, please encode to bytes: 'ª\x0c\x04\x00P\x04'

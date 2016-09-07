@@ -1,0 +1,20 @@
+#config_version=4
+Mode:
+  start_events: ball_starting
+  priority: 100
+  code: base.Base
+
+event_player:
+  mode_base_started:
+    jukebox_up
+
+Logic_blocks:
+  counters:
+    lb_jukebox_counter:
+      count_events: sw_jukebox
+      events_when_hit: jukebox_hit #Hook the "count" parameter of this event ?? Can I do that in config?
+      starting_count: 0
+      count_complete_value: 100
+      direction: up
+      events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
+

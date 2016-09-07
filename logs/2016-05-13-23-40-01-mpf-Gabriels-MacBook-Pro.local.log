@@ -1,0 +1,41 @@
+2016-05-13 23:40:01,461 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1482
+2016-05-13 23:40:01,461 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-13 23:40:01,671 : INFO : Machine : Loading config from original files
+2016-05-13 23:40:01,722 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-05-13 23:40:01,840 : INFO : Machine : Config file cache created: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-13 23:40:01,841 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-13 23:40:01,851 : INFO : FAST : Configuring FAST hardware.
+2016-05-13 23:40:01,852 : INFO : Machine : Loading core modules...
+2016-05-13 23:40:01,865 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-05-13 23:40:01,865 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-05-13 23:40:03,382 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:40:03,383 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-05-13 23:40:04,900 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:40:04,917 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:40:04,933 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:40:04,934 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-05-13 23:40:04,987 : INFO : DeviceManager : Loading devices...
+2016-05-13 23:40:05,031 : ERROR : ConfigProcessor : Your config contains a value for the setting "shots:right_lane:led", but this is not a valid setting name.
+2016-05-13 23:40:05,031 : ERROR : root : Your config contains a value for the setting "shots:right_lane:led", but this is not a valid setting name.
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 127, in __init__
+    self._run_init_phases()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 148, in _run_init_phases
+    self.events.process_event_queue()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 482, in process_event_queue
+    **event[3])
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 417, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/device_manager.py", line 60, in _load_device_modules
+    self.load_devices_config(validate=True)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/device_manager.py", line 105, in load_devices_config
+    config[device_name] = collection[device_name].validate_and_parse_config(config[device_name], False)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/device.py", line 50, in validate_and_parse_config
+    self.config_section, config, self.name)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/config_validator.py", line 1226, in validate_config
+    validation_failure_info)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/config_validator.py", line 1359, in check_for_invalid_sections
+    'setting "' + path_string + '", but this is not a valid '
+AssertionError: Your config contains a value for the setting "shots:right_lane:led", but this is not a valid setting name.

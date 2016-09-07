@@ -1,0 +1,10 @@
+2016-05-13 23:42:29,348 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1482
+2016-05-13 23:42:29,348 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-13 23:42:29,568 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-13 23:42:29,569 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-13 23:42:29,575 : INFO : FAST : Configuring FAST hardware.
+2016-05-13 23:42:29,576 : INFO : Machine : Loading core modules...
+2016-05-13 23:42:29,583 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-05-13 23:42:29,583 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-05-13 23:42:31,099 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:42:31,100 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps

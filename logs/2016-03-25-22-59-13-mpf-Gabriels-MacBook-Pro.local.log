@@ -1,0 +1,40 @@
+2016-03-25 22:59:13,853 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-25 22:59:13,854 : INFO : Machine : Loading cached config: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-25 22:59:13,871 : INFO : FAST : Configuring FAST hardware.
+2016-03-25 22:59:13,871 : INFO : Machine : Loading core modules...
+2016-03-25 22:59:14,066 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-25 22:59:14,066 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-25 22:59:15,584 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 22:59:15,585 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-25 22:59:17,103 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 22:59:17,120 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 22:59:17,136 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 22:59:17,151 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-25 22:59:17,237 : INFO : DeviceManager : Loading devices...
+2016-03-25 22:59:17,260 : ERROR : root : 'long_pulse_ms'
+Traceback (most recent call last):
+  File "/Users/gabe/pinball/mpf30/mpf/commands/core.py", line 135, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 111, in __init__
+    self._run_init_phases()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 127, in _run_init_phases
+    self.events.process_event_queue()
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 477, in process_event_queue
+    **event[3])
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 412, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 61, in _load_device_modules
+    self.initialize_devices()
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 141, in initialize_devices
+    collection[device_name].device_added_system_wide()
+  File "/Users/gabe/pinball/mpf30/mpf/core/system_wide_device.py", line 7, in device_added_system_wide
+    self._initialize()
+  File "/Users/gabe/pinball/mpf30/mpf/devices/driver.py", line 40, in _initialize
+    self.platform.configure_driver(self.config))
+  File "/Users/gabe/pinball/mpf30/mpf/platforms/fast.py", line 470, in configure_driver
+    return (FASTDriver(config, self.net_connection.send, self.machine),
+  File "/Users/gabe/pinball/mpf30/mpf/platforms/fast.py", line 840, in __init__
+    self.driver_settings.update(self.merge_driver_settings(**config))
+  File "/Users/gabe/pinball/mpf30/mpf/platforms/fast.py", line 954, in merge_driver_settings
+    return_dict['pulse_ms'] = self.config['long_pulse_ms']
+KeyError: 'long_pulse_ms'

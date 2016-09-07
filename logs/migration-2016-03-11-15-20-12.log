@@ -1,0 +1,300 @@
+Migrator : MPF Migrator: MPF v0.30.0.dev615
+Migrator : Migrating config and show files from: /Users/gabe/pinball/bnd
+Migrator : New config version will be v4
+Migrator : Found Migrator for config files v4
+Migrator : Found file: /Users/gabe/pinball/bnd/config/config.yaml
+Migrator : Found file: /Users/gabe/pinball/bnd/modes/base/config/base.yaml
+Migrator : Detected base folder: /Users/gabe/pinball/bnd/
+Migrator : Backing up files to /Users/gabe/pinball/bnd/previous_config_files/2016-03-11-15-20-12
+Migrator : Backup done
+YAML File Interface : Loading file: /Users/gabe/pinball/bnd/config/config.yaml
+config.yaml : 
+config.yaml : ------------------ config.yaml ------------------
+config.yaml : Analyzing config file: /Users/gabe/pinball/bnd/config/config.yaml
+config.yaml : Current config version is 3
+config.yaml : Setting config_version=4
+config.yaml : Converting keys to lowercase
+config.yaml : Renaming key: Machine: -> machine:
+config.yaml : Renaming key: Balls_Installed: -> balls_installed:
+config.yaml : Renaming key: Hardware: -> hardware:
+config.yaml : Renaming key: Platform: -> platform:
+config.yaml : Renaming key: DriverBoards: -> driverboards:
+config.yaml : Renaming key: Fast: -> fast:
+config.yaml : Renaming key: Game: -> game:
+config.yaml : Renaming key: Balls_per_game: -> balls_per_game:
+config.yaml : Renaming key: Max_players: -> max_players:
+config.yaml : Renaming key: s_LeftFlipper: -> s_leftflipper:
+config.yaml : Renaming key: s_RightUpperFlipper: -> s_rightupperflipper:
+config.yaml : Renaming key: s_RightFlipper: -> s_rightflipper:
+config.yaml : Renaming key: s_PlungerLane: -> s_plungerlane:
+config.yaml : Renaming key: s_RightBankBottom: -> s_rightbankbottom:
+config.yaml : Renaming key: s_TroughExit: -> s_troughexit:
+config.yaml : Renaming key: s_RightOutlane: -> s_rightoutlane:
+config.yaml : Renaming key: s_LeftOutlane: -> s_leftoutlane:
+config.yaml : Renaming key: s_LeftInlane: -> s_leftinlane:
+config.yaml : Renaming key: s_RightInlane: -> s_rightinlane:
+config.yaml : Renaming key: s_RightSling: -> s_rightsling:
+config.yaml : Renaming key: s_RightBankTop: -> s_rightbanktop:
+config.yaml : Renaming key: s_TopRightStandup: -> s_toprightstandup:
+config.yaml : Renaming key: s_JukeboxOpto: -> s_jukeboxopto:
+config.yaml : Renaming key: s_TopKickingTarget: -> s_topkickingtarget:
+config.yaml : Renaming key: s_SubwayOpto: -> s_subwayopto:
+config.yaml : Renaming key: s_LowerVUKOpto: -> s_lowervukopto:
+config.yaml : Renaming key: s_LeftSling: -> s_leftsling:
+config.yaml : Renaming key: s_LeftRampOpto: -> s_leftrampopto:
+config.yaml : Renaming key: s_BottomKickingTarget: -> s_bottomkickingtarget:
+config.yaml : Renaming key: s_LeftOrbit: -> s_leftorbit:
+config.yaml : Renaming key: s_DropTarget1: -> s_droptarget1:
+config.yaml : Renaming key: s_DropTarget2: -> s_droptarget2:
+config.yaml : Renaming key: s_DropTarget3: -> s_droptarget3:
+config.yaml : Renaming key: s_DropTarget4: -> s_droptarget4:
+config.yaml : Renaming key: s_DropTarget5: -> s_droptarget5:
+config.yaml : Renaming key: s_TopRightVUK: -> s_toprightvuk:
+config.yaml : Renaming key: s_RightRampOpto: -> s_rightrampopto:
+config.yaml : Renaming key: s_RightLane: -> s_rightlane:
+config.yaml : Renaming key: s_LeftLane: -> s_leftlane:
+config.yaml : Renaming key: s_TopKicker: -> s_topkicker:
+config.yaml : Renaming key: s_Spinner: -> s_spinner:
+config.yaml : Renaming key: s_LeftPop: -> s_leftpop:
+config.yaml : Renaming key: s_RightPop: -> s_rightpop:
+config.yaml : Renaming key: s_BottomPop: -> s_bottompop:
+config.yaml : Renaming key: c_LeftFlipperMain: -> c_leftflippermain:
+config.yaml : Renaming key: c_LeftFlipperHold: -> c_leftflipperhold:
+config.yaml : Renaming key: c_RightSling: -> c_rightsling:
+config.yaml : Renaming key: c_RightFlipperMain: -> c_rightflippermain:
+config.yaml : Renaming key: c_RightFlipperHold: -> c_rightflipperhold:
+config.yaml : Renaming key: c_Plunger: -> c_plunger:
+config.yaml : Renaming key: c_TroughEnter: -> c_troughenter:
+config.yaml : Renaming key: c_JukeboxMagnet: -> c_jukeboxmagnet:
+config.yaml : Renaming key: c_LeftSling: -> c_leftsling:
+config.yaml : Renaming key: c_LowerVUK: -> c_lowervuk:
+config.yaml : Renaming key: c_BottomKickingTarget: -> c_bottomkickingtarget:
+config.yaml : Renaming key: c_Diverter: -> c_diverter:
+config.yaml : Renaming key: c_JukeboxHold: -> c_jukeboxhold:
+config.yaml : Renaming key: c_JukeboxMain: -> c_jukeboxmain:
+config.yaml : Renaming key: c_TopKickingTarget: -> c_topkickingtarget:
+config.yaml : Renaming key: c_OuterDropTargetDrop: -> c_outerdroptargetdrop:
+config.yaml : Renaming key: c_InnerDropTargetDrop: -> c_innerdroptargetdrop:
+config.yaml : Renaming key: c_DropTargetReset: -> c_droptargetreset:
+config.yaml : Renaming key: c_TopKicker: -> c_topkicker:
+config.yaml : Renaming key: c_TopRightVUK: -> c_toprightvuk:
+config.yaml : Renaming key: c_UpperRightFlipperMain: -> c_upperrightflippermain:
+config.yaml : Renaming key: c_UpperRightFlipperHold: -> c_upperrightflipperhold:
+config.yaml : Renaming key: c_BottomPop: -> c_bottompop:
+config.yaml : Renaming key: c_RightPop: -> c_rightpop:
+config.yaml : Renaming key: c_LeftPop: -> c_leftpop:
+config.yaml : Renaming key: tocks_per_sec: -> speed:
+config.yaml : Renaming key: tocks_per_sec: -> speed:
+config.yaml : Renaming key: tocks_per_sec: -> speed:
+config.yaml : Renaming key: tocks_per_sec: -> speed:
+config.yaml : Renaming key: tocks_per_sec: -> speed:
+config.yaml : Renaming key: repeat: -> loops:
+config.yaml : Renaming key: repeat: -> loops:
+config.yaml : Renaming key: repeat: -> loops:
+config.yaml : Renaming key: repeat: -> loops:
+config.yaml : Renaming key: repeat: -> loops:
+config.yaml : Renaming key: game:allow start with loose balls: -> allow_start_with_loose_balls:
+config.yaml : Migrating light_player: section
+config.yaml : Creating show_player: section
+config.yaml : Updating show_player: content
+config.yaml : Removing key: light_player
+config.yaml : Renaming key: light_scripts: -> shows:
+config.yaml : Converting "tocks:" to "time:" and cascading entries to the next step (since time: is for the current step versus tocks: being for the previous step)
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting "tocks:" to "time:" and cascading entries to the next step (since time: is for the current step versus tocks: being for the previous step)
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting "tocks:" to "time:" and cascading entries to the next step (since time: is for the current step versus tocks: being for the previous step)
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Converting hex color 'ff0000' to named color 'red'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffff00' to named color 'yellow'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '00ff00' to named color 'lime'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '0000ff' to named color 'blue'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting "tocks:" to "time:" and cascading entries to the next step (since time: is for the current step versus tocks: being for the previous step)
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Converting hex color 'ff0000' to named color 'red'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '00ff00' to named color 'lime'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '0000ff' to named color 'blue'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting "tocks:" to "time:" and cascading entries to the next step (since time: is for the current step versus tocks: being for the previous step)
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Converting hex color '00ff00' to named color 'lime'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '0000ff' to named color 'blue'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ff0000' to named color 'red'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting "tocks:" to "time:" and cascading entries to the next step (since time: is for the current step versus tocks: being for the previous step)
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Renaming key: tocks: -> time:
+config.yaml : Converting hex color '0000ff' to named color 'blue'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ff0000' to named color 'red'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '00ff00' to named color 'lime'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color 'ffffff' to named color 'white'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : Converting hex color '000000' to named color 'black'
+config.yaml : Renaming key: color: -> (leds):
+config.yaml : Moving key: (leds) -> (leds)
+config.yaml : ----------------------------------------
+Migrator : Writing file: /Users/gabe/pinball/bnd/config/config.yaml
+YAML File Interface : Loading file: /Users/gabe/pinball/bnd/modes/base/config/base.yaml
+base.yaml : 
+base.yaml : ------------------ base.yaml ------------------
+base.yaml : Analyzing config file: /Users/gabe/pinball/bnd/modes/base/config/base.yaml
+base.yaml : Skipping non-config file: /Users/gabe/pinball/bnd/modes/base/config/base.yaml
+Migrator : DONE! Migrated 1 config file(s) and 0 show file(s) in 0.56s
+Migrator : Detailed log file is in /Users/gabe/pinball/bnd/logs.
+Migrator : Original YAML files are in /Users/gabe/pinball/bnd/previous_config_files/2016-03-11-15-20-12

@@ -1,0 +1,31 @@
+2016-05-27 23:45:15,887 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1633
+2016-05-27 23:45:15,888 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-27 23:45:16,080 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-27 23:45:16,081 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-27 23:45:16,096 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-05-27 23:45:16,096 : ERROR : root : [Errno 2] could not open port /dev/tty.usbserial-141C: [Errno 2] No such file or directory: '/dev/tty.usbserial-141C'
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialposix.py", line 242, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/tty.usbserial-141C'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 116, in __init__
+    self._initialize_platforms()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 170, in _initialize_platforms
+    platform.initialize()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/fast/fast.py", line 108, in initialize
+    self._connect_to_hardware()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/fast/fast.py", line 152, in _connect_to_hardware
+    receive_queue=self.receive_queue))
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/fast/fast.py", line 689, in __init__
+    timeout=1, writeTimeout=0)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialutil.py", line 182, in __init__
+    self.open()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialposix.py", line 245, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/tty.usbserial-141C: [Errno 2] No such file or directory: '/dev/tty.usbserial-141C'

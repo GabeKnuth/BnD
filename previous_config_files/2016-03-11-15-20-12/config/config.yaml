@@ -1,0 +1,941 @@
+#config_version=3
+
+# Mission Pinball Framework machine configuration file for Brooks & Dunn
+
+# ASCII art headings generated from
+# http://patorjk.com/software/taag/#p=display&c=bash&f=Alligator&t=Mission%0APinball%0AFramework
+
+# Instructions for this config file:
+# https://missionpinball.com/docs/configuration-file-reference/
+
+# Created by Brian Madden & Gabe Knuth
+
+
+#        ::::::::      :::       :::   :::   ::::::::::
+#      :+:    :+:   :+: :+:    :+:+: :+:+:  :+:
+#     +:+         +:+   +:+  +:+ +:+:+ +:+ +:+
+#    :#:        +#++:++#++: +#+  +:+  +#+ +#++:++#
+#   +#+   +#+# +#+     +#+ +#+       +#+ +#+
+#  #+#    #+# #+#     #+# #+#       #+# #+#
+#  ########  ###     ### ###       ### ##########
+
+#        ::::::::  :::::::::: ::::::::::: :::    ::: :::::::::
+#      :+:    :+: :+:            :+:     :+:    :+: :+:    :+:
+#     +:+        +:+            +:+     +:+    +:+ +:+    +:+
+#    +#++:++#++ +#++:++#       +#+     +#+    +:+ +#++:++#+
+#          +#+ +#+            +#+     +#+    +#+ +#+
+#  #+#    #+# #+#            #+#     #+#    #+# #+#
+#  ########  ##########     ###      ########  ###
+
+
+Machine:
+    # HZ: 60
+    Balls_Installed: 1
+
+Hardware:
+    Platform: fast
+    DriverBoards: fast
+
+Fast:
+    ports: /dev/tty.usbserial-141C, /dev/tty.usbserial-141A, /dev/tty.usbserial-141B    
+    config_number_format: int
+
+Game:
+    Balls_per_game: 3
+    Max_players: 4
+
+#Scriptlets:
+#    lighttest.LightTest
+
+
+#        ::::::::  :::       ::: ::::::::::: ::::::::::: ::::::::  :::    ::: :::::::::: ::::::::
+#      :+:    :+: :+:       :+:     :+:         :+:    :+:    :+: :+:    :+: :+:       :+:    :+:
+#     +:+        +:+       +:+     +:+         +:+    +:+        +:+    +:+ +:+       +:+
+#    +#++:++#++ +#+  +:+  +#+     +#+         +#+    +#+        +#++:++#++ +#++:++#  +#++:++#++
+#          +#+ +#+ +#+#+ +#+     +#+         +#+    +#+        +#+    +#+ +#+              +#+
+#  #+#    #+#  #+#+# #+#+#      #+#         #+#    #+#    #+# #+#    #+# #+#       #+#    #+#
+#  ########    ###   ###   ###########     ###     ########  ###    ### ########## ########
+
+
+switches:
+    s_LeftFlipper:
+        number: 0
+    s_RightUpperFlipper:
+        number: 1
+    s_RightFlipper:
+        number: 2
+    s_start:
+        number: 3
+        tags: start
+    s_PlungerLane:
+        number: 16
+    s_RightBankBottom:
+        number: 17
+        tags: plunger
+    s_TroughExit:
+        number: 18
+    s_RightOutlane:
+        number: 19
+    s_LeftOutlane:
+        number: 20
+    s_drain:
+        number: 21
+    s_LeftInlane:
+        number: 22
+    s_RightInlane:
+        number: 24
+    s_RightSling:
+        number: 25
+    s_RightBankTop:
+        number: 26
+    s_TopRightStandup:
+        number: 27
+    s_JukeboxOpto:
+        number: 40
+        type: NC
+        tags: jukebox
+    s_TopKickingTarget:
+        number: 41
+    s_SubwayOpto:
+        number: 42
+        type: NC
+    s_LowerVUKOpto:
+        number: 43
+        type: NC
+    s_LeftSling:
+        number: 44
+    s_LeftRampOpto:
+        number: 45
+        type: NC
+    s_BottomKickingTarget:
+        number: 46
+    s_LeftOrbit:
+        number: 47
+    s_DropTarget1:
+        number: 64
+    s_DropTarget2:
+        number: 65
+    s_DropTarget3:
+        number: 66
+    s_DropTarget4:
+        number: 67
+    s_DropTarget5:
+        number: 68
+    s_TopRightVUK:
+        number: 69
+    s_RightRampOpto:
+        number: 72
+        type: NC
+    s_RightLane:
+        number: 73
+    s_LeftLane:
+        number: 74
+    s_TopKicker:
+        number: 75
+    s_Spinner:
+        number: 76
+    s_LeftPop:
+        number: 77
+    s_RightPop:
+        number: 78
+    s_BottomPop:
+        number: 79
+
+
+#        ::::::::   :::::::: ::::::::::: :::        ::::::::
+#      :+:    :+: :+:    :+:    :+:     :+:       :+:    :+:
+#     +:+        +:+    +:+    +:+     +:+       +:+
+#    +#+        +#+    +:+    +#+     +#+       +#++:++#++
+#   +#+        +#+    +#+    +#+     +#+              +#+
+#  #+#    #+# #+#    #+#    #+#     #+#       #+#    #+#
+#  ########   ######## ########### ########## ########
+
+
+coils:
+    c_LeftFlipperMain:
+        number: 0
+        pulse_ms: 35
+        debug: true
+    c_LeftFlipperHold:
+        number: 1
+    c_RightSling:
+        number: 2
+    c_RightFlipperMain:
+        number: 3
+        pulse_ms: 35
+        debug: true
+    c_RightFlipperHold:
+        number: 4
+    c_Plunger:
+        number: 5
+        pulse_ms: 20
+    c_drain_eject:
+        number: 6
+    c_TroughEnter:
+        number: 7
+    c_JukeboxMagnet:
+        number: 8
+        pulse_ms: 10
+        hold_power: 1
+    c_LeftSling:
+        number: 9
+    c_LowerVUK:
+        number: 10
+        pulse_ms: 40
+    c_BottomKickingTarget:
+        number: 11
+    c_Diverter:
+        number: 12
+    c_JukeboxHold:
+        number: 13
+    c_JukeboxMain:
+        number: 14
+        pulse_ms: 40
+    c_TopKickingTarget:
+        number: 15
+    c_OuterDropTargetDrop:
+        number: 16
+    c_InnerDropTargetDrop:
+        number: 17
+    c_DropTargetReset:
+        number: 18
+        pulse_ms: 20
+    c_TopKicker:
+        number: 20
+        pulse_ms: 5
+    c_TopRightVUK:
+        number: 19
+        pulse_ms: 8
+    c_UpperRightFlipperMain:
+        number: 29
+        pulse_ms: 25
+        debug: true
+    c_UpperRightFlipperHold:
+        number: 25
+        debug: true
+    c_BottomPop:
+        number: 26
+        pulse_ms: 20
+    c_RightPop:
+        number: 27
+        pulse_ms: 20
+    c_LeftPop:
+        number: 28
+        pulse_ms: 20
+
+
+#        :::::::::: :::        ::::::::::: :::::::::  :::::::::  :::::::::: :::::::::   ::::::::
+#       :+:        :+:            :+:     :+:    :+: :+:    :+: :+:        :+:    :+: :+:    :+:
+#      +:+        +:+            +:+     +:+    +:+ +:+    +:+ +:+        +:+    +:+ +:+
+#     :#::+::#   +#+            +#+     +#++:++#+  +#++:++#+  +#++:++#   +#++:++#:  +#++:++#++
+#    +#+        +#+            +#+     +#+        +#+        +#+        +#+    +#+        +#+
+#   #+#        #+#            #+#     #+#        #+#        #+#        #+#    #+# #+#    #+#
+#  ###        ########## ########### ###        ###        ########## ###    ###  ########
+
+
+flippers:
+    left_flipper:
+        main_coil: c_LeftFlipperMain
+        hold_coil: c_LeftFlipperHold
+        activation_switch: s_LeftFlipper
+        enable_events: machine_reset_phase_3 #Remove this after game logic is added
+        use_eos: False
+        debug: true
+    right_flipper:
+        main_coil: c_RightFlipperMain
+        hold_coil: c_RightFlipperHold
+        activation_switch: s_RightFlipper
+        enable_events: machine_reset_phase_3 #Remove this after game logic is added
+        use_eos: False
+        debug: true
+    upper_right_flipper:
+        main_coil: c_UpperRightFlipperMain
+        hold_coil: c_UpperRightFlipperHold
+        activation_switch: s_RightUpperFlipper
+        enable_events: machine_reset_phase_3 #Remove this after game logic is added
+        use_eos: False
+        debug: true
+#    jukebox_test:
+#        main_coil: c_JukeboxMain
+#        hold_coil: c_JukeboxHold
+#        activation_switch: s_LeftFlipper
+#        enable_events: machine_reset_phase_3
+#        use_eos: False
+
+
+
+#        :::::::::      :::     :::        :::
+#       :+:    :+:   :+: :+:   :+:        :+:
+#      +:+    +:+  +:+   +:+  +:+        +:+
+#     +#++:++#+  +#++:++#++: +#+        +#+
+#    +#+    +#+ +#+     +#+ +#+        +#+
+#   #+#    #+# #+#     #+# #+#        #+#
+#  #########  ###     ### ########## ##########
+
+#        :::::::::  :::::::::: :::     ::: ::::::::::: ::::::::  :::::::::: ::::::::
+#       :+:    :+: :+:        :+:     :+:     :+:    :+:    :+: :+:       :+:    :+:
+#      +:+    +:+ +:+        +:+     +:+     +:+    +:+        +:+       +:+
+#     +#+    +:+ +#++:++#   +#+     +:+     +#+    +#+        +#++:++#  +#++:++#++
+#    +#+    +#+ +#+         +#+   +#+      +#+    +#+        +#+              +#+
+#   #+#    #+# #+#          #+#+#+#       #+#    #+#    #+# #+#       #+#    #+#
+#  #########  ##########     ###     ########### ########  ########## ########
+
+
+ball_devices:
+    bd_trough:
+        tags: trough, home
+        entrance_switch: s_troughEnter
+        eject_coil: c_TroughEnter
+        confirm_eject_type: target
+        eject_targets: bd_plunger, playfield
+        entrance_count_delay: 500ms
+    bd_drain:
+        tags: drain
+        entrance_switch: s_drain
+        eject_coil: c_drain_eject
+        confirm_eject_type: count
+        exit_count_delay: 500ms
+        eject_targets: bd_trough, bd_plunger, playfield
+    bd_plunger:
+        tags: ball_add_live
+        ball_switches: s_PlungerLane
+        entrance_count_delay: 500ms
+        eject_coil: c_Plunger
+        eject_targets: playfield
+        exit_count_delay: 1000ms
+        confirm_eject_type: count
+        mechanical_eject: true
+    bd_top_right_vuk:
+        ball_switches: s_TopRightVUK
+        entrance_count_delay: 500ms
+        eject_coil: c_TopRightVUK
+        eject_targets: playfield
+        exit_count_delay: 500ms
+        confirm_eject_type: count
+    bd_lower_vuk:
+        ball_switches: s_LowerVUKOpto
+        entrance_count_delay: 600ms
+        eject_coil: c_LowerVUK
+        eject_targets: playfield
+        exit_count_delay: 800ms
+        confirm_eject_type: count
+    bd_top_kicker:
+        ball_switches: s_TopKicker
+        entrance_count_delay: 500ms
+        eject_coil: c_TopKicker
+        eject_targets: playfield, bd_top_right_vuk
+        exit_count_delay: 500ms
+        confirm_eject_type: count
+
+
+#        :::::::::  :::            :::   :::   ::: :::::::::: ::::::::::: :::::::::: :::        :::::::::   ::::::::
+#       :+:    :+: :+:          :+: :+: :+:   :+: :+:            :+:     :+:        :+:        :+:    :+: :+:    :+:
+#      +:+    +:+ +:+         +:+   +:+ +:+ +:+  +:+            +:+     +:+        +:+        +:+    +:+ +:+
+#     +#++:++#+  +#+        +#++:++#++: +#++:   :#::+::#       +#+     +#++:++#   +#+        +#+    +:+ +#++:++#++
+#    +#+        +#+        +#+     +#+  +#+    +#+            +#+     +#+        +#+        +#+    +#+        +#+
+#   #+#        #+#        #+#     #+#  #+#    #+#            #+#     #+#        #+#        #+#    #+# #+#    #+#
+#  ###        ########## ###     ###  ###    ###        ########### ########## ########## #########   ########
+
+
+playfields:
+    playfield:
+        tags: default
+
+
+#            :::     :::    ::: ::::::::::: ::::::::
+#         :+: :+:   :+:    :+:     :+:    :+:    :+:
+#       +:+   +:+  +:+    +:+     +:+    +:+    +:+
+#     +#++:++#++: +#+    +:+     +#+    +#+    +:+ +#++:++#++:++
+#    +#+     +#+ +#+    +#+     +#+    +#+    +#+
+#   #+#     #+# #+#    #+#     #+#    #+#    #+#
+#  ###     ###  ########      ###     ########
+
+#        :::::::::: ::::::::::: :::::::::  ::::::::::
+#       :+:            :+:     :+:    :+: :+:
+#      +:+            +:+     +:+    +:+ +:+
+#     :#::+::#       +#+     +#++:++#:  +#++:++#
+#    +#+            +#+     +#+    +#+ +#+
+#   #+#            #+#     #+#    #+# #+#
+#  ###        ########### ###    ### ##########
+
+#        ::::::::   :::::::: ::::::::::: :::        ::::::::
+#      :+:    :+: :+:    :+:    :+:     :+:       :+:    :+:
+#     +:+        +:+    +:+    +:+     +:+       +:+
+#    +#+        +#+    +:+    +#+     +#+       +#++:++#++
+#   +#+        +#+    +#+    +#+     +#+              +#+
+#  #+#    #+# #+#    #+#    #+#     #+#       #+#    #+#
+#  ########   ######## ########### ########## ########
+
+
+autofire_coils:
+    left_sling:
+        coil: c_leftsling
+        switch: s_leftsling
+        enable_events: machine_reset_phase_3
+    right_sling:
+        coil: c_rightsling
+        switch: s_rightsling
+        enable_events: machine_reset_phase_3
+    left_pop:
+        coil: c_leftpop
+        switch: s_leftpop
+        enable_events: machine_reset_phase_3
+    right_pop:
+        coil: c_rightpop
+        switch: s_rightpop
+        enable_events: machine_reset_phase_3
+    bottom_pop:
+        coil: c_bottompop
+        switch: s_bottompop
+        enable_events: machine_reset_phase_3
+    top_kicking_target: 
+        coil: c_topKickingTarget
+        switch: s_topKickingTarget
+        enable_events: machine_reset_phase_3
+    bottom_kicking_target:
+        coil: c_bottomKickingTarget
+        switch: s_bottomkickingtarget
+        enable_events: machine_reset_phase_3
+
+
+
+#        :::::::::  :::::::::   ::::::::  :::::::::
+#       :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+#      +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+
+#     +#+    +:+ +#++:++#:  +#+    +:+ +#++:++#+
+#    +#+    +#+ +#+    +#+ +#+    +#+ +#+
+#   #+#    #+# #+#    #+# #+#    #+# #+#
+#  #########  ###    ###  ########  ###
+
+#    ::::::::::: :::     :::::::::   ::::::::  :::::::::: ::::::::::: ::::::::
+#       :+:   :+: :+:   :+:    :+: :+:    :+: :+:            :+:    :+:    :+:
+#      +:+  +:+   +:+  +:+    +:+ +:+        +:+            +:+    +:+
+#     +#+ +#++:++#++: +#++:++#:  :#:        +#++:++#       +#+    +#++:++#++
+#    +#+ +#+     +#+ +#+    +#+ +#+   +#+# +#+            +#+           +#+
+#   #+# #+#     #+# #+#    #+# #+#    #+# #+#            #+#    #+#    #+#
+#  ### ###     ### ###    ###  ########  ##########     ###     ########
+
+
+drop_targets:
+    dt_top:
+        switch: s_droptarget1
+    dt_top_center:
+        switch: s_DropTarget2
+    dt_center:
+        switch: s_droptarget3
+    dt_bottom_center:
+        switch: s_droptarget4
+        knockdown_coil: c_InnerDropTargetDrop
+        knockdown_events: knockdown_left, knockdown_both, s_rightoutlane_active
+    dt_bottom:
+        switch: s_droptarget5
+        knockdown_coil: c_OuterDropTargetDrop
+        knockdown_events: knockdown_right, knockdown_both, s_rightinlane_active
+
+
+
+#        :::::::::  :::::::::   ::::::::  :::::::::
+#       :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+#      +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+
+#     +#+    +:+ +#++:++#:  +#+    +:+ +#++:++#+
+#    +#+    +#+ +#+    +#+ +#+    +#+ +#+
+#   #+#    #+# #+#    #+# #+#    #+# #+#
+#  #########  ###    ###  ########  ###
+
+#    ::::::::::: :::     :::::::::   ::::::::  :::::::::: :::::::::::
+#       :+:   :+: :+:   :+:    :+: :+:    :+: :+:            :+:
+#      +:+  +:+   +:+  +:+    +:+ +:+        +:+            +:+
+#     +#+ +#++:++#++: +#++:++#:  :#:        +#++:++#       +#+
+#    +#+ +#+     +#+ +#+    +#+ +#+   +#+# +#+            +#+
+#   #+# #+#     #+# #+#    #+# #+#    #+# #+#            #+#
+#  ### ###     ### ###    ###  ########  ##########     ###
+
+#        :::::::::      :::     ::::    ::: :::    ::: ::::::::
+#       :+:    :+:   :+: :+:   :+:+:   :+: :+:   :+: :+:    :+:
+#      +:+    +:+  +:+   +:+  :+:+:+  +:+ +:+  +:+  +:+
+#     +#++:++#+  +#++:++#++: +#+ +:+ +#+ +#++:++   +#++:++#++
+#    +#+    +#+ +#+     +#+ +#+  +#+#+# +#+  +#+         +#+
+#   #+#    #+# #+#     #+# #+#   #+#+# #+#   #+# #+#    #+#
+#  #########  ###     ### ###    #### ###    ### ########
+
+
+drop_target_banks:
+    drop_targets:
+        drop_targets:
+          - dt_top
+          - dt_top_center
+          - dt_center
+          - dt_bottom_center
+          - dt_bottom
+        reset_coils: c_DropTargetReset
+        reset_events: ball_starting, reset_drop_targets
+
+
+#        ::::::::: ::::::::::: :::     ::: :::::::::: ::::::::: ::::::::::: :::::::::: :::::::::   ::::::::
+#       :+:    :+:    :+:     :+:     :+: :+:        :+:    :+:    :+:     :+:        :+:    :+: :+:    :+:
+#      +:+    +:+    +:+     +:+     +:+ +:+        +:+    +:+    +:+     +:+        +:+    +:+ +:+
+#     +#+    +:+    +#+     +#+     +:+ +#++:++#   +#++:++#:     +#+     +#++:++#   +#++:++#:  +#++:++#++
+#    +#+    +#+    +#+      +#+   +#+  +#+        +#+    +#+    +#+     +#+        +#+    +#+        +#+
+#   #+#    #+#    #+#       #+#+#+#   #+#        #+#    #+#    #+#     #+#        #+#    #+# #+#    #+#
+#  ######### ###########     ###     ########## ###    ###    ###     ########## ###    ###  ########
+
+
+diverters:
+    diverter:
+        activation_coil: c_Diverter
+        type: hold
+        activation_time: 3s
+        activation_switches: s_LeftOrbit
+        enable_events: machine_reset_phase_3, enable_diverter
+        disable_events: ball_ended
+    jukebox_magnet:
+        activation_coil: c_JukeboxMagnet
+        type: hold
+        activation_time: 3s
+        activation_switches: s_jukeboxOpto
+        enable_events: machine_reset_phase_3, enable_diverter
+        disable_events: ball_ended
+
+
+#        :::        :::::::::: :::::::::   :::::::: 
+#       :+:        :+:        :+:    :+: :+:    :+: 
+#      +:+        +:+        +:+    +:+ +:+         
+#     +#+        +#++:++#   +#+    +:+ +#++:++#++   
+#    +#+        +#+        +#+    +#+        +#+    
+#   #+#        #+#        #+#    #+# #+#    #+#     
+#  ########## ########## #########   ########    
+
+
+leds:  
+    l_left_quarter:
+        number: 1-1
+    l_quintuple_platinum:
+        number: 1-2
+    l_jukebox_insert:
+        number: 1-3
+    l_play_poker:
+        number: 1-4
+    l_music_award:
+        number: 1-5
+    l_ramp_jackpot:
+        number: 1-6
+    l_south_america:
+        number: 1-7
+    l_middle_quarter:
+        number: 1-8
+    l_bottom_quarter:
+        number: 1-9
+    l_lower_right_flasher:
+        number: 1-10
+    l_right_lane_special:
+        number: 1-11
+    l_right_lane_spot_quarter:
+        number: 1-12
+    l_again:
+        number: 1-13
+    l_shoot:
+        number: 1-14
+    l_left_lane_spot_quarter:
+        number: 1-15
+    l_left_lane_special:
+        number: 1-16
+    l_question_card:
+        number: 1-17
+    l_begin_round:
+        number: 1-18
+    l_hi_lo:
+        number: 1-19
+    l_world_tour:
+        number: 1-20
+    l_money_bags:
+        number: 1-21
+    l_music_awards:
+        number: 1-22
+    l_double_platinum:
+        number: 1-23
+    l_single_platinum:
+        number: 1-24
+    l_gold:
+        number: 1-25
+    l_silver:
+        number: 1-26
+    l_wizard_shot:
+        number: 1-27
+    l_left_longhorn:
+        number: 1-28
+    l_double_jackpot:
+        number: 1-29
+    l_advance_wizard:
+        number: 1-30
+    l_lower_left_flasher:
+        number: 1-31
+    l_north_america:
+        number: 1-32
+    l_left_ramp_flasher:
+        number: 1-33
+    l_music_award:
+        number: 1-34
+    l_managers_choice:
+        number: 1-35
+    l_jukebox_left:
+        number: 1-36
+    l_jukebox_right:
+        number: 1-37
+    l_europe:
+        number: 1-38
+    l_center_lock:
+        number: 1-39
+    l_center_longhorn:
+        number: 1-40
+    l_left_pop:
+        number: 1-41
+    l_right_pop:
+        number: 1-42
+    l_bottom_pop:
+        number: 1-43
+    l_collect_wizard:
+        number: 1-44
+    l_extra_ball:
+        number: 1-45
+    l_ramp_fire:
+        number: 1-46
+    l_right_ramp_flasher:
+        number: 1-47
+    l_gi_right_5:
+        number: 2-0
+        tags: gi, gi18
+    l_gi_right_4:
+        number: 2-1
+        tags: gi, gi19
+    l_gi_right_3:
+        number: 2-2
+        tags: gi, gi20
+    l_gi_right_2:
+        number: 2-3
+        tags: gi, gi21
+    l_gi_right_1:
+        number: 2-4
+        tags: gi, gi22
+    l_gi_left_2:
+        number: 2-5
+        tags: gi, gi2
+    l_gi_left_1:
+        number: 2-6
+        tags: gi, gi1
+    l_gi_left_3:
+        number: 2-7
+        tags: gi, gi3
+    l_gi_left_4:
+        number: 2-8
+        tags: gi, gi4
+    l_gi_left_5:
+        number: 2-9
+        tags: gi, gi5
+    l_gi_left_6:
+        number: 2-10
+        tags: gi, gi6
+    l_gi_left_7:
+        number: 2-11
+        tags: gi, gi7
+    l_gi_left_8:
+        number: 2-12
+        tags: gi, gi8
+    l_gi_left_9:
+        number: 2-13
+        tags: gi, gi9
+    l_gi_left_10:
+        number: 2-14
+        tags: gi, gi10
+    l_gi_left_lane:
+        number: 2-15
+        tags: gi, gi11
+    l_gi_center_lane:
+        number: 2-16
+        tags: gi, gi12
+    l_gi_right_lane:
+        number: 2-17
+        tags: gi, gi13
+    l_gi_right_9:
+        number: 2-18
+        tags: gi, gi14
+    l_gi_right_8:
+        number: 2-19
+        tags: gi, gi15
+    l_gi_right_7:
+        number: 2-20
+        tags: gi, gi16
+    l_gi_right_6:
+        number: 2-21
+        tags: gi, gi17
+
+
+#        :::        ::::::::::: ::::::::  :::    ::: :::::::::::        
+#       :+:            :+:    :+:    :+: :+:    :+:     :+:             
+#      +:+            +:+    +:+        +:+    +:+     +:+              
+#     +#+            +#+    :#:        +#++:++#++     +#+               
+#    +#+            +#+    +#+   +#+# +#+    +#+     +#+                
+#   #+#            #+#    #+#    #+# #+#    #+#     #+#                 
+#  ########## ########### ########  ###    ###     ###                  
+#        :::::::::  :::            :::   :::   ::: :::::::::: ::::::::: 
+#       :+:    :+: :+:          :+: :+: :+:   :+: :+:        :+:    :+: 
+#      +:+    +:+ +:+         +:+   +:+ +:+ +:+  +:+        +:+    +:+  
+#     +#++:++#+  +#+        +#++:++#++: +#++:   +#++:++#   +#++:++#:    
+#    +#+        +#+        +#+     +#+  +#+    +#+        +#+    +#+    
+#   #+#        #+#        #+#     #+#  #+#    #+#        #+#    #+#     
+#  ###        ########## ###     ###  ###    ########## ###    ###
+
+
+light_player:
+    mode_attract_started:
+        - led_tags: gi
+          script: gi_on
+          tocks_per_sec: 1
+          repeat: yes
+        - leds: l_wizard_shot, l_advance_wizard, l_north_america, l_music_award
+          script: new_flash
+          tocks_per_sec: 2
+          repeat: yes
+        - leds: l_left_pop
+          script: concert1
+          tocks_per_sec: 2.5
+          repeat: yes
+        - leds: l_right_pop
+          script: concert2
+          tocks_per_sec: 2.5
+          repeat: yes
+        - leds: l_bottom_pop
+          script: concert3
+          tocks_per_sec: 2.5
+          repeat: yes
+
+
+light_scripts:
+    gi_on:
+        - tocks: 1
+          color: 66ff18
+        - tocks: 1
+          color: 66ff18
+    new_flash:
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+    rainbow_cycle:
+        - tocks: 1
+          color: ff0000
+        - tocks: 1
+          color: ff5500
+        - tocks: 1
+          color: ffff00
+        - tocks: 1
+          color: 00ff00
+        - tocks: 1
+          color: 0000ff
+        - tocks: 1
+          color: ff0099
+    concert1:
+        - tocks: 1
+          color: ff0000
+        - tocks: 1
+          color: 00ff00
+        - tocks: 1
+          color: 0000ff
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+    concert2:
+        - tocks: 1
+          color: 00ff00
+        - tocks: 1
+          color: 0000ff
+        - tocks: 1
+          color: ff0000
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+    concert3:
+        - tocks: 1
+          color: 0000ff
+        - tocks: 1
+          color: ff0000
+        - tocks: 1
+          color: 00ff00
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+        - tocks: 1
+          color: 555555
+        - tocks: 1
+          color: ffffff
+        - tocks: 1
+          color: 000000
+
+
+#        ::::::::  :::    :::  :::::::: ::::::::::: :::::::: 
+#      :+:    :+: :+:    :+: :+:    :+:    :+:    :+:    :+: 
+#     +:+        +:+    +:+ +:+    +:+    +:+    +:+         
+#    +#++:++#++ +#++:++#++ +#+    +:+    +#+    +#++:++#++   
+#          +#+ +#+    +#+ +#+    +#+    +#+          +#+    
+#  #+#    #+# #+#    #+# #+#    #+#    #+#    #+#    #+#     
+#  ########  ###    ###  ########     ###     ######## 
+
+# Using this only for special shots that need to be grouped togehter or 
+# require a sequence of switches. 
+
+shots:
+# Shots to group
+    left_lane:
+        switch: s_LeftLane
+        led: l_world_tour
+    right_lane:
+        switch: s_RightLane
+        led: l_money_bags
+
+#Shot with sequences
+    right_ramp_full_loop:
+        switch_sequence: s_rightRampOpto, s_LeftRampOpto
+        time: 1000ms
+    subway_shot: # Seems like a weird name, but probably should have this one
+        switch_sequence: s_SubwayOpto, s_LowerVUKOpto
+        time: 500ms
+
+
+#        ::::::::  :::    :::  :::::::: :::::::::::                      
+#      :+:    :+: :+:    :+: :+:    :+:    :+:                           
+#     +:+        +:+    +:+ +:+    +:+    +:+                            
+#    +#++:++#++ +#++:++#++ +#+    +:+    +#+                             
+#          +#+ +#+    +#+ +#+    +#+    +#+                              
+#  #+#    #+# #+#    #+# #+#    #+#    #+#                               
+#  ########  ###    ###  ########     ###                                
+#        ::::::::  :::::::::   ::::::::  :::    ::: :::::::::   :::::::: 
+#      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+: 
+#     +:+        +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+ +:+         
+#    :#:        +#++:++#:  +#+    +:+ +#+    +:+ +#++:++#+  +#++:++#++   
+#   +#+   +#+# +#+    +#+ +#+    +#+ +#+    +#+ +#+               +#+    
+#  #+#    #+# #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#     
+#  ########  ###    ###  ########   ########  ###         ########  
+
+# shot_groups:
+#     upper_lanes:
+#         shots: left_lane, right_lane
+#         profile: default
+#         rotate_left_events: s_leftflipper_active
+#         rotate_right_events: s_rightflipper_active
+#         reset_events: upper_lanes_default_lit_complete
+#         enable_events: ball_started
+#         disable_events: ball_ending
+
+
+#        ::::::::  :::    :::  :::::::: :::::::::::
+#      :+:    :+: :+:    :+: :+:    :+:    :+:
+#     +:+        +:+    +:+ +:+    +:+    +:+
+#    +#++:++#++ +#++:++#++ +#+    +:+    +#+
+#          +#+ +#+    +#+ +#+    +#+    +#+
+#  #+#    #+# #+#    #+# #+#    #+#    #+#
+#  ########  ###    ###  ########     ###
+#        :::::::::  :::::::::   ::::::::  :::::::::: ::::::::::: :::        :::::::::: ::::::::
+#       :+:    :+: :+:    :+: :+:    :+: :+:            :+:     :+:        :+:       :+:    :+:
+#      +:+    +:+ +:+    +:+ +:+    +:+ +:+            +:+     +:+        +:+       +:+
+#     +#++:++#+  +#++:++#:  +#+    +:+ :#::+::#       +#+     +#+        +#++:++#  +#++:++#++
+#    +#+        +#+    +#+ +#+    +#+ +#+            +#+     +#+        +#+              +#+
+#   #+#        #+#    #+# #+#    #+# #+#            #+#     #+#        #+#       #+#    #+#
+#  ###        ###    ###  ########  ###        ########### ########## ########## ########
+
+
+
+
+
+
+
+
+#            :::     :::    ::: ::::::::: ::::::::::: ::::::::::: ::::::::  :::::::::
+#         :+: :+:   :+:    :+: :+:    :+:    :+:         :+:    :+:    :+: :+:    :+:
+#       +:+   +:+  +:+    +:+ +:+    +:+    +:+         +:+    +:+    +:+ +:+    +:+
+#     +#++:++#++: +#+    +:+ +#+    +:+    +#+         +#+    +#+    +:+ +#++:++#:
+#    +#+     +#+ +#+    +#+ +#+    +#+    +#+         +#+    +#+    +#+ +#+    +#+
+#   #+#     #+# #+#    #+# #+#    #+#    #+#         #+#    #+#    #+# #+#    #+#
+#  ###     ###  ########  ######### ###########     ###     ########  ###    ###
+
+
+
+
+
+
+
+
+#        :::    ::: :::::::::: :::   ::: :::::::::   ::::::::      :::     :::::::::  :::::::::
+#       :+:   :+:  :+:        :+:   :+: :+:    :+: :+:    :+:   :+: :+:   :+:    :+: :+:    :+:
+#      +:+  +:+   +:+         +:+ +:+  +:+    +:+ +:+    +:+  +:+   +:+  +:+    +:+ +:+    +:+
+#     +#++:++    +#++:++#     +#++:   +#++:++#+  +#+    +:+ +#++:++#++: +#++:++#:  +#+    +:+
+#    +#+  +#+   +#+           +#+    +#+    +#+ +#+    +#+ +#+     +#+ +#+    +#+ +#+    +#+
+#   #+#   #+#  #+#           #+#    #+#    #+# #+#    #+# #+#     #+# #+#    #+# #+#    #+#
+#  ###    ### ##########    ###    #########   ########  ###     ### ###    ### #########
+
+
+
+
+
+
+
+
+#        :::::::::      :::     :::        :::
+#       :+:    :+:   :+: :+:   :+:        :+:
+#      +:+    +:+  +:+   +:+  +:+        +:+
+#     +#++:++#+  +#++:++#++: +#+        +#+
+#    +#+    +#+ +#+     +#+ +#+        +#+
+#   #+#    #+# #+#     #+# #+#        #+#
+#  #########  ###     ### ########## ##########
+#        ::::::::      :::     :::     ::: :::::::::: ::::::::
+#      :+:    :+:   :+: :+:   :+:     :+: :+:       :+:    :+:
+#     +:+         +:+   +:+  +:+     +:+ +:+       +:+
+#    +#++:++#++ +#++:++#++: +#+     +:+ +#++:++#  +#++:++#++
+#          +#+ +#+     +#+  +#+   +#+  +#+              +#+
+#  #+#    #+# #+#     #+#   #+#+#+#   #+#       #+#    #+#
+#  ########  ###     ###     ###     ########## ########
+
+

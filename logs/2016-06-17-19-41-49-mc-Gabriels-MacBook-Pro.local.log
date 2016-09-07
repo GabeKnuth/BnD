@@ -1,0 +1,68 @@
+2016-06-17 19:41:50,204 : INFO : kivy : Factory: 179 symbols loaded
+2016-06-17 19:41:50,293 : INFO : kivy : Image: Providers: img_tex, img_imageio, img_dds, img_gif, img_sdl2 (img_pil, img_ffpyplayer ignored)
+2016-06-17 19:41:50,427 : INFO : kivy : VideoGstplayer: Using Gstreamer 1.4.5.0
+2016-06-17 19:41:50,427 : INFO : kivy : Video: Provider: gstplayer
+2016-06-17 19:41:50,439 : INFO : kivy : Loading MPF-MC controller
+2016-06-17 19:41:50,439 : INFO : mpfmc : Mission Pinball Framework Media Controller v0.30.0.dev496
+2016-06-17 19:41:50,439 : INFO : mpfmc : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-06-17 19:41:50,440 : INFO : mpfmc : Starting clock at 60.0Hz
+2016-06-17 19:41:50,445 : INFO : kivy : Text: Provider: sdl2
+2016-06-17 19:41:50,661 : INFO : kivy : OSC: using <multiprocessing> for socket
+2016-06-17 19:41:50,663 : INFO : kivy : Window: Provider: sdl2
+2016-06-17 19:41:50,766 : INFO : kivy : GL: OpenGL version <b'2.1 INTEL-10.8.77'>
+2016-06-17 19:41:50,766 : INFO : kivy : GL: OpenGL vendor <b'Intel Inc.'>
+2016-06-17 19:41:50,766 : INFO : kivy : GL: OpenGL renderer <b'Intel(R) Iris(TM) Graphics 6100'>
+2016-06-17 19:41:50,766 : INFO : kivy : GL: OpenGL parsed version: 2, 1
+2016-06-17 19:41:50,766 : INFO : kivy : GL: Shading version <b'1.20'>
+2016-06-17 19:41:50,766 : INFO : kivy : GL: Texture max size <16384>
+2016-06-17 19:41:50,766 : INFO : kivy : GL: Texture max units <16>
+2016-06-17 19:41:50,781 : INFO : kivy : Window: auto add sdl2 input provider
+2016-06-17 19:41:50,781 : INFO : kivy : Window: virtual keyboard not allowed, single mode, not docked
+2016-06-17 19:41:50,783 : INFO : SoundSystem : SoundSystem: Using default 'sound_system' settings
+2016-06-17 19:41:50,804 : INFO : AudioInterface : Initialized 0.30.0-dev16
+2016-06-17 19:41:50,807 : INFO : kivy : Base: Start application main loop
+2016-06-17 19:41:50,896 : INFO : kivy : Base: Leaving application in progress...
+2016-06-17 19:41:50,896 : ERROR : kivy : Your config contains a value for the setting "widgets:text:widgets:text:width", but this is not a valid setting name.
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/commands/mc.py", line 149, in __init__
+    machine_path=machine_path).run()
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/app.py", line 828, in run
+    runTouchApp()
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/base.py", line 487, in runTouchApp
+    EventLoop.window.mainloop()
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/core/window/window_sdl2.py", line 619, in mainloop
+    self._mainloop()
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/core/window/window_sdl2.py", line 362, in _mainloop
+    EventLoop.idle()
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/base.py", line 327, in idle
+    Clock.tick()
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/clock.py", line 515, in tick
+    self._process_events()
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/clock.py", line 647, in _process_events
+    event.tick(self._last_tick, remove)
+  File "/Applications/MPF.app/Contents/Resources/kivy/kivy/clock.py", line 406, in tick
+    ret = callback(self._dt)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/uix/display.py", line 122, in _displays_initialized
+    self.mc.displays_initialized()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/core/mc.py", line 199, in displays_initialized
+    self._init()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/core/mc.py", line 222, in _init
+    self.events.process_event_queue()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 481, in process_event_queue
+    **event[3])
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 416, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/core/config_collection.py", line 47, in create_entries_from_root_config
+    self.create_entries(self.mc.machine_config[self.config_section])
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/core/config_collection.py", line 58, in create_entries
+    self[name] = self.process_config(settings)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/config_collections/slide.py", line 29, in process_config
+    config['widgets'][i] = self.mc.widgets.process_widget(widget)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpfmc/config_collections/widget.py", line 73, in process_widget
+    config['type']).lower(), config, base_spec='widgets:common')
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/config_validator.py", line 1257, in validate_config
+    validation_failure_info)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/config_validator.py", line 1390, in check_for_invalid_sections
+    'setting "' + path_string + '", but this is not a valid '
+AssertionError: Your config contains a value for the setting "widgets:text:widgets:text:width", but this is not a valid setting name.
+2016-06-17 19:41:50,901 : INFO : kivy : Stopping child threads... (1 remaining)

@@ -1,0 +1,45 @@
+2016-04-12 21:16:55,532 : INFO : Machine : Mission Pinball Framework v0.30.0.dev887
+2016-04-12 21:16:55,536 : INFO : Machine : Loading config from original files
+2016-04-12 21:16:55,666 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-04-12 21:16:55,828 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-04-12 21:16:55,855 : INFO : FAST : Configuring FAST hardware.
+2016-04-12 21:16:55,856 : INFO : Machine : Loading core modules...
+2016-04-12 21:16:56,184 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-04-12 21:16:56,184 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-04-12 21:16:57,701 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-04-12 21:16:57,702 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-04-12 21:16:59,220 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-04-12 21:16:59,236 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-04-12 21:16:59,252 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-04-12 21:16:59,268 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-04-12 21:16:59,366 : INFO : DeviceManager : Loading devices...
+2016-04-12 21:16:59,430 : INFO : FAST : Received SA: 01,00,0B,00000000002D00001F0100
+2016-04-12 21:16:59,451 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-04-12 21:16:59,452 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-04-12 21:16:59,453 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-04-12 21:16:59,453 : INFO : Machine : Loading plugins...
+2016-04-12 21:16:59,473 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-04-12 21:16:59,473 : INFO : SwitchController : Dumping current active switches
+2016-04-12 21:16:59,473 : INFO : SwitchController : Active Switch|s_droptarget1
+2016-04-12 21:16:59,474 : INFO : SwitchController : Active Switch|s_droptarget3
+2016-04-12 21:16:59,474 : INFO : SwitchController : Active Switch|s_droptarget4
+2016-04-12 21:16:59,474 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-04-12 21:16:59,474 : INFO : SwitchController : Active Switch|s_droptarget5
+2016-04-12 21:16:59,475 : INFO : FAST : Received SA: 01,00,0B,00000000002D00001F0100
+2016-04-12 21:16:59,475 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-04-12 21:16:59,476 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-04-12 21:16:59,476 : INFO : Mode Controller : | attract : 10                        |
+2016-04-12 21:16:59,476 : INFO : Mode Controller : +-------------------------------------+
+2016-04-12 21:17:03,320 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-04-12 21:17:07,946 : INFO : SwitchController : <<<<< switch: s_jukeboxopto, State:1 >>>>>
+2016-04-12 21:17:08,449 : INFO : SwitchController : <<<<< switch: s_jukeboxopto, State:0 >>>>>
+2016-04-12 21:17:08,902 : INFO : SwitchController : <<<<< switch: s_jukeboxopto, State:1 >>>>>
+2016-04-12 21:17:08,974 : INFO : SwitchController : <<<<< switch: s_jukeboxopto, State:0 >>>>>
+2016-04-12 21:17:24,061 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-04-12 21:17:24,853 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-04-12 21:17:25,812 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-04-12 21:17:26,326 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-04-12 21:17:34,877 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-04-12 21:17:44,541 : INFO : Machine : Shutting down...
+2016-04-12 21:17:44,542 : INFO : Machine : Actual MPF loop rate: 70.1 Hz
+2016-04-12 21:17:44,542 : INFO : root : MPF run loop ended.

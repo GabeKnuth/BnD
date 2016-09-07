@@ -1,0 +1,17 @@
+2016-05-13 23:41:33,519 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1482
+2016-05-13 23:41:33,519 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-13 23:41:33,748 : INFO : Machine : Loading config from original files
+2016-05-13 23:41:33,796 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-05-13 23:41:33,939 : INFO : Machine : Config file cache created: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-13 23:41:33,940 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-13 23:41:33,948 : INFO : FAST : Configuring FAST hardware.
+2016-05-13 23:41:33,949 : INFO : Machine : Loading core modules...
+2016-05-13 23:41:33,958 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-05-13 23:41:33,959 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-05-13 23:41:35,476 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:41:35,479 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-05-13 23:41:36,996 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:41:37,013 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:41:37,028 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:41:37,030 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-05-13 23:41:37,077 : INFO : DeviceManager : Loading devices...

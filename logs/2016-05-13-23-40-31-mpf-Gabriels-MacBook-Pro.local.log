@@ -1,0 +1,39 @@
+2016-05-13 23:40:31,690 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1482
+2016-05-13 23:40:31,690 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-13 23:40:31,968 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-13 23:40:31,970 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-13 23:40:31,985 : INFO : FAST : Configuring FAST hardware.
+2016-05-13 23:40:31,985 : INFO : Machine : Loading core modules...
+2016-05-13 23:40:31,997 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-05-13 23:40:31,997 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-05-13 23:40:33,515 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:40:33,516 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-05-13 23:40:35,034 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-05-13 23:40:35,051 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:40:35,066 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-05-13 23:40:35,068 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-05-13 23:40:35,121 : INFO : DeviceManager : Loading devices...
+2016-05-13 23:40:35,154 : ERROR : ConfigProcessor : Your config contains a value for the setting "shots:left_lane:led", but this is not a valid setting name.
+2016-05-13 23:40:35,154 : ERROR : root : Your config contains a value for the setting "shots:left_lane:led", but this is not a valid setting name.
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 127, in __init__
+    self._run_init_phases()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 148, in _run_init_phases
+    self.events.process_event_queue()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 482, in process_event_queue
+    **event[3])
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/events.py", line 417, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/device_manager.py", line 60, in _load_device_modules
+    self.load_devices_config(validate=True)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/device_manager.py", line 105, in load_devices_config
+    config[device_name] = collection[device_name].validate_and_parse_config(config[device_name], False)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/device.py", line 50, in validate_and_parse_config
+    self.config_section, config, self.name)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/config_validator.py", line 1226, in validate_config
+    validation_failure_info)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/config_validator.py", line 1359, in check_for_invalid_sections
+    'setting "' + path_string + '", but this is not a valid '
+AssertionError: Your config contains a value for the setting "shots:left_lane:led", but this is not a valid setting name.

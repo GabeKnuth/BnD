@@ -1,0 +1,19 @@
+2016-05-13 17:47:59,678 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1482
+2016-05-13 17:47:59,679 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-05-13 17:47:59,896 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-05-13 17:47:59,897 : INFO : Machine : Starting clock at 30.0Hz
+2016-05-13 17:47:59,903 : INFO : FAST : Configuring FAST hardware.
+2016-05-13 17:47:59,903 : INFO : Machine : Loading core modules...
+2016-05-13 17:47:59,910 : ERROR : root : 'pololu_maestro'
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 120, in __init__
+    self._initialize_platforms()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 178, in _initialize_platforms
+    platform.initialize()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/pololu_maestro.py", line 39, in initialize
+    None)
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 789, in get_platform_sections
+    if self.config['hardware'][platform_section] != 'default':
+KeyError: 'pololu_maestro'

@@ -1,0 +1,42 @@
+2016-03-25 00:14:41,466 : INFO : Machine : Mission Pinball Framework v0.30.0.dev700
+2016-03-25 00:14:41,466 : INFO : Machine : Loading config from original files
+2016-03-25 00:14:41,530 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-25 00:14:41,669 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-25 00:14:41,674 : INFO : FAST : Configuring FAST hardware.
+2016-03-25 00:14:41,674 : INFO : Machine : Loading core modules...
+2016-03-25 00:14:41,847 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-25 00:14:41,847 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-25 00:14:43,365 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:14:43,366 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-25 00:14:44,884 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:14:44,900 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:14:44,916 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:14:44,931 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-25 00:14:45,018 : INFO : DeviceManager : Loading devices...
+2016-03-25 00:14:45,035 : ERROR : root : Config validation error: Entry ball_devices:bd_drain:eject_coil:c_drain_eject is not valid
+Traceback (most recent call last):
+  File "/Users/gabe/pinball/mpf30/mpf/commands/core.py", line 135, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 111, in __init__
+    self._run_init_phases()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 127, in _run_init_phases
+    self.events.process_event_queue()
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 477, in process_event_queue
+    **event[3])
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 412, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 60, in _load_device_modules
+    self.load_devices_config(validate=True)
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 106, in load_devices_config
+    device_cls.config_section, config[device_name], device_name)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1125, in validate_config
+    validation_failure_info=(validation_failure_info, k))
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1165, in validate_config_item
+    validation_failure_info)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1408, in validate_item
+    return self.validator_list[validator](item, param, validation_failure_info=validation_failure_info)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1262, in _validate_type_machine
+    self.validation_error(item, validation_failure_info)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1424, in validation_error
+    item))
+AssertionError: Config validation error: Entry ball_devices:bd_drain:eject_coil:c_drain_eject is not valid

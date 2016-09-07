@@ -1,0 +1,49 @@
+2016-03-26 00:22:19,567 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-26 00:22:19,568 : INFO : Machine : Loading config from original files
+2016-03-26 00:22:19,636 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-26 00:22:19,774 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-26 00:22:19,779 : INFO : FAST : Configuring FAST hardware.
+2016-03-26 00:22:19,779 : INFO : Machine : Loading core modules...
+2016-03-26 00:22:19,961 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-26 00:22:19,961 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-26 00:22:21,478 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 00:22:21,479 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-26 00:22:22,998 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 00:22:23,014 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 00:22:23,030 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 00:22:23,046 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-26 00:22:23,132 : INFO : DeviceManager : Loading devices...
+2016-03-26 00:22:23,186 : INFO : FAST : Received SA: 01,00,0B,00002400002D0000020100
+2016-03-26 00:22:23,200 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 00:22:23,201 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 00:22:23,202 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 00:22:23,203 : INFO : Machine : Loading plugins...
+2016-03-26 00:22:23,219 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 00:22:23,219 : INFO : SwitchController : Dumping current active switches
+2016-03-26 00:22:23,219 : INFO : SwitchController : Active Switch|s_drain
+2016-03-26 00:22:23,219 : INFO : SwitchController : Active Switch|s_troughenter
+2016-03-26 00:22:23,219 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-03-26 00:22:23,220 : INFO : FAST : Received SA: 01,00,0B,00002400002D0000020100
+2016-03-26 00:22:23,222 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-03-26 00:22:23,223 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 00:22:23,223 : INFO : Mode Controller : | attract : 10                        |
+2016-03-26 00:22:23,223 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 00:22:24,995 : INFO : SwitchController : <<<<< switch: s_start, State:1 >>>>>
+2016-03-26 00:22:25,155 : INFO : SwitchController : <<<<< switch: s_start, State:0 >>>>>
+2016-03-26 00:22:25,155 : INFO : Mode.game : Mode Starting. Priority: 20
+2016-03-26 00:22:25,156 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 00:22:25,157 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 00:22:25,157 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 00:22:25,158 : INFO : Mode Controller : | game : 20                           |
+2016-03-26 00:22:25,158 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 00:22:25,159 : INFO : Mode.game : Player added successfully. Total players: 1
+2016-03-26 00:22:25,160 : INFO : Mode.game : ***************************************************
+2016-03-26 00:22:25,160 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-26 00:22:25,160 : INFO : Mode.game : **                                               **
+2016-03-26 00:22:25,161 : INFO : Mode.game : **    Player: 1    Ball: 1   Score: 0            **
+2016-03-26 00:22:25,161 : INFO : Mode.game : **                                               **
+2016-03-26 00:22:25,161 : INFO : Mode.game : ***************************************************
+2016-03-26 00:22:25,161 : INFO : Mode.game : ***************************************************
+2016-03-26 00:22:25,705 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-26 00:22:29,152 : INFO : Machine : Actual MPF loop rate: 68.21 Hz
+2016-03-26 00:22:29,152 : INFO : root : MPF run loop ended.

@@ -1,0 +1,153 @@
+2016-03-21 23:59:06,472 : INFO : Machine : Mission Pinball Framework v0.30.0.dev700
+2016-03-21 23:59:06,472 : DEBUG : Machine : Command line arguments: {'mpfconfigfile': '/Users/gabe/pinball/mpf30/mpf/mpfconfig.yaml', 'consoleloglevel': True, 'loglevel': 10, 'bcp': True, 'configfile': ['config'], 'pause': True, 'no_load_cache': False, 'create_config_cache': True, 'logfile': 'logs/2016-03-21-23-59-06-mpf-Gabriels-MacBook-Pro.local.log', 'force_platform': None}
+2016-03-21 23:59:06,473 : DEBUG : Machine : Python version: 3.5.0
+2016-03-21 23:59:06,473 : DEBUG : Machine : Platform: darwin
+2016-03-21 23:59:06,473 : DEBUG : Machine : Python executable location: /Applications/Kivy.app/Contents/Resources/python
+2016-03-21 23:59:06,473 : DEBUG : Machine : 32-bit Python? False
+2016-03-21 23:59:06,473 : DEBUG : Clock : Starting clock (maximum frames per second=60.0)
+2016-03-21 23:59:06,474 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method MachineController._check_crash_queue of <mpf.core.machine.MachineController object at 0x102e333c8>>, timeout=1, priority=1)
+2016-03-21 23:59:06,474 : DEBUG : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-03-21 23:59:06,474 : INFO : Machine : Loading config from original files
+2016-03-21 23:59:06,474 : DEBUG : YAML File Interface : Loading file: /Users/gabe/pinball/mpf30/mpf/mpfconfig.yaml
+2016-03-21 23:59:06,540 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-21 23:59:06,541 : DEBUG : YAML File Interface : Loading file: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml
+2016-03-21 23:59:06,693 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-21 23:59:06,700 : INFO : FAST : Configuring FAST hardware.
+2016-03-21 23:59:06,700 : DEBUG : Machine : Setting default platform to 'fast'
+2016-03-21 23:59:06,700 : INFO : Machine : Loading core modules...
+2016-03-21 23:59:06,700 : DEBUG : Machine : Loading 'mpf.core.events.EventManager' core module
+2016-03-21 23:59:06,701 : DEBUG : Machine : Loading 'mpf.core.mode_controller.ModeController' core module
+2016-03-21 23:59:06,702 : DEBUG : Events : Registered ModeController._load_modes as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-03-21 23:59:06,702 : DEBUG : Events : Registered ModeController._ball_ending as a handler for 'ball_ending', priority: 0, kwargs: {}
+2016-03-21 23:59:06,702 : DEBUG : Events : Registered ModeController._ball_starting as a handler for 'ball_starting', priority: 0, kwargs: {}
+2016-03-21 23:59:06,703 : DEBUG : Events : Registered ModeController._player_added as a handler for 'player_add_success', priority: 0, kwargs: {}
+2016-03-21 23:59:06,703 : DEBUG : Events : Registered ModeController._player_turn_start as a handler for 'player_turn_start', priority: 1000000, kwargs: {}
+2016-03-21 23:59:06,703 : DEBUG : Events : Registered ModeController._player_turn_stop as a handler for 'player_turn_stop', priority: 1000000, kwargs: {}
+2016-03-21 23:59:06,703 : DEBUG : Machine : Loading 'mpf.core.config_processor.ConfigProcessor' core module
+2016-03-21 23:59:06,703 : DEBUG : Machine : Loading 'mpf.core.shot_profile_manager.ShotProfileManager' core module
+2016-03-21 23:59:06,704 : DEBUG : ShotProfileManager : Registering Shot Profile: 'default'
+2016-03-21 23:59:06,900 : DEBUG : ShotProfileManager : Processed 'default' profile configuration: {'player_variable': '%_default', 'rotation_pattern': deque(['right']), 'state_names_to_not_rotate': [], 'states': [{'repeat': True, 'blend': False, 'speed': 1.0, 'reset': False, 'loops': 0, 'show': None, 'sync_ms': 0, 'name': 'unlit', 'script': 'off', 'hold': True}, {'repeat': True, 'blend': False, 'speed': 1.0, 'reset': False, 'loops': 0, 'show': None, 'sync_ms': 0, 'name': 'lit', 'script': 'on', 'hold': True}], 'block': True, 'show_when_disabled': True, 'state_names_to_rotate': [], 'show': None, 'loop': False}
+2016-03-21 23:59:06,901 : DEBUG : Mode Controller : Registering <bound method ShotProfileManager.mode_start_for_shots of <mpf.core.shot_profile_manager.ShotProfileManager object at 0x102e7ec18>> as a mode start method. Config section: shots, priority: 0, kwargs: {}
+2016-03-21 23:59:06,901 : DEBUG : Mode Controller : Registering <bound method ShotProfileManager.mode_start_for_shot_groups of <mpf.core.shot_profile_manager.ShotProfileManager object at 0x102e7ec18>> as a mode start method. Config section: shot_groups, priority: 0, kwargs: {}
+2016-03-21 23:59:06,901 : DEBUG : Events : Registered ShotProfileManager._player_turn_start as a handler for 'player_turn_start', priority: 1000000, kwargs: {}
+2016-03-21 23:59:06,901 : DEBUG : Events : Registered ShotProfileManager._player_turn_stop as a handler for 'player_turn_stop', priority: 0, kwargs: {}
+2016-03-21 23:59:06,901 : DEBUG : Machine : Loading 'mpf.core.device_manager.DeviceManager' core module
+2016-03-21 23:59:06,901 : DEBUG : Events : Registered DeviceManager._load_device_modules as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:06,901 : DEBUG : Events : Registered DeviceManager.create_machinewide_device_control_events as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-03-21 23:59:06,901 : DEBUG : Events : Registered DeviceManager.create_collection_control_events as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-03-21 23:59:06,902 : DEBUG : Machine : Loading 'mpf.core.switch_controller.SwitchController' core module
+2016-03-21 23:59:06,902 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method SwitchController._tick of <mpf.core.switch_controller.SwitchController object at 0x102ea7ba8>>, timeout=0, priority=1000)
+2016-03-21 23:59:06,902 : DEBUG : Events : Registered SwitchController._initialize_switches as a handler for 'init_phase_2', priority: 1000, kwargs: {}
+2016-03-21 23:59:06,902 : DEBUG : Events : Registered SwitchController.log_active_switches as a handler for 'machine_reset_phase_3', priority: 1, kwargs: {}
+2016-03-21 23:59:06,902 : DEBUG : Machine : Loading 'mpf.core.ball_controller.BallController' core module
+2016-03-21 23:59:06,903 : DEBUG : BallController : Loading the BallController
+2016-03-21 23:59:06,903 : DEBUG : Events : Registered BallController.request_to_start_game as a handler for 'request_to_start_game', priority: 1, kwargs: {}
+2016-03-21 23:59:06,903 : DEBUG : Events : Registered BallController._initialize as a handler for 'machine_reset_phase_2', priority: 1, kwargs: {}
+2016-03-21 23:59:06,903 : DEBUG : Events : Registered BallController._init2 as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-03-21 23:59:06,903 : DEBUG : Machine : Loading 'mpf.core.assets.AssetManager' core module
+2016-03-21 23:59:06,904 : DEBUG : Mode Controller : Registering <bound method AssetManager._load_mode_assets of <mpf.core.assets.AssetManager object at 0x102e9f048>> as a mode start method. Config section: None, priority: 0, kwargs: {}
+2016-03-21 23:59:06,904 : DEBUG : Events : Registered AssetManager._create_assets as a handler for 'init_phase_3', priority: 1, kwargs: {}
+2016-03-21 23:59:06,904 : DEBUG : Events : Registered AssetManager._bcp_client_asset_load as a handler for 'assets_to_load', priority: 1, kwargs: {}
+2016-03-21 23:59:06,904 : DEBUG : Machine : Loading 'mpf.core.show_controller.ShowController' core module
+2016-03-21 23:59:06,905 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method ShowController._tick of <mpf.core.show_controller.ShowController object at 0x102ea9d30>>, timeout=0, priority=1)
+2016-03-21 23:59:06,905 : DEBUG : Events : Registered ShowController._initialize as a handler for 'init_phase_3', priority: 1, kwargs: {}
+2016-03-21 23:59:06,905 : DEBUG : Machine : Loading 'mpf.core.bcp.BCP' core module
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'ball_started', priority: 1, kwargs: {'name': 'ball_started'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'ball_ended', priority: 1, kwargs: {'name': 'ball_ended'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'player_add_success', priority: 1, kwargs: {'name': 'player_add_success'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'tilt', priority: 1, kwargs: {'command': 'tilt'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'player_turn_start', priority: 1, kwargs: {'params': {'player_num': '%number'}, 'command': 'player_turn_start'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'ball_ending', priority: 1, kwargs: {'command': 'ball_end'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'slam_tilt', priority: 1, kwargs: {'command': 'slam_tilt'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'ball_started', priority: 1, kwargs: {'params': {'player_num': '%player', 'ball': '%ball'}, 'command': 'ball_start'}
+2016-03-21 23:59:06,906 : DEBUG : Events : Registered BCP._bcp_event_callback as a handler for 'tilt_warning', priority: 1, kwargs: {'params': {'warnings': '%warnings', 'warnings_remaining': '%warnings_remaining'}, 'command': 'tilt_warning'}
+2016-03-21 23:59:06,907 : DEBUG : Events : Registered BCP.bcp_trigger as a handler for 'player_score', priority: 1, kwargs: {'name': 'player_score'}
+2016-03-21 23:59:06,907 : DEBUG : Events : Registered BCP._setup_bcp_connections as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-03-21 23:59:06,907 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method BCP.get_bcp_messages of <BCP Module>>, timeout=0, priority=1)
+2016-03-21 23:59:06,907 : DEBUG : Events : Registered BCP.bcp_player_added as a handler for 'player_add_success', priority: 1, kwargs: {}
+2016-03-21 23:59:06,907 : DEBUG : Events : Registered BCP.bcp_reset as a handler for 'machine_reset_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:06,907 : DEBUG : Events : Registered BCP.increase_volume as a handler for 'increase_volume', priority: 1, kwargs: {}
+2016-03-21 23:59:06,907 : DEBUG : Events : Registered BCP.decrease_volume as a handler for 'decrease_volume', priority: 1, kwargs: {}
+2016-03-21 23:59:06,908 : DEBUG : Events : Registered BCP.enable_volume_keys as a handler for 'enable_volume_keys', priority: 1, kwargs: {}
+2016-03-21 23:59:06,908 : DEBUG : Events : Registered BCP.disable_volume_keys as a handler for 'disable_volume_keys', priority: 1, kwargs: {}
+2016-03-21 23:59:06,908 : DEBUG : Events : Registered BCP.get_led_coordinates as a handler for 'bcp_get_led_coordinates', priority: 1, kwargs: {}
+2016-03-21 23:59:06,908 : DEBUG : Mode Controller : Registering <bound method BCP.bcp_mode_start of <BCP Module>> as a mode start method. Config section: mode, priority: 0, kwargs: {}
+2016-03-21 23:59:06,908 : DEBUG : Machine : Loading 'mpf.core.logic_blocks.LogicBlocks' core module
+2016-03-21 23:59:06,909 : DEBUG : Mode Controller : Registering <bound method LogicBlocks._process_config of <mpf.core.logic_blocks.LogicBlocks object at 0x102eafe48>> as a mode start method. Config section: logic_blocks, priority: 0, kwargs: {}
+2016-03-21 23:59:06,909 : DEBUG : Events : Registered LogicBlocks._create_player_logic_blocks as a handler for 'player_add_success', priority: 1, kwargs: {}
+2016-03-21 23:59:06,909 : DEBUG : Events : Registered LogicBlocks.player_turn_start as a handler for 'player_turn_start', priority: 1, kwargs: {}
+2016-03-21 23:59:06,909 : DEBUG : Events : Registered LogicBlocks.player_turn_stop as a handler for 'player_turn_stop', priority: 1, kwargs: {}
+2016-03-21 23:59:06,909 : DEBUG : Machine : Loading 'mpf.core.scoring.ScoreController' core module
+2016-03-21 23:59:06,909 : DEBUG : Score : Loading the Score Controller
+2016-03-21 23:59:06,909 : DEBUG : Mode Controller : Registering <bound method ScoreController.mode_start of <mpf.core.scoring.ScoreController object at 0x102eaf898>> as a mode start method. Config section: scoring, priority: 0, kwargs: {}
+2016-03-21 23:59:06,910 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-21 23:59:06,910 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-21 23:59:08,413 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141C'
+2016-03-21 23:59:08,428 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-21 23:59:08,429 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-21 23:59:09,931 : DEBUG : FAST : Sending 'ID:' command to port '/dev/tty.usbserial-141B'
+2016-03-21 23:59:09,947 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-21 23:59:09,947 : DEBUG : FAST : Querying FAST IO boards...
+2016-03-21 23:59:09,963 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-21 23:59:09,979 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-21 23:59:09,995 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-21 23:59:10,077 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.coils> as a mode start method. Config section: coil_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,078 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,078 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.triggers> as a mode start method. Config section: trigger_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,079 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,079 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.gis> as a mode start method. Config section: gi_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,079 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,080 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.random_events> as a mode start method. Config section: random_event_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,080 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,080 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.flashers> as a mode start method. Config section: flasher_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,081 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,081 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.lights> as a mode start method. Config section: light_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,081 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,081 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.bcp> as a mode start method. Config section: bcp_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,082 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,082 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.events> as a mode start method. Config section: event_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,082 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,083 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.shows> as a mode start method. Config section: show_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,083 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,083 : DEBUG : Mode Controller : Registering <bound method ConfigPlayer.register_player_events of ConfigPlayer.leds> as a mode start method. Config section: led_player, priority: 0, kwargs: {}
+2016-03-21 23:59:10,084 : DEBUG : Events : Registered ConfigPlayer._initialize as a handler for 'init_phase_1', priority: 1, kwargs: {}
+2016-03-21 23:59:10,084 : DEBUG : Events : Registered MachineController.power_off as a handler for 'shutdown', priority: 1, kwargs: {}
+2016-03-21 23:59:10,084 : DEBUG : Events : Registered MachineController.power_off as a handler for 'sw_shutdown', priority: 1, kwargs: {}
+2016-03-21 23:59:10,084 : DEBUG : Events : Registered MachineController.stop as a handler for 'quit', priority: 1, kwargs: {}
+2016-03-21 23:59:10,084 : DEBUG : Events : Registered MachineController.stop as a handler for 'sw_quit', priority: 1, kwargs: {}
+2016-03-21 23:59:10,084 : DEBUG : DataInterface : Loading machine_vars from /Users/gabe/Dropbox/Pinball/Gabe/bnd/data/machine_vars.yaml
+2016-03-21 23:59:10,084 : DEBUG : DataInterface : Didn't find the machine_vars file. No prob. We'll create it when we save.
+2016-03-21 23:59:10,084 : DEBUG : Events : ^^^^ Posted event 'init_phase_1'. Type: None, Callback: None, Args: {}
+2016-03-21 23:59:10,085 : DEBUG : Events : ============== EVENTS QUEUE =============
+2016-03-21 23:59:10,085 : DEBUG : Events : init_phase_1, None, None, {}
+2016-03-21 23:59:10,085 : DEBUG : Events : =========================================
+2016-03-21 23:59:10,085 : DEBUG : Events : ^^^^ Processing event 'init_phase_1'. Type: None, Callback: None, Args: {}
+2016-03-21 23:59:10,085 : DEBUG : Events : DeviceManager._load_device_modules (priority: 1) responding to event 'init_phase_1' with args {}
+2016-03-21 23:59:10,085 : INFO : DeviceManager : Loading devices...
+2016-03-21 23:59:10,088 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method Led.update_leds of <class 'mpf.devices.led.Led'>>, timeout=0, priority=-100)
+2016-03-21 23:59:10,092 : DEBUG : Events : Registered BallSearch.request_to_start_game as a handler for 'request_to_start_game', priority: 1, kwargs: {}
+2016-03-21 23:59:10,104 : ERROR : root : count is not in list of allowed values target,switch,event,fake
+Traceback (most recent call last):
+  File "/Users/gabe/pinball/mpf30/mpf/commands/core.py", line 135, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 111, in __init__
+    self._run_init_phases()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 127, in _run_init_phases
+    self.events.process_event_queue()
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 477, in process_event_queue
+    **event[3])
+  File "/Users/gabe/pinball/mpf30/mpf/core/events.py", line 412, in _process_event
+    result = handler[0](**merged_kwargs)
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 60, in _load_device_modules
+    self.load_devices_config(validate=True)
+  File "/Users/gabe/pinball/mpf30/mpf/core/device_manager.py", line 106, in load_devices_config
+    device_cls.config_section, config[device_name], device_name)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1125, in validate_config
+    validation_failure_info=(validation_failure_info, k))
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1165, in validate_config_item
+    validation_failure_info)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1408, in validate_item
+    return self.validator_list[validator](item, param, validation_failure_info=validation_failure_info)
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_validator.py", line 1251, in _validate_type_enum
+    raise ValueError("{} is not in list of allowed values {}".format(item, str(param)))
+ValueError: count is not in list of allowed values target,switch,event,fake

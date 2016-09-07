@@ -1,0 +1,40 @@
+2016-03-26 20:11:58,196 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-26 20:11:58,196 : INFO : Machine : Loading config from original files
+2016-03-26 20:11:58,271 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-26 20:11:58,424 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-26 20:11:58,429 : INFO : FAST : Configuring FAST hardware.
+2016-03-26 20:11:58,429 : INFO : Machine : Loading core modules...
+2016-03-26 20:11:58,641 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-26 20:11:58,641 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-26 20:12:00,159 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 20:12:00,161 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-26 20:12:01,679 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 20:12:01,695 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 20:12:01,711 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 20:12:01,727 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-26 20:12:01,813 : INFO : DeviceManager : Loading devices...
+2016-03-26 20:12:01,877 : INFO : FAST : Received SA: 01,00,0B,00000400002D00001F0900
+2016-03-26 20:12:01,877 : INFO : FAST : Received SA: 01,00,0B,00000400002D00001F0900
+2016-03-26 20:12:01,890 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 20:12:01,892 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 20:12:01,893 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 20:12:01,893 : INFO : Machine : Loading plugins...
+2016-03-26 20:12:01,910 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 20:12:01,910 : INFO : SwitchController : Dumping current active switches
+2016-03-26 20:12:01,910 : INFO : SwitchController : Active Switch|s_topkicker
+2016-03-26 20:12:01,910 : INFO : SwitchController : Active Switch|s_droptarget1
+2016-03-26 20:12:01,910 : INFO : SwitchController : Active Switch|s_droptarget5
+2016-03-26 20:12:01,910 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-03-26 20:12:01,911 : INFO : SwitchController : Active Switch|s_troughenter
+2016-03-26 20:12:01,911 : INFO : SwitchController : Active Switch|s_droptarget4
+2016-03-26 20:12:01,911 : INFO : SwitchController : Active Switch|s_droptarget3
+2016-03-26 20:12:01,913 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-03-26 20:12:01,914 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 20:12:01,914 : INFO : Mode Controller : | attract : 10                        |
+2016-03-26 20:12:01,914 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 20:12:02,044 : INFO : SwitchController : <<<<< switch: s_topkicker, State:0 >>>>>
+2016-03-26 20:12:03,007 : INFO : SwitchController : <<<<< switch: s_topkicker, State:1 >>>>>
+2016-03-26 20:12:11,938 : INFO : SwitchController : <<<<< switch: s_topkicker, State:0 >>>>>
+2016-03-26 20:12:12,918 : INFO : SwitchController : <<<<< switch: s_topkicker, State:1 >>>>>
+2016-03-26 20:12:14,331 : INFO : Machine : Actual MPF loop rate: 70.45 Hz
+2016-03-26 20:12:14,331 : INFO : root : MPF run loop ended.

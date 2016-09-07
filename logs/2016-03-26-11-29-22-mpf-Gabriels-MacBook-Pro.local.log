@@ -1,0 +1,28 @@
+2016-03-26 11:29:22,552 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-26 11:29:22,552 : DEBUG : Machine : Command line arguments: {'consoleloglevel': True, 'no_load_cache': False, 'loglevel': 10, 'logfile': 'logs/2016-03-26-11-29-22-mpf-Gabriels-MacBook-Pro.local.log', 'pause': True, 'force_platform': None, 'bcp': True, 'configfile': ['config'], 'create_config_cache': True, 'mpfconfigfile': '/Users/gabe/pinball/mpf30/mpf/mpfconfig.yaml'}
+2016-03-26 11:29:22,553 : DEBUG : Machine : Python version: 3.5.0
+2016-03-26 11:29:22,553 : DEBUG : Machine : Platform: darwin
+2016-03-26 11:29:22,553 : DEBUG : Machine : Python executable location: /Applications/Kivy.app/Contents/Resources/python
+2016-03-26 11:29:22,553 : DEBUG : Machine : 32-bit Python? False
+2016-03-26 11:29:22,553 : DEBUG : Clock : Starting clock (maximum frames per second=60.0)
+2016-03-26 11:29:22,554 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method MachineController._check_crash_queue of <mpf.core.machine.MachineController object at 0x104dcc2b0>>, timeout=1, priority=1)
+2016-03-26 11:29:22,555 : DEBUG : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-03-26 11:29:22,556 : INFO : Machine : Loading config from original files
+2016-03-26 11:29:22,556 : DEBUG : YAML File Interface : Loading file: /Users/gabe/pinball/mpf30/mpf/mpfconfig.yaml
+2016-03-26 11:29:22,854 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-26 11:29:22,854 : DEBUG : YAML File Interface : Loading file: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml
+2016-03-26 11:29:23,271 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-26 11:29:23,340 : INFO : FAST : Configuring FAST hardware.
+2016-03-26 11:29:23,341 : DEBUG : Machine : Setting default platform to 'fast'
+2016-03-26 11:29:23,341 : INFO : Machine : Loading core modules...
+2016-03-26 11:29:23,341 : DEBUG : Machine : Loading 'mpf.core.events.EventManager' core module
+2016-03-26 11:29:23,341 : DEBUG : Machine : Loading 'mpf.core.mode_controller.ModeController' core module
+2016-03-26 11:29:23,346 : DEBUG : Events : Registered ModeController._load_modes as a handler for 'init_phase_2', priority: 1, kwargs: {}
+2016-03-26 11:29:23,348 : DEBUG : Events : Registered ModeController._ball_ending as a handler for 'ball_ending', priority: 0, kwargs: {}
+2016-03-26 11:29:23,348 : DEBUG : Events : Registered ModeController._ball_starting as a handler for 'ball_starting', priority: 0, kwargs: {}
+2016-03-26 11:29:23,349 : DEBUG : Events : Registered ModeController._player_added as a handler for 'player_add_success', priority: 0, kwargs: {}
+2016-03-26 11:29:23,349 : DEBUG : Events : Registered ModeController._player_turn_start as a handler for 'player_turn_start', priority: 1000000, kwargs: {}
+2016-03-26 11:29:23,349 : DEBUG : Events : Registered ModeController._player_turn_stop as a handler for 'player_turn_stop', priority: 1000000, kwargs: {}
+2016-03-26 11:29:23,349 : DEBUG : Machine : Loading 'mpf.core.config_processor.ConfigProcessor' core module
+2016-03-26 11:29:23,349 : DEBUG : Machine : Loading 'mpf.core.shot_profile_manager.ShotProfileManager' core module
+2016-03-26 11:29:23,354 : DEBUG : ShotProfileManager : Registering Shot Profile: 'default'

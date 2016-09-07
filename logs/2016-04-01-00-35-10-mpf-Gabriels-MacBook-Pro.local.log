@@ -1,0 +1,63 @@
+2016-04-01 00:35:10,060 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-04-01 00:35:10,060 : DEBUG : Machine : Command line arguments: {'mpfconfigfile': '/Users/gabe/pinball/mpf30/mpf/mpfconfig.yaml', 'loglevel': 10, 'create_config_cache': True, 'force_platform': None, 'configfile': ['config'], 'logfile': 'logs/2016-04-01-00-35-10-mpf-Gabriels-MacBook-Pro.local.log', 'no_load_cache': False, 'bcp': True, 'pause': True, 'consoleloglevel': True}
+2016-04-01 00:35:10,061 : DEBUG : Machine : Python version: 3.5.0
+2016-04-01 00:35:10,061 : DEBUG : Machine : Platform: darwin
+2016-04-01 00:35:10,061 : DEBUG : Machine : Python executable location: /Applications/Kivy.app/Contents/Resources/python
+2016-04-01 00:35:10,061 : DEBUG : Machine : 32-bit Python? False
+2016-04-01 00:35:10,063 : DEBUG : Clock : Starting clock (maximum frames per second=60.0)
+2016-04-01 00:35:10,063 : DEBUG : Clock : Scheduled a recurring clock callback (callback=<bound method MachineController._check_crash_queue of <mpf.core.machine.MachineController object at 0x10f9bf668>>, timeout=1, priority=1)
+2016-04-01 00:35:10,063 : DEBUG : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-04-01 00:35:10,064 : INFO : Machine : Loading config from original files
+2016-04-01 00:35:10,064 : DEBUG : YAML File Interface : Loading file: /Users/gabe/pinball/mpf30/mpf/mpfconfig.yaml
+2016-04-01 00:35:10,157 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-04-01 00:35:10,158 : DEBUG : YAML File Interface : Loading file: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml
+2016-04-01 00:35:10,215 : DEBUG : YAML File Interface : YAML error found in file /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml. Line 307, Position 4
+2016-04-01 00:35:10,216 : ERROR : root : YAML error found in file /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml. Line 307, Position 4
+Traceback (most recent call last):
+  File "/Users/gabe/pinball/mpf30/mpf/file_interfaces/yaml_interface.py", line 303, in load
+    config = YamlInterface.process(f, round_trip)
+  File "/Users/gabe/pinball/mpf30/mpf/file_interfaces/yaml_interface.py", line 333, in process
+    return Util.keys_to_lower(yaml.load(data_string, Loader=MpfLoader))
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/main.py", line 75, in load
+    return loader.get_single_data()
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/constructor.py", line 57, in get_single_data
+    node = self.get_single_node()
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 46, in get_single_node
+    document = self.compose_document()
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 66, in compose_document
+    node = self.compose_node(None, None)
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 97, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 156, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 97, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/composer.py", line 149, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/parser_.py", line 118, in check_event
+    self.current_event = self.state()
+  File "/Applications/Kivy.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/ruamel/yaml/parser_.py", line 504, in parse_block_mapping_key
+    token.start_mark)
+ruamel.yaml.parser_.ParserError: while parsing a block mapping
+  in "/Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml", line 293, column 3
+expected <block end>, but found '<block mapping start>'
+  in "/Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml", line 307, column 4
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/gabe/pinball/mpf30/mpf/commands/core.py", line 133, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 85, in __init__
+    self._load_config()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 248, in _load_config
+    self._load_config_from_files()
+  File "/Users/gabe/pinball/mpf30/mpf/core/machine.py", line 265, in _load_config_from_files
+    ConfigProcessor.load_config_file(config_file))
+  File "/Users/gabe/pinball/mpf30/mpf/core/config_processor.py", line 95, in load_config_file
+    config = FileManager.load(filename, verify_version, halt_on_error)
+  File "/Users/gabe/pinball/mpf30/mpf/core/file_manager.py", line 155, in load
+    round_trip)
+  File "/Users/gabe/pinball/mpf30/mpf/file_interfaces/yaml_interface.py", line 312, in load
+    "Position {}".format(filename, mark.line+1, mark.column+1))
+ValueError: YAML error found in file /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config.yaml. Line 307, Position 4

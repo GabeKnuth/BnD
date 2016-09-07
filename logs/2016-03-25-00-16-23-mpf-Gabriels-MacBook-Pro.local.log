@@ -1,0 +1,51 @@
+2016-03-25 00:16:23,352 : INFO : Machine : Mission Pinball Framework v0.30.0.dev700
+2016-03-25 00:16:23,352 : INFO : Machine : Loading config from original files
+2016-03-25 00:16:23,424 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-25 00:16:23,575 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-25 00:16:23,580 : INFO : FAST : Configuring FAST hardware.
+2016-03-25 00:16:23,581 : INFO : Machine : Loading core modules...
+2016-03-25 00:16:23,754 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-25 00:16:23,755 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-25 00:16:25,272 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:16:25,274 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-25 00:16:26,792 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-25 00:16:26,808 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:16:26,824 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-25 00:16:26,839 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-25 00:16:26,925 : INFO : DeviceManager : Loading devices...
+2016-03-25 00:16:26,977 : INFO : FAST : Received SA: 01,00,0B,00002000002D0000020100
+2016-03-25 00:16:26,990 : INFO : Machine : Loading plugins...
+2016-03-25 00:16:27,006 : INFO : SwitchController : Dumping current active switches
+2016-03-25 00:16:27,006 : INFO : SwitchController : Active Switch|s_drain
+2016-03-25 00:16:27,006 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-03-25 00:16:27,007 : INFO : FAST : Received SA: 01,00,0B,00002000002D0000020100
+2016-03-25 00:16:27,008 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-03-25 00:16:27,008 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-25 00:16:27,008 : INFO : Mode Controller : | attract : 10                        |
+2016-03-25 00:16:27,008 : INFO : Mode Controller : +-------------------------------------+
+2016-03-25 00:16:30,695 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:30,915 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:31,455 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:31,842 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:32,212 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:32,544 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:32,978 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:33,414 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:33,736 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:34,228 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:34,690 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:35,136 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:35,678 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:36,180 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:36,683 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:1 >>>>>
+2016-03-25 00:16:37,257 : INFO : SwitchController : <<<<< switch: s_leftinlane, State:0 >>>>>
+2016-03-25 00:16:38,260 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:1 >>>>>
+2016-03-25 00:16:38,689 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:0 >>>>>
+2016-03-25 00:16:39,093 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:1 >>>>>
+2016-03-25 00:16:39,486 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:0 >>>>>
+2016-03-25 00:16:39,909 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:1 >>>>>
+2016-03-25 00:16:40,347 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:0 >>>>>
+2016-03-25 00:16:40,734 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:1 >>>>>
+2016-03-25 00:16:41,258 : INFO : SwitchController : <<<<< switch: s_leftoutlane, State:0 >>>>>
+2016-03-25 00:16:45,782 : INFO : Machine : Actual MPF loop rate: 69.0 Hz
+2016-03-25 00:16:45,783 : INFO : root : MPF run loop ended.

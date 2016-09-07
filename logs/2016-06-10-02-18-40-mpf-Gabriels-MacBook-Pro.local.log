@@ -1,0 +1,6 @@
+2016-06-10 02:18:40,537 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1705
+2016-06-10 02:18:40,537 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-06-10 02:18:40,778 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-06-10 02:18:40,779 : INFO : Machine : Starting clock at 30.0Hz
+2016-06-10 02:18:40,798 : INFO : FAST : Connecting to /dev/tty.usbserial-142C at 921600bps
+2016-06-10 02:18:42,316 : INFO : FAST : Connecting to /dev/tty.usbserial-142B at 921600bps

@@ -1,0 +1,272 @@
+2016-03-26 19:48:52,608 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-26 19:48:52,609 : INFO : Machine : Loading config from original files
+2016-03-26 19:48:52,704 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-26 19:48:52,857 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-26 19:48:52,864 : INFO : FAST : Configuring FAST hardware.
+2016-03-26 19:48:52,864 : INFO : Machine : Loading core modules...
+2016-03-26 19:48:53,071 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-26 19:48:53,071 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-26 19:48:54,589 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 19:48:54,590 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-26 19:48:56,108 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 19:48:56,124 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 19:48:56,140 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 19:48:56,156 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-26 19:48:56,242 : INFO : DeviceManager : Loading devices...
+2016-03-26 19:48:56,290 : INFO : FAST : Received SA: 01,00,0B,00002400002D00001F0100
+2016-03-26 19:48:56,301 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:48:56,302 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:48:56,303 : INFO : Machine : Loading plugins...
+2016-03-26 19:48:56,318 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:48:56,319 : INFO : SwitchController : Dumping current active switches
+2016-03-26 19:48:56,319 : INFO : SwitchController : Active Switch|s_droptarget4
+2016-03-26 19:48:56,319 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-03-26 19:48:56,319 : INFO : SwitchController : Active Switch|s_droptarget1
+2016-03-26 19:48:56,319 : INFO : SwitchController : Active Switch|s_droptarget3
+2016-03-26 19:48:56,319 : INFO : SwitchController : Active Switch|s_droptarget5
+2016-03-26 19:48:56,319 : INFO : SwitchController : Active Switch|s_drain
+2016-03-26 19:48:56,319 : INFO : SwitchController : Active Switch|s_troughenter
+2016-03-26 19:48:56,320 : INFO : FAST : Received SA: 01,00,0B,00002400002D00001F0100
+2016-03-26 19:48:56,321 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-03-26 19:48:56,322 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:48:56,322 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 19:48:56,323 : INFO : Mode Controller : | attract : 10                        |
+2016-03-26 19:48:56,323 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 19:48:57,057 : INFO : SwitchController : <<<<< switch: s_start, State:1 >>>>>
+2016-03-26 19:48:57,196 : INFO : SwitchController : <<<<< switch: s_start, State:0 >>>>>
+2016-03-26 19:48:57,197 : INFO : Mode.game : Mode Starting. Priority: 20
+2016-03-26 19:48:57,198 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 19:48:57,198 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 19:48:57,199 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 19:48:57,199 : INFO : Mode Controller : | game : 20                           |
+2016-03-26 19:48:57,199 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 19:48:57,200 : INFO : Mode.game : Player added successfully. Total players: 1
+2016-03-26 19:48:57,201 : INFO : Mode.game : ***************************************************
+2016-03-26 19:48:57,201 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-26 19:48:57,201 : INFO : Mode.game : **                                               **
+2016-03-26 19:48:57,201 : INFO : Mode.game : **    Player: 1    Ball: 1   Score: 0            **
+2016-03-26 19:48:57,202 : INFO : Mode.game : **                                               **
+2016-03-26 19:48:57,202 : INFO : Mode.game : ***************************************************
+2016-03-26 19:48:57,202 : INFO : Mode.game : ***************************************************
+2016-03-26 19:48:58,120 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:1 >>>>>
+2016-03-26 19:48:58,233 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-03-26 19:48:58,601 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-26 19:48:58,741 : INFO : SwitchController : <<<<< switch: s_drain, State:0 >>>>>
+2016-03-26 19:48:58,889 : INFO : SwitchController : <<<<< switch: s_troughenter, State:1 >>>>>
+2016-03-26 19:48:59,410 : INFO : SwitchController : <<<<< switch: s_launch, State:1 >>>>>
+2016-03-26 19:48:59,457 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:0 >>>>>
+2016-03-26 19:48:59,565 : INFO : SwitchController : <<<<< switch: s_launch, State:0 >>>>>
+2016-03-26 19:48:59,911 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:1 >>>>>
+2016-03-26 19:48:59,939 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:0 >>>>>
+2016-03-26 19:49:01,485 : INFO : SwitchController : <<<<< switch: s_topkicker, State:1 >>>>>
+2016-03-26 19:49:02,072 : INFO : SwitchController : <<<<< switch: s_topkicker, State:0 >>>>>
+2016-03-26 19:49:03,847 : INFO : SwitchController : <<<<< switch: s_rightlane, State:1 >>>>>
+2016-03-26 19:49:03,903 : INFO : SwitchController : <<<<< switch: s_rightlane, State:0 >>>>>
+2016-03-26 19:49:06,826 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:06,826 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:06,981 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:06,981 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:09,015 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:09,293 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:09,600 : INFO : SwitchController : <<<<< switch: s_leftsling, State:1 >>>>>
+2016-03-26 19:49:09,614 : INFO : SwitchController : <<<<< switch: s_leftsling, State:0 >>>>>
+2016-03-26 19:49:10,047 : INFO : SwitchController : <<<<< switch: s_rightsling, State:1 >>>>>
+2016-03-26 19:49:10,060 : INFO : SwitchController : <<<<< switch: s_rightsling, State:0 >>>>>
+2016-03-26 19:49:11,657 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:11,794 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:12,880 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:12,881 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:13,055 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:13,056 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:14,340 : INFO : SwitchController : <<<<< switch: s_topkicker, State:1 >>>>>
+2016-03-26 19:49:14,911 : INFO : SwitchController : <<<<< switch: s_topkicker, State:0 >>>>>
+2016-03-26 19:49:16,877 : INFO : SwitchController : <<<<< switch: s_rightlane, State:1 >>>>>
+2016-03-26 19:49:16,961 : INFO : SwitchController : <<<<< switch: s_rightlane, State:0 >>>>>
+2016-03-26 19:49:18,438 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:18,439 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:18,595 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:18,596 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:18,887 : INFO : SwitchController : <<<<< switch: s_topkickingtarget, State:1 >>>>>
+2016-03-26 19:49:18,902 : INFO : SwitchController : <<<<< switch: s_topkickingtarget, State:0 >>>>>
+2016-03-26 19:49:20,651 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:20,822 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:21,265 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:21,266 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:21,377 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:21,378 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:21,432 : INFO : SwitchController : <<<<< switch: s_drain, State:1 >>>>>
+2016-03-26 19:49:21,939 : INFO : Mode.game : ***************************************************
+2016-03-26 19:49:21,939 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-26 19:49:21,940 : INFO : Mode.game : **                                               **
+2016-03-26 19:49:21,940 : INFO : Mode.game : **    Player: 1    Ball: 2   Score: 0            **
+2016-03-26 19:49:21,940 : INFO : Mode.game : **                                               **
+2016-03-26 19:49:21,940 : INFO : Mode.game : ***************************************************
+2016-03-26 19:49:21,941 : INFO : Mode.game : ***************************************************
+2016-03-26 19:49:22,791 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:1 >>>>>
+2016-03-26 19:49:22,959 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-03-26 19:49:23,361 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-26 19:49:23,406 : INFO : SwitchController : <<<<< switch: s_drain, State:0 >>>>>
+2016-03-26 19:49:23,407 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:23,407 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:23,533 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:23,534 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:23,548 : INFO : SwitchController : <<<<< switch: s_troughenter, State:1 >>>>>
+2016-03-26 19:49:24,752 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:24,752 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:24,855 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:24,855 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:25,425 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:25,660 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:26,348 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:26,349 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:26,377 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:26,377 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:26,391 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:26,392 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:26,435 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:26,436 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:26,436 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:26,436 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:26,517 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:26,517 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:27,099 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:27,099 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:27,270 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:27,271 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:27,907 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:27,907 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:28,038 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:28,039 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:28,481 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:28,481 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:28,592 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:28,592 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:40,757 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:40,757 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:40,929 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:40,929 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:42,121 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:42,121 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:42,252 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:42,252 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:43,694 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:43,694 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:43,894 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:43,894 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:45,539 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:45,539 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:45,612 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:45,613 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:45,846 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:45,847 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:45,975 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:45,975 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:47,442 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:47,443 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:47,586 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:47,587 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:49,596 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:49,781 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:50,222 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:50,408 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:51,029 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:51,203 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:51,806 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:52,000 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:53,460 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:53,460 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:53,573 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:53,573 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:53,674 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:53,675 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:53,757 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:53,757 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:55,516 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:55,516 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:49:55,609 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:49:55,609 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:49:57,989 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:58,108 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:58,221 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:58,360 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:58,478 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:49:58,607 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:49:59,962 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:49:59,962 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:00,084 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:00,084 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:02,048 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:02,048 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:02,207 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:02,207 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:02,751 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:02,752 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:02,929 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:02,930 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:03,416 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:03,416 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:03,591 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:03,591 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:04,069 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:04,069 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:04,242 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:04,242 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:05,859 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:05,859 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:06,028 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:06,029 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:07,104 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:07,104 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:07,288 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:07,289 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:08,938 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:50:09,116 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:50:09,533 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:50:09,690 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:50:11,506 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:11,507 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:11,639 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:11,640 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:12,336 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:12,337 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:12,466 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:12,467 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:14,359 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:14,360 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:14,558 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:14,559 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:15,343 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:15,343 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:15,503 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:15,504 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:18,479 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:18,479 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:18,638 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:18,638 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:20,239 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:20,239 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:20,408 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:20,408 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:22,466 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:22,467 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:22,628 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:22,629 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:24,413 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:50:24,593 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:50:25,673 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:50:25,845 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:50:27,392 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:27,393 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:27,509 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:27,509 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:28,269 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:28,269 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:28,429 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:28,429 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:50:29,583 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:50:29,596 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:50:29,712 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:50:29,713 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:53:30,625 : INFO : Machine : Shutting down...
+2016-03-26 19:53:30,626 : INFO : Machine : Actual MPF loop rate: 70.3 Hz
+2016-03-26 19:53:30,627 : INFO : root : MPF run loop ended.

@@ -1,0 +1,129 @@
+2016-03-26 19:37:33,870 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
+2016-03-26 19:37:33,871 : INFO : Machine : Loading config from original files
+2016-03-26 19:37:33,975 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
+2016-03-26 19:37:34,221 : INFO : Machine : Config file cache created: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
+2016-03-26 19:37:34,231 : INFO : FAST : Configuring FAST hardware.
+2016-03-26 19:37:34,232 : INFO : Machine : Loading core modules...
+2016-03-26 19:37:34,433 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
+2016-03-26 19:37:34,433 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
+2016-03-26 19:37:35,952 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 19:37:35,953 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps
+2016-03-26 19:37:37,471 : INFO : FAST : Received ID acknowledgement. Processor: NET, Board: FP-CPU-002-2, Firmware: 01.00
+2016-03-26 19:37:37,487 : INFO : FAST : Fast IO Board 00: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 19:37:37,503 : INFO : FAST : Fast IO Board 01: Model: FP-I/O-3208-2, Firmware: 01.00, Switches: 32, Drivers: 8
+2016-03-26 19:37:37,521 : INFO : FAST : Fast IO Board 02: Model: FP-I/O-1616-2, Firmware: 01.00, Switches: 16, Drivers: 16
+2016-03-26 19:37:37,605 : INFO : DeviceManager : Loading devices...
+2016-03-26 19:37:37,689 : INFO : FAST : Received SA: 01,00,0B,00002400002D0000020100
+2016-03-26 19:37:37,690 : INFO : FAST : Received SA: 01,00,0B,00002400002D0000020100
+2016-03-26 19:37:37,704 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:37:37,705 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:37:37,706 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:37:37,706 : INFO : Machine : Loading plugins...
+2016-03-26 19:37:37,724 : WARNING : BCPClientSocket.local_display : Failed to connect to remote BCP host localhost:5050. Error: [Errno 61] Connection refused
+2016-03-26 19:37:37,725 : INFO : SwitchController : Dumping current active switches
+2016-03-26 19:37:37,726 : INFO : SwitchController : Active Switch|s_droptarget2
+2016-03-26 19:37:37,726 : INFO : SwitchController : Active Switch|s_troughenter
+2016-03-26 19:37:37,726 : INFO : SwitchController : Active Switch|s_drain
+2016-03-26 19:37:37,727 : INFO : Mode.attract : Mode Starting. Priority: 10
+2016-03-26 19:37:37,728 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 19:37:37,728 : INFO : Mode Controller : | attract : 10                        |
+2016-03-26 19:37:37,728 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 19:37:39,540 : INFO : SwitchController : <<<<< switch: s_start, State:1 >>>>>
+2016-03-26 19:37:39,766 : INFO : SwitchController : <<<<< switch: s_start, State:0 >>>>>
+2016-03-26 19:37:39,767 : INFO : Mode.game : Mode Starting. Priority: 20
+2016-03-26 19:37:39,768 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 19:37:39,768 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 19:37:39,768 : INFO : Mode Controller : +=========== ACTIVE MODES ============+
+2016-03-26 19:37:39,768 : INFO : Mode Controller : | game : 20                           |
+2016-03-26 19:37:39,768 : INFO : Mode Controller : +-------------------------------------+
+2016-03-26 19:37:39,770 : INFO : Mode.game : Player added successfully. Total players: 1
+2016-03-26 19:37:39,771 : INFO : Mode.game : ***************************************************
+2016-03-26 19:37:39,772 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-26 19:37:39,772 : INFO : Mode.game : **                                               **
+2016-03-26 19:37:39,772 : INFO : Mode.game : **    Player: 1    Ball: 1   Score: 0            **
+2016-03-26 19:37:39,772 : INFO : Mode.game : **                                               **
+2016-03-26 19:37:39,772 : INFO : Mode.game : ***************************************************
+2016-03-26 19:37:39,772 : INFO : Mode.game : ***************************************************
+2016-03-26 19:37:40,664 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:1 >>>>>
+2016-03-26 19:37:40,793 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-03-26 19:37:41,205 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-26 19:37:41,277 : INFO : SwitchController : <<<<< switch: s_drain, State:0 >>>>>
+2016-03-26 19:37:41,432 : INFO : SwitchController : <<<<< switch: s_troughenter, State:1 >>>>>
+2016-03-26 19:37:42,603 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:0 >>>>>
+2016-03-26 19:37:43,233 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:1 >>>>>
+2016-03-26 19:37:43,287 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:0 >>>>>
+2016-03-26 19:37:44,390 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:1 >>>>>
+2016-03-26 19:37:44,442 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:0 >>>>>
+2016-03-26 19:37:45,213 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:37:45,410 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:37:45,636 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:37:45,636 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:37:45,719 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:37:45,719 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:37:46,154 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:37:46,155 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:37:46,477 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:37:46,477 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:37:46,955 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:37:46,955 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:37:47,242 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:37:47,367 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:37:47,368 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:37:47,500 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:37:47,866 : INFO : SwitchController : <<<<< switch: s_drain, State:1 >>>>>
+2016-03-26 19:37:48,371 : INFO : Mode.game : ***************************************************
+2016-03-26 19:37:48,371 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-26 19:37:48,372 : INFO : Mode.game : **                                               **
+2016-03-26 19:37:48,372 : INFO : Mode.game : **    Player: 1    Ball: 2   Score: 0            **
+2016-03-26 19:37:48,372 : INFO : Mode.game : **                                               **
+2016-03-26 19:37:48,372 : INFO : Mode.game : ***************************************************
+2016-03-26 19:37:48,372 : INFO : Mode.game : ***************************************************
+2016-03-26 19:37:49,237 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:1 >>>>>
+2016-03-26 19:37:49,391 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-03-26 19:37:49,767 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-26 19:37:49,842 : INFO : SwitchController : <<<<< switch: s_drain, State:0 >>>>>
+2016-03-26 19:37:49,993 : INFO : SwitchController : <<<<< switch: s_troughenter, State:1 >>>>>
+2016-03-26 19:37:51,393 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:37:51,394 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:37:51,602 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:37:51,603 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:37:52,697 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:37:52,912 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:37:54,507 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:0 >>>>>
+2016-03-26 19:37:55,285 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:1 >>>>>
+2016-03-26 19:37:55,359 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:37:55,359 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:37:55,460 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:37:55,460 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:37:55,603 : INFO : SwitchController : <<<<< switch: s_rightrampopto, State:0 >>>>>
+2016-03-26 19:37:56,592 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:37:56,789 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:38:00,137 : INFO : SwitchController : <<<<< switch: s_drain, State:1 >>>>>
+2016-03-26 19:38:00,654 : INFO : Mode.game : ***************************************************
+2016-03-26 19:38:00,654 : INFO : Mode.game : ****************** BALL STARTING ******************
+2016-03-26 19:38:00,655 : INFO : Mode.game : **                                               **
+2016-03-26 19:38:00,655 : INFO : Mode.game : **    Player: 1    Ball: 3   Score: 0            **
+2016-03-26 19:38:00,655 : INFO : Mode.game : **                                               **
+2016-03-26 19:38:00,655 : INFO : Mode.game : ***************************************************
+2016-03-26 19:38:00,655 : INFO : Mode.game : ***************************************************
+2016-03-26 19:38:01,517 : INFO : SwitchController : <<<<< switch: s_plungerlane, State:1 >>>>>
+2016-03-26 19:38:01,666 : WARNING : FAST : Received unknown serial command? TN:P. (This is ok to ignore for now while the FAST platform is in development)
+2016-03-26 19:38:02,051 : INFO : SwitchController : <<<<< switch: s_troughenter, State:0 >>>>>
+2016-03-26 19:38:02,133 : INFO : SwitchController : <<<<< switch: s_drain, State:0 >>>>>
+2016-03-26 19:38:02,259 : INFO : SwitchController : <<<<< switch: s_troughenter, State:1 >>>>>
+2016-03-26 19:38:04,120 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:1 >>>>>
+2016-03-26 19:38:04,323 : INFO : SwitchController : <<<<< switch: s_leftflipper, State:0 >>>>>
+2016-03-26 19:38:04,755 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:38:04,756 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:38:04,868 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:38:04,870 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:38:04,983 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:38:04,984 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:38:05,063 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:38:05,064 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:38:05,177 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:1 >>>>>
+2016-03-26 19:38:05,178 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:1 >>>>>
+2016-03-26 19:38:05,247 : INFO : SwitchController : <<<<< switch: s_rightupperflipper, State:0 >>>>>
+2016-03-26 19:38:05,248 : INFO : SwitchController : <<<<< switch: s_rightflipper, State:0 >>>>>
+2016-03-26 19:38:09,563 : INFO : Machine : Actual MPF loop rate: 69.08 Hz
+2016-03-26 19:38:09,563 : INFO : root : MPF run loop ended.

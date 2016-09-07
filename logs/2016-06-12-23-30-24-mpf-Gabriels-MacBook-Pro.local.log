@@ -1,0 +1,34 @@
+2016-06-12 23:30:24,003 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1727
+2016-06-12 23:30:24,003 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
+2016-06-12 23:30:24,229 : INFO : Machine : Loading cached config: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
+2016-06-12 23:30:24,230 : INFO : Machine : Starting clock at 30.0Hz
+2016-06-12 23:30:24,245 : INFO : FAST : Connecting to /dev/tty.usbserial-142C at 921600bps
+2016-06-12 23:30:25,763 : INFO : FAST : Connecting to /dev/tty.usbserial-142B at 921600bps
+2016-06-12 23:30:47,470 : ERROR : root : read failed: [Errno 6] Device not configured
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialposix.py", line 460, in read
+    buf = os.read(self.fd, size - len(read))
+OSError: [Errno 6] Device not configured
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/commands/game.py", line 130, in __init__
+    MachineController(mpf_path, machine_path, vars(args)).run()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 120, in __init__
+    self._initialize_platforms()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/core/machine.py", line 174, in _initialize_platforms
+    platform.initialize()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/fast/fast.py", line 111, in initialize
+    self._connect_to_hardware()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/fast/fast.py", line 155, in _connect_to_hardware
+    receive_queue=self.receive_queue))
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/fast/fast.py", line 701, in __init__
+    self.identify_connection()
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/mpf/platforms/fast/fast.py", line 720, in identify_connection
+    msg = self.serial_io.readline()  # todo timeout
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialutil.py", line 475, in readinto
+    data = self.read(len(b))
+  File "/Applications/MPF.app/Contents/Frameworks/python/3.5.0/lib/python3.5/site-packages/serial/serialposix.py", line 475, in read
+    raise SerialException('read failed: {}'.format(e))
+serial.serialutil.SerialException: read failed: [Errno 6] Device not configured
