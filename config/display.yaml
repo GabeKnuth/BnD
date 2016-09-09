@@ -48,7 +48,7 @@ assets:
             load: mode_start
 images:
   bnd_background:
-    file: bnd_background.jpg
+    file: bnd_background
 
 slides:
   stage_base_game:
