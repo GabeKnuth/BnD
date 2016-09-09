@@ -4,3 +4,5 @@ __mpfcache__
 .idea
 logs
 /data
+._*
+.DS_Store
