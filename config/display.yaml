@@ -35,6 +35,21 @@ displays:
 #    height: 32
 #    default: true
 
+assets:
+    images:
+        default:
+            load: preload
+        preload:
+            load: preload
+            test_key: test_value
+        on_demand:
+            load: on_demand
+        mode_start:
+            load: mode_start
+images:
+  bnd_background:
+    file: bnd_background.jpg
+
 slides:
   stage_base_game:
     widgets:
@@ -55,7 +70,7 @@ slides:
       z: 1
       color: red
     - type: image
-      image: bnd_background.jpg
+      image: bnd_background
       z: 0
       anchor_x: center
       anchor_y: middle
@@ -107,7 +122,4 @@ widget_styles:
     font_name: big_noodle_titling
     font_size: 20
 
-assets:
-    images:
-        default:
-            load: preload
+
