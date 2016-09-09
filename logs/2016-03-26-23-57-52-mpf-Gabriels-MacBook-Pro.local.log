@@ -1,8 +1,0 @@
-2016-03-26 23:57:52,022 : INFO : Machine : Mission Pinball Framework v0.30.0.dev801
-2016-03-26 23:57:52,023 : INFO : Machine : Loading cached config: /Users/gabe/Dropbox/Pinball/Gabe/bnd/__mpfcache__/config_config.p
-2016-03-26 23:57:52,032 : INFO : FAST : Configuring FAST hardware.
-2016-03-26 23:57:52,032 : INFO : Machine : Loading core modules...
-2016-03-26 23:57:52,276 : INFO : FAST : Configuring FAST Controller for FAST IO boards.
-2016-03-26 23:57:52,277 : INFO : FAST : Connecting to /dev/tty.usbserial-141C at 921600bps
-2016-03-26 23:57:53,795 : INFO : FAST : Received ID acknowledgement. Processor: RGB, Board: FP-CPU-002-2, Firmware: 01.00
-2016-03-26 23:57:53,796 : INFO : FAST : Connecting to /dev/tty.usbserial-141B at 921600bps

@@ -1,7 +1,0 @@
-2016-05-19 22:57:25,812 : INFO : Machine : Mission Pinball Framework Core Engine v0.30.0.dev1568
-2016-05-19 22:57:25,812 : INFO : Machine : Machine path: /Users/gabe/Dropbox/Pinball/Gabe/bnd
-2016-05-19 22:57:26,065 : INFO : Machine : Loading config from original files
-2016-05-19 22:57:26,113 : INFO : Machine : Machine config file #1: /Users/gabe/Dropbox/Pinball/Gabe/bnd/config/config
-2016-05-19 22:57:26,226 : INFO : Machine : Config file cache created: /var/folders/c1/z5pg47y54_s14cd2m1zmk1kc0000gn/T/db0cb78b77a969ed262a283d7c7743faconfig
-2016-05-19 22:57:26,226 : INFO : Machine : Starting clock at 30.0Hz
-2016-05-19 22:57:26,319 : INFO : BCPClientSocket.local_display : Connecting to BCP Media Controller at localhost:5050...
