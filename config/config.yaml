@@ -50,6 +50,8 @@ game:
 
 modes:
   - base
+  - skill_shot
+  - jukebox_hurryup
 
 config:
   - display.yaml
@@ -85,104 +87,104 @@ switches:
     number: 16
   s_rightbankbottom:
     number: 17
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_troughenter:
     number: 18
   s_rightoutlane:
     number: 19
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_leftoutlane:
     number: 20
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_drain:
     number: 21
     tags: drain
   s_leftinlane:
     number: 22
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_rightinlane:
     number: 24
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_rightsling:
     number: 25
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_rightbanktop:
     number: 26
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_toprightstandup:
     number: 27
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_jukeboxopto:
     number: 40
     type: NC
-    tags: jukebox, playfield_active
+    tags: jukebox, playfield_active, end_skill_shot
   s_topkickingtarget:
     number: 41
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_subwayopto:
     number: 42
-    tags: subway, playfield_active
+    tags: subway, playfield_active, end_skill_shot
     type: NC
   s_lowervukopto:
     number: 43
     type: NC
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_leftsling:
     number: 44
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_leftrampopto:
     number: 45
     type: NC
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_bottomkickingtarget:
     number: 46
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_leftorbit:
     number: 47
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_droptarget1:
     number: 64
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_droptarget2:
     number: 65
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_droptarget3:
     number: 66
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_droptarget4:
     number: 67
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_droptarget5:
     number: 68
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_toprightvuk:
     number: 69
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_rightrampopto:
     number: 72
     type: NC
     tags: playfield_active
   s_rightlane:
     number: 73
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_leftlane:
     number: 74
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_topkicker:
     number: 75
     tags: playfield_active
   s_spinner:
     number: 76
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_leftpop:
     number: 77
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_rightpop:
     number: 78
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
   s_bottompop:
     number: 79
-    tags: playfield_active
+    tags: playfield_active, end_skill_shot
 
 
 #        ::::::::   :::::::: ::::::::::: :::        ::::::::
@@ -348,7 +350,7 @@ ball_devices:
     entrance_count_delay: 500ms
     eject_coil: c_Plunger
     eject_targets: playfield
-    exit_count_delay: 1000ms
+    exit_count_delay: 2000ms
     confirm_eject_type: target
     player_controlled_eject_event: sw_launch
     mechanical_eject: true
@@ -897,50 +899,7 @@ shows:
         l_bottom_pop: black
 
 
-#        ::::::::  :::    :::  :::::::: ::::::::::: ::::::::
-#      :+:    :+: :+:    :+: :+:    :+:    :+:    :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+    +:+    +:+
-#    +#++:++#++ +#++:++#++ +#+    +:+    +#+    +#++:++#++
-#          +#+ +#+    +#+ +#+    +#+    +#+          +#+
-#  #+#    #+# #+#    #+# #+#    #+#    #+#    #+#    #+#
-#  ########  ###    ###  ########     ###     ########
 
-# Using this only for special shots that need to be grouped together or
-# require a sequence of switches.
-
-
-shots:
-# Shots to group
-  shot_left_lane:
-    switch: s_LeftLane
-  shot_right_lane:
-    switch: s_RightLane
-  shot_pops:
-    switch: s_leftpop, s_rightpop, s_bottompop
-  shot_left_drops:
-    switch: s_droptarget1, s_DropTarget2, s_droptarget3
-  shot_right_drops: #Broken up so I can block this shot when I need to knock down targets
-    switch:  s_droptarget4, s_droptarget5
-  shot_standups:
-    switch: s_rightbanktop, s_rightbankbottom, s_toprightstandup
-  shot_slings:
-    switch: s_leftsling, s_rightsling
-  shot_pops_to_vuk:
-    switch: s_TopRightVUK
-    delay_switch: 
-      s_spinner: 2s #this matches the value in the spinner_to_vuk sequence.
-
-
-#Shot with sequences
-  shot_right_ramp_full_loop:
-    switch_sequence: s_rightRampOpto, s_LeftRampOpto
-    time: 1000ms
-  shot_subway_shot:   # Seems like a weird name, but probably should have this one
-    switch_sequence: s_SubwayOpto, s_LowerVUKOpto
-    time: 500ms
-  shot_spinner_to_vuk:
-    switch_sequence: s_spinner, s_TopRightVUK
-    time: 2s
 
 
 show_player:
@@ -962,31 +921,7 @@ show_player:
       loops: -1
 
 
-#        ::::::::  :::    :::  :::::::: :::::::::::
-#      :+:    :+: :+:    :+: :+:    :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+    +:+
-#    +#++:++#++ +#++:++#++ +#+    +:+    +#+
-#          +#+ +#+    +#+ +#+    +#+    +#+
-#  #+#    #+# #+#    #+# #+#    #+#    #+#
-#  ########  ###    ###  ########     ###
-#        ::::::::  :::::::::   ::::::::  :::    ::: :::::::::   ::::::::
-#      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+ +:+
-#    :#:        +#++:++#:  +#+    +:+ +#+    +:+ +#++:++#+  +#++:++#++
-#   +#+   +#+# +#+    +#+ +#+    +#+ +#+    +#+ +#+               +#+
-#  #+#    #+# #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#
-#  ########  ###    ###  ########   ########  ###         ########
 
-
-shot_groups:
-     upper_lanes:
-         shots: left_lane, right_lane
-         profile: default
-         rotate_left_events: s_leftflipper_active
-         rotate_right_events: s_rightflipper_active
-         reset_events: upper_lanes_default_lit_complete
-         enable_events: ball_started
-         disable_events: ball_ending
 
 
 #        ::::::::  :::    :::  :::::::: :::::::::::

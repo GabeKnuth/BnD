@@ -1,0 +1,18 @@
+#config_version=4
+Mode:
+  start_events: ball_starting
+  stop_events: timer_skill_shot_complete, shot_skill_shot_complete
+  priority: 100
+
+timers:
+    skill_shot_timer:
+        start_value: 5
+        direction: down
+        control_events:
+          - event: balldevice_playfield_ball_enter
+            action: start
+
+shots:
+    skill_shot:
+        switch_sequence: s_rightrampopto, s_topkicker
+
