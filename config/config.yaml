@@ -35,6 +35,7 @@ machine:
 hardware:
   platform: fast
   driverboards: fast
+  #rgb_dmd: smartmatrix
 
 fast:
   ports: /dev/tty.usbserial-141C, /dev/tty.usbserial-141B #, /dev/tty.usbserial-141A
