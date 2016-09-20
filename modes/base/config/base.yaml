@@ -20,47 +20,47 @@ Logic_blocks:
 
 scoring:
     shot_pops_hit:
-        score:	10
+        score: 10
         jackpot: 5000
     switch_s_lowerVUKOpto_active:
-        score:	500
+        score: 500
     s_jukeboxOpto_active:
-        score:	9999
+        score: 9999
     shot_left_lane_hit:
-        score:	500
+        score: 500
     shot_right_lane_hit:
-        score:	500
+        score: 500
     upper_lanes_default_lit_complete:
-        score:	10000
+        score: 10000
     shot_left_drops_hit:
-        score:	500
+        score: 500
     shot_right_drops_hit:
-        score:	500
+        score: 500
     s_spinner_active:
-        score:	1000
+        score: 1000
     shot_right_ramp_full_loop_hit:
-        score:	3000
+        score: 3000
     s_leftorbit_active:
-        score:	25000
+        score: 25000
     shot_standups_hit:
-        score:	500
+        score: 500
     shot_slings_hit:
-        score:	10
+        score: 10
     s_topkickingtarget_active:
-        score:	10
+        score: 10
     s_bottomkickingtarget_active:
-        score:	500
+        score: 500
         jackpot: 50000
     shot_spinner_to_vuk_hit:
-        score:	500
+        score: 500
     shot_pops_to_vuk_hit:
-        score:	300
+        score: 300
     s_leftinlane_active:
-        score:	5000
+        score: 5000
     s_rightinlane_active:
-        score:	5000
+        score: 5000
     s_topkicker_active:
-        score:	5000
+        score: 5000
 
 
 #        ::::::::  :::    :::  :::::::: ::::::::::: ::::::::
@@ -126,7 +126,7 @@ shots:
 
 shot_groups:
     upper_lanes:
-        shots: left_lane, right_lane
+        shots: shot_left_lane, shot_right_lane
         profile: default
         rotate_left_events: s_leftflipper_active
         rotate_right_events: s_rightflipper_active

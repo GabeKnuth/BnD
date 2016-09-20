@@ -82,7 +82,7 @@ slides:
       text: "LOADING ASSETS: (percent)%"
 
 slide_player:
-  mc_ready:
+  init_done:
     stage_base_game:
       target: stage
   loading_assets: asset_status

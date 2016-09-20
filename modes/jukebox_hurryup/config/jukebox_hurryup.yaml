@@ -15,10 +15,10 @@ timers:
 
   jukebox_timer:
     start_value: 15
-      end_value: 0
-      direction: down
-      tick_interval: 1s
-      control_events:
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
         - event: sw_subway
           action: pause
         - event: balldevice_playfield_ball_enter
