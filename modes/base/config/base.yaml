@@ -18,3 +18,46 @@ Logic_blocks:
       direction: up
       events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
 
+scoring:
+    shot_pops_hit:
+        score:	10
+        jackpot: 5000
+    switch_s_lowerVUKOpto_active:
+        score:	500
+    s_jukeboxOpto_active:
+        score:	9999
+    shot_left_lane_hit:
+        score:	500
+    shot_right_lane_hit:
+        score:	500
+    upper_lanes_default_lit_complete:
+        score:	10000
+    shot_left_drops_hit:
+        score:	500
+    shot_right_drops_hit:
+        score:	500
+    s_spinner_active:
+        score:	1000
+    shot_right_ramp_full_loop_hit:
+        score:	3000
+    s_leftorbit_active:
+        score:	25000
+    shot_standups_hit:
+        score:	500
+    shot_slings_hit:
+        score:	10
+    s_topkickingtarget_active:
+        score:	10
+    s_bottomkickingtarget_active:
+        score:	500
+        jackpot: 50000
+    shot_spinner_to_vuk_hit:
+        score:	500
+    shot_pops_to_vuk_hit:
+        score:	300
+    s_leftinlane_active:
+        score:	5000
+    s_rightinlane_active:
+        score:	5000
+    s_topkicker_active:
+        score:	5000

@@ -12,7 +12,7 @@ class Jukebox_hurryup(Mode):
         self.reset_jukebox_hurryup(count=0)
 
     def reset_jukebox_hurryup(self, count, **kwargs):
-        # score need to decrease each second. I can do this a few ways, but I
+        # score needs to decrease each second. I can do this a few ways, but I
         # think the way to go is to take the score when it's reset and divide
         # it by 15, then subtract that at each timer tick. This method resets
         # the score.

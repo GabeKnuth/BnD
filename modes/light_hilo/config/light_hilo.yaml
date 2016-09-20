@@ -1,7 +1,9 @@
 #config_version=4
 Mode:
-  start_events: ball_starting
+  start_events: light_hilo
   priority: 100
+
+
 
 # Light HiLo then set up the shots that will trigger the HiLo video mode
 

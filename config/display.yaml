@@ -46,9 +46,6 @@ assets:
             load: on_demand
         mode_start:
             load: mode_start
-images:
-  bnd_background:
-    file: bnd_background.jpg
 
 slides:
   stage_base_game:

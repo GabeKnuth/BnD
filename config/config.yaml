@@ -911,22 +911,36 @@ shows:
 
 shots:
 # Shots to group
-   left_lane:
-     switch: s_LeftLane
-     show_tokens:
-       leds: l_world_tour
-   right_lane:
-     switch: s_RightLane
-     show_tokens:
-       leds: l_money_bags
+  shot_left_lane:
+    switch: s_LeftLane
+  shot_right_lane:
+    switch: s_RightLane
+  shot_pops:
+    switch: s_leftpop, s_rightpop, s_bottompop
+  shot_left_drops:
+    switch: s_droptarget1, s_DropTarget2, s_droptarget3
+  shot_right_drops: #Broken up so I can block this shot when I need to knock down targets
+    switch:  s_droptarget4, s_droptarget5
+  shot_standups:
+    switch: s_rightbanktop, s_rightbankbottom, s_toprightstandup
+  shot_slings:
+    switch: s_leftsling, s_rightsling
+  shot_pops_to_vuk:
+    switch: s_TopRightVUK
+    delay_switch: 
+      s_spinner: 2s #this matches the value in the spinner_to_vuk sequence.
+
 
 #Shot with sequences
-   right_ramp_full_loop:
-     switch_sequence: s_rightRampOpto, s_LeftRampOpto
-     time: 1000ms
-   subway_shot:   # Seems like a weird name, but probably should have this one
-     switch_sequence: s_SubwayOpto, s_LowerVUKOpto
-     time: 500ms
+  shot_right_ramp_full_loop:
+    switch_sequence: s_rightRampOpto, s_LeftRampOpto
+    time: 1000ms
+  shot_subway_shot:   # Seems like a weird name, but probably should have this one
+    switch_sequence: s_SubwayOpto, s_LowerVUKOpto
+    time: 500ms
+  shot_spinner_to_vuk:
+    switch_sequence: s_spinner, s_TopRightVUK
+    time: 2s
 
 
 show_player:
