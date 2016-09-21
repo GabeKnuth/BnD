@@ -32,10 +32,10 @@ machine:
     # HZ: 60
   balls_installed: 3
 
-virtual_platform_start_active_switches: s_drain, s_trough_enter
+#virtual_platform_start_active_switches: s_drain, s_trough_enter
 
 hardware:
-  platform: smart_virtual
+  platform: fast
   driverboards: fast
   rgb_dmd: smartmatrix
 
@@ -226,7 +226,7 @@ coils:
     # hold_power: 7
   c_draineject:
     number: 7
-    pulse_ms: 60
+    pulse_ms: 80
   c_jukeboxmagnet:
     number: 8
     pulse_ms: 10
@@ -330,21 +330,21 @@ flippers:
 
 ball_devices:
   bd_drain:
-    tags: drain
+    tags: drain, home
     ball_switches: s_drain
     eject_coil: c_draineject
     confirm_eject_type: target
     #exit_count_delay: 500ms
-    eject_targets: bd_trough, bd_plunger, playfield
+    eject_targets: bd_trough
     debug: true
   bd_trough:
     tags: trough, home
     entrance_switch: s_trough_enter
-    entrance_switch_full_timeout: 3s
+    entrance_switch_full_timeout: 500ms
     eject_coil: c_Trougheject
     confirm_eject_type: target
     ball_capacity: 3
-    eject_targets: bd_plunger, playfield
+    eject_targets: bd_plunger
     #entrance_count_delay: 500ms
     debug: true
   bd_plunger:
