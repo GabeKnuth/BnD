@@ -1,0 +1,15 @@
+#config_version=4
+
+show_player:
+  mode_attract_started:
+    attract_dmd_loop:
+      loops: -1
+    attract_stage_loop:
+      loops: -1
+
+  mode_attract_stopped:
+    attract_dmd_loop:
+      action: stop
+    attract_stage_loop:  # todo test if we have to do this?
+      action: stop
+      target: stage

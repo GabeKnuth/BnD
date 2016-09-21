@@ -1,0 +1,25 @@
+#show_version=4
+
+- duration: 2
+  slides:
+    stage_attract_1:
+        widgets:
+            - type: text
+              style: tall title
+              text: MISSION PINBALL FRAMEWORK
+              anchor_y: top
+              y: top-3
+              font_size: 30
+              color: white
+            - type: text
+              style: tall title
+              text: "Brooks n Dunn"
+              anchor_x: center
+              anchor_y: middle-15
+              font_size: 30
+              color: red
+            - type: image
+              image: bnd_background
+              anchor_x: center
+              anchor_y: middle
+        target: stage
