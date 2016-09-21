@@ -99,6 +99,11 @@ slide_player:
       target: dmd
     stage_boot:
       target: stage
+  mode_attract_started:
+    dmd_boot:
+      action: remove
+    stage_boot:
+      action: remove
 
   #loading_assets: asset_status
 
