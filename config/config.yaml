@@ -750,181 +750,10 @@ shows:
       leds:
         (leds): 66ff18
 
-  new_flash:
-    - duration: 1
-      leds:
-        (leds): white
-    - duration: 1
-      leds:
-        (leds): black
-
-  rainbow_cycle:
-    - duration: 1
-      leds:
-        (leds): red
-    - duration: 1
-      leds:
-        (leds): ff5500
-    - duration: 1
-      leds:
-        (leds): yellow
-    - duration: 1
-      leds:
-        (leds): lime
-    - duration: 1
-      leds:
-        (leds): blue
-    - duration: 1
-      leds:
-        (leds): ff0099
-
-  concert1:
-    - duration: 1
-      leds:
-        l_left_pop: red
-    - duration: 1
-      leds:
-        l_left_pop: lime
-    - duration: 1
-      leds:
-        l_left_pop: blue
-    - duration: 1
-      leds:
-        l_left_pop: white
-    - duration: 1
-      leds:
-        l_left_pop: black
-    - duration: 1
-      leds:
-        l_left_pop: 555555
-    - duration: 1
-      leds:
-        l_left_pop: white
-    - duration: 1
-      leds:
-        l_left_pop: black
-    - duration: 1
-      leds:
-        l_left_pop: 555555
-    - duration: 1
-      leds:
-        l_left_pop: white
-    - duration: 1
-      leds:
-        l_left_pop: black
-    - duration: 1
-      leds:
-        l_left_pop: 555555
-    - duration: 1
-      leds:
-        l_left_pop: white
-
-  concert2:
-    - duration: 1
-      leds:
-        l_right_pop: lime
-    - duration: 1
-      leds:
-        l_right_pop: blue
-    - duration: 1
-      leds:
-        l_right_pop: red
-    - duration: 1
-      leds:
-        l_right_pop: black
-    - duration: 1
-      leds:
-        l_right_pop: white
-    - duration: 1
-      leds:
-        l_right_pop: black
-    - duration: 1
-      leds:
-        l_right_pop: 555555
-    - duration: 1
-      leds:
-        l_right_pop: white
-    - duration: 1
-      leds:
-        l_right_pop: black
-    - duration: 1
-      leds:
-        l_right_pop: 555555
-    - duration: 1
-      leds:
-        l_right_pop: white
-    - duration: 1
-      leds:
-        l_right_pop: black
-    - duration: 1
-      leds:
-        l_right_pop: 555555
-
-  concert3:
-    - duration: 1
-      leds:
-        l_bottom_pop: blue
-    - duration: 1
-      leds:
-        l_bottom_pop: red
-    - duration: 1
-      leds:
-        l_bottom_pop: lime
-    - duration: 1
-      leds:
-        l_bottom_pop: black
-    - duration: 1
-      leds:
-        l_bottom_pop: 555555
-    - duration: 1
-      leds:
-        l_bottom_pop: white
-    - duration: 1
-      leds:
-        l_bottom_pop: black
-    - duration: 1
-      leds:
-        l_bottom_pop: 555555
-    - duration: 1
-      leds:
-        l_bottom_pop: white
-    - duration: 1
-      leds:
-        l_bottom_pop: black
-    - duration: 1
-      leds:
-        l_bottom_pop: 555555
-    - duration: 1
-      leds:
-        l_bottom_pop: white
-    - duration: 1
-      leds:
-        l_bottom_pop: black
-
-
-
-
-
 show_player:
   mode_attract_started:
     gi_on:
       leds: gi
-    new_flash:
-      leds: l_wizard_shot, l_advance_wizard, l_north_america, l_music_award
-      speed: 2
-      loops: -1
-    concert1:
-      speed: 2.5
-      loops: -1
-    concert2:
-      speed: 2.5
-      loops: -1
-    concert3:
-      speed: 2.5
-      loops: -1
-
-
-
 
 
 #        ::::::::  :::    :::  :::::::: :::::::::::
@@ -966,12 +795,38 @@ show_player:
 
 
 keyboard:
-  q: 
-    switch: s_rightbanktop
-  w: 
-    switch: s_rightbankbottom
   s:
     switch: s_start
+  p:
+    switch: s_plungerlane
+    toggle: true
+  z:
+    switch: s_leftflipper
+  /:
+    switch: s_rightflipper
+  L:
+    switch: s_launch
+  x:
+    switch: s_leftoutlane
+  c:
+    switch: s_leftinlane
+  ",":
+    switch: s_rightinlane
+  ".":
+    switch: s_rightoutlane
+  1:
+    switch: s_drain
+    toggle: true
+  2:
+    switch: s_trough_enter
+    toggle: true
+  v:
+    switch: s_leftsling
+  m:
+    switch: s_rightsling
+  q:
+    switch: s_leftorbit
+
 
 
 #        :::::::::      :::     :::        :::
