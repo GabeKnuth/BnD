@@ -1,5 +1,5 @@
 #config_version=4
-Mode:
+mode:
   start_events: ball_starting
   priority: 100
   code: base.Base
@@ -8,7 +8,10 @@ event_player:
   mode_base_started:
     jukebox_up
 
-Logic_blocks:
+config:
+  - display
+
+logic_blocks:
   counters:
     lb_jukebox_counter:
       count_events: sw_jukebox
