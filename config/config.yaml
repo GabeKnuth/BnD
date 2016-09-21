@@ -53,6 +53,7 @@ smartmatrix:
 game:
   balls_per_game: 3
   allow_start_with_loose_balls: True
+  allow_start_with_ball_in_drain: True
   max_players: 4
 
 modes:
@@ -334,10 +335,9 @@ flippers:
 
 ball_devices:
   bd_drain:
-    tags: drain, home
+    tags: drain
     ball_switches: s_drain
     eject_coil: c_draineject
-    confirm_eject_type: target
     #exit_count_delay: 500ms
     eject_targets: bd_trough
     debug: true
@@ -346,9 +346,10 @@ ball_devices:
     entrance_switch: s_trough_enter
     entrance_switch_full_timeout: 500ms
     eject_coil: c_Trougheject
-    confirm_eject_type: target
     ball_capacity: 3
     eject_targets: bd_plunger
+    eject_timeouts: 3s
+    exit_count_delay: 1.5s
     #entrance_count_delay: 500ms
     debug: true
   bd_plunger:
@@ -357,8 +358,7 @@ ball_devices:
     entrance_count_delay: 500ms
     eject_coil: c_Plunger
     eject_targets: playfield
-    exit_count_delay: 2000ms
-    confirm_eject_type: target
+    eject_timeouts: 2s
     player_controlled_eject_event: sw_launch
     mechanical_eject: true
   bd_top_right_vuk:
@@ -377,7 +377,7 @@ ball_devices:
     confirm_eject_type: target
   bd_top_kicker:
     ball_switches: s_TopKicker
-    entrance_count_delay: 500ms
+    entrance_count_delay: 1s
     eject_coil: c_TopKicker
     eject_targets: playfield, bd_top_right_vuk
     exit_count_delay: 500ms
