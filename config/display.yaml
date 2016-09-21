@@ -9,38 +9,34 @@
 # https://missionpinball.com/docs/configuration-file-reference/
 
 # Created by Brian Madden & Gabe Knuth
-#hardware:
-#      rgb_dmd: smartmatrix
 
-###smartmatrix:
-###    port: /dev/tty.usbmodem1030681
+smartmatrix:
+    port: /dev/tty.usbmodem1030681
 
 mpf-mc:
   fps: 60
 
-#physical_dmd:
-#  shades: 16
-#  fps: 24
-
-#window:
-#  width: 1280
-#  height: 720
-#  title: Mission Pinball Framework - Brooks & Dunn
-#  resizable: false
-#  fullscreen: false
-#  borderless: false
-#  exit_on_escape: true
+window:
+  width: 800
+  height: 480
+  title: Mission Pinball Framework - Brooks & Dunn
+  resizable: false
+  fullscreen: false
+  borderless: false
+  exit_on_escape: true
+  source_display: stage
 
 displays:
-  #stage:
-  #  height: 480
-  #  width: 800
+  stage:
+    height: 480
+    width: 800
   dmd:
     width: 128
     height: 32
     default: true
 
-physical_rgb_dmd:
+physical_rgb_dmds:
+  smartmatrix:
     brightness: .5
 
 assets:
@@ -56,46 +52,57 @@ assets:
             load: mode_start
 
 slides:
-    stage_base_game:
-        widgets:
-            - type: text
-              style: tall title
-              text: MISSION PINBALL FRAMEWORK
-              anchor_y: top
-              y: top-3
-              font_size: 30
-              color: white
-            - type: text
-              style: tall title
-              text: Brooks & Dunn
-              anchor_x: center
-              anchor_y: middle-15
-              font_size: 30
-              color: red
-            - type: image
-              image: bnd_background
-              anchor_x: center
-              anchor_y: middle
-    waiting_for_connection:
-        widgets:
-            - type: text
-              text: WAITING FOR MPF CONNECTION
-              anchor_y: middle
-    asset_status:
-        widgets:
-            - type: text
-              text: "LOADING ASSETS: (percent)%"
+#    stage_base_game:
+#        widgets:
+#            - type: text
+#              style: tall title
+#              text: MISSION PINBALL FRAMEWORK
+#              anchor_y: top
+#              y: top-3
+#              font_size: 30
+#              color: white
+#            - type: text
+#              style: tall title
+#              text: Brooks & Dunn
+#              anchor_x: center
+#              anchor_y: middle-15
+#              font_size: 30
+#              color: red
+#            - type: image
+#              image: bnd_background
+#              anchor_x: center
+#              anchor_y: middle
+#    waiting_for_connection:
+#        widgets:
+#            - type: text
+#              text: WAITING FOR MPF CONNECTION
+#              anchor_y: middle
+#    asset_status:
+#        widgets:
+#            - type: text
+#              text: "LOADING ASSETS: (percent)%"
+  dmd_boot:
+    widgets:
+      - type: text
+        text: DMD DISPLAY
+        style: dmd_small
+
+  stage_boot:
+    widgets:
+      - type: text
+        text: STAGE DISPLAY
+
 
 slide_player:
-  init_done: stage_base_game
+  init_done:
+    dmd_boot:
+      target: dmd
+    stage_boot:
+      target: stage
+
   #loading_assets: asset_status
 
 widget_styles:
-  text_default:
-    font_name: Quadrit
-    font_size: 10
-    adjust_top: 2
-    adjust_bottom: 3
   space title huge:
     font_name: DEADJIM
     font_size: 29
@@ -106,16 +113,6 @@ widget_styles:
     font_name: DEADJIM
     font_size: 21
     antialias: true
-    adjust_top: 2
-    adjust_bottom: 3
-  medium:
-    font_name: pixelmix
-    font_size: 8
-    adjust_top: 1
-    adjust_bottom: 1
-  small:
-    font_name: smallest_pixel-7
-    font_size: 9
     adjust_top: 2
     adjust_bottom: 3
   tall title:

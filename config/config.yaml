@@ -32,10 +32,12 @@ machine:
     # HZ: 60
   balls_installed: 3
 
+virtual_platform_start_active_switches: s_drain, s_trough_enter
+
 hardware:
-  platform: fast
+  platform: smart_virtual
   driverboards: fast
-  #rgb_dmd: smartmatrix
+  rgb_dmd: smartmatrix
 
 fast:
   ports: /dev/tty.usbserial-141C, /dev/tty.usbserial-141B #, /dev/tty.usbserial-141A
@@ -55,7 +57,7 @@ modes:
   - jukebox_hurryup
 
 config:
-  - display.yaml
+  - display
 
 playfields:
   playfield:
@@ -89,7 +91,7 @@ switches:
   s_rightbankbottom:
     number: 17
     tags: playfield_active, end_skill_shot
-  s_troughenter:
+  s_trough_enter:
     number: 18
   s_rightoutlane:
     number: 19
@@ -337,7 +339,7 @@ ball_devices:
     debug: true
   bd_trough:
     tags: trough, home
-    entrance_switch: s_troughEnter
+    entrance_switch: s_trough_enter
     entrance_switch_full_timeout: 3s
     eject_coil: c_Trougheject
     confirm_eject_type: target
@@ -968,6 +970,8 @@ keyboard:
     switch: s_rightbanktop
   w: 
     switch: s_rightbankbottom
+  s:
+    switch: s_start
 
 
 #        :::::::::      :::     :::        :::
