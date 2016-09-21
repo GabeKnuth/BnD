@@ -10,8 +10,7 @@
 
 # Created by Brian Madden & Gabe Knuth
 
-smartmatrix:
-    port: /dev/tty.usbmodem1030681
+
 
 mpf-mc:
   fps: 60

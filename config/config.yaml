@@ -46,6 +46,10 @@ fast:
   config_number_format: int
   #debug: true
 
+smartmatrix:
+#    port: /dev/tty.usbmodem1030681
+    port: com3
+
 game:
   balls_per_game: 3
   allow_start_with_loose_balls: True
