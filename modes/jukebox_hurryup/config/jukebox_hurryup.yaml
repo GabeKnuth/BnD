@@ -30,7 +30,7 @@ logic_blocks:
   counters:
     jukebox_reset_counter:
       count_events: sw_jukebox
-      event_when_hits: reset_jukebox_hurryup
+      events_when_hit: reset_jukebox_hurryup
       direction: up
       starting_count: 0
       count_complete_value: 5
