@@ -111,6 +111,22 @@ shots:
     switch_sequence: s_spinner, s_TopRightVUK
     time: 2s
 
+
+#  managers_choice:
+#    hit_events: balldevice_bd_top_kicker_ball_enter
+#    reset_events: managers_choice_done
+#    enable_events: None
+#    show_tokens:
+#      led: l_managers_choice
+
+
+
+
+
+
+
+
+
 #        ::::::::  :::    :::  :::::::: :::::::::::
 #      :+:    :+: :+:    :+: :+:    :+:    :+:
 #     +:+        +:+    +:+ +:+    +:+    +:+
@@ -152,6 +168,17 @@ shot_profiles:
             - name: quintuple
               show: quintuple
         loop: yes
+
+    managers_choice:
+        states:
+          - name: unlit
+            show: off
+          - name: lit
+            show: flash
+            speed: 5
+          - name: active
+            show: on
+        loop: no
 
 shows:
     silver:
