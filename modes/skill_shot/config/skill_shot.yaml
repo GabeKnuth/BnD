@@ -1,7 +1,7 @@
 #config_version=4
 mode:
   start_events: ball_starting
-  stop_events: timer_skill_shot_timer_complete, shot_skill_shot_complete
+  stop_events: end_skill_shot, collect_managers_choice, sw_end_skill_shot
   priority: 200
 
 timers:
@@ -12,18 +12,23 @@ timers:
           - event: balldevice_playfield_ball_enter
             action: start
 
-shots:
-    skill_shot:
-        switch_sequence: s_rightrampopto, s_topkicker
+event_player:
+  mode_skill_shot_started:
+    - light_managers_choice
+  timer_skill_shot_timer_complete:
+    - end_managers_choice
+    - end_skill_shot
 
 slides:
   skill_shot:
     widgets:
       - type: text
         text: SKILL SHOT INSTRUCTIONS
+        style: stage
       - type: text
         text: TIME LEFT (skill_shot_skill_shot_timer_tick)
         y: 20%
+        style: stage
 
 slide_player:
   mode_skill_shot_started:
