@@ -1,0 +1,53 @@
+#config_version=4
+
+mode:
+  priority: 300
+  start_events: ball_started, light_mystery
+  stop_events: stop_mystery
+
+show_player:
+  mode_mystery_lit_started:
+    flash_mystery:
+      sync_ms: 500
+  collect_mystery:
+    flash_mystery:
+      action: stop
+    on:
+      show_tokens:
+        led: l_mystery
+    collect_mystery_display_show:
+      loops: 0
+
+event_player:
+  balldevice_bd_lower_vuk_ball_enter:
+    collect_mystery
+  mystery_done:
+    release_mystery_ball
+    stop_mystery
+
+shows:
+  flash_mystery:
+    - duration: 200ms
+      leds:
+        l_mystery: white-f100ms
+    - duration: 200ms
+      leds:
+        l_mystery: off-f100ms
+  collect_mystery_display_show:
+    - duration: 2s
+      slides:
+        collect_mystery_slide_1:
+        - type: text
+          text: MYSTERY COLLECTED
+          style: dmd_med
+    - duration: 100ms
+      events:
+        mystery_done:
+
+ball_locks:
+  mystery:
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
+    enable_events: mode_mystery_lit_started
+    request_new_balls_to_pf: False
+    release_one_events: release_mystery_ball

@@ -1,0 +1,20 @@
+#config_version=4
+
+mode:
+  priority: 301
+  start_events: collect_mystery
+
+event_player:
+  balldevice_bd_top_kicker_ball_enter:
+    collect_managers_choice_base
+    finish_managers_choice|2s
+
+
+slide_player:
+  collect_mystery:
+      collect_mystery:
+        widgets:
+          - type: text
+            text: MANAGERS CHOICE COLLECTED
+            style: dmd_med
+        expire: 2s
