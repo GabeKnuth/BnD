@@ -98,7 +98,7 @@ slide_player:
       target: dmd
     stage_boot:
       target: stage
-  mode_attract_started:
+  mode_attract_started:  # this doesn't work??? #todo
     dmd_boot:
       action: remove
     stage_boot:
@@ -122,5 +122,7 @@ widget_styles:
   tall title:
     font_name: big_noodle_titling
     font_size: 20
+  stage:
+    font_size: 30
 
 
