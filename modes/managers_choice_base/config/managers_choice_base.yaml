@@ -1,0 +1,21 @@
+#config_version=4
+
+mode:
+  priority: 301
+  start_events: ball_starting
+
+event_player:
+  balldevice_bd_top_kicker_ball_enter:
+    # collect_managers_choice stops skill shot mode
+    collect_managers_choice
+    collect_managers_choice_base
+    finish_managers_choice|3s
+
+slide_player:
+  collect_managers_choice_base:
+      managers_choice_collected:
+        widgets:
+          - type: text
+            text: MANAGERS CHOICE COLLECTED
+            style: dmd_med
+        expire: 2s

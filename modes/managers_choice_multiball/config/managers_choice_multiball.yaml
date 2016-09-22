@@ -1,0 +1,6 @@
+#config_version=4
+
+mode:
+  priority: 303
+  start_events: # list of multiball start events # todo
+  stop_events: # list of multiball stop events # todo
