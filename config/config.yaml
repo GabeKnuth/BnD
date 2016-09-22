@@ -587,8 +587,8 @@ leds:
     number: 1-3
   l_play_poker:
     number: 1-4
-  l_music_award:
-    number: 1-34
+  l_right_music_award:
+    number: 1-5
   l_ramp_jackpot:
     number: 1-6
   l_south_america:
@@ -611,7 +611,7 @@ leds:
     number: 1-15
   l_left_lane_special:
     number: 1-16
-  l_question_card:
+  l_mystery:
     number: 1-17
   l_begin_round:
     number: 1-18
@@ -645,6 +645,8 @@ leds:
     number: 1-32
   l_left_ramp_flasher:
     number: 1-33
+  l_left_music_award:
+    number: 1-34
   l_managers_choice:
     number: 1-35
   l_jukebox_left:
