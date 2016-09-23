@@ -1,0 +1,100 @@
+#config_version=4
+
+mode:
+  priority: 400
+  start_events: start_money_bags
+  stop_events: ball_ending, money_bags_finished
+
+shots:
+    left_kicking_target:
+        switch: s_bottomkickingtarget
+        show_tokens:
+            led: l_left_longhorn
+    spinner_to_vuk:
+        switch_sequence: s_spinner, s_toprightvuk
+        show_tokens:
+            led: l_center_longhorn
+
+shot_groups:
+    money_bags:
+        shots: left_kicking_target, spinner_to_vuk
+        profile: advertise
+        enable_events: mode_money_bags_started
+        disable_events: mode_money_bags_stopped
+        rotate_events: money_bags_advertise_flashing_hit
+
+timers:
+    shot_timer:
+        start_value: 10
+        end_value: 0
+        direction: down
+        max_value: 10
+        tick_interval: 1
+        reset_on_complete: true
+        control_events:
+            - action: start
+              event: balldevice_bd_lower_vuk_eject_success
+            - action: reset
+              event: money_bags_advertise_flashing_hit
+            - action: stop
+              event: logicblock_money_bags_counter_complete
+
+logic_blocks:
+    counters:
+        money_bags_counter:
+            enable_events: mode_money_bags_started
+            disable_events: mode_money_bags_ended
+            count_events: money_bags_advertise_flashing_hit
+            persist_state: true
+            player_variable: money_bags_hit
+            count_complete_value: 9
+            starting_count: 0
+            direction: up
+
+
+# NEED A SHOW for start, complete, and ended before it's done. Mode can end at
+# completion of show.
+
+slide_player:
+  mode_money_bags_started:
+      money_bags_intro:
+        widgets:
+          - type: text
+            text: Money bags!
+            style: dmd_med
+        expire: 2s
+  timer_shot_timer_tick:
+      money_bags_intro:
+        widgets:
+          - type: text
+            text: (ticks)
+            style: dmd_med
+  timer_shot_timer_complete:
+      money_bags_intro:
+        widgets:
+          - type: text
+            text: Dang!
+            style: dmd_med
+        expire: 2s
+  logicblock_money_bags_counter_complete:
+      money_bags_intro:
+        widgets:
+          - type: text
+            text: You Rock!
+            style: dmd_med
+        expire: 2s
+
+scoring:
+    money_bags_advertise_flashing_hit:
+        score: 1000000
+
+shot_profiles:
+    advertise:
+      states:
+        - name: flashing
+          show: flashing
+          speed: 5
+        - name: unlit
+          show: off
+      loop: yes
+
