@@ -66,54 +66,7 @@ scoring:
         score: 5000
 
 
-#        ::::::::  :::    :::  :::::::: ::::::::::: ::::::::
-#      :+:    :+: :+:    :+: :+:    :+:    :+:    :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+    +:+    +:+
-#    +#++:++#++ +#++:++#++ +#+    +:+    +#+    +#++:++#++
-#          +#+ +#+    +#+ +#+    +#+    +#+          +#+
-#  #+#    #+# #+#    #+# #+#    #+#    #+#    #+#    #+#
-#  ########  ###    ###  ########     ###     ########
 
-
-shots:
-# Shots to group
-  shot_left_lane:
-    switch: s_LeftLane
-  shot_right_lane:
-    switch: s_RightLane
-  shot_pops:
-    switch: s_leftpop, s_rightpop, s_bottompop
-  shot_left_drops:
-    switch: s_droptarget1, s_DropTarget2, s_droptarget3
-  shot_right_drops: #Broken up so I can block this shot when I need to knock down targets
-    switch:  s_droptarget4, s_droptarget5
-  shot_standups:
-    switch: s_rightbanktop, s_rightbankbottom, s_toprightstandup
-  shot_slings:
-    switch: s_leftsling, s_rightsling
-  shot_pops_to_vuk:
-    switch: s_TopRightVUK
-    delay_switch:
-      s_spinner: 2s #this matches the value in the spinner_to_vuk sequence.
-  rotate_album_multipliers:
-    switch: s_leftpop, s_rightpop, s_bottompop, s_leftsling, s_rightsling, s_bottomkickingtarget, s_topkickingtarget
-
-
-
-#Shot with sequences
-  shot_right_ramp_full_loop:
-    switch_sequence: s_rightRampOpto, s_LeftRampOpto
-    time: 1000ms
-  shot_subway_shot:   # Seems like a weird name, but probably should have this one
-    switch_sequence: s_SubwayOpto, s_LowerVUKOpto
-    time: 500ms
-  shot_spinner_to_vuk:
-    switch_sequence: s_spinner, s_TopRightVUK
-    time: 2s
-
-  album_rotator:
-    hit_events: shot_pops_hit, shot_slings_hit
-    profile: album_rotator
 
 
 #  managers_choice:
@@ -155,31 +108,6 @@ show_player:
 
 
 
-#        ::::::::  :::    :::  :::::::: :::::::::::
-#      :+:    :+: :+:    :+: :+:    :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+    +:+
-#    +#++:++#++ +#++:++#++ +#+    +:+    +#+
-#          +#+ +#+    +#+ +#+    +#+    +#+
-#  #+#    #+# #+#    #+# #+#    #+#    #+#
-#  ########  ###    ###  ########     ###
-#        ::::::::  :::::::::   ::::::::  :::    ::: :::::::::   ::::::::
-#      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+ +:+
-#    :#:        +#++:++#:  +#+    +:+ +#+    +:+ +#++:++#+  +#++:++#++
-#   +#+   +#+# +#+    +#+ +#+    +#+ +#+    +#+ +#+               +#+
-#  #+#    #+# #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#
-#  ########  ###    ###  ########   ########  ###         ########
-
-
-shot_groups:
-    upper_lanes:
-        shots: shot_left_lane, shot_right_lane
-        profile: default
-        rotate_left_events: s_leftflipper_active
-        rotate_right_events: s_rightflipper_active
-        reset_events: upper_lanes_default_lit_complete
-        enable_events: ball_started
-        disable_events: ball_ending
 
 
 
