@@ -124,8 +124,32 @@ shots:
 #      led: l_managers_choice
 
 
-
-
+show_player:
+  s_spinner_active:
+    flash_once:
+      loops: 0
+      speed: 1.5
+      show_tokens:
+        led: l_center_longhorn
+      priority: 1000000
+  s_leftpop_active:
+    flash_once:
+      loops: 0
+      show_tokens:
+        led: l_left_pop
+      priority: 1000000
+  s_bottompop_active:
+    flash_once:
+      loops: 0
+      show_tokens:
+        led: l_bottom_pop
+      priority: 1000000
+  s_rightpop_active:
+    flash_once:
+      loops: 0
+      show_tokens:
+        led: l_right_pop
+      priority: 1000000
 
 
 
@@ -196,6 +220,10 @@ shot_profiles:
             show: on
         loop: no
 
+#led_player:
+#  sw_s_spinner:
+
+
 shows:
   album_rotator:
       - leds:
@@ -214,45 +242,10 @@ shows:
           l_quintuple_platinum: white
           l_double_platinum: off
 
-
-
-#    silver:
-#        - duration: 1
-#          leds:
-#            l_silver: white
-#            l_gold: 00
-#            l_single_platinum: 00
-#            l_double_platinum: 00
-#            l_quintuple_platinum: 00
-#    gold:
-#        - duration: 1
-#          leds:
-#            l_silver: 00
-#            l_gold: white
-#            l_single_platinum: 00
-#            l_double_platinum: 00
-#            l_quintuple_platinum: 00
-#    platinum:
-#        - duration: 1
-#          leds:
-#            l_silver: 00
-#            l_gold: 00
-#            l_single_platinum: white
-#            l_double_platinum: 00
-#            l_quintuple_platinum: 00
-#    double:
-#        - duration: 1
-#          leds:
-#            l_silver: 00
-#            l_gold: 00
-#            l_single_platinum: 00
-#            l_double_platinum: white
-#            l_quintuple_platinum: 00
-#    quintuple:
-#        - duration: 1
-#          leds:
-#            l_silver: 00
-#            l_gold: 00
-#            l_single_platinum: 00
-#            l_double_platinum: 00
-#            l_quintuple_platinum: white
+  flash_once:
+    - time: 0
+      leds:
+        (led): white-f0
+    - time: 50ms
+      leds:
+        (led): off-f0
