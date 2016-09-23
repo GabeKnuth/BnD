@@ -34,6 +34,9 @@ machine:
 
 #virtual_platform_start_active_switches: s_drain, s_trough_enter
 
+#scriptlets:
+#  trough.Trough
+
 hardware:
   platform: fast
   driverboards: fast
@@ -565,7 +568,6 @@ diverters:
     activation_time: 3s
     activation_switches: s_LeftOrbit
     enable_events: enable_diverter
-    disable_events: ball_ended
     disable_events: ball_ended, disable_diverter
 #  d_jukebox_magnet:
 #    activation_coil: c_JukeboxMagnet
