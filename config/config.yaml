@@ -253,6 +253,7 @@ coils:
     number: 11
   c_diverter:
     number: 12
+    allow_enable: true
   # c_jukeboxmain:
   #   number: 13
   #   pulse_ms: 10
