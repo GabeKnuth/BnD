@@ -111,6 +111,10 @@ shots:
     switch_sequence: s_spinner, s_TopRightVUK
     time: 2s
 
+  album_rotator:
+    hit_events: shot_pops_hit, shot_slings_hit
+    profile: album_rotator
+
 
 #  managers_choice:
 #    hit_events: balldevice_bd_top_kicker_ball_enter
@@ -154,20 +158,32 @@ shot_groups:
         disable_events: ball_ending
 
 
+
 shot_profiles:
+#    album_rotator:
+#        states:
+#            - name: silver
+#              show: silver
+#            - name: gold
+#              show: gold
+#            - name: platinum
+#              show: platinum
+#            - name: double
+#              show: double
+#            - name: quintuple
+#              show: quintuple
+#        loop: yes
+
     album_rotator:
-        states:
-            - name: silver
-              show: silver
-            - name: gold
-              show: gold
-            - name: platinum
-              show: platinum
-            - name: double
-              show: double
-            - name: quintuple
-              show: quintuple
-        loop: yes
+      show: album_rotator
+      states:
+        - name: silver
+        - name: gold
+        - name: platinum
+        - name: double
+        - name: quintuple
+      loop: yes
+      player_variable: lit_album
 
     managers_choice:
         states:
@@ -181,43 +197,62 @@ shot_profiles:
         loop: no
 
 shows:
-    silver:
-        - duration: 1
-          leds:
-            l_silver: white
-            l_gold: 00
-            l_single_platinum: 00
-            l_double_platinum: 00
-            l_quintuple_platinum: 00
-    gold:
-        - duration: 1
-          leds:
-            l_silver: 00
-            l_gold: white
-            l_single_platinum: 00
-            l_double_platinum: 00
-            l_quintuple_platinum: 00
-    platinum:
-        - duration: 1
-          leds:
-            l_silver: 00
-            l_gold: 00
-            l_single_platinum: white
-            l_double_platinum: 00
-            l_quintuple_platinum: 00
-    double:
-        - duration: 1
-          leds:
-            l_silver: 00
-            l_gold: 00
-            l_single_platinum: 00
-            l_double_platinum: white
-            l_quintuple_platinum: 00
-    quintuple:
-        - duration: 1
-          leds:
-            l_silver: 00
-            l_gold: 00
-            l_single_platinum: 00
-            l_double_platinum: 00
-            l_quintuple_platinum: white
+  album_rotator:
+      - leds:
+          l_silver: white
+          l_quintuple_platinum: off
+      - leds:
+          l_gold: white
+          l_silver: off
+      - leds:
+          l_single_platinum: white
+          l_gold: off
+      - leds:
+          l_double_platinum: white
+          l_single_platinum: off
+      - leds:
+          l_quintuple_platinum: white
+          l_double_platinum: off
+
+
+
+#    silver:
+#        - duration: 1
+#          leds:
+#            l_silver: white
+#            l_gold: 00
+#            l_single_platinum: 00
+#            l_double_platinum: 00
+#            l_quintuple_platinum: 00
+#    gold:
+#        - duration: 1
+#          leds:
+#            l_silver: 00
+#            l_gold: white
+#            l_single_platinum: 00
+#            l_double_platinum: 00
+#            l_quintuple_platinum: 00
+#    platinum:
+#        - duration: 1
+#          leds:
+#            l_silver: 00
+#            l_gold: 00
+#            l_single_platinum: white
+#            l_double_platinum: 00
+#            l_quintuple_platinum: 00
+#    double:
+#        - duration: 1
+#          leds:
+#            l_silver: 00
+#            l_gold: 00
+#            l_single_platinum: 00
+#            l_double_platinum: white
+#            l_quintuple_platinum: 00
+#    quintuple:
+#        - duration: 1
+#          leds:
+#            l_silver: 00
+#            l_gold: 00
+#            l_single_platinum: 00
+#            l_double_platinum: 00
+#            l_quintuple_platinum: white
