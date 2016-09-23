@@ -68,6 +68,7 @@ modes:
   - managers_choice_timed_mode
   - managers_choice_lit
   - mystery_lit
+  - wizard_advance_lit
 
 config:
   - display
@@ -565,6 +566,7 @@ diverters:
     activation_switches: s_LeftOrbit
     enable_events: enable_diverter
     disable_events: ball_ended
+    disable_events: ball_ended, disable_diverter
 #  d_jukebox_magnet:
 #    activation_coil: c_JukeboxMagnet
 #    type: hold
@@ -904,9 +906,7 @@ shots:
     switch_sequence: s_spinner, s_TopRightVUK
     time: 2s
 
-  album_rotator:
-    hit_events: shot_pops_hit, shot_slings_hit
-    profile: album_rotator
+
 
 
 #        ::::::::  :::    :::  :::::::: :::::::::::

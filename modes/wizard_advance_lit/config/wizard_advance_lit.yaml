@@ -1,0 +1,43 @@
+#config_version=4
+
+mode:
+  priority: 400
+  start_events: ball_starting
+
+event_player:
+  advance_wizard_hit:
+      advance_wizard_bonus
+  mode_wizard_advance_lit_started:
+      enable_diverter
+
+shot_profiles:
+  wizard:
+    states:
+    - name: lit
+      show: flash
+      sync_ms: 500
+      speed: 5
+    - name: unlit
+      show: off
+
+shots:
+  # redefine the left lane shot here, since there are several "shots" which use the left lane, so if we applied a
+  # profile to the machine-wide shot here, we wouldn't be able to tie it to different LEDs since those are set in the
+  # show_tokens section of the shot
+  advance_wizard:
+    profile: wizard
+    switch: s_LeftLane
+    show_tokens:
+      led: l_advance_wizard
+
+
+
+slides:
+  advance_wizard_bonus:
+    widgets:
+      - type: text
+        text: WIZARD BONUS QIO
+        style: dmd_med
+
+show_player:
+  advance_wizard_bonus: advance_wizard_bonus
