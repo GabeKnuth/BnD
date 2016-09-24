@@ -367,7 +367,7 @@ ball_devices:
     entrance_count_delay: 500ms
     eject_coil: c_Plunger
     eject_targets: playfield
-    eject_timeouts: 2s
+    eject_timeouts: 3s
     player_controlled_eject_event: sw_launch
     mechanical_eject: true
     debug: true
