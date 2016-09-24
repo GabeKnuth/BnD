@@ -4,12 +4,13 @@ from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
 
 class TestBnD(MpfMachineTestCase):
 
-    def test_bnd(self):
+    def test_attract_mode(self):
         # make sure attract mode is running
         self.assertTrue(self.machine.modes['attract'].active)
 
         self.advance_time_and_run()
 
         # make sure the GI comes on
-        self.assertEqual(RGBColor('66ff18'),
-            self.machine.leds.l_gi_right_5.hw_driver.current_color)
+        for led in self.machine.leds.items_tagged('gi'):
+            self.assertEqual(RGBColor('66ff18'),
+                led.hw_driver.current_color)

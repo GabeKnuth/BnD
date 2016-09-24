@@ -6,6 +6,7 @@ show_player:
       loops: -1
     attract_stage_loop:
       loops: -1
+    gi_on: {}
 
   mode_attract_stopped:
     attract_dmd_loop:
