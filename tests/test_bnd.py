@@ -13,8 +13,10 @@ class TestBnd(MpfMachineTestCase):
         self.assertEqual(self.machine.ball_devices.bd_trough.balls, 3)
         self.assertEqual(self.machine.ball_devices.bd_plunger.balls, 0)
 
-        # advance 10 secs and make sure everything is still right
-        self.advance_time_and_run(10)
+        # advance 1 sec and make sure everything is still right
+        # this checks for the trough kicking out a ball and the plunger
+        # auto-plunging it?
+        self.advance_time_and_run(1)
 
         self.assertEqual(self.machine.ball_devices.bd_drain.balls, 1)
         self.assertEqual(self.machine.ball_devices.bd_trough.balls, 3)
