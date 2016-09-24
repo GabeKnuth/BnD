@@ -30,7 +30,8 @@
 
 machine:
     # HZ: 60
-  balls_installed: 3
+  balls_installed: 4
+#  min_balls: 0
 
 #virtual_platform_start_active_switches: s_drain, s_trough_enter
 
@@ -50,8 +51,8 @@ fast:
   #debug: true
 
 smartmatrix:
-#    port: /dev/tty.usbmodem1030681
-    port: com3
+    port: /dev/tty.usbmodem1030681
+#    port: com3
 
 game:
   balls_per_game: 3
@@ -72,6 +73,7 @@ modes:
   - managers_choice_lit
   - mystery_lit
   - wizard_advance_lit
+#  - money_bags
 
 config:
   - display
@@ -764,10 +766,24 @@ leds:
 
 
 shows:
-  gi_on:
+    gi_on:
     - duration: 1
       leds:
         (leds): 66ff18
+    flash_color:
+        - time: 0
+          leds:
+            (led):
+              color: (color)
+            (leds):
+              color: (color)
+        - time: 1
+          leds:
+            (led):
+              color: black
+            (leds):
+              color: black
+        - time: 2
 
 show_player:
   mode_attract_started:

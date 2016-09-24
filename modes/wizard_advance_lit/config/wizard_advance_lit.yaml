@@ -26,7 +26,7 @@ shots:
   # show_tokens section of the shot
   advance_wizard:
     profile: wizard
-    switch: s_LeftLane
+    switch: s_LeftOrbit
     show_tokens:
       led: l_advance_wizard
 
@@ -39,5 +39,5 @@ slides:
         text: WIZARD BONUS QIO
         style: dmd_med
 
-show_player:
-  advance_wizard_bonus: advance_wizard_bonus
+#show_player:
+#  advance_wizard_bonus: advance_wizard_bonus

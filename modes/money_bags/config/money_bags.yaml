@@ -2,26 +2,36 @@
 
 mode:
   priority: 400
-  start_events: start_money_bags
-  stop_events: ball_ending, money_bags_finished
+  start_events: s_rightinlane_active
+  stop_events: money_bags_finished
+
+event_player:
+    mode_money_bags_started:
+        start_money_bags_timer
 
 shots:
     left_kicking_target:
         switch: s_bottomkickingtarget
         show_tokens:
             led: l_left_longhorn
+#            color: ffcc00
+        advance_events: mode_money_bags_started
+        debug: true
     spinner_to_vuk:
         switch_sequence: s_spinner, s_toprightvuk
         show_tokens:
             led: l_center_longhorn
+#            color: ffcc00
+        debug: true
 
 shot_groups:
     money_bags:
         shots: left_kicking_target, spinner_to_vuk
         profile: advertise
-        enable_events: mode_money_bags_started
-        disable_events: mode_money_bags_stopped
+#        enable_events: mode_money_bags_started
+#        disable_events: mode_money_bags_stopped
         rotate_events: money_bags_advertise_flashing_hit
+        debug: true
 
 timers:
     shot_timer:
@@ -30,10 +40,10 @@ timers:
         direction: down
         max_value: 10
         tick_interval: 1
-        reset_on_complete: true
+        restart_on_complete: true
         control_events:
             - action: start
-              event: balldevice_bd_lower_vuk_eject_success
+              event: start_money_bags_timer
             - action: reset
               event: money_bags_advertise_flashing_hit
             - action: stop
@@ -92,9 +102,11 @@ shot_profiles:
     advertise:
       states:
         - name: flashing
-          show: flashing
-          speed: 5
+#          show: flash_color
+          show: flash
+          speed: 10
         - name: unlit
           show: off
       loop: yes
+      advance_on_hit: false
 
