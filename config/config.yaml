@@ -29,14 +29,9 @@
 
 
 machine:
-    # HZ: 60
   balls_installed: 4
-#  min_balls: 0
 
-#virtual_platform_start_active_switches: s_drain, s_trough_enter
-
-#scriptlets:
-#  trough.Trough
+virtual_platform_start_active_switches: s_drain, s_trough_enter
 
 hardware:
   platform: fast
@@ -48,7 +43,6 @@ fast:
   # Brian, comment out for Gabe
   #  ports: /dev/tty.usbserial-1415C, /dev/tty.usbserial-1415B #, /dev/tty.usbserial-1415A
   config_number_format: int
-  #debug: true
 
 smartmatrix:
     port: /dev/tty.usbmodem1030681
@@ -350,7 +344,7 @@ flippers:
 
 ball_devices:
   bd_drain:
-    tags: drain
+    tags: drain, home
     ball_switches: s_drain
     eject_coil: c_draineject
     #exit_count_delay: 500ms
@@ -376,6 +370,7 @@ ball_devices:
     eject_timeouts: 2s
     player_controlled_eject_event: sw_launch
     mechanical_eject: true
+    debug: true
   bd_top_right_vuk:
     ball_switches: s_TopRightVUK
     entrance_count_delay: 500ms
