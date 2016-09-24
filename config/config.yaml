@@ -344,12 +344,13 @@ flippers:
 
 ball_devices:
   bd_drain:
-    tags: drain, home
+    tags: drain
     ball_switches: s_drain
     eject_coil: c_draineject
     #exit_count_delay: 500ms
     eject_targets: bd_trough
     debug: true
+    target_on_unexpected_ball: bd_trough
   bd_trough:
     tags: trough, home
     entrance_switch: s_trough_enter
