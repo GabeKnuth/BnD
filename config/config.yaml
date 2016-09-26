@@ -687,69 +687,91 @@ leds:
   l_gi_right_5:
     number: 2-0
     tags: gi, gi18
+    type: grb
   l_gi_right_4:
     number: 2-1
+    type: grb
     tags: gi, gi19
   l_gi_right_3:
     number: 2-2
     tags: gi, gi20
+    type: grb
   l_gi_right_2:
     number: 2-3
     tags: gi, gi21
+    type: grb
   l_gi_right_1:
     number: 2-4
     tags: gi, gi22
+    type: grb
   l_gi_left_2:
     number: 2-5
     tags: gi, gi2
+    type: grb
   l_gi_left_1:
     number: 2-6
     tags: gi, gi1
+    type: grb
   l_gi_left_3:
     number: 2-7
     tags: gi, gi3
+    type: grb
   l_gi_left_4:
     number: 2-8
     tags: gi, gi4
+    type: grb
   l_gi_left_5:
     number: 2-9
     tags: gi, gi5
+    type: grb
   l_gi_left_6:
     number: 2-10
     tags: gi, gi6
+    type: grb
   l_gi_left_7:
     number: 2-11
     tags: gi, gi7
+    type: grb
   l_gi_left_8:
     number: 2-12
     tags: gi, gi8
+    type: grb
   l_gi_left_9:
     number: 2-13
     tags: gi, gi9
+    type: grb
   l_gi_left_10:
     number: 2-14
     tags: gi, gi10
+    type: grb
   l_gi_left_lane:
     number: 2-15
     tags: gi, gi11
+    type: grb
   l_gi_center_lane:
     number: 2-16
     tags: gi, gi12
+    type: grb
   l_gi_right_lane:
     number: 2-17
     tags: gi, gi13
+    type: grb
   l_gi_right_9:
     number: 2-18
     tags: gi, gi14
+    type: grb
   l_gi_right_8:
     number: 2-19
     tags: gi, gi15
+    type: grb
   l_gi_right_7:
     number: 2-20
     tags: gi, gi16
+    type: grb
   l_gi_right_6:
     number: 2-21
     tags: gi, gi17
+    type: grb
 
 
 #        ::::::::  :::    :::  ::::::::  :::       :::  ::::::::
