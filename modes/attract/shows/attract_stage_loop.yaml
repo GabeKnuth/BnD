@@ -3,6 +3,10 @@
 - duration: 2
   slides:
     stage_attract_1:
+#        widgets:
+#            - type: video
+#              video: mr_bed
+#              end_behavior: loop
         widgets:
             - type: text
               style: tall title

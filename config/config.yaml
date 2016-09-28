@@ -57,6 +57,33 @@ game:
 led_settings:
     default_led_fade_ms: 200
 
+sound_system:
+    master_volume: 0.75
+    tracks:
+       music:
+          simultaneous_sounds: 1
+          volume: 1.0
+       voice:
+          simultaneous_sounds: 1
+          volume: 0.7
+       sfx:
+          simultaneous_sounds: 8
+          volume: 0.4
+
+assets:
+    sounds:
+        default:
+            load: on_demand
+        music:
+            track: music
+        sfx:
+            track: sfx
+        voice:
+            track: voice
+    videos:
+        default:
+            load: on_demand
+
 modes:
   - base
   - skill_shot

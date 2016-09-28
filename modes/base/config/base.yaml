@@ -11,8 +11,26 @@ event_player:
 config:
   - display
 
+sound_player:
+  mode_base_started:
+    wait_to_plunge:
+        action: play
+        loops: -1
+        events_when_looping: wait_to_plunge_looped
+  start_step_2:
+    plunged:
+        action: play
+        loops: 0
+        events_when_stopped: start_step_3
+    wait_to_plunge:
+        action: stop
+  start_step_3:
+    base_bed_loop:
+        action: play
+        loops: -1
+
 logic_blocks:
-  counters:
+  counter:
     lb_jukebox_counter:
       count_events: sw_jukebox
       events_when_hit: jukebox_hit #Hook the "count" parameter of this event ?? Can I do that in config?
@@ -20,6 +38,12 @@ logic_blocks:
       count_complete_value: 100
       direction: up
       events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
+  sequence:
+    sound_timing:
+      events:
+        - balldevice_playfield_enter
+        - wait_to_plunge_looped
+      events_when_complete: start_step_2
 
 scoring:
     shot_pops_hit:

@@ -14,3 +14,4 @@ show_player:
     attract_stage_loop:  # todo test if we have to do this?
       action: stop
       target: stage
+
