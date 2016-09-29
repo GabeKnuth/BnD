@@ -33,20 +33,7 @@ machine:
 
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
-hardware:
-  platform: fast
-  driverboards: fast
-  rgb_dmd: smartmatrix
 
-fast:
-  ports: /dev/tty.usbserial-141C, /dev/tty.usbserial-141B #, /dev/tty.usbserial-141A
-  # Brian, comment out for Gabe
-  #  ports: /dev/tty.usbserial-1415C, /dev/tty.usbserial-1415B #, /dev/tty.usbserial-1415A
-  config_number_format: int
-
-smartmatrix:
-    port: /dev/tty.usbmodem1030681
-#    port: com3
 
 game:
   balls_per_game: 3

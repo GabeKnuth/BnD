@@ -1,0 +1,66 @@
+#config_version=4
+
+# Override config for "desktop" mode which renders both the LCD and DMD in a
+# single on-screen window.
+
+# To use, run the mpf-mc like this:
+# mpf mc -c config,desktop
+
+
+displays:
+  # _overwrite: true will completely replace the existing displays: section
+  window:
+    width: 1024
+    height: 768
+  dmd:
+    width: 128
+    height: 32
+    default: true
+
+hardware:
+  platform: smart_virtual
+  rgb_dmd: smart_virtual
+
+slides:
+  desktop:
+    - type: slide_frame
+      name: stage
+      width: 800
+      height: 480
+      y: top-50
+      anchor_y: top
+    - type: rectangle
+      color: aa0000
+      width: 840
+      height: 520
+      corner_radius: 20
+      anchor_y: top
+      y: top-30
+    - type: color_dmd
+      width: 640
+      height: 160
+      y: 31
+      anchor_y: bottom
+    - type: rectangle
+      width: 642
+      height: 162
+      anchor_y: bottom
+      y: 30
+
+slide_player:
+  mc_ready:
+    desktop:
+      target: window
+
+config:
+  - config
+
+window:
+  width: 1024
+  height: 768
+  title: Mission Pinball Framework - Brooks & Dunn
+  resizable: false
+  fullscreen: false
+  borderless: false
+  exit_on_escape: true
+  source_display: window

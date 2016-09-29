@@ -1,0 +1,40 @@
+hardware:
+  platform: fast
+  driverboards: fast
+  rgb_dmd: smartmatrix
+
+fast:
+  ports: /dev/tty.usbserial-141C, /dev/tty.usbserial-141B #, /dev/tty.usbserial-141A
+  # Brian, comment out for Gabe
+  #  ports: /dev/tty.usbserial-1415C, /dev/tty.usbserial-1415B #, /dev/tty.usbserial-1415A
+  config_number_format: int
+
+smartmatrix:
+    port: /dev/tty.usbmodem1030681
+#    port: com3
+
+config:
+  - config
+
+window:
+  width: 800
+  height: 480
+  title: Mission Pinball Framework - Brooks & Dunn
+  resizable: false
+  fullscreen: false
+  borderless: false
+  exit_on_escape: true
+  source_display: stage
+
+displays:
+  stage:
+    height: 480
+    width: 800
+  dmd:
+    width: 128
+    height: 32
+    default: true
+
+physical_rgb_dmds:
+  smartmatrix:
+    brightness: .5
