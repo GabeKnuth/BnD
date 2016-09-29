@@ -53,7 +53,7 @@ slide_player:
       target: window
 
 config:
-  - config
+  - machine_config
 
 window:
   width: 1024
