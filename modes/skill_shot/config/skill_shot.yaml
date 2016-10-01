@@ -9,7 +9,7 @@ timers:
         start_value: 5
         direction: down
         control_events:
-          - event: balldevice_playfield_ball_enter
+          - event: balldevice_bd_plunger_ball_left
             action: start
 
 event_player:
@@ -20,17 +20,23 @@ event_player:
     - end_skill_shot
 
 slides:
-  skill_shot:
+  skill_shot_stage:
     widgets:
-      - type: text
-        text: SKILL SHOT INSTRUCTIONS
-        style: stage
+      - type: video
+        video: ss_skill_shot
+        end_behavior: loop
+#      - type: text
+#        text: SKILL SHOT INSTRUCTIONS
+#        style: stage
+  skill_shot_dmd:
+    widgets:
       - type: text
         text: TIME LEFT (skill_shot_skill_shot_timer_tick)
         y: 20%
-        style: stage
 
 slide_player:
   mode_skill_shot_started:
-    skill_shot:
+    skill_shot_stage:
       target: stage
+    skill_shot_dmd:
+      target: dmd
