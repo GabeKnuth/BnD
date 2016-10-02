@@ -1,0 +1,1 @@
+mpf -c desktop $@ & mpf mc -c desktop $@

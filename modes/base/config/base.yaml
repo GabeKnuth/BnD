@@ -16,7 +16,7 @@ sound_player:
     wait_to_plunge:
         action: play
         loops: -1
-        #events_when_looping: wait_to_plunge_looped
+        events_when_looping: wait_to_plunge_looped
   balldevice_bd_plunger_ball_left:
     plunged:
         action: play
