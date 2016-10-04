@@ -81,6 +81,7 @@ modes:
   - managers_choice_lit
   - mystery_lit
   - wizard_advance_lit
+  - mission_rotator
 #  - money_bags
 
 config:
@@ -137,7 +138,7 @@ switches:
     tags: playfield_active, end_skill_shot
   s_rightsling:
     number: 25
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, toggle
   s_rightbanktop:
     number: 26
     tags: playfield_active, end_skill_shot
@@ -150,7 +151,7 @@ switches:
     tags: jukebox, playfield_active, end_skill_shot
   s_topkickingtarget:
     number: 41
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, toggle
   s_subwayopto:
     number: 42
     tags: subway, playfield_active, end_skill_shot
@@ -161,14 +162,14 @@ switches:
     tags: playfield_active, end_skill_shot
   s_leftsling:
     number: 44
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, toggle
   s_leftrampopto:
     number: 45
     type: NC
     tags: playfield_active, end_skill_shot
   s_bottomkickingtarget:
     number: 46
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, toggle
   s_leftorbit:
     number: 47
     tags: playfield_active, end_skill_shot
@@ -208,13 +209,13 @@ switches:
     tags: playfield_active, end_skill_shot
   s_leftpop:
     number: 77
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, toggle
   s_rightpop:
     number: 78
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, toggle
   s_bottompop:
     number: 79
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, toggle
 
 
 #        ::::::::   :::::::: ::::::::::: :::        ::::::::

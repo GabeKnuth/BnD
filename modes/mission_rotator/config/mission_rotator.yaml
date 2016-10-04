@@ -1,0 +1,59 @@
+#config_version=4
+mode:
+  start_events: mode_base_started
+  stop_events: mission_started
+
+shots:
+    world_tour:
+      label: world_tour
+      hit_events: s_lowervukopto_active
+      advance_events: mode_mission_control_started
+      show_tokens:
+        leds: l_world_tour
+    money_bags:
+      label: money_bags
+      hit_events: s_lowervukopto_active
+      show_tokens:
+        leds: l_money_bags
+    music_awards:
+      label: music_awards
+      hit_events: s_lowervukopto_active
+      show_tokens:
+        leds: l_music_awards
+    jukebox_mode:
+      label: jukebox
+      hit_events: s_lowervukopto_active
+      show_tokens:
+        leds: l_jukebox_insert
+    play_poker:
+      label: play_poker
+      hit_events: s_lowervukopto_active
+      show_tokens:
+        leds: l_play_poker
+
+shot_groups:
+    missions:
+      profile: rotator
+      enable_events: mode_base_started, mission_ended
+      disable_events: mission_started
+      reset_events: all_missions_completed
+      rotate_right_events: sw_toggle
+
+shot_profiles:
+    rotator:
+        loop: true
+        state_names_to_rotate: highlighted
+        state_names_to_not_rotate: completed, unfinished
+        player_variable: mission_position
+        states:
+            - name: unlit
+              show: "off"
+            - name: highlighted
+              show: flash
+            - name: unfinished
+              show: flash
+              speed: 2
+            - name: completed
+              show: "on"
+
+
