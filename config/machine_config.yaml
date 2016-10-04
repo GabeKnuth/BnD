@@ -605,6 +605,8 @@ diverters:
 
 
 leds:
+  l_australia:
+    number: 1-0
   l_left_quarter:
     number: 1-1
   l_quintuple_platinum:
