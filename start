@@ -1,1 +1,2 @@
-mpf -c desktop $@ & mpf mc -c desktop $@
+mpf -c desktop $@ & mpf mc -c desktop $@ & sleep 3 && mpf monitor
+
