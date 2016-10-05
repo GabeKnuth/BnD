@@ -7,32 +7,32 @@ mode:
 shots:
     world_tour:
       label: world_tour
-      hit_events: s_lowervukopto_active
+      hit_events: bd_lower_vuk_ball_enter
       advance_events: mode_mission_rotator_started
       profile: mission_rotator
       show_tokens:
         leds: l_world_tour
     money_bags:
       label: money_bags
-      hit_events: s_lowervukopto_active
+      hit_events: bd_lower_vuk_ball_enter
       profile: mission_rotator
       show_tokens:
         leds: l_money_bags
     music_awards:
       label: music_awards
-      hit_events: s_lowervukopto_active
+      hit_events: bd_lower_vuk_ball_enter
       profile: mission_rotator
       show_tokens:
         leds: l_music_awards
     jukebox_mode:
       label: jukebox
-      hit_events: s_lowervukopto_active
+      hit_events: bd_lower_vuk_ball_enter
       profile: mission_rotator
       show_tokens:
         leds: l_jukebox_insert
     play_poker:
       label: play_poker
-      hit_events: s_lowervukopto_active
+      hit_events: bd_lower_vuk_ball_enter
       profile: mission_rotator
       show_tokens:
         leds: l_play_poker
@@ -41,7 +41,7 @@ shot_groups:
     missions:
       shots: world_tour, money_bags, music_awards, jukebox_mode, play_poker
       profile: mission_rotator
-      enable_events: mode_base_started, mission_ended
+      enable_events: mode_mission_rotator_started, mission_ended
       disable_events: mission_started
       reset_events: all_missions_completed
       rotate_right_events: sw_toggle
@@ -49,18 +49,14 @@ shot_groups:
 shot_profiles:
     mission_rotator:
         loop: true
-        state_names_to_rotate: highlighted
-        state_names_to_not_rotate: completed, unfinished
-        player_variable: mission_position
+        state_names_to_rotate: lit, unlit
+        advance_on_hit: false
         states:
             - name: unlit
               show: "off"
-            - name: highlighted
+            - name: lit
               show: flash
               speed: 3
-            - name: unfinished
-              show: flash
-              speed: 6
             - name: completed
               show: "on"
 
