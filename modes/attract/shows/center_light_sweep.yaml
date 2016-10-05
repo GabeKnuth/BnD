@@ -1,0 +1,51 @@
+#show_version=4
+
+- duration: 200ms
+  leds:
+    l_world_tour: on
+    l_silver: on
+    l_gold: off
+    l_money_bags: off
+- duration: 200ms
+  leds:
+    l_world_tour: off
+    l_silver: off
+    l_gold: on
+    l_money_bags: on
+- duration: 200ms
+  leds:
+    l_gold: off
+    l_money_bags: off
+    l_single_platinum: on
+    l_music_awards: on
+- duration: 200ms
+  leds:
+    l_single_platinum: off
+    l_music_awards: off
+    l_jukebox_insert: on
+    l_double_platinum: on
+- duration: 200ms
+  leds:
+    l_jukebox_insert: off
+    l_double_platinum: off
+    l_quintuple_platinum: on
+    l_play_poker: on
+- duration: 200ms
+  leds:
+    l_jukebox_insert: on
+    l_double_platinum: on
+    l_quintuple_platinum: off
+    l_play_poker: off
+
+- duration: 200ms
+  leds:
+    l_jukebox_insert: off
+    l_double_platinum: off
+    l_single_platinum: on
+    l_music_awards: on
+- duration: 200ms
+  leds:
+    l_single_platinum: off
+    l_music_awards: off
+    l_gold: on
+    l_money_bags: on

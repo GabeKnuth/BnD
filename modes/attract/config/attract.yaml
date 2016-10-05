@@ -7,6 +7,8 @@ show_player:
     attract_stage_loop:
       loops: -1
     gi_on: {}
+    center_light_sweep:
+      speed: 2
 
   mode_attract_stopped:
     attract_dmd_loop:
