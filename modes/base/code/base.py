@@ -24,5 +24,3 @@ class Base(Mode):
         else:
             pass
 
-
-

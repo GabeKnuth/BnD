@@ -3,8 +3,94 @@ mode:
   priority: 500
   start_events: start_jukebox_mode
 
+# todo
 #Intro dots
-#video pool??
-#counter for hits. fire new video on count event
+#DMD dots during mode
 #when over, has to start multiball mode
+#jukebox lights need to do something
+#scoring
+#initial ball lock
 
+
+# Kind of random jukebox scoop positioning. When it's in the down position, and a
+# ball enters the subway, it might move to the up position or stay down
+# You can't confidently do this on the jukebox opto event because it could trap
+# a ball inside or in the back. If it traps inside, it will likely break the servo
+
+random_event_player:
+    s_subwayopto_active:
+        - jukebox_up
+        - jukebox_down
+
+# Need one shot with two possible switches: s_jukeboxopto and s_subwayopto, so we
+# just tag both those switches with "jukebox_hit" and use that as a hit event here
+
+#shots:
+#    shot_jukebox:
+#        hit_events: sw_jukebox_hit
+
+# actually, maybe we don't need this? We can just use that sw_jukebox_hit event
+
+# Now let's make a logic block that counts jukebox hit events. We can use the hit
+# events to change videos, as well as to fire off the complete mode logic
+
+logic_blocks:
+    counters:
+        jukebox_mode_hit_counter:
+            enable_events: mode_jukebox_mode_started
+            reset_on_complete: true
+            disable_on_complete: true
+            persist_state: true # keep status between balls
+            count_events: sw_jukebox_hit
+            count_complete_value: 9
+            multiple_hit_window: 1s
+            events_when_hit: change_song
+            events_when_complete: play_bnd_song
+
+# Mode timer so we know when time runs out. We'll count down at 1.25s intervals.
+# This also pauses when the ball enters the subway until it ejects from the vuk.
+# Each hit on the jukebox adds 3 seconds, but it never goes above 15 seconds.
+
+timers:
+    jukebox_mode_timer:
+        start_value: 10
+        max_value: 15
+        tick_interval: 1.25s
+        direction: down
+        control_events:
+          - event: balldevice_bd_lower_vuk_ball_left
+            action: start
+          - event: s_subwayopto_active
+            action: stop
+          - event: sw_jukebox_hit
+            action: add
+            value: 3
+
+# I think we'll play the videos randomly, so let's try that. That way everyone in
+# this mode can hear/see differnet songs.
+
+video_pools:
+    jukebox_videos:
+        type: random_force_all
+        videos:
+            jb_9_to_5
+            jb_achy_breaky
+            jb_convoy|2
+            jb_every_little_thing
+            jb_feel_like_a_woman
+            jb_hello_darlin|2
+            jb_louisiana_woman
+            jb_rhinestone_cowboy
+            jb_stand_by_your_man
+
+# Now we need to play the video. We probably need a show here because we have to play
+# the record scratch sound, too. The first event needs to be just the song. Each one
+# after that should be record scratch, then song.
+
+show_player:
+  mode_jukebox_mode_started:
+    play_video:
+      loops: -1
+  change_song(2):
+    play_video:
+      loops: -1

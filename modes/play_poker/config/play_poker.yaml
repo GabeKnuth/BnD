@@ -3,11 +3,10 @@ Mode:
   start_events: mode_play_poker_starting #start_play_poker_mode
   priority: 500
 
-# need to find out how to hold the ball in the top vuk while we show the card_received
-# events below, then release it when done.
+# TODO
+# Also need a counter to count how many cards and something to remember the cards.
+# Scoring
 
-## Also need a counter to count how many cards
-# and something to remember the cards.
 
 ball_locks:
   poker_lock:

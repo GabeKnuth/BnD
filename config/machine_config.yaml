@@ -153,13 +153,13 @@ switches:
   s_jukeboxopto:
     number: 40
     type: NC
-    tags: jukebox, playfield_active, end_skill_shot
+    tags: jukebox, playfield_active, end_skill_shot, jukebox_hit
   s_topkickingtarget:
     number: 41
     tags: playfield_active, end_skill_shot, toggle
   s_subwayopto:
     number: 42
-    tags: subway, playfield_active, end_skill_shot
+    tags: subway, playfield_active, end_skill_shot, jukebox_hit
     type: NC
   s_lowervukopto:
     number: 43

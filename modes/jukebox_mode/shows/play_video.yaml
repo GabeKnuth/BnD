@@ -1,0 +1,14 @@
+#show_version=4
+
+- duration: 2
+  slides:
+    video:
+        widgets:
+            - type: video
+              video: jukebox_videos
+              end_behavior: loop
+        target: stage
+    instructions:
+        widgets:
+            - type: text
+            text: Change the song!
