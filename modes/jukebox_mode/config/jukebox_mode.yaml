@@ -1,0 +1,10 @@
+#config_version=4
+mode:
+  priority: 500
+  start_events: start_jukebox_mode
+
+#Intro dots
+#video pool??
+#counter for hits. fire new video on count event
+#when over, has to start multiball mode
+

@@ -1,17 +1,31 @@
 #config_version=4
 Mode:
   start_events: ball_starting #start_play_poker_mode
-  priority: 50000
+  priority: 500
 
-# need a timer
+# need to find out how to hold the ball in the top vuk while we show the card_received
+# events below, then release it when done.
+
+# Also need intro dots and instructions
 
 timers:
     shuffle_timer:
-        start_value: 2
+        start_value: 1
         direction: down
+        restart_on_complete: true
         control_events:
           - event: shot_spinner_to_vuk_hit
             action: start
+          - event: timer_shuffle_timer_complete
+            action: stop
+    display_timer:
+        start_value: 5
+        direction: down
+        restart_on_complete: true
+            - event: timer_shuffle_timer_complete
+              action: start
+            - event: timer_display_timer_complete
+              action: stop
 
 show_player:
     s_spinner_active:
@@ -23,6 +37,7 @@ show_player:
 
 # Need to get music from base to fade away. Maybe use ducking? Need to configure
 # the release to happen when the ball ejects, though, which isn't a thing.
+      # This might be ok now - moved poker_loop to music track and set to preload
 
     poker_ten_received:
         award_card:
@@ -51,11 +66,15 @@ show_player:
             loops: -1
 
 random_event_player:
-    timer_shuffle_timer_complete:
+    timer_shuffle_timer_started:
         - poker_ten_received
         - poker_jack_received
         - poker_queen_received
         - poker_king_received
         - poker_ace_received
 
-
+sound_player:
+  timer_shuffle_timer_started:
+    poker_loop:
+        action: play
+        loops: -1

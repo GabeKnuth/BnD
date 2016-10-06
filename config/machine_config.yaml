@@ -61,30 +61,31 @@ sound_system:
 assets:
     sounds:
         default:
-            load: on_demand
+            load: preload
         music:
             track: music
         sfx:
             track: sfx
-            load: preload
         voice:
             track: voice
     videos:
         default:
             load: on_demand
+        #preload:
+        #    load: on_demand
 
 modes:
   - base
-#  - skill_shot
-#  - jukebox_hurryup
-#  - managers_choice_base
-#  - managers_choice_multiball
-#  - managers_choice_timed_mode
-#  - managers_choice_lit
-#  - mystery_lit
-#  - wizard_advance_lit
-#  - mission_rotator
-#  - light_mission_select
+  - skill_shot
+  - jukebox_hurryup
+  - managers_choice_base
+  - managers_choice_multiball
+  - managers_choice_timed_mode
+  - managers_choice_lit
+  - mystery_lit
+  - wizard_advance_lit
+  - mission_rotator
+  - light_mission_select
   - play_poker
 #  - money_bags
 

@@ -35,7 +35,7 @@ slides:
         y: 20%
 
 slide_player:
-  mode_skill_shot_started:
+  mode_skill_shot_starting:
     skill_shot_stage:
       target: stage
     skill_shot_dmd:

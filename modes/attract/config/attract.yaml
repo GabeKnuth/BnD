@@ -26,14 +26,13 @@ show_player:
     attract_music_lights:
       action: stop
 
-#sound_player:
-#  mode_attract_started:
-#    base_bed_loop:
-#      action: play
-#      loops: -1
-#  mode_attract_stopped:
-#    base_bed_loop:
-#      action: stop
+sound_player:
+  mode_attract_started:
+    base_bed_loop:
+      action: play
+      loops: -1
+      mode_end_action: stop
+
 
 
 shows:
