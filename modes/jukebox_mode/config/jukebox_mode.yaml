@@ -1,7 +1,7 @@
 #config_version=4
 mode:
   priority: 500
-  start_events: start_jukebox_mode
+  start_events: mode_base_started #start_jukebox_mode
 
 # todo
 #Intro dots
@@ -44,7 +44,7 @@ logic_blocks:
             count_events: sw_jukebox_hit
             count_complete_value: 9
             multiple_hit_window: 1s
-            events_when_hit: change_song
+            events_when_hit: change_song, stop_song
             events_when_complete: play_bnd_song
 
 # Mode timer so we know when time runs out. We'll count down at 1.25s intervals.
@@ -70,7 +70,7 @@ timers:
 # this mode can hear/see differnet songs.
 
 video_pools:
-    jukebox_videos:
+    jukebox_videos_pool:
         type: random_force_all
         videos:
             jb_9_to_5
@@ -83,14 +83,22 @@ video_pools:
             jb_rhinestone_cowboy
             jb_stand_by_your_man
 
-# Now we need to play the video. We probably need a show here because we have to play
-# the record scratch sound, too. The first event needs to be just the song. Each one
-# after that should be record scratch, then song.
+# Now we need to play the video. The first event needs to be just the song. Each one
+# after that should be record scratch, then song, so we also have a sound_player config
+# that plays the sound only after the first time the
 
 show_player:
+  stop_song:
+    play_video:
+      action: stop
+  change_song:
+    play_video:
+      loops: -1
   mode_jukebox_mode_started:
     play_video:
       loops: -1
-  change_song(2):
-    play_video:
-      loops: -1
+
+sound_player:
+  stop_song{remaining<=8}:
+    jb_record_scratch:
+      loops: 0

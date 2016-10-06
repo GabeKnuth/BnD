@@ -5,8 +5,8 @@
     video:
         widgets:
             - type: video
-              video: jukebox_videos
-              end_behavior: loop
+            video: jukebox_videos_pool # This is a video pool. does this work?
+            end_behavior: loop
         target: stage
     instructions:
         widgets:
