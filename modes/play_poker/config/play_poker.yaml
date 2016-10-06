@@ -1,10 +1,21 @@
 #config_version=4
 Mode:
-  start_events: ball_starting #start_play_poker_mode
+  start_events: mode_play_poker_starting #start_play_poker_mode
   priority: 500
 
 # need to find out how to hold the ball in the top vuk while we show the card_received
 # events below, then release it when done.
+
+## Also need a counter to count how many cards
+# and something to remember the cards.
+
+ball_locks:
+  poker_lock:
+    balls_to_lock: 1
+    lock_devices: bd_top_right_vuk
+    enable_events: shot_spinner_to_vuk_hit
+    request_new_balls_to_pf: False
+    release_one_events: play_poker_release_ball #nothing posts this event yet
 
 # Also need intro dots and instructions
 
