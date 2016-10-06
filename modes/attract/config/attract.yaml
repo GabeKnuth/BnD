@@ -9,6 +9,13 @@ show_player:
     gi_on: {}
     center_light_sweep:
       speed: 2
+    attract_music_lights:
+      loops: -1
+      speed: 1
+      show_tokens:
+        left: left
+        center: center
+        right: right
 
   mode_attract_stopped:
     attract_dmd_loop:
@@ -16,4 +23,43 @@ show_player:
     attract_stage_loop:  # todo test if we have to do this?
       action: stop
       target: stage
+    attract_music_lights:
+      action: stop
 
+#sound_player:
+#  mode_attract_started:
+#    base_bed_loop:
+#      action: play
+#      loops: -1
+#  mode_attract_stopped:
+#    base_bed_loop:
+#      action: stop
+
+
+shows:
+  attract_music_lights:
+    - duration: .39s
+      leds:
+        (left): white
+        (right): off
+        (center): off
+    - duration: .39s
+      leds:
+        (left): off
+        (right): white
+        (center): off
+    - duration: .39s
+      leds:
+        (left): off
+        (right): off
+        (center): white
+    - duration: .20s
+      leds:
+        (left): white
+        (right): white
+        (center): white
+    - duration: .19s
+      leds:
+        (left): off
+        (right): off
+        (center): off

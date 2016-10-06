@@ -7,6 +7,7 @@ mode:
 event_player:
   mode_base_started:
     jukebox_up
+    light_mission_select
 
 config:
   - display
@@ -127,6 +128,18 @@ show_player:
       show_tokens:
         led: l_right_pop
       priority: 1000000
+  s_rightrampopto_active:
+    flash_once:
+      loops: 3
+      speed: 1.5
+      show_tokens:
+        led: l_right_ramp_flasher
+  s_leftrampopto_active:
+    flash_once:
+      loops: 3
+      speed: 1.5
+      show_tokens:
+        led: l_left_ramp_flasher
 
 
 
@@ -163,6 +176,10 @@ shots:
   shot_subway_shot:   # Seems like a weird name, but probably should have this one
     switch_sequence: s_SubwayOpto, s_LowerVUKOpto
     time: 500ms
+  shot_lower_vuk_from_playfield:
+    switch: s_lowervukopto
+    delay_switch:
+      s_subwayopto: 2s
   shot_spinner_to_vuk:
     switch_sequence: s_spinner, s_TopRightVUK
     time: 2s

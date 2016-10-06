@@ -1,38 +1,66 @@
 #config_version=4
+
+# This mode is almost done, but needs to have something in it to know
+# when a mission is complete and set the light's state to complete.
+# We also need a way to reset all of those states when the everything
+# has been done.
+
+# Is this mode where we keep track of incomplete modes that are resumed?
+# Need stuff for that, too.
+
 mode:
-  start_events: mode_base_started # Really, this should start when the right ramp shot is made when lit)
-  stop_events: mission_started
+  start_events: start_mission_rotator
+  stop_events: ball_ending, start_money_bags_mode, start_world_tour_mode, start_music_awards_mode, start_jukebox_mode, start_play_poker_mode
   priority: 200
+
+random_event_player:
+    mode_mission_rotator_started:
+        - world_tour_advance
+        - money_bags_advance
+        - music_awards_advance
+        - jukebox_mode_advance
+        - play_poker_advance
+
+event_player:
+    money_bags_mission_rotator_lit_hit: start_money_bags_mode
+    world_tour_mission_rotator_lit_hit: start_world_tour_mode
+    music_awards_mission_rotator_lit_hit: start_music_awards_mode
+    jukebox_mode_mission_rotator_lit_hit: start_jukebox_mode
+    play_poker_mission_rotator_lit_hit: start_play_poker_mode
 
 shots:
     world_tour:
       label: world_tour
-      hit_events: bd_lower_vuk_ball_enter
-      advance_events: mode_mission_rotator_started
+      hit_events: shot_lower_vuk_from_playfield_hit
+      advance_events: world_tour_advance
       profile: mission_rotator
       show_tokens:
         leds: l_world_tour
     money_bags:
       label: money_bags
-      hit_events: bd_lower_vuk_ball_enter
+      hit_events: shot_lower_vuk_from_playfield_hit
+      advance_events: money_bags_advance
       profile: mission_rotator
       show_tokens:
         leds: l_money_bags
     music_awards:
       label: music_awards
-      hit_events: bd_lower_vuk_ball_enter
+      hit_events: shot_lower_vuk_from_playfield_hit
+      advance_events: music_awards_advance
       profile: mission_rotator
       show_tokens:
         leds: l_music_awards
     jukebox_mode:
       label: jukebox
-      hit_events: bd_lower_vuk_ball_enter
+      hit_events: shot_lower_vuk_from_playfield_hit
+      advance_events: jukebox_mode_advance
       profile: mission_rotator
       show_tokens:
         leds: l_jukebox_insert
     play_poker:
       label: play_poker
-      hit_events: bd_lower_vuk_ball_enter
+      hit_events: shot_lower_vuk_from_playfield_hit
+      advance_events: play_poker_advance
       profile: mission_rotator
       show_tokens:
         leds: l_play_poker

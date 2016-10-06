@@ -1,0 +1,12 @@
+# show_version=4
+- duration: 3
+  slides:
+    card_awarded:
+    - type: image
+      image: (card_image)
+  sounds:
+    poker_loop:
+      action: play
+      loops: 0
+
+

@@ -16,13 +16,13 @@ shots:
             led: l_left_longhorn
 #            color: ffcc00
         advance_events: mode_money_bags_started
-        debug: true
+        ##debug: true
     spinner_to_vuk:
         switch_sequence: s_spinner, s_toprightvuk
         show_tokens:
             led: l_center_longhorn
 #            color: ffcc00
-        debug: true
+        ##debug: true
 
 shot_groups:
     money_bags:
@@ -31,7 +31,7 @@ shot_groups:
 #        enable_events: mode_money_bags_started
 #        disable_events: mode_money_bags_stopped
         rotate_events: money_bags_advertise_flashing_hit
-        debug: true
+        #debug: true
 
 timers:
     shot_timer:

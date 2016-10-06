@@ -1,0 +1,61 @@
+#config_version=4
+Mode:
+  start_events: ball_starting #start_play_poker_mode
+  priority: 50000
+
+# need a timer
+
+timers:
+    shuffle_timer:
+        start_value: 2
+        direction: down
+        control_events:
+          - event: shot_spinner_to_vuk_hit
+            action: start
+
+show_player:
+    s_spinner_active:
+        cycle_cards:
+            loops: 3
+    timer_shuffle_timer_complete:
+        cycle_cards:
+            action: stop
+
+# Need to get music from base to fade away. Maybe use ducking? Need to configure
+# the release to happen when the ball ejects, though, which isn't a thing.
+
+    poker_ten_received:
+        award_card:
+            show_tokens:
+                card_image: 10_dmd
+            loops: -1
+    poker_jack_received:
+        award_card:
+            show_tokens:
+                card_image: jack_dmd
+            loops: -1
+    poker_queen_received:
+        award_card:
+            show_tokens:
+                card_image: queen_dmd
+            loops: -1
+    poker_king_received:
+        award_card:
+            show_tokens:
+                card_image: king_dmd
+            loops: -1
+    poker_ace_received:
+        award_card:
+            show_tokens:
+                card_image: ace_dmd
+            loops: -1
+
+random_event_player:
+    timer_shuffle_timer_complete:
+        - poker_ten_received
+        - poker_jack_received
+        - poker_queen_received
+        - poker_king_received
+        - poker_ace_received
+
+

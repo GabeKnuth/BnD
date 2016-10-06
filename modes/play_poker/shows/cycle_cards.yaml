@@ -1,0 +1,10 @@
+# show_version=4
+- duration: 2
+  slides:
+    poker_slide_1:
+    - type: image
+      image: poker
+  sounds:
+    shuffling:
+      action: play
+      loops: 0

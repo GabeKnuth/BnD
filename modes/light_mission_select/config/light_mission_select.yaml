@@ -1,0 +1,22 @@
+#config_version=4
+Mode:
+  start_events: light_mission_select
+  stop_events: start_mission_rotator, ball_ending
+  priority: 200
+
+show_player:
+  s_rightrampopto_active:
+    flash_once:
+      loops: 3
+      speed: 1.5
+      show_tokens:
+        led: l_right_ramp_flasher
+  mode_light_mission_select_started:
+    flash:
+      loops: -1
+      speed: 3
+      show_tokens:
+        led: l_ramp_fire
+
+event_player:
+    s_rightrampopto_active: start_mission_rotator
