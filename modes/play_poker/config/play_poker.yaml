@@ -32,10 +32,11 @@ timers:
         start_value: 5
         direction: down
         restart_on_complete: true
-            - event: timer_shuffle_timer_complete
-              action: start
-            - event: timer_display_timer_complete
-              action: stop
+        control_events:
+           - event: timer_shuffle_timer_complete
+             action: start
+           - event: timer_display_timer_complete
+             action: stop
 
 show_player:
     s_spinner_active:

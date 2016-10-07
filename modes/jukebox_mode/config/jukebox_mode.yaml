@@ -1,7 +1,7 @@
 #config_version=4
 mode:
   priority: 500
-  start_events: mode_base_started #start_jukebox_mode
+  start_events: start_jukebox_mode
 
 # todo
 #Intro dots
@@ -9,8 +9,16 @@ mode:
 #when over, has to start multiball mode
 #jukebox lights need to do something
 #scoring
-#initial ball lock
+#Need to fix show and video code so videos stop when show stops
+#Need fo fix video pools in assets
 
+ball_locks:
+  intro_lock:
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
+    enable_events: mode_jukebox_mode_started
+    request_new_balls_to_pf: False
+    release_one_events: timer_display_timer_complete
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down
@@ -21,15 +29,6 @@ random_event_player:
     s_subwayopto_active:
         - jukebox_up
         - jukebox_down
-
-# Need one shot with two possible switches: s_jukeboxopto and s_subwayopto, so we
-# just tag both those switches with "jukebox_hit" and use that as a hit event here
-
-#shots:
-#    shot_jukebox:
-#        hit_events: sw_jukebox_hit
-
-# actually, maybe we don't need this? We can just use that sw_jukebox_hit event
 
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
 # events to change videos, as well as to fire off the complete mode logic
@@ -67,25 +66,29 @@ timers:
             value: 3
 
 # I think we'll play the videos randomly, so let's try that. That way everyone in
-# this mode can hear/see differnet songs.
+# this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
 
-video_pools:
-    jukebox_videos_pool:
-        type: random_force_all
-        videos:
-            jb_9_to_5
-            jb_achy_breaky
-            jb_convoy|2
-            jb_every_little_thing
-            jb_feel_like_a_woman
-            jb_hello_darlin|2
-            jb_louisiana_woman
-            jb_rhinestone_cowboy
-            jb_stand_by_your_man
+#video_pools:
+#    jukebox_videos_pool:
+#        type: random_force_all
+#        videos:
+#            jb_bed_of_roses
+#            jb_achy_breaky
+#            jb_convoy
+#            jb_every_little_thing
+#            jb_boots_are_made_for_walkin
+#            jb_hello_darlin
+#            jb_louisiana_woman
+#            jb_rhinestone_cowboy
+#            jb_stand_by_your_man
 
 # Now we need to play the video. The first event needs to be just the song. Each one
 # after that should be record scratch, then song, so we also have a sound_player config
-# that plays the sound only after the first time the
+# that plays the sound only after the first time the jukebox is hit.
+
+# Two things right now (besides video pool thing:
+#   When jukebox is hit, the video leaves the stage, but nothing replaces it (though the sound still plays).
+#   The video in a show isn't stopping.
 
 show_player:
   stop_song:
@@ -99,6 +102,6 @@ show_player:
       loops: -1
 
 sound_player:
-  stop_song{remaining<=8}:
+  change_song:
     jb_record_scratch:
       loops: 0

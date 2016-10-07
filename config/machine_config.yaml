@@ -77,18 +77,18 @@ assets:
 modes:
   - base
   - jukebox_mode
-#  - skill_shot
-#  - jukebox_hurryup
-#  - managers_choice_base
-#  - managers_choice_multiball
-#  - managers_choice_timed_mode
-#  - managers_choice_lit
-#  - mystery_lit
-#  - wizard_advance_lit
-#  - mission_rotator
-#  - light_mission_select
-#  - play_poker
-#  - money_bags
+  - skill_shot
+  - jukebox_hurryup
+  - managers_choice_base
+  - managers_choice_multiball
+  - managers_choice_timed_mode
+  - managers_choice_lit
+  - mystery_lit
+  - wizard_advance_lit
+  - mission_rotator
+  - light_mission_select
+  - play_poker
+  - money_bags
 
 config:
   - display

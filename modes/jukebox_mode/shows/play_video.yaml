@@ -1,14 +1,36 @@
 #show_version=4
 
-- duration: 2
+- duration: 1
   slides:
     video:
       widgets:
         - type: video
-          video: jukebox_videos_pool # This is a video pool. does this work?
+          video: jb_convoy # eventually this will be a video pool
           end_behavior: loop
+          control_events:
+            - event: stop_song
+              action: stop
       target: stage
     instructions:
       widgets:
         - type: text
           text: Change the song!
+          #anchor_y: center
+          #anchor_x: right
+          style: dmd_big
+          #x: right+1
+          #y: top-1
+        - type: text
+          text: Time left (player_jukebox_mode_jukebox_mode_timer_tick)
+          anchor_y: bottom
+          style: dmd_small
+          y: bottom+1
+          anchor_x: left
+          x: left+1
+        - type: text
+          text: Each hit = 100k
+          anchor_y: top
+          style: dmd_small
+          y: top-1
+          anchor_x: left
+          x: left+1

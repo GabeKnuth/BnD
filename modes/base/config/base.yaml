@@ -8,6 +8,16 @@ event_player:
   mode_base_started:
     jukebox_up
     light_mission_select
+  mode_jukebox_mode_ended: #made
+    light_mission_select
+  mode_world_tour_ended:
+    light_mission_select
+  mode_play_poker_ended: #made
+    light_mission_select
+  mode_money_bags_ended: #made
+    light_mission_select
+  mode_music_awards_ended:
+    light_mission_select
 
 config:
   - display

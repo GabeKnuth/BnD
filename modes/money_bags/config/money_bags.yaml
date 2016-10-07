@@ -1,13 +1,28 @@
 #config_version=4
 
+#todo
+# intro dots
+# mode timer
+
+
 mode:
   priority: 400
-  start_events: s_rightinlane_active
+  start_events: start_money_bags_mode
   stop_events: money_bags_finished
+
+ball_locks:
+  money_bags_intro_lock:
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
+    enable_events: mode_money_bags_mode_started
+    request_new_balls_to_pf: False
+    release_one_events: timer_mb_intro_timer_complete #probably switch this to an event fired by a show. Then delete timer
 
 event_player:
     mode_money_bags_started:
         start_money_bags_timer
+    timer_shot_timer_complete:
+        money_bags_finished|2s
 
 shots:
     left_kicking_target:
@@ -16,11 +31,13 @@ shots:
             led: l_left_longhorn
 #            color: ffcc00
         advance_events: mode_money_bags_started
+        disable_events: timer_shot_timer_complete
         ##debug: true
     spinner_to_vuk:
         switch_sequence: s_spinner, s_toprightvuk
         show_tokens:
             led: l_center_longhorn
+        disable_events: timer_shot_timer_complete
 #            color: ffcc00
         ##debug: true
 
@@ -29,18 +46,25 @@ shot_groups:
         shots: left_kicking_target, spinner_to_vuk
         profile: advertise
 #        enable_events: mode_money_bags_started
-#        disable_events: mode_money_bags_stopped
+        disable_events: timer_shot_timer_complete
         rotate_events: money_bags_advertise_flashing_hit
         #debug: true
 
 timers:
+    mb_intro_timer:
+        start_value: 3
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: mode_money_bags_started
     shot_timer:
         start_value: 10
         end_value: 0
         direction: down
         max_value: 10
         tick_interval: 1
-        restart_on_complete: true
+        #restart_on_complete: true #not sure if this means go back to 10 and keep counting, or just reset to initial state
         control_events:
             - action: start
               event: start_money_bags_timer
