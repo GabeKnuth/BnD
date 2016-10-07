@@ -3,12 +3,12 @@
 - duration: 2
   slides:
     video:
-        widgets:
-            - type: video
-            video: jukebox_videos_pool # This is a video pool. does this work?
-            end_behavior: loop
-        target: stage
+      widgets:
+        - type: video
+          video: jukebox_videos_pool # This is a video pool. does this work?
+          end_behavior: loop
+      target: stage
     instructions:
-        widgets:
-            - type: text
-            text: Change the song!
+      widgets:
+        - type: text
+          text: Change the song!
