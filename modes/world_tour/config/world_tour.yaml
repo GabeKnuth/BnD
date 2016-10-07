@@ -1,0 +1,178 @@
+#config_version=4
+mode:
+  priority: 500
+  start_events: start_world_tour_mode
+
+# todo
+#Intro dots
+#DMD dots during mode
+#when over, has to start multiball mode
+#lights
+#scoring
+#world tour videos play on shots
+#video bed
+
+event_player:
+  mode_world_tour_started:
+    mode_running|3s
+
+# We need one shot here in order to make sure that the top right vuk only counts for the australia
+# shot, not the Europe shot through the spinner
+
+shots:
+    australia:
+        switch: s_toprightvuk
+        delay_switch:
+            s_spinner: 2s
+
+ball_locks:
+  wt_intro_lock:
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
+    enable_events: mode_world_tour_started
+    request_new_balls_to_pf: False
+    release_one_events: timer_wt_intro_timer_complete
+
+
+# Mode timer so we know when time runs out. We'll count down at 1s intervals, then change to 1.25
+# for the last five seconds. It wasn't in the rules doc, but I also added a pause if the ball goes
+# into the subway. It resumes when the ball is kicked out of the lower VUK.
+
+timers:
+    world_tour_timer:
+        start_value: 16
+        tick_interval: 1.25s
+        direction: down
+        control_events:
+          - event: timer_wt_intro_timer_complete
+            action: start
+          - event: timer_world_tour_timer{count == 5}
+            action: change_tick_interval
+            value: 1.25
+          - event: s_subwayopto_active
+            action: stop
+    wt_intro_timer:
+        start_value: 3
+        direction: down
+        control_events:
+          - event: mode_world_tour_started
+            action: start
+
+# We need a show for each shot. There are four shots, so four shows. Each show will do a light
+# sweep (one up-down, one down-up, one left-right, one right-left) and play a video of a plane
+# flying across the earth.
+#
+# Each shot has a specific video. When the player hits the Australia shot, it plays the
+# wt_australia video, etc...
+
+show_player:
+  s_rightrampopto_active:
+    south_america:
+      loops: 0
+  australia_hit:
+    australia:
+      loops: 0
+  s_spinner_active:
+    europe:
+      loops: 0
+  s_leftorbit_active:
+    north_america:
+      loops: 0
+
+# We also have a video bed for this mode, so we have to figure out a way to play that video bed
+# first, then play the plane animations over that, returning to the video when they're done. Let's
+# try putting that on a slide, then playing shows over it.
+
+slides:
+  intro_dmd:
+    widgets:
+      - type: video
+        video: wt_spinny_globe_dmd
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: text
+        text: Shoot around
+        anchor_y: top
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: the world!
+        anchor_y: bottom
+        y: bottom +1
+        anchor_x: right
+        x: right-1
+    target: dmd
+  world_tour_stage:
+    widgets:
+      - type: video
+        video: wt_boot_scoot
+        end_behavior: loop
+  world_tour_dmd:
+    widgets:
+      - type: video
+        video: wt_spinny_globe_dmd
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: text
+        text: Time left (world_tour_world_tour_timer_tick)
+        anchor_y: bottom
+        style: dmd_small
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: Each hit = 100k
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+
+slide_player:
+  mode_world_tour_starting:
+    intro_dmd:
+      target: dmd
+    world_tour_stage:
+      target: stage
+  mode_running:
+    world_tour_dmd:
+      target: dmd
+
+# Now we need a logic block to keep track of shots. When all four are hit, we're done!
+
+#logic_blocks:                                       # todo add validation
+#    __valid_in__: machine, mode
+#    common:
+#        enable_events: list|str|None
+#        disable_events: list|str|None
+#        reset_events: list|str|None
+#        restart_events: list|str|None
+#        reset_on_complete: single|bool|True
+#        disable_on_complete: single|bool|True
+#        persist_state: single|bool|False
+#        events_when_complete: list|str|None
+#        events_when_hit: list|str|None
+#        player_variable: single|str|None
+#    accrual:
+#        events: list|str|
+#    counter:
+#        count_events: list|str|
+#        count_complete_value: single|int|None
+#        multiple_hit_window: single|ms|0
+#        count_interval: single|int|1
+#        direction: single|str|up
+#        starting_count: single|int|0
+#    sequence:
+#        events: list|str|
+
+logic_blocks:
+    accrual:
+        events: s_rightrampopto_active, australia_hit, s_spinner_active, s_leftorbit_active
+        enable_events: mode_world_tour_started
+        events_when_complete: all_shots_made
+        persist_state: true
+
+

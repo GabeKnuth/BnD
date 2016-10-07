@@ -1,7 +1,0 @@
-#show_version=4
-
-- duration: 3
-  slides:
-    widgets:
-      - type: text
-        text: Change the song

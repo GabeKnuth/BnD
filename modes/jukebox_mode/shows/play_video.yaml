@@ -5,7 +5,7 @@
     video:
       widgets:
         - type: video
-          video: jb_convoy # eventually this will be a video pool
+          video: jukebox_videos_pool # eventually this will be a video pool
           end_behavior: loop
           control_events:
             - event: stop_song
@@ -25,12 +25,12 @@
           anchor_y: bottom
           style: dmd_small
           y: bottom+1
-          anchor_x: left
-          x: left+1
+          anchor_x: center
+          x: center
         - type: text
           text: Each hit = 100k
           anchor_y: top
           style: dmd_small
           y: top-1
-          anchor_x: left
-          x: left+1
+          anchor_x: center
+          x: center

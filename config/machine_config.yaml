@@ -89,6 +89,7 @@ modes:
   - light_mission_select
   - play_poker
   - money_bags
+  - world_tour
 
 config:
   - display

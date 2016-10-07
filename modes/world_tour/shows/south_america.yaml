@@ -1,0 +1,10 @@
+#show_version=4
+
+- duration: 2.5
+  slides:
+    video:
+      widgets:
+        - type: video
+          video: wt_south_america
+          end_behavior: stop
+      target: stage

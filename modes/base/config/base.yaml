@@ -1,4 +1,8 @@
 #config_version=4
+
+#todo
+# Sound pool for kickers, slings, and pops
+
 mode:
   start_events: ball_starting
   priority: 100

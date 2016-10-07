@@ -13,7 +13,7 @@ mode:
 #Need fo fix video pools in assets
 
 ball_locks:
-  intro_lock:
+  jb_intro_lock:
     balls_to_lock: 1
     lock_devices: bd_lower_vuk
     enable_events: mode_jukebox_mode_started
@@ -68,19 +68,19 @@ timers:
 # I think we'll play the videos randomly, so let's try that. That way everyone in
 # this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
 
-#video_pools:
-#    jukebox_videos_pool:
-#        type: random_force_all
-#        videos:
-#            jb_bed_of_roses
-#            jb_achy_breaky
-#            jb_convoy
-#            jb_every_little_thing
-#            jb_boots_are_made_for_walkin
-#            jb_hello_darlin
-#            jb_louisiana_woman
-#            jb_rhinestone_cowboy
-#            jb_stand_by_your_man
+video_pools:
+    jukebox_videos_pool:
+        type: random_force_all
+        videos:
+            jb_bed_of_roses
+            jb_achy_breaky
+            jb_convoy
+            jb_every_little_thing
+            jb_boots_are_made_for_walkin
+            jb_hello_darlin
+            jb_louisiana_woman
+            jb_rhinestone_cowboy
+            jb_stand_by_your_man
 
 # Now we need to play the video. The first event needs to be just the song. Each one
 # after that should be record scratch, then song, so we also have a sound_player config
