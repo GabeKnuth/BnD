@@ -15,14 +15,51 @@ event_player:
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
 
-# We need one shot here in order to make sure that the top right vuk only counts for the australia
-# shot, not the Europe shot through the spinner
+# We need to set up shots so that we start on the North America shot, then move on to
+# Europe, then South America, and finally Australia
 
 shots:
-    australia:
-        switch: s_toprightvuk
-        delay_switch:
-            s_spinner: 2s
+  shot_australia:
+    switch: s_TopRightVUK
+    delay_switch:
+      s_spinner: 2s
+    show_tokens:
+      led: l_australia
+  shot_europe:
+    switch_sequence: s_spinner, s_TopRightVUK
+    time: 2s
+    show_tokens:
+      led: l_europe
+  shot_north_america:
+    switch: s_leftorbit
+    advance_events: mode_world_tour_started # Needs to start on this shot
+    show_tokens:
+      led: l_north_america
+  shot_south_america:
+    switch: s_rightrampopto
+    show_tokens:
+      led: l_south_america
+
+shot_groups:
+    world_tour_shots:
+        shots: shot_north_america, shot_europe, shot_south_america, shot_australia
+        profile: wt_advertise
+        enable_events: mode_world_tour_started
+        disable_events: all_shots_made
+        rotate_right_events: shot_group_world_tour_shots_flashing_hit
+        #debug: true
+
+shot_profiles:
+    wt_advertise:
+      states:
+        - name: unlit
+          show: off
+        - name: flashing
+#          show: flash_color
+          show: flash
+          speed: 10
+      loop: yes
+      advance_on_hit: yes
 
 ball_locks:
   wt_intro_lock:
@@ -67,6 +104,8 @@ timers:
             value: 3
           - event: s_subwayopto_active
             action: stop
+          - event: balldevice_bd_lower_vuk_ball_left
+            action: start
     wt_intro_timer:
         start_value: 3
         direction: down
@@ -82,16 +121,16 @@ timers:
 # wt_australia video, etc...
 
 show_player:
-  s_rightrampopto_active:
+  shot_south_america_hit:
     south_america:
       loops: 0
-  australia_hit:
+  shot_australia_hit:
     australia:
       loops: 0
-  s_spinner_active:
+  shot_europe_hit:
     europe:
       loops: 0
-  s_leftorbit_active:
+  shot_north_america_hit:
     north_america:
       loops: 0
 
@@ -178,21 +217,21 @@ slide_player:
 # It's not in the rules, but I also added something to extend the time when you hit a shot
 # just so that the song plays longer.
 
-
+# Might not need the sequence
 logic_blocks:
     sequences:
-        world_tour_accrual:
+        world_tour_sequence:
             events:
-              - s_leftorbit_active
-              - s_spinner_active
-              - s_rightrampopto_active
-              - australia_hit
+              - shot_north_america_hit
+              - shot_europe_hit
+              - shot_south_america_hit
+              - shot_australia_hit
             enable_events: mode_world_tour_started
             events_when_complete: all_shots_made
             persist_state: true
     counters:
         stop_adding_time:
-            count_events: s_rightrampopto_active, australia_hit, s_spinner_active, s_leftorbit_active
+            count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit
             events_when_hit: add_time
             count_complete_value: 3
             events_when_complete: world_tour_stop_adding_time
