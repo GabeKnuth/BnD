@@ -1,7 +1,2 @@
 #show_version=4
 
-- duration: 1
-  leds:
-    l_led1: red
-    l_led2: red
-    l_led3: ff0000

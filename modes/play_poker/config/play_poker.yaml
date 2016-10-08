@@ -1,11 +1,14 @@
 #config_version=4
 Mode:
-  start_events: mode_play_poker_starting #start_play_poker_mode
+  start_events: start_play_poker_mode
   priority: 500
 
 # TODO
 # Also need a counter to count how many cards and something to remember the cards.
 # Scoring
+# Stage show
+# There is something not quite right about this show.
+# WHEN YOU PLAY THIS, YOU HAVE TO HIT SPINNER, THEN TOP RIGHT VUK QUICKLY AFTER
 
 
 ball_locks:

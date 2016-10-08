@@ -4,17 +4,16 @@ mode:
   start_events: start_world_tour_mode
 
 # todo
-#Intro dots
-#DMD dots during mode
-#when over, has to start multiball mode
+#when over, has to start something else. Doc says another mode.
 #lights
 #scoring
-#world tour videos play on shots
-#video bed
+# need to redo this so it goes in sequence. Needs shot groups?
 
 event_player:
   mode_world_tour_started:
-    mode_running|3s
+    mode_running|10s
+  player_world_tour_world_tour_timer_tick{value == 5}:
+    slow_down_timer
 
 # We need one shot here in order to make sure that the top right vuk only counts for the australia
 # shot, not the Europe shot through the spinner
@@ -38,17 +37,34 @@ ball_locks:
 # for the last five seconds. It wasn't in the rules doc, but I also added a pause if the ball goes
 # into the subway. It resumes when the ball is kicked out of the lower VUK.
 
+#timers:
+#    __valid_in__: mode
+#    debug: single|bool|False
+#    start_value: single|int|0
+#    end_value: single|int|None
+#    direction: single|str|up
+#    max_value: single|ms|None
+#    tick_interval: single|ms|1s
+#    start_running: single|bool|False
+#    control_events: list|subconfig(control_events)|None
+#    restart_on_complete: single|bool|False
+#    bcp: single|bool|False
+
 timers:
     world_tour_timer:
-        start_value: 16
+        start_value: 20
+        max_value: 20
         tick_interval: 1.25s
         direction: down
         control_events:
           - event: timer_wt_intro_timer_complete
             action: start
-          - event: timer_world_tour_timer{count == 5}
+          - event: slow_down_timer #player_world_tour_world_tour_timer_tick{value == 5}
             action: change_tick_interval
-            value: 1.25
+            value: 1.5
+          - event: add_time
+            action: add
+            value: 3
           - event: s_subwayopto_active
             action: stop
     wt_intro_timer:
@@ -86,23 +102,32 @@ show_player:
 slides:
   intro_dmd:
     widgets:
+      - type: text
+        text: Hit flashing shots
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: to complete the
+        style: dmd_small
+        anchor_y: bottom
+        y: center
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: WORLD TOUR!
+        style: dmd_big
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
       - type: video
         video: wt_spinny_globe_dmd
         end_behavior: loop
         anchor_x: left
         x: left
-      - type: text
-        text: Shoot around
-        anchor_y: top
-        y: top-1
-        anchor_x: right
-        x: right-1
-      - type: text
-        text: the world!
-        anchor_y: bottom
-        y: bottom +1
-        anchor_x: right
-        x: right-1
     target: dmd
   world_tour_stage:
     widgets:
@@ -124,6 +149,14 @@ slides:
         anchor_x: right
         x: right-1
       - type: text
+        text: (player1|score)
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-1
+        y: middle
+        style: tall title
+      - type: text
         text: Each hit = 100k
         anchor_y: top
         style: dmd_small
@@ -142,37 +175,30 @@ slide_player:
       target: dmd
 
 # Now we need a logic block to keep track of shots. When all four are hit, we're done!
+# It's not in the rules, but I also added something to extend the time when you hit a shot
+# just so that the song plays longer.
 
-#logic_blocks:                                       # todo add validation
-#    __valid_in__: machine, mode
-#    common:
-#        enable_events: list|str|None
-#        disable_events: list|str|None
-#        reset_events: list|str|None
-#        restart_events: list|str|None
-#        reset_on_complete: single|bool|True
-#        disable_on_complete: single|bool|True
-#        persist_state: single|bool|False
-#        events_when_complete: list|str|None
-#        events_when_hit: list|str|None
-#        player_variable: single|str|None
-#    accrual:
-#        events: list|str|
-#    counter:
-#        count_events: list|str|
-#        count_complete_value: single|int|None
-#        multiple_hit_window: single|ms|0
-#        count_interval: single|int|1
-#        direction: single|str|up
-#        starting_count: single|int|0
-#    sequence:
-#        events: list|str|
 
 logic_blocks:
-    accrual:
-        events: s_rightrampopto_active, australia_hit, s_spinner_active, s_leftorbit_active
-        enable_events: mode_world_tour_started
-        events_when_complete: all_shots_made
-        persist_state: true
+    sequences:
+        world_tour_accrual:
+            events:
+              - s_leftorbit_active
+              - s_spinner_active
+              - s_rightrampopto_active
+              - australia_hit
+            enable_events: mode_world_tour_started
+            events_when_complete: all_shots_made
+            persist_state: true
+    counters:
+        stop_adding_time:
+            count_events: s_rightrampopto_active, australia_hit, s_spinner_active, s_leftorbit_active
+            events_when_hit: add_time
+            count_complete_value: 3
+            events_when_complete: world_tour_stop_adding_time
+            enable_events: mode_world_tour_started
+            disable_events: logicblock_stop_adding_time_complete
+            multiple_hit_window: 500ms
+            persist_state: true
 
 
