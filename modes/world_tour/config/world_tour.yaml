@@ -16,6 +16,7 @@ event_player:
     slow_down_timer
   shot_australia_hit:
     world_tour_done|5s
+    world_tour_fade_out|3s
 
 
 # We need to set up shots so that we start on the North America shot, then move on to
@@ -177,6 +178,11 @@ slides:
       - type: video
         video: wt_boot_scoot
         end_behavior: loop
+        animations:
+          world_tour_fade_out:
+            - property: volume
+              value: 0
+              duration: 2s
   world_tour_dmd:
     widgets:
       - type: video
