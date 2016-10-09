@@ -7,7 +7,6 @@ mode:
 #when over, has to start something else. Doc says another mode.
 #lights
 #scoring
-# need to redo this so it goes in sequence. Needs shot groups?
 
 event_player:
   mode_world_tour_started:
@@ -53,22 +52,10 @@ shots:
     profile: wt_advertise
     debug: yes
 
-#shot_groups:
-#    world_tour_shots:
-#        shots: shot_north_america, shot_europe, shot_south_america, shot_australia
-#        profile: wt_advertise
-##        enable_events: mode_world_tour_started
-##        disable_events: all_shots_made
-#        rotate_right_events: shot_group_world_tour_shots_flashing_hit
-#        #debug: true
-
 shot_profiles:
     wt_advertise:
       states:
-#        - name: unlit
-#          show: off
         - name: flashing
-#          show: flash_color
           show: flash
           speed: 10
         - name: complete
@@ -84,24 +71,6 @@ ball_locks:
     enable_events: mode_world_tour_started
     request_new_balls_to_pf: False
     release_one_events: timer_wt_intro_timer_complete
-
-
-# Mode timer so we know when time runs out. We'll count down at 1s intervals, then change to 1.25
-# for the last five seconds. It wasn't in the rules doc, but I also added a pause if the ball goes
-# into the subway. It resumes when the ball is kicked out of the lower VUK.
-
-#timers:
-#    __valid_in__: mode
-#    debug: single|bool|False
-#    start_value: single|int|0
-#    end_value: single|int|None
-#    direction: single|str|up
-#    max_value: single|ms|None
-#    tick_interval: single|ms|1s
-#    start_running: single|bool|False
-#    control_events: list|subconfig(control_events)|None
-#    restart_on_complete: single|bool|False
-#    bcp: single|bool|False
 
 timers:
     world_tour_timer:
@@ -140,14 +109,22 @@ show_player:
   shot_south_america_hit:
     south_america:
       loops: 0
+    south_america_lights:
+      loops: 0
   shot_australia_hit:
     australia:
+      loops: 0
+    australia_lights:
       loops: 0
   shot_europe_hit:
     europe:
       loops: 0
+    europe_lights:
+      loops: 0
   shot_north_america_hit:
     north_america:
+      loops: 0
+    north_america_lights:
       loops: 0
 
 # We also have a video bed for this mode, so we have to figure out a way to play that video bed
