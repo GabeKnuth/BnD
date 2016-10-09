@@ -244,25 +244,25 @@ shot_profiles:
 shows:
   album_rotator:
       - leds:
-          l_silver: white
+          l_silver: on
           l_quintuple_platinum: off
       - leds:
-          l_gold: white
+          l_gold: on
           l_silver: off
       - leds:
-          l_single_platinum: white
+          l_single_platinum: on
           l_gold: off
       - leds:
-          l_double_platinum: white
+          l_double_platinum: on
           l_single_platinum: off
       - leds:
-          l_quintuple_platinum: white
+          l_quintuple_platinum: on
           l_double_platinum: off
 
   flash_once:
     - time: 0
       leds:
-        (led): white-f0
+        (led): on-f0
     - time: 50ms
       leds:
         (led): off-f0

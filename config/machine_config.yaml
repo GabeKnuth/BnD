@@ -615,6 +615,7 @@ leds:
   l_australia:
     number: 1-0
     tags: right
+    default_color: red
   l_left_quarter:
     number: 1-1
     tags: right
@@ -624,6 +625,7 @@ leds:
   l_jukebox_insert:
     number: 1-3
     tags: center
+    default_color: ffcc00
   l_play_poker:
     number: 1-4
     tags: right
@@ -636,6 +638,7 @@ leds:
   l_south_america:
     number: 1-7
     tags: right
+    default_color: red
   l_middle_quarter:
     number: 1-8
     tags: right
@@ -648,21 +651,25 @@ leds:
   l_right_lane_special:
     number: 1-11
     tags: right
+    default_color: red
   l_right_lane_spot_quarter:
     number: 1-12
     tags: right
   l_again:
     number: 1-13
     tags: center
+    default_color: red
   l_shoot:
     number: 1-14
     tags: center
+    default_color: red
   l_left_lane_spot_quarter:
     number: 1-15
     tags: left
   l_left_lane_special:
     number: 1-16
     tags: left
+    default_color: red
   l_mystery:
     number: 1-17
     tags: left
@@ -675,6 +682,7 @@ leds:
   l_world_tour:
     number: 1-20
     tags: center
+    default_color: red
   l_money_bags:
     number: 1-21
     tags: center
@@ -690,6 +698,7 @@ leds:
   l_gold:
     number: 1-25
     tags: center
+    default_color: ffcc00
   l_silver:
     number: 1-26
     tags: center
@@ -711,6 +720,7 @@ leds:
   l_north_america:
     number: 1-32
     tags: left
+    default_color: red
   l_left_ramp_flasher:
     number: 1-33
     tags: left
@@ -729,6 +739,7 @@ leds:
   l_europe:
     number: 1-38
     tags: center
+    default_color: red
   l_center_lock:
     number: 1-39
     tags: center

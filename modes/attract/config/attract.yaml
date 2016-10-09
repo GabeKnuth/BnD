@@ -39,24 +39,24 @@ shows:
   attract_music_lights:
     - duration: .39s
       leds:
-        (left): white
+        (left): on
         (right): off
         (center): off
     - duration: .39s
       leds:
         (left): off
-        (right): white
+        (right): on
         (center): off
     - duration: .39s
       leds:
         (left): off
         (right): off
-        (center): white
+        (center): on
     - duration: .20s
       leds:
-        (left): white
-        (right): white
-        (center): white
+        (left): on
+        (right): on
+        (center): on
     - duration: .19s
       leds:
         (left): off

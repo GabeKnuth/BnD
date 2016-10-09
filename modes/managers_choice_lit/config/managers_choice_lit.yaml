@@ -41,7 +41,7 @@ shows:
   flash_managers_choice:
     - duration: 200ms
       leds:
-        l_managers_choice: white-f100ms
+        l_managers_choice: on-f100ms
     - duration: 200ms
       leds:
         l_managers_choice: off-f100ms

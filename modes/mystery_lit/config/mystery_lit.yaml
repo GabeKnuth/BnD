@@ -29,7 +29,7 @@ shows:
   flash_mystery:
     - duration: 200ms
       leds:
-        l_mystery: white-f100ms
+        l_mystery: on-f100ms
     - duration: 200ms
       leds:
         l_mystery: off-f100ms
