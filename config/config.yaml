@@ -1,3 +1,5 @@
+#config_version=4
+
 hardware:
   platform: fast
   driverboards: fast
