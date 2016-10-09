@@ -1,0 +1,28 @@
+#config_version=4
+mode:
+  priority: 500
+  start_events: start_music_awards_mode
+  stop_events: world_tour_done
+
+# todo
+#We need everything. Let's map this out.
+#
+#Need a timer that starts at 10 secs. Need to add 5 secs per successfult shot. Max 10 secs, though.
+#
+#Two shots: Music Awards are made through either the left orbit or right ramp. Both shots are lit all the time.
+#
+#Need a counter to count shots made. Mode is complete at 6. Not entirely sure what happens. Most others fire off
+#a 2-ball multiball, so maybe this one does, too? I think we need something to kick off Extra Ball...maybe that's
+#this mode?
+#
+#Scoring starts at 500k per shot. Both VUKs add 500k to the value. Value needs to reset when mode
+#is resumed. This is probably the hardest part of this mode.
+#
+#intro dots
+#video bed
+#each shot plays a video of BnD accepting an award.
+#I'll try to make a spinning award for the DMD. World Tour animation looked cool.
+
+
+
+

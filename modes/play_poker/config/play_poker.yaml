@@ -5,10 +5,18 @@ Mode:
 
 # TODO
 # Also need a counter to count how many cards and something to remember the cards.
-# Scoring
 # Stage show
 # There is something not quite right about this show.
 # WHEN YOU PLAY THIS, YOU HAVE TO HIT SPINNER, THEN TOP RIGHT VUK QUICKLY AFTER
+# Scoring:
+#1 Pair- Mystery 1,000,000
+#2 Pair- Mystery 3,000,000
+#3 Kind- Managers Choice 5,000,000
+#Full House- Extra Ball
+#Straight- Extra Ball
+#4 Kind- 1 Special
+#5 Kind- 3 Specials
+#5 Aces- Award Extra Ball, Special, Complete BROOKS N DUNN, 10M, and Double Score.
 
 
 ball_locks:

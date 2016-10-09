@@ -2,17 +2,21 @@
 mode:
   priority: 500
   start_events: start_world_tour_mode
+  stop_events: world_tour_done
 
 # todo
-#when over, has to start something else. Doc says another mode.
-#lights
-#scoring
+#when over, has to start something else. Doc says another mode. This mode is complete, though.
+# ok, not quite. Need to find a way to fade down the video when the mode ends instead of just
+# killing it.
 
 event_player:
   mode_world_tour_started:
-    mode_running|10s
+    mode_running|5s
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
+  shot_australia_hit:
+    world_tour_done|5s
+
 
 # We need to set up shots so that we start on the North America shot, then move on to
 # Europe, then South America, and finally Australia
@@ -44,7 +48,7 @@ shots:
   shot_australia:
     switch: s_TopRightVUK
     enable_events: shot_south_america_hit
-#    disable_events:
+    disable_events: shot_australia_hit
     delay_switch:
       s_spinner: 2s
     show_tokens:
@@ -68,9 +72,16 @@ ball_locks:
   wt_intro_lock:
     balls_to_lock: 1
     lock_devices: bd_lower_vuk
-    enable_events: mode_world_tour_started
+    enable_events: mode_world_tour_started|1
     request_new_balls_to_pf: False
     release_one_events: timer_wt_intro_timer_complete
+  wt_complete:
+    balls_to_lock: 1
+    lock_devices: bd_top_right_vuk
+    enable_events: shot_australia_hit|1
+    request_new_balls_to_pf: false
+    release_one_events: mode_world_tour_ending
+
 
 timers:
     world_tour_timer:
@@ -195,6 +206,29 @@ slides:
         y: top-1
         anchor_x: right
         x: right-1
+  world_tour_complete:
+    widgets:
+      - type: video
+        video: wt_spinny_globe_dmd
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: text
+        text: World Tour
+        anchor_y: top
+        style: dmd_med
+        y: top-4
+        anchor_x: right
+        x: right-9
+      - type: text
+        text: Complete!
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-6
+        anchor_y: bottom
+        y: bottom+1
+        style: tall title
 
 slide_player:
   mode_world_tour_starting:
@@ -205,6 +239,10 @@ slide_player:
   mode_running:
     world_tour_dmd:
       target: dmd
+  shot_australia_hit:
+    world_tour_complete:
+      target: dmd
+
 
 # Now we need a logic block to keep track of shots. When all four are hit, we're done!
 # It's not in the rules, but I also added something to extend the time when you hit a shot
@@ -212,16 +250,16 @@ slide_player:
 
 # Might not need the sequence
 logic_blocks:
-    sequences:
-        world_tour_sequence:
-            events:
-              - shot_north_america_hit
-              - shot_europe_hit
-              - shot_south_america_hit
-              - shot_australia_hit
-            enable_events: mode_world_tour_started
-            events_when_complete: all_shots_made
-            persist_state: true
+#    sequences: # Don't need this anymore
+#        world_tour_sequence:
+#            events:
+#              - shot_north_america_hit
+#              - shot_europe_hit
+#              - shot_south_america_hit
+#              - shot_australia_hit
+#            enable_events: mode_world_tour_started
+#            events_when_complete: all_shots_made
+#            persist_state: true
     counters:
         stop_adding_time:
             count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit
@@ -233,4 +271,13 @@ logic_blocks:
             multiple_hit_window: 500ms
             persist_state: true
 
+scoring:
+    shot_south_america_hit:
+      score: 2000000
+    shot_north_america_hit:
+      score: 2000000
+    shot_europe_hit:
+      score: 2000000
+    shot_australia_hit:
+      score: 2000000
 

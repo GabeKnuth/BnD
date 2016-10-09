@@ -12,16 +12,26 @@ event_player:
   mode_base_started:
     jukebox_up
     light_mission_select
-  mode_jukebox_mode_ended: #made
+  mode_jukebox_mode_stopping: #made
     light_mission_select
-  mode_world_tour_ended:
+  mode_world_tour_stopping:
     light_mission_select
-  mode_play_poker_ended: #made
+  mode_play_poker_stopping: #made
     light_mission_select
-  mode_money_bags_ended: #made
+  mode_money_bags_stopping: #made
     light_mission_select
-  mode_music_awards_ended:
+  mode_music_awards_stopping:
     light_mission_select
+  mode_jukebox_mode_starting: #made
+    fade_down_base_music
+  mode_world_tour_starting:
+    fade_down_base_music
+  mode_play_poker_starting: #made
+    fade_down_base_music
+  mode_money_bags_starting: #made
+    fade_down_base_music
+  mode_music_awards_starting:
+    fade_down_base_music
 
 config:
   - display
@@ -43,6 +53,18 @@ sound_player:
     base_bed_loop:
         action: play
         loops: -1
+  light_mission_select:
+    base_bed_loop:
+        action: play
+        fade_in: 500ms
+  fade_down_base_music:
+    plunged:
+        action: stop
+        fade_out: 500ms
+    base_bed_loop:
+        action: stop
+        fade_out: 500ms
+
 
 logic_blocks:
   counter:
