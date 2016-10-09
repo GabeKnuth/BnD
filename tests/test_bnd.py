@@ -35,7 +35,7 @@ class TestBnd(MpfMachineTestCase):
 
         # make sure the GI comes on
         for led in self.machine.leds.items_tagged('gi'):
-            self.assertEqual(RGBColor('66ff18'),
+            self.assertEqual(RGBColor('ff6618'),
                 led.hw_driver.current_color)
 
         # make sure the attract mode shows are running
