@@ -19,47 +19,63 @@ event_player:
 # Europe, then South America, and finally Australia
 
 shots:
+  shot_north_america:
+    switch: s_leftorbit
+    advance_events: mode_world_tour_started|1 # bump this priority so it's called after the shot has been enabled
+    enable_events: mode_world_tour_started
+    disable_events: shot_north_america_hit
+    show_tokens:
+      led: l_north_america
+    profile: wt_advertise
+  shot_europe:
+    switch_sequence: s_spinner, s_TopRightVUK
+    time: 2s
+    enable_events: shot_north_america_hit
+    disable_events: shot_europe_hit
+    show_tokens:
+      led: l_europe
+    profile: wt_advertise
+  shot_south_america:
+    switch: s_rightrampopto
+    enable_events: shot_europe_hit
+    disable_events: shot_south_america_hit
+    show_tokens:
+      led: l_south_america
+    profile: wt_advertise
   shot_australia:
     switch: s_TopRightVUK
+    enable_events: shot_south_america_hit
+#    disable_events:
     delay_switch:
       s_spinner: 2s
     show_tokens:
       led: l_australia
-  shot_europe:
-    switch_sequence: s_spinner, s_TopRightVUK
-    time: 2s
-    show_tokens:
-      led: l_europe
-  shot_north_america:
-    switch: s_leftorbit
-    advance_events: mode_world_tour_started # Needs to start on this shot
-    show_tokens:
-      led: l_north_america
-  shot_south_america:
-    switch: s_rightrampopto
-    show_tokens:
-      led: l_south_america
+    profile: wt_advertise
+    debug: yes
 
-shot_groups:
-    world_tour_shots:
-        shots: shot_north_america, shot_europe, shot_south_america, shot_australia
-        profile: wt_advertise
-        enable_events: mode_world_tour_started
-        disable_events: all_shots_made
-        rotate_right_events: shot_group_world_tour_shots_flashing_hit
-        #debug: true
+#shot_groups:
+#    world_tour_shots:
+#        shots: shot_north_america, shot_europe, shot_south_america, shot_australia
+#        profile: wt_advertise
+##        enable_events: mode_world_tour_started
+##        disable_events: all_shots_made
+#        rotate_right_events: shot_group_world_tour_shots_flashing_hit
+#        #debug: true
 
 shot_profiles:
     wt_advertise:
       states:
-        - name: unlit
-          show: off
+#        - name: unlit
+#          show: off
         - name: flashing
 #          show: flash_color
           show: flash
           speed: 10
-      loop: yes
+        - name: complete
+          show: on
+      loop: no
       advance_on_hit: yes
+      block: yes
 
 ball_locks:
   wt_intro_lock:

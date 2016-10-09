@@ -122,6 +122,88 @@ class TestBnd(MpfMachineTestCase):
         self.assertEqual(self.machine.ball_devices.bd_plunger.balls, 0)
         self.assertEqual(1, self.machine.playfield.balls)
 
+    def test_world_tour(self):
+        self._start_single_player_game(1)
+
+        # shot the right ramp
+        self.hit_and_release_switch('s_rightrampopto')
+
+        # hit the sling until world tour is lit
+        while self.machine.leds.l_world_tour.hw_driver.current_color == [0, 0, 0]:
+            self.hit_and_release_switch('s_rightsling')
+            self.advance_time_and_run()
+
+        self.assertFalse(self.machine.modes.world_tour.active)
+
+        # shot the lower vuk to start the mode
+        self.machine.switch_controller.process_switch('s_lowervukopto', logical=True)
+
+        # advance enough time for it to kick the ball out
+        self.advance_time_and_run(3)
+
+        self.assertTrue(self.machine.modes.world_tour.active)
+
+        # make sure the shots have the proper shows running
+        self.assertEqual('flash',
+            self.machine.shots.shot_north_america.profiles[0]['running_show'].name)
+        self.assertIsNone(self.machine.shots.shot_europe.profiles[0]['running_show'])
+        self.assertIsNone(self.machine.shots.shot_south_america.profiles[0]['running_show'])
+        self.assertIsNone(self.machine.shots.shot_australia.profiles[0]['running_show'])
+
+        # and the shots are enabled properly
+        self.assertTrue(self.machine.shots.shot_north_america.enabled)
+        self.assertFalse(self.machine.shots.shot_europe.enabled)
+        self.assertFalse(self.machine.shots.shot_south_america.enabled)
+        self.assertFalse(self.machine.shots.shot_australia.enabled)
+
+        # hit north america
+        self.hit_and_release_switch('s_leftorbit')
+
+        self.assertIsNone(self.machine.shots.shot_north_america.profiles[0]['running_show'])
+        self.assertEqual('flash',
+            self.machine.shots.shot_europe.profiles[0]['running_show'].name)
+        self.assertIsNone(self.machine.shots.shot_south_america.profiles[0]['running_show'])
+        self.assertIsNone(self.machine.shots.shot_australia.profiles[0]['running_show'])
+
+        self.assertFalse(self.machine.shots.shot_north_america.enabled)
+        self.assertTrue(self.machine.shots.shot_europe.enabled)
+        self.assertFalse(self.machine.shots.shot_south_america.enabled)
+        self.assertFalse(self.machine.shots.shot_australia.enabled)
+
+        # hit europe
+        self.hit_and_release_switch('s_spinner')
+        self.machine.switch_controller.process_switch('s_TopRightVUK', logical=True)
+        self.advance_time_and_run(1)
+
+        self.assertIsNone(self.machine.shots.shot_north_america.profiles[0]['running_show'])
+        self.assertIsNone(self.machine.shots.shot_europe.profiles[0]['running_show'])
+        self.assertEqual('flash',
+            self.machine.shots.shot_south_america.profiles[0]['running_show'].name)
+        self.assertIsNone(self.machine.shots.shot_australia.profiles[0]['running_show'])
+
+        self.assertFalse(self.machine.shots.shot_north_america.enabled)
+        self.assertFalse(self.machine.shots.shot_europe.enabled)
+        self.assertTrue(self.machine.shots.shot_south_america.enabled)
+        self.assertFalse(self.machine.shots.shot_australia.enabled)
+
+        # hit south america
+        self.hit_and_release_switch('s_rightrampopto')
+
+        self.assertIsNone(self.machine.shots.shot_north_america.profiles[0]['running_show'])
+        self.assertIsNone(self.machine.shots.shot_europe.profiles[0]['running_show'])
+        self.assertIsNone(self.machine.shots.shot_south_america.profiles[0]['running_show'])
+        self.assertEqual('flash',
+            self.machine.shots.shot_australia.profiles[0]['running_show'].name)
+
+        self.assertFalse(self.machine.shots.shot_north_america.enabled)
+        self.assertFalse(self.machine.shots.shot_europe.enabled)
+        self.assertFalse(self.machine.shots.shot_south_america.enabled)
+        self.assertTrue(self.machine.shots.shot_australia.enabled)
+
+        # hit autralia
+        self.hit_switch_and_run('s_rightrampopto', 1)
+
+        # todo now what?
 
 # class TestBndFull(FullMachineTestCase):
 #
