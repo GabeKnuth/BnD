@@ -10,8 +10,8 @@
 displays:
   # _overwrite: true will completely replace the existing displays: section
   window:
-    width: 1024
-    height: 768
+    width: 400
+    height: 340
   dmd:
     width: 128
     height: 32
@@ -25,27 +25,27 @@ slides:
   desktop:
     - type: slide_frame
       name: stage
-      width: 800
-      height: 480
-      y: top-50
+      width: 400
+      height: 240
+      y: top
       anchor_y: top
-    - type: rectangle
-      color: aa0000
-      width: 840
-      height: 520
-      corner_radius: 20
-      anchor_y: top
-      y: top-30
+#    - type: rectangle
+#      color: aa0000
+#      width: 840
+#      height: 520
+#      corner_radius: 20
+#      anchor_y: top
+#      y: top-30
     - type: color_dmd
-      width: 640
-      height: 160
-      y: 31
+      width: 400
+      height: 100
+      y: 0
       anchor_y: bottom
-    - type: rectangle
-      width: 642
-      height: 162
-      anchor_y: bottom
-      y: 30
+#    - type: rectangle
+#      width: 642
+#      height: 162
+#      anchor_y: bottom
+#      y: 30
 
 slide_player:
   mc_ready:
@@ -56,11 +56,14 @@ config:
   - machine_config
 
 window:
-  width: 1024
-  height: 768
+  width: 400
+  height: 340
   title: Mission Pinball Framework - Brooks & Dunn
   resizable: false
   fullscreen: false
   borderless: false
   exit_on_escape: true
   source_display: window
+
+mpf:
+      default_led_hw_update_hz: 20
