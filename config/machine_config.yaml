@@ -42,7 +42,7 @@ game:
   max_players: 4
 
 led_settings:
-    default_led_fade_ms: 200
+    default_led_fade_ms: 100
 
 sound_system:
     master_volume: 0.75

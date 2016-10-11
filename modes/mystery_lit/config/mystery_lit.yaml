@@ -27,12 +27,12 @@ event_player:
 
 shows:
   flash_mystery:
-    - duration: 200ms
+    - duration: 250ms
       leds:
-        l_mystery: on-f100ms
-    - duration: 200ms
+        l_mystery: on
+    - duration: 250ms
       leds:
-        l_mystery: off-f100ms
+        l_mystery: off
   collect_mystery_display_show:
     - duration: 2s
       slides:

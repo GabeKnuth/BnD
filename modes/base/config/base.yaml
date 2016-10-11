@@ -275,7 +275,8 @@ shot_profiles:
             show: off
           - name: lit
             show: flash
-            speed: 5
+            speed: 4
+            sync_ms: 500
           - name: active
             show: on
         loop: no
@@ -301,10 +302,10 @@ shows:
   flash_once:
     - time: 0
       leds:
-        (led): on-f0
+        (led): on
     - time: 50ms
       leds:
-        (led): off-f0
+        (led): off
 
 
 

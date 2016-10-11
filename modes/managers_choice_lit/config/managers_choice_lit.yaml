@@ -32,16 +32,16 @@ ball_locks:
 show_player:
   mode_managers_choice_lit_started:
     flash_managers_choice:
-      sync_ms: 200
+      sync_ms: 500
   finish_managers_choice:  # todo why is this needed???
     flash_managers_choice:
       action: stop
 
 shows:
   flash_managers_choice:
-    - duration: 200ms
+    - duration: 250ms
       leds:
-        l_managers_choice: on-f100ms
-    - duration: 200ms
+        l_managers_choice: on
+    - duration: 250ms
       leds:
-        l_managers_choice: off-f100ms
+        l_managers_choice: off
