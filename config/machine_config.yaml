@@ -33,8 +33,6 @@ machine:
 
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
-
-
 game:
   balls_per_game: 3
   allow_start_with_loose_balls: True
@@ -86,7 +84,7 @@ modes:
   - mystery_lit
   - wizard_advance_lit
   - mission_rotator
-  - light_mission_select
+#  - light_mission_select
   - play_poker
   - money_bags
   - world_tour

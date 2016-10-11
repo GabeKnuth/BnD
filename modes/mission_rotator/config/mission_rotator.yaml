@@ -10,12 +10,20 @@
 # Need stuff for that, too.
 
 mode:
-  start_events: start_mission_rotator
-  stop_events: ball_ending, start_money_bags_mode, start_world_tour_mode, start_music_awards_mode, start_jukebox_mode, start_play_poker_mode
+  start_events: ball_started
+#  stop_events: ball_ending, start_money_bags_mode, start_world_tour_mode, start_music_awards_mode, start_jukebox_mode, start_play_poker_mode
   priority: 200
 
+logic_blocks:
+  sequences:
+    advance_random_mission:
+      events: mode_mission_rotator_started
+      events_when_complete: advance_random_mission
+      reset_on_complete: false
+      persist_state: true
+
 random_event_player:
-    mode_mission_rotator_started:
+    advance_random_mission:
         - world_tour_advance
         - money_bags_advance
         - music_awards_advance
@@ -30,6 +38,13 @@ event_player:
     play_poker_mission_rotator_lit_hit: start_play_poker_mode
 
 shots:
+    light_mission_select:
+      switch: s_rightrampopto
+      enable_events: mode_mission_rotator_stared, light_mission_select
+      disable_events: disable_mission_select, light_mission_select_hit
+      profile: light_mission_select
+      show_tokens:
+        leds: l_ramp_fire
     world_tour:
       label: world_tour
       hit_events: shot_lower_vuk_from_playfield_hit
@@ -73,20 +88,38 @@ shot_groups:
       enable_events: mode_mission_rotator_started, mission_ended
       disable_events: mission_started
       reset_events: all_missions_completed
-      rotate_right_events: sw_toggle
+      rotate_right_events: sw_toggle, rotate_mission_rotator
 
 shot_profiles:
     mission_rotator:
         loop: true
         state_names_to_rotate: lit, unlit
         advance_on_hit: false
+        show_when_disabled: true
         states:
             - name: unlit
               show: "off"
             - name: lit
               show: flash
-              speed: 3
+              speed: 4
+              sync_ms: 500
             - name: completed
               show: "on"
+    light_mission_select:
+        loop: true
+        advance_on_hit: false
+        states:
+#            - name: unlit
+#              show: "off"
+            - name: lit
+              show: flash
+              speed: 4
+              sync_ms: 500
 
-
+show_player:
+  light_mission_select_hit:
+    flash_once:
+      loops: 3
+      speed: 1.5
+      show_tokens:
+        led: l_right_ramp_flasher

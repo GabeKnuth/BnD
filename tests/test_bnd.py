@@ -205,6 +205,109 @@ class TestBnd(MpfMachineTestCase):
 
         # todo now what?
 
+    def test_mission_rotator(self):
+        self._start_single_player_game(1)
+
+        # none of the mission lights should be lit
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_world_tour.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_money_bags.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_music_awards.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_jukebox_insert.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_play_poker.hw_driver.current_color)
+
+        # mission rotator should be active
+        self.assertTrue(self.machine.modes.mission_rotator.active)
+
+        # mission select should not be active
+        self.assertTrue(self.machine.shots.light_mission_select.enabled)
+        self.assertEqual('flash',
+            self.machine.shots.light_mission_select.profiles[0]['running_show'].name)
+
+        # hit the shot to enable the mission rotator
+        self.hit_and_release_switch('s_rightrampopto')
+
+        # mission rotator should be active
+        self.assertTrue(self.machine.modes.mission_rotator.active)
+
+        # one of the mission shots should randomly be selected and flashing,
+        # the others should be off
+
+        temp_list = list()
+
+        temp_list.append(self.machine.shots.world_tour.profiles[0]['running_show'].name)
+        temp_list.append(self.machine.shots.money_bags.profiles[0]['running_show'].name)
+        temp_list.append(self.machine.shots.music_awards.profiles[0]['running_show'].name)
+        temp_list.append(self.machine.shots.jukebox_mode.profiles[0]['running_show'].name)
+        temp_list.append(self.machine.shots.play_poker.profiles[0]['running_show'].name)
+
+        self.assertEqual(1, len([x for x in temp_list if x == 'flash']))
+        self.assertEqual(4, len([x for x in temp_list if x == 'off']))
+
+        # move the flashing one to world tour
+        while (self.machine.shots.world_tour.profiles[0]['running_show'].name !=
+                'flash'):
+
+            self.hit_and_release_switch('s_rightsling')
+
+        # start the world_tour mission
+        self.machine.switch_controller.process_switch('s_lowervukopto', logical=True)
+        self.advance_time_and_run()
+        self.assertTrue(self.machine.modes.world_tour.active)
+
+        # wait for it to time out
+        self.advance_time_and_run(30)
+        self.assertFalse(self.machine.modes.world_tour.active)
+
+        # missions should be all off now
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_world_tour.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_money_bags.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_music_awards.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_jukebox_insert.hw_driver.current_color)
+        self.assertEqual([0, 0, 0],
+            self.machine.leds.l_play_poker.hw_driver.current_color)
+
+        # mission select should be active
+        self.assertTrue(self.machine.modes.light_mission_select.active)
+
+        # l_ramp_fire should be flashing
+        temp_list = list()
+        temp_list.append(self.machine.leds.l_ramp_fire.hw_driver.current_color)
+        self.advance_time_and_run(.333)
+        temp_list.append(self.machine.leds.l_ramp_fire.hw_driver.current_color)
+        self.assertIn([0,0,0], temp_list)
+        self.assertIn([255,255,255], temp_list)
+
+        # mission rotator should not be active
+        self.assertFalse(self.machine.modes.mission_rotator.active)
+
+        # hit the shot to enable the mission rotator
+        self.hit_and_release_switch('s_rightrampopto')
+
+        # mission rotator should be active
+        self.assertTrue(self.machine.modes.mission_rotator.active)
+
+        # lit mission should have rotated
+        self.assertEqual('off',
+            self.machine.shots.world_tour.profiles[0]['running_show'].name)
+        self.assertEqual('flash',
+            self.machine.shots.money_bags.profiles[0]['running_show'].name)
+        self.assertEqual('off',
+            self.machine.shots.music_awards.profiles[0]['running_show'].name)
+        self.assertEqual('off',
+            self.machine.shots.jukebox_mode.profiles[0]['running_show'].name)
+        self.assertEqual('off',
+            self.machine.shots.play_poker.profiles[0]['running_show'].name)
+
+
 # class TestBndFull(FullMachineTestCase):
 #
 #     def test_integrated_attract_mode(self):

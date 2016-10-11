@@ -15,9 +15,17 @@ event_player:
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
   shot_australia_hit:
+    world_tour_success
+  world_tour_success:  # play a success show here todo
+    world_tour_advance
     world_tour_done|5s
     world_tour_fade_out|3s
-
+    rotate_mission_rotator
+  timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
+    world_tour_done|5s
+    world_tour_fade_out|3s
+    rotate_mission_rotator
+    stop_world_tour_timer
 
 # We need to set up shots so that we start on the North America shot, then move on to
 # Europe, then South America, and finally Australia
@@ -100,6 +108,8 @@ timers:
             action: add
             value: 3
           - event: s_subwayopto_active
+            action: stop
+          - event: stop_world_tour_timer
             action: stop
           - event: balldevice_bd_lower_vuk_ball_left
             action: start
