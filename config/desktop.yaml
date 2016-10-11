@@ -64,3 +64,9 @@ window:
   borderless: false
   exit_on_escape: true
   source_display: window
+
+mpf:
+      default_led_hw_update_hz: 20
+
+led_settings:
+    default_led_fade_ms: 0
