@@ -2,22 +2,271 @@
 mode:
   priority: 500
   start_events: start_music_awards_mode
-  stop_events: world_tour_done
+  stop_events: music_awards_done
 
 # todo
-#We need everything. Let's map this out.
-#
-#Need a timer that starts at 10 secs. Need to add 5 secs per successfult shot. Max 10 secs, though.
-#
-#Two shots: Music Awards are made through either the left orbit or right ramp. Both shots are lit all the time.
-#
-#Need a counter to count shots made. Mode is complete at 6. Not entirely sure what happens. Most others fire off
-#a 2-ball multiball, so maybe this one does, too? I think we need something to kick off Extra Ball...maybe that's
-#this mode?
-#
-#Scoring starts at 500k per shot. Both VUKs add 500k to the value. Value needs to reset when mode
-#is resumed. This is probably the hardest part of this mode.
-#
+# What to do when the mode is over. No ball captured. Thinking hurry up. 7 seconds to get extra ball?
+
+# Scoring starts at 500k per shot. Both VUKs add 500k to the value. Value needs to reset when mode
+# is resumed. This is probably the hardest part of this mode. Can do in mode code, though 100% not sure how.
+# Possible to do in config??
+
+# Also need to add in a music awards video pool type thing. It will hook the add_time event.
+
+event_player:
+  mode_music_awards_started:
+    mode_running|5s
+  logicblock_stop_adding_time_complete:
+    music_awards_done|5s
+    music_awards_fade_out|3s
+
+# need to hold the ball for a bit to play intro dots
+ball_locks:
+  ma_intro_lock:
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
+    enable_events: mode_music_awards_started|1
+    request_new_balls_to_pf: False
+    release_one_events: timer_ma_intro_timer_complete
+
+#Need a timer that starts at 10 secs. Need to add 5 secs per successful shot. Max 10 secs, though.
+
+# /// This timer is a boilerplate mode timer for this game. Specifically, it pauses the timer
+# /// the ball goes into the subway and re-starts it when the ball ejects.
+
+timers:
+    music_awards_timer:
+        start_value: 10
+        max_value: 10
+        tick_interval: 1.25s
+        direction: down
+        control_events:
+          - event: timer_ma_intro_timer_complete
+            action: start
+          - event: add_time
+            action: add
+            value: 5
+          - event: s_subwayopto_active
+            action: stop
+          - event: balldevice_bd_lower_vuk_ball_left
+            action: start
+    ma_intro_timer:
+        start_value: 5
+        direction: down
+        control_events:
+          - event: mode_music_awards_started
+            action: start
+
+# Two shots: Music Awards are made through either the left orbit or right ramp. Both shots are lit all the time.
+# We won't actually create shots for this since we don't need them. We've got shows to play for each shot, then
+# a show player to kick off those shows when the mode starts.
+
+# Each time a shot is hit, the logic block fires an add_time event. We'll hook that with the timer above, as well
+# as with the show player to play a wipe of lights.
+
+shows:
+  ma_advertise_show_left:
+    - duration: 150ms
+      leds:
+        (led3): off
+        (led1): on
+    - duration: 150ms
+      leds:
+        (led1): on
+        (led2): on
+    - duration: 150ms
+      leds:
+        (led1): off
+        (led2): on
+        (led3): on
+    - duration: 150ms
+      leds:
+        (led2): off
+    - duration: 150ms
+      leds:
+        (led3): off
+    - duration: 250ms
+      leds:
+        (led1): off
+        (led2): off
+        (led3): off
+  ma_advertise_show_right:
+    - duration: 150ms
+      leds:
+        (led3): off
+        (led1): on
+    - duration: 150ms
+      leds:
+        (led1): on
+        (led2): on
+    - duration: 150ms
+      leds:
+        (led1): off
+        (led2): on
+        (led3): on
+    - duration: 150ms
+      leds:
+        (led2): off
+    - duration: 150ms
+      leds:
+        (led3): off
+    - duration: 250ms
+      leds:
+        (led1): off
+        (led2): off
+        (led3): off
+
+show_player:
+    mode_music_awards_started:
+        ma_advertise_show_right:
+            loops: -1
+            speed: 2
+            show_tokens:
+                led1: l_right_music_award
+                led2: l_ramp_jackpot
+                led3: l_south_america
+        ma_advertise_show_left:
+            loops: -1
+            speed: 2
+            show_tokens:
+                led1: l_advance_wizard
+                led2: l_north_america
+                led3: l_left_music_award
+    add_time:
+        australia_lights:
+            loops: 0
+            speed: 2
+
+#Need a counter to count shots made. Mode is complete at 6. Need to figure out what happens when the mode is over.
+
+logic_blocks:
+    counters:
+        stop_adding_time:
+            count_events: s_rightrampopto_active, s_leftorbit_active
+            events_when_hit: add_time
+            count_complete_value: 6
+            events_when_complete: music_awards_stop_adding_time
+            enable_events: mode_music_awards_started
+            disable_events: logicblock_stop_adding_time_complete
+            multiple_hit_window: 500ms
+            persist_state: true
+
+
+# This is where we set up the slides that play the different dots and stage slides during the mode.
+
+slide_player:
+  mode_music_awards_starting:
+    intro_dmd:
+      target: dmd
+    music_awards_stage:
+      target: stage
+  mode_running:
+    music_awards_dmd:
+      target: dmd
+  logicblock_stop_adding_time_complete:
+    music_awards_complete:
+      target: dmd
+
+
+# And here are the slides referenced above
+
+slides:
+  intro_dmd:
+    widgets:
+      - type: text
+        text: Hit flashing shots
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: to collect
+        style: dmd_small
+        anchor_y: bottom
+        y: center
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: Music Awards!
+        style: dmd_big
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: video
+        video: ma_grammy_loop_2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+    target: dmd
+  music_awards_stage:
+    widgets:
+      - type: video
+        video: ma_my_maria
+        end_behavior: loop
+        animations:
+          music_awards_fade_out:
+            - property: volume
+              value: 0
+              duration: 2s
+  music_awards_dmd:
+    widgets:
+      - type: video
+        video: ma_grammy_loop_2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: text
+        text: Time left (music_awards_music_awards_timer_tick)
+        anchor_y: bottom
+        style: dmd_small
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-1
+        y: middle
+        style: tall title
+      - type: text
+        text: Each hit = 500k #todo this needs to show whatever the actual score is that we calculate as the mode progresses
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+  music_awards_complete:
+    widgets:
+      - type: video
+        video: ma_grammy_loop
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: text
+        text: Music Awards
+        anchor_y: top
+        style: dmd_med
+        y: top-4
+        anchor_x: right
+        x: right-9
+      - type: text
+        text: Complete!
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-6
+        anchor_y: bottom
+        y: bottom+1
+        style: tall title
+
+scoring:
+    add_time:
+      score: 500000
+
 #intro dots
 #video bed
 #each shot plays a video of BnD accepting an award.
@@ -26,3 +275,290 @@ mode:
 
 
 
+
+
+
+
+
+
+#
+#
+#
+#event_player:
+#  mode_world_tour_started:
+#    mode_running|5s
+#  player_world_tour_world_tour_timer_tick{value == 5}:
+#    slow_down_timer
+#  shot_australia_hit:
+#    world_tour_done|5s
+#    world_tour_fade_out|3s
+#
+#
+## We need to set up shots so that we start on the North America shot, then move on to
+## Europe, then South America, and finally Australia
+#
+#shots:
+#  shot_north_america:
+#    switch: s_leftorbit
+#    advance_events: mode_world_tour_started|1 # bump this priority so it's called after the shot has been enabled
+#    enable_events: mode_world_tour_started
+#    disable_events: shot_north_america_hit
+#    show_tokens:
+#      led: l_north_america
+#    profile: wt_advertise
+#  shot_europe:
+#    switch_sequence: s_spinner, s_TopRightVUK
+#    time: 2s
+#    enable_events: shot_north_america_hit
+#    disable_events: shot_europe_hit
+#    show_tokens:
+#      led: l_europe
+#    profile: wt_advertise
+#  shot_south_america:
+#    switch: s_rightrampopto
+#    enable_events: shot_europe_hit
+#    disable_events: shot_south_america_hit
+#    show_tokens:
+#      led: l_south_america
+#    profile: wt_advertise
+#  shot_australia:
+#    switch: s_TopRightVUK
+#    enable_events: shot_south_america_hit
+#    disable_events: shot_australia_hit
+#    delay_switch:
+#      s_spinner: 2s
+#    show_tokens:
+#      led: l_australia
+#    profile: wt_advertise
+#    debug: yes
+#
+#shot_profiles:
+#    wt_advertise:
+#      states:
+#        - name: flashing
+#          show: flash
+#          speed: 10
+#        - name: complete
+#          show: on
+#      loop: no
+#      advance_on_hit: yes
+#      block: yes
+#
+#ball_locks:
+#  wt_intro_lock:
+#    balls_to_lock: 1
+#    lock_devices: bd_lower_vuk
+#    enable_events: mode_world_tour_started|1
+#    request_new_balls_to_pf: False
+#    release_one_events: timer_wt_intro_timer_complete
+#  wt_complete:
+#    balls_to_lock: 1
+#    lock_devices: bd_top_right_vuk
+#    enable_events: shot_australia_hit|1
+#    request_new_balls_to_pf: false
+#    release_one_events: mode_world_tour_ending
+#
+#
+#timers:
+#    world_tour_timer:
+#        start_value: 20
+#        max_value: 20
+#        tick_interval: 1.25s
+#        direction: down
+#        control_events:
+#          - event: timer_wt_intro_timer_complete
+#            action: start
+#          - event: slow_down_timer #player_world_tour_world_tour_timer_tick{value == 5}
+#            action: change_tick_interval
+#            value: 1.5
+#          - event: add_time
+#            action: add
+#            value: 3
+#          - event: s_subwayopto_active
+#            action: stop
+#          - event: balldevice_bd_lower_vuk_ball_left
+#            action: start
+#    wt_intro_timer:
+#        start_value: 3
+#        direction: down
+#        control_events:
+#          - event: mode_world_tour_started
+#            action: start
+#
+## We need a show for each shot. There are four shots, so four shows. Each show will do a light
+## sweep (one up-down, one down-up, one left-right, one right-left) and play a video of a plane
+## flying across the earth.
+##
+## Each shot has a specific video. When the player hits the Australia shot, it plays the
+## wt_australia video, etc...
+#
+#show_player:
+#  shot_south_america_hit:
+#    south_america:
+#      loops: 0
+#    south_america_lights:
+#      loops: 0
+#  shot_australia_hit:
+#    australia:
+#      loops: 0
+#    australia_lights:
+#      loops: 0
+#  shot_europe_hit:
+#    europe:
+#      loops: 0
+#    europe_lights:
+#      loops: 0
+#  shot_north_america_hit:
+#    north_america:
+#      loops: 0
+#    north_america_lights:
+#      loops: 0
+#
+## We also have a video bed for this mode, so we have to figure out a way to play that video bed
+## first, then play the plane animations over that, returning to the video when they're done. Let's
+## try putting that on a slide, then playing shows over it.
+#
+#slides:
+#  intro_dmd:
+#    widgets:
+#      - type: text
+#        text: Hit flashing shots
+#        anchor_y: top
+#        style: dmd_small
+#        y: top-1
+#        anchor_x: right
+#        x: right-1
+#      - type: text
+#        text: to complete the
+#        style: dmd_small
+#        anchor_y: bottom
+#        y: center
+#        anchor_x: right
+#        x: right-1
+#      - type: text
+#        text: WORLD TOUR!
+#        style: dmd_big
+#        anchor_y: bottom
+#        y: bottom+1
+#        anchor_x: right
+#        x: right-1
+#      - type: video
+#        video: wt_spinny_globe_dmd
+#        end_behavior: loop
+#        anchor_x: left
+#        x: left
+#    target: dmd
+#  world_tour_stage:
+#    widgets:
+#      - type: video
+#        video: wt_boot_scoot
+#        end_behavior: loop
+#        animations:
+#          world_tour_fade_out:
+#            - property: volume
+#              value: 0
+#              duration: 2s
+#  world_tour_dmd:
+#    widgets:
+#      - type: video
+#        video: wt_spinny_globe_dmd
+#        end_behavior: loop
+#        anchor_x: left
+#        x: left
+#      - type: text
+#        text: Time left (world_tour_world_tour_timer_tick)
+#        anchor_y: bottom
+#        style: dmd_small
+#        y: bottom+1
+#        anchor_x: right
+#        x: right-1
+#      - type: text
+#        text: (player1|score)
+#        number_grouping: true
+#        min_digits: 2
+#        anchor_x: right
+#        x: right-1
+#        y: middle
+#        style: tall title
+#      - type: text
+#        text: Each hit = 100k
+#        anchor_y: top
+#        style: dmd_small
+#        y: top-1
+#        anchor_x: right
+#        x: right-1
+#  world_tour_complete:
+#    widgets:
+#      - type: video
+#        video: wt_spinny_globe_dmd
+#        end_behavior: loop
+#        anchor_x: left
+#        x: left
+#      - type: text
+#        text: World Tour
+#        anchor_y: top
+#        style: dmd_med
+#        y: top-4
+#        anchor_x: right
+#        x: right-9
+#      - type: text
+#        text: Complete!
+#        number_grouping: true
+#        min_digits: 2
+#        anchor_x: right
+#        x: right-6
+#        anchor_y: bottom
+#        y: bottom+1
+#        style: tall title
+#
+#slide_player:
+#  mode_world_tour_starting:
+#    intro_dmd:
+#      target: dmd
+#    world_tour_stage:
+#      target: stage
+#  mode_running:
+#    world_tour_dmd:
+#      target: dmd
+#  shot_australia_hit:
+#    world_tour_complete:
+#      target: dmd
+#
+#
+## Now we need a logic block to keep track of shots. When all four are hit, we're done!
+## It's not in the rules, but I also added something to extend the time when you hit a shot
+## just so that the song plays longer.
+#
+## Might not need the sequence
+#logic_blocks:
+##    sequences: # Don't need this anymore
+##        world_tour_sequence:
+##            events:
+##              - shot_north_america_hit
+##              - shot_europe_hit
+##              - shot_south_america_hit
+##              - shot_australia_hit
+##            enable_events: mode_world_tour_started
+##            events_when_complete: all_shots_made
+##            persist_state: true
+#    counters:
+#        stop_adding_time:
+#            count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit
+#            events_when_hit: add_time
+#            count_complete_value: 3
+#            events_when_complete: world_tour_stop_adding_time
+#            enable_events: mode_world_tour_started
+#            disable_events: logicblock_stop_adding_time_complete
+#            multiple_hit_window: 500ms
+#            persist_state: true
+#
+#scoring:
+#    shot_south_america_hit:
+#      score: 2000000
+#    shot_north_america_hit:
+#      score: 2000000
+#    shot_europe_hit:
+#      score: 2000000
+#    shot_australia_hit:
+#      score: 2000000
+#

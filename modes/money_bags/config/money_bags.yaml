@@ -1,29 +1,37 @@
 #config_version=4
 
+mode:
+  priority: 500
+  start_events: start_money_bags_mode
+  stop_events: money_bags_done
+
 #todo
 # intro dots
 # mode timer
 # money bag animation
 # stage video?
 
-mode:
-  priority: 400
-  start_events: start_money_bags_mode
-  stop_events: money_bags_finished
+
+event_player:
+  mode_money_bags_started:
+    mode_running|5s
+  logicblock_stop_adding_time_complete:
+    money_bags_done|5s
+    money_bags_fade_out|3s
 
 ball_locks:
   money_bags_intro_lock:
     balls_to_lock: 1
     lock_devices: bd_lower_vuk
-    enable_events: mode_money_bags_mode_started
+    enable_events: mode_money_bags_started|1
     request_new_balls_to_pf: False
     release_one_events: timer_mb_intro_timer_complete #probably switch this to an event fired by a show. Then delete timer
 
-event_player:
-    mode_money_bags_started:
-        start_money_bags_timer
-    timer_shot_timer_complete:
-        money_bags_finished|2s
+#event_player:
+#    mode_money_bags_started:
+#        start_money_bags_timer
+#    timer_money_bags_timer_complete:
+#        money_bags_finished|2s
 
 shots:
     left_kicking_target:
@@ -32,13 +40,13 @@ shots:
             led: l_left_longhorn
 #            color: ffcc00
         advance_events: mode_money_bags_started
-        disable_events: timer_shot_timer_complete
+        disable_events: timer_money_bags_timer_complete
         ##debug: true
     spinner_to_vuk:
         switch_sequence: s_spinner, s_toprightvuk
         show_tokens:
             led: l_center_longhorn
-        disable_events: timer_shot_timer_complete
+        disable_events: timer_money_bags_timer_complete
 #            color: ffcc00
         ##debug: true
 
@@ -47,7 +55,7 @@ shot_groups:
         shots: left_kicking_target, spinner_to_vuk
         profile: advertise
 #        enable_events: mode_money_bags_started
-        disable_events: timer_shot_timer_complete
+        disable_events: timer_money_bags_timer_complete
         rotate_events: money_bags_advertise_flashing_hit
         #debug: true
 
@@ -59,7 +67,7 @@ timers:
         control_events:
             - action: start
               event: mode_money_bags_started
-    shot_timer:
+    money_bags_timer:
         start_value: 10
         end_value: 0
         direction: down
@@ -90,35 +98,129 @@ logic_blocks:
 # NEED A SHOW for start, complete, and ended before it's done. Mode can end at
 # completion of show.
 
-slide_player:
-  mode_money_bags_started:
-      money_bags_intro:
-        widgets:
-          - type: text
-            text: Money bags!
-            style: dmd_med
-        expire: 2s
-  timer_shot_timer_tick:
-      money_bags_intro:
-        widgets:
-          - type: text
-            text: (ticks)
-            style: dmd_med
-  timer_shot_timer_complete:
-      money_bags_intro:
-        widgets:
-          - type: text
-            text: Dang!
-            style: dmd_med
-        expire: 2s
-  logicblock_money_bags_counter_complete:
-      money_bags_intro:
-        widgets:
-          - type: text
-            text: You Rock!
-            style: dmd_med
-        expire: 2s
+# This is where we set up the slides that play the different dots and stage slides during the mode.
 
+slide_player:
+  mode_money_bags_starting:
+    mb_intro_dmd:
+      target: dmd
+    money_bags_stage:
+      target: stage
+  mode_running:
+    money_bags_dmd:
+      target: dmd
+  logicblock_money_bags_counter_complete:
+    money_bags_complete:
+      target: dmd
+
+
+# And here are the slides referenced above
+
+slides:
+  mb_intro_dmd:
+    widgets:
+      - type: text
+        text: Shooting lit shots
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: collects and increases
+        style: dmd_small
+        anchor_y: bottom
+        y: center
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: Money Bags Value
+        style: dmd_big
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: rectangle
+        color: 000000
+        height: 32
+        width: 128
+        opacity: .4
+      - type: video
+        video: mb_dmd_loop_2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+    target: dmd
+  money_bags_stage:
+    widgets:
+      - type: video
+        video: mb_beer_thirty
+        end_behavior: loop
+        animations:
+          money_bags_fade_out:
+            - property: volume
+              value: 0
+              duration: 2s
+  money_bags_dmd:
+    widgets:
+      - type: text
+        text: Time left (money_bags_money_bags_timer_tick)
+        anchor_y: bottom
+        style: dmd_small
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-1
+        y: middle
+        style: tall title
+      - type: text
+        text: Each hit = 1,000,000 #todo this needs to show whatever the actual score is that we calculate as the mode progresses
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: rectangle
+        color: 000000
+        height: 32
+        width: 128
+        opacity: .4
+      - type: video
+        video: mb_dmd_loop_2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+  money_bags_complete:
+    widgets:
+      - type: text
+        text: Money Bags
+        anchor_y: top
+        style: dmd_med
+        y: top-4
+        anchor_x: right
+        x: right-9
+      - type: text
+        text: Complete!
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-6
+        anchor_y: bottom
+        y: bottom+1
+        style: tall title
+      - type: video
+        video: mb_dmd_loop_2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+
+
+        
 scoring:
     money_bags_advertise_flashing_hit:
         score: 1000000

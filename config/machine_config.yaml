@@ -90,6 +90,7 @@ modes:
   - play_poker
   - money_bags
   - world_tour
+  - music_awards
 
 config:
   - display
@@ -145,7 +146,7 @@ switches:
     tags: playfield_active, end_skill_shot
   s_rightsling:
     number: 25
-    tags: playfield_active, end_skill_shot, toggle
+    tags: playfield_active, end_skill_shot, toggle, beat
   s_rightbanktop:
     number: 26
     tags: playfield_active, end_skill_shot
@@ -158,7 +159,7 @@ switches:
     tags: jukebox, playfield_active, end_skill_shot, jukebox_hit
   s_topkickingtarget:
     number: 41
-    tags: playfield_active, end_skill_shot, toggle
+    tags: playfield_active, end_skill_shot, toggle, beat
   s_subwayopto:
     number: 42
     tags: subway, playfield_active, end_skill_shot, jukebox_hit
@@ -169,14 +170,14 @@ switches:
     tags: playfield_active, end_skill_shot
   s_leftsling:
     number: 44
-    tags: playfield_active, end_skill_shot, toggle
+    tags: playfield_active, end_skill_shot, toggle, beat
   s_leftrampopto:
     number: 45
     type: NC
     tags: playfield_active, end_skill_shot
   s_bottomkickingtarget:
     number: 46
-    tags: playfield_active, end_skill_shot, toggle
+    tags: playfield_active, end_skill_shot, toggle, beat
   s_leftorbit:
     number: 47
     tags: playfield_active, end_skill_shot
@@ -216,13 +217,13 @@ switches:
     tags: playfield_active, end_skill_shot
   s_leftpop:
     number: 77
-    tags: playfield_active, end_skill_shot, toggle
+    tags: playfield_active, end_skill_shot, toggle, beat
   s_rightpop:
     number: 78
-    tags: playfield_active, end_skill_shot, toggle
+    tags: playfield_active, end_skill_shot, toggle, beat
   s_bottompop:
     number: 79
-    tags: playfield_active, end_skill_shot, toggle
+    tags: playfield_active, end_skill_shot, toggle, beat
 
 
 #        ::::::::   :::::::: ::::::::::: :::        ::::::::
@@ -631,13 +632,13 @@ leds:
     tags: right
   l_right_music_award:
     number: 1-5
-    tags: right
+    tags: right, right_ramp
   l_ramp_jackpot:
     number: 1-6
-    tags: right
+    tags: right, right_ramp
   l_south_america:
     number: 1-7
-    tags: right
+    tags: right, right_ramp
     default_color: red
   l_middle_quarter:
     number: 1-8
@@ -713,20 +714,20 @@ leds:
     tags: left
   l_advance_wizard:
     number: 1-30
-    tags: left
+    tags: left, left_orbit
   l_lower_left_flasher:
     number: 1-31
     tags: left
   l_north_america:
     number: 1-32
-    tags: left
+    tags: left, left_orbit
     default_color: red
   l_left_ramp_flasher:
     number: 1-33
     tags: left
   l_left_music_award:
     number: 1-34
-    tags: left
+    tags: left, left_orbit
   l_managers_choice:
     number: 1-35
     tags: left

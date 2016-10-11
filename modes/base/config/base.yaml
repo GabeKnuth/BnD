@@ -36,6 +36,28 @@ event_player:
 config:
   - display
 
+sound_pools:
+    beats:
+        type: random
+        sounds:
+          drum1
+          drum2
+          drum3
+          drum4
+          drum5
+          drum6
+          drum7
+          drum8
+          drum9
+          drum10
+          drum11
+          drum12
+          drum13
+          drum14
+          drum15
+          drum16
+          drum17
+
 sound_player:
   mode_base_started:
     wait_to_plunge:
@@ -64,7 +86,8 @@ sound_player:
     base_bed_loop:
         action: stop
         fade_out: 500ms
-
+    sw_beat:
+        action: play
 
 logic_blocks:
   counter:
@@ -256,12 +279,6 @@ shot_profiles:
           - name: active
             show: on
         loop: no
-
-
-
-#led_player:
-#  sw_s_spinner:
-
 
 shows:
   album_rotator:
