@@ -30,9 +30,7 @@ ball_locks:
     release_one_events: release_managers_choice_ball
 
 show_player:
-  mode_managers_choice_lit_started:
-    flash_managers_choice:
-      sync_ms: 500
+  mode_managers_choice_lit_started: flash_managers_choice
   finish_managers_choice:  # todo why is this needed???
     flash_managers_choice:
       action: stop

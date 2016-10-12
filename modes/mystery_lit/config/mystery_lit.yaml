@@ -6,9 +6,7 @@ mode:
   stop_events: stop_mystery
 
 show_player:
-  mode_mystery_lit_started:
-    flash_mystery:
-      sync_ms: 500
+  mode_mystery_lit_started: flash_mystery
   collect_mystery:
     flash_mystery:
       action: stop

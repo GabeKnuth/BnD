@@ -102,7 +102,6 @@ shot_profiles:
             - name: lit
               show: flash
               speed: 4
-              sync_ms: 500
             - name: completed
               show: "on"
     light_mission_select:
@@ -114,7 +113,6 @@ shot_profiles:
             - name: lit
               show: flash
               speed: 4
-              sync_ms: 500
 
 show_player:
   light_mission_select_hit:

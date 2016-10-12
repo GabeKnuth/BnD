@@ -169,38 +169,42 @@ show_player:
       show_tokens:
         led: l_center_longhorn
       priority: 1000000
+      sync_ms: 0
   s_leftpop_active:
     flash_once:
       loops: 0
       show_tokens:
         led: l_left_pop
       priority: 1000000
+      sync_ms: 0
   s_bottompop_active:
     flash_once:
       loops: 0
       show_tokens:
         led: l_bottom_pop
       priority: 1000000
+      sync_ms: 0
   s_rightpop_active:
     flash_once:
       loops: 0
       show_tokens:
         led: l_right_pop
       priority: 1000000
+      sync_ms: 0
   s_rightrampopto_active:
     flash_once:
       loops: 3
       speed: 1.5
       show_tokens:
         led: l_right_ramp_flasher
+        sync_ms: 0
   s_leftrampopto_active:
     flash_once:
       loops: 3
       speed: 1.5
       show_tokens:
         led: l_left_ramp_flasher
-
-
+        sync_ms: 0
 
 shots:
   album_rotator:
@@ -275,8 +279,6 @@ shot_profiles:
             show: off
           - name: lit
             show: flash
-            speed: 4
-            sync_ms: 500
           - name: active
             show: on
         loop: no
@@ -306,11 +308,6 @@ shows:
     - time: 50ms
       leds:
         (led): off
-
-
-
-
-
 
 shot_groups:
     upper_lanes:

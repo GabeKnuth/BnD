@@ -15,7 +15,6 @@ shot_profiles:
     states:
     - name: lit
       show: flash
-      sync_ms: 500
       speed: 4
     - name: unlit
       show: off
