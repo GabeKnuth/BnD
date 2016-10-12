@@ -39,9 +39,6 @@ game:
   allow_start_with_ball_in_drain: True
   max_players: 4
 
-led_settings:
-    default_led_fade_ms: 100
-
 sound_system:
     master_volume: 0.75
     tracks:

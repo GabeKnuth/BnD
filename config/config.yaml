@@ -15,6 +15,9 @@ smartmatrix:
     port: /dev/tty.usbmodem1030681
 #    port: com3
 
+led_settings:
+    default_led_fade_ms: 100
+
 config:
   - machine_config
 
