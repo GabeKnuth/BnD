@@ -231,7 +231,6 @@ shot_profiles:
         - name: flashing
 #          show: flash_color
           show: flash
-          speed: 10
         - name: unlit
           show: off
       loop: yes

@@ -66,23 +66,23 @@ timers:
 
 shows:
   ma_advertise_show_left:
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led3): off
         (led1): on
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led1): on
         (led2): on
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led1): off
         (led2): on
         (led3): on
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led2): off
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led3): off
     - duration: 250ms
@@ -91,23 +91,23 @@ shows:
         (led2): off
         (led3): off
   ma_advertise_show_right:
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led3): off
         (led1): on
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led1): on
         (led2): on
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led1): off
         (led2): on
         (led3): on
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led2): off
-    - duration: 150ms
+    - duration: 50ms
       leds:
         (led3): off
     - duration: 250ms
@@ -120,14 +120,12 @@ show_player:
     mode_music_awards_started:
         ma_advertise_show_right:
             loops: -1
-            speed: 2
             show_tokens:
                 led1: l_right_music_award
                 led2: l_ramp_jackpot
                 led3: l_south_america
         ma_advertise_show_left:
             loops: -1
-            speed: 2
             show_tokens:
                 led1: l_advance_wizard
                 led2: l_north_america

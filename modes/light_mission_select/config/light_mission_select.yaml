@@ -14,7 +14,6 @@ show_player:
   mode_light_mission_select_started:
     flash:
       loops: -1
-      speed: 3
       show_tokens:
         led: l_ramp_fire
 

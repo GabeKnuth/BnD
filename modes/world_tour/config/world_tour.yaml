@@ -70,7 +70,6 @@ shot_profiles:
       states:
         - name: flashing
           show: flash
-          speed: 10
         - name: complete
           show: on
       loop: no

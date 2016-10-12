@@ -884,6 +884,20 @@ shows:
             (leds):
               color: black
         - time: 2
+    flash:  #overwrite default so we can tune our machine-wide flashing in one place
+        - _overwrite: true
+        - duration: 250ms
+          leds:
+            (led):
+              color: on
+            (leds):
+              color: on
+        - duration: 250ms
+          leds:
+            (led):
+              color: black
+            (leds):
+              color: black
 
 show_player:
   mode_attract_started:

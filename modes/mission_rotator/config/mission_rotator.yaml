@@ -101,7 +101,6 @@ shot_profiles:
               show: "off"
             - name: lit
               show: flash
-              speed: 4
             - name: completed
               show: "on"
     light_mission_select:
@@ -112,7 +111,6 @@ shot_profiles:
 #              show: "off"
             - name: lit
               show: flash
-              speed: 4
 
 show_player:
   light_mission_select_hit:
