@@ -84,7 +84,7 @@ modes:
   - mystery_lit
   - wizard_advance_lit
   - mission_rotator
-#  - light_mission_select
+  - light_mission_select
   - play_poker
   - money_bags
   - world_tour
