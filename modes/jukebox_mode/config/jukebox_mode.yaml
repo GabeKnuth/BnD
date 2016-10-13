@@ -2,6 +2,7 @@
 mode:
   priority: 500
   start_events: start_jukebox_mode
+  stop_events: end_jukebox_mode
 
 # todo
 #Intro dots
@@ -20,6 +21,10 @@ ball_locks:
     request_new_balls_to_pf: False
     release_one_events: timer_display_timer_complete
 
+event_player:
+  timer_jukebox_mode_timer_complete:
+    end_jukebox_mode
+
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down
 # You can't confidently do this on the jukebox opto event because it could trap
@@ -29,6 +34,16 @@ random_event_player:
     s_subwayopto_active:
         - jukebox_up
         - jukebox_down
+    play_jukebox_video:
+          jb_bed_of_roses
+          jb_achy_breaky
+          jb_convoy
+          jb_every_little_thing
+          jb_boots_are_made_for_walkin
+          jb_hello_darlin
+          jb_louisiana_woman
+          jb_rhinestone_cowboy
+          jb_stand_by_your_man
 
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
 # events to change videos, as well as to fire off the complete mode logic
@@ -68,19 +83,19 @@ timers:
 # I think we'll play the videos randomly, so let's try that. That way everyone in
 # this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
 
-video_pools:
-    jukebox_videos_pool:
-        type: random_force_all
-        videos:
-            jb_bed_of_roses
-            jb_achy_breaky
-            jb_convoy
-            jb_every_little_thing
-            jb_boots_are_made_for_walkin
-            jb_hello_darlin
-            jb_louisiana_woman
-            jb_rhinestone_cowboy
-            jb_stand_by_your_man
+#video_pools:
+#    jukebox_videos_pool:
+#        type: random_force_all
+#        videos:
+#            jb_bed_of_roses
+#            jb_achy_breaky
+#            jb_convoy
+#            jb_every_little_thing
+#            jb_boots_are_made_for_walkin
+#            jb_hello_darlin
+#            jb_louisiana_woman
+#            jb_rhinestone_cowboy
+#            jb_stand_by_your_man
 
 # Now we need to play the video. The first event needs to be just the song. Each one
 # after that should be record scratch, then song, so we also have a sound_player config

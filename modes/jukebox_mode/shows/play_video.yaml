@@ -5,7 +5,7 @@
     video:
       widgets:
         - type: video
-          video: jukebox_videos_pool # eventually this will be a video pool
+          video: jb_bed_of_roses
           end_behavior: loop
           control_events:
             - event: stop_song
