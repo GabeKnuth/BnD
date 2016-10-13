@@ -19,11 +19,15 @@ ball_locks:
     lock_devices: bd_lower_vuk
     enable_events: mode_jukebox_mode_started
     request_new_balls_to_pf: False
-    release_one_events: timer_display_timer_complete
+    release_one_events: jb_release_ball
 
 event_player:
+  mode_jukebox_mode_started:
+    play_jukebox_video
   timer_jukebox_mode_timer_complete:
-    end_jukebox_mode
+    end_jukebox_mode|2s
+    jukebox_success|1s
+    jb_release_ball|1s
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down
@@ -35,15 +39,17 @@ random_event_player:
         - jukebox_up
         - jukebox_down
     play_jukebox_video:
-          jb_bed_of_roses
-          jb_achy_breaky
-          jb_convoy
-          jb_every_little_thing
-          jb_boots_are_made_for_walkin
-          jb_hello_darlin
-          jb_louisiana_woman
-          jb_rhinestone_cowboy
-          jb_stand_by_your_man
+      force_all: true
+      events:
+        jb_bed_of_roses
+        jb_achy_breaky
+        jb_convoy
+        jb_every_little_thing
+        jb_boots_are_made_for_walkin
+        jb_hello_darlin
+        jb_louisiana_woman
+        jb_rhinestone_cowboy
+        jb_stand_by_your_man
 
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
 # events to change videos, as well as to fire off the complete mode logic
@@ -58,8 +64,8 @@ logic_blocks:
             count_events: sw_jukebox_hit
             count_complete_value: 9
             multiple_hit_window: 1s
-            events_when_hit: change_song, stop_song
-            events_when_complete: play_bnd_song
+            events_when_hit: change_song, play_jukebox_video, stop_song
+            events_when_complete: jb_play_bnd_song
 
 # Mode timer so we know when time runs out. We'll count down at 1.25s intervals.
 # This also pauses when the ball enters the subway until it ejects from the vuk.
@@ -83,20 +89,6 @@ timers:
 # I think we'll play the videos randomly, so let's try that. That way everyone in
 # this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
 
-#video_pools:
-#    jukebox_videos_pool:
-#        type: random_force_all
-#        videos:
-#            jb_bed_of_roses
-#            jb_achy_breaky
-#            jb_convoy
-#            jb_every_little_thing
-#            jb_boots_are_made_for_walkin
-#            jb_hello_darlin
-#            jb_louisiana_woman
-#            jb_rhinestone_cowboy
-#            jb_stand_by_your_man
-
 # Now we need to play the video. The first event needs to be just the song. Each one
 # after that should be record scratch, then song, so we also have a sound_player config
 # that plays the sound only after the first time the jukebox is hit.
@@ -105,18 +97,207 @@ timers:
 #   When jukebox is hit, the video leaves the stage, but nothing replaces it (though the sound still plays).
 #   The video in a show isn't stopping.
 
+slide_player:
+  player_jukebox_mode_jukebox_mode_timer_tick: jb_instructions
+
+slides:
+  jb_instructions:
+      - type: text
+        text: Change the song!
+        #anchor_y: center
+        #anchor_x: right
+        style: dmd_big
+        #x: right+1
+        #y: top-1
+      - type: text
+        text: Time left (jukebox_mode_jukebox_mode_timer_tick)
+        anchor_y: bottom
+        style: dmd_small
+        y: bottom+1
+        anchor_x: center
+        x: center
+      - type: text
+        text: Each hit = 100k
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: center
+        x: center
+
 show_player:
-  stop_song:
-    play_video:
-      action: stop
-  change_song:
-    play_video:
-      loops: -1
-  mode_jukebox_mode_started:
-    play_video:
-      loops: -1
+#  stop_song:
+#    play_video:
+#      action: stop
+#  change_song:
+#    play_video:
+#      loops: -1
+#  mode_jukebox_mode_started:
+#    play_video:
+#      loops: -1
+  jb_bed_of_roses:
+    jb_bed_of_roses:
+      key: jb_active_video
+  jb_achy_breaky:
+    jb_achy_breaky:
+      key: jb_active_video
+  jb_convoy:
+    jb_convoy:
+      key: jb_active_video
+  jb_every_little_thing:
+    jb_every_little_thing:
+      key: jb_active_video
+  jb_boots_are_made_for_walkin:
+    jb_boots_are_made_for_walkin:
+      key: jb_active_video
+  jb_hello_darlin:
+    jb_hello_darlin:
+      key: jb_active_video
+  jb_louisiana_woman:
+    jb_louisiana_woman:
+      key: jb_active_video
+  jb_rhinestone_cowboy:
+    jb_rhinestone_cowboy:
+      key: jb_active_video
+  jb_stand_by_your_man:
+    jb_stand_by_your_man:
+      key: jb_active_video
+  jb_play_bnd_song:
+    jb_play_bnd_song:
+      key: jb_active_video
+
 
 sound_player:
   change_song:
     jb_record_scratch:
       loops: 0
+
+shows:
+  jb_bed_of_roses:
+    - duration: -1
+      slides:
+        bed_of_roses:
+          widgets:
+          - type: video
+            video: jb_bed_of_roses
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_achy_breaky:
+    - duration: -1
+      slides:
+        bed_of_roses:
+          widgets:
+          - type: video
+            video: jb_achy_breaky
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_convoy:
+    - duration: -1
+      slides:
+        bed_of_roses:
+          widgets:
+          - type: video
+            video: jb_convoy
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_every_little_thing:
+    - duration: -1
+      slides:
+        bed_of_roses:
+          widgets:
+          - type: video
+            video: jb_every_little_thing
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_boots_are_made_for_walkin:
+    - duration: -1
+      slides:
+        jb_boots_are_made_for_walkin:
+          widgets:
+          - type: video
+            video: jb_boots_are_made_for_walkin
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_hello_darlin:
+    - duration: -1
+      slides:
+        jb_hello_darlin:
+          widgets:
+          - type: video
+            video: jb_hello_darlin
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_louisiana_woman:
+    - duration: -1
+      slides:
+        jb_louisiana_woman:
+          widgets:
+          - type: video
+            video: jb_louisiana_woman
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_rhinestone_cowboy:
+    - duration: -1
+      slides:
+        jb_rhinestone_cowboy:
+          widgets:
+          - type: video
+            video: jb_rhinestone_cowboy
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_stand_by_your_man:
+    - duration: -1
+      slides:
+        jb_stand_by_your_man:
+          widgets:
+          - type: video
+            video: jb_stand_by_your_man
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_play_bnd_song:
+    - duration: -1
+      slides:
+        jb_stand_by_your_man:
+          widgets:
+          - type: video
+            video: jb_hard_workin_man
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
