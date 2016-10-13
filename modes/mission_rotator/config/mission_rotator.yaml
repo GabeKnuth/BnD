@@ -10,105 +10,25 @@
 # Need stuff for that, too.
 
 mode:
-  start_events: ball_started
+  start_events: ball_starting
 #  stop_events: ball_ending, start_money_bags_mode, start_world_tour_mode, start_music_awards_mode, start_jukebox_mode, start_play_poker_mode
   priority: 200
-
-logic_blocks:
-  sequences:
-    advance_random_mission:
-      events: mode_mission_rotator_started
-      events_when_complete: advance_random_mission
-      reset_on_complete: false
-      persist_state: true
-
-random_event_player:
-    advance_random_mission:
-        - world_tour_advance
-        - money_bags_advance
-        - music_awards_advance
-        - jukebox_mode_advance
-        - play_poker_advance
-
-event_player:
-    money_bags_mission_rotator_lit_hit: start_money_bags_mode
-    world_tour_mission_rotator_lit_hit: start_world_tour_mode
-    music_awards_mission_rotator_lit_hit: start_music_awards_mode
-    jukebox_mode_mission_rotator_lit_hit: start_jukebox_mode
-    play_poker_mission_rotator_lit_hit: start_play_poker_mode
 
 shots:
     light_mission_select:
       switch: s_rightrampopto
-      enable_events: mode_mission_rotator_stared, light_mission_select
+      enable_events: light_mission_select
       disable_events: disable_mission_select, light_mission_select_hit
       profile: light_mission_select
       show_tokens:
         leds: l_ramp_fire
-    world_tour:
-      label: world_tour
-      hit_events: shot_lower_vuk_from_playfield_hit
-      advance_events: world_tour_advance
-      profile: mission_rotator
-      show_tokens:
-        leds: l_world_tour
-    money_bags:
-      label: money_bags
-      hit_events: shot_lower_vuk_from_playfield_hit
-      advance_events: money_bags_advance
-      profile: mission_rotator
-      show_tokens:
-        leds: l_money_bags
-    music_awards:
-      label: music_awards
-      hit_events: shot_lower_vuk_from_playfield_hit
-      advance_events: music_awards_advance
-      profile: mission_rotator
-      show_tokens:
-        leds: l_music_awards
-    jukebox_mode:
-      label: jukebox
-      hit_events: shot_lower_vuk_from_playfield_hit
-      advance_events: jukebox_mode_advance
-      profile: mission_rotator
-      show_tokens:
-        leds: l_jukebox_insert
-    play_poker:
-      label: play_poker
-      hit_events: shot_lower_vuk_from_playfield_hit
-      advance_events: play_poker_advance
-      profile: mission_rotator
-      show_tokens:
-        leds: l_play_poker
-
-shot_groups:
-    missions:
-      shots: world_tour, money_bags, music_awards, jukebox_mode, play_poker
-      profile: mission_rotator
-      enable_events: mode_mission_rotator_started, mission_ended
-      disable_events: mission_started
-      reset_events: all_missions_completed
-      rotate_right_events: sw_toggle, rotate_mission_rotator
+      debug: true
 
 shot_profiles:
-    mission_rotator:
-        loop: true
-        state_names_to_rotate: lit, unlit
-        advance_on_hit: false
-        show_when_disabled: true
-        states:
-            - name: unlit
-              show: "off"
-            - name: lit
-              show: flash
-            - name: completed
-              show: "on"
     light_mission_select:
         loop: true
         advance_on_hit: false
         states:
-#            - name: unlit
-#              show: "off"
             - name: lit
               show: flash
 
@@ -119,3 +39,74 @@ show_player:
       speed: 1.5
       show_tokens:
         led: l_right_ramp_flasher
+
+achievements:
+  world_tour:
+    show_tokens:
+      leds: l_world_tour
+    show_when_selected: flash
+    show_when_started: flash
+    show_when_completed: on
+    events_when_started: start_world_tour_mode
+    restart_after_stop_possible: true
+    start_enabled: True
+    events_when_completed: rotate_mission_rotator
+    complete_events: world_tour_success
+
+  money_bags:
+    show_tokens:
+      leds: l_money_bags
+    show_when_selected: flash
+    show_when_started: flash
+    show_when_completed: on
+    events_when_started: start_money_bags_mode
+    restart_after_stop_possible: true
+    start_enabled: True
+    events_when_completed: rotate_mission_rotator
+
+  music_awards:
+    show_tokens:
+      leds: l_music_awards
+    show_when_selected: flash
+    show_when_started: flash
+    show_when_completed: on
+    events_when_started: start_music_awards_mode
+    restart_after_stop_possible: true
+    start_enabled: True
+    events_when_completed: rotate_mission_rotator
+
+  jukebox:
+    show_tokens:
+      leds: l_jukebox_insert
+    show_when_selected: flash
+    show_when_started: flash
+    show_when_completed: on
+    events_when_started: start_jukebox_mode
+    restart_after_stop_possible: true
+    start_enabled: True
+    events_when_completed: rotate_mission_rotator
+
+  play_poker:
+    show_tokens:
+      leds: l_play_poker
+    show_when_selected: flash
+    show_when_started: flash
+    show_when_completed: on
+    events_when_started: start_play_poker_mode
+    restart_after_stop_possible: true
+    start_enabled: True
+    events_when_completed: rotate_mission_rotator
+
+achievement_groups:
+  my_group:
+    achievements: world_tour, money_bags, music_awards, jukebox, play_poker
+    enable_events: light_mission_select_light_mission_select_lit_hit
+    disable_events: ball_ending
+    start_selected_events: shot_lower_vuk_from_playfield_hit
+    select_random_achievement_events: mode_mission_rotator_started
+    events_when_enabled: select_next_mission
+    rotate_right_events: sw_toggle, rotate_mission_rotator
+    show_tokens:
+      leds:
+        l_begin_round
+    show_when_enabled: flash
