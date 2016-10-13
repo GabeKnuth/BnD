@@ -15,7 +15,8 @@ mode:
 event_player:
   mode_money_bags_started:
     mode_running|5s
-  logicblock_stop_adding_time_complete:
+#  logicblock_stop_adding_time_complete:
+  logicblock_money_bags_counter_complete:  # brian added
     money_bags_done|5s
     money_bags_fade_out|3s
 

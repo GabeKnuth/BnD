@@ -2,7 +2,7 @@
 mode:
   priority: 500
   start_events: start_world_tour_mode
-  stop_events: world_tour_done
+  stop_events: stop_world_tour
 
 # todo
 #when over, has to start something else. Doc says another mode. This mode is complete, though.
@@ -14,21 +14,23 @@ event_player:
     mode_running|5s
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
-  shot_australia_hit:
-    world_tour_success
-  world_tour_success:  # play a success show here todo
-    world_tour_advance
-    world_tour_done|5s
+  shot_australia_hit:  # play a success show here todo
+    stop_world_tour|5s
     world_tour_fade_out|3s
-    rotate_mission_rotator
+    release_wt_ball|4s
+    world_tour_success|3s
+
   timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
-    world_tour_done|5s
+    stop_world_tour|5s
     world_tour_fade_out|3s
-    rotate_mission_rotator
     stop_world_tour_timer
+    world_tour_fail|3s
+
 
 # We need to set up shots so that we start on the North America shot, then move on to
 # Europe, then South America, and finally Australia
+
+# todo convert these shots to achievements
 
 shots:
   shot_north_america:
@@ -64,6 +66,9 @@ shots:
       led: l_australia
     profile: wt_advertise
     debug: yes
+  light_mission_select:
+    profile: shot_blocker
+    disable_events: mode_world_tour_started
 
 shot_profiles:
     wt_advertise:
@@ -88,7 +93,7 @@ ball_locks:
     lock_devices: bd_top_right_vuk
     enable_events: shot_australia_hit|1
     request_new_balls_to_pf: false
-    release_one_events: mode_world_tour_ending
+    release_one_events: release_wt_ball
 
 
 timers:

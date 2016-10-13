@@ -16,9 +16,14 @@ mode:
 event_player:
   mode_music_awards_started:
     mode_running|5s
-  logicblock_stop_adding_time_complete:
+  music_awards_stop_adding_time:  # success
     music_awards_done|5s
     music_awards_fade_out|3s
+    music_awards_success|1s
+  timer_music_awards_timer_complete:  # fail
+    music_awards_done|5s
+    music_awards_fade_out|3s
+    music_awards_fail|1s
 
 # need to hold the ball for a bit to play intro dots
 ball_locks:
