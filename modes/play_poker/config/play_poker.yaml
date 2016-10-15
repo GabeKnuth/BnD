@@ -21,8 +21,8 @@ Mode:
 
 event_player:
   mode_play_poker_started:
-    play_poker_done|15s
-    play_poker_success|14s
+      - play_poker_done|15s
+      - play_poker_success|14s
 
 ball_locks:
   poker_lock:
