@@ -22,6 +22,7 @@ event_player:
     money_bags_success|4s   # is there a fail mode todo
   timer_money_bags_timer_complete:
     money_bags_fail
+    money_bags_done|1
 
 ball_locks:
   money_bags_intro_lock:
