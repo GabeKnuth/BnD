@@ -18,7 +18,7 @@ show_player:
     flash:
       loops: -1
       show_tokens:
-        led: l_left_apron_flasher
+        led: l_start_button
 
   mode_attract_stopped:
     attract_dmd_loop:
