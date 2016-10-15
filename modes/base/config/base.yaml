@@ -283,6 +283,12 @@ shot_profiles:
             show: on
         loop: no
 
+    stealth:
+      states:
+        - name: off
+          show: off
+      advance_on_hit: false
+
 shows:
   album_rotator:
       - leds:

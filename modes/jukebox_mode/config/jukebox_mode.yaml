@@ -26,8 +26,11 @@ event_player:
     play_jukebox_video
   timer_jukebox_mode_timer_complete:
     end_jukebox_mode|2s
-    jukebox_success|1s
+    jukebox_fail|1s
     jb_release_ball|1s
+  jb_play_bnd_song:
+    jukebox_success  # temp todo
+
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down

@@ -1,6 +1,7 @@
 #config_version=4
 Mode:
   start_events: start_play_poker_mode
+  stop_events: play_poker_done
   priority: 500
 
 # TODO
@@ -18,6 +19,10 @@ Mode:
 #5 Kind- 3 Specials
 #5 Aces- Award Extra Ball, Special, Complete BROOKS N DUNN, 10M, and Double Score.
 
+event_player:
+  start_play_poker_mode:
+    play_poker_done|5s
+    play_poker_success|4s
 
 ball_locks:
   poker_lock:

@@ -19,6 +19,9 @@ event_player:
   logicblock_money_bags_counter_complete:  # brian added
     money_bags_done|5s
     money_bags_fade_out|3s
+    money_bags_success|4s   # is there a fail mode todo
+  timer_money_bags_timer_complete:
+    money_bags_fail
 
 ball_locks:
   money_bags_intro_lock:
@@ -77,7 +80,7 @@ timers:
         #restart_on_complete: true #not sure if this means go back to 10 and keep counting, or just reset to initial state
         control_events:
             - action: start
-              event: start_money_bags_timer
+              event: timer_mb_intro_timer_complete
             - action: reset
               event: money_bags_advertise_flashing_hit
             - action: stop
@@ -219,8 +222,6 @@ slides:
         end_behavior: loop
         anchor_x: left
         x: left
-
-
         
 scoring:
     money_bags_advertise_flashing_hit:
