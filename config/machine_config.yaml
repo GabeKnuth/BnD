@@ -341,7 +341,7 @@ flippers:
   upper_right_flipper:
     main_coil: c_UpperRightFlipperMain
     hold_coil: c_UpperRightFlipperHold
-    activation_switch: s_RightUpperFlipper
+    activation_switch: s_RightFlipper
     enable_events: ball_starting
     use_eos: false
     ##debug: true
