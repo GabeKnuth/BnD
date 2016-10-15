@@ -33,6 +33,7 @@ ball_locks:
     enable_events: mode_music_awards_started|1
     request_new_balls_to_pf: False
     release_one_events: timer_ma_intro_timer_complete
+    disable_events: timer_ma_intro_timer_complete|1
 
 #Need a timer that starts at 10 secs. Need to add 5 secs per successful shot. Max 10 secs, though.
 
