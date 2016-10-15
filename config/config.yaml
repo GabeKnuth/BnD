@@ -12,9 +12,10 @@ fast:
   config_number_format: int
 
 smartmatrix:
+    baud: 3400000
     port: /dev/tty.usbmodem1030681
 #    port: com3
-
+    
 led_settings:
     default_led_fade_ms: 100
 
