@@ -126,89 +126,181 @@ class TestBnd(MpfMachineTestCase):
         self.assertEqual(1, self.machine.playfield.balls)
 
     def test_world_tour(self):
-        self._start_single_player_game(1)
 
-        # shot the right ramp
+        self.mock_event('world_tour_success')
+        self.mock_event('world_tour_fail')
+        self.mock_event('add_time')
+        self.mock_event('wt_australia_complete')
+
+        self._start_single_player_game(1)
+        self.assertEqual(self.machine.achievements.world_tour.state, 'enabled')
+
+        # shoot the right ramp
         self.hit_and_release_switch('s_rightrampopto')
 
         # # hit the sling until world tour is lit
+        x = 0
         while self.machine.achievements.world_tour.state != 'selected':
+
+            if x > 5:
+                raise AssertionError("Mode failed to be selected")
+
+            x += 1
             self.hit_and_release_switch('s_rightsling')
             self.advance_time_and_run()
 
-        self.assertFalse(self.machine.modes.world_tour.active)
+        self.assertModeNotRunning('world_tour')
 
         # # shot the lower vuk to start the mode
         self.hit_switch_and_run('s_lowervukopto', 1)
 
+        self.assertEqual(self.machine.achievements.world_tour.state, 'started')
+
         # advance enough time for it to kick the ball out
         self.advance_time_and_run(3)
 
-        self.assertTrue(self.machine.modes.world_tour.active)
+        self.assertModeRunning('world_tour')
 
+        self.assertLedColors('l_north_america', ['red', 'off'], 1)
 
-        #
-        # # make sure the shots have the proper shows running
-        # self.assertEqual('flash',
-        #     self.machine.shots.shot_north_america.profiles[0]['running_show'].name)
-        # self.assertIsNone(self.machine.shots.shot_europe.profiles[0]['running_show'])
-        # self.assertIsNone(self.machine.shots.shot_south_america.profiles[0]['running_show'])
-        # self.assertIsNone(self.machine.shots.shot_australia.profiles[0]['running_show'])
-        #
-        # # and the shots are enabled properly
-        # self.assertTrue(self.machine.shots.shot_north_america.enabled)
-        # self.assertFalse(self.machine.shots.shot_europe.enabled)
-        # self.assertFalse(self.machine.shots.shot_south_america.enabled)
-        # self.assertFalse(self.machine.shots.shot_australia.enabled)
-        #
-        # # hit north america
-        # self.hit_and_release_switch('s_leftorbit')
-        #
-        # self.assertIsNone(self.machine.shots.shot_north_america.profiles[0]['running_show'])
-        # self.assertEqual('flash',
-        #     self.machine.shots.shot_europe.profiles[0]['running_show'].name)
-        # self.assertIsNone(self.machine.shots.shot_south_america.profiles[0]['running_show'])
-        # self.assertIsNone(self.machine.shots.shot_australia.profiles[0]['running_show'])
-        #
-        # self.assertFalse(self.machine.shots.shot_north_america.enabled)
-        # self.assertTrue(self.machine.shots.shot_europe.enabled)
-        # self.assertFalse(self.machine.shots.shot_south_america.enabled)
-        # self.assertFalse(self.machine.shots.shot_australia.enabled)
-        #
-        # # hit europe
-        # self.hit_and_release_switch('s_spinner')
-        # self.machine.switch_controller.process_switch('s_TopRightVUK', logical=True)
-        # self.advance_time_and_run(1)
-        #
-        # self.assertIsNone(self.machine.shots.shot_north_america.profiles[0]['running_show'])
-        # self.assertIsNone(self.machine.shots.shot_europe.profiles[0]['running_show'])
-        # self.assertEqual('flash',
-        #     self.machine.shots.shot_south_america.profiles[0]['running_show'].name)
-        # self.assertIsNone(self.machine.shots.shot_australia.profiles[0]['running_show'])
-        #
-        # self.assertFalse(self.machine.shots.shot_north_america.enabled)
-        # self.assertFalse(self.machine.shots.shot_europe.enabled)
-        # self.assertTrue(self.machine.shots.shot_south_america.enabled)
-        # self.assertFalse(self.machine.shots.shot_australia.enabled)
-        #
-        # # hit south america
-        # self.hit_and_release_switch('s_rightrampopto')
-        #
-        # self.assertIsNone(self.machine.shots.shot_north_america.profiles[0]['running_show'])
-        # self.assertIsNone(self.machine.shots.shot_europe.profiles[0]['running_show'])
-        # self.assertIsNone(self.machine.shots.shot_south_america.profiles[0]['running_show'])
-        # self.assertEqual('flash',
-        #     self.machine.shots.shot_australia.profiles[0]['running_show'].name)
-        #
-        # self.assertFalse(self.machine.shots.shot_north_america.enabled)
-        # self.assertFalse(self.machine.shots.shot_europe.enabled)
-        # self.assertFalse(self.machine.shots.shot_south_america.enabled)
-        # self.assertTrue(self.machine.shots.shot_australia.enabled)
-        #
-        # # hit australia
-        # self.hit_switch_and_run('s_rightrampopto', 1)
-        #
-        # # todo now what?
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 19)
+
+        self.hit_and_release_switch('s_leftorbit')
+
+        self.assertLedColors('l_north_america', ['off'], 1)
+        self.assertLedColors('l_europe', ['red', 'off'], 1)
+
+        # make sure it added more time
+        self.assertEventCalled('add_time')
+
+        # let the mode timeout
+        self.advance_time_and_run(45)
+        self.assertModeNotRunning('world_tour')
+        self.assertEventCalled('world_tour_fail')
+        self.assertEventNotCalled('world_tour_success')
+
+        # check the ramp light is flashing
+        self.assertLedColors('l_ramp_fire', ['white', 'off'], 1)
+
+        # hit the ramp
+        self.hit_and_release_switch('s_rightrampopto')
+
+        # # hit the sling until world tour is lit
+        x = 0
+        while self.machine.achievements.world_tour.state != 'selected':
+
+            if x > 5:
+                raise AssertionError("Mode failed to be selected")
+
+            x += 1
+            self.hit_and_release_switch('s_rightsling')
+            self.advance_time_and_run()
+
+        # make sure the LED is flashing
+        self.assertLedColors('l_world_tour', ['red', 'off'], 1)
+
+        # shoot the lower vuk to start the mode
+        self.hit_switch_and_run('s_lowervukopto', 1)
+
+        # make sure the mode is running
+        self.assertModeRunning('world_tour')
+        self.assertEqual(self.machine.achievements.world_tour.state, 'started')
+
+        # and the light is still flashing
+        self.assertLedColors('l_world_tour', ['red', 'off'], 1)
+
+        # ramp light should be off
+        self.assertLedColor('l_ramp_fire', 'off')
+
+        self.assertEqual(self.get_timer('wt_intro_timer').ticks_remaining, 1)
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 0)
+
+        # make sure we picked up where we left off
+        self.assertLedColor('l_north_america', 'red')
+        self.assertLedColors('l_europe', ['red', 'off'], 1)
+        self.assertLedColor('l_south_america', 'off')
+        self.assertLedColor('l_australia', 'off')
+
+        # advance past the intro and into the countdown
+        self.advance_time_and_run(5)
+
+        # ball should be ejected
+        self.assertEqual(self.machine.ball_devices.bd_lower_vuk.balls, 0)
+
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 16)
+        self.advance_time_and_run(1.25)  # this is the tick interval
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 15)
+
+        # hit complete shot and it should not change anything
+        self.hit_and_release_switch('s_leftorbit')
+        self.advance_time_and_run(1.25)
+        self.assertLedColor('l_north_america', 'red')
+        self.assertLedColors('l_europe', ['red', 'off'], 1)
+        self.assertLedColor('l_south_america', 'off')
+        self.assertLedColor('l_australia', 'off')
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 14)
+
+        # hit unlit shot and nothing should change
+        self.hit_and_release_switch('s_rightrampopto')
+        self.advance_time_and_run(1.25)
+        self.assertLedColor('l_north_america', 'red')
+        self.assertLedColors('l_europe', ['red', 'off'], 1)
+        self.assertLedColor('l_south_america', 'off')
+        self.assertLedColor('l_australia', 'off')
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 12)
+
+        # hit europe
+        self.hit_and_release_switch('s_spinner')
+        self.advance_time_and_run(1)
+        self.hit_switch_and_run('s_TopRightVUK', 2)  # have to wait for show to end
+        self.assertLedColor('l_north_america', 'red')
+        self.assertLedColor('l_europe', 'red')
+        self.assertLedColors('l_south_america', ['red', 'off'], 1)
+        self.assertLedColor('l_australia', 'off')
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 12)
+
+        # ball should be ejected
+        self.assertEqual(self.machine.ball_devices.bd_top_right_vuk.balls, 0)
+
+        # hit south america
+        self.mock_event('wt_south_america_complete')
+        self.hit_and_release_switch('s_rightrampopto')
+        self.advance_time_and_run(3)  # give it time for the show to run
+
+        self.assertEventCalled('wt_south_america_complete')
+
+        self.assertLedColor('l_north_america', 'red')
+        self.assertLedColor('l_europe', 'red')
+        self.assertLedColor('l_south_america', 'red')
+        self.assertLedColors('l_australia', ['red', 'off'], 1)
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 11)
+
+        self.assertEqual(self.machine.ball_devices.bd_top_right_vuk.balls, 0)
+
+        # hit australia
+        self.hit_switch_and_run('s_TopRightVUK', 2) # have to wait for show to end
+        self.assertEventCalled('wt_australia_complete')
+        self.assertLedColor('l_north_america', 'red')
+        self.assertLedColor('l_europe', 'red')
+        self.assertLedColor('l_south_america', 'red')
+        self.assertLedColor('l_australia', 'red')
+
+        # should eject ball and end mode
+        self.advance_time_and_run(6)
+        self.assertEqual(self.machine.ball_devices.bd_top_right_vuk.balls, 0)
+        self.assertModeNotRunning('world_tour')
+        self.assertLedColor('l_world_tour', 'red')
+
+        # light next mission should be flashing
+        self.assertLedColors('l_ramp_fire', ['white', 'off'], 1)
+
+        # rotating should keep world tour complete
+
+        for x in range(5):
+            self.hit_and_release_switch('s_rightsling')
+            self.assertLedColors('l_world_tour', ['red'], 1)
+            self.assertEqual(self.machine.achievements.world_tour.state, 'completed')
+
 
     def test_mission_rotator(self):
         self._start_single_player_game(1)

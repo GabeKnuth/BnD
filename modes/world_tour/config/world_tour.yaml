@@ -14,7 +14,7 @@ event_player:
     mode_running|5s
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
-  shot_australia_hit:  # play a success show here todo
+  wt_australia_complete:  # play a success show here todo
     stop_world_tour|5s
     world_tour_fade_out|3s
     release_wt_ball|4s
@@ -32,43 +32,81 @@ event_player:
 
 # todo convert these shots to achievements
 
-shots:
-  shot_north_america:
-    switch: s_leftorbit
-    advance_events: mode_world_tour_started|1 # bump this priority so it's called after the shot has been enabled
-    enable_events: mode_world_tour_started
-    disable_events: shot_north_america_hit
+#shots:
+#  shot_north_america:
+#    switch: s_leftorbit
+#    advance_events: mode_world_tour_started|1 # bump this priority so it's called after the shot has been enabled
+#    enable_events: mode_world_tour_started
+#    disable_events: shot_north_america_hit
+#    show_tokens:
+#      led: l_north_america
+#    profile: wt_advertise
+#  shot_europe:
+#    switch_sequence: s_spinner, s_TopRightVUK
+#    time: 2s
+#    enable_events: shot_north_america_hit
+#    disable_events: shot_europe_hit
+#    show_tokens:
+#      led: l_europe
+#    profile: wt_advertise
+#  shot_south_america:
+#    switch: s_rightrampopto
+#    enable_events: shot_europe_hit
+#    disable_events: shot_south_america_hit
+#    show_tokens:
+#      led: l_south_america
+#    profile: wt_advertise
+#  shot_australia:
+#    switch: s_TopRightVUK
+#    enable_events: shot_south_america_hit
+#    disable_events: shot_australia_hit
+#    delay_switch:
+#      s_spinner: 2s
+#    show_tokens:
+#      led: l_australia
+#    profile: wt_advertise
+#    debug: yes
+
+achievements:
+  wt_north_america:
+    start_events: mode_world_tour_started
+    complete_events: s_leftorbit_active
+    events_when_completed: wt_north_america_complete, add_time
     show_tokens:
       led: l_north_america
-    profile: wt_advertise
-  shot_europe:
-    switch_sequence: s_spinner, s_TopRightVUK
-    time: 2s
-    enable_events: shot_north_america_hit
-    disable_events: shot_europe_hit
+    show_when_started: flash
+    show_when_completed: on
+    restart_after_stop_possible: true
+
+  wt_europe:
+    start_events: wt_north_america_complete
+    complete_events: shot_spinner_to_vuk_hit
+    events_when_completed: wt_europe_complete, add_time
     show_tokens:
       led: l_europe
-    profile: wt_advertise
-  shot_south_america:
-    switch: s_rightrampopto
-    enable_events: shot_europe_hit
-    disable_events: shot_south_america_hit
+    show_when_started: flash
+    show_when_completed: on
+    restart_after_stop_possible: true
+
+  wt_south_america:
+    start_events: wt_europe_complete
+    complete_events: s_rightrampopto_active
+    events_when_completed: wt_south_america_complete, add_time
     show_tokens:
       led: l_south_america
-    profile: wt_advertise
-  shot_australia:
-    switch: s_TopRightVUK
-    enable_events: shot_south_america_hit
-    disable_events: shot_australia_hit
-    delay_switch:
-      s_spinner: 2s
+    show_when_started: flash
+    show_when_completed: on
+    restart_after_stop_possible: true
+
+  wt_australia:
+    start_events: wt_south_america_complete
+    complete_events: balldevice_bd_top_right_vuk_ball_enter
+    events_when_completed: wt_australia_complete
     show_tokens:
       led: l_australia
-    profile: wt_advertise
-    debug: yes
-  light_mission_select:
-    profile: shot_blocker
-    disable_events: mode_world_tour_started
+    show_when_started: flash
+    show_when_completed: on
+    restart_after_stop_possible: true
 
 shot_profiles:
     wt_advertise:
@@ -132,22 +170,22 @@ timers:
 # wt_australia video, etc...
 
 show_player:
-  shot_south_america_hit:
+  wt_south_america_complete:
     south_america:
       loops: 0
     south_america_lights:
       loops: 0
-  shot_australia_hit:
+  wt_autralia_complete:
     australia:
       loops: 0
     australia_lights:
       loops: 0
-  shot_europe_hit:
+  wt_europe_complete:
     europe:
       loops: 0
     europe_lights:
       loops: 0
-  shot_north_america_hit:
+  wt_north_america_complete:
     north_america:
       loops: 0
     north_america_lights:
@@ -278,7 +316,7 @@ logic_blocks:
 #              - shot_south_america_hit
 #              - shot_australia_hit
 #            enable_events: mode_world_tour_started
-#            events_when_complete: all_shots_made
+#            events_when_completed: all_shots_made
 #            persist_state: true
     counters:
         stop_adding_time:
