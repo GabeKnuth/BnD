@@ -288,7 +288,7 @@ coils:
     number: 17
   c_droptargetreset:
     number: 18
-    pulse_ms: 2
+    pulse_ms: 15
   c_topkicker:
     number: 20
     pulse_ms: 30
