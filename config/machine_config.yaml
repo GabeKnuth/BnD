@@ -982,6 +982,30 @@ leds:
     number: 3-31
     tags: gi
     type: grb
+  l_backbox_33:
+    number: 3-32
+    tags: gi
+    type: grb
+  l_backbox_34:
+    number: 3-33
+    tags: gi
+    type: grb
+  l_backbox_35:
+    number: 3-34
+    tags: gi
+    type: grb
+  l_backbox_36:
+    number: 3-35
+    tags: gi
+    type: grb
+  l_backbox_37:
+    number: 3-36
+    tags: gi
+    type: grb
+  l_backbox_38:
+    number: 3-37
+    tags: gi
+    type: grb
   l_left_apron_flasher:
     number: 0-0
   l_right_apron_flasher:
