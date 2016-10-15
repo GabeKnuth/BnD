@@ -854,7 +854,134 @@ leds:
     number: 2-21
     tags: gi, gi17
     type: grb
-
+  l_backbox_1:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_2:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_3:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_4:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_5:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_6:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_7:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_8:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_9:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_10:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_11:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_12:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_13:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_14:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_15:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_16:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_17:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_18:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_19:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_20:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_21:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_22:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_23:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_24:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_25:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_26:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_27:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_28:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_29:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_30:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_31:
+    number: 0-0
+    tags: gi
+    type: grb
+  l_backbox_32:
+    number: 0-0
+    tags: gi
+    type: grb
 
 #        ::::::::  :::    :::  ::::::::  :::       :::  ::::::::
 #      :+:    :+: :+:    :+: :+:    :+: :+:       :+: :+:    :+:
@@ -869,7 +996,7 @@ shows:
     gi_on:
     - duration: -1
       leds:
-        gi: 66ff18
+        gi: on
     flash_color:
         - time: 0
           leds:
