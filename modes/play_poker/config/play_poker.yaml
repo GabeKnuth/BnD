@@ -20,9 +20,9 @@ Mode:
 #5 Aces- Award Extra Ball, Special, Complete BROOKS N DUNN, 10M, and Double Score.
 
 event_player:
-  start_play_poker_mode:
-    play_poker_done|5s
-    play_poker_success|4s
+  mode_play_poker_started:
+    play_poker_done|15s
+    play_poker_success|14s
 
 ball_locks:
   poker_lock:
