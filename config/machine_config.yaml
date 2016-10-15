@@ -982,6 +982,21 @@ leds:
     number: 3-31
     tags: gi
     type: grb
+  l_left_apron_flasher:
+    number: 0-0
+  l_right_apron_flasher:
+    number: 0-1
+  l_start_button:
+    number: 0-2
+    type: grb
+  l_coin_1:
+    number: 0-3
+    type: grb
+    tags: gi
+  l_coin_2:
+    number: 0-4
+    type: grb
+    tags: gi
 
 #        ::::::::  :::    :::  ::::::::  :::       :::  ::::::::
 #      :+:    :+: :+:    :+: :+:    :+: :+:       :+: :+:    :+:
