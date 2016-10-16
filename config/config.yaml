@@ -43,4 +43,4 @@ displays:
 
 physical_rgb_dmds:
   smartmatrix:
-    brightness: .07
+    brightness: 0
