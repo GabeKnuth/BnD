@@ -160,7 +160,7 @@ logic_blocks:
 
 slide_player:
   mode_music_awards_starting:
-    intro_dmd:
+    ma_intro_dmd:
       target: dmd
     music_awards_stage:
       target: stage
@@ -175,7 +175,7 @@ slide_player:
 # And here are the slides referenced above
 
 slides:
-  intro_dmd:
+  ma_intro_dmd:
     widgets:
       - type: text
         text: Hit flashing shots
@@ -423,7 +423,7 @@ scoring:
 ## try putting that on a slide, then playing shows over it.
 #
 #slides:
-#  intro_dmd:
+#  ma_intro_dmd:
 #    widgets:
 #      - type: text
 #        text: Hit flashing shots
@@ -517,7 +517,7 @@ scoring:
 #
 #slide_player:
 #  mode_world_tour_starting:
-#    intro_dmd:
+#    ma_intro_dmd:
 #      target: dmd
 #    world_tour_stage:
 #      target: stage

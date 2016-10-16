@@ -161,7 +161,7 @@ show_player:
 # try putting that on a slide, then playing shows over it.
 
 slides:
-  intro_dmd:
+  wt_intro_dmd:
     widgets:
       - type: text
         text: Hit flashing shots
@@ -255,7 +255,7 @@ slides:
 
 slide_player:
   mode_world_tour_starting:
-    intro_dmd:
+    wt_intro_dmd:
       target: dmd
     world_tour_stage:
       target: stage
