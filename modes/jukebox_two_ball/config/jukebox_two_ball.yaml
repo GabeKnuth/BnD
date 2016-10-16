@@ -5,7 +5,7 @@ mode:
   stop_events: multiball_jukebox_two_ball_ended
 
 multiballs:
-  bnd_two_ball:
+  jukebox_two_ball:
     ball_count: 2
     shoot_again: 5s
     start_events: mode_jukebox_two_ball_started
