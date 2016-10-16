@@ -33,7 +33,9 @@ show_player:
   mode_jukebox_two_ball_started:
     jb_play_bnd_song:
       key: jb_active_video
-  mode_jukebox_two_ball_started: flash_jukebox
+    flash_jukebox:
+      action: play
+
 
 shows:
   jb_play_bnd_song:
