@@ -31,10 +31,12 @@
 machine:
   balls_installed: 4
 
+
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
 mpf:
   default_show_sync_ms: 500
+  default_led_hw_update_hz: 20
 
 game:
   balls_per_game: 3
