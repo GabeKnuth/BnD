@@ -1,0 +1,50 @@
+#config_version=4
+mode:
+  priority: 600
+  start_events: start_jukebox_two_ball
+  stop_events: multiball_jukebox_two_ball_ended
+
+multiballs:
+  bnd_two_ball:
+    ball_count: 2
+    shoot_again: 5s
+    start_events: mode_jukebox_two_ball_started
+
+slide_player:
+  mode_jukebox_two_ball_started:
+    multiball:
+      expire: 3s
+
+slides:
+  multiball:
+    widgets:
+      - type: text
+        text: MULTIBALL
+        expire: 2s
+        style: dmd_huge
+  ball_saved:
+    widgets:
+      - type: text
+        text: BALL SAVED!
+        expire: 2s
+        style: dmd_huge
+
+show_player:
+  mode_jukebox_two_ball_started:
+    jb_play_bnd_song:
+      key: jb_active_video
+  mode_jukebox_two_ball_started: flash_jukebox
+
+shows:
+  jb_play_bnd_song:
+    - duration: -1
+      slides:
+        jb_play_bnd_song:
+          widgets:
+          - type: video
+            video: jb_hard_workin_man
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
