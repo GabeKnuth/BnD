@@ -6,21 +6,20 @@
 mode:
   start_events: ball_starting
   priority: 100
-  code: base.Base
 
 event_player:
   mode_base_started:
     jukebox_up
     light_mission_select
-  mode_jukebox_mode_stopping: #made
+  world_tour_fail:
     light_mission_select
-  mode_world_tour_stopping:
+  money_bags_fail:
     light_mission_select
-  mode_play_poker_stopping: #made
+  music_awards_fail: #made
     light_mission_select
-  mode_money_bags_stopping: #made
+  jukebox_fail: #made
     light_mission_select
-  mode_music_awards_stopping:
+  play_poker_fail:
     light_mission_select
   mode_jukebox_mode_starting: #made
     fade_down_base_music

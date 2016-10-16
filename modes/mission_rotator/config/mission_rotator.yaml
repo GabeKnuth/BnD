@@ -23,9 +23,9 @@ achievements:
     events_when_started: start_world_tour_mode
     restart_after_stop_possible: true
     start_enabled: True
-    events_when_completed: rotate_mission_rotator
+    events_when_completed: rotate_mission_rotator, light_mission_select
     complete_events: world_tour_success
-    enable_events: world_tour_fail
+    enable_events: world_tour_fail, ball_will_end
 
   money_bags:
     show_tokens:
@@ -36,9 +36,9 @@ achievements:
     events_when_started: start_money_bags_mode
     restart_after_stop_possible: true
     start_enabled: True
-    events_when_completed: rotate_mission_rotator
+    events_when_completed: rotate_mission_rotator, light_mission_select
     complete_events: money_bags_success
-    enable_events: money_bags_fail
+    enable_events: money_bags_fail, ball_will_end
 
   music_awards:
     show_tokens:
@@ -50,8 +50,8 @@ achievements:
     restart_after_stop_possible: true
     start_enabled: True
     complete_events: music_awards_success
-    events_when_completed: rotate_mission_rotator
-    enable_events: music_awards_fail
+    events_when_completed: rotate_mission_rotator, light_mission_select
+    enable_events: music_awards_fail, ball_will_end
 
   jukebox:
     show_tokens:
@@ -62,9 +62,9 @@ achievements:
     events_when_started: start_jukebox_mode
     restart_after_stop_possible: true
     start_enabled: True
-    events_when_completed: rotate_mission_rotator
+    events_when_completed: rotate_mission_rotator, light_mission_select
     complete_events: jukebox_success
-    enable_events: jukebox_fail
+    enable_events: jukebox_fail, ball_will_end
 
   play_poker:
     show_tokens:
@@ -75,9 +75,9 @@ achievements:
     events_when_started: start_play_poker_mode
     restart_after_stop_possible: true
     start_enabled: True
-    events_when_completed: rotate_mission_rotator
+    events_when_completed: rotate_mission_rotator, light_mission_select
     complete_events: play_poker_success
-    enable_events: play_poker_fail
+    enable_events: play_poker_fail, ball_will_end
 
 achievement_groups:
   my_group:
