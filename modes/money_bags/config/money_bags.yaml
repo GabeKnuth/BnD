@@ -74,11 +74,11 @@ timers:
             - action: start
               event: mode_money_bags_started
     money_bags_timer:
-        start_value: 10
+        start_value: 15
         end_value: 0
         direction: down
         max_value: 10
-        tick_interval: 1s
+        tick_interval: 1.25s
         #restart_on_complete: true #not sure if this means go back to 10 and keep counting, or just reset to initial state
         control_events:
             - action: start
