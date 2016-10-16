@@ -24,7 +24,7 @@
       widgets:
       - type: text
         text: "BROOKS 'N' DUNN"
-        color: ff5500
+        color: ff4400
         style: dmd_med
       transition:
         type: push
@@ -37,7 +37,7 @@
       widgets:
       - type: text
         text: "GOTTLIEB'S LAST MACHINE"
-        color: ff5500
+        color: ff4400
         style: dmd_med
       transition:
         type: push
@@ -50,7 +50,7 @@
       widgets:
       - type: text
         text: "(NEVER FINISHED)"
-        color: ff5500
+        color: ff4400
         style: dmd_med
       transition:
         type: push
@@ -63,7 +63,7 @@
       widgets:
       - type: text
         text: FROM 1996!
-        color: ff5500
+        color: ff4400
         style: dmd_med
       transition:
         type: push
@@ -76,7 +76,7 @@
       widgets:
       - type: text
         text: BROUGHT BACK TO LIFE
-        color: ff5500
+        color: ff4400
         style: dmd_med
       transition:
         type: push
