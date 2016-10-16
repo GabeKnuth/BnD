@@ -412,7 +412,7 @@ ball_devices:
     confirm_eject_type: target
   bd_lower_vuk:
     ball_switches: s_LowerVUKOpto
-    entrance_count_delay: 600ms
+    #entrance_count_delay: 500ms
     eject_coil: c_LowerVUK
     eject_targets: playfield
     #exit_count_delay: 800ms
