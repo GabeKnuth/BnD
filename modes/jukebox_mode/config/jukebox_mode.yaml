@@ -19,8 +19,8 @@ ball_locks:
     lock_devices: bd_lower_vuk
     enable_events: mode_jukebox_mode_started
     request_new_balls_to_pf: False
-    release_one_events: jb_release_ball
-    disable_events: jb_release_ball|1
+    release_one_events: jb_intro_timer_complete
+    disable_events: jb_intro_timer_complete|200ms
 
 event_player:
   mode_jukebox_mode_started:
@@ -28,7 +28,7 @@ event_player:
   timer_jukebox_mode_timer_complete:
     end_jukebox_mode|3s
     jukebox_fail|1s
-    jb_release_ball|1s
+    #jb_release_ball|1s
   jb_play_bnd_song:
     jukebox_success  # temp todo
 
@@ -89,6 +89,12 @@ timers:
           - event: sw_jukebox_hit
             action: add
             value: 3
+    jb_intro_timer:
+        start_value: 3
+        direction: down
+        control_events:
+          - event: mode_jukebox_started
+            action: start
 
 # I think we'll play the videos randomly, so let's try that. That way everyone in
 # this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
