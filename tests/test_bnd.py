@@ -324,6 +324,7 @@ class TestBnd(MpfMachineTestCase):
         # shoot the lower vuk to start the mode
         self.hit_switch_and_run('s_lowervukopto', 1)
 
+        # make sure the timer is running
         self.assertEqual(self.machine.achievements.jukebox.state, 'started')
         self.assertEqual(self.get_timer('jb_intro_timer').ticks_remaining, 2)
         self.advance_time_and_run(1)
@@ -334,8 +335,19 @@ class TestBnd(MpfMachineTestCase):
 
         self.assertModeRunning('jukebox_mode')
 
+        # make sure the timer is running
         self.assertEqual(self.get_timer('jukebox_mode_timer').ticks_remaining, 10)
         self.advance_time_and_run(1.25)
         self.assertEqual(self.get_timer('jukebox_mode_timer').ticks_remaining, 9)
         self.advance_time_and_run(1.25)
         self.assertEqual(self.get_timer('jukebox_mode_timer').ticks_remaining, 8)
+
+        # shoot the lower vuk and make sure it ejects the ball
+        self.hit_switch_and_run('s_lowervukopto', 2)
+        self.assertEqual(self.machine.ball_devices.bd_lower_vuk.balls, 0)
+
+        self.assertEqual(self.get_timer('jukebox_mode_timer').ticks_remaining, 6)
+
+        # shoot the jukebox
+        self.hit_and_release_switch('s_jukeboxopto')
+        self.assertEqual(self.get_timer('jukebox_mode_timer').ticks_remaining, 9)

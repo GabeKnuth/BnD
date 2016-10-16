@@ -314,6 +314,15 @@ shows:
     - time: 50ms
       leds:
         (led): off
+  flash_jukebox:
+    - duration: 125ms
+      leds:
+        l_jukebox_left: on-f0
+        l_jukebox_right: off-f0
+    - duration: 125ms
+      leds:
+        l_jukebox_left: off-f0
+        l_jukebox_right: on-f0
 
 shot_groups:
     upper_lanes:

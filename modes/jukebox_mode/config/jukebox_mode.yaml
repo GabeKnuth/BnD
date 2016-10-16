@@ -174,6 +174,7 @@ show_player:
   jb_play_bnd_song:
     jb_play_bnd_song:
       key: jb_active_video
+  mode_jukebox_mode_started: flash_jukebox
 
 
 sound_player:
