@@ -31,7 +31,6 @@ slides:
         text: PLAYER (number) UP
         style: dmd_huge
         color: ff4400
-        y: 60%
         animations:
           pre_show_slide:
           - property: opacity
@@ -45,6 +44,12 @@ slides:
             easing: in_quint
       - type: text
         text: SEE STAGE FOR SKILLSHOT!
+        style: dmd_small
+        anchor_y: top
+        y: top
+        color: red
+      - type: text
+        text: BALL (ball)
         style: dmd_small
         anchor_y: bottom
         y: 0
