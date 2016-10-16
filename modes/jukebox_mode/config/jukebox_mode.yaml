@@ -42,6 +42,9 @@ random_event_player:
     s_subwayopto_active:
         - jukebox_up
         - jukebox_down
+    shot_jukebox_loop_hit:
+        - jukebox_up
+        - jukebox_down
     play_jukebox_video:
       force_all: true
       events:
