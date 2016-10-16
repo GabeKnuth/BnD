@@ -78,7 +78,7 @@ timers:
         end_value: 0
         direction: down
         max_value: 10
-        tick_interval: 1
+        tick_interval: 1s
         #restart_on_complete: true #not sure if this means go back to 10 and keep counting, or just reset to initial state
         control_events:
             - action: start
@@ -150,7 +150,7 @@ slides:
         color: 000000
         height: 32
         width: 128
-        opacity: .4
+        opacity: .8
       - type: video
         video: mb_dmd_loop_2
         end_behavior: loop
@@ -195,7 +195,7 @@ slides:
         color: 000000
         height: 32
         width: 128
-        opacity: .4
+        opacity: .8
       - type: video
         video: mb_dmd_loop_2
         end_behavior: loop
