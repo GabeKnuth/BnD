@@ -15,16 +15,6 @@ slide_player:
   mode_base_started:
     base_background:
       target: stage
-#  mode_base_started:
-#    widgets:
-#        - type: image
-#          image: bnd_background
-#          anchor_x: center
-#          anchor_y: middle
-#    target: stage
-
-
-
 
 slides:
   base_background:
@@ -39,8 +29,7 @@ slides:
     number_grouping: true
     min_digits: 2
     y: middle+2
-      #persist_slide: yes
-    style: tall title
+    style: dmd_big
   - type: text
     text: BALL (player1|ball)    (machine|credits_string)
     anchor_y: bottom
@@ -56,6 +45,7 @@ slides:
     anchor_x: right
     x: right-60
     y: top-2
+    style: dmd_big
   - type: text
     text: (player2|score)
     style: dmd_med
@@ -101,7 +91,7 @@ slides:
     y: top-2
   - type: text
     text: (player2|score)
-#      font: medium
+    style: dmd_big
     anchor_y: top
     anchor_x: right
     number_grouping: true
@@ -153,7 +143,7 @@ slides:
     y: top-2
   - type: text
     text: (player3|score)
-#      font: medium
+    style: dmd_big
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -205,7 +195,7 @@ slides:
     min_digits: 2
   - type: text
     text: (player4|score)
-#      font: medium
+    style: dmd_big
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
