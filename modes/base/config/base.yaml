@@ -247,8 +247,11 @@ shots:
     switch_sequence: s_spinner, s_TopRightVUK
     time: 2s
   shot_jukebox_loop:
-    switch_sequence: s_jukeboxopto, s_jukeboxopto
-    time: 1s
+    switch: s_jukeboxopto
+    delay_switch:
+      s_jukeboxopto: 1s
+
+
 
 shot_profiles:
 #    album_rotator:
