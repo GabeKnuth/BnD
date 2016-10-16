@@ -11,7 +11,7 @@ mode:
 
 event_player:
   mode_world_tour_started:
-    mode_running|5s
+    wt_mode_running|5s
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
   wt_australia_complete:  # play a success show here todo
@@ -259,10 +259,10 @@ slide_player:
       target: dmd
     world_tour_stage:
       target: stage
-  mode_running:
+  wt_mode_running:
     world_tour_dmd:
       target: dmd
-  shot_australia_hit:
+  wt_australia_complete:
     world_tour_complete:
       target: dmd
 
@@ -273,16 +273,7 @@ slide_player:
 
 # Might not need the sequence
 logic_blocks:
-#    sequences: # Don't need this anymore
-#        world_tour_sequence:
-#            events:
-#              - shot_north_america_hit
-#              - shot_europe_hit
-#              - shot_south_america_hit
-#              - shot_australia_hit
-#            enable_events: mode_world_tour_started
-#            events_when_completed: all_shots_made
-#            persist_state: true
+
     counters:
         stop_adding_time:
             count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit

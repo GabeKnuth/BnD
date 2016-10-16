@@ -126,7 +126,6 @@ class TestBnd(MpfMachineTestCase):
         self.assertEqual(1, self.machine.playfield.balls)
 
     def test_world_tour(self):
-
         self.mock_event('world_tour_success')
         self.mock_event('world_tour_fail')
         self.mock_event('add_time')
@@ -135,8 +134,11 @@ class TestBnd(MpfMachineTestCase):
         self._start_single_player_game(1)
         self.assertEqual(self.machine.achievements.world_tour.state, 'enabled')
 
+        self.assertModeRunning('light_mission_select')
+
         # shoot the right ramp
         self.hit_and_release_switch('s_rightrampopto')
+        self.assertModeRunning('mission_rotator')
 
         # # hit the sling until world tour is lit
         x = 0
@@ -152,7 +154,9 @@ class TestBnd(MpfMachineTestCase):
         self.assertModeNotRunning('world_tour')
 
         # shoot the lower vuk to start the mode
+        self.mock_event('shot_lower_vuk_from_playfield_hit')
         self.hit_switch_and_run('s_lowervukopto', 1)
+        self.assertEventCalled('shot_lower_vuk_from_playfield_hit')
 
         self.assertEqual(self.machine.achievements.world_tour.state, 'started')
 
@@ -173,17 +177,35 @@ class TestBnd(MpfMachineTestCase):
         # make sure it added more time
         self.assertEventCalled('add_time')
 
-        # let the mode timeout
-        self.advance_time_and_run(45)
+        self.mock_event('light_mission_select')
+
+        # drain ball and start again
+        self.hit_switch_and_run('s_drain', 3)
+        self.assertEqual(self.machine.game.player.ball, 2)
+
+        self.assertModeRunning('base')
+        self.assertEventCalled('light_mission_select')
+
+        # launch ball
+        self.release_switch_and_run('s_plungerlane', 3)
+
         self.assertModeNotRunning('world_tour')
-        self.assertEventCalled('world_tour_fail')
         self.assertEventNotCalled('world_tour_success')
 
         # check the ramp light is flashing
         self.assertLedColors('l_ramp_fire', ['white', 'off'], 1)
+        self.assertModeRunning('light_mission_select')
 
         # hit the ramp
+        self.mock_event('enable_mission_selection')
+        self.assertModeRunning('mission_rotator')
         self.hit_and_release_switch('s_rightrampopto')
+        self.advance_time_and_run(1)
+        self.assertEventCalled('enable_mission_selection')
+        self.assertModeNotRunning('light_mission_select')
+
+        print(self.machine.achievements.world_tour.state)
+        self.assertNotEqual(self.machine.achievements.world_tour.state, 'completed')
 
         # # hit the sling until world tour is lit
         x = 0
