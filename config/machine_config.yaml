@@ -91,7 +91,7 @@ modes:
   - money_bags
   - world_tour
   - music_awards
-  - bnd_two_ball
+  - jukebox_two_ball
 
 widget_styles:
   dmd_huge:
