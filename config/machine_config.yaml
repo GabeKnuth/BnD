@@ -91,6 +91,7 @@ modes:
   - money_bags
   - world_tour
   - music_awards
+  - bnd_two_ball
 
 widget_styles:
   dmd_huge:
@@ -1150,6 +1151,8 @@ keyboard:
     switch: s_rightsling
   q:
     switch: s_leftorbit
+  shift+m:
+    event: start_bnd_two_ball
 
 
 
