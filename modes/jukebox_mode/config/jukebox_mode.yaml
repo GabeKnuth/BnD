@@ -2,7 +2,7 @@
 mode:
   priority: 500
   start_events: start_jukebox_mode
-  stop_events: end_jukebox_mode
+  stop_events: start_bnd_two_ball
 
 # todo
 #Intro dots
@@ -72,7 +72,7 @@ logic_blocks:
             count_complete_value: 9
             multiple_hit_window: 1s
             events_when_hit: change_song, play_jukebox_video, stop_song
-            events_when_complete: jb_play_bnd_song
+            events_when_complete: start_bnd_two_ball
 
 # Mode timer so we know when time runs out. We'll count down at 1.25s intervals.
 # This also pauses when the ball enters the subway until it ejects from the vuk.
