@@ -306,7 +306,7 @@ shows:
   jb_play_bnd_song:
     - duration: -1
       slides:
-        jb_stand_by_your_man:
+        jb_play_bnd_song:
           widgets:
           - type: video
             video: jb_hard_workin_man
