@@ -92,6 +92,13 @@ modes:
   - world_tour
   - music_awards
 
+widget_styles:
+  dmd_huge:
+      font_name: big_noodle_titling
+      font_size: 20
+#      adjust_bottom: 5
+#      adjust_top: 2
+
 config:
   - display
 

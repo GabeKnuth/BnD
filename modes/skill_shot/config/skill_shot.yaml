@@ -28,15 +28,35 @@ slides:
 #      - type: text
 #        text: SKILL SHOT INSTRUCTIONS
 #        style: stage
-  skill_shot_dmd:
+  player_start:
     widgets:
       - type: text
+        text: PLAYER (number) UP
+        style: dmd_huge
+        color: ff4400
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 150ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 150ms
+            repeat: true
+            easing: in_quint
+  skill_shot_dmd:
+      - type: text
         text: TIME LEFT (skill_shot_skill_shot_timer_tick)
-        y: 20%
+        style: dmd_big
 
 slide_player:
   mode_skill_shot_starting:
     skill_shot_stage:
       target: stage
+    player_start:
+      target: dmd
+
+  balldevice_bd_plunger_ball_left:
     skill_shot_dmd:
       target: dmd

@@ -29,7 +29,7 @@ slides:
     number_grouping: true
     min_digits: 2
     y: middle+2
-    style: dmd_big
+    style: dmd_huge
   - type: text
     text: BALL (player1|ball)    (machine|credits_string)
     anchor_y: bottom
