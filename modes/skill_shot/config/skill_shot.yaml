@@ -25,15 +25,13 @@ slides:
       - type: video
         video: ss_skill_shot
         end_behavior: loop
-#      - type: text
-#        text: SKILL SHOT INSTRUCTIONS
-#        style: stage
   player_start:
     widgets:
       - type: text
         text: PLAYER (number) UP
         style: dmd_huge
         color: ff4400
+        y: 60%
         animations:
           pre_show_slide:
           - property: opacity
@@ -45,10 +43,11 @@ slides:
             duration: 150ms
             repeat: true
             easing: in_quint
-  skill_shot_dmd:
       - type: text
-        text: TIME LEFT (skill_shot_skill_shot_timer_tick)
-        style: dmd_big
+        text: SEE STAGE FOR SKILLSHOT!
+        style: dmd_small
+        anchor_y: bottom
+        y: 0
 
 slide_player:
   mode_skill_shot_starting:
@@ -58,5 +57,5 @@ slide_player:
       target: dmd
 
   balldevice_bd_plunger_ball_left:
-    skill_shot_dmd:
-      target: dmd
+    player_start:
+      action: remove
