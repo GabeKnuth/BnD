@@ -2,7 +2,7 @@
 mode:
   priority: 500
   start_events: start_jukebox_mode
-  stop_events: start_jukebox_two_ball
+  stop_events: start_jukebox_two_ball, end_jukebox_mode
 
 # todo
 #Intro dots
@@ -28,10 +28,6 @@ event_player:
   timer_jukebox_mode_timer_complete:
     end_jukebox_mode|3s
     jukebox_fail|1s
-    #jb_release_ball|1s
-  jb_play_bnd_song:
-    jukebox_success  # temp todo
-
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down
@@ -72,7 +68,7 @@ logic_blocks:
             count_complete_value: 9
             multiple_hit_window: 1s
             events_when_hit: change_song, play_jukebox_video, stop_song
-            events_when_complete: start_jukebox_two_ball
+            events_when_complete: start_jukebox_two_ball, jukebox_success
 
 # Mode timer so we know when time runs out. We'll count down at 1.25s intervals.
 # This also pauses when the ball enters the subway until it ejects from the vuk.
@@ -173,9 +169,6 @@ show_player:
       key: jb_active_video
   jb_stand_by_your_man:
     jb_stand_by_your_man:
-      key: jb_active_video
-  jb_play_bnd_song:
-    jb_play_bnd_song:
       key: jb_active_video
   mode_jukebox_mode_started: flash_jukebox
 
