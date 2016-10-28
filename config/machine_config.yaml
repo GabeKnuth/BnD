@@ -45,17 +45,17 @@ game:
   max_players: 4
 
 sound_system:
-    master_volume: 0.75
+    master_volume: 1.0
     tracks:
        music:
           simultaneous_sounds: 1
           volume: 1.0
        voice:
           simultaneous_sounds: 1
-          volume: 0.7
+          volume: 1.0
        sfx:
           simultaneous_sounds: 8
-          volume: 0.4
+          volume: 1.0
 
 
 assets:

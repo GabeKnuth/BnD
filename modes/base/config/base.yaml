@@ -21,16 +21,18 @@ event_player:
     light_mission_select
   play_poker_fail:
     light_mission_select
-  mode_jukebox_mode_starting: #made
-    fade_down_base_music
-  mode_world_tour_starting:
-    fade_down_base_music
-  mode_play_poker_starting: #made
-    fade_down_base_music
-  mode_money_bags_starting: #made
-    fade_down_base_music
-  mode_music_awards_starting:
-    fade_down_base_music
+#  mode_jukebox_mode_starting: #made
+#    fade_out_base_music
+#  mode_world_tour_starting:
+#    fade_out_base_music
+#  mode_play_poker_starting: #made
+#    fade_out_base_music
+#  mode_money_bags_starting: #made
+#    fade_out_base_music
+#  mode_music_awards_starting:
+#    fade_out_base_music
+#  mode_jukebox_two_ball_starting:
+#    fade_out_base_music
 
 config:
   - display
@@ -55,7 +57,7 @@ sound_pools:
           drum14
           drum15
           drum16
-          drum17
+
 
 sound_player:
   mode_base_started:
@@ -74,19 +76,44 @@ sound_player:
     base_bed_loop:
         action: play
         loops: -1
-  light_mission_select:
+  fade_in_base_music:
     base_bed_loop:
         action: play
         fade_in: 500ms
-  fade_down_base_music:
+  fade_out_base_music:
     plunged:
         action: stop
         fade_out: 500ms
+  timer_sound_timer_complete:
     base_bed_loop:
         action: stop
         fade_out: 500ms
-    sw_beat:
-        action: play
+#    sw_beat:
+#        action: play
+
+#timers:
+#    __valid_in__: mode
+#    debug: single|bool|False
+#    start_value: single|int|0
+#    end_value: single|int|None
+#    direction: single|str|up
+#    max_value: single|ms|None
+#    tick_interval: single|ms|1s
+#    start_running: single|bool|False
+#    control_events: list|subconfig(control_events)|None
+#    restart_on_complete: single|bool|False
+#    bcp: single|bool|False
+
+timers:
+  sound_timer:
+    start_value: 1
+    end_value: 0
+    direction: down
+    tick_interval: 500ms
+    control_events:
+      - event: fade_out_base_music
+        action: start
+
 
 logic_blocks:
   counter:

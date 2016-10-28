@@ -36,8 +36,34 @@ sound_player:
       loops: -1
       mode_end_action: stop
 
+#timers:
+#    video_timer:
+#        start_value: 0
+#        end_value: 720
+#        direction: up
+#        tick_interval: 1s
+#        start_running: true
+#        restart_on_complete: true
 
-
+random_event_player:
+    timer_video_timer_complete:
+      force_all: true
+      events:
+        full_bed_of_roses
+        full_achy_breaky
+        full_convoy
+        full_every_little_thing
+        full_boots_are_made_for_walkin
+        full_hello_darlin
+        full_louisiana_woman
+        full_rhinestone_cowboy
+        full_stand_by_your_man
+        ma_my_maria
+        jb_hard_workin_man
+        mb_beer_thirty
+        wt_boot_scoot
+        pp_honky_tonk_stomp
+        mr_bed
 
 shows:
   attract_music_lights:
@@ -66,3 +92,182 @@ shows:
         (left): off
         (right): off
         (center): off
+  full_stand_by_your_man:
+    - duration: -1
+      slides:
+        full_stand_by_your_man:
+          widgets:
+          - type: video
+            video: full_stand_by_your_man
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_bed_of_roses:
+    - duration: -1
+      slides:
+        full_bed_of_roses:
+          widgets:
+          - type: video
+            video: full_bed_of_roses
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_achy_breaky:
+    - duration: -1
+      slides:
+        full_achy_breaky:
+          widgets:
+          - type: video
+            video: full_achy_breaky
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_convoy:
+    - duration: -1
+      slides:
+        full_convoy:
+          widgets:
+          - type: video
+            video: full_convoy
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_every_little_thing:
+    - duration: -1
+      slides:
+        full_every_little_thing:
+          widgets:
+          - type: video
+            video: full_every_little_thing
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_boots_are_made_for_walkin:
+    - duration: -1
+      slides:
+        full_boots_are_made_for_walkin:
+          widgets:
+          - type: video
+            video: full_boots_are_made_for_walkin
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_hello_darlin:
+    - duration: -1
+      slides:
+        full_hello_darlin:
+          widgets:
+          - type: video
+            video: full_hello_darlin
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_louisiana_woman:
+    - duration: -1
+      slides:
+        full_louisiana_woman:
+          widgets:
+          - type: video
+            video: full_louisiana_woman
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  full_rhinestone_cowboy:
+    - duration: -1
+      slides:
+        full_rhinestone_cowboy:
+          widgets:
+          - type: video
+            video: full_rhinestone_cowboy
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  ma_my_maria:
+    - duration: -1
+      slides:
+        attract_my_maria:
+          widgets:
+          - type: video
+            video: ma_my_maria
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  jb_hard_workin_man:
+    - duration: -1
+      slides:
+        attract_hard_workin_man:
+          widgets:
+          - type: video
+            video: jb_hard_workin_man
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  mb_beer_thirty:
+    - duration: -1
+      slides:
+        attract_beer_thirty:
+          widgets:
+          - type: video
+            video: ma_beer_thirty
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  wt_boot_scoot:
+    - duration: -1
+      slides:
+        attract_boot_scoot:
+          widgets:
+          - type: video
+            video: wt_boot_scoot
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  pp_honky_tonk_stomp:
+    - duration: -1
+      slides:
+        attract_honky_start_stomp:
+          widgets:
+          - type: video
+            video: pp_honky_tonk_stomp
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage
+
+  mr_bed:
+    - duration: -1
+      slides:
+        attract_mr_bed:
+          widgets:
+          - type: video
+            video: mr_bed
+            control_events:
+              - event: stop_song
+                action: stop
+          target: stage

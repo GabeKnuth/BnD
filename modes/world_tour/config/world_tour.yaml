@@ -12,6 +12,7 @@ mode:
 event_player:
   mode_world_tour_started:
     wt_mode_running|5s
+    fade_out_base_music
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
   wt_australia_complete:  # play a success show here todo

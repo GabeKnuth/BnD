@@ -23,6 +23,7 @@ event_player:
   mode_play_poker_started:
       - play_poker_done|15s
       - play_poker_success|14s
+      - fade_out_base_music
 
 ball_locks:
   poker_lock:
