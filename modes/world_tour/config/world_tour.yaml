@@ -20,7 +20,7 @@ event_player:
     world_tour_fade_out
     start_bnd_two_ball|1s
     release_wt_ball|3s
-    stop_world_tour|2s
+    stop_world_tour|3.5s
   timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
     stop_world_tour|5s
     world_tour_fade_out|3s
@@ -28,7 +28,6 @@ event_player:
     world_tour_fail|3s
   mode_world_tour_stopping:
     fade_in_base_music
-
 
 # We need to set up shots so that we start on the North America shot, then move on to
 # Europe, then South America, and finally Australia
@@ -99,7 +98,6 @@ ball_locks:
     enable_events: wt_south_america_complete
     request_new_balls_to_pf: false
     release_one_events: release_wt_ball
-
 
 timers:
     world_tour_timer:
@@ -268,14 +266,12 @@ slide_player:
     world_tour_complete:
       target: dmd
 
-
 # Now we need a logic block to keep track of shots. When all four are hit, we're done!
 # It's not in the rules, but I also added something to extend the time when you hit a shot
 # just so that the song plays longer.
 
 # Might not need the sequence
 logic_blocks:
-
     counters:
         stop_adding_time:
             count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit
