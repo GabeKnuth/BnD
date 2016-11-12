@@ -29,6 +29,7 @@ event_player:
   timer_jukebox_mode_timer_complete:
     end_jukebox_mode|3s
     jukebox_fail|1s
+  mode_jukebox_mode_stopping:
     fade_in_base_music
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a

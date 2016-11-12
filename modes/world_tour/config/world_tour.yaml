@@ -19,14 +19,15 @@ event_player:
     world_tour_success
     world_tour_fade_out
     start_bnd_two_ball|1s
-    release_wt_ball|2s
+    release_wt_ball|3s
     stop_world_tour|2s
-
   timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
     stop_world_tour|5s
     world_tour_fade_out|3s
     stop_world_tour_timer
     world_tour_fail|3s
+  mode_world_tour_stopping:
+    fade_in_base_music
 
 
 # We need to set up shots so that we start on the North America shot, then move on to
@@ -65,7 +66,7 @@ achievements:
 
   wt_australia:
     start_events: wt_south_america_complete
-    complete_events: balldevice_bd_top_right_vuk_ball_enter
+    complete_events: shot_pops_to_vuk_hit
     events_when_completed: wt_australia_complete
     show_tokens:
       led: l_australia
@@ -95,7 +96,7 @@ ball_locks:
   wt_complete:
     balls_to_lock: 1
     lock_devices: bd_top_right_vuk
-    enable_events: shot_australia_hit|1
+    enable_events: wt_south_america_complete
     request_new_balls_to_pf: false
     release_one_events: release_wt_ball
 

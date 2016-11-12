@@ -21,10 +21,13 @@ event_player:
     music_awards_done|5s
     music_awards_fade_out|3s
     music_awards_success|1s
+    fade_in_base_music|4s
   timer_music_awards_timer_complete:  # fail
     music_awards_done|5s
     music_awards_fade_out|3s
     music_awards_fail|1s
+  mode_music_awards_stopping:
+    fade_in_base_music
 
 # need to hold the ball for a bit to play intro dots
 ball_locks:

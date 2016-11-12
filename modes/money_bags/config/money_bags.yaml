@@ -24,6 +24,8 @@ event_player:
   timer_money_bags_timer_complete:
     money_bags_fail
     money_bags_done|1
+  mode_money_bags_stopping:
+    fade_in_base_music
 
 ball_locks:
   money_bags_intro_lock:
