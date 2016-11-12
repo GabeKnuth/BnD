@@ -20,7 +20,7 @@ event_player:
     world_tour_fade_out
     start_bnd_two_ball|1s
     release_wt_ball|3s
-    stop_world_tour|3.5s
+    stop_world_tour|3s
   timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
     stop_world_tour|5s
     world_tour_fade_out|3s
