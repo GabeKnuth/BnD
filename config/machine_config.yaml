@@ -1046,7 +1046,7 @@ shows:
     gi_on:
     - duration: -1
       leds:
-        gi: on
+        gi: ffd9aa
     flash_color:
         - time: 0
           leds:
