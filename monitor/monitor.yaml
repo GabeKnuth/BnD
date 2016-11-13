@@ -71,7 +71,7 @@ led:
   l_left_pop:
     x: 0.6595860398138477
     y: 0.22698744769874474
-  l_left_quarter:
+  l_top_quarter:
     x: 0.6451425498909167
     y: 0.5219665271966527
   l_left_ramp_flasher:

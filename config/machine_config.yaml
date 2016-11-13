@@ -626,12 +626,14 @@ leds:
     number: 1-0
     tags: right
     default_color: red
-  l_left_quarter:
+  l_top_quarter:
     number: 1-1
     tags: right
+    default_color: ccccccc
   l_quintuple_platinum:
     number: 1-2
     tags: center
+    default_color: ccccccc
   l_jukebox_insert:
     number: 1-3
     tags: center
@@ -655,9 +657,11 @@ leds:
   l_middle_quarter:
     number: 1-8
     tags: right
+    default_color: ccccccc
   l_bottom_quarter:
     number: 1-9
     tags: right
+    default_color: ccccccc
   l_lower_right_flasher:
     number: 1-10
     tags: right
@@ -712,9 +716,11 @@ leds:
   l_double_platinum:
     number: 1-23
     tags: center
+    default_color: ccccccc
   l_single_platinum:
     number: 1-24
     tags: center
+    default_color: ccccccc
   l_gold:
     number: 1-25
     tags: center
@@ -722,6 +728,7 @@ leds:
   l_silver:
     number: 1-26
     tags: center
+    default_color: ccccccc
   l_wizard_shot:
     number: 1-27
     tags: left

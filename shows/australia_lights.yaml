@@ -44,7 +44,7 @@
   leds:
     l_lower_left_flasher: on
     l_wizard_shot: on
-    l_left_quarter: on
+    l_top_quarter: on
     l_south_america: on
     l_lower_right_flasher: on
 - duration: 69ms
@@ -126,7 +126,7 @@
   leds:
     l_lower_left_flasher: off
     l_wizard_shot: off
-    l_left_quarter: off
+    l_top_quarter: off
     l_south_america: off
     l_lower_right_flasher: off
 - duration: 69ms

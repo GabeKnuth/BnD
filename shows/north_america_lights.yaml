@@ -58,7 +58,7 @@
 - duration: 69ms
   leds:
     l_australia: on
-    l_left_quarter: on
+    l_top_quarter: on
 - duration: 69ms
   leds:
     l_right_music_award: on
@@ -142,7 +142,7 @@
 - duration: 69ms
   leds:
     l_australia: off
-    l_left_quarter: off
+    l_top_quarter: off
 - duration: 69ms
   leds:
     l_right_music_award: off
