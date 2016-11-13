@@ -639,12 +639,15 @@ leds:
   l_play_poker:
     number: 1-4
     tags: right
+    default_color: ff9027
   l_right_music_award:
     number: 1-5
     tags: right, right_ramp
+    default_color: ff9027
   l_ramp_jackpot:
     number: 1-6
     tags: right, right_ramp
+    default_color: ff9027
   l_south_america:
     number: 1-7
     tags: right, right_ramp
@@ -665,6 +668,7 @@ leds:
   l_right_lane_spot_quarter:
     number: 1-12
     tags: right
+    default_color: ff9027
   l_again:
     number: 1-13
     tags: center
@@ -676,6 +680,7 @@ leds:
   l_left_lane_spot_quarter:
     number: 1-15
     tags: left
+    default_color: ff9027
   l_left_lane_special:
     number: 1-16
     tags: left
@@ -683,12 +688,15 @@ leds:
   l_mystery:
     number: 1-17
     tags: left
+    default_color: ff9027
   l_begin_round:
     number: 1-18
     tags: left
+    default_color: ff9027
   l_hi_lo:
     number: 1-19
     tags: left
+    default_color: ff9027
   l_world_tour:
     number: 1-20
     tags: center
@@ -696,9 +704,11 @@ leds:
   l_money_bags:
     number: 1-21
     tags: center
+    default_color: ff9027
   l_music_awards:
     number: 1-22
     tags: center
+    default_color: ff9027
   l_double_platinum:
     number: 1-23
     tags: center
@@ -715,15 +725,19 @@ leds:
   l_wizard_shot:
     number: 1-27
     tags: left
+    default_color: ff9027
   l_left_longhorn:
     number: 1-28
     tags: left
+    default_color: ff9027
   l_double_jackpot:
     number: 1-29
     tags: left
+    default_color: ff9027
   l_advance_wizard:
     number: 1-30
     tags: left, left_orbit
+    default_color: ff9027
   l_lower_left_flasher:
     number: 1-31
     tags: left
@@ -737,15 +751,19 @@ leds:
   l_left_music_award:
     number: 1-34
     tags: left, left_orbit
+    default_color: ff9027
   l_managers_choice:
     number: 1-35
     tags: left
+    default_color: ff9027
   l_jukebox_left:
     number: 1-36
     tags: left
+    default_color: ff9027
   l_jukebox_right:
     number: 1-37
     tags: left
+    default_color: ff9027
   l_europe:
     number: 1-38
     tags: center
@@ -753,27 +771,35 @@ leds:
   l_center_lock:
     number: 1-39
     tags: center
+    default_color: ff9027
   l_center_longhorn:
     number: 1-40
     tags: center
+    default_color: ff9027
   l_left_pop:
     number: 1-41
     tags: right
+    default_color: ff9027
   l_right_pop:
     number: 1-42
     tags: right
+    default_color: ff9027
   l_bottom_pop:
     number: 1-43
     tags: right
+    default_color: ff9027
   l_collect_wizard:
     number: 1-44
     tags: right
+    default_color: ff9027
   l_extra_ball:
     number: 1-45
     tags: right
+    default_color: ff9027
   l_ramp_fire:
     number: 1-46
     tags: right
+    default_color: red
   l_right_ramp_flasher:
     number: 1-47
     tags: right

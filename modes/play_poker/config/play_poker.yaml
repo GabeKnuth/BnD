@@ -21,8 +21,8 @@ Mode:
 
 event_player:
   mode_play_poker_started:
-      - play_poker_done|15s
-      - play_poker_success|14s
+      - play_poker_done|5s # This shorts out the mode. Remove when ready
+      - play_poker_success|4s # This shorts out the mode. Remove when ready
       - fade_out_base_music
   mode_play_poker_stopping:
     fade_in_base_music
@@ -34,11 +34,25 @@ ball_locks:
     enable_events: shot_spinner_to_vuk_hit
     request_new_balls_to_pf: False
     release_one_events: timer_display_timer_complete #probably switch this to an event fired by a show
-    disable_events: timer_display_timer_complete|1
+    #disable_events: timer_display_timer_complete|1 # I think we don't want this to disable?
+  play_poker_intro_lock:
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
+    enable_events: mode_play_poker_started|1
+    request_new_balls_to_pf: False
+    release_one_events: timer_pp_intro_timer_complete #probably switch this to an event fired by a show. Then delete timer
+    disable_events: timer_pp_intro_timer_complete|1
 
 # Also need intro dots and instructions
 
 timers:
+    pp_intro_timer:
+        start_value: 3
+        direction: down
+        end_value: 0
+        control_events:
+          - event: mode_play_poker_started
+            action: start
     shuffle_timer:
         start_value: 1
         direction: down

@@ -62,7 +62,7 @@ achievements:
     events_when_started: start_jukebox_mode
     restart_after_stop_possible: true
     start_enabled: True
-    events_when_completed: rotate_mission_rotator, light_mission_select
+    #events_when_completed: rotate_mission_rotator, light_mission_select # Commented out because we start a multiball
     complete_events: jukebox_success
     enable_events: jukebox_fail, ball_will_end
 
