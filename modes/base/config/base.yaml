@@ -80,8 +80,14 @@ sound_player:
     base_bed_loop:
         action: play
         fade_in: 500ms
-  fade_out_base_music:
+  fade_out_base_music: # all possible base game music is in this section, though only one plays at a time
     plunged:
+        action: stop
+        fade_out: 500ms
+    wait_to_plunge:
+        action: stop
+        fade_out: 500ms
+    base_bed_loop:
         action: stop
         fade_out: 500ms
   timer_sound_timer_complete:

@@ -1,51 +1,93 @@
 #config_version=4
+
+# TODO
+### I want to redo the rules for this mode.
+# Jon's rules for Play Poker specify using the spinner to vuk shot to lock the ball and show a card. That shot is a
+# bitch to hit, even just throwing the ball up there by hand. I want to rework the mode to be a bit more fun to play and
+# to utilize the cards printed around the left hole on the playfield.
+
+# The spinner can be used to pick a card still. Hitting it plays the shuffle animation for a short period, maybe as
+# little as 500ms, but I'm thinking 1s to 1.5s. It then lands on a card and flashes all the lights around the left hole.
+# If the player wants that card, they can shoot the left hole to collect it, or they can hit the spinner again to get a
+# different card.
+
+# When the player shoots the left hole, we play an animation that locks in that card to their hand, then pop the ball
+# back out, turning off the lights around the hole. The player then has to hit the spinner again to choose a card and
+# the cycle repeats.
+
+# The mode has a 30s timer, and you can add 5s by collecting a card. That means you can dick around with picking your
+# cards, or you can just shoot, collect, and shoot again.
+
+# We'll still use Jon's scoring table:
+
+# 1 pair = 1,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
+# 2 pair = 2,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
+# 3 of a kind = 5,000,000 pts (he also says to award Managers Choice, but we haven't gotten that far)
+# Full House = Extra Ball
+# Straight = Extra Ball
+# 4 of a kind = 1 Special (don't know what that is yet)
+# 5 of a kind = 3 Specials (ditto)
+# 5 Aces = Extra Ball, Special, Complete BROOKS N DUNN, 10M pts, and double score (?)
+
+##################
+# Important Info #
+##################
+
+# A card is randomly selected when the spinner is hit. The random event player post an event like
+# "poker_<card>_received", which we also can probably use to know which card is able to be collected.
+
+# A card is collected when the "ball_lock_pp_collect_locked_ball" event posts.
+
+#####################
+# BEGIN MODE CONFIG #
+#####################
+
+# This is a complex mode, so let's document it as we go. This will get refined and used for First up is the mode config.
+# the final example game code, too. Some of this might seem way too obvious.
+
 Mode:
   start_events: start_play_poker_mode
   stop_events: play_poker_done
   priority: 500
 
-# TODO
-# Also need a counter to count how many cards and something to remember the cards.
-# Stage show
-# There is something not quite right about this show.
-# WHEN YOU PLAY THIS, YOU HAVE TO HIT SPINNER, THEN TOP RIGHT VUK QUICKLY AFTER
-# Scoring:
-#1 Pair- Mystery 1,000,000
-#2 Pair- Mystery 3,000,000
-#3 Kind- Managers Choice 5,000,000
-#Full House- Extra Ball
-#Straight- Extra Ball
-#4 Kind- 1 Special
-#5 Kind- 3 Specials
-#5 Aces- Award Extra Ball, Special, Complete BROOKS N DUNN, 10M, and Double Score.
+# Next up is the event player, which we use extensively throughout our modes. Right now, it's hotwired to simply
+# complete itself after 2 seconds until we get the mode finished.
 
 event_player:
   mode_play_poker_started:
-      - play_poker_done|5s # This shorts out the mode. Remove when ready
-      - play_poker_success|4s # This shorts out the mode. Remove when ready
+      - play_poker_done|2s # This shorts out the mode. Remove when ready
+      - play_poker_success|1s # This shorts out the mode. Remove when ready
       - fade_out_base_music
   mode_play_poker_stopping:
     fade_in_base_music
 
+# We need some ball locks
+
 ball_locks:
+  # The first lock is the intro lock. We just use this to hang on to the ball while we play some instructions.
   poker_lock:
-    balls_to_lock: 1
-    lock_devices: bd_top_right_vuk
-    enable_events: shot_spinner_to_vuk_hit
-    request_new_balls_to_pf: False
-    release_one_events: timer_display_timer_complete #probably switch this to an event fired by a show
-    #disable_events: timer_display_timer_complete|1 # I think we don't want this to disable?
-  play_poker_intro_lock:
     balls_to_lock: 1
     lock_devices: bd_lower_vuk
     enable_events: mode_play_poker_started|1
     request_new_balls_to_pf: False
-    release_one_events: timer_pp_intro_timer_complete #probably switch this to an event fired by a show. Then delete timer
+    release_one_events: timer_pp_intro_timer_complete
     disable_events: timer_pp_intro_timer_complete|1
+  # This ball lock is used to collect a card. It's enabled when the spinner is hit, and disabled shortly after the ball
+  # is ejected, until the spinner is hit again. When it's hit, it posts the event "ball_lock_pp_collect_locked_ball"
+  # which we can use to fire off the card collection process.
+  pp_collect:
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
+    enable_events: s_spinner_active
+    request_new_balls_to_pf: false
+    release_one_events: timer_pp_collect_card_timer_complete
+    disable_events: timer_pp_collect_card_timer_complete|1
 
-# Also need intro dots and instructions
+# Now we'll define some timers.
 
 timers:
+    # The intro timer will count down from three while showing some instructions on the screen. When it completes, it
+    # will post the timer_pp_intro_timer_complete event that is hooked by the ball lock to kick out a ball.
     pp_intro_timer:
         start_value: 3
         direction: down
@@ -53,37 +95,25 @@ timers:
         control_events:
           - event: mode_play_poker_started
             action: start
-    shuffle_timer:
-        start_value: 1
+    # This is the timer we use when we collect a card. Both of these timers will probably be replaced by shows someday
+    pp_collect_card_timer:
+        start_value: 3
         direction: down
+        enable_events: timer_pp_intro_timer_complete|1
         restart_on_complete: true
         control_events:
-          - event: shot_spinner_to_vuk_hit
-            action: start
-          - event: timer_shuffle_timer_complete
-            action: stop
-    display_timer:
-        start_value: 5
-        direction: down
-        restart_on_complete: true
-        control_events:
-           - event: timer_shuffle_timer_complete
+           - event: ball_lock_poker_lock_locked_ball
              action: start
-           - event: timer_display_timer_complete
-             action: stop
+
+# Next up is show player. We don't have many shows, so this will be kind of sparse at the moment.
 
 show_player:
+# This loops through the shuffled cards three times. We'll settle on a card later.
     s_spinner_active:
         cycle_cards:
-            loops: 3
-    timer_shuffle_timer_complete:
-        cycle_cards:
-            action: stop
-
-# Need to get music from base to fade away. Maybe use ducking? Need to configure
-# the release to happen when the ball ejects, though, which isn't a thing.
-      # This might be ok now - moved poker_loop to music track and set to preload
-
+            loops: 1
+# These shows are used to display the card that you acquired. The events that play them come from the
+# random_event_player section.
     poker_ten_received:
         award_card:
             show_tokens:
@@ -110,16 +140,67 @@ show_player:
                 card_image: ace_dmd
             loops: -1
 
+# We use this to randomly select cards. Currently we have only one card of each type, so if you had two tens, they would
+# both be the same suit. We'll fix that later. #todo
+
 random_event_player:
-    timer_shuffle_timer_started:
+    s_spinner_active|1.5s:
         - poker_ten_received
         - poker_jack_received
         - poker_queen_received
         - poker_king_received
         - poker_ace_received
 
-sound_player:
-  timer_shuffle_timer_started:
-    poker_loop:
-        action: play
-        loops: -1
+# Next is slides. This is kind cheating right now. We'll make this a show because I want to play a woosh sound when
+# we transition.
+
+slides:
+  pp_intro_dmd_1:
+    widgets:
+      - type: text
+        text: Hit spinner to
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: get card
+        style: dmd_small
+        anchor_y: bottom
+        y: center
+        anchor_x: right
+        x: right-1
+    target: dmd
+# This will transition in over the first slide, right to left.
+  pp_intro_dmd_2:
+    transition: # I think this is how to do this?
+        type: push
+        direction: left
+    widgets:
+      - type: text
+        text: Shoot left hole
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: to collect
+        style: dmd_small
+        anchor_y: bottom
+        y: center
+        anchor_x: right
+        x: right-1
+    target: dmd
+# This plays the music video on the stage
+  pp_stage:
+    widgets:
+      - type: video
+        video: pp_play_something_country
+        end_behavior: loop
+        animations:
+          music_awards_fade_out:
+            - property: volume
+              value: 0
+              duration: 2s
