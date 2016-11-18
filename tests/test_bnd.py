@@ -5,9 +5,6 @@ from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
 class TestBnd(MpfMachineTestCase):
 
-    def get_platform(self):
-        return 'smart_virtual'
-
     def test_machine_boot(self):
 
         # game starts with drain and trough switches active
