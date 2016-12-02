@@ -190,7 +190,7 @@ class TestBnd(MpfMachineTestCase):
         self.assertEventNotCalled('world_tour_success')
 
         # check the ramp light is flashing
-        self.assertLedColors('l_ramp_fire', ['white', 'off'], 1)
+        self.assertLedColors('l_ramp_fire', ['red', 'off'], 1)
         self.assertModeRunning('light_mission_select')
 
         # hit the ramp
@@ -311,7 +311,7 @@ class TestBnd(MpfMachineTestCase):
         self.assertLedColor('l_world_tour', 'red')
 
         # light next mission should be flashing
-        self.assertLedColors('l_ramp_fire', ['white', 'off'], 1)
+        self.assertLedColors('l_ramp_fire', ['red', 'off'], 1)
 
         # rotating should keep world tour complete
 
