@@ -99,7 +99,7 @@ timers:
     pp_collect_card_timer:
         start_value: 3
         direction: down
-        enable_events: timer_pp_intro_timer_complete|1
+#        enable_events: timer_pp_intro_timer_complete|1
         restart_on_complete: true
         control_events:
            - event: ball_lock_poker_lock_locked_ball
