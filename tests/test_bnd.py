@@ -327,7 +327,7 @@ class TestBnd(MpfMachineTestCase):
         # shoot the right ramp
         self.hit_and_release_switch('s_rightrampopto')
 
-        # # hit the sling until world tour is lit
+        # # hit the sling until jukebox is lit
         x = 0
         while self.machine.achievements.jukebox.state != 'selected':
 
@@ -370,3 +370,43 @@ class TestBnd(MpfMachineTestCase):
         # shoot the jukebox
         self.hit_and_release_switch('s_jukeboxopto')
         self.assertEqual(self.get_timer('jukebox_mode_timer').ticks_remaining, 9)
+
+    def test_play_poker_mode(self):
+        self._start_single_player_game(1)
+
+        self.assertEqual(self.machine.achievements.play_poker.state, 'enabled')
+
+        # shoot the right ramp to light the rotator
+        self.hit_and_release_switch('s_rightrampopto')
+
+        # # hit the sling until play_poker is lit
+        x = 0
+        while self.machine.achievements.play_poker.state != 'selected':
+
+            if x > 5:
+                raise AssertionError("Mode failed to be selected")
+
+            x += 1
+            self.hit_and_release_switch('s_rightsling')
+            self.advance_time_and_run()
+
+        self.assertModeNotRunning('play_poker')
+
+        # shoot the lower vuk to start the mode
+        self.hit_switch_and_run('s_lowervukopto', .1)
+
+        # make sure the mode started
+        self.assertModeRunning('play_poker')
+
+        # there should be a 5s show
+        self.assertShowRunning('play_poker_intro')
+
+        # meanwhile make sure the ball is still locked
+
+        self.advance_time_and_run(3)
+        self.assertEqual(self.machine.ball_devices.bd_lower_vuk.balls, 1)
+
+        # advanced to when show should be over and ball is ejected
+        self.advance_time_and_run(3)
+        self.assertShowNotRunning('play_poker_intro')
+        self.assertEqual(self.machine.ball_devices.bd_lower_vuk.balls, 0)

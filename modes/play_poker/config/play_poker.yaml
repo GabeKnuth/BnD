@@ -64,37 +64,24 @@ event_player:
 # We need some ball locks
 
 ball_locks:
-  # The first lock is the intro lock. We just use this to hang on to the ball while we play some instructions.
+  # General lock we use to hold the ball in the VUK during the mode
+  # It enables when the mode starts and when the spinner is hit
+  # It disables when the ball is released (since the spinner has to be hit to relight it)
+  # When it's enabled and hit, it posts the event "ball_lock_poker_lock_locked_ball"
+
+  # TODO will this keep the ball locked when the ball is in there already when the mode starts?
+
   poker_lock:
     balls_to_lock: 1
     lock_devices: bd_lower_vuk
-    enable_events: mode_play_poker_started|1
+    enable_events: mode_play_poker_started, s_spinner_active
+    disable_events: release_pp_ball
     request_new_balls_to_pf: False
-    release_one_events: timer_pp_intro_timer_complete
-    disable_events: timer_pp_intro_timer_complete|1
-  # This ball lock is used to collect a card. It's enabled when the spinner is hit, and disabled shortly after the ball
-  # is ejected, until the spinner is hit again. When it's hit, it posts the event "ball_lock_pp_collect_locked_ball"
-  # which we can use to fire off the card collection process.
-  pp_collect:
-    balls_to_lock: 1
-    lock_devices: bd_lower_vuk
-    enable_events: s_spinner_active
-    request_new_balls_to_pf: false
-    release_one_events: timer_pp_collect_card_timer_complete
-    disable_events: timer_pp_collect_card_timer_complete|1
+    release_one_events: release_pp_ball
 
 # Now we'll define some timers.
 
 timers:
-    # The intro timer will count down from three while showing some instructions on the screen. When it completes, it
-    # will post the timer_pp_intro_timer_complete event that is hooked by the ball lock to kick out a ball.
-    pp_intro_timer:
-        start_value: 3
-        direction: down
-        end_value: 0
-        control_events:
-          - event: mode_play_poker_started
-            action: start
     # This is the timer we use when we collect a card. Both of these timers will probably be replaced by shows someday
     pp_collect_card_timer:
         start_value: 3
@@ -108,6 +95,16 @@ timers:
 # Next up is show player. We don't have many shows, so this will be kind of sparse at the moment.
 
 show_player:
+
+    mode_play_poker_started:
+        play_poker_intro:
+            events_when_stopped: start_play_poker_timer, release_pp_ball
+            loops: 0
+    flipper_cancel:
+        play_poker_intro:
+            action: stop
+
+
 # This loops through the shuffled cards three times. We'll settle on a card later.
     s_spinner_active:
         cycle_cards:
@@ -144,7 +141,7 @@ show_player:
 # both be the same suit. We'll fix that later. #todo
 
 random_event_player:
-    s_spinner_active|1.5s:
+    s_spinner_active:
         - poker_ten_received
         - poker_jack_received
         - poker_queen_received
