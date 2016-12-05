@@ -120,10 +120,12 @@ playfields:
 switches:
   s_leftflipper:
     number: 0
+    tags: left_flipper
   s_rightupperflipper:
     number: 1
   s_rightflipper:
     number: 2
+    tags: right_flipper
   s_start:
     number: 3
     tags: start
