@@ -84,6 +84,8 @@ timers:
         tick_interval: 1.25s
         direction: down
         control_events:
+          - event: start_jukebox_timer
+            action: start
           - event: balldevice_bd_lower_vuk_ball_left
             action: start
           - event: s_subwayopto_active
@@ -91,12 +93,6 @@ timers:
           - event: sw_jukebox_hit
             action: add
             value: 3
-    jb_intro_timer:
-        start_value: 3
-        direction: down
-        control_events:
-          - event: mode_jukebox_mode_started
-            action: start
 
 # I think we'll play the videos randomly, so let's try that. That way everyone in
 # this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
@@ -137,6 +133,15 @@ slides:
         x: center
 
 show_player:
+  mode_jukebox_mode_started:
+    jukebox_intro:
+      events_when_stopped: start_jukebox_timer, release_jb_ball
+      loops: 0
+    flash_jukebox:
+      loops: -1  # we don't really need this, but yaml needs something here
+  flipper_cancel:
+    jukebox_mode_intro:
+      action: stop
 #  stop_song:
 #    play_video:
 #      action: stop
@@ -173,7 +178,6 @@ show_player:
   jb_stand_by_your_man:
     jb_stand_by_your_man:
       key: jb_active_video
-  mode_jukebox_mode_started: flash_jukebox
 
 
 sound_player:

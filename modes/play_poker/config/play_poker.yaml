@@ -45,7 +45,7 @@
 # This is a complex mode, so let's document it as we go. This will get refined and used for First up is the mode config.
 # the final example game code, too. Some of this might seem way too obvious.
 
-Mode:
+mode:
   start_events: start_play_poker_mode
   stop_events: play_poker_done
   priority: 500

@@ -260,7 +260,7 @@ shots:
   shot_pops_to_vuk:
     switch: s_TopRightVUK
     delay_switch:
-      s_spinner: 2s #this matches the value in the spinner_to_vuk sequence.
+      s_spinner: 2s # this matches the value in the spinner_to_vuk sequence.
   rotate_album_multipliers:
     switch: s_leftpop, s_rightpop, s_bottompop, s_leftsling, s_rightsling, s_bottomkickingtarget, s_topkickingtarget
 

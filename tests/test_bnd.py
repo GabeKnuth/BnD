@@ -122,6 +122,107 @@ class TestBnd(MpfMachineTestCase):
         self.assertEqual(self.machine.ball_devices.bd_plunger.balls, 0)
         self.assertEqual(1, self.machine.playfield.balls)
 
+    def test_mission_rotator(self):
+        self._start_single_player_game(1)
+
+        # one of the missions should be selected
+
+        selected = [x for x in
+                    self.machine.achievement_groups.missions.config['achievements']
+                    if x.state == 'selected']
+
+        enabled = [x for x in
+                   self.machine.achievement_groups.missions.config['achievements']
+                   if x.state == 'enabled']
+
+        self.assertEqual(len(selected), 1)  # should be 1 selected
+        self.assertEqual(len(enabled), 4)  # and 4 enabled
+
+        selected = selected[0]
+
+        # selected one should be flashing between its default color and off
+        self.assertLedColors(selected.config['show_tokens']['leds'], ['on', 'off'])
+
+        # enabled ones should be off
+        for x in enabled:
+            self.assertLedColor(x.config['show_tokens']['leds'], 'off')
+
+        # begin round should be off
+        self.assertLedColor('l_begin_round', 'off')
+
+        # light mission select should be running on ball start
+        self.assertModeRunning('light_mission_select')
+
+        # its light should be flashing
+        self.assertLedColors('l_ramp_fire', ['on', 'off'])
+
+        # hit the ramp
+        self.hit_and_release_switch('s_rightrampopto')
+
+        # ramp light should be off
+        self.assertLedColor('l_ramp_fire', 'off')
+
+        # begin round should be flashing
+        self.assertLedColors('l_begin_round', ['on', 'off'])
+        self.assertShotProfile('begin_round', 'begin_round')
+        self.assertShotProfileState('begin_round', 'lit')
+
+        # shoot the lower vuk to start the mode
+        self.hit_switch_and_run('s_LowerVUKOpto', 1)
+        self.assertEqual(selected.state, 'started')
+
+        # begin round should be off
+        self.assertLedColor('l_begin_round', 'off')
+
+        # the rotator should be disabled
+        self.assertFalse(self.machine.achievement_groups.missions.enabled)
+
+        # wait for this mode to timeout:
+        while selected.state == 'started':
+            self.advance_time_and_run(5)
+
+        # modes just go to 'enabled' if they fail, and one should be selected
+        # again
+
+        # the rotator should be enabled
+        self.assertTrue(self.machine.achievement_groups.missions.enabled)
+
+        selected = [x for x in
+                    self.machine.achievement_groups.missions.config['achievements']
+                    if x.state == 'selected']
+
+        enabled = [x for x in
+                  self.machine.achievement_groups.missions.config['achievements']
+                  if x.state == 'enabled']
+
+        self.assertEqual(len(selected), 1)  # should be 1 selected
+        self.assertEqual(len(enabled), 4)  # and 4 enabled
+
+        selected = selected[0]
+
+        # let's get the selected one to world_tour:
+        while self.machine.achievements.world_tour.state != 'selected':
+            self.hit_and_release_switch('s_rightsling')
+
+        self.assertEqual(self.machine.achievements.world_tour.state, 'selected')
+        self.assertEqual(self.machine.achievements.money_bags.state, 'enabled')
+        self.assertEqual(self.machine.achievements.music_awards.state, 'enabled')
+        self.assertEqual(self.machine.achievements.jukebox.state, 'enabled')
+        self.assertEqual(self.machine.achievements.play_poker.state, 'enabled')
+
+        self.hit_and_release_switch('s_rightsling')
+        self.assertEqual(self.machine.achievements.world_tour.state, 'enabled')
+        self.assertEqual(self.machine.achievements.money_bags.state, 'selected')
+        self.assertEqual(self.machine.achievements.music_awards.state, 'enabled')
+        self.assertEqual(self.machine.achievements.jukebox.state, 'enabled')
+        self.assertEqual(self.machine.achievements.play_poker.state, 'enabled')
+
+        self.assertLedColor('l_world_tour', 'off')
+        self.assertLedColors('l_money_bags', ['on', 'off'])
+        self.assertLedColor('l_music_awards', 'off')
+        self.assertLedColor('l_jukebox_insert', 'off')
+        self.assertLedColor('l_play_poker', 'off')
+
     def test_world_tour(self):
         self.mock_event('world_tour_success')
         self.mock_event('world_tour_fail')
@@ -129,13 +230,13 @@ class TestBnd(MpfMachineTestCase):
         self.mock_event('wt_australia_complete')
 
         self._start_single_player_game(1)
-        self.assertEqual(self.machine.achievements.world_tour.state, 'enabled')
 
         self.assertModeRunning('light_mission_select')
 
         # shoot the right ramp
         self.hit_and_release_switch('s_rightrampopto')
-        self.assertModeRunning('mission_rotator')
+        self.assertShotProfile('begin_round', 'begin_round')
+        self.assertShotProfileState('begin_round', 'lit')
 
         # # hit the sling until world tour is lit
         x = 0
@@ -151,11 +252,12 @@ class TestBnd(MpfMachineTestCase):
         self.assertModeNotRunning('world_tour')
 
         # shoot the lower vuk to start the mode
-        self.mock_event('shot_lower_vuk_from_playfield_hit')
+        self.mock_event('begin_round_lit_hit')
         self.hit_switch_and_run('s_lowervukopto', 1)
-        self.assertEventCalled('shot_lower_vuk_from_playfield_hit')
+        self.assertEventCalled('begin_round_lit_hit')
 
         self.assertEqual(self.machine.achievements.world_tour.state, 'started')
+        self.assertFalse(self.machine.achievement_groups.missions.enabled)
 
         # advance enough time for it to kick the ball out
         self.advance_time_and_run(3)
@@ -199,9 +301,7 @@ class TestBnd(MpfMachineTestCase):
         self.hit_and_release_switch('s_rightrampopto')
         self.advance_time_and_run(1)
         self.assertEventCalled('enable_mission_selection')
-        self.assertModeNotRunning('light_mission_select')
 
-        print(self.machine.achievements.world_tour.state)
         self.assertNotEqual(self.machine.achievements.world_tour.state, 'completed')
 
         # # hit the sling until world tour is lit
@@ -231,7 +331,7 @@ class TestBnd(MpfMachineTestCase):
         # ramp light should be off
         self.assertLedColor('l_ramp_fire', 'off')
 
-        self.assertEqual(self.get_timer('wt_intro_timer').ticks_remaining, 1)
+        self.assertEqual(self.get_timer('wt_intro_timer').ticks_remaining, 2)
         self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 0)
 
         # make sure we picked up where we left off
@@ -246,9 +346,9 @@ class TestBnd(MpfMachineTestCase):
         # ball should be ejected
         self.assertEqual(self.machine.ball_devices.bd_lower_vuk.balls, 0)
 
-        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 16)
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 17)
         self.advance_time_and_run(1.25)  # this is the tick interval
-        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 15)
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 16)
 
         # hit complete shot and it should not change anything
         self.hit_and_release_switch('s_leftorbit')
@@ -292,7 +392,7 @@ class TestBnd(MpfMachineTestCase):
         self.assertLedColor('l_europe', 'red')
         self.assertLedColor('l_south_america', 'red')
         self.assertLedColors('l_australia', ['red', 'off'], 1)
-        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 11)
+        self.assertEqual(self.get_timer('world_tour_timer').ticks_remaining, 12)
 
         self.assertEqual(self.machine.ball_devices.bd_top_right_vuk.balls, 0)
 
@@ -342,17 +442,14 @@ class TestBnd(MpfMachineTestCase):
 
         # shoot the lower vuk to start the mode
         self.hit_switch_and_run('s_lowervukopto', 1)
-
-        # make sure the timer is running
         self.assertEqual(self.machine.achievements.jukebox.state, 'started')
-        self.assertEqual(self.get_timer('jb_intro_timer').ticks_remaining, 2)
-        self.advance_time_and_run(1)
-        self.assertEqual(self.get_timer('jb_intro_timer').ticks_remaining, 1)
-
-        # advance enough time for it to kick the ball out
-        self.advance_time_and_run(2)
-
         self.assertModeRunning('jukebox_mode')
+
+        # intro show should be playing
+        self.assertShowRunning('jukebox_intro')
+
+        # advance enough time for the show to end
+        self.advance_time_and_run(5)
 
         # make sure the timer is running
         self.assertEqual(self.get_timer('jukebox_mode_timer').ticks_remaining, 10)

@@ -1,7 +1,13 @@
 #config_version=4
-Mode:
+
+# this mode handles the lighting of the right ramp and the lower vuk "begin_round" shot
+
+# the mode starts when a mission is not running, and stops when a mission starts
+
+
+mode:
   start_events: light_mission_select
-  stop_events: mission_rotator_ready
+  stop_events: mission_started
   priority: 200
 
 show_player:
@@ -19,3 +25,16 @@ show_player:
 
 event_player:
     s_rightrampopto_active: enable_mission_selection
+
+shots:
+  begin_round:
+    profile: begin_round
+    enable_events: s_rightrampopto_active
+    hit_events: balldevice_bd_lower_vuk_ball_enter
+
+shot_profiles:
+  begin_round:
+    states:
+      - name: lit
+        show: on
+    advance_on_hit: false
