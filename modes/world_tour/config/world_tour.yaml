@@ -28,6 +28,8 @@ event_player:
     world_tour_fail|3s
   mode_world_tour_stopping:
     fade_in_base_music
+  ball_will_end:
+    world_tour_fail
 
 # We need to set up shots so that we start on the North America shot, then move on to
 # Europe, then South America, and finally Australia

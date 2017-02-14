@@ -159,10 +159,10 @@ switches:
     tags: playfield_active, end_skill_shot, toggle, beat
   s_rightbanktop:
     number: 26
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_toprightstandup:
     number: 27
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_jukeboxopto:
     number: 40
     type: NC
@@ -193,19 +193,19 @@ switches:
     tags: playfield_active, end_skill_shot
   s_droptarget1:
     number: 64
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_droptarget2:
     number: 65
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_droptarget3:
     number: 66
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_droptarget4:
     number: 67
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_droptarget5:
     number: 68
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_toprightvuk:
     number: 69
     tags: playfield_active, end_skill_shot
@@ -224,7 +224,7 @@ switches:
     tags: playfield_active
   s_spinner:
     number: 76
-    tags: playfield_active, end_skill_shot
+    tags: playfield_active, end_skill_shot, beat
   s_leftpop:
     number: 77
     tags: playfield_active, end_skill_shot, toggle, beat

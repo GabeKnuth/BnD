@@ -1,0 +1,68 @@
+- Add sounds for random target hits. (I think this is done, but need to test. Using random drum sounds right now)
+
+- Add sounds for ramp shot. Helicopter maybe? Woosh? Thunder/lightning (flashers?)
+
+- Speaking of flashers, let's add in some light animations around ejects out of the left, right VUKs and pops/slings
+
+- Smaller modes, like what do the quarters do? Norris says to have them build. Ball start, all 3 are flashing. You have
+to hit all three before the group resets. Each hit on a flashing target adds a quarter, plays a QIO shows old/new
+quarter count. QIO also shows next threshold (like RS Blast Zone).
+        3 Quarters, Light Mystery or score 250k
+        6 Quarters, Light Mystery or score 250k
+        9 Quarters, light Extra Ball
+        18, Light Special
+        30, 25 Million
+        31+, 250k each
+
+Also, the return lanes have a "Spot Quarter" lamp. These should rotate with slings/pops/kicking targets between the
+lamps, but I think they shouldn't always be on. Maybe they "rotate" like: all off, left, all off, right. If hit when
+lit, they complete one of the lit quarters.
+
+- Also the top kicker, Manager's Choice. That's something right now, but I think we should
+make it more like the striker in WCS. Award something, call it a day. Awards could be:
+        Start BROOKS N DUNN Multiball
+        Award BROOKS N DUNN Letters
+        Select / Start mission
+        Extra Ball
+        Spot X Quarters
+        1 Million Points
+        Start ball saver for 15 seconds
+
+Mystery shot lights Managers Choice. Mystery shot (left hole) is lit in Base mode only when Begin Round is NOT lit.
+
+- Need to make Metal Rodeo, whatever that is. I kind of like the "unlimited balls for X seconds" multiball in TOTAN and
+WCS. Maybe we do that for 30 seconds, all shots lit. Shots score a certain amount based on how many quarters you collect
+which helps prioritize getting quarters.
+        <7 Quarters: 1M per shot
+        7-12 Quarters: 2M per shot
+        13-24 Quarters: 3M per shot
+        25+ Quarters: 5M per shot
+
+Shooting the Collect Wizard shot during Metal Rodeo collects the wizard value each time, plus the per-shot value above.
+
+- We need the album value to be a variable value based on the lit insert. Silver = 25k, Gold = 50k, Plat = 100k,
+Double = 200k, Quintuple = 500k
+
+- Drop Target bank is used to advance album multiplier. (Need to remove this from the sling/pop/kicking rotator) Base
+mode shows default animation on LCD to inform player. Completing bank advances multiplier and scores the album value,
+unless it's maxed, at which point it scores 5x the Album Value (which really doesn't require math - it's 2.5M)
+
+- End of Ball Bonus. Suggest counting quarters and multiplying that by the active album value. So, 9 Quarters X Plat =
+900k, 7 Quarters X Quint = 3.5M, etc...
+
+- What to do about the Wizard thing? In any mode other than Music Awards, Advance Wizard is flashing. Shooting it adds
+25k to wizard value and lights the Wizard shot through the drop targets (drops the two targets if needed) for 10 seconds
+(maybe 5). Shows something on LCD and DMD. Shooting there awards the wizard value. Wizard value is NOT reset when hit.
+Shooting the left orbit continues to increase the wizard value and light the shot again.
+
+Also adds 25k to Wizard Bonus value, which is added to the Shot Bonus (just
+made that up now...25k per shot during a ball), which is multiplied by the album multiplier at ball end.
+
+- Ball search
+
+- Ball save. Do we have this already? Animations for it?
+
+- Add the add-a-ball feature to the mode-ending multiballs. Spinner-to-VUK shot captures ball, queues up ball from
+trough, and ejects both at the ~ same time
+
+- High Scores, Replay (not THAT important), Quarter Champion (again, not THAT important. Just made that up now)

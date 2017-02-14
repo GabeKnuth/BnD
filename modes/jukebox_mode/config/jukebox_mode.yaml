@@ -31,6 +31,8 @@ event_player:
     jukebox_fail|1s
   mode_jukebox_mode_stopping:
     fade_in_base_music
+  ball_will_end:
+    jukebox_fail
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down
