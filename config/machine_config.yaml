@@ -382,7 +382,7 @@ ball_devices:
     eject_coil: c_draineject
     #exit_count_delay: 500ms
     eject_targets: bd_trough
-    #debug: true
+    debug: true
     target_on_unexpected_ball: bd_trough
   bd_trough:
     tags: trough, home
@@ -394,7 +394,7 @@ ball_devices:
     eject_timeouts: 3s
     exit_count_delay: 1.5s
     #entrance_count_delay: 500ms
-    #debug: true
+    debug: true
   bd_plunger:
     tags: ball_add_live
     ball_switches: s_PlungerLane

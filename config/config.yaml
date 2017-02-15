@@ -10,6 +10,7 @@ fast:
   # Brian, comment out for Gabe
   #  ports: /dev/tty.usbserial-1415C, /dev/tty.usbserial-1415B #, /dev/tty.usbserial-1415A
   config_number_format: int
+  rgb_buffer: 4
 
 smartmatrix:
     baud: 3400000
