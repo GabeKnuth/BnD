@@ -100,3 +100,4 @@ achievement_groups:
       leds:
         l_begin_round
     show_when_enabled: flash
+    enable_while_no_achievement_started: false
