@@ -30,7 +30,7 @@ shots:
   begin_round:
     profile: begin_round
     enable_events: s_rightrampopto_active
-    hit_events: balldevice_bd_lower_vuk_ball_enter
+    hit_events: shot_lower_vuk_from_playfield_hit
 
 shot_profiles:
   begin_round:
