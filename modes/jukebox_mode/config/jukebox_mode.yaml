@@ -95,6 +95,13 @@ timers:
           - event: sw_jukebox_hit
             action: add
             value: 3
+    jb_intro_timer:
+        start_value: 3
+        end_value: 0
+        direction: down
+        control_events:
+          - event: mode_jukebox_mode_started
+
 
 # I think we'll play the videos randomly, so let's try that. That way everyone in
 # this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
