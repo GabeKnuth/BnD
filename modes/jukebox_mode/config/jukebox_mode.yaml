@@ -101,6 +101,7 @@ timers:
         direction: down
         control_events:
           - event: mode_jukebox_mode_started
+            action: start
 
 
 # I think we'll play the videos randomly, so let's try that. That way everyone in
