@@ -405,7 +405,7 @@ ball_devices:
   bd_plunger:
     tags: ball_add_live
     ball_switches: s_PlungerLane
-    entrance_count_delay: 500ms
+    entrance_count_delay: 1000ms
     eject_coil: c_Plunger
     eject_targets: playfield
     eject_timeouts: 3s
