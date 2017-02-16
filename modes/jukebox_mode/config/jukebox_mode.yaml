@@ -33,6 +33,8 @@ event_player:
     fade_in_base_music
   ball_will_end:
     jukebox_fail
+  timer_jukebox_intro_timer_complete:
+    start_jukebox_timer
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down
@@ -88,7 +90,7 @@ timers:
         control_events:
           - event: start_jukebox_timer
             action: start
-          - event: balldevice_bd_lower_vuk_ball_left
+          - event: balldevice_bd_lower_vuk_ball_eject_success
             action: start
           - event: s_subwayopto_active
             action: stop
