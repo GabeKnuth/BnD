@@ -96,6 +96,7 @@ modes:
   - world_tour
   - music_awards
   - jukebox_two_ball
+  - bonus
 
 widget_styles:
   dmd_huge:

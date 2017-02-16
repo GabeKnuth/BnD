@@ -507,3 +507,41 @@ class TestBnd(MpfMachineTestCase):
         self.advance_time_and_run(3)
         self.assertShowNotRunning('play_poker_intro')
         self.assertEqual(self.machine.ball_devices.bd_lower_vuk.balls, 0)
+    def test_bonus(self):
+
+        self.mock_event('bonus_start')
+        self.mock_event('quarter_bonus')
+        self.mock_event('wizard_bonus')
+        self.mock_event('bonus_total')
+
+        self._start_single_player_game(5)
+
+        self.machine.game.player.quarters = 2
+        self.machine.game.player.album_value = 250000
+        self.machine.game.player.num_albums = 2
+
+        self.hit_switch_and_run('s_drain', 1)
+        self.assertModeRunning('bonus')
+
+        self.assertEventCalled('bonus_start')
+        self.assertEventNotCalled('quarter_bonus')
+        self.assertEventNotCalled('wizard_bonus')
+        self.assertEventNotCalled('bonus_total')
+
+        self.advance_time_and_run(2)
+        self.assertEventCalled('quarter_bonus')
+        self.assertEventNotCalled('wizard_bonus')
+        self.assertEventNotCalled('bonus_total')
+
+        self.advance_time_and_run(2)
+        self.assertEventCalled('wizard_bonus')
+        self.assertEventNotCalled('bonus_total')
+
+        self.advance_time_and_run(2)
+        self.assertEventCalled('bonus_total')
+
+        # (2 quarters * 250k album value) + (25k * 2 albums)
+        self.assertEqual(self.machine.game.player.score, 550000)
+
+        self.advance_time_and_run(2)
+        self.assertModeNotRunning('bonus')

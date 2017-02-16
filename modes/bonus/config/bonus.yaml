@@ -1,0 +1,32 @@
+#config_version=4
+
+mode_settings:
+  display_delay_ms: 2000
+  hurry_up_delay_ms: 500
+  hurry_up_event: flipper_cancel
+  bonus_entries:
+      - event: quarter_bonus
+        # number quarters * album value
+        score: current_player.quarters * current_player.album_value
+      - event: wizard_bonus
+        # 25k per wizard shot * num albums completed
+        score: 25000
+        player_score_entry: num_albums
+
+slide_player:
+  bonus_start:
+    bonus_start:
+    - type: text
+      text: END OF BALL BONUS
+  quarter_bonus:
+    quarter_bonus:
+    - type: text
+      text: (current_player.quarters) QUARTERS x (current_player.album_value) ALBUM VALUE
+  wizard_bonus:
+    wizard_bonus:
+    - type: text
+      text: "(current_player.num_albums) ALBUMS x 25,000"
+  bonus_total:
+    bonus_total:
+    - type: text
+      text: "TOTAL BONUS: (score)"
