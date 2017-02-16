@@ -384,6 +384,7 @@ ball_devices:
     eject_targets: bd_trough
     debug: true
     target_on_unexpected_ball: bd_trough
+    console_log: Full
   bd_trough:
     tags: trough, home
     entrance_switch: s_trough_enter
@@ -393,6 +394,7 @@ ball_devices:
     eject_targets: bd_plunger
     eject_timeouts: 3s
     exit_count_delay: 1.5s
+    console_log: Full
     #entrance_count_delay: 500ms
     debug: true
   bd_plunger:
@@ -404,7 +406,7 @@ ball_devices:
     eject_timeouts: 3s
     player_controlled_eject_event: sw_launch
     mechanical_eject: true
-    #debug: true
+    console_log: Full
   bd_top_right_vuk:
     ball_switches: s_TopRightVUK
     entrance_count_delay: 500ms
@@ -412,6 +414,7 @@ ball_devices:
     eject_targets: playfield
     exit_count_delay: 500ms
     confirm_eject_type: target
+    console_log: Full
   bd_lower_vuk:
     ball_switches: s_LowerVUKOpto
     #entrance_count_delay: 500ms
@@ -420,6 +423,7 @@ ball_devices:
     #exit_count_delay: 800ms
     confirm_eject_type: target
     eject_timeouts: 500ms
+    console_log: Full
   bd_top_kicker:
     ball_switches: s_TopKicker
     entrance_count_delay: 1s
@@ -427,6 +431,7 @@ ball_devices:
     eject_targets: playfield, bd_top_right_vuk
     exit_count_delay: 500ms
     confirm_eject_type: target
+    console_log: Full
   # bd_jukebox_lock:
   #   entrance_count_delay: 500ms
   #   eject_coil: c_jukeboxmain
