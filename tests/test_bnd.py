@@ -125,6 +125,21 @@ class TestBnd(MpfMachineTestCase):
     def test_mission_rotator(self):
         self._start_single_player_game(1)
 
+        # no missions should be selected, all should be enabled
+
+        selected = [x for x in
+                    self.machine.achievement_groups.missions.config['achievements']
+                    if x.state == 'selected']
+
+        enabled = [x for x in
+                   self.machine.achievement_groups.missions.config['achievements']
+                   if x.state == 'enabled']
+
+        self.assertEqual(len(selected), 0)
+        self.assertEqual(len(enabled), 5)
+
+        self.hit_and_release_switch('s_rightrampopto')
+
         # one of the missions should be selected
 
         selected = [x for x in
@@ -507,6 +522,7 @@ class TestBnd(MpfMachineTestCase):
         self.advance_time_and_run(3)
         self.assertShowNotRunning('play_poker_intro')
         self.assertEqual(self.machine.ball_devices.bd_lower_vuk.balls, 0)
+
     def test_bonus(self):
 
         self.mock_event('bonus_start')
