@@ -93,6 +93,14 @@ sound_player:
     base_bed_loop:
         action: stop
         fade_out: 500ms
+  sw_toggle:
+    beats:
+        action: play
+        loops: 0
+  sw_quarter:
+    quarter:
+        action: play
+        loops: 0
 #    sw_beat:
 #        action: play
 
