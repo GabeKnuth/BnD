@@ -2,7 +2,7 @@ from mpf.core.mode import Mode
 
 class Base(Mode):
     def mode_init(self):
-        self.add_mode_event_handler('jukebox_hit', self.jukebox_manager)
+        self.add_mode_event_handler('sw_jukebox_hit', self.jukebox_manager)
 
     def jukebox_manager(self, count, **kwargs):
         if count == 3:
