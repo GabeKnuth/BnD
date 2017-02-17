@@ -390,6 +390,7 @@ ball_devices:
     debug: true
     target_on_unexpected_ball: bd_trough
     console_log: Full
+    eject_coil_retry_pulse: 120
   bd_trough:
     tags: trough, home
     entrance_switch: s_trough_enter
