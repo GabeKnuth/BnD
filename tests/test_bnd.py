@@ -13,6 +13,7 @@ class TestBnd(MpfMachineTestCase):
         self.assertEqual(self.machine.ball_devices.bd_drain.balls, 1)
         self.assertEqual(self.machine.ball_devices.bd_trough.balls, 3)
         self.assertEqual(self.machine.ball_devices.bd_plunger.balls, 0)
+        self.assertEqual(self.machine.ball_controller.num_balls_known, 4)
 
         # advance 1 sec and make sure everything is still right
         # this checks for the trough kicking out a ball and the plunger
@@ -40,14 +41,10 @@ class TestBnd(MpfMachineTestCase):
 
         # make sure the attract mode shows are running
 
-    def _dump_balls(self):
-        print('-------------')
-        print('drain:    ', self.machine.ball_devices.bd_drain.balls)
-        print('trough:   ', self.machine.ball_devices.bd_trough.balls)
-        print('plunger:  ', self.machine.ball_devices.bd_plunger.balls)
-        print('playfield:', self.machine.ball_devices.playfield.balls)
-
     def _start_single_player_game(self, secs_since_plunge):
+        self.set_num_balls_known(4)
+        self.machine.playfield.ball_search.disable()
+        self.advance_time_and_run(10)
         self.hit_and_release_switch('s_start')
 
         # game should be running
@@ -55,7 +52,7 @@ class TestBnd(MpfMachineTestCase):
         self.assertEqual(1, self.machine.game.player.ball)
 
         # advance enough time for the balls to eject and stuff
-        self.advance_time_and_run()
+        self.advance_time_and_run(2)
 
         # ball should be sitting in the plunger lane
         self.assertEqual(self.machine.ball_devices.bd_drain.balls, 0)
@@ -561,3 +558,8 @@ class TestBnd(MpfMachineTestCase):
 
         self.advance_time_and_run(2)
         self.assertModeNotRunning('bonus')
+
+    def test_ball_search(self):
+        self._start_single_player_game(5)
+
+        self.advance_time_and_run(30)
