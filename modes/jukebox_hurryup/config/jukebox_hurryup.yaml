@@ -36,7 +36,17 @@ logic_blocks:
       count_complete_value: 5
       disable_on_complete: true
 
+slide_player:
+  mode_jukebox_hurryup_started:
+    jukebox_hurryup_stage:
+      target: stage
 
+slides:
+  jukebox_hurryup_stage:
+    widgets:
+      - type: video
+        video: jb_hurry_up_foggy_mountain
+        end_behavior: loop
 
 
 # Need a light show in here that turns off other things and just lights the hurry up shot

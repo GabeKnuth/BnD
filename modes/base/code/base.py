@@ -11,7 +11,7 @@ class Base(Mode):
             self.machine.events.post('light_hilo')
         elif count == 16:
             self.machine.events.post('light_lock_2')
-        elif count == 24:
+        elif count == 2: #24:
             self.machine.events.post('light_jukebox_hurryup')
         elif count == 36:
             self.machine.events.post('light_lock_3')

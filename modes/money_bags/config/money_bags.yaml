@@ -165,7 +165,7 @@ slides:
   money_bags_stage:
     widgets:
       - type: video
-        video: jb_hello_darlin
+        video: mb_beer_thirty
         end_behavior: loop
         animations:
           money_bags_fade_out:
