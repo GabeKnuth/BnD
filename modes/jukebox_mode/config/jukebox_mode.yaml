@@ -204,7 +204,7 @@ shows:
         bed_of_roses:
           widgets:
           - type: video
-            video: mb_beer_thirty
+            video: jb_bed_of_roses
             end_behavior: loop
             control_events:
               - event: stop_song
@@ -230,7 +230,7 @@ shows:
         bed_of_roses:
           widgets:
           - type: video
-            video: jb_convoy
+            video: convoy_test
             end_behavior: loop
             control_events:
               - event: stop_song
