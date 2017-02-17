@@ -53,7 +53,7 @@ sound_system:
     tracks:
        music:
           simultaneous_sounds: 1
-          volume: 1.0
+          volume: .8
        voice:
           simultaneous_sounds: 1
           volume: 1.0
