@@ -364,6 +364,7 @@ flippers:
     enable_events: ball_starting
     use_eos: false
     ##debug: true
+    include_in_ball_search: true
 
 #        :::::::::      :::     :::        :::
 #       :+:    :+:   :+: :+:   :+:        :+:
