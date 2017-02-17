@@ -29,7 +29,7 @@ event_player:
   timer_jukebox_mode_timer_complete:
     end_jukebox_mode|3s
     jukebox_fail|1s
-  mode_jukebox_mode_stopping:
+  jukebox_fail:
     fade_in_base_music
   ball_will_end:
     jukebox_fail
