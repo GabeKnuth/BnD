@@ -101,6 +101,28 @@ sound_player:
     quarter:
         action: play
         loops: 0
+  drop_target_bank_drop_targets_mixed{down==1}:
+    applause_1:
+      action: play
+      loops: 0
+  drop_target_bank_drop_targets_mixed{down==2}:
+    applause_2:
+      action: play
+      loops: 0
+  drop_target_bank_drop_targets_mixed{down==3}:
+    applause_3:
+      action: play
+      loops: 0
+  drop_target_bank_drop_targets_mixed{down==4}:
+    applause_4:
+      action: play
+      loops: 0
+  drop_target_bank_drop_targets_mixed{down==5}:
+    applause_5:
+      action: play
+      loops: 0
+
+
 #    sw_beat:
 #        action: play
 
