@@ -68,10 +68,10 @@ sound_player:
     plunged:
         action: play
         loops: 0
-        events_when_stopped: start_step_3
+        #events_when_stopped: start_step_3
     wait_to_plunge:
         action: stop
-  start_step_3:
+#  start_step_3:
     base_bed_loop:
         action: play
         loops: -1
