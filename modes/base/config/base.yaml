@@ -64,7 +64,7 @@ sound_player:
         action: play
         loops: -1
         events_when_looping: wait_to_plunge_looped
-  balldevice_bd_plunger_ball_left:
+  balldevice_bd_plunger_ball_eject_success:
     plunged:
         action: play
         loops: 0

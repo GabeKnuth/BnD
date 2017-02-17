@@ -120,7 +120,7 @@ timers:
             action: stop
           - event: stop_world_tour_timer
             action: stop
-          - event: balldevice_bd_lower_vuk_ball_left
+          - event: balldevice_bd_lower_vuk_ball_eject_success
             action: start
     wt_intro_timer:
         start_value: 3

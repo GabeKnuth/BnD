@@ -9,7 +9,7 @@ timers:
         start_value: 5
         direction: down
         control_events:
-          - event: balldevice_bd_plunger_ball_left
+          - event: balldevice_bd_plunger_ball_eject_success
             action: start
 
 event_player:
@@ -61,6 +61,6 @@ slide_player:
     player_start:
       target: dmd
 
-  balldevice_bd_plunger_ball_left:
+  balldevice_bd_plunger_ball_eject_success:
     player_start:
       action: remove

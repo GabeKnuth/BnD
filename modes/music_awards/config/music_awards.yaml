@@ -60,7 +60,7 @@ timers:
             value: 5
           - event: s_subwayopto_active
             action: stop
-          - event: balldevice_bd_lower_vuk_ball_left
+          - event: balldevice_bd_lower_vuk_ball_eject_success
             action: start
     ma_intro_timer:
         start_value: 5
@@ -386,7 +386,7 @@ scoring:
 #            value: 3
 #          - event: s_subwayopto_active
 #            action: stop
-#          - event: balldevice_bd_lower_vuk_ball_left
+#          - event: balldevice_bd_lower_vuk_ball_eject_success
 #            action: start
 #    wt_intro_timer:
 #        start_value: 3
