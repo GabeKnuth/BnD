@@ -111,6 +111,8 @@ config:
 playfields:
   playfield:
     tags: default
+    enable_ball_search: true
+    ball_search_interval: 150ms
 
 
 #        ::::::::  :::       ::: ::::::::::: ::::::::::: ::::::::  :::    ::: :::::::::: ::::::::
@@ -182,7 +184,7 @@ switches:
   s_lowervukopto:
     number: 43
     type: NC
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_leftsling:
     number: 44
     tags: playfield_active, end_skill_shot, toggle, beat
@@ -213,7 +215,7 @@ switches:
     tags: playfield_active, end_skill_shot, beat
   s_toprightvuk:
     number: 69
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_rightrampopto:
     number: 72
     type: NC
@@ -226,7 +228,7 @@ switches:
     tags: playfield_active, end_skill_shot
   s_topkicker:
     number: 75
-    tags: playfield_active
+    tags:
   s_spinner:
     number: 76
     tags: playfield_active, end_skill_shot, beat

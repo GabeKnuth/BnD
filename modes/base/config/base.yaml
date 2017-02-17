@@ -148,7 +148,7 @@ scoring:
     shot_pops_hit:
         score: 10
         jackpot: 5000
-    switch_s_lowerVUKOpto_active:
+    bd_lower_vuk_ball_enter:
         score: 500
     s_jukeboxOpto_active:
         score: 9999
@@ -279,7 +279,7 @@ shots:
     switch_sequence: s_SubwayOpto, s_LowerVUKOpto
     time: 500ms
   shot_lower_vuk_from_playfield:
-    switch: s_lowervukopto
+    hit_events: bd_lower_vuk_ball_enter
     delay_switch:
       s_subwayopto: 2s
   shot_spinner_to_vuk:
