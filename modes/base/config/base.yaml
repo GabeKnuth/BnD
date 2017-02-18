@@ -209,6 +209,11 @@ scoring:
         score: 5000
     s_topkicker_active:
         score: 5000
+    mode_base_started:
+        test:
+          action: set
+          score: HELLO
+
 
 
 
@@ -266,6 +271,19 @@ show_player:
       show_tokens:
         led: l_left_ramp_flasher
       sync_ms: 0
+  ball_save_main_enabled:
+    flash:
+      show_tokens:
+        leds: l_shoot, l_again
+      key: ball_save
+  ball_save_main_hurry_up:
+    flash:
+      show_tokens:
+        leds: l_shoot, l_again
+      key: ball_save
+      speed: 2
+  ball_save_main_disabled:
+      ball_save: stop
 
 shots:
   album_rotator:
@@ -400,3 +418,11 @@ shot_groups:
         reset_events: upper_lanes_default_lit_complete
         enable_events: ball_started
         disable_events: ball_ending
+
+ball_saves:
+  main:
+    active_time: 8s
+    hurry_up_time: 2s
+    grace_period: 1s
+    early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
+    timer_start_events: playfield_active

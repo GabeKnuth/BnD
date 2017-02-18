@@ -15,6 +15,14 @@ slide_player:
   mode_base_started:
     base_background:
       target: stage
+  ball_save_main_saving_ball:
+    ball_saved:
+      widgets:
+        - type: text
+          text: BALL SAVED!
+          style: dmd_big
+      expire: 2s
+      priority: 5000
 
 slides:
   base_background:
