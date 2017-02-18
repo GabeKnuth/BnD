@@ -53,6 +53,17 @@ slides:
         style: dmd_small
         anchor_y: bottom
         y: 0
+        anchor_x: left
+        x: left
+      - type: text
+        text: (score)
+        style: dmd_small
+        min_digits: 2
+        number_grouping: true
+        anchor_y: bottom
+        y: 0
+        anchor_x: right
+        x: right
 
 slide_player:
   mode_skill_shot_starting:
