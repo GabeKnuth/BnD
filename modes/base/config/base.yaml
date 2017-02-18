@@ -117,7 +117,7 @@ sound_player:
     applause_4:
       action: play
       loops: 0
-  drop_target_bank_drop_targets_mixed{down==5}:
+  drop_target_bank_drop_targets_down:
     applause_5:
       action: play
       loops: 0
