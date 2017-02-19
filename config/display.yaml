@@ -46,11 +46,13 @@ slide_player:
       target: dmd
     stage_boot:
       target: stage
-  mode_attract_started:  # this doesn't work??? #todo
+  mode_attract_started:
     dmd_boot:
       action: remove
+      target: dmd
     stage_boot:
       action: remove
+      target: stage
 
   #loading_assets: asset_status
 
