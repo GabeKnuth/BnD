@@ -271,3 +271,31 @@ shows:
               - event: stop_song
                 action: stop
           target: stage
+
+
+#slide_player:
+#  mode_attract_started:
+#    jukebox_hurryup_stage:
+#      target: stage
+#
+#slides:
+#  jukebox_hurryup_stage:
+#    widgets:
+#      - type: image
+#        image: jb_hurryup_arrow
+#        anchor_x: middle
+#        anchor_y: top
+#        x: middle
+#        y: top
+#        animations:
+#          show_slide:
+#            - property: y
+#              value: 0
+#              duration: 800ms
+#            - property: y
+#              value: 289
+#              duration: 800ms
+#              repeat: true
+#      - type: video
+#        video: jb_hurry_up_foggy_mountain
+#        end_behavior: loop

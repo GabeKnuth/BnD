@@ -173,6 +173,7 @@ switches:
   s_jukeboxopto:
     number: 40
     type: NC
+    ignore_window_ms: 500
     tags: jukebox, playfield_active, end_skill_shot, jukebox_hit
   s_topkickingtarget:
     number: 41

@@ -1,11 +1,16 @@
 #config_version=4
 mode:
-  start_events: light_jukebox_hurryup
+  start_events: start_jukebox_hurryup
   priority: 1000
+
+##todo
+#Need a light show to indicate that we need to shoot the jukebox
+#Do math on score timer info
+#slides to show score counting down and time left
 
 timers:
   start_timer: #This just plays while we show some dots
-    start_value: 2
+    start_value: 3
     end_value: 0
     direction: down
     tick_interval: 1s
@@ -13,7 +18,7 @@ timers:
       - event: mode_jukebox_hurry_started
         action: start
 
-  jukebox_timer:
+  jb_display_timer:
     start_value: 15
     end_value: 0
     direction: down
@@ -25,6 +30,20 @@ timers:
           action: start
         - event: timer_start_timer_complete
           action: start
+
+  jb_score_timer:
+    start_value: 1500
+    end_value: 0
+    direction: down
+    tick_interval: 100ms
+    control_events:
+        - event: timer_jb_display_timer_started
+          action: start
+        - event: timer_jb_display_timer_paused
+          action: pause
+        - event: timer_jb_display_timer_stopped
+          action: stop
+
 
 logic_blocks:
   counters:
@@ -44,6 +63,21 @@ slide_player:
 slides:
   jukebox_hurryup_stage:
     widgets:
+      - type: image
+        image: jb_hurryup_arrow
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top
+        animations:
+          show_slide:
+            - property: y
+              value: 190
+              duration: 800ms
+            - property: y
+              value: 480
+              duration: 800ms
+              repeat: true
       - type: video
         video: jb_hurry_up_foggy_mountain
         end_behavior: loop

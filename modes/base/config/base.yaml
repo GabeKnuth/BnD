@@ -21,18 +21,20 @@ event_player:
     light_mission_select
   play_poker_fail:
     light_mission_select
-#  mode_jukebox_mode_starting: #made
-#    fade_out_base_music
-#  mode_world_tour_starting:
-#    fade_out_base_music
-#  mode_play_poker_starting: #made
-#    fade_out_base_music
-#  mode_money_bags_starting: #made
-#    fade_out_base_music
-#  mode_music_awards_starting:
-#    fade_out_base_music
-#  mode_jukebox_two_ball_starting:
-#    fade_out_base_music
+  hit_jukebox{count==3}:
+    light_lock_1
+  hit_jukebox{count==8}:
+    light_hilo
+  hit_jukebox{count==16}:
+    light_lock_2
+  hit_jukebox{count==2}: ## Should be 24
+    start_jukebox_hurryup
+  hit_jukebox{count==36}:
+    light_lock_3
+  hit_jukebox{count==48}:
+    light_hilo
+  hit_jukebox{count==64}:
+    start_jukebox_hurryup
 
 config:
   - display
@@ -56,7 +58,6 @@ sound_pools:
           drum14
           drum15
           drum16
-
 
 sound_player:
   mode_base_started:
@@ -153,12 +154,14 @@ timers:
 logic_blocks:
   counter:
     lb_jukebox_counter:
-      count_events: sw_jukebox
-      events_when_hit: jukebox_hit #Hook the "count" parameter of this event ?? Can I do that in config?
+      count_events: sw_jukebox_hit
+      events_when_hit: hit_jukebox #Hook the "count" parameter of this event ?? Can I do that in config?
       starting_count: 0
       count_complete_value: 100
       direction: up
       events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
+      disable_events: mission_started
+      enable_events: ball_starting, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour
 #  sequence:
 #    sound_timing:
 #      events:
@@ -327,10 +330,6 @@ shots:
     time: 2s
   shot_jukebox_loop:
     switch: s_jukeboxopto
-    delay_switch:
-      s_jukeboxopto: 1s
-
-
 
 shot_profiles:
 #    album_rotator:
