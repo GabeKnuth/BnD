@@ -212,10 +212,6 @@ scoring:
         score: 5000
     s_topkicker_active:
         score: 5000
-    mode_base_started:
-        test:
-          action: set
-          score: HELLO
 
 
 
