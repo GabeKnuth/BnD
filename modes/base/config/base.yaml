@@ -318,7 +318,7 @@ shots:
     switch_sequence: s_SubwayOpto, s_LowerVUKOpto
     time: 500ms
   shot_lower_vuk_from_playfield:
-    hit_events: bd_lower_vuk_ball_enter
+    hit_events: balldevice_bd_lower_vuk_ball_enter
     delay_switch:
       s_subwayopto: 2s
   shot_spinner_to_vuk:
