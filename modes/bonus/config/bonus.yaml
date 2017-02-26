@@ -23,45 +23,70 @@ scoring:
 slide_player:
   bonus_start:
     bonus_start:
+    - type: image
+      image: bonus_bg
+      anchor_x: middle
+      anchor_y: top
+      x: middle
+      y: top
     - type: text
       text: END OF BALL BONUS
       style: dmd_big
-    - type: line
-      points: 1, 1, 1, 32, 128, 32, 128, 1
-      color: green
+#    - type: line
+#      points: 1, 1, 1, 32, 128, 32, 128, 1
+#      color: green
   quarter_bonus:
     quarter_bonus:
+    - type: image
+      image: bonus_bg
+      anchor_x: middle
+      anchor_y: top
+      x: middle
+      y: top
     - type: text
       text: (quarters) QUARTERS
-      y: top
+      y: top-7
       anchor_y: top
       style: dmd_big
     - type: text
+      y: middle-4
       text: X
       style: dmd_small
     - type: text
-      text: "(album_name) ALBUM VALUE: (album_value)"
-      y: bottom
+      text: "(album_name) VALUE: (album_value)"
+      y: bottom+1
       anchor_y: bottom
-      style: dmd_med
+      style: dmd_small
       number_grouping: true
   wizard_bonus:
     wizard_bonus:
+    - type: image
+      image: bonus_bg
+      anchor_x: middle
+      anchor_y: top
+      x: middle
+      y: top
     - type: text
       text: (num_albums) ALBUMS x 25,000
       style: dmd_big
   bonus_total:
     bonus_total:
+    - type: image
+      image: bonus_bg
+      anchor_x: middle
+      anchor_y: top
+      x: middle
+      y: top
     - type: text
       text: "TOTAL BONUS"
       style: dmd_big
-      y: 70%
+      y: 64%
     - type: text
       text: (score)
       style: dmd_big
       number_grouping: true
       color: gold
-      y: 30%
+      y: 24%
       animations:
         pre_show_slide:
         - property: opacity
