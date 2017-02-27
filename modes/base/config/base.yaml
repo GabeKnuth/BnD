@@ -35,6 +35,9 @@ event_player:
     light_hilo
   hit_jukebox{count==64}:
     start_jukebox_hurryup
+  ball_ending:
+    fade_out_base_music
+
 
 config:
   - display
@@ -122,6 +125,15 @@ sound_player:
     applause_5:
       action: play
       loops: 0
+  s_leftorbit_active:
+    left_loop:
+      action: play
+      loops: 0
+  s_rightrampopto:
+    fire_whoosh:
+      action: play
+      loops: 0
+
 
 
 #    sw_beat:

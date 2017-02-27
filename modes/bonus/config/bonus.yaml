@@ -20,6 +20,15 @@ scoring:
     album_name:
         string: GOLD
 
+sound_player:
+  mode_bonus_started:
+    bonus_bed:
+        action: play
+        loops: -1
+  mode_bonus_ending:
+    bonus_bed:
+      action: stop
+
 slide_player:
   bonus_start:
     bonus_start:
