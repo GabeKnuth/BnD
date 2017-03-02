@@ -200,7 +200,7 @@ scoring:
         score: 5000
 
 show_player:
-  balldevice_bd_lower_vuk_eject_attempt:
+  balldevice_bd_lower_vuk_ball_eject_attempt:
     eject_alert:
       loops: 0
       show_tokens:
