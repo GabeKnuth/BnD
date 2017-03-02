@@ -36,7 +36,7 @@ event_player:
 
 achievements:
   wt_north_america:
-    start_events: mode_world_tour_started
+    enable_events: mode_world_tour_started
     complete_events: s_leftorbit_active
     events_when_completed: wt_north_america_complete, add_time
     show_tokens:
@@ -46,7 +46,7 @@ achievements:
     restart_after_stop_possible: true
 
   wt_europe:
-    start_events: wt_north_america_complete
+    enable_events: wt_north_america_complete
     complete_events: shot_spinner_to_vuk_hit
     events_when_completed: wt_europe_complete, add_time
     show_tokens:
@@ -56,7 +56,7 @@ achievements:
     restart_after_stop_possible: true
 
   wt_south_america:
-    start_events: wt_europe_complete
+    enable_events: wt_europe_complete
     complete_events: s_rightrampopto_active
     events_when_completed: wt_south_america_complete, add_time
     show_tokens:
@@ -66,7 +66,7 @@ achievements:
     restart_after_stop_possible: true
 
   wt_australia:
-    start_events: wt_south_america_complete
+    enable_events: wt_south_america_complete
     complete_events: shot_pops_to_vuk_hit
     events_when_completed: wt_australia_complete
     show_tokens:

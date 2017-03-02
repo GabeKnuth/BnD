@@ -14,14 +14,14 @@ mode_settings:
         player_score_entry: num_albums
 
 scoring:
-  mode_bonus_started:
+  bonus:
     quarters: 2
     album_value: 750000
     album_name:
         string: GOLD
 
 sound_player:
-  mode_bonus_started:
+  bonus_start:
     bonus_bed:
         action: play
         loops: -1
