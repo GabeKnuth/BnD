@@ -199,8 +199,13 @@ scoring:
     s_topkicker_active:
         score: 5000
 
-show_player:
+queue_relay_player:
   balldevice_bd_lower_vuk_ball_eject_attempt:
+    post: eject_flash
+    wait_for: eject_alert_over
+    
+show_player:
+  eject_flash:
     eject_alert:
       loops: 0
       show_tokens:
@@ -267,7 +272,6 @@ shots:
   album_rotator:
     hit_events: shot_pops_hit, shot_slings_hit
     profile: album_rotator
-
   shot_left_lane:
     switch: s_LeftLane
   shot_right_lane:
@@ -388,16 +392,16 @@ shows:
     - time: 100ms
       leds:
         (led): off
-    - time: 175ms
+    - time: 250ms
       leds:
         (led): on
-    - time: 275ms
-      leds:
-        (led): off
     - time: 350ms
       leds:
+        (led): off
+    - time: 500ms
+      leds:
         (led): on
-    - time: 450ms
+    - time: 600ms
       leds:
         (led): off
     - time: 1300ms
