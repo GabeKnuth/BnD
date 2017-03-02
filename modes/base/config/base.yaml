@@ -206,7 +206,7 @@ queue_relay_player:
 
 show_player:
   s_leftoutlane_active:
-      eject_alert:
+    eject_alert:
       loops: 0
       show_tokens:
         led: l_lower_left_flasher
