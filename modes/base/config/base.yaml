@@ -400,7 +400,7 @@ shows:
     - time: 450ms
       leds:
         (led): off
-    -time: 1300ms
+    - time: 1300ms
       events: eject_alert_over
 
 shot_groups:
