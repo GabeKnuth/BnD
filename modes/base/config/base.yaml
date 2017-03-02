@@ -203,7 +203,7 @@ queue_relay_player:
   balldevice_bd_lower_vuk_ball_eject_attempt:
     post: eject_flash
     wait_for: eject_alert_over
-    
+
 show_player:
   eject_flash:
     eject_alert:
