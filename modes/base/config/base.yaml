@@ -205,7 +205,7 @@ show_player:
       loops: 0
       show_tokens:
         led: l_lower_left_flasher
-        priority: 1000000
+      priority: 1000000
   s_spinner_active:
     flash_once:
       loops: 0
