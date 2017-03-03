@@ -154,7 +154,7 @@ logic_blocks:
       events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
       disable_events: mission_started
       enable_events: ball_starting, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour
-    music_gate:
+    lb_music_gate:
       count_events: s_plungerlane_inactive
       starting_count: 0
       count_complete_value: 1
