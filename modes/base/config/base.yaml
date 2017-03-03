@@ -67,7 +67,7 @@ sound_player:
         action: play
         loops: -1
         events_when_looping: wait_to_plunge_looped
-  balldevice_bd_plunger_ball_eject_success:
+  start_base_music_bed:
     plunged:
         action: play
         loops: 0
@@ -154,6 +154,13 @@ logic_blocks:
       events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
       disable_events: mission_started
       enable_events: ball_starting, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour
+    music_gate:
+      count_events: s_plungerlane_inactive
+      starting_count: 0
+      count_complete_value: 1
+      events_when_complete: start_base_music_bed
+      enable_events: ball_starting
+      disable_events: start_base_music_bed|1s
 
 scoring:
     shot_pops_hit:
