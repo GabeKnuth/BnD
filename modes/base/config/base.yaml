@@ -205,12 +205,6 @@ queue_relay_player:
     wait_for: eject_alert_over
 
 show_player:
-  s_leftoutlane_active:
-    eject_alert:
-      loops: 0
-      show_tokens:
-        led: l_lower_left_flasher
-      priority: 1000000
   eject_flash:
     eject_alert:
       loops: 0
