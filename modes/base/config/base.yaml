@@ -159,7 +159,7 @@ logic_blocks:
       starting_count: 0
       count_complete_value: 1
       events_when_complete: start_base_music_bed
-      enable_events: ball_starting
+      enable_events: mode_base_started
       disable_events: start_base_music_bed|1s
 
 scoring:
