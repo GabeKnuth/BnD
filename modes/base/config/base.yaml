@@ -144,7 +144,7 @@ timers:
         action: start
 
 logic_blocks:
-  counter:
+  counters:
     lb_jukebox_counter:
       count_events: sw_jukebox_hit
       events_when_hit: hit_jukebox #Hook the "count" parameter of this event ?? Can I do that in config?
