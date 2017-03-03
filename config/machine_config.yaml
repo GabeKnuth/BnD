@@ -61,9 +61,9 @@ sound_system:
           simultaneous_sounds: 8
           volume: 1.0
 
-logging:
-  file:
-    event_manager: full
+#logging:
+#  file:
+#    event_manager: full
 
 assets:
     sounds:
