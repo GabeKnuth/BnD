@@ -35,15 +35,29 @@ event_player:
 # We need to set up shots so that we start on the North America shot, then move on to
 # Europe, then South America, and finally Australia
 
+# music_awards:
+#    show_tokens:
+#      leds: l_music_awards
+#    show_when_selected: flash
+#    show_when_started: flash
+#    show_when_completed: on
+#    events_when_started: start_music_awards_mode, mission_started
+#    events_when_completed: light_mission_select
+#    events_when_enabled: light_mission_select
+#    restart_after_stop_possible: true
+#    complete_events: music_awards_success
+#    enable_events: music_awards_fail, mode_mission_rotator_started
+
 achievements:
   wt_north_america:
-    enable_events: enable_north_america
-    complete_events: s_leftorbit_active
-    events_when_completed: wt_north_america_complete, add_time
     show_tokens:
       led: l_north_america
     show_when_started: flash
     show_when_completed: on
+    enable_events: enable_north_america
+    start_events: enable_north_america
+    complete_events: s_leftorbit_active
+    events_when_completed: wt_north_america_complete, add_time
     restart_after_stop_possible: true
 
   wt_europe:
