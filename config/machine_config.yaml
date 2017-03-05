@@ -63,7 +63,7 @@ sound_system:
 
 logging:
   file:
-    event_manager: basic
+    event_manager: full
 
 assets:
     sounds:
