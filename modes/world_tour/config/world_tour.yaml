@@ -12,6 +12,7 @@ mode:
 event_player:
   mode_world_tour_started:
     wt_mode_running|5s
+    enable_north_america|1s
     fade_out_base_music
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
@@ -36,7 +37,7 @@ event_player:
 
 achievements:
   wt_north_america:
-    enable_events: mode_world_tour_started
+    enable_events: enable_north_america
     complete_events: s_leftorbit_active
     events_when_completed: wt_north_america_complete, add_time
     show_tokens:

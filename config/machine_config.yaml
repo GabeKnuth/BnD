@@ -295,6 +295,7 @@ coils:
     pulse_ms: 40
   c_bottomkickingtarget:
     number: 11
+    pulse_ms: 5
   c_diverter:
     number: 12
     allow_enable: true
@@ -305,6 +306,7 @@ coils:
   #   number: 14
   c_topkickingtarget:
     number: 15
+    pulse_ms: 5
   c_outerdroptargetdrop:
     number: 16
   c_innerdroptargetdrop:
@@ -427,6 +429,7 @@ ball_devices:
     eject_targets: playfield
     exit_count_delay: 500ms
     confirm_eject_type: target
+    eject_timeouts: 2s
     console_log: Full
   bd_lower_vuk:
     ball_switches: s_LowerVUKOpto
