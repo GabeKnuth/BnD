@@ -210,6 +210,9 @@ queue_relay_player:
   balldevice_bd_lower_vuk_ball_eject_attempt:
     post: eject_flash
     wait_for: eject_alert_over
+  balldevice_bd_top_right_vuk_ball_eject_attempt:
+    post: top_eject_flash
+    wait_for: top_eject_alert_over
 
 show_player:
   eject_flash:
@@ -217,6 +220,12 @@ show_player:
       loops: 0
       show_tokens:
         led: l_lower_left_flasher
+      priority: 1000000
+  top_eject_flash:
+    eject_alert:
+      loops: 0
+      show_tokens:
+        led: l_right_ramp_flasher
       priority: 1000000
   s_spinner_active:
     flash_once:
@@ -297,8 +306,8 @@ shots:
     switch: s_TopRightVUK
     delay_switch:
       s_spinner: 2s # this matches the value in the spinner_to_vuk sequence.
-  rotate_album_multipliers:
-    switch: s_leftpop, s_rightpop, s_bottompop, s_leftsling, s_rightsling, s_bottomkickingtarget, s_topkickingtarget
+#  rotate_album_multipliers:
+#    switch: s_leftpop, s_rightpop, s_bottompop, s_leftsling, s_rightsling, s_bottomkickingtarget, s_topkickingtarget
 
 #Shot with sequences
   shot_right_ramp_full_loop:
@@ -380,9 +389,10 @@ shows:
     - time: 0
       leds:
         (led): on
-    - time: 50ms
+    - time: 200ms
       leds:
         (led): off
+    - time: 50ms
   flash_jukebox:
     - duration: 125ms
       leds:
@@ -396,23 +406,44 @@ shows:
     - time: 0
       leds:
         (led): on
-    - time: 100ms
+    - time: 300ms
       leds:
         (led): off
-    - time: 250ms
+    - time: 450ms
       leds:
         (led): on
-    - time: 350ms
+    - time: 750ms
       leds:
         (led): off
-    - time: 500ms
+    - time: 900ms
       leds:
         (led): on
-    - time: 600ms
+    - time: 1200ms
       leds:
         (led): off
-    - time: 1300ms
+    - time: 1350ms
       events: eject_alert_over
+  top_eject_alert:
+    - time: 0
+      leds:
+        (led): on
+    - time: 300ms
+      leds:
+        (led): off
+    - time: 450ms
+      leds:
+        (led): on
+    - time: 750ms
+      leds:
+        (led): off
+    - time: 900ms
+      leds:
+        (led): on
+    - time: 1200ms
+      leds:
+        (led): off
+    - time: 1350ms
+      events: top_eject_alert_over
 
 shot_groups:
     upper_lanes:
