@@ -38,7 +38,7 @@
 #Mode restarting just goes back to base mode.
 
 mode:
-  start_events: s_leftoutlane_active
+  start_events: s_rightinlane_active
   stop_events: stop_metal_rodeo
   priority: 2000
 
@@ -46,5 +46,5 @@ multiballs:
   metal_rodeo_multiball:
     ball_count: 4
     shoot_again: 40
-    start_events: s_leftoutlane_active
+    start_events: s_rightinlane_active
 
