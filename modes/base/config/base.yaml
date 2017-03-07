@@ -205,18 +205,18 @@ scoring:
         score: 5000
     s_topkicker_active:
         score: 5000
-
-slides:
-  camera:
-    type: camera
-
-slide_player:
-  s_spinner_active:
-    camera:
-    - type: camera
-      width: 800
-      height: 480
-      target: stage
+#
+#slides:
+#  camera:
+#    type: camera
+#
+#slide_player:
+#  s_spinner_active:
+#    camera:
+#    - type: camera
+#      width: 800
+#      height: 480
+#      target: stage
 
 queue_relay_player:
   balldevice_bd_lower_vuk_ball_eject_attempt:
