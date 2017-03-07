@@ -395,12 +395,12 @@ ball_devices:
     tags: drain
     ball_switches: s_drain
     eject_coil: c_draineject
-    #exit_count_delay: 500ms
     eject_targets: bd_trough
     debug: true
     target_on_unexpected_ball: bd_trough
     console_log: Full
-    eject_coil_retry_pulse: 120
+    eject_coil_retry_pulse: 140
+    retries_before_increasing_pulse: 1
   bd_trough:
     tags: trough, home
     entrance_switch: s_trough_enter
@@ -411,7 +411,6 @@ ball_devices:
     eject_timeouts: 3s
     exit_count_delay: 1.5s
     console_log: Full
-    #entrance_count_delay: 500ms
     debug: true
   bd_plunger:
     tags: ball_add_live
