@@ -58,11 +58,15 @@ show_player:
       loops: -1
     mr_music_lights_show:
       loops: 0
+      sync_ms: 250
       show_tokens:
         left: left
         center: center
         right: right
         gi: gi
+    mr_bed_show:
+      loops: -1
+      sync_ms: 250
 
 #slide_player:
 #  mode_metal_rodeo_started:
