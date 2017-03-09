@@ -1,119 +1,119 @@
 #show_version=4
 
-- time: 0
+- time: 0ms
   leds:
     (right): off
     (center): off
     (left): off
     (gi): off
-- time: 3933
+- time: 3933ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 3966
+- time: 3966ms
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 4100
+- time: 4100ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 4133
+- time: 4133ms
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 4300
+- time: 4300ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 4366
+- time: 4366ms
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 4500
+- time: 4500ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 4566
+- time: 4566ms
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 4600
+- time: 4600ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 4633
+- time: 4633ms
   leds:
     l_lower_right_flasher: 808080
     l_lower_left_flasher: 808080
     l_right_ramp_flasher: 808080
     l_left_ramp_flasher: 808080
-- time: 4700
+- time: 4700ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 4766
+- time: 4766ms
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 8266
+- time: 8266ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 8299
+- time: 8299ms
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 8433
+- time: 8433ms
   leds:
     l_lower_right_flasher: on
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 8466
+- time: 8466ms
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 9233
+- time: 9233ms
   leds:
     (right): on
     (center): on
     (left): on
     (gi): on
     fade: 2433ms
-- time: 11666   
+- time: 11666ms 
   leds:
     (right): off
     (center): off
     (left): off
     (gi): off
     fade: 200ms
-- time: 12000
+- time: 12000ms
