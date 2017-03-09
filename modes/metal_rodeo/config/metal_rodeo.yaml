@@ -39,7 +39,7 @@
 
 mode:
   start_events: s_rightinlane_active
-  stop_events: stop_metal_rodeo
+  stop_events: s_rightoutlane_active
   priority: 2000
 
 event_player:
