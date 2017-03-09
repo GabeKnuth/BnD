@@ -104,16 +104,14 @@
     l_left_ramp_flasher: off
 - time: 9.233
   leds:
-    (right): on
-    (center): on
-    (left): on
-    (gi): on
-    fade: 2433ms
+    (right): on-f2433ms
+    (center): on-f2433ms
+    (left): on-f2433ms
+    (gi): on-f2433ms
 - time: 11.666
   leds:
-    (right): off
-    (center): off
-    (left): off
-    (gi): off
-    fade: 200ms
+    (right): off-f200ms
+    (center): off-f200ms
+    (left): off-f200ms
+    (gi): off-f200ms
 - time: 12.000
