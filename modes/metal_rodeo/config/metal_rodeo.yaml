@@ -56,13 +56,13 @@ show_player:
   mode_metal_rodeo_started:
     mr_mode_sweep:
       loops: -1
-    mr_music_lights_show:
-      loops: 0
-      show_tokens:
-        left: left
-        center: center
-        right: right
-        gi: gi
+#    mr_music_lights_show:
+#      loops: 0
+#      show_tokens:
+#        left: left
+#        center: center
+#        right: right
+#        gi: gi
 
 slide_player:
   mode_metal_rodeo_started:
