@@ -48,7 +48,7 @@
     l_lower_left_flasher: on
     l_right_ramp_flasher: on
     l_left_ramp_flasher: on
-- time: 4366
+- time: 4566
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
