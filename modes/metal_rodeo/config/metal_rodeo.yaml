@@ -42,6 +42,10 @@ mode:
   stop_events: stop_metal_rodeo
   priority: 2000
 
+event_player:
+  mode_metal_rodeo_started:
+    fade_out_base_music
+
 multiballs:
   metal_rodeo_multiball:
     ball_count: 4
