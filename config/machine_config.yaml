@@ -1067,8 +1067,10 @@ leds:
     type: grb
   l_left_apron_flasher:
     number: 0-0
+    tags: left
   l_right_apron_flasher:
     number: 0-1
+    tags: right
   l_start_button:
     number: 0-2
     type: grb

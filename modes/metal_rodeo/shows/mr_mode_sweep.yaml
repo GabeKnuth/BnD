@@ -1,0 +1,61 @@
+#show_version=4
+
+- duration: 100
+  leds:
+    l_world_tour: FFFFFF
+    l_money_bags: AAAAAA
+    l_music_awards: 555555
+    l_jukebox: 555555
+    l_play_poker: 555555
+- duration: 100
+  leds:
+    l_world_tour: AAAAAA
+    l_money_bags: FFFFFF
+    l_music_awards: AAAAAA
+    l_jukebox: 555555
+    l_play_poker: 555555
+- duration: 100
+  leds:
+    (led1): off
+    (led2): off
+    l_world_tour: 555555
+    l_money_bags: AAAAAA
+    l_music_awards: FFFFFF
+    l_jukebox: AAAAAA
+    l_play_poker: 555555
+- duration: 100
+  leds:
+    l_world_tour: 555555
+    l_money_bags: 555555
+    l_music_awards: AAAAAA
+    l_jukebox: FFFFFF
+    l_play_poker: AAAAAA
+- duration: 100
+  leds:
+    l_world_tour: 555555
+    l_money_bags: 555555
+    l_music_awards: 555555
+    l_jukebox: AAAAAA
+    l_play_poker: FFFFFF
+- duration: 100
+  leds:
+    l_world_tour: 555555
+    l_money_bags: 555555
+    l_music_awards: AAAAAA
+    l_jukebox: FFFFFF
+    l_play_poker: AAAAAA
+- duration: 100
+  leds:
+    l_world_tour: 555555
+    l_money_bags: AAAAAA
+    l_music_awards: FFFFFF
+    l_jukebox: AAAAAA
+    l_play_poker: 555555
+- duration: 100
+  leds:
+    l_world_tour: AAAAAA
+    l_money_bags: FFFFFF
+    l_music_awards: AAAAAA
+    l_jukebox: 555555
+    l_play_poker: 555555
+

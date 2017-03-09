@@ -48,3 +48,32 @@ multiballs:
     shoot_again: 40
     start_events: s_rightinlane_active
 
+show_player:
+  mode_metal_rodeo_started:
+    mr_mode_sweep:
+      loops: -1
+    mr_music_lights_show:
+      loops: 0
+      show_tokens:
+        left: left
+        center: center
+        right: right
+        gi: gi
+
+slide_player:
+  mode_metal_rodeo_started:
+    mr_stage:
+      target: stage
+
+slides:
+  mr_stage:
+    widgets:
+      - type: video
+        video: mr_bed2
+        end_behavior: stop
+        animations:
+          mr_fade_out:
+            - property: volume
+              value: 0
+              duration: 2s
+
