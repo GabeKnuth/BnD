@@ -46,11 +46,11 @@ event_player:
   mode_metal_rodeo_started:
     fade_out_base_music
 
-multiballs:
-  metal_rodeo_multiball:
-    ball_count: 4
-    shoot_again: 40
-    start_events: s_rightinlane_active
+#multiballs:
+#  metal_rodeo_multiball:
+#    ball_count: 4
+#    shoot_again: 40
+#    start_events: s_rightinlane_active
 
 show_player:
   mode_metal_rodeo_started:
@@ -73,7 +73,7 @@ slides:
   mr_stage:
     widgets:
       - type: video
-        video: mr_bed2
+        video: mr_bed3
         end_behavior: stop
         animations:
           mr_fade_out:
