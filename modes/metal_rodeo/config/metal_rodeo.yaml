@@ -64,10 +64,10 @@ show_player:
         right: right
         gi: gi
 
-slide_player:
-  mode_metal_rodeo_started:
-    mr_stage:
-      target: stage
+#slide_player:
+#  mode_metal_rodeo_started:
+#    mr_stage:
+#      target: stage
 
 slides:
   mr_stage:

@@ -6,6 +6,9 @@
     (center): off
     (left): off
     (gi): off
+  slides:
+    mr_stage:
+      target: stage
 - time: 3.933
   leds:
     l_lower_right_flasher: on
