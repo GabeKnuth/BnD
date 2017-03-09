@@ -16,8 +16,6 @@
     l_play_poker: 555555
 - duration: 100
   leds:
-    (led1): off
-    (led2): off
     l_world_tour: 555555
     l_money_bags: AAAAAA
     l_music_awards: FFFFFF
