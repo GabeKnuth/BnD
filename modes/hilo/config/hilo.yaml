@@ -15,8 +15,8 @@ widgets:
         x: 100
 
 event_player:
-  mode_hilo_starting: fade_out_base_music
-  mode_hilo_ending: fade_in_base_music
+  mode_hilo_started: fade_out_base_music
+  mode_hilo_stopping: fade_in_base_music
 
 sound_player:
   mode_hilo_started:
