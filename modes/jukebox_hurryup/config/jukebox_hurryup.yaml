@@ -12,9 +12,6 @@ event_player:
   mode_jukebox_hurryup_started: fade_out_base_music
   timer_jb_display_timer_complete: jukebox_hurryup_done
   jukebox_hurryup_done:
-    jukebox_hurryup_done_2|1s
-    jukebox_hurryup_done_3|2s
-    jukebox_hurryup_done_4|3s
     fade_in_base_music|3s
     stop_jukebox_hurryup_mode|4s
 
@@ -154,19 +151,11 @@ slides:
       - type: video
         video: jb_hurry_up_foggy_mountain
         end_behavior: loop
-        control_events:
-          - event: jukebox_hurryup_done
-            action: volume
-            value: .7
-          - event: jukebox_hurryup_done_2
-            action: volume
-            value: .5
-          - event: jukebox_hurryup_done_3
-            action: volume
-            value: .3
-          - event: jukebox_hurryup_done_4
-            action: volume
-            value: .1
+        animations:
+          jukebox_hurryup_done:
+            - property: volume
+              value: 0
+              duration: 2s
   jukebox_hurryup_dmd:
     widgets:
       - type: text
