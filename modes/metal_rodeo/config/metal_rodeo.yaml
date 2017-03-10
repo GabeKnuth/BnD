@@ -55,7 +55,7 @@ event_player:
 
 show_player:
   play_intro:
-    mr_intro_show
+    mr_intro_show:
       loops: 0
       show_tokens:
         left: left
@@ -102,4 +102,7 @@ slides:
         x: center
         y: center
   mr_intro_dmd_1:
-    widgets
+    widgets:
+      - type: video
+        video: mr_intro_movie
+        end_behavior: stop
