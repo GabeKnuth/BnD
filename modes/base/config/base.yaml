@@ -236,6 +236,36 @@ queue_relay_player:
     post: top_eject_flash
     wait_for: top_eject_alert_over
 
+# When the left VUK is shot from the playfield, there could up to three inserts
+# lit and we want to service those one-by-one. So the first thing we have to
+# do is hold the ball, which we do here. Modes that may start from this shot
+# can post the release_left_vuk_ball event when they want to relase the ball.
+# They can also post the disable_base_left_vuk_hold if they don't want to
+# hold the ball there in their mode, and then post enable_base_left_vuk_hold
+# to re-enable it in the base mode when they're done.
+ball_holds:
+  left_vuk:
+    # we only need to hold the ball if the ball enters directly from the pf,
+    # not if it gets here via the subway from the jukebox
+    enable_events: balldevice_bd_lower_vuk_ball_eject_attempt, mode_base_started, enable_base_left_vuk_hold
+    disable_events: s_subwayopto_active, disable_base_left_vuk_hold
+    balls_to_hold: 1
+    hold_devices: bd_lower_vuk
+    release_one_events: release_left_vuk_ball
+    console_log: full
+
+# Next we use a queue_event_player to watch for the ball being held, and then
+# we post the left_vuk_hit queue event. Any of the associated modes for those
+# three inserts can service this, and when they're all done, we post
+# release_left_vuk_ball which will cause the ball_hold to release the ball.
+# This nice thing about this is we don't care how many (or even if any) other
+# modes grab this queue event. If they don't, then the release event will be
+# posted right away.
+queue_event_player:
+  ball_hold_left_vuk_held_ball:
+    queue_event: left_vuk_hit
+    events_when_finished: release_left_vuk_ball
+
 show_player:
   eject_flash:
     eject_alert:

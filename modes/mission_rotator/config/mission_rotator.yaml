@@ -11,6 +11,11 @@ mode:
   start_events: mode_base_started
   priority: 200
 
+queue_relay_player:
+  left_vuk_hit{device.achievement_groups.missions["enabled"]}:
+      post: start_mission
+      wait_for: mode_hilo_stopping
+
 achievements:
   world_tour:
     show_tokens:
@@ -82,7 +87,7 @@ achievement_groups:
     achievements: world_tour, money_bags, music_awards, jukebox, play_poker
     auto_select: true
     enable_events: enable_mission_selection
-    start_selected_events: begin_round_lit_hit  # from mission rotator mode
+    start_selected_events: start_mission
     events_when_enabled: mission_rotator_ready
     rotate_right_events: sw_toggle
     show_tokens:

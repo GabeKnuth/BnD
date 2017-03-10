@@ -4,18 +4,38 @@
 
 mode:
   start_events: light_hilo
-  priority: 100
+  stop_events: mode_hilo_stopped
+  priority: 400
   restart_on_next_ball: true
 
+# Watch for the left_vuk_hit queue event which is posted by the queue_event_player
+# in the base mode when a ball is shot into the left vuk. This will start the
+# hilo mode, and when the hilo mode is over, it will release the queue so
+# processing for that vuk entry can continue
+queue_relay_player:
+  left_vuk_hit:
+      post: start_hilo
+      wait_for: mode_hilo_stopping
+
+# Flash the insert when this mode starts to indicate that it can be shot. When
+# the hilo mode starts, switch the insert to solid on. The hilo mode stopping
+# will also stop this mode which will stop the show and turn off the light
 show_player:
   mode_hilo_lit_started:
     flash:
       loops: -1
       show_tokens:
         leds: l_hi_lo
+  mode_hilo_started:
+    on:
+      show_tokens:
+        leds: l_hi_lo
 
+# Tells the player that that hilo mode is lit
 slide_player:
-  mode_hilo_lit_started: hilo_lit
+  mode_hilo_lit_started:
+    hilo_lit:
+      expire: 2s
 
 slides:
   hilo_lit:
