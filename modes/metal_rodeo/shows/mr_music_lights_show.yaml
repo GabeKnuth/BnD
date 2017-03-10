@@ -1,0 +1,101 @@
+#show_version=4
+# Everything Off
+- time: 0
+  leds:
+    (right): off
+    (center): off
+    (left): off
+    (gi): off
+
+# First strobe in video
+- time: 3.933
+  leds:
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 4.2
+  leds:
+    l_lower_right_flasher: 363636
+    l_lower_left_flasher: 363636
+    l_right_ramp_flasher: 363636
+    l_left_ramp_flasher: 363636
+- time: 4.35
+  leds:
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 4.733
+  leds:
+    l_lower_right_flasher: off
+    l_lower_left_flasher: off
+    l_right_ramp_flasher: off
+    l_left_ramp_flasher: off
+
+# Second strobe in video
+- time: 6.133
+  leds:
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 6.5
+  leds:
+    l_lower_right_flasher: 363636
+    l_lower_left_flasher: 363636
+    l_right_ramp_flasher: 363636
+    l_left_ramp_flasher: 363636
+- time: 6.85
+  leds:
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 7.1
+  leds:
+    l_lower_right_flasher: off
+    l_lower_left_flasher: off
+    l_right_ramp_flasher: off
+    l_left_ramp_flasher: off
+
+# Third strobe
+- time: 8.3
+  leds:
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 8.6
+  leds:
+    l_lower_right_flasher: 363636
+    l_lower_left_flasher: 363636
+    l_right_ramp_flasher: 363636
+    l_left_ramp_flasher: 363636
+- time: 8.75
+  leds:
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 9.1
+  leds:
+    l_lower_right_flasher: off
+    l_lower_left_flasher: off
+    l_right_ramp_flasher: off
+    l_left_ramp_flasher: off
+
+# Light up playfield again
+- time: 9.233
+  leds:
+    (right): on-f2433ms
+    (center): on-f2433ms
+    (left): on-f2433ms
+    (gi): on-f2433ms
+- time: 11.666
+  leds:
+    (right): off-f200ms
+    (center): off-f200ms
+    (left): off-f200ms
+    (gi): off-f200ms
+- time: 12.000

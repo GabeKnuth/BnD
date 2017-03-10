@@ -78,23 +78,23 @@ timers:
 
 shows:
   ma_advertise_show_left:
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led3): off
         (led1): on
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led1): on
         (led2): on
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led1): off
         (led2): on
         (led3): on
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led2): off
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led3): off
     - duration: 250ms
@@ -103,23 +103,23 @@ shows:
         (led2): off
         (led3): off
   ma_advertise_show_right:
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led3): off
         (led1): on
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led1): on
         (led2): on
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led1): off
         (led2): on
         (led3): on
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led2): off
-    - duration: 50ms
+    - duration: 150ms
       leds:
         (led3): off
     - duration: 250ms

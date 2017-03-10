@@ -12,14 +12,15 @@ fast:
   #  ports: /dev/tty.usbserial-1415C, /dev/tty.usbserial-1415B #, /dev/tty.usbserial-1415A
   config_number_format: int
   rgb_buffer: 10
+  hardware_led_fade_time: 65ms
 
 smartmatrix:
     baud: 3400000
     #port: /dev/tty.usbmodem1030681
     port: com3
 
-led_settings:
-    default_led_fade_ms: 100
+#led_settings:
+#    default_led_fade_ms: 100
 
 config:
   - machine_config

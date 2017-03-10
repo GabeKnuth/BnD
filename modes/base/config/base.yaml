@@ -35,9 +35,20 @@ event_player:
     light_hilo
   hit_jukebox{count==64}:
     start_jukebox_hurryup
+  ball_ending:
+    fade_out_base_music
 
 config:
   - display
+
+led_player:
+  s_leftoutlane_active:
+    l_begin_round:
+      color: ff9027
+  s_leftoutlane_inactive:
+    l_begin_round:
+      color: 7f4813
+
 
 sound_pools:
     beats:
@@ -65,7 +76,7 @@ sound_player:
         action: play
         loops: -1
         events_when_looping: wait_to_plunge_looped
-  balldevice_bd_plunger_ball_eject_success:
+  start_base_music_bed:
     plunged:
         action: play
         loops: 0
@@ -122,23 +133,14 @@ sound_player:
     applause_5:
       action: play
       loops: 0
-
-
-#    sw_beat:
-#        action: play
-
-#timers:
-#    __valid_in__: mode
-#    debug: single|bool|False
-#    start_value: single|int|0
-#    end_value: single|int|None
-#    direction: single|str|up
-#    max_value: single|ms|None
-#    tick_interval: single|ms|1s
-#    start_running: single|bool|False
-#    control_events: list|subconfig(control_events)|None
-#    restart_on_complete: single|bool|False
-#    bcp: single|bool|False
+  s_leftorbit_active:
+    left_loop:
+      action: play
+      loops: 0
+  s_rightrampopto:
+    fire_whoosh:
+      action: play
+      loops: 0
 
 timers:
   sound_timer:
@@ -150,9 +152,8 @@ timers:
       - event: fade_out_base_music
         action: start
 
-
 logic_blocks:
-  counter:
+  counters:
     lb_jukebox_counter:
       count_events: sw_jukebox_hit
       events_when_hit: hit_jukebox #Hook the "count" parameter of this event ?? Can I do that in config?
@@ -162,12 +163,13 @@ logic_blocks:
       events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
       disable_events: mission_started
       enable_events: ball_starting, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour
-#  sequence:
-#    sound_timing:
-#      events:
-#        - balldevice_playfield_enter
-#        - wait_to_plunge_looped
-#      events_when_complete: start_step_2
+    lb_music_gate:
+      count_events: s_plungerlane_inactive
+      starting_count: 0
+      count_complete_value: 1
+      events_when_complete: start_base_music_bed
+      enable_events: mode_base_started
+      disable_events: start_base_music_bed|1s
 
 scoring:
     shot_pops_hit:
@@ -212,21 +214,40 @@ scoring:
         score: 5000
     s_topkicker_active:
         score: 5000
+#
+#slides:
+#  camera:
+#    type: camera
+#
+#slide_player:
+#  s_spinner_active:
+#    camera:
+#    - type: camera
+#      width: 800
+#      height: 480
+#      target: stage
 
-
-
-
-
-
-#  managers_choice:
-#    hit_events: balldevice_bd_top_kicker_ball_enter
-#    reset_events: managers_choice_done
-#    enable_events: None
-#    show_tokens:
-#      led: l_managers_choice
-
+queue_relay_player:
+  balldevice_bd_lower_vuk_ball_eject_attempt:
+    post: eject_flash
+    wait_for: eject_alert_over
+  balldevice_bd_top_right_vuk_ball_eject_attempt:
+    post: top_eject_flash
+    wait_for: top_eject_alert_over
 
 show_player:
+  eject_flash:
+    eject_alert:
+      loops: 0
+      show_tokens:
+        led: l_lower_left_flasher
+      priority: 1000000
+  top_eject_flash:
+    top_eject_alert:
+      loops: 0
+      show_tokens:
+        led: l_right_ramp_flasher
+      priority: 1000000
   s_spinner_active:
     flash_once:
       loops: 0
@@ -288,7 +309,6 @@ shots:
   album_rotator:
     hit_events: shot_pops_hit, shot_slings_hit
     profile: album_rotator
-
   shot_left_lane:
     switch: s_LeftLane
   shot_right_lane:
@@ -307,8 +327,8 @@ shots:
     switch: s_TopRightVUK
     delay_switch:
       s_spinner: 2s # this matches the value in the spinner_to_vuk sequence.
-  rotate_album_multipliers:
-    switch: s_leftpop, s_rightpop, s_bottompop, s_leftsling, s_rightsling, s_bottomkickingtarget, s_topkickingtarget
+#  rotate_album_multipliers:
+#    switch: s_leftpop, s_rightpop, s_bottompop, s_leftsling, s_rightsling, s_bottomkickingtarget, s_topkickingtarget
 
 #Shot with sequences
   shot_right_ramp_full_loop:
@@ -318,7 +338,7 @@ shots:
     switch_sequence: s_SubwayOpto, s_LowerVUKOpto
     time: 500ms
   shot_lower_vuk_from_playfield:
-    hit_events: bd_lower_vuk_ball_enter
+    hit_events: balldevice_bd_lower_vuk_ball_enter
     delay_switch:
       s_subwayopto: 2s
   shot_spinner_to_vuk:
@@ -386,14 +406,14 @@ shows:
       - leds:
           l_quintuple_platinum: on
           l_double_platinum: off
-
   flash_once:
     - time: 0
       leds:
         (led): on
-    - time: 50ms
+    - time: 200ms
       leds:
         (led): off
+    - time: 50ms
   flash_jukebox:
     - duration: 125ms
       leds:
@@ -403,6 +423,48 @@ shows:
       leds:
         l_jukebox_left: off-f0
         l_jukebox_right: on-f0
+  eject_alert:
+    - time: 0
+      leds:
+        (led): on
+    - time: 300ms
+      leds:
+        (led): off
+    - time: 450ms
+      leds:
+        (led): on
+    - time: 750ms
+      leds:
+        (led): off
+    - time: 900ms
+      leds:
+        (led): on
+    - time: 1200ms
+      leds:
+        (led): off
+    - time: 1350ms
+      events: eject_alert_over
+  top_eject_alert:
+    - time: 0
+      leds:
+        (led): on
+    - time: 300ms
+      leds:
+        (led): off
+    - time: 450ms
+      leds:
+        (led): on
+    - time: 750ms
+      leds:
+        (led): off
+    - time: 900ms
+      leds:
+        (led): on
+    - time: 1200ms
+      leds:
+        (led): off
+    - time: 1350ms
+      events: top_eject_alert_over
 
 shot_groups:
     upper_lanes:

@@ -12,6 +12,7 @@ mode:
 event_player:
   mode_world_tour_started:
     wt_mode_running|5s
+    enable_north_america|1s
     fade_out_base_music
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
@@ -36,16 +37,18 @@ event_player:
 
 achievements:
   wt_north_america:
-    start_events: mode_world_tour_started
-    complete_events: s_leftorbit_active
-    events_when_completed: wt_north_america_complete, add_time
     show_tokens:
       led: l_north_america
     show_when_started: flash
     show_when_completed: on
+    enable_events: enable_north_america
+    start_events: enable_north_america
+    complete_events: s_leftorbit_active
+    events_when_completed: wt_north_america_complete, add_time
     restart_after_stop_possible: true
 
   wt_europe:
+    enable_events: wt_north_america_complete
     start_events: wt_north_america_complete
     complete_events: shot_spinner_to_vuk_hit
     events_when_completed: wt_europe_complete, add_time
@@ -56,6 +59,7 @@ achievements:
     restart_after_stop_possible: true
 
   wt_south_america:
+    enable_events: wt_europe_complete
     start_events: wt_europe_complete
     complete_events: s_rightrampopto_active
     events_when_completed: wt_south_america_complete, add_time
@@ -66,6 +70,7 @@ achievements:
     restart_after_stop_possible: true
 
   wt_australia:
+    enable_events: wt_south_america_complete
     start_events: wt_south_america_complete
     complete_events: shot_pops_to_vuk_hit
     events_when_completed: wt_australia_complete
