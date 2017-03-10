@@ -103,6 +103,7 @@ modes:
   - music_awards
   - jukebox_two_ball
   - bonus
+  - hilo
 
 widget_styles:
   dmd_huge:
