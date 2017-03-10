@@ -1,4 +1,7 @@
 #config_version=4
+
+# todo need to setup left vuk relay event
+
 mode:
   start_events: light_hilo
   priority: 100
@@ -11,3 +14,12 @@ show_player:
       show_tokens:
         leds: l_hi_lo
 
+slide_player:
+  mode_hilo_lit_started: hilo_lit
+
+slides:
+  hilo_lit:
+    widgets:
+      - type: text
+        text: HI/LO LIT
+        style: dmd_med
