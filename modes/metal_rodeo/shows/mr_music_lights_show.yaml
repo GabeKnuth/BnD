@@ -1,107 +1,91 @@
 #show_version=4
-
+# Everything Off
 - time: 0
   leds:
     (right): off
     (center): off
     (left): off
     (gi): off
+
+# First strobe in video
 - time: 3.933
   leds:
-    l_lower_right_flasher: red
-    l_lower_left_flasher: red
-    l_right_ramp_flasher: red
-    l_left_ramp_flasher: red
-- time: 3.966
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 4.2
+  leds:
+    l_lower_right_flasher: 363636
+    l_lower_left_flasher: 363636
+    l_right_ramp_flasher: 363636
+    l_left_ramp_flasher: 363636
+- time: 4.35
+  leds:
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 4.733
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 4.100
+
+# Second strobe in video
+- time: 6.133
   leds:
-    l_lower_right_flasher: green
-    l_lower_left_flasher: green
-    l_right_ramp_flasher: green
-    l_left_ramp_flasher: green
-- time: 4.133
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 6.5
   leds:
-    l_lower_right_flasher: off
-    l_lower_left_flasher: off
-    l_right_ramp_flasher: off
-    l_left_ramp_flasher: off
-- time: 4.300
+    l_lower_right_flasher: 363636
+    l_lower_left_flasher: 363636
+    l_right_ramp_flasher: 363636
+    l_left_ramp_flasher: 363636
+- time: 6.85
   leds:
-    l_lower_right_flasher: blue
-    l_lower_left_flasher: blue
-    l_right_ramp_flasher: blue
-    l_left_ramp_flasher: blue
-- time: 4.366
-  leds:
-    l_lower_right_flasher: off
-    l_lower_left_flasher: off
-    l_right_ramp_flasher: off
-    l_left_ramp_flasher: off
-- time: 4.500
-  leds:
-    l_lower_right_flasher: yellow
-    l_lower_left_flasher: yellow
-    l_right_ramp_flasher: yellow
-    l_left_ramp_flasher: yellow
-- time: 4.566
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 7.1
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 4.600
+
+# Third strobe
+- time: 8.3
   leds:
-    l_lower_right_flasher: orange
-    l_lower_left_flasher: orange
-    l_right_ramp_flasher: orange
-    l_left_ramp_flasher: orange
-- time: 4.633
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 8.6
   leds:
-    l_lower_right_flasher: 808080
-    l_lower_left_flasher: 808080
-    l_right_ramp_flasher: 808080
-    l_left_ramp_flasher: 808080
-- time: 4.700
+    l_lower_right_flasher: 363636
+    l_lower_left_flasher: 363636
+    l_right_ramp_flasher: 363636
+    l_left_ramp_flasher: 363636
+- time: 8.75
   leds:
-    l_lower_right_flasher: purple
-    l_lower_left_flasher: purple
-    l_right_ramp_flasher: purple
-    l_left_ramp_flasher: purple
-- time: 4.766
-  leds:
-    l_lower_right_flasher: off
-    l_lower_left_flasher: off
-    l_right_ramp_flasher: off
-    l_left_ramp_flasher: off
-- time: 8.266
-  leds:
-    l_lower_right_flasher: pink
-    l_lower_left_flasher: pink
-    l_right_ramp_flasher: pink
-    l_left_ramp_flasher: pink
-- time: 8.299
+    l_lower_right_flasher: on
+    l_lower_left_flasher: on
+    l_right_ramp_flasher: on
+    l_left_ramp_flasher: on
+- time: 9.1
   leds:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
     l_left_ramp_flasher: off
-- time: 8.433
-  leds:
-    l_lower_right_flasher: red
-    l_lower_left_flasher: red
-    l_right_ramp_flasher: red
-    l_left_ramp_flasher: red
-- time: 8.466
-  leds:
-    l_lower_right_flasher: off
-    l_lower_left_flasher: off
-    l_right_ramp_flasher: off
-    l_left_ramp_flasher: off
+
+# Light up playfield again
 - time: 9.233
   leds:
     (right): on-f2433ms
