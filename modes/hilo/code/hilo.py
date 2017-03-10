@@ -100,17 +100,6 @@ class HiLo(Mode):
         else:
             self.gamble_lose()
 
-    def guess_lower_result(self, **kwargs):
-        self.next_card = self.get_card()
-
-        while self.next_card.value == self.current_card.value:
-            self.next_card = self.get_card()
-
-        if self.next_card.value < self.current_card.value:
-            self.gamble_win('LOWER')
-        else:
-            self.gamble_lose('LOWER')
-
     def gamble_win(self):
         self.current_round += 1
 
