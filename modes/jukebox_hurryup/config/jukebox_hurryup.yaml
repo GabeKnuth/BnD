@@ -1,21 +1,35 @@
 #config_version=4
+
+# todo we should add a light show that disables any other lights that might
+# be flashing since really all we want the player to do is shoot the JB
+
 mode:
   start_events: start_jukebox_hurryup
-  stop_events: stop_jukebox_hurryup
+  stop_events: stop_jukebox_hurryup_mode
   priority: 1000
-
-##todo
-#Do math on score timer info
-#slides to show score counting down and time left
 
 event_player:
   mode_jukebox_hurryup_started: fade_out_base_music
-  mode_jukebox_hurryup_stopping: fade_in_base_music
-  timer_jb_display_timer_complete: stop_jukebox_hurryup
+  timer_jb_display_timer_complete: jukebox_hurryup_done
+  jukebox_hurryup_done:
+    jukebox_hurryup_done_2|1s
+    jukebox_hurryup_done_3|2s
+    jukebox_hurryup_done_4|3s
+    fade_in_base_music|3s
+    stop_jukebox_hurryup_mode|4s
 
 scoring:
-  ﻿sw_jukebox_hit:
-     score: current_player.jukebox_hurryup_jb_score_timer_tick * 667|block
+  jukebox_hurryup_hit:  # fires when the JB is hit
+     score: current_player.jukebox_hurryup_value  # adds the score
+     jukebox_hurryup_total: current_player.jukebox_hurryup_value  # tracks how many points the player got in this mode
+  player_jukebox_hurryup_jb_score_timer_tick:
+     jukebox_hurryup_value:  # does the math for the score, with "set" action to reset this var each time instead of adding to it
+        score: current_player.jukebox_hurryup_jb_score_timer_tick * current_player.jukebox_hurryup_score_multiplier * 6667
+        action: set
+  mode_jukebox_hurryup_started:
+     jukebox_hurryup_total:  # resets the mode total each time the mode starts since this is in a player var
+       score: 0
+       action: set
 
 timers:
   start_timer: #This just plays while we show some dots
@@ -23,11 +37,12 @@ timers:
     end_value: 0
     direction: down
     tick_interval: 1s
+    bcp: no
     control_events:
       - event: mode_jukebox_hurryup_started
         action: start
 
-  jb_display_timer:
+  jb_display_timer:  # the "Friendly" countdown from 15 to 0
     start_value: 15
     max_value: 15
     end_value: 0
@@ -40,16 +55,19 @@ timers:
           action: start
         - event: timer_start_timer_complete
           action: start
-        - event: sw_jukebox_hit
+        - event: jukebox_hurryup_hit
+          # logic block hit event, not switch hit, so this won't count if the
+          # mode is complete but still running it's final summary slide
           action: add
           value: 7
 
-  jb_score_timer:
+  jb_score_timer:  # a more precise 1/10th second time for the score countdown
     start_value: 150
     max_value: 150
     end_value: 0
     direction: down
     tick_interval: 100ms
+    bcp: no
     control_events:
         - event: timer_jb_display_timer_started
           action: start
@@ -57,28 +75,65 @@ timers:
           action: pause
         - event: timer_jb_display_timer_stopped
           action: stop
-        - event: sw_jukebox_hit
+        - event: jukebox_hurryup_hit
+          # logic block hit event, not switch hit, so this won't count if the
+          # mode is complete but still running it's final summary slide
           action: add
           value: 70
 
-
 logic_blocks:
   counters:
-    jukebox_reset_counter:
-      count_events: sw_jukebox
-      events_when_hit: reset_jukebox_hurryup
+    jukebox_hurryup_score_multiplier:
+      count_events: sw_jukebox_hit
+      events_when_hit: jukebox_hurryup_hit
       direction: up
-      starting_count: 0
-      count_complete_value: 5
+      # The next three lines ensure that the value of this counter is 1, 3, and
+      # 5, which gives us the multipliers we need for the scoring math
+      starting_count: 1
+      count_complete_value: 6  # updated with each hit, but has to be higher than 5 because we want to count the final hit, not end on it
+      count_interval: 2
       disable_on_complete: true
+      disable_events: jukebox_hurryup_done
+      events_when_complete: jukebox_hurryup_done
+      player_variable: jukebox_hurryup_score_multiplier
+      console_log: full
 
 slide_player:
   mode_jukebox_hurryup_started:
     jukebox_hurryup_stage:
       target: stage
-  timer_jb_display_timer_tick: jukebox_hurryup_dmd
+    jukerbox_hurryup_intro:
+      target: dmd
+  timer_jb_score_timer_tick: jukebox_hurryup_dmd
+  jukebox_hurryup_done:
+    jukebox_hurryup_done:
+      # priority shift +1 so this slide shows on top of the counter slide
+      priority: 1
 
 slides:
+  jukerbox_hurryup_intro:
+    widgets:
+      - type: text
+        text: SHOOT THE JUKEBOX
+        style: dmd_huge
+        color: yellow
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 100ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 100ms
+            repeat: true
+            easing: in_quint
+      - type: text
+        text: JAMBOREE!
+        style: dmd_huge
+        color: red
+        font_size: 41
+        y: 15
   jukebox_hurryup_stage:
     widgets:
       - type: image
@@ -90,22 +145,64 @@ slides:
         animations:
           show_slide:
             - property: y
-              value: 190
+              value: -10
               duration: 800ms
             - property: y
-              value: 480
+              value: 300
               duration: 800ms
               repeat: true
       - type: video
         video: jb_hurry_up_foggy_mountain
         end_behavior: loop
+        control_events:
+          - event: jukebox_hurryup_done
+            action: volume
+            value: .7
+          - event: jukebox_hurryup_done_2
+            action: volume
+            value: .5
+          - event: jukebox_hurryup_done_3
+            action: volume
+            value: .3
+          - event: jukebox_hurryup_done_4
+            action: volume
+            value: .1
   jukebox_hurryup_dmd:
     widgets:
       - type: text
-        text: (ticks)
+        text: NEXT HIT = (player|jukebox_hurryup_value)
+        color: red
+        style: dmd_small
+        y: 29
+        number_grouping: true
+        anchor_x: left
+        x: 25
+      - type: text
+        text: "TIME REMAINING: (player|jukebox_hurryup_jb_display_timer_tick)"
+        style: dmd_huge
+        anchor_x: left
+        x: 8
+      - type: text
+        text: "YOUR SCORE (player|score)"
+        style: dmd_small
+        y: 3
+        number_grouping: true
+  jukebox_hurryup_done:
+    widgets:
+      - type: text
+        text: PHEW!
+        style: dmd_huge
+        y: 20
+      - type: text
+        text: "JAMBOREE TOTAL: (player|jukebox_hurryup_total)"
+        style: dmd_small
+        y: 8
+        number_grouping: true
 
+sound_player:
+  jukebox_hurryup_hit:
+    yeehaw:
+      loops: 0
 
-
-# Need a light show in here that turns off other things and just lights the hurry up shot
-
-# Also need scoring for whatever that shot is
+show_player:
+  mode_jukebox_hurryup_started: flash_jukebox
