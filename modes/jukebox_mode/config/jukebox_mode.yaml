@@ -35,7 +35,7 @@ event_player:
     enable_base_left_vuk_hold
   ball_will_end:
     jukebox_fail
-  timer_jukebox_intro_timer_complete:
+  timer_jb_intro_timer_complete:
     start_jukebox_timer
     release_left_vuk_ball
     disable_base_left_vuk_hold
