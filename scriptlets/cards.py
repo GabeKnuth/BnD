@@ -16,6 +16,6 @@ class Cards(Scriptlet):
         for suit in ('clubs', 'hearts', 'diamonds', 'spades'):
             for value_name, value in value_map.items():
                 cards.append(Card('{}_{}'.format(value_name, suit), value_name,
-                               value, suit))
+                             value, suit))
 
         self.machine.card_deck = cards

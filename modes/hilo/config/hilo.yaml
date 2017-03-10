@@ -78,9 +78,6 @@ slides:
         anchor_x: left
         x: left+1
         y: 15
-#      - type: image
-#        image: six_hearts
-#        x: 34
       - type: text
         text: "LEFT FLIPPER:"
         anchor_x: left
@@ -308,9 +305,6 @@ slides:
         anchor_x: left
         x: left+1
         y: 15
-#      - type: image
-#        image: six_hearts
-#        x: 34
       - type: text
         text: "DEALER'S"
         style: dmd_small
@@ -323,9 +317,6 @@ slides:
         anchor_x: left
         x: 50
         y: 15
-#      - type: image
-#        image: king_spades
-#        x: 100
 
   hilo_cash_out:
     widgets:
