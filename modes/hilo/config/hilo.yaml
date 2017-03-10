@@ -1,8 +1,424 @@
 #config_version=4
-Mode:
-  start_events: ball_starting
-  priority: 100
+mode:
+  start_events: start_hilo
+  priority: 1000
+  code: hilo.HiLo
 
-# Light HiLo then set up the shots that will trigger the HiLo video mode
+widgets:
+  hilo_players_card:
+      - type: image
+        image:
+        x: 34
+  hilo_dealer_card:
+      - type: image
+        image:
+        x: 100
 
-# Sound callouts, dots, etc... too
+event_player:
+  mode_hilo_starting: fade_out_base_music
+  mode_hilo_ending: fade_in_base_music
+
+sound_player:
+  mode_hilo_started:
+    poker_loop:
+      action: play
+      loops: -1
+      mode_end_action: stop
+
+widget_player:
+  show_player_card: hilo_players_card
+  show_dealer_card: hilo_dealer_card
+  hilo_clear_cards:
+    hilo_players_card:
+      action: remove
+    hilo_dealer_card:
+      action: remove
+
+slide_player:
+  hilo_intro: hilo_intro
+  hilo_show_card: hilo_show_card
+  hilo_show_gamble_slide: hilo_gamble
+  hilo_show_next_card: hilo_show_next_card
+  hilo_cash_out: hilo_cash_out
+  hilo_win: hilo_win
+  hilo_lose: hilo_lose
+  hilo_game_win: hilo_game_win
+  hilo_total: hilo_total
+
+slides:
+  hilo_intro:
+    widgets:
+      - type: text
+        text: LET'S PLAY SOME HI/LO!
+        color: red
+        style: dmd_med
+        y: 25
+      - type: text
+        text: WILL THE NEXT CARD
+        style: dmd_small
+        y: 13
+      - type: text
+        text: BE HIGHER OR LOWER?
+        style: dmd_small
+        y: 5
+      - type: line
+        points: 1, 1, 1, 32, 128, 32, 128, 1, 1, 1
+        color: violet
+
+  hilo_show_card:
+    widgets:
+      - type: text
+        text: "YOUR"
+        style: dmd_small
+        anchor_x: left
+        x: left+1
+        y: 22
+      - type: text
+        text: "CARD"
+        style: dmd_small
+        anchor_x: left
+        x: left+1
+        y: 15
+#      - type: image
+#        image: six_hearts
+#        x: 34
+      - type: text
+        text: "LEFT FLIPPER:"
+        anchor_x: left
+        x: 49
+        y: 29
+        style: dmd_small
+        color: lime
+        animations:
+          show_slide:
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+          - property: opacity
+            value: 1
+            duration: 500ms
+            repeat: true
+          hilo_gamble:
+          - property: opacity
+            value: 0
+        reset_animations_events: pre_show_slide, hilo_gamble
+      - type: text
+        text: CASH OUT (cash_out)
+        style: dmd_small
+        anchor_x: left
+        x: 49
+        y: 23
+        color: lime
+        animations:
+          show_slide:
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+          - property: opacity
+            value: 1
+            duration: 500ms
+            repeat: true
+          hilo_gamble:
+          - property: opacity
+            value: 0
+        reset_animations_events: pre_show_slide
+      - type: text
+        text: "RIGHT FLIPPER:"
+        anchor_x: right
+        x: right
+        y: 10
+        style: dmd_small
+        color: yellow
+        opacity: 0
+        animations:
+          show_slide:
+          - property: opacity
+            value: 1
+            duration: 500ms
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+            repeat: true
+          hilo_gamble:
+          - property: opacity
+            value: 0
+        reset_animations_events: pre_show_slide, hilo_gamble
+      - type: text
+        text: GAMBLE FOR (next_bet)
+        style: dmd_small
+        anchor_x: right
+        x: right
+        y: 3
+        color: yellow
+        opacity: 0
+        animations:
+          hilo_gamble:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+          show_slide:
+          - property: opacity
+            value: 1
+            duration: 500ms
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+            repeat: true
+        reset_animations_events: pre_show_slide, hilo_gamble
+
+  hilo_gamble:
+    widgets:
+      - type: text
+        text: "YOUR"
+        style: dmd_small
+        anchor_x: left
+        x: left+1
+        y: 22
+      - type: text
+        text: "CARD"
+        style: dmd_small
+        anchor_x: left
+        x: left+1
+        y: 15
+      - type: text
+        text: "LEFT FLIPPER:"
+        anchor_x: left
+        x: 49
+        y: 29
+        style: dmd_small
+        color: lime
+        animations:
+          show_slide:
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+          - property: opacity
+            value: 1
+            duration: 500ms
+            repeat: true
+          hilo_guess_higher:
+          - property: opacity
+            value: 0
+          hilo_guess_lower:
+          - property: opacity
+            value: 0
+        reset_animations_events: pre_show_slide, hilo_guess_higher
+      - type: text
+        text: NEXT CARD LOWER
+        style: dmd_small
+        anchor_x: left
+        x: 49
+        y: 23
+        color: lime
+        animations:
+          hilo_guess_lower:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+          show_slide:
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+          - property: opacity
+            value: 1
+            duration: 500ms
+            repeat: true
+          hilo_guess_higher:
+          - property: opacity
+            value: 0
+        reset_animations_events: pre_show_slide, hilo_guess_higher
+      - type: text
+        text: "RIGHT FLIPPER:"
+        anchor_x: right
+        x: right
+        y: 10
+        style: dmd_small
+        color: yellow
+        opacity: 0
+        animations:
+          show_slide:
+          - property: opacity
+            value: 1
+            duration: 500ms
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+            repeat: true
+          hilo_guess_lower:
+          - property: opacity
+            value: 0
+          hilo_guess_higher:
+          - property: opacity
+            value: 0
+        reset_animations_events: pre_show_slide, hilo_guess_lower
+      - type: text
+        text: NEXT CARD HIGHER
+        style: dmd_small
+        anchor_x: right
+        x: right
+        y: 3
+        color: yellow
+        opacity: 0
+        animations:
+          hilo_guess_higher:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+          hilo_guess_lower:
+          - property: opacity
+            value: 0
+          show_slide:
+          - property: opacity
+            value: 1
+            duration: 500ms
+          - property: opacity
+            value: 0.5
+            duration: 500ms
+            repeat: true
+        reset_animations_events: pre_show_slide, hilo_guess_lower
+
+  hilo_show_next_card:
+    widgets:
+      - type: text
+        text: "YOUR"
+        style: dmd_small
+        anchor_x: left
+        x: left+1
+        y: 22
+      - type: text
+        text: "CARD"
+        style: dmd_small
+        anchor_x: left
+        x: left+1
+        y: 15
+#      - type: image
+#        image: six_hearts
+#        x: 34
+      - type: text
+        text: "DEALER'S"
+        style: dmd_small
+        anchor_x: left
+        x: 50
+        y: 22
+      - type: text
+        text: "CARD"
+        style: dmd_small
+        anchor_x: left
+        x: 50
+        y: 15
+#      - type: image
+#        image: king_spades
+#        x: 100
+
+  hilo_cash_out:
+    widgets:
+      - type: text
+        text: CASH OUT!
+        style: dmd_big
+        y: 20
+        color: yellow
+      - type: text
+        text: "WINNINGS: (points)"
+        style: dmd_med
+        y: 10
+        color: lime
+        number_grouping: true
+
+  hilo_win:
+    widgets:
+      - type: text
+        text: WINNER!
+        style: dmd_big
+        y: 20
+        color: yellow
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+      - type: text
+        text: NEXT BET WORTH (points)
+        style: dmd_med
+        y: 10
+        color: lime
+        number_grouping: true
+
+  hilo_lose:
+    widgets:
+      - type: text
+        text: YOU LOST IT ALL
+        style: dmd_big
+        y: 20
+        color: red
+      - type: text
+        text: YOU GET NOTHING
+        style: dmd_med
+        y: 10
+
+  hilo_game_win:
+    widgets:
+      - type: text
+        text: BIG WINNER!
+        style: dmd_big
+        y: 17
+        color: yellow
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+
+  hilo_total:
+    widgets:
+      - type: text
+        text: HI/LO GAME TOTAL
+        style: dmd_med
+        y: 28
+        color: red
+      - type: text
+        text: (score)
+        style: dmd_huge
+        y: 13
+        color: yellow
+        number_grouping: true
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
