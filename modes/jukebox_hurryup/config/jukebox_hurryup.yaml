@@ -8,6 +8,10 @@ mode:
 #Do math on score timer info
 #slides to show score counting down and time left
 
+event_player:
+  mode_jukebox_hurryup_started: fade_out_base_music
+  mode_jukebox_hurryup_stopping: fade_in_base_music
+
 timers:
   start_timer: #This just plays while we show some dots
     start_value: 3
@@ -15,7 +19,7 @@ timers:
     direction: down
     tick_interval: 1s
     control_events:
-      - event: mode_jukebox_hurry_started
+      - event: mode_jukebox_hurryup_started
         action: start
 
   jb_display_timer:

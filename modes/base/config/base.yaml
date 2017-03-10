@@ -158,11 +158,12 @@ logic_blocks:
       count_events: sw_jukebox_hit
       events_when_hit: hit_jukebox #Hook the "count" parameter of this event ?? Can I do that in config?
       starting_count: 0
-      count_complete_value: 100
+#      count_complete_value: 100
       direction: up
-      events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
-      disable_events: mission_started
-      enable_events: ball_starting, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour
+      # Brian: I think there is no max to this? Just keep counting
+#      events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
+      disable_events: mission_started, mode_jukebox_hurryup_started
+      enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, mode_jukebox_hurryup_stopping
     lb_music_gate:
       count_events: s_plungerlane_inactive
       starting_count: 0
