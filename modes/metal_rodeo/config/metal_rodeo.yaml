@@ -45,6 +45,7 @@ mode:
 event_player:
   mode_metal_rodeo_started:
     fade_out_base_music
+    play_intro
 
 #multiballs:
 #  metal_rodeo_multiball:
@@ -53,7 +54,15 @@ event_player:
 #    start_events: s_rightinlane_active
 
 show_player:
-  mode_metal_rodeo_started:
+  play_intro:
+    mr_intro_show
+      loops: 0
+      show_tokens:
+        left: left
+        center: center
+        right: right
+        gi: gi
+  mr_go:
     mr_mode_sweep:
       loops: -1
     mr_music_lights_show:
@@ -84,3 +93,13 @@ slides:
             - property: volume
               value: 0
               duration: 2s
+  mr_intro_stage:
+    widgets:
+      - type: rectangle
+        width: 800
+        height: 480
+        color: black
+        x: center
+        y: center
+  mr_intro_dmd_1:
+    widgets
