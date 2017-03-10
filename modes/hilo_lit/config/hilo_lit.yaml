@@ -1,10 +1,13 @@
 #config_version=4
-Mode:
+mode:
   start_events: light_hilo
   priority: 100
+  restart_on_next_ball: true
 
+show_player:
+  mode_hilo_lit_started:
+    flash:
+      loops: -1
+      show_tokens:
+        leds: l_hi_lo
 
-
-# Light HiLo then set up the shots that will trigger the HiLo video mode
-
-# Sound callouts, dots, etc... too

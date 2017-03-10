@@ -104,6 +104,7 @@ modes:
   - jukebox_two_ball
   - bonus
   - hilo
+  - hilo_lit
 
 widget_styles:
   dmd_huge:
