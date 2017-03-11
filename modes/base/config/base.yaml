@@ -37,6 +37,8 @@ event_player:
     start_jukebox_hurryup
   ball_ending:
     fade_out_base_music
+  drop_target_bank_drop_targets_down:
+    reset_drop_targets|1s
 
 config:
   - display
