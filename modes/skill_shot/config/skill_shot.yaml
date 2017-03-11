@@ -2,7 +2,7 @@
 mode:
   start_events: ball_starting
   stop_events: end_skill_shot, collect_managers_choice, sw_end_skill_shot
-  priority: 200
+  priority: 700
 
 timers:
     skill_shot_timer:
