@@ -176,7 +176,7 @@ scoring:
         jackpot: 5000
     bd_lower_vuk_ball_enter:
         score: 500
-    s_jukeboxOpto_active:
+    sw_jukebox:
         score: 9999
     shot_left_lane_hit:
         score: 500
@@ -213,6 +213,23 @@ scoring:
         score: 5000
     s_topkicker_active:
         score: 5000
+    player_quarters{value < 7}:
+        mr_shot_score:
+          score: 1
+          action: set
+    player_quarters{value >= 7 and value <= 12}:
+        mr_shot_score:
+          score: 2
+          action: set
+    player_quarters{value >= 13 and value <= 24}:
+        mr_shot_score:
+          score: 3
+          action: set
+    player_quarters{value >= 25}:
+        mr_shot_score:
+          score: 5
+          action: set
+
 #
 #slides:
 #  camera:

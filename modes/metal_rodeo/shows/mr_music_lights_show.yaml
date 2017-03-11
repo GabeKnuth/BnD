@@ -98,4 +98,6 @@
     (center): off-f200ms
     (left): off-f200ms
     (gi): off-f200ms
+  events:
+    mr_launch_balls
 - time: 12.000

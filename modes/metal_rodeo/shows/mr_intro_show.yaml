@@ -11,6 +11,38 @@
     (center): off
     (left): off
     (gi): off
-- time: 5
+- time: 6
+  slides:
+    unlimited_balls:
+      target: dmd
+      transition:
+        type: push
+        duration: 250ms
+        direction: right
+- time: 8.25
+  slides:
+    all_shots_lit:
+      target: dmd
+      transition:
+        type: push
+        duration: 250ms
+        direction: right
+- time: 10.5
+  slides:
+    quarter_count:
+      target: dmd
+      transition:
+        type: push
+        duration: 250ms
+        direction: right
+- time: 12.75
+  slides:
+    shot_score:
+      target: dmd
+      transition:
+        type: push
+        duration: 250ms
+        direction: right
+- time: 14
   events:
     mr_go

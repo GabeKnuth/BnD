@@ -47,11 +47,11 @@ event_player:
     fade_out_base_music
     play_intro
 
-#multiballs:
-#  metal_rodeo_multiball:
-#    ball_count: 4
-#    shoot_again: 40
-#    start_events: s_rightinlane_active
+multiballs:
+  mr_launch_balls:
+    ball_count: 4
+    shoot_again: 40
+    start_events: s_rightinlane_active
 
 show_player:
   play_intro:
@@ -106,3 +106,91 @@ slides:
       - type: video
         video: mr_intro_movie
         end_behavior: stop
+  all_shots_lit:
+    widgets:
+      - type: text
+        text: ALL SHOTS LIT
+        color: red
+        y: center-1
+        font_size: 30
+        style: dmd_huge
+  unlimited_balls:
+    widgets:
+      - type: text
+        text: Unlimited balls
+        color: red
+        style: dmd_big
+        anchor_y: top
+        y: top-4
+      - type: text
+        text: for 40 seconds
+        color: yellow
+        style: dmd_big
+        anchor_y: bottom
+        y: bottom+4
+  quarter_count:
+    widgets:
+      - type: text
+        text: (quarters) QUARTERS
+        color: gray
+        style: dmd_huge
+        font_size: 30
+        y: center-1
+  shot_score:
+    widgets:
+      - type: text
+        text: EACH SHOT SCORES
+        color: gray
+        style: dmd_med
+        anchor_y: top
+        y: top-2
+      - type: text
+        text: (mr_shot_score) MILLION!
+        color: red
+        style: dmd_huge
+        anchor_y: bottom
+        y: bottom
+
+scoring:
+  sw_jukebox:
+    score: mr_shot_score * 1000000
+  shot_spinner_to_vuk_hit:
+    score: mr_shot_score * 1000000
+  shot_right_ramp_full_loop_hit:
+    score: mr_shot_score * 1000000
+  shot_pops_to_vuk_hit:
+    score: mr_shot_score * 1000000
+  s_leftorbit_active:
+    score: mr_shot_score * 1000000
+  shot_lower_vuk_from_playfield_hit:
+    score: mr_shot_score * 1000000
+
+sound_player:
+  sw_jukebox:
+    boom:
+      action: play
+      loops: 0
+  shot_spinner_to_vuk_hit:
+    boom:
+      action: play
+      loops: 0
+  shot_right_ramp_full_loop_hit:
+    boom:
+      action: play
+      loops: 0
+  shot_pops_to_vuk_hit:
+    boom:
+      action: play
+      loops: 0
+  s_leftorbit_active:
+    boom:
+      action: play
+      loops: 0
+  shot_lower_vuk_from_playfield_hit:
+    boom:
+      action: play
+      loops: 0
+
+
+
+
