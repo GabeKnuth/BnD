@@ -1,7 +1,7 @@
 #config_version=4
 
 mode_settings:
-  display_delay_ms: 4000
+  display_delay_ms: 1500
   hurry_up_delay_ms: 500
   hurry_up_event: flipper_cancel
   bonus_entries:
@@ -78,6 +78,19 @@ slide_player:
     - type: text
       text: (num_albums) ALBUMS x 25,000
       style: dmd_big
+  bonus_subtotal:
+    bonus_subtotal:
+      - type: text
+        text: (score)
+        style: dmd_big
+        number_grouping: true
+  bonus_multiplier:
+    bonus_multiplier:
+      - type: text
+        text: (multiplier)X
+        style: dmd_huge
+        font_size: 40
+        color: red
   bonus_total:
     bonus_total:
     - type: image
