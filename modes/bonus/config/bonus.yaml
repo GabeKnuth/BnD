@@ -13,13 +13,6 @@ mode_settings:
         score: 25000
         player_score_entry: num_albums
 
-scoring:
-  bonus:
-    quarters: 2
-    album_value: 750000
-    album_name:
-        string: GOLD
-
 sound_player:
   bonus_start:
     bonus_bed:
@@ -76,8 +69,19 @@ slide_player:
       x: middle
       y: top
     - type: text
-      text: (num_albums) ALBUMS x 25,000
+      text: (num_albums) ALBUMS
       style: dmd_big
+      anchor_x: right
+      x: 67
+    - type: text
+      text: 25,000
+      style: dmd_big
+      anchor_x: left
+      x: 78
+    - type: text
+      text: x
+      style: dmd_med
+      x: 72
   bonus_subtotal:
     bonus_subtotal:
       - type: text

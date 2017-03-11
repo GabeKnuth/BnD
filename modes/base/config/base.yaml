@@ -333,9 +333,9 @@ show_player:
       ball_save: stop
 
 shots:
-  album_rotator:
-    hit_events: shot_pops_hit, shot_slings_hit
-    profile: album_rotator
+#  album_rotator:
+#    hit_events: shot_pops_hit, shot_slings_hit
+#    profile: album_rotator
   shot_left_lane:
     switch: s_LeftLane
   shot_right_lane:
@@ -389,16 +389,16 @@ shot_profiles:
 #              show: quintuple
 #        loop: yes
 
-    album_rotator:
-      show: album_rotator
-      states:
-        - name: silver
-        - name: gold
-        - name: platinum
-        - name: double
-        - name: quintuple
-      loop: yes
-      player_variable: lit_album
+#    album_rotator:
+#      show: album_rotator
+#      states:
+#        - name: silver
+#        - name: gold
+#        - name: platinum
+#        - name: double
+#        - name: quintuple
+#      loop: yes
+#      player_variable: lit_album
 
     managers_choice:
         states:
@@ -417,22 +417,22 @@ shot_profiles:
       advance_on_hit: false
 
 shows:
-  album_rotator:
-      - leds:
-          l_silver: on
-          l_quintuple_platinum: off
-      - leds:
-          l_gold: on
-          l_silver: off
-      - leds:
-          l_single_platinum: on
-          l_gold: off
-      - leds:
-          l_double_platinum: on
-          l_single_platinum: off
-      - leds:
-          l_quintuple_platinum: on
-          l_double_platinum: off
+#  album_rotator:
+#      - leds:
+#          l_silver: on
+#          l_quintuple_platinum: off
+#      - leds:
+#          l_gold: on
+#          l_silver: off
+#      - leds:
+#          l_single_platinum: on
+#          l_gold: off
+#      - leds:
+#          l_double_platinum: on
+#          l_single_platinum: off
+#      - leds:
+#          l_quintuple_platinum: on
+#          l_double_platinum: off
   flash_once:
     - time: 0
       leds:

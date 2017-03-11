@@ -108,6 +108,7 @@ modes:
   - metal_rodeo
   - quarters
   - extra_ball_lit
+  - albums
 
 widget_styles:
   dmd_huge:
@@ -1268,3 +1269,9 @@ keyboard:
 #  ########  ###    ###  ########   ########  ###         ########
 
 
+player_vars:
+  album_value:
+    initial_value: 0
+  album_value_name:
+    initial_value: INDY
+    value_type: str

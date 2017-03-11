@@ -1,0 +1,214 @@
+#config_version=4
+
+mode:
+  priority: 160
+  start_events: mode_base_starting
+
+logic_blocks:
+  counters:
+    albums:
+      count_events: drop_target_bank_drop_targets_down
+      player_variable: num_albums
+      persist_state: true
+
+event_player:
+  player_num_albums: show_album_slide|.1s
+
+led_player:
+  # These light the LEDs when they're awarded during this ball
+  player_num_albums{value == 1}:
+    l_silver: on
+  player_num_albums{value == 2}:
+    l_gold: on
+  player_num_albums{value == 3}:
+    l_single_platinum: on
+  player_num_albums{value == 4}:
+    l_double_platinum: on
+  player_num_albums{value == 5}:
+    l_quintuple_platinum: on
+
+  # these restore the LEDs when the ball starts
+  mode_albums_started{current_player.num_albums >= 1}:
+    l_silver: on
+  mode_albums_started{current_player.num_albums >= 2}:
+    l_gold: on
+  mode_albums_started{current_player.num_albums >= 3}:
+    l_single_platinum: on
+  mode_albums_started{current_player.num_albums >= 4}:
+    l_double_platinum: on
+  mode_albums_started{current_player.num_albums >= 5}:
+    l_quintuple_platinum: on
+
+scoring:
+  player_num_albums{value == 1}:
+    album_value:
+      score: 25000
+      action: set
+    album_name:
+      string: SILVER
+    score: 25000
+
+  player_num_albums{value == 2}:
+    album_value:
+      score: 50000
+      action: set
+    album_name:
+      string: GOLD
+    score: 50000
+
+  player_num_albums{value == 3}:
+    album_value:
+      score: 100000
+      action: set
+    album_name:
+      string: PLATINUM
+    score: 100000
+
+  player_num_albums{value == 4}:
+    album_value:
+      score: 200000
+      action: set
+    album_name:
+      string: DOUBLE PLATINUM
+    score: 200000
+
+  player_num_albums{value == 5}:
+    album_value:
+      score: 500000
+      action: set
+    album_name:
+      string: QUINTUPLE PLATINUM
+    score: 500000
+
+  player_num_albums{value >= 6}:  # beyond 6 we don't increase anymore
+    album_value:
+      score: 2500000
+      action: set
+    album_name:
+      string: OFF THE CHARTS
+    score: 2500000
+
+slide_player:
+  show_album_slide{current_player.num_albums == 1}:
+    album_silver:
+      expire: 2s
+  show_album_slide{current_player.num_albums == 2}:
+      album_gold:
+        expire: 2s
+  show_album_slide{current_player.num_albums == 3}:
+      album_platinum:
+        expire: 2s
+  show_album_slide{current_player.num_albums == 4}:
+      album_platinum:
+        expire: 2s
+  show_album_slide{current_player.num_albums == 5}:
+      album_platinum:
+        expire: 2s
+  show_album_slide{current_player.num_albums >= 6}:
+      album_off_the_charts:
+        expire: 2s
+
+slides:
+  album_silver:
+    widgets:
+      - type: text
+        text: (player|album_name)
+        style: dmd_huge
+        y: 22
+        color: aaaaaa
+      - type: text
+        text: (player|album_value)
+        style: dmd_big
+        y: 7
+        color: aaaaaa
+        number_grouping: true
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+  album_gold:
+    widgets:
+      - type: text
+        text: (player|album_name)
+        style: dmd_huge
+        y: 22
+        color: gold
+      - type: text
+        text: (player|album_value)
+        style: dmd_big
+        y: 7
+        color: gold
+        number_grouping: true
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+  album_platinum:  # used for all three platinum awards
+    widgets:
+      - type: text
+        text: (player|album_name)
+        style: dmd_huge
+        y: 22
+        color: black
+      - type: text
+        text: (player|album_value)
+        style: dmd_big
+        y: 7
+        color: black
+        number_grouping: true
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+      - type: rectangle
+        width: 128
+        height: 32
+  album_off_the_charts:
+    widgets:
+      - type: text
+        text: (player|album_name)
+        style: dmd_huge
+        y: 22
+        color: black
+      - type: text
+        text: (player|album_value)
+        style: dmd_big
+        y: 7
+        color: black
+        number_grouping: true
+      - type: rectangle
+        width: 128
+        height: 32
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 50ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 50ms
+            repeat: true
+            easing: in_quint
+
