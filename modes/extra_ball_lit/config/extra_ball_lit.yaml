@@ -1,0 +1,61 @@
+#config_version=4
+
+mode:
+  priority: 500
+  start_events: extra_ball_lit
+  stop_events: stop_extra_ball_lit_mode
+
+led_player:
+  mode_extra_ball_lit_started:
+    l_extra_ball: on
+
+event_player:
+  shot_pops_to_vuk_hit: award_lit_extra_ball
+  extra_ball_unlit: stop_extra_ball_lit_mode|2s
+
+sound_player:
+  extra_ball_awarded:
+    yeehaw:
+      loops: 0
+  extra_ball_lit_awarded:
+    cowbell_alert:
+      loops: 0
+
+slide_player:
+  extra_ball_awarded:
+    extra_ball:
+      expire: 2s
+  extra_ball_lit_awarded:
+    extra_ball_lit:
+      expire: 3.376s
+
+slides:
+  extra_ball:
+    widgets:
+      - type: text
+        text: EXTRA BALL
+        style: dmd_huge
+        color: red
+        font_size: 0
+        reset_animations_events: pre_show_slide
+        animations:
+          show_slide:
+           - property: font_size
+             value: 200
+             duration: 2s
+  extra_ball_lit:
+      - type: text
+        text: EXTRA BALL IS LIT!
+        style: dmd_huge
+        color: red
+        font_size: 25
+        reset_animations_events: pre_show_slide
+        animations:
+          show_slide:
+           - property: opacity
+             value: 0
+             duration: 211ms
+           - property: opacity
+             value: 1
+             duration: 211ms
+             repeat: true

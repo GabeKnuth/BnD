@@ -106,6 +106,7 @@ modes:
   - hilo
   - hilo_lit
   - quarters
+  - extra_ball_lit
 
 widget_styles:
   dmd_huge:
@@ -1210,7 +1211,7 @@ keyboard:
   shift+m:
     event: start_bnd_two_ball
   h:
-    event: start_hilo
+    event: light_extra_ball
   j:
     switch: s_jukeboxopto
 
