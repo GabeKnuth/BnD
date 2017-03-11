@@ -131,7 +131,7 @@ slides:
   quarter_count:
     widgets:
       - type: text
-        text: (quarters) QUARTERS
+        text: (player|quarters) QUARTERS
         color: gray
         style: dmd_huge
         font_size: 30
@@ -145,7 +145,7 @@ slides:
         anchor_y: top
         y: top-2
       - type: text
-        text: (mr_shot_score) MILLION!
+        text: (player|mr_shot_score) MILLION!
         color: red
         style: dmd_huge
         anchor_y: bottom
