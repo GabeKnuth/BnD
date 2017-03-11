@@ -26,6 +26,18 @@ show_player:
     collect_mystery_display_show:
       loops: 0
 
+slide_player:
+  mode_mystery_lit_started:
+    mystery_lit:
+      expire: 2s
+
+slides:
+  mystery_lit:
+    widgets:
+      - type: text
+        text: MYSTERY LIT!
+        style: dmd_huge
+
 event_player:
   mystery_done:
     stop_mystery
