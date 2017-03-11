@@ -1,0 +1,16 @@
+#show_version=4
+
+- time: 0
+  slides:
+    mr_intro_stage:
+      target: stage
+    mr_intro_dmd_1:
+      target: dmd
+  leds:
+    (right): off
+    (center): off
+    (left): off
+    (gi): off
+- time: 5
+  events:
+    mr_go

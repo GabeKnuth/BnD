@@ -4,56 +4,56 @@
   leds:
     l_world_tour: FFFFFF
     l_money_bags: 363636
-    l_music_awards: 090909
-    l_jukebox_insert: 090909
-    l_play_poker: 090909
+    l_music_awards: 151515
+    l_jukebox_insert: 151515
+    l_play_poker: 151515
 - duration: 150ms
   leds:
     l_world_tour: 363636
     l_money_bags: FFFFFF
     l_music_awards: 363636
-    l_jukebox_insert: 090909
-    l_play_poker: 090909
+    l_jukebox_insert: 151515
+    l_play_poker: 151515
 - duration: 150ms
   leds:
-    l_world_tour: 090909
+    l_world_tour: 151515
     l_money_bags: 363636
     l_music_awards: FFFFFF
     l_jukebox_insert: 363636
-    l_play_poker: 090909
+    l_play_poker: 151515
 - duration: 150ms
   leds:
-    l_world_tour: 090909
-    l_money_bags: 090909
+    l_world_tour: 151515
+    l_money_bags: 151515
     l_music_awards: 363636
     l_jukebox_insert: FFFFFF
     l_play_poker: 363636
 - duration: 150ms
   leds:
-    l_world_tour: 090909
-    l_money_bags: 090909
-    l_music_awards: 090909
+    l_world_tour: 151515
+    l_money_bags: 151515
+    l_music_awards: 151515
     l_jukebox_insert: 363636
     l_play_poker: FFFFFF
 - duration: 150ms
   leds:
-    l_world_tour: 090909
-    l_money_bags: 090909
+    l_world_tour: 151515
+    l_money_bags: 151515
     l_music_awards: 363636
     l_jukebox_insert: FFFFFF
     l_play_poker: 363636
 - duration: 150ms
   leds:
-    l_world_tour: 090909
+    l_world_tour: 151515
     l_money_bags: 363636
     l_music_awards: FFFFFF
     l_jukebox_insert: 363636
-    l_play_poker: 090909
+    l_play_poker: 151515
 - duration: 150ms
   leds:
     l_world_tour: 363636
     l_money_bags: FFFFFF
     l_music_awards: 363636
-    l_jukebox_insert: 090909
-    l_play_poker: 090909
+    l_jukebox_insert: 151515
+    l_play_poker: 151515
 
