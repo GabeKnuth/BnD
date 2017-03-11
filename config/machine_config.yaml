@@ -1216,6 +1216,10 @@ keyboard:
     event: light_extra_ball
   j:
     switch: s_jukeboxopto
+  r:
+    switch: s_rightinlane
+  t:
+    switch: s_rightoutlane
 
 
 
