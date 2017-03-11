@@ -153,17 +153,17 @@ slides:
 
 scoring:
   sw_jukebox:
-    score: mr_shot_score * 1000000
+    score: current_player.mr_shot_score * 1000000
   shot_spinner_to_vuk_hit:
-    score: mr_shot_score * 1000000
+    score: current_player.mr_shot_score * 1000000
   shot_right_ramp_full_loop_hit:
-    score: mr_shot_score * 1000000
+    score: current_player.mr_shot_score * 1000000
   shot_pops_to_vuk_hit:
-    score: mr_shot_score * 1000000
+    score: current_player.mr_shot_score * 1000000
   s_leftorbit_active:
-    score: mr_shot_score * 1000000
+    score: current_player.mr_shot_score * 1000000
   shot_lower_vuk_from_playfield_hit:
-    score: mr_shot_score * 1000000
+    score: current_player.mr_shot_score * 1000000
 
 sound_player:
   sw_jukebox:
