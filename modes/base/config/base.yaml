@@ -109,10 +109,6 @@ sound_player:
     beats:
         action: play
         loops: 0
-  sw_quarter:
-    quarter:
-        action: play
-        loops: 0
   drop_target_bank_drop_targets_mixed{down==1}:
     applause_1:
       action: play
@@ -196,8 +192,8 @@ scoring:
         score: 3000
     s_leftorbit_active:
         score: 25000
-    shot_standups_hit:
-        score: 500
+#    shot_standups_hit:
+#        score: 500
     shot_slings_hit:
         score: 10
     s_topkickingtarget_active:
@@ -350,8 +346,8 @@ shots:
     switch: s_droptarget1, s_DropTarget2, s_droptarget3
   shot_right_drops: #Broken up so I can block this shot when I need to knock down targets
     switch:  s_droptarget4, s_droptarget5
-  shot_standups:
-    switch: s_rightbanktop, s_rightbankbottom, s_toprightstandup
+#  shot_standups:
+#    switch: s_rightbanktop, s_rightbankbottom, s_toprightstandup
   shot_slings:
     switch: s_leftsling, s_rightsling
   shot_pops_to_vuk:

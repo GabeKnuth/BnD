@@ -1,0 +1,184 @@
+#config_version=4
+
+# todo spot quarter feature
+
+mode:
+  start_events: mode_base_started
+  priority: 110
+
+sound_player:
+  quarters_quarters_lit_hit:
+      quarter:
+          action: play
+          loops: 0
+
+scoring:
+  mode_quarters_started:
+    quarters_this_ball:
+      score: 0
+      action: set
+  quarters_quarters_lit_hit:
+    score: 2507
+  quarters_quarters_collected_complete:
+    quarters: 1
+  quarters_quarters_collect_hit:
+    score: 42
+  quarter_25m:
+    score: 25000000
+  super_quarters:
+    score: 250000
+
+event_player:
+
+  light_quarters_extra_ball: light_extra_ball
+
+  player_quarters{value <= 3}:
+    collect_quarters:
+      next_award_name: LIGHT MYSTERY
+      next_award_quarters: 3
+
+  player_quarters{current_player.quarters == 3}: light_mystery|2s
+
+  player_quarters{value >= 4 and value <= 6}:
+    collect_quarters:
+      next_award_name: LIGHT MYSTERY
+      next_award_quarters: 6
+
+  player_quarters{current_player.quarters == 6}: light_mystery|2s
+
+  player_quarters{value >= 7 and value <= 9}:
+    collect_quarters:
+      next_award_name: LIGHT EXTRA BALL
+      next_award_quarters: 9
+
+  player_quarters{current_player.quarters == 9}: light_quarters_extra_ball|2s
+
+  player_quarters{value >= 10 and value <= 20}:
+    collect_quarters:
+      next_award_name: LIGHT SPECIAL
+      next_award_quarters: 20
+
+  player_quarters{current_player.quarters == 20}: light_special|2s
+
+  player_quarters{value >= 21 and value <= 32}:
+    collect_quarters:
+      next_award_name: 25M POINTS
+      next_award_quarters: 32
+
+  player_quarters{current_player.quarters == 32}: quarter_25m|2s
+
+  player_quarters{current_player.quarters >= 33}: quarters_maxed
+
+
+logic_blocks:
+  counters:
+    bonus_multiplier:
+      count_events: quarters_quarters_collected_complete  # posted by the shot group
+      player_variable: bonus_multiplier
+      starting_count: 1
+      count_complete_value: 4
+      reset_on_complete: false
+
+shots:
+  quarter_1:
+    switch: s_toprightstandup
+    show_tokens:
+      leds: l_top_quarter
+  quarter_2:
+    switch: s_rightbanktop
+    show_tokens:
+      leds: l_middle_quarter
+  quarter_3:
+    switch: s_rightbankbottom
+    show_tokens:
+      leds: l_bottom_quarter
+
+shot_groups:
+  quarters:
+    shots: quarter_1, quarter_2, quarter_3
+    profile: quarters
+    reset_events: quarters_quarters_collected_complete
+
+shot_profiles:
+    quarters:
+        states:
+          - name: lit
+            show: flash
+          - name: collected
+            show: "on"
+
+slide_player:
+  collect_quarters:
+    collect_quarters:
+      expire: 2s
+  quarters_maxed:
+    quarters_maxed:
+      expire: 2s
+
+slides:
+  collect_quarters:
+    widgets:
+      - type: text
+        text: QUARTER COLLECTED!
+        style: dmd_big
+        color: lime
+        y: 25
+      - type: text
+        text: (player|bonus_multiplier)X
+        style: dmd_huge
+        anchor_x: left
+        x: 0
+        y: 8
+        color: yellow
+      - type: text
+        text: BONUS
+        style: dmd_small
+        x: 29
+        y: 3
+        color: yellow
+      - type: text
+        text: "TOTAL QUARTERS: (player|quarters)"
+        style: dmd_small
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: (next_award_name) AT (next_award_quarters)
+        style: dmd_small
+        anchor_x: right
+        x: right-1
+        y: 10
+  quarters_maxed:
+    widgets:
+      - type: text
+        text: QUARTER COLLECTED!
+        style: dmd_big
+        color: lime
+        y: 25
+      - type: text
+        text: (player|bonus_multiplier)X
+        style: dmd_huge
+        anchor_x: left
+        x: 0
+        y: 8
+        color: yellow
+      - type: text
+        text: BONUS
+        style: dmd_small
+        x: 29
+        y: 3
+        color: yellow
+      - type: text
+        text: "TOTAL QUARTERS: (player|quarters)"
+        style: dmd_small
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: NEXT QUARTER 250K
+        style: dmd_small
+        anchor_x: right
+        x: right-1
+        y: 10
+
+extra_balls:
+  quarters:
+    light_events: light_quarters_extra_ball

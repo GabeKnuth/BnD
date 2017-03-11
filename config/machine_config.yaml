@@ -105,6 +105,7 @@ modes:
   - bonus
   - hilo
   - hilo_lit
+  - quarters
 
 widget_styles:
   dmd_huge:
