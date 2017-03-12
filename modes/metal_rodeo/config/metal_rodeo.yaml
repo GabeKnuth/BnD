@@ -69,7 +69,7 @@ multiballs:
     ball_count: 4
     shoot_again: 100
     start_events: mr_launch_balls
-    stop_events: timer_mr_multiball_timer_complete
+    stop_events: timer_mr_multiball_timer_complete, mode_metal_rodeo_stopping
 
 timers:
   mr_multiball_timer:

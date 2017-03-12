@@ -218,7 +218,7 @@ slides:
   music_awards_dmd:
     widgets:
       - type: video
-        video: ma_grammy_loop_2
+        video: ma_grammy_loop_3
         end_behavior: loop
         anchor_x: left
         x: left
