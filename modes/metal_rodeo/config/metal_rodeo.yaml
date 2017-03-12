@@ -11,6 +11,23 @@
 #  a way to stop the game, collect the balls, and continue the ball. Maybe we just disable flippers? I don't want
 #  the ball to end, though, so that has to be worked around. We could just change timer to 30s, then let the round play
 #  out like a normal multiball, but I like that effect.
+
+#Here's the plan:
+
+#Set multiball timer super high, like 100s (gives lots of time for balls to return. Doesn't matter how
+#long because we're going to turn it off manually anyway)
+
+#Set mode timer to 30s for amount of time for unlimited balls
+
+#after 30s, disable flippers. Kill multiball. Enable Ball Saver and tell it not to autolaunch
+
+#  Also, play wrap-up show.
+#    Lights out
+#    Maybe show mr total score
+#    Keep Shooting
+#    Lights on
+#  Release queue or whatever to let ball shoot again. Ball should continue.
+
 #
 #All shots lit:
 #  N. America (disable diverter)
@@ -50,8 +67,33 @@ event_player:
 multiballs:
   mr_launch_balls:
     ball_count: 4
-    shoot_again: 40
-    start_events: s_rightinlane_active
+    shoot_again: 100
+    start_events: mr_launch_balls
+    stop_events: timer_mr_multiball_timer_complete
+
+timers:
+  mr_multiball_timer:
+    start_value: 30 # This is how long unlimited balls goes for
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mr_launch_balls
+
+ball_saves:
+  mr_ball_save:
+    active_time: 30s # This just gives time to collect balls from the playfield.
+    timer_start_events: timer_mr_multiball_timer_complete
+    auto_launch: False
+
+
+
+
+
+
+
+
+
 
 show_player:
   play_intro:

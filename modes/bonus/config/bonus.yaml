@@ -40,7 +40,7 @@ slide_player:
   quarter_bonus:
     quarter_bonus:
     - type: image
-      image: bonus_bg
+      image: bonus_bg_cc
       anchor_x: middle
       anchor_y: top
       x: middle
@@ -63,7 +63,7 @@ slide_player:
   wizard_bonus:
     wizard_bonus:
     - type: image
-      image: bonus_bg
+      image: bonus_bg_cc
       anchor_x: middle
       anchor_y: top
       x: middle
@@ -98,7 +98,7 @@ slide_player:
   bonus_total:
     bonus_total:
     - type: image
-      image: bonus_bg
+      image: bonus_bg_cc
       anchor_x: middle
       anchor_y: top
       x: middle
