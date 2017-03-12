@@ -232,15 +232,14 @@ scoring:
 
 
 slides:
-  camera:
-    type: camera
+  widgets:
+    - type: camera
+      width: 800
+      height: 480
 
 slide_player:
   s_spinner_active:
     camera:
-    - type: camera
-      width: 800
-      height: 480
       target: stage
 
 queue_relay_player:
