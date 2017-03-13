@@ -53,6 +53,8 @@ slide_player:
     stage_boot:
       action: remove
       target: stage
+    dmd_gamma_test:
+      priority: 1000000
 
   #loading_assets: asset_status
 
