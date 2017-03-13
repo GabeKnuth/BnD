@@ -185,12 +185,12 @@ slides:
         y: top-1
         anchor_x: right
         x: right-1
-      - type: rectangle
-        color: 000000
-        height: 32
-        width: 128
-        opacity: .2
-      - type: video
+#      - type: rectangle
+#        color: 000000
+#        height: 32
+#        width: 128
+#        opacity: .2
+#      - type: video
         video: mb_dmd_loop_2
         end_behavior: loop
         anchor_x: left
@@ -213,11 +213,11 @@ slides:
         anchor_y: bottom
         y: bottom+1
         style: tall title
-      - type: rectangle
-        color: 000000
-        height: 32
-        width: 128
-        opacity: .2
+#      - type: rectangle
+#        color: 000000
+#        height: 32
+#        width: 128
+#        opacity: .2
       - type: video
         video: mb_dmd_loop_2
         end_behavior: loop

@@ -46,6 +46,6 @@ displays:
 
 physical_rgb_dmds:
   smartmatrix:
-    brightness: .7
+    brightness: .6
     fps: 25
     gamma: 2.5
