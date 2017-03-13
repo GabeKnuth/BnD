@@ -1,0 +1,35 @@
+#show_version=4
+
+- time: 0
+  slides:
+    mr_good_job:
+      target: dmd
+  leds:
+    (right): off-f150
+    (center): off-f150
+    (left): off-f150
+    (gi): off-f150
+- time: 5
+  slides:
+    mr_total_score:
+      target: dmd
+      transition:
+        type: push
+        duration: 250ms
+        direction: right
+- time: 7.25
+  slides:
+    mr_keep_shooting:
+      target: dmd
+      transition:
+        type: push
+        duration: 250ms
+        direction: right
+  events:
+    mr_advertise_plunger
+- time: 8.5
+  slides:
+    mr_keep_shooting:
+      target: dmd
+  events:
+    mr_resume_game

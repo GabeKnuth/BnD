@@ -23,7 +23,7 @@
 
 #  Also, play wrap-up show.
 #    Lights out
-#    Maybe show mr total score
+#    Maybe show mr total score ( var is "mr_score")
 #    Keep Shooting
 #    Lights on
 #  Release queue or whatever to let ball shoot again. Ball should continue.
@@ -135,6 +135,63 @@ slides:
             - property: volume
               value: 0
               duration: 2s
+  mr_total_score:
+    widgets:
+      - type: text
+        text: "METAL RODEO TOTAL:"
+        color: black
+        style: dmd_med
+        anchor_y: top
+        y: top-2
+      - type: text
+        number_grouping: True
+        text: (player|mr_score)
+        color: black
+        style: dmd_huge
+        anchor_y: bottom
+        y: bottom
+      - type: rectangle
+        color: white
+        height: 32
+        width: 128
+  mr_keep_shooting:
+    widgets:
+      - type: text
+        text: KEEP SHOOTING
+        style: dmd_huge
+        color: ff4400
+        anchor_y: center
+        y: center-1
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 150ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 150ms
+            repeat: true
+            easing: in_quint
+      - type: text
+        text: "PLAYER (number):"
+        style: dmd_med
+        anchor_y: top
+        y: top
+        color: red
+      - type: text
+        text: BALL (ball)
+        style: dmd_small
+        anchor_y: bottom
+        y: 0
+  mr_good_job:
+    widgets:
+      - type: text
+        color: red
+        y: center-1
+        font_size: 30
+        style: dmd_huge
+        text: GOOD JOB!
   mr_intro_stage:
     widgets:
       - type: rectangle
@@ -196,16 +253,22 @@ slides:
 scoring:
   sw_jukebox:
     score: current_player.mr_shot_score * 1000000
+    mr_score: current_player.mr_shot_score * 1000000
   shot_spinner_to_vuk_hit:
     score: current_player.mr_shot_score * 1000000
+    mr_score: current_player.mr_shot_score * 1000000
   shot_right_ramp_full_loop_hit:
     score: current_player.mr_shot_score * 1000000
+    mr_score: current_player.mr_shot_score * 1000000
   shot_pops_to_vuk_hit:
-    score: current_player.mr_shot_score * 1000000
+    score: (current_player.mr_shot_score * 1000000) + (current_player.wizard_score * current_player.num_albums)
+    mr_score: current_player.mr_shot_score * 1000000
   s_leftorbit_active:
     score: current_player.mr_shot_score * 1000000
+    mr_score: current_player.mr_shot_score * 1000000
   shot_lower_vuk_from_playfield_hit:
     score: current_player.mr_shot_score * 1000000
+    mr_score: current_player.mr_shot_score * 1000000
 
 sound_player:
   sw_jukebox:

@@ -10,8 +10,8 @@ mode_settings:
         score: current_player.quarters * current_player.album_value
       - event: wizard_bonus
         # 25k per wizard shot * num albums completed
-        score: 25000
-        player_score_entry: num_albums
+        score: current_player.wizard_score * current_player.num_albums
+
 
 sound_player:
   bonus_start:
@@ -26,7 +26,7 @@ slide_player:
   bonus_start:
     bonus_start:
     - type: image
-      image: bonus_bg
+      image: bonus_bg_cc
       anchor_x: middle
       anchor_y: top
       x: middle
