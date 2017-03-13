@@ -190,7 +190,7 @@ slides:
 #        height: 32
 #        width: 128
 #        opacity: .2
-#      - type: video
+      - type: video
         video: mb_dmd_loop_2
         end_behavior: loop
         anchor_x: left
