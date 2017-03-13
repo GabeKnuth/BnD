@@ -113,7 +113,6 @@ slide_player:
     money_bags_complete:
       target: dmd
 
-
 # And here are the slides referenced above
 
 slides:
@@ -179,7 +178,14 @@ slides:
         y: middle
         style: tall title
       - type: text
-        text: Each hit = 1,000,000 #todo this needs to show whatever the actual score is that we calculate as the mode progresses
+        text: Each hit =
+        anchor_y: top
+        style: dmd_small
+        y: top-1
+        anchor_x: right
+        x: center+16
+      - type: text
+        text: (player|mb_shot_score)
         anchor_y: top
         style: dmd_small
         y: top-1
@@ -225,8 +231,12 @@ slides:
         x: left
 
 scoring:
+    mode_money_bags_started:
+      mb_shot_score:
+        score: current_player.money_bags_hit * 1000000
+        action: set
     money_bags_advertise_flashing_hit:
-        score: 1000000
+      score: current_player.money_bags_hit * 1000000
 
 shot_profiles:
     advertise:
