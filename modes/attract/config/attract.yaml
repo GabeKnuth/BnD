@@ -37,13 +37,13 @@ sound_player:
       mode_end_action: stop
 
 #timers:
-#    video_timer:
-#        start_value: 0
-#        end_value: 720
-#        direction: up
-#        tick_interval: 1s
-#        start_running: true
-#        restart_on_complete: true
+#  video_timer:
+#    start_value: 0
+#    end_value: 480
+#    direction: up
+#    tick_interval: 1s
+#    start_running: true
+#    restart_on_complete: true
 
 random_event_player:
     timer_video_timer_complete:

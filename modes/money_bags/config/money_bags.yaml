@@ -38,17 +38,14 @@ shots:
         switch: s_bottomkickingtarget
         show_tokens:
             led: l_left_longhorn
-#            color: ffcc00
         advance_events: mode_money_bags_started
         disable_events: timer_money_bags_timer_complete
-        ##debug: true
+
     spinner_to_vuk:
         switch_sequence: s_spinner, s_toprightvuk
         show_tokens:
             led: l_center_longhorn
         disable_events: timer_money_bags_timer_complete
-#            color: ffcc00
-        ##debug: true
 
 shot_groups:
     money_bags:
@@ -93,7 +90,6 @@ logic_blocks:
             count_complete_value: 9
             starting_count: 0
             direction: up
-
 
 # NEED A SHOW for start, complete, and ended before it's done. Mode can end at
 # completion of show.
@@ -233,16 +229,15 @@ slides:
 scoring:
     mode_money_bags_started:
       mb_shot_score:
-        score: current_player.money_bags_hit * 1000000
+        score: (current_player.money_bags_hit + 1) * 1000000
         action: set
     money_bags_advertise_flashing_hit:
-      score: current_player.money_bags_hit * 1000000
+      score: (current_player.money_bags_hit + 1) * 1000000
 
 shot_profiles:
     advertise:
       states:
         - name: flashing
-#          show: flash_color
           show: flash
         - name: unlit
           show: off

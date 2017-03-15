@@ -43,15 +43,6 @@ event_player:
 config:
   - display
 
-led_player:
-  s_leftoutlane_active:
-    l_begin_round:
-      color: ff9027
-  s_leftoutlane_inactive:
-    l_begin_round:
-      color: 7f4813
-
-
 sound_pools:
     beats:
         type: random

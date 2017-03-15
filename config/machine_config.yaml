@@ -51,7 +51,7 @@ game:
   max_players: 4
 
 sound_system:
-    master_volume: 1.0
+    master_volume: .2
     tracks:
        music:
           simultaneous_sounds: 1
