@@ -563,3 +563,31 @@ class TestBnd(MpfMachineTestCase):
         self._start_single_player_game(5)
 
         self.advance_time_and_run(30)
+
+    def test_money_bags(self):
+        self._start_single_player_game(5)
+
+        self.machine.events.post('start_money_bags_mode')
+        self.advance_time_and_run(1)
+
+        self.assertLedColors('l_left_longhorn', ['off'])
+        self.assertLedColors('l_center_longhorn', ['off', 'on'])
+
+        self.hit_and_release_switch('s_spinner')
+        self.advance_time_and_run(1)
+        self.hit_switch_and_run('s_toprightvuk', .1)
+        self.assertLedColors('l_left_longhorn', ['off', 'on'])
+        self.assertLedColors('l_center_longhorn', ['off'])
+
+        self.hit_and_release_switch('s_bottomkickingtarget')
+        self.advance_time_and_run(2)
+
+        self.assertLedColors('l_left_longhorn', ['off'])
+        self.assertLedColors('l_center_longhorn', ['off', 'on'])
+
+        self.hit_and_release_switch('s_spinner')
+        self.advance_time_and_run(1)
+        self.hit_switch_and_run('s_toprightvuk', 2)
+
+        self.assertLedColors('l_left_longhorn', ['off', 'on'])
+        self.assertLedColors('l_center_longhorn', ['off'])
