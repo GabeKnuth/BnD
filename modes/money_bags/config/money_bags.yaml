@@ -87,7 +87,7 @@ logic_blocks:
             count_events: money_bags_advertise_flashing_hit
             persist_state: true
             player_variable: money_bags_hit
-            count_complete_value: 9
+            count_complete_value: 7
             starting_count: 0
             direction: up
 

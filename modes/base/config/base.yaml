@@ -444,13 +444,9 @@ shows:
 #          l_quintuple_platinum: on
 #          l_double_platinum: off
   flash_once:
-    - time: 0
-      leds:
-        (led): on
-    - time: 200ms
+    - duration: 200ms
       leds:
         (led): off
-    - time: 50ms
   flash_jukebox:
     - duration: 125ms
       leds:
