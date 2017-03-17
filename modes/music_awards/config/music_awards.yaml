@@ -133,6 +133,84 @@ shows:
         (led1): off
         (led2): off
         (led3): off
+  play_ma_award1:
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_out
+    - duration: 2600ms
+      slides:
+        award_1:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_in
+  play_ma_award2:
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_out
+    - duration: 6300ms
+      slides:
+        award_2:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_in
+  play_ma_award3:
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_out
+    - duration: 4430ms
+      slides:
+        award_3:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_in
+  play_ma_award4:
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_out
+    - duration: 3570ms
+      slides:
+        award_4:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_in
+  play_ma_award5:
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_out
+    - duration: 6000ms
+      slides:
+        award_5:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_in
+  play_ma_award6:
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_out
+    - duration: 4000ms
+      slides:
+        award_6:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        music_awards_quick_fade_in
 
 show_player:
     mode_music_awards_started:
@@ -152,6 +230,24 @@ show_player:
         australia_lights:
             loops: 0
             speed: 2
+    play_ma_award1:
+      play_ma_award1:
+        loops: 0
+    play_ma_award2:
+      play_ma_award2:
+        loops: 0
+    play_ma_award3:
+      play_ma_award3:
+        loops: 0
+    play_ma_award4:
+      play_ma_award4:
+        loops: 0
+    play_ma_award5:
+      play_ma_award5:
+        loops: 0
+    play_ma_award6:
+      play_ma_award6:
+        loops: 0
 
 #Need a counter to count shots made. Mode is complete at 6. Need to figure out what happens when the mode is over.
 
@@ -182,36 +278,36 @@ slide_player:
   logicblock_stop_adding_time_complete:
     music_awards_complete:
       target: dmd
-  play_ma_award1:
-    award_1:
-      target: stage
-      priority: 501
-      transition_out: fade
-  play_ma_award2:
-    award_2:
-      target: stage
-      priority: 501
-      transition_out: fade
-  play_ma_award3:
-    award_3:
-      target: stage
-      priority: 501
-      transition_out: fade
-  play_ma_award4:
-    award_4:
-      target: stage
-      priority: 501
-      transition_out: fade
-  play_ma_award5:
-    award_5:
-      target: stage
-      priority: 501
-      transition_out: fade
-  play_ma_award6:
-    award_6:
-      target: stage
-      priority: 501
-      transition_out: fade
+#  play_ma_award1:
+#    award_1:
+#      target: stage
+#      priority: 501
+#      transition_out: fade
+#  play_ma_award2:
+#    award_2:
+#      target: stage
+#      priority: 501
+#      transition_out: fade
+#  play_ma_award3:
+#    award_3:
+#      target: stage
+#      priority: 501
+#      transition_out: fade
+#  play_ma_award4:
+#    award_4:
+#      target: stage
+#      priority: 501
+#      transition_out: fade
+#  play_ma_award5:
+#    award_5:
+#      target: stage
+#      priority: 501
+#      transition_out: fade
+#  play_ma_award6:
+#    award_6:
+#      target: stage
+#      priority: 501
+#      transition_out: fade
 
 
 
@@ -257,6 +353,14 @@ slides:
             - property: volume
               value: 0
               duration: 2s
+          music_awards_quick_fade_in:
+            - property: volume
+              value: 1.0
+              duration: .2s
+          music_awards_quick_fade_out:
+            - property: volume
+              value: .5
+              duration: .8s
   music_awards_dmd:
     widgets:
       - type: video
