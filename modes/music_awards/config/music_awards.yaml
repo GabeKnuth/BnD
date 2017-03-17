@@ -36,6 +36,17 @@ event_player:
     release_left_vuk_ball
     disable_base_left_vuk_hold
 
+random_event_player:
+    add_time:
+      force_all: true
+      events:
+          play_ma_award1
+          play_ma_award2
+          play_ma_award3
+          play_ma_award4
+          play_ma_award5
+          play_ma_award6
+
 #Need a timer that starts at 10 secs. Need to add 5 secs per successful shot. Max 10 secs, though.
 
 # /// This timer is a boilerplate mode timer for this game. Specifically, it pauses the timer
@@ -171,6 +182,37 @@ slide_player:
   logicblock_stop_adding_time_complete:
     music_awards_complete:
       target: dmd
+  play_ma_award1:
+    award_1:
+      target: stage
+      priority: 501
+      transition_out: fade
+  play_ma_award2:
+    award_2:
+      target: stage
+      priority: 501
+      transition_out: fade
+  play_ma_award3:
+    award_3:
+      target: stage
+      priority: 501
+      transition_out: fade
+  play_ma_award4:
+    award_4:
+      target: stage
+      priority: 501
+      transition_out: fade
+  play_ma_award5:
+    award_5:
+      target: stage
+      priority: 501
+      transition_out: fade
+  play_ma_award6:
+    award_6:
+      target: stage
+      priority: 501
+      transition_out: fade
+
 
 
 # And here are the slides referenced above
@@ -267,19 +309,52 @@ slides:
         anchor_y: bottom
         y: bottom+1
         style: tall title
+  award_1:
+    widgets:
+      - type: video
+        video: ma_award1
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_2:
+    widgets:
+      - type: video
+        video: ma_award2
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_3:
+    widgets:
+      - type: video
+        video: ma_award3
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_4:
+    widgets:
+      - type: video
+        video: ma_award4
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_5:
+    widgets:
+      - type: video
+        video: ma_award5
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_6:
+    widgets:
+      - type: video
+        video: ma_award6
+        end_behavior: stop
+        anchor_x: left
+        x: left
 
 scoring:
     add_time:
       score: 500000
 
-video_pools:
-    add_time:
-        type: random
-        videos:
-          ma_award1
-          ma_award2
-          ma_award3
-          ma_award4
-          ma_award5
-          ma_award6
+
 
