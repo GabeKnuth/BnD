@@ -24,12 +24,12 @@ show_player:
 # Spot 3 quarters todo show
 # 1 M points todo show
 # Start Ball Saver todo show
-# todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here
+# todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here...somehow
 # Start Multiball (3 ball) (this mode hasn't been created) todo show
-# Select/Start Mission todo (not sure how to do this while ignoring completed events) todo show
+# Select/Start Mission todo (not sure how to do this while ignoring completed missions) todo show
 # Extra ball todo show
 # 10 points todo show
-# todo weak flippers (need Jan input)
+# todo weak flippers (need Jan input. posted to slack)
 
 random_event_player:
   mc_choose_award:
@@ -57,7 +57,7 @@ scoring:
     score: 10
   mc_1_million_points:
     score: 1000000
-  mc_quarter_1:
+  mc_quarter_1: # doing one at a time in hopes that we can avoid skipping a quarter award.
     quarters: 1
   mc_quarter_2:
     quarters: 1
