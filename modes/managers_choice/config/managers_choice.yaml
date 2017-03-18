@@ -1,0 +1,67 @@
+#config_version=4
+
+mode:
+  priority: 301
+  start_events: start_managers_choice
+  stop_events: stop_managers_choice
+
+event_player:
+  mc_extra_ball:
+    award_extra_ball
+  mc_spot_quarters:
+    mc_quarter_1|800ms # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
+    mc_quarter_2|1600ms # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
+    mc_quarter_3|2400ms # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
+    # probably do some other stuff here...shows...etc...
+
+show_player:
+  mode_managers_choice_started:
+    rainbow:
+      show_tokens:
+        led: l_mystery
+      loops: -1
+
+# Spot 3 quarters todo show
+# 1 M points todo show
+# Start Ball Saver todo show
+# todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here
+# Start Multiball (3 ball) (this mode hasn't been created) todo show
+# Select/Start Mission todo (not sure how to do this while ignoring completed events) todo show
+# Extra ball todo show
+# 10 points todo show
+# todo weak flippers (need Jan input)
+
+random_event_player:
+  mc_choose_award:
+    force_all: true
+    events:
+      mc_spot_quarters
+      mc_start_ball_saver
+      mc_hold_album_value
+      mc_start_multiball
+      mc_start_mission
+      mc_extra_ball
+      mc_10_points
+      mc_1_million_points
+      mc_weak_flippers
+  mc_start_mission:
+    events: #todo This isn't going to work. Need a way to only start a mode that hasn't been completed. For now it's ok.
+      start_music_awards_mode
+      start_money_bags_mode
+      start_world_tour_mode
+      start_jukebox_mode
+      start_play_poker_mode
+
+scoring:
+  mc_10_points:
+    score: 10
+  mc_1_million_points:
+    score: 1000000
+  mc_quarter_1:
+    quarters: 1
+  mc_quarter_2:
+    quarters: 1
+  mc_quarter_3:
+    quarters: 1
+
+

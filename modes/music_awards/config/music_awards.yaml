@@ -17,7 +17,6 @@ event_player:
   mode_music_awards_started:
     mode_running|5s
     fade_out_base_music
-
   music_awards_stop_adding_time:  # success
     music_awards_done|5s
     music_awards_fade_out|3s

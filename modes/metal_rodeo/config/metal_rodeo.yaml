@@ -86,15 +86,6 @@ ball_saves:
     timer_start_events: timer_mr_multiball_timer_complete
     auto_launch: False
 
-
-
-
-
-
-
-
-
-
 show_player:
   play_intro:
     mr_intro_show:

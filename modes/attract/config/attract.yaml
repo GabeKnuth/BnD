@@ -20,6 +20,26 @@ show_player:
       show_tokens:
         led: l_start_button
 
+#slide_player:
+#  game_ended: # move this to match
+#    how_long_gone_stage:
+#      target: stage
+#
+#slides:
+#  how_long_gone_stage: # move this to match
+#    widgets:
+#      - type: video
+#        video: how_long_gone
+#        end_behavior: stop
+#        animations:
+#          show_slide:
+#            - property: opacity
+#              value: 1
+#              duration: 10s
+#            - property: opacity
+#              value: 0
+#              duration: 2s
+
   mode_attract_stopped:
     attract_dmd_loop:
       action: stop

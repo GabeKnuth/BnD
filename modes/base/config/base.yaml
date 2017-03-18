@@ -11,6 +11,10 @@ event_player:
   mode_base_started:
     jukebox_up
     light_mission_select
+  light_mission_select_started:
+    light_mystery
+  mode_mission_rotator_started:
+    stop_mystery
   world_tour_fail:
     light_mission_select
   money_bags_fail:
@@ -341,6 +345,19 @@ show_player:
       speed: 2
   ball_save_main_disabled:
       ball_save: stop
+  ball_save_managers_choice_enabled:
+    flash:
+      show_tokens:
+        leds: l_shoot, l_again
+      key: ball_save
+  ball_save_managers_choice_hurry_up:
+    flash:
+      show_tokens:
+        leds: l_shoot, l_again
+      key: ball_save
+      speed: 2
+  ball_save_managers_choice_disabled:
+      ball_save: stop
 
 shots:
 #  album_rotator:
@@ -498,6 +515,31 @@ shows:
         (led): off
     - time: 1350ms
       events: top_eject_alert_over
+  rainbow:
+    - duration: 150ms
+      leds:
+        (leds): red
+        fade: 100ms
+    - duration: 150ms
+      leds:
+        (leds): orange
+        fade: 100ms
+    - duration: 150ms
+      leds:
+        (leds): yellow
+        fade: 100ms
+    - duration: 150ms
+      leds:
+        (leds): green
+        fade: 100ms
+    - duration: 150ms
+      leds:
+        (leds): blue
+        fade: 100ms
+    - duration: 150ms
+      leds:
+        (leds): purple
+        fade: 100ms
 
 shot_groups:
     upper_lanes:
@@ -516,3 +558,10 @@ ball_saves:
     grace_period: 1s
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
     timer_start_events: playfield_active
+  managers_choice:
+    active_time: 15s
+    hurry_up_time: 2s
+    grace_period: 1s
+    enable_events: mc_start_ball_saver
+    early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
+    timer_start_events: balldevice_bd_lower_vuk_ball_eject_success

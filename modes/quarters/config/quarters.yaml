@@ -20,11 +20,11 @@ scoring:
       score: 0
       action: set
   quarters_quarters_lit_hit:
-    score: 2507  # 2507 instead of 2500 to give some score randomness
+    score: 2570  # 2570 instead of 2500 to give some score randomness
   quarters_quarters_collected_complete:
     quarters: 1
   quarters_quarters_collected_hit:
-    score: 42  # gotta get something if they hit an already complete target
+    score: 40  # gotta get something if they hit an already complete target (42 was great, but good luck during Match :)
   quarter_25m:
     score: 25000000
   super_quarters:
