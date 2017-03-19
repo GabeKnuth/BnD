@@ -29,8 +29,28 @@ show_player:
 # 1 M points todo show
 # Start Ball Saver todo show
 # todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here...somehow
+
+# add a new player var called hold_album value that is 0 or 1. Use the scoring: section of the base mode with
+# a conditional event on something like ball_starting{curent_player.hold_album_value==0} to post a new event
+# "reset_album_value" or something, so if that is non zero then it won't reset.
+
+# Then have another scoring entry for reset_album value which sets that (action: set) to 0. And have another scoring
+# entry on ball_start that sets hold_album_value to 0 so it removes the hold at the start of each ball. And
+# use the event sequencing in your scoring section (ball_starting.1, ball_starting.2, etc.) so that the resetting
+# of it from the paragraph above runs first
+
 # Start Multiball (3 ball) (this mode hasn't been created) todo show
 # Select/Start Mission todo (@Brian - not sure how to do this while ignoring completed missions) todo show
+
+# You should be able to post the event to start the selected mission, which in the achievement group setting
+# from the mission rotator mode, it looks like that's "start_mission". However the achievement group has to be
+# enabled for that to work, so you might need to post the enable event first (which is "enable_mission_selection")
+# So you could use a show or event player to post those back to back. That might have some other downside, like
+# starting some other show or QIO saying that the mission is lit ("SHOOT THE HOLE!" or whatever). I'm thinking maybe
+# I add a feature to achievement groups for "force_start_selected_achievement" or something like that for this use
+# case, since I know other games where it could happen (Start next city in roadshow), etc. If you need that, I can
+# add that quickly.
+
 # Extra ball todo show
 # 10 points todo show
 #  weak flippers todo show
