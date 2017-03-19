@@ -6,12 +6,14 @@ mode:
   stop_events: stop_managers_choice
 
 event_player:
-  mc_extra_ball:
+  mc_extra_ball: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
     award_extra_ball
-  mc_spot_quarters:
-    mc_quarter_1|800ms # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
-    mc_quarter_2|1600ms # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
-    mc_quarter_3|2400ms # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
+  mc_weak_flippers: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
+    weak_flippers_enabled
+  mc_spot_quarters: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
+    mc_quarter_1|800ms
+    mc_quarter_2|1600ms
+    mc_quarter_3|2400ms
     # probably do some other stuff here...shows...etc...
 
 show_player:
@@ -21,15 +23,17 @@ show_player:
         led: l_mystery
       loops: -1
 
+# @Brian - you can ignore the todo show
+
 # Spot 3 quarters todo show
 # 1 M points todo show
 # Start Ball Saver todo show
 # todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here...somehow
 # Start Multiball (3 ball) (this mode hasn't been created) todo show
-# Select/Start Mission todo (not sure how to do this while ignoring completed missions) todo show
+# Select/Start Mission todo (@Brian - not sure how to do this while ignoring completed missions) todo show
 # Extra ball todo show
 # 10 points todo show
-# todo weak flippers (need Jan input. posted to slack)
+#  weak flippers todo show
 
 random_event_player:
   mc_choose_award:

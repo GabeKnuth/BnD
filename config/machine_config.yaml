@@ -358,23 +358,53 @@ flippers:
     main_coil: c_LeftFlipperMain
     hold_coil: c_LeftFlipperHold
     activation_switch: s_LeftFlipper
-    enable_events: ball_starting
+    enable_events: ball_starting, weak_flippers_disabled
+    disable_events: weak_flippers_enabled, ball_ending
     use_eos: false
-    ##debug: true
   right_flipper:
     main_coil: c_RightFlipperMain
     hold_coil: c_RightFlipperHold
     activation_switch: s_RightFlipper
-    enable_events: ball_starting
+    enable_events: ball_starting, weak_flippers_disabled
+    disable_events: weak_flippers_enabled, ball_ending
     use_eos: false
-    ##debug: true
   upper_right_flipper:
     main_coil: c_UpperRightFlipperMain
     hold_coil: c_UpperRightFlipperHold
     activation_switch: s_RightFlipper
-    enable_events: ball_starting
+    enable_events: ball_starting, weak_flippers_disabled
+    disable_events: weak_flippers_enabled, ball_ending
     use_eos: false
-    ##debug: true
+    include_in_ball_search: true
+
+# Weak Flippers
+  weak_left_flipper:
+    main_coil: c_weak_LeftFlipperMain
+    main_coil_overwrite:
+      pulse_ms: 15
+    hold_coil: c_LeftFlipperHold
+    activation_switch: s_LeftFlipper
+    enable_events: weak_flippers_enabled
+    disable_events: weak_flippers_disabled
+    use_eos: false
+  weak_right_flipper:
+    main_coil: c_weak_RightFlipperMain
+    main_coil_overwrite:
+      pulse_ms: 15
+    hold_coil: c_RightFlipperHold
+    activation_switch: s_RightFlipper
+    enable_events: weak_flippers_enabled
+    disable_events: weak_flippers_disabled
+    use_eos: false
+  weak_upper_right_flipper:
+    main_coil: c_weak_UpperRightFlipperMain
+    mail_coil_overwrite:
+      pulse_ms: 7
+    hold_coil: c_UpperRightFlipperHold
+    activation_switch: s_RightFlipper
+    enable_events: weak_flippers_enabled
+    disable_events: weak_flippers_disabled
+    use_eos: false
     include_in_ball_search: true
 
 #        :::::::::      :::     :::        :::
