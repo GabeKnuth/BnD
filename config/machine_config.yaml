@@ -379,7 +379,7 @@ flippers:
 
 # Weak Flippers
   weak_left_flipper:
-    main_coil: c_weak_LeftFlipperMain
+    main_coil: c_LeftFlipperMain
     main_coil_overwrite:
       pulse_ms: 15
     hold_coil: c_LeftFlipperHold
@@ -388,7 +388,7 @@ flippers:
     disable_events: weak_flippers_disabled
     use_eos: false
   weak_right_flipper:
-    main_coil: c_weak_RightFlipperMain
+    main_coil: c_RightFlipperMain
     main_coil_overwrite:
       pulse_ms: 15
     hold_coil: c_RightFlipperHold
@@ -397,8 +397,8 @@ flippers:
     disable_events: weak_flippers_disabled
     use_eos: false
   weak_upper_right_flipper:
-    main_coil: c_weak_UpperRightFlipperMain
-    mail_coil_overwrite:
+    main_coil: c_UpperRightFlipperMain
+    main_coil_overwrite:
       pulse_ms: 7
     hold_coil: c_UpperRightFlipperHold
     activation_switch: s_RightFlipper
