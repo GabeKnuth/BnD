@@ -1210,6 +1210,13 @@ keyboard:
   p:
     switch: s_plungerlane
     toggle: true
+  0:
+    event: start_play_poker_mode
+  9:
+    switch: s_spinner
+  8:
+    switch: s_lowervukopto
+    toggle: true
   z:
     switch: s_leftflipper
   o:

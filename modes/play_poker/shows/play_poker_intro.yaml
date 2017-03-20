@@ -1,7 +1,51 @@
 #show_version=4
-- duration: 5s
+- duration: 2s
   slides:
-    pp_intro:
+    poker_intro_1:
       widgets:
-        - type: text
-          text: PP INSTRUCTIONS
+      - type: text
+        text: PLAY POKER!
+        style: dmd_huge
+        y: 19
+      - type: text
+        text: COLLECT THE BEST HAND
+        style: dmd_med
+        y: 4
+- duration: 2s
+  slides:
+    poker_intro_2:
+      widgets:
+      - type: text
+        text: SHOOT THE SPINNER
+        style: dmd_huge
+        y: 19
+      - type: text
+        text: TO PICK A NEW CARD
+        style: dmd_med
+        y: 4
+- duration: 2s
+  slides:
+    poker_intro_3:
+      widgets:
+      - type: text
+        text: SHOOT THE LEFT HOLE
+        style: dmd_huge
+        y: 19
+        x: 63
+      - type: text
+        text: TO LOCK IN THE CARD
+        style: dmd_med
+        y: 4
+- duration: 2s
+  slides:
+    poker_intro_4:
+      widgets:
+      - type: text
+        text: BEST POKER HAND
+        style: dmd_huge
+        y: 19
+        x: 63
+      - type: text
+        text: MEANS BIG PRIZES
+        style: dmd_med
+        y: 4
