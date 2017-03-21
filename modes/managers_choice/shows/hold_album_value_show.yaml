@@ -1,0 +1,122 @@
+#show_version=4
+
+- duration: 1500ms
+  slides:
+    mcsl_title:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_spot_quarters:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_ball_saver:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_10_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_extra_ball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_big_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_start_mission:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_weak_flippers:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_start_multiball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_hold_album_value:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_spot_quarters:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_ball_saver:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_10_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_extra_ball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_big_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_start_mission:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_weak_flippers:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_start_multiball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_hold_album_value:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_spot_quarters:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_ball_saver:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_10_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_extra_ball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_big_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_start_mission:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_weak_flippers:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_start_multiball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_hold_album_value:
+      target: dmd
+- duration: 400ms
+  events:
+    mc_choose_award
+  slides:
+    mcsl_white_box:
+      target: dmd
+      animations:
+        show_slide: fade_in

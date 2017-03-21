@@ -9,7 +9,7 @@ logic_blocks:
     albums:
       count_events: drop_target_bank_drop_targets_down
       player_variable: num_albums
-      persist_state: true
+      persist_state: false
 
 event_player:
   player_num_albums: show_album_slide|.1s

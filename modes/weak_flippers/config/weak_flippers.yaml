@@ -1,0 +1,19 @@
+#config_version=4
+
+mode:
+  priority: 300
+  start_events: start_weak_flippers
+  stop_events: stop_weak_flippers
+
+event_player:
+  mode_weak_flippers_started: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
+    weak_flippers_enabled
+  timer_weak_flippers_complete:
+    weak_flippers_disabled
+    stop_weak_flippers|100ms
+
+timers:
+  weak_flippers:
+    start_value: 30
+    tick_interval: 1s
+    direction: down

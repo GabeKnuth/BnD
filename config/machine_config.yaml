@@ -63,10 +63,10 @@ sound_system:
           simultaneous_sounds: 8
           volume: 1.0
 
-#logging:
-#  file:
-#    event_manager: full
-#    show_controller: full
+logging:
+  file:
+    event_manager: basic
+    show_controller: full
 
 assets:
     sounds:
@@ -105,6 +105,8 @@ modes:
   - quarters
   - extra_ball_lit
   - albums
+  - weak_flippers
+  - managers_choice
 
 widget_styles:
   dmd_huge:
@@ -1312,3 +1314,14 @@ player_vars:
   album_value_name:
     initial_value: INDY
     value_type: str
+
+
+animations:
+  fade_in:
+    property: opacity
+    value: 1
+    duration: 400ms
+  fade_out:
+    property: opacity
+    value: 0
+    duration: 400ms

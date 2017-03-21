@@ -1,6 +1,0 @@
-#config_version=4
-
-mode:
-  priority: 302
-  start_events: #list of mode start events from timed modes. #todo
-  stop_events: #mode stop events from the above list #todo

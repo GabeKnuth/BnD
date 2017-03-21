@@ -1,0 +1,15 @@
+#show_version=4
+
+- duration: 2700ms
+  slides:
+    mcsl_extra_ball:
+      target: dmd
+      transition: fade
+  sounds:
+    yeehaw:
+      action: play
+  events:
+    award_extra_ball
+- duration: 1ms
+  events:
+    stop_managers_choice

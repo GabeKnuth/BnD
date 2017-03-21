@@ -4,9 +4,6 @@
 # We also need a way to reset all of those states when the everything
 # has been done.
 
-# Something is wrong here. Missions don't light. Also, hitting the begin round hole doesn't start anything. The
-# begin_round_lit_hit mention here is the only one in this project besides a test (I don't think that matters yet)
-
 mode:
   start_events: mode_base_started
   priority: 200

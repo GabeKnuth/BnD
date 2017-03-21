@@ -44,6 +44,21 @@ event_player:
   drop_target_bank_drop_targets_down:
     reset_drop_targets|1s
 
+random_event_player:
+  mc_choose_award:
+    force_all: true
+    events:
+      mc_spot_quarters
+      mc_start_ball_saver
+      mc_start_mission
+      mc_extra_ball
+      mc_10_points
+      mc_big_points
+      mc_weak_flippers
+      #mc_hold_album_value
+      #mc_start_multiball
+
+
 config:
   - display
 

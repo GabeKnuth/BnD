@@ -1,0 +1,13 @@
+#show_version=4
+
+- duration: 1500ms
+  slides:
+    mcsl_start_mission:
+      target: dmd
+      transition: fade
+  events:
+    enable_mission_selection
+- duration: 100ms
+  events:
+    start_mission
+    stop_managers_choice

@@ -1,0 +1,22 @@
+#show_version=4
+
+- duration: 1000ms
+  slides:
+    mcsl_ball_saver:
+      target: dmd
+      transition: fade
+  sounds:
+    yeehaw:
+      action: play
+- duration: 1500ms
+  slides:
+    mcsl_ball_saver_2:
+      target: dmd
+#- duration: 1500ms # UNCOMMENT WHEN/IF WE GET GLOBAL SCORE MULTIPLIERS
+#  slides:
+#    mcsl_ball_saver_3:
+  events:
+    mc_start_ball_saver
+- duration: 1ms
+  events:
+    stop_managers_choice

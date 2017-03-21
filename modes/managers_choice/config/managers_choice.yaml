@@ -1,20 +1,10 @@
 #config_version=4
 
 mode:
-  priority: 301
+  priority: 500
   start_events: start_managers_choice
   stop_events: stop_managers_choice
 
-event_player:
-  mc_extra_ball: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
-    award_extra_ball
-  mc_weak_flippers: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
-    weak_flippers_enabled
-  mc_spot_quarters: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
-    mc_quarter_1|800ms
-    mc_quarter_2|1600ms
-    mc_quarter_3|2400ms
-    # probably do some other stuff here...shows...etc...
 
 show_player:
   mode_managers_choice_started:
@@ -22,6 +12,35 @@ show_player:
       show_tokens:
         led: l_mystery
       loops: -1
+    mc_intro_show:
+      loops: 0
+  mc_spot_quarters:
+    spot_quarters_show:
+      loops: 0
+  mc_start_ball_saver:
+    start_ball_saver_show:
+      loops: 0
+  mc_hold_album_value:
+    hold_album_value_show:
+      loops: 0
+  mc_start_multiball:
+    start_multiball_show:
+      loops: 0
+  mc_start_mission:
+    start_mission_show:
+      loops: 0
+  mc_extra_ball:
+    start_extra_ball_show:
+      loops: 0
+  mc_10_points:
+    10_points_show:
+      loops: 0
+  mc_big_points:
+    big_points_show:
+      loops: 0
+  mc_weak_flippers:
+    weak_flippers_show:
+      loops: 0
 
 # @Brian - you can ignore the todo show
 
@@ -39,53 +58,221 @@ show_player:
 # use the event sequencing in your scoring section (ball_starting.1, ball_starting.2, etc.) so that the resetting
 # of it from the paragraph above runs first
 
+#Wouldn't this make more sense to set the logic block to false and have it not persist by default? Then have num_albums
+#set to previous value at ball_starting if player_hold_album_value is not zero? Maybe that's what he wrote, actually.
+#I'm tired.
+
 # Start Multiball (3 ball) (this mode hasn't been created) todo show
-# Select/Start Mission todo (@Brian - not sure how to do this while ignoring completed missions) todo show
-
-# You should be able to post the event to start the selected mission, which in the achievement group setting
-# from the mission rotator mode, it looks like that's "start_mission". However the achievement group has to be
-# enabled for that to work, so you might need to post the enable event first (which is "enable_mission_selection")
-# So you could use a show or event player to post those back to back. That might have some other downside, like
-# starting some other show or QIO saying that the mission is lit ("SHOOT THE HOLE!" or whatever). I'm thinking maybe
-# I add a feature to achievement groups for "force_start_selected_achievement" or something like that for this use
-# case, since I know other games where it could happen (Start next city in roadshow), etc. If you need that, I can
-# add that quickly.
-
+# Select/Start Mission todo show
 # Extra ball todo show
 # 10 points todo show
 #  weak flippers todo show
 
-random_event_player:
-  mc_choose_award:
-    force_all: true
-    events:
-      mc_spot_quarters
-      mc_start_ball_saver
-      mc_hold_album_value
-      mc_start_multiball
-      mc_start_mission
-      mc_extra_ball
-      mc_10_points
-      mc_1_million_points
-      mc_weak_flippers
-  mc_start_mission:
-    events: #todo This isn't going to work. Need a way to only start a mode that hasn't been completed. For now it's ok.
-      start_music_awards_mode
-      start_money_bags_mode
-      start_world_tour_mode
-      start_jukebox_mode
-      start_play_poker_mode
+
+#  mc_start_mission:
+#    events: #todo This isn't going to work. Need a way to only start a mode that hasn't been completed. For now it's ok.
+#      start_music_awards_mode
+#      start_money_bags_mode
+#      start_world_tour_mode
+#      start_jukebox_mode
+#      start_play_poker_mode
 
 scoring:
   mc_10_points:
     score: 10
-  mc_1_million_points:
+  mc_big_points:
     score: 1000000
-  mc_quarter_1: # doing one at a time in hopes that we can avoid skipping a quarter award.
-    quarters: 1
-  mc_quarter_2:
-    quarters: 1
-  mc_quarter_3:
+  mc_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
     quarters: 1
 
+slides:
+  mcsl_title:
+    widgets:
+      - type: line # part of an apostrophe
+        points: 65, 22, 65, 20
+        color: red
+      - type: line # part of an apostrophe
+        points: 66, 22, 66, 18
+        color: red
+      - type: points # part of an apostrophe
+        points: 65, 18
+        color: red
+        pointsize: .5
+      - type: text
+        text: S
+        style: dmd_big
+        anchor_y: center
+        y: center
+        anchor_x: left
+        x: 67
+        color: red
+      - type: text
+        text: MANAGER
+        style: dmd_big
+        anchor_y: center
+        y: center
+        anchor_x: right
+        x: 64
+        color: red
+      - type: text
+        text: CHOICE
+        style: dmd_big
+        anchor_y: center
+        y: center
+        anchor_x: left
+        x: 79
+        color: white
+  mcsl_spot_quarters:
+    widgets:
+      - type: text
+        text: SPOT QUARTERS
+        color: red
+        style: dmd_big
+  mcsl_ball_saver:
+    widgets:
+      - type: text
+        text: START BALL SAVER
+        color: red
+        style: dmd_big
+  mcsl_ball_saver_2:
+    widgets:
+      - type: text
+        text: BALL SAVER ACTIVE
+        color: red
+        style: dmd_big
+        anchor_y: top
+        y: top-4
+      - type: text
+        text: FOR 15 SECONDS
+        anchor_y: bottom
+        y: bottom+4
+        color: white
+        style: dmd_big
+  mcsl_hold_album_value:
+    widgets:
+      - type: text
+        text: HOLD ALBUM VALUE
+        color: red
+        style: dmd_big
+  mcsl_start_multiball:
+    widgets:
+      - type: text
+        text: START MULTIBALL
+        color: red
+        style: dmd_big
+  mcsl_start_mission:
+    widgets:
+      - type: text
+        text: START MISSION
+        color: red
+        style: dmd_big
+  mcsl_extra_ball:
+    widgets:
+      - type: text
+        text: EXTRA BALL
+        color: red
+        style: dmd_big
+  mcsl_10_points:
+    widgets:
+      - type: text
+        text: 10 POINTS
+        color: red
+        style: dmd_big
+  mcsl_big_points:
+    widgets:
+      - type: text
+        text: BIG POINTS
+        color: red
+        style: dmd_big
+  mcsl_big_points_2:
+    widgets:
+      - type: text
+        text: "1,000,000!"
+        color: gold
+        style: dmd_big
+  mcsl_weak_flippers:
+    widgets:
+      - type: text
+        text: WEAK FLIPPERS
+        color: red
+        style: dmd_big
+  mcsl_weak_flippers_2:
+    widgets:
+      - type: text
+        text: LOW POWER FLIPPERS
+        anchor_y: top
+        y: top-4
+        color: red
+        style: dmd_big
+      - type: text
+        text: FOR 30 SECONDS
+        anchor_y: bottom
+        y: bottom+4
+        color: white
+        style: dmd_big
+  mcsl_weak_flippers_3:
+    widgets:
+      - type: text
+        text: ALL SCORES
+        color: red
+        style: dmd_big
+        anchor_x: left
+        x: left+3
+      - type: text
+        text: DOUBLED!
+        color: white
+        anchor_x: right
+        x: right-2
+        style: dmd_big
+  mcsl_white_box:
+    widgets:
+      - type: rectangle
+        width: 128
+        height: 32
+        color: white
+        opacity: 0
+        animations:
+          show_slide: fade_in
+  mcsl_quarter_1:
+    widgets:
+      - type: image
+        image: quarter
+        anchor_x: left
+        x: left
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+  mcsl_quarter_2:
+    widgets:
+      - type: image
+        image: quarter
+        anchor_x: left
+        x: left
+      - type: image
+        image: quarter
+        anchor_x: center
+        x: center
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+  mcsl_quarter_3:
+    widgets:
+      - type: image
+        image: quarter
+        anchor_x: left
+        x: left
+      - type: image
+        image: quarter
+        anchor_x: center
+        x: center
+      - type: image
+        image: quarter
+        anchor_x: right
+        x: right
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
 
