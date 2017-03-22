@@ -14,15 +14,16 @@
 # The mode has a 30s timer, and the player can add 5s by collecting a card.
 
 # Scoring table:
-
+# High card = point value of card. (hah!)
 # 1 pair = 1,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
 # 2 pair = 2,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
 # 3 of a kind = 5,000,000 pts (he also says to award Managers Choice, but we haven't gotten that far)
-# Full House = Extra Ball
 # Straight = Extra Ball
+# Flush = Extra Ball
+# Full House = Extra Ball
 # 4 of a kind = 1 Special (don't know what that is yet)
-# 5 of a kind = 3 Specials (ditto)
-# 4 Aces = Extra Ball, Special, Complete BROOKS N DUNN, 10M pts, and double score (?)
+# Straight Flush = 3 Specials (ditto)
+# Royal Flush = Extra Ball, Special, Complete BROOKS N DUNN, 10M pts, and double score (?)
 
 mode:
   start_events: start_play_poker_mode
