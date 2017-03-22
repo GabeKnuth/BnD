@@ -4,10 +4,18 @@
   slides:
     mcsl_weak_flippers:
       target: dmd
-      transition: fade
+      #transition: fade
   sounds:
     broken_guitar:
       action: play
+- duration: 1000ms
+  slides:
+    mcsl_weak_flippers_2:
+      target: dmd
+- duration: 1000ms
+  slides:
+    mcsl_weak_flippers_3:
+      target: dmd
 - duration: 1ms
   events:
     start_weak_flippers

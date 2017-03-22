@@ -10,7 +10,7 @@ show_player:
   mode_managers_choice_started:
     rainbow:
       show_tokens:
-        led: l_mystery
+        leds: l_mystery
       loops: -1
     mc_intro_show:
       loops: 0

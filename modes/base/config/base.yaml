@@ -533,28 +533,22 @@ shows:
   rainbow:
     - duration: 150ms
       leds:
-        (leds): red
-        fade: 100ms
+        (leds): red-f100ms
     - duration: 150ms
       leds:
-        (leds): orange
-        fade: 100ms
+        (leds): orange-f100ms
     - duration: 150ms
       leds:
-        (leds): yellow
-        fade: 100ms
+        (leds): yellow-f100ms
     - duration: 150ms
       leds:
-        (leds): green
-        fade: 100ms
+        (leds): green-f100ms
     - duration: 150ms
       leds:
-        (leds): blue
-        fade: 100ms
+        (leds): blue-f100ms
     - duration: 150ms
       leds:
-        (leds): purple
-        fade: 100ms
+        (leds): purple-f100ms
 
 shot_groups:
     upper_lanes:

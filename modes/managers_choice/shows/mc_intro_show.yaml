@@ -108,15 +108,14 @@
   slides:
     mcsl_start_multiball:
       target: dmd
+  events:
+    mc_choose_award
 - duration: 100ms
   slides:
     mcsl_hold_album_value:
       target: dmd
 - duration: 400ms
-  events:
-    mc_choose_award
   slides:
     mcsl_white_box:
       target: dmd
-      animations:
-        show_slide: fade_in
+      transition: fade

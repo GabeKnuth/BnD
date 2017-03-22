@@ -4,7 +4,7 @@
   slides:
     mcsl_big_points:
       target: dmd
-      transition: fade
+      #transition: fade
   sounds:
     yeehaw:
       action: play

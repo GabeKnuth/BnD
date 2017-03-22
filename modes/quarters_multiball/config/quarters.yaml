@@ -36,14 +36,14 @@ event_player:
 
   player_quarters{value <= 3}:
     collect_quarters:
-      next_award_name: MANAGERS CHOICE
+      next_award_name: LIGHT MYSTERY
       next_award_quarters: 3
 
   player_quarters{current_player.quarters == 3}: light_mystery|2s
 
   player_quarters{value >= 4 and value <= 6}:
     collect_quarters:
-      next_award_name: MANAGERS CHOICE
+      next_award_name: LIGHT MYSTERY
       next_award_quarters: 6
 
   player_quarters{current_player.quarters == 6}: light_mystery|2s
@@ -55,33 +55,12 @@ event_player:
 
   player_quarters{current_player.quarters == 9}: light_quarters_extra_ball|2s
 
-  player_quarters{value >= 10 and value <= 12}:
-    collect_quarters:
-      next_award_name: MANAGERS CHOICE
-      next_award_quarters: 6
-
-  player_quarters{current_player.quarters == 12}: light_mystery|2s
-
-  player_quarters{value >= 13 and value <= 15}:
-    collect_quarters:
-      next_award_name: MANAGERS CHOICE
-      next_award_quarters: 6
-
-  player_quarters{current_player.quarters == 15}: light_mystery|2s
-
   player_quarters{value >= 10 and value <= 20}:
     collect_quarters:
       next_award_name: LIGHT SPECIAL
       next_award_quarters: 20
 
   player_quarters{current_player.quarters == 20}: light_special|2s
-
-  player_quarters{value >= 21 and value <= 25}:
-    collect_quarters:
-      next_award_name: MANAGERS CHOICE
-      next_award_quarters: 6
-
-  player_quarters{current_player.quarters == 25}: light_mystery|2s
 
   player_quarters{value >= 21 and value <= 32}:
     collect_quarters:

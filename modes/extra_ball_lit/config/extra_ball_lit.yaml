@@ -18,16 +18,25 @@ sound_player:
     yeehaw:
       loops: 0
   extra_ball_lit_awarded:
-    cowbell_alert:
+    cowbell_alert2:
       loops: 0
 
 slide_player:
-  extra_ball_awarded:
-    extra_ball:
-      expire: 2s
+#  extra_ball_awarded:
+#    extra_ball:
+#      expire: 2s
   extra_ball_lit_awarded:
     extra_ball_lit:
       expire: 3.376s
+
+show_player:
+  extra_ball_awarded:
+    extra_ball_awarded:
+      show_tokens:
+        left: left
+        center: center
+        right: right
+        gi: gi
 
 slides:
   extra_ball:
@@ -41,8 +50,23 @@ slides:
         animations:
           show_slide:
            - property: font_size
-             value: 200
-             duration: 2s
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
   extra_ball_lit:
       - type: text
         text: EXTRA BALL IS LIT!
@@ -59,3 +83,47 @@ slides:
              value: 1
              duration: 211ms
              repeat: true
+
+shows:
+  extra_ball_awarded:
+    - time: 0
+      slides:
+        extra_ball:
+          target: dmd
+    - time: 150ms
+      leds:
+        (right): red-f150ms
+        (center): red-f150ms
+        (left): red-f150ms
+        (gi): red-f150ms
+    - time: 300ms
+      leds:
+        (right): off-f150ms
+        (center): off-f150ms
+        (left): off-f150ms
+        (gi): off-f150ms
+    - time: 750ms
+      leds:
+        (right): red-f150ms
+        (center): red-f150ms
+        (left): red-f150ms
+        (gi): red-f150ms
+    - time: 900ms
+      leds:
+        (right): off-f150ms
+        (center): off-f150ms
+        (left): off-f150ms
+        (gi): off-f150ms
+    - time: 1050ms
+      leds:
+        (right): red-f150ms
+        (center): red-f150ms
+        (left): red-f150ms
+        (gi): red-f150ms
+    - time: 1200ms
+      duration: 150ms
+      leds:
+        (right): off-f150ms
+        (center): off-f150ms
+        (left): off-f150ms
+        (gi): off-f150ms

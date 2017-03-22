@@ -4,7 +4,7 @@
   slides:
     mcsl_extra_ball:
       target: dmd
-      transition: fade
+      #transition: fade
   sounds:
     yeehaw:
       action: play
