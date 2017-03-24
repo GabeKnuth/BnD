@@ -14,7 +14,7 @@ mode:
 #todo create player var with Jukebox value for slides and scoring
 #todo Add scoring
 #todo Add Jackpot sounds/slides
-
+#todo Need to set up ball locks and stuff. GLWAT
 
 
 event_player:
