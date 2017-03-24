@@ -108,6 +108,8 @@ modes:
   - weak_flippers
   - managers_choice
   - quarters_multiball
+  - light_lock
+  - honky_tonk_multiball
 
 widget_styles:
   dmd_huge:
