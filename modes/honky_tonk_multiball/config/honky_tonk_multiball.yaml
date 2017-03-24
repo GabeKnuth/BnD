@@ -1,0 +1,192 @@
+#config_version=4
+mode:
+  priority: 600
+  start_events: start_honky_tonk_multiball
+  stop_events: multiball_honky_tonk_ended
+
+#Map this out.
+#
+#3 balls
+#Shooting jukebox adds 100k to jackpot score (default score 250k)
+#Jackpot awarded on ramp. Then switches to double jackpot. Awards 2x Jackpot, switches back. Can use Achievements from
+#Longhorn 2-ball.
+#
+#todo create player var with Jukebox value for slides and scoring
+#todo Add scoring
+#todo Add Jackpot sounds/slides
+
+
+
+event_player:
+  mode_honky_tonk_multiball_started:
+    fade_out_base_music
+    stop_quarters_mode
+  mode_honky_tonk_multiball_stopping:
+    fade_in_base_music
+    start_quarters_mode
+
+multiballs:
+  honky_tonk:
+    ball_count: 3
+    shoot_again: 10s
+    start_events: mode_honky_tonk_multiball_started
+
+slide_player:
+  mode_honky_tonk_multiball_started:
+    honky_tonk_dmd_intro:
+      expire: 5.4s
+      target: dmd
+  slide_honky_tonk_dmd_intro_removed:
+    honky_tonk_stage:
+      target: stage
+    honky_tonk_instructions:
+      target: dmd
+      expires: 5s
+  slide_honky_tonk_instructions_removed:
+    honky_tonk_dmd:
+      target: dmd
+
+slides:
+  honky_tonk_dmd:
+    widgets:
+      - type: text
+        text: 1234567890
+        number_grouping: true
+        style: dmd_huge
+        font_size: 24
+        anchor_y: top
+        y: top+3
+      - type: text
+        text: JACKPOT = (ht_jackpot)
+        number_grouping: true
+        style: dmd_med
+        color: gold
+        anchor_y: bottom
+        y: bottom+1
+        animations:
+          show_slide:
+            - property: opacity
+              value: 1
+              duration: .3s
+            - property: opacity
+              value: .6
+              duration: .3s
+              repeat: true
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+        opacity: .5
+      - type: image
+        image: honky_tonk
+
+  honky_tonk_instructions:
+    widgets:
+      - type: text
+        text: HONKY TONK
+        style: dmd_big
+        anchor_y: top
+        y: top
+        color: yellow
+      - type: text
+        text: MULTIBALL
+        style: dmd_huge
+        anchor_y: top
+        y: top-8
+        color: red
+      - type: text
+        style: dmd_small
+        text: EACH SHOT = 250k
+        anchor_y: bottom
+        y: bottom
+        animations:
+          show_slide:
+            - property: opacity
+              value: 1
+              duration: 2s
+            - property: opacity
+              value: 0
+      - type: text
+        style: dmd_small
+        opacity: 0
+        anchor_y: bottom
+        y: bottom
+        text: JUKEBOX ADDS TO JACKPOT
+        animations:
+          show_slide:
+            - property: opacity
+              value: 0
+              duration: 2s
+            - property: opacity
+              value: 1
+  honky_tonk_dmd_intro:
+    widgets:
+      - type: video
+        video: htmb_dmd_intro
+        anchor_x: left
+        x: left
+  ball_saved:
+    widgets:
+      - type: text
+        text: BALL SAVED!
+        expire: 2s
+        style: dmd_huge
+  honky_tonk_stage:
+    widgets:
+      - type: video
+        video: htmb_miss_honky_tonk
+        end_behavior: loop
+
+shows:
+  jb_play_honky_tonk_song:
+    - duration: -1
+      slides:
+        jb_play_honky_tonk_song:
+          widgets:
+          - type: video
+            video: jb_hard_workin_man
+            end_behavior: loop
+            control_events:
+              - event: stop_song
+                action: stop
+            animations:
+              duck:
+                - property: volume
+                  value: .4
+                  duration: .01s
+              unduck:
+                - property: volume
+                  value: 1
+                  duration: .5s
+          target: stage
+
+achievements:
+  jackpot:
+    show_when_started: flash
+    show_when_completed: off
+    show_tokens:
+      led: jackpot
+    reset_events: s_topkicker_active
+#    enable_events: mode_jukebox_two_ball_started
+    start_events: mode_jukebox_two_ball_started, double_jackpot_complete
+    complete_events: shot_right_ramp_full_loop_hit
+    events_when_completed: jackpot_complete
+    restart_after_stop_possible: true
+
+  double_jackpot:
+    show_when_started: flash
+    show_when_completed: off
+    show_tokens:
+      led: double_jackpot
+    reset_events: shot_right_ramp_full_loop_hit
+#    enable_events: mode_jukebox_two_ball_started
+    start_events: jackpot_complete
+    complete_events: s_topkicker_active
+    events_when_completed: double_jackpot_complete
+    restart_after_stop_possible: true
+
+scoring:
+  jackpot_complete:
+    score: 1000000
+  double_jackpot_complete:
+    score: 2000000

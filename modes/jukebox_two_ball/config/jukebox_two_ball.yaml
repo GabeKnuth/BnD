@@ -4,8 +4,6 @@ mode:
   start_events: start_jukebox_two_ball
   stop_events: multiball_jukebox_two_ball_ended
 
-#todo this needs slides, sounds, goals, scoring, lights...blah blah
-
 event_player:
   mode_jukebox_two_ball_started:
     fade_out_base_music
