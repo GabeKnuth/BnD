@@ -31,7 +31,7 @@ event_player:
     light_hilo
   hit_jukebox{count==16}:
     light_lock_2
-  hit_jukebox{count==2}: ## Should be 24
+  hit_jukebox{count==24}: ## Should be 24
     start_jukebox_hurryup
   hit_jukebox{count==36}:
     light_lock_3
@@ -170,8 +170,8 @@ logic_blocks:
       direction: up
       # Brian: I think there is no max to this? Just keep counting
 #      events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
-      disable_events: mission_started, mode_jukebox_hurryup_started
-      enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done
+      disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits
+      enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, enable_jukebox_hits
     lb_music_gate:
       count_events: s_plungerlane_inactive
       starting_count: 0
@@ -571,6 +571,6 @@ ball_saves:
     active_time: 15s
     hurry_up_time: 2s
     grace_period: 1s
-    enable_events: mc_start_ball_saver
+    enable_events: start_mc_ball_saver
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
     timer_start_events: balldevice_bd_lower_vuk_ball_eject_success

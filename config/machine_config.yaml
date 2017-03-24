@@ -107,6 +107,7 @@ modes:
   - albums
   - weak_flippers
   - managers_choice
+  - quarters_multiball
 
 widget_styles:
   dmd_huge:
@@ -153,7 +154,7 @@ switches:
     number: 16
   s_rightbankbottom:
     number: 17
-    tags: playfield_active, end_skill_shot, quarter
+    tags: playfield_active, end_skill_shot, quarter, qmb
   s_trough_enter:
     number: 18
   s_rightoutlane:
@@ -176,10 +177,10 @@ switches:
     tags: playfield_active, end_skill_shot, toggle, beat
   s_rightbanktop:
     number: 26
-    tags: playfield_active, end_skill_shot, quarter
+    tags: playfield_active, end_skill_shot, quarter, qmb
   s_toprightstandup:
     number: 27
-    tags: playfield_active, end_skill_shot, quarter
+    tags: playfield_active, end_skill_shot, quarter, qmb
   s_jukeboxopto:
     number: 40
     type: NC
@@ -187,7 +188,7 @@ switches:
     tags: jukebox, playfield_active, end_skill_shot, jukebox_hit
   s_topkickingtarget:
     number: 41
-    tags: playfield_active, end_skill_shot, toggle, beat
+    tags: playfield_active, end_skill_shot, toggle, beat, qmb
   s_subwayopto:
     number: 42
     tags: subway, playfield_active, end_skill_shot, jukebox_hit
@@ -205,7 +206,7 @@ switches:
     tags: playfield_active, end_skill_shot
   s_bottomkickingtarget:
     number: 46
-    tags: playfield_active, end_skill_shot, toggle, beat
+    tags: playfield_active, end_skill_shot, toggle, beat, qmb
   s_leftorbit:
     number: 47
     tags: playfield_active, end_skill_shot
@@ -679,7 +680,7 @@ leds:
     default_color: red
   l_top_quarter:
     number: 1-1
-    tags: right
+    tags: right, quarter
     default_color: aaaaaa
   l_quintuple_platinum:
     number: 1-2
@@ -695,23 +696,23 @@ leds:
     default_color: ff9027
   l_right_music_award:
     number: 1-5
-    tags: right, right_ramp
+    tags: right, right_ramp, jackpot
     default_color: ff9027
   l_ramp_jackpot:
     number: 1-6
-    tags: right, right_ramp
+    tags: right, right_ramp, jackpot
     default_color: ff9027
   l_south_america:
     number: 1-7
-    tags: right, right_ramp
+    tags: right, right_ramp, jackpot
     default_color: red
   l_middle_quarter:
     number: 1-8
-    tags: right
+    tags: right, quarter
     default_color: aaaaaaa
   l_bottom_quarter:
     number: 1-9
-    tags: right
+    tags: right, quarter
     default_color: aaaaaa
   l_lower_right_flasher:
     number: 1-10
@@ -790,7 +791,7 @@ leds:
     default_color: ff9027
   l_double_jackpot:
     number: 1-29
-    tags: left
+    tags: left, double_jackpot
     default_color: ff9027
   l_advance_wizard:
     number: 1-30
@@ -812,7 +813,7 @@ leds:
     default_color: ff9027
   l_managers_choice:
     number: 1-35
-    tags: left
+    tags: left, double_jackpot
     default_color: ff9027
   l_jukebox_left:
     number: 1-36
@@ -856,7 +857,7 @@ leds:
     default_color: ff9027
   l_ramp_fire:
     number: 1-46
-    tags: right
+    tags: right, ramp_indicator, jackpot
     default_color: red
   l_right_ramp_flasher:
     number: 1-47
@@ -1221,6 +1222,10 @@ keyboard:
     toggle: true
   7:
     event: light_mystery
+  6:
+    event: start_quarters_multiball
+  5:
+    event: start_jukebox_two_ball
   z:
     switch: s_leftflipper
   o:

@@ -25,6 +25,9 @@
 # Straight Flush = 3 Specials (ditto)
 # Royal Flush = Extra Ball, Special, Complete BROOKS N DUNN, 10M pts, and double score (?)
 
+#todo make all lights around left hole flash to collect card. They can pretty much just flashing all the time after the
+#todo spinner is hit the first time.
+
 mode:
   start_events: start_play_poker_mode
   stop_events: play_poker_done

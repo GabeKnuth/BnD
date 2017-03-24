@@ -78,11 +78,11 @@ show_player:
 #      start_play_poker_mode
 
 scoring:
-  mc_10_points:
+  mc_score_10_points:
     score: 10
-  mc_big_points:
+  mc_score_big_points:
     score: 1000000
-  mc_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
+  mc_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
     quarters: 1
 
 slides:

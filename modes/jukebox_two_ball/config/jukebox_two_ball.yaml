@@ -4,11 +4,15 @@ mode:
   start_events: start_jukebox_two_ball
   stop_events: multiball_jukebox_two_ball_ended
 
+#todo this needs slides, sounds, goals, scoring, lights...blah blah
+
 event_player:
   mode_jukebox_two_ball_started:
     fade_out_base_music
+    stop_quarters_mode
   mode_jukebox_two_ball_stopping:
     fade_in_base_music
+    start_quarters_mode
 
 multiballs:
   jukebox_two_ball:
@@ -18,16 +22,155 @@ multiballs:
 
 slide_player:
   mode_jukebox_two_ball_started:
-    multiball:
+    jb2b_dmd_intro:
       expire: 3s
+      target: dmd
+  slide_jb2b_dmd_intro_removed:
+    jb2b_dmd_shoot_ramp:
+      target: dmd
+  double_jackpot_complete:
+    jb2b_dmd_shoot_ramp:
+      target: dmd
+  jackpot_complete:
+    jb2b_dmd_shoot_loop:
+      target: dmd
+
+sound_player:
+  jackpot_complete:
+    woo_baby:
+      action: play
+      loops: 0
+  double_jackpot_complete:
+    woo_baby:
+      action: play
+      loops: 0
 
 slides:
+  jb2b_dmd_shoot_loop:
+    widgets:
+      - type: text
+        text: (score)
+        anchor_y: top
+        style: dmd_huge
+        y: top-2
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: SHOOT JUKEBOX LOOP!
+        style: dmd_small
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: video
+        video: jb2b_jukebox
+        anchor_x: left
+        x: left
+        end_behavior: loop
+  jb2b_dmd_shoot_ramp:
+    widgets:
+      - type: text
+        text: (score)
+        anchor_y: top
+        style: dmd_huge
+        y: top-2
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: SHOOT RIGHT RAMP!
+        style: dmd_small
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: video
+        video: jb2b_jukebox
+        anchor_x: left
+        x: left
+        end_behavior: loop
   multiball:
     widgets:
       - type: text
         text: MULTIBALL
-        expire: 2s
         style: dmd_huge
+        font_size: 0
+        color: yellow
+        animations:
+          show_slide:
+            - property: font_size
+              value: 60
+              duration: .3s
+            - property: font_size
+              value: 30
+              duration: .1s
+            - property: font_size
+              value: 60
+              duration: .2s
+            - property: font_size
+              value: 40
+              duration: .1s
+  jb2b_dmd_intro:
+    widgets:
+      - type: text
+        text: MULTIBALL
+        style: dmd_huge
+        font_size: 0
+        color: yellow
+        animations:
+          show_slide:
+            - property: font_size
+              value: 60
+              duration: .3s
+            - property: font_size
+              value: 30
+              duration: .1s
+            - property: font_size
+              value: 60
+              duration: .2s
+            - property: font_size
+              value: 40
+              duration: .1s
+            - property: opacity
+              value: 0
+              duration: .3s
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+        animations:
+          show_slide:
+            - property: opacity
+              value: 100
+              duration: .7s
+            - property: opacity
+              value: 0
+              duration: .3s
+      - type: text
+        text: JUKEBOX MULTIBALL
+        anchor_y: top
+        style: dmd_big
+        y: top-1
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: Shoot Jackpot to
+        style: dmd_small
+        anchor_y: bottom
+        y: center-5
+        anchor_x: right
+        x: right-10
+      - type: text
+        text: light Double Jackpot
+        style: dmd_small
+        anchor_y: bottom
+        y: bottom+4
+        anchor_x: right
+        x: right-1
+      - type: image
+        image: jb2b_still
+        anchor_x: left
+        x: left
+
   ball_saved:
     widgets:
       - type: text
@@ -42,7 +185,6 @@ show_player:
     flash_jukebox:
       action: play
 
-
 shows:
   jb_play_bnd_song:
     - duration: -1
@@ -56,3 +198,34 @@ shows:
               - event: stop_song
                 action: stop
           target: stage
+
+achievements:
+  jackpot:
+    show_when_started: flash
+    show_when_completed: off
+    show_tokens:
+      led: jackpot
+    reset_events: double_jackpot_complete
+#    enable_events: mode_jukebox_two_ball_started
+    start_events: mode_jukebox_two_ball_started, double_jackpot_complete
+    complete_events: shot_right_ramp_full_loop_hit
+    events_when_completed: jackpot_complete
+    restart_after_stop_possible: true
+
+  double_jackpot:
+    show_when_started: flash
+    show_when_completed: off
+    show_tokens:
+      led: double_jackpot
+    reset_events: jackpot_complete
+#    enable_events: mode_jukebox_two_ball_started
+    start_events: jackpot_complete
+    complete_events: s_topkicker_active
+    events_when_completed: double_jackpot_complete
+    restart_after_stop_possible: true
+
+scoring:
+  jackpot_complete:
+    score: 1000000
+  double_jackpot_complete:
+    score: 2000000

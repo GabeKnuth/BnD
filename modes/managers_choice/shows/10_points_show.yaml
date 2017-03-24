@@ -6,7 +6,7 @@
       target: dmd
       #transition: fade
   events:
-    mc_10_points
+    mc_score_10_points
   sounds:
     broken_guitar:
       action: play

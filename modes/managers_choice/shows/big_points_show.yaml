@@ -13,7 +13,7 @@
     mcsl_big_points_2:
       target: dmd
   events:
-    mc_big_points
+    mc_score_big_points
 - duration: 1ms
   events:
     stop_managers_choice

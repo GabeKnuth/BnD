@@ -1,0 +1,271 @@
+#config_version=4
+
+mode:
+  start_events: start_quarters_multiball
+  stop_events: multiball_qmb_ended
+  priority: 500
+
+#Map this out.
+#
+######Need a multiballs section. 2 Balls.
+######Scoring: 750k per quarter target, 1.5M per money bags target
+#
+######Music - qmb_put_a_girl_in_it
+#
+#Slides and sounds for hits and stuff https://www.youtube.com/watch?v=36MClSdyfaI&spfreload=10
+#
+######Shows to indicate shots
+#
+
+####Hitting quarters targets adds a ball. One ball per target is fine.
+####Deposit quarters in jukebox to score. 750k per shot. Jukebox scoop on random.
+
+event_player:
+  mode_quarters_multiball_started:
+    qmb_go|5s
+    fade_out_base_music
+    start_qmb|4.9s
+    stop_quarters_mode
+    block_jukebox_hits
+  mode_quarters_multiball_stopping:
+    start_quarters_mode
+    fade_in_base_music
+    enable_base_left_vuk_hold
+    qmb_fade_out
+    enable_jukebox_hits
+
+random_event_player:
+    s_subwayopto_active:
+        - jukebox_up
+        - jukebox_down
+    shot_jukebox_loop_hit:
+        - jukebox_up
+        - jukebox_down
+
+sound_player:
+  sw_qmb:
+    coins:
+      action: play
+      loops: 0
+  sw_jukebox:
+    jb_record_scratch:
+      action: play
+      loops: 0
+
+multiballs:
+  qmb:
+    ball_count: 2
+    start_events: start_qmb
+    add_a_ball_events: add_qmb_ball
+
+timers:
+  add_ball:
+    start_value: 20
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: start_qmb
+
+logic_blocks:
+  accruals:
+    qmb_ball_adder:
+      events: sw_quarter
+      events_when_complete: add_qmb_ball
+      enable_events: qmb_go
+      disable_events: timer_add_ball_complete
+      disable_on_complete: false
+
+show_player:
+  mode_quarters_multiball_started:
+    flash:
+      loops: -1
+      speed: 2
+      show_tokens:
+        led: quarter
+    flash_jukebox:
+      loops: -1
+
+slide_player:
+  mode_quarters_multiball_started:
+    qmb_intro_dmd:
+      target: dmd
+    qmb_stage:
+      target: stage
+  balls_in_play{balls==2}:
+    qmb_dmd_2_balls:
+      target: dmd
+  balls_in_play{balls==3}:
+    qmb_dmd_3_balls:
+      target: dmd
+  balls_in_play{balls==4}:
+    qmb_dmd_4_balls:
+      target: dmd
+
+slides:
+  qmb_intro_dmd:
+    widgets:
+      - type: text
+        text: QUARTER MULTIBALL
+        anchor_y: top
+        style: dmd_big
+        y: top-1
+        anchor_x: right
+        x: right
+        color: lime
+      - type: text
+        text: QUARTERS ADD BALLS
+        style: dmd_med
+        anchor_y: bottom
+        y: bottom+10
+        anchor_x: right
+        x: right-1
+        color: gold
+      - type: text
+        text: JUKEBOX SCORES 750K
+        style: dmd_small
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+        opacity: .4
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+    target: dmd
+  qmb_stage:
+    widgets:
+      - type: video
+        video: qmb_put_a_girl_in_it
+        end_behavior: loop
+        animations:
+          qmb_fade_out:
+            - property: volume
+              value: 0
+              duration: 2s
+  qmb_dmd_2_balls:
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-1
+        y: middle+5
+        style: tall title
+      - type: text
+        text: JUKEBOX = 750,000
+        style: dmd_med
+        anchor_y: bottom
+        y: bottom+3
+        anchor_x: right
+        x: right-1
+        color: lime
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+        opacity: .4
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left+32
+  qmb_dmd_3_balls:
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-1
+        y: middle+5
+        style: tall title
+      - type: text
+        text: JUKEBOX = 750,000
+        style: dmd_med
+        anchor_y: bottom
+        y: bottom+3
+        anchor_x: right
+        x: right-1
+        color: lime
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+        opacity: .4
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left+32
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left+64
+  qmb_dmd_4_balls:
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-1
+        y: middle+5
+        style: tall title
+      - type: text
+        text: JUKEBOX = 750,000
+        style: dmd_med
+        anchor_y: bottom
+        y: bottom+3
+        anchor_x: right
+        x: right-1
+        color: lime
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+        opacity: .4
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left+32
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: left
+        x: left+64
+      - type: video
+        video: qmb_quarter2
+        end_behavior: loop
+        anchor_x: right
+        x: right
+
+scoring:
+  sw_quarter:
+    score: 13720
+  sw_jukebox:
+    score: 750000

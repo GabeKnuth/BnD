@@ -1,11 +1,11 @@
 #config_version=4
 
 # todo spot quarter feature
-# sound for hitting a quarter that's already collected
 # QIO for quarter_25m
 
 mode:
-  start_events: mode_base_started
+  start_events: mode_base_started, start_quarters_mode
+  stop_events: stop_quarters_mode
   priority: 110
 
 sound_player:
@@ -13,6 +13,10 @@ sound_player:
       quarter:
           action: play
           loops: 0
+  quarters_quarters_collected_hit:
+      beats:
+        action: play
+        loops: 0
 
 scoring:
   mode_quarters_started:
@@ -43,10 +47,10 @@ event_player:
 
   player_quarters{value >= 4 and value <= 6}:
     collect_quarters:
-      next_award_name: MANAGERS CHOICE
+      next_award_name: QUARTER MULTIBALL
       next_award_quarters: 6
 
-  player_quarters{current_player.quarters == 6}: light_mystery|2s
+  player_quarters{current_player.quarters == 6}: start_quarters_multiball|2s
 
   player_quarters{value >= 7 and value <= 9}:
     collect_quarters:
@@ -55,17 +59,10 @@ event_player:
 
   player_quarters{current_player.quarters == 9}: light_quarters_extra_ball|2s
 
-  player_quarters{value >= 10 and value <= 12}:
+  player_quarters{value >= 10 and value <= 15}:
     collect_quarters:
       next_award_name: MANAGERS CHOICE
-      next_award_quarters: 6
-
-  player_quarters{current_player.quarters == 12}: light_mystery|2s
-
-  player_quarters{value >= 13 and value <= 15}:
-    collect_quarters:
-      next_award_name: MANAGERS CHOICE
-      next_award_quarters: 6
+      next_award_quarters: 15
 
   player_quarters{current_player.quarters == 15}: light_mystery|2s
 
