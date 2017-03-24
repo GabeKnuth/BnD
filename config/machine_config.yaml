@@ -1225,7 +1225,7 @@ keyboard:
   6:
     event: start_quarters_multiball
   5:
-    event: start_jukebox_two_ball
+    event: start_world_tour_mode
   z:
     switch: s_leftflipper
   o:

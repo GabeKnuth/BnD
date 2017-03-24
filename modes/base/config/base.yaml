@@ -402,7 +402,7 @@ shots:
 #Shot with sequences
   shot_right_ramp_full_loop:
     switch_sequence: s_rightRampOpto, s_LeftRampOpto
-    time: 1000ms
+    time: 3000ms
   shot_subway_shot:   # Seems like a weird name, but probably should have this one
     switch_sequence: s_SubwayOpto, s_LowerVUKOpto
     time: 500ms

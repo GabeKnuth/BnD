@@ -2,7 +2,7 @@
 mode:
   priority: 500
   start_events: start_world_tour_mode
-  stop_events: stop_world_tour
+  stop_events: stop_world_tour, start_jukebox_two_ball
 
 # todo
 #when over, has to start something else. Doc says another mode. This mode is complete, though.
@@ -17,19 +17,19 @@ event_player:
 
   player_world_tour_world_tour_timer_tick{value == 5}:
     slow_down_timer
-  wt_australia_complete:  # play a success show here todo
-    world_tour_success
-    world_tour_fade_out
-    start_bnd_two_ball|1s
-    release_wt_ball|3s
-    stop_world_tour|3.5s
+  wt_australia_complete:
+    world_tour_success|2.5s
+    world_tour_fade_out|3.7s
+    start_jukebox_two_ball|3.7s
+    release_wt_ball|3.7s
+    stop_world_tour|3.7s
   timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
     stop_world_tour|5s
     world_tour_fade_out|3s
     stop_world_tour_timer
     world_tour_fail|3s
+    fade_in_base_music|3s
   mode_world_tour_stopping:
-    fade_in_base_music
     enable_base_left_vuk_hold
   ball_will_end:
     world_tour_fail
@@ -37,8 +37,21 @@ event_player:
     release_left_vuk_ball
     disable_base_left_vuk_hold
 
+
 # We need to set up shots so that we start on the North America shot, then move on to
 # Europe, then South America, and finally Australia
+
+#  jackpot:
+#    show_when_started: flash
+#    show_when_completed: off
+#    show_tokens:
+#      led: jackpot
+#    reset_events: double_jackpot_complete
+##    enable_events: mode_jukebox_two_ball_started
+#    start_events: mode_jukebox_two_ball_started, double_jackpot_complete
+#    complete_events: shot_right_ramp_full_loop_hit
+#    events_when_completed: jackpot_complete
+#    restart_after_stop_possible: true
 
 achievements:
   wt_north_america:
@@ -46,14 +59,14 @@ achievements:
       led: l_north_america
     show_when_started: flash
     show_when_completed: on
-    enable_events: enable_north_america
+#    enable_events: enable_north_america
     start_events: enable_north_america
     complete_events: s_leftorbit_active
     events_when_completed: wt_north_america_complete, add_time
     restart_after_stop_possible: true
 
   wt_europe:
-    enable_events: wt_north_america_complete
+#    enable_events: wt_north_america_complete
     start_events: wt_north_america_complete
     complete_events: shot_spinner_to_vuk_hit
     events_when_completed: wt_europe_complete, add_time
@@ -64,7 +77,7 @@ achievements:
     restart_after_stop_possible: true
 
   wt_south_america:
-    enable_events: wt_europe_complete
+#    enable_events: wt_europe_complete
     start_events: wt_europe_complete
     complete_events: s_rightrampopto_active
     events_when_completed: wt_south_america_complete, add_time
@@ -75,7 +88,7 @@ achievements:
     restart_after_stop_possible: true
 
   wt_australia:
-    enable_events: wt_south_america_complete
+#    enable_events: wt_south_america_complete
     start_events: wt_south_america_complete
     complete_events: shot_pops_to_vuk_hit
     events_when_completed: wt_australia_complete
@@ -145,7 +158,7 @@ show_player:
       loops: 0
     south_america_lights:
       loops: 0
-  wt_autralia_complete:
+  wt_australia_complete:
     australia:
       loops: 0
     australia_lights:
@@ -166,6 +179,47 @@ show_player:
 # try putting that on a slide, then playing shows over it.
 
 slides:
+  wt_complete:
+    widgets:
+      - type: text
+        text: WORLD TOUR
+        style: dmd_huge
+        font_size: 90
+        color: yellow
+        animations:
+          show_slide:
+            - property: font_size
+              value: 33
+              duration: .2s
+            - property: font_size
+              value: 33
+              duration: .8s
+            - property: font_size
+              value: 0
+              duration: .2s
+            - property: opacity
+              value: 0
+      - type: text
+        text: COMPLETE
+        style: dmd_huge
+        font_size: 90
+        opacity: 0
+        color: yellow
+        animations:
+          show_slide:
+            - property: font_size
+              value: 90
+              duration: 1s
+            - property: opacity
+              value: 1
+              duration: 1ms
+            - property: font_size
+              value: 33
+              duration: .2s
+            - property: font_size
+              value: 33
+              duration: 1s
+
   wt_intro_dmd:
     widgets:
       - type: text
@@ -270,6 +324,16 @@ slide_player:
   wt_australia_complete:
     world_tour_complete:
       target: dmd
+  world_tour_success:
+    wt_complete:
+      target: dmd
+
+sound_player:
+  world_tour_success:
+    slam:
+      action: play
+      loops: 1
+
 
 # Now we need a logic block to keep track of shots. When all four are hit, we're done!
 # It's not in the rules, but I also added something to extend the time when you hit a shot

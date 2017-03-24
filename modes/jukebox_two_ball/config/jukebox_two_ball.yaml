@@ -40,10 +40,14 @@ sound_player:
     woo_baby:
       action: play
       loops: 0
+      events_when_played: duck
+      events_when_stopped: unduck
   double_jackpot_complete:
     woo_baby:
       action: play
       loops: 0
+      events_when_played: duck
+      events_when_stopped: unduck
 
 slides:
   jb2b_dmd_shoot_loop:
@@ -52,6 +56,7 @@ slides:
         text: (score)
         anchor_y: top
         style: dmd_huge
+        number_grouping: true
         y: top-2
         anchor_x: right
         x: right-1
@@ -73,6 +78,7 @@ slides:
         text: (score)
         anchor_y: top
         style: dmd_huge
+        number_grouping: true
         y: top-2
         anchor_x: right
         x: right-1
@@ -88,27 +94,6 @@ slides:
         anchor_x: left
         x: left
         end_behavior: loop
-  multiball:
-    widgets:
-      - type: text
-        text: MULTIBALL
-        style: dmd_huge
-        font_size: 0
-        color: yellow
-        animations:
-          show_slide:
-            - property: font_size
-              value: 60
-              duration: .3s
-            - property: font_size
-              value: 30
-              duration: .1s
-            - property: font_size
-              value: 60
-              duration: .2s
-            - property: font_size
-              value: 40
-              duration: .1s
   jb2b_dmd_intro:
     widgets:
       - type: text
@@ -146,26 +131,42 @@ slides:
               value: 0
               duration: .3s
       - type: text
-        text: JUKEBOX MULTIBALL
+        text: "LONGHORN MULTIBALL!"
         anchor_y: top
         style: dmd_big
         y: top-1
         anchor_x: right
         x: right-1
       - type: text
-        text: Shoot Jackpot to
+        text: "Shoot         to"
         style: dmd_small
         anchor_y: bottom
         y: center-5
         anchor_x: right
         x: right-10
       - type: text
-        text: light Double Jackpot
+        text: JACKPOT
+        style: dmd_small
+        anchor_y: bottom
+        y: center-5
+        anchor_x: right
+        x: right-25
+        color: lime
+      - type: text
+        text: light
+        style: dmd_small
+        anchor_y: bottom
+        y: bottom+4
+        anchor_x: right
+        x: right-74
+      - type: text
+        text: Double Jackpot
         style: dmd_small
         anchor_y: bottom
         y: bottom+4
         anchor_x: right
         x: right-1
+        color: red
       - type: image
         image: jb2b_still
         anchor_x: left
@@ -197,6 +198,15 @@ shows:
             control_events:
               - event: stop_song
                 action: stop
+            animations:
+              duck:
+                - property: volume
+                  value: .4
+                  duration: .01s
+              unduck:
+                - property: volume
+                  value: 1
+                  duration: .5s
           target: stage
 
 achievements:
@@ -205,7 +215,7 @@ achievements:
     show_when_completed: off
     show_tokens:
       led: jackpot
-    reset_events: double_jackpot_complete
+    reset_events: s_topkicker_active
 #    enable_events: mode_jukebox_two_ball_started
     start_events: mode_jukebox_two_ball_started, double_jackpot_complete
     complete_events: shot_right_ramp_full_loop_hit
@@ -217,7 +227,7 @@ achievements:
     show_when_completed: off
     show_tokens:
       led: double_jackpot
-    reset_events: jackpot_complete
+    reset_events: shot_right_ramp_full_loop_hit
 #    enable_events: mode_jukebox_two_ball_started
     start_events: jackpot_complete
     complete_events: s_topkicker_active
