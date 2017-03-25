@@ -34,7 +34,7 @@
     mc_score_quarter
 - duration: 1ms
   events:
-    stop_managers_choice
+    mc_done
 
 
 

@@ -15,7 +15,6 @@ event_player:
   mode_money_bags_started:
     mode_running|5s
     fade_out_base_music
-
 #  logicblock_stop_adding_time_complete:
   logicblock_money_bags_counter_complete:  # brian added
     money_bags_done|5s
@@ -51,10 +50,8 @@ shot_groups:
     money_bags:
         shots: left_kicking_target, spinner_to_vuk
         profile: advertise
-#        enable_events: mode_money_bags_started
         disable_events: timer_money_bags_timer_complete
         rotate_events: money_bags_advertise_flashing_hit
-        #debug: true
 
 timers:
     mb_intro_timer:
@@ -70,7 +67,6 @@ timers:
         direction: down
         max_value: 10
         tick_interval: 1.25s
-        #restart_on_complete: true #not sure if this means go back to 10 and keep counting, or just reset to initial state
         control_events:
             - action: start
               event: timer_mb_intro_timer_complete
@@ -91,11 +87,6 @@ logic_blocks:
             starting_count: 0
             direction: up
 
-# NEED A SHOW for start, complete, and ended before it's done. Mode can end at
-# completion of show.
-
-# This is where we set up the slides that play the different dots and stage slides during the mode.
-
 slide_player:
   mode_money_bags_starting:
     mb_intro_dmd:
@@ -108,8 +99,6 @@ slide_player:
   logicblock_money_bags_counter_complete:
     money_bags_complete:
       target: dmd
-
-# And here are the slides referenced above
 
 slides:
   mb_intro_dmd:

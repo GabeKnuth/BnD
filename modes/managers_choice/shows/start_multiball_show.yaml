@@ -1,5 +1,11 @@
 #show_version=4
 
-- duration: 100ms
+- duration: 1000ms
+  slides:
+    mcsl_start_multiball:
+      target: dmd
+      #transition: fade
+- duration: 1ms
   events:
-    multiball_show # Just so this isn't an empty show
+    start_honky_tonk_multiball
+    mc_done

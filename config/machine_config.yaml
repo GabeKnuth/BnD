@@ -1228,6 +1228,8 @@ keyboard:
     event: start_quarters_multiball
   5:
     event: start_world_tour_mode
+  4:
+    event: start_honky_tonk_multiball
   z:
     switch: s_leftflipper
   o:

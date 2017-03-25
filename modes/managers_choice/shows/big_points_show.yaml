@@ -16,4 +16,4 @@
     mc_score_big_points
 - duration: 1ms
   events:
-    stop_managers_choice
+    mc_done

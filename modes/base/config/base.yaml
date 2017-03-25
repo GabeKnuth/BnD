@@ -6,6 +6,7 @@
 mode:
   start_events: ball_starting
   priority: 100
+  code: base.Base
 
 event_player:
   mode_base_started:
@@ -25,25 +26,21 @@ event_player:
     light_mission_select
   play_poker_fail:
     light_mission_select
-  hit_jukebox{count==3}:
-    light_lock
-  hit_jukebox{count==8}:
+  hit_jukebox{count==5}:
+    start_jukebox_hurryup
+  hit_jukebox{count==12}:
     light_hilo
-  hit_jukebox{count==16}:
-    light_lock
-  hit_jukebox{count==24}: ## Should be 24
+  hit_jukebox{count==23}:
     start_jukebox_hurryup
   hit_jukebox{count==36}:
-    light_lock
-  hit_jukebox{count==48}:
     light_hilo
-  hit_jukebox{count==64}:
+  hit_jukebox{count==45}:
     start_jukebox_hurryup
   ball_ending:
     fade_out_base_music
   drop_target_bank_drop_targets_down:
     reset_drop_targets|1s
-
+  # There was a few events here for light lock. That's done in mode code now.
 
 random_event_player:
   mc_choose_award:
@@ -56,9 +53,8 @@ random_event_player:
       mc_10_points
       mc_big_points
       mc_weak_flippers
-      #mc_hold_album_value
-      #mc_start_multiball
-
+      mc_start_multiball
+      #mc_hold_album_value #todo need to figure this one out yet
 
 config:
   - display
@@ -172,7 +168,7 @@ logic_blocks:
       # Brian: I think there is no max to this? Just keep counting
 #      events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
       disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits
-      enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, enable_jukebox_hits
+      enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits
     lb_music_gate:
       count_events: s_plungerlane_inactive
       starting_count: 0
@@ -188,7 +184,7 @@ scoring:
     bd_lower_vuk_ball_enter:
         score: 500
     sw_jukebox:
-        score: 9999
+        score: 9070
     shot_left_lane_hit:
         score: 500
     shot_right_lane_hit:

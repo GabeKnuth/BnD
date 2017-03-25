@@ -44,9 +44,6 @@ show_player:
 
 # @Brian - you can ignore the todo show
 
-# Spot 3 quarters todo show
-# 1 M points todo show
-# Start Ball Saver todo show
 # todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here...somehow
 
 # add a new player var called hold_album value that is 0 or 1. Use the scoring: section of the base mode with
@@ -62,20 +59,7 @@ show_player:
 #set to previous value at ball_starting if player_hold_album_value is not zero? Maybe that's what he wrote, actually.
 #I'm tired.
 
-# Start Multiball (3 ball) (this mode hasn't been created) todo show
-# Select/Start Mission todo show
-# Extra ball todo show
-# 10 points todo show
-#  weak flippers todo show
-
-
-#  mc_start_mission:
-#    events: #todo This isn't going to work. Need a way to only start a mode that hasn't been completed. For now it's ok.
-#      start_music_awards_mode
-#      start_money_bags_mode
-#      start_world_tour_mode
-#      start_jukebox_mode
-#      start_play_poker_mode
+#  weak flippers todo need to figure out how to double scores globally
 
 scoring:
   mc_score_10_points:
@@ -84,6 +68,31 @@ scoring:
     score: 1000000
   mc_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
     quarters: 1
+
+event_player:
+  mode_managers_choice_stopping:
+    enable_base_left_vuk_hold
+  mc_done:
+    disable_base_left_vuk_hold
+    stop_managers_choice|2s
+
+
+
+
+
+
+#random_event_player:
+#  mc_choose_award:
+#    force_all: true
+#    events:
+#      mc_spot_quarters
+#      mc_start_ball_saver
+#      mc_start_mission
+#      mc_extra_ball
+#      mc_10_points
+#      mc_big_points
+#      mc_weak_flippers
+#      mc_start_multiball
 
 slides:
   mcsl_title:
@@ -170,8 +179,30 @@ slides:
     widgets:
       - type: text
         text: EXTRA BALL
+        style: dmd_huge
         color: red
-        style: dmd_big
+        font_size: 0
+        reset_animations_events: pre_show_slide
+        animations:
+          show_slide:
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
   mcsl_10_points:
     widgets:
       - type: text

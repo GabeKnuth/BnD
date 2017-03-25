@@ -8,9 +8,11 @@ event_player:
   mode_honky_tonk_multiball_started:
     fade_out_base_music
     stop_quarters_mode
+    block_jukebox_hits
   mode_honky_tonk_multiball_stopping:
     fade_in_base_music
     start_quarters_mode
+    unblock_jukebox_hits
   htmb_double_jackpot_complete:
     duck
     unduck|1.5s
@@ -44,7 +46,7 @@ slide_player:
       target: stage
     honky_tonk_instructions:
       target: dmd
-      expires: 5s
+      expire: 5s
   slide_honky_tonk_instructions_removed:
     honky_tonk_dmd:
       target: dmd
@@ -59,14 +61,14 @@ slides:
   honky_tonk_dmd:
     widgets:
       - type: text
-        text: 1234567890
+        text: (score)
         number_grouping: true
         style: dmd_huge
         font_size: 24
         anchor_y: top
         y: top+3
       - type: text
-        text: JACKPOT = (ht_jackpot)
+        text: JACKPOT = (player|ht_jackpot)
         number_grouping: true
         style: dmd_med
         color: gold
@@ -145,6 +147,15 @@ slides:
       - type: video
         video: htmb_miss_honky_tonk
         end_behavior: loop
+        animations:
+          duck:
+            - property: volume
+              value: .4
+              duration: .01s
+          unduck:
+            - property: volume
+              value: 1
+              duration: .5s
   double_jackpot_slide:
     widgets:
       - type: image
@@ -184,29 +195,6 @@ slides:
               value: 0
               duration: .2s
 
-shows:
-  jb_play_honky_tonk_song:
-    - duration: -1
-      slides:
-        jb_play_honky_tonk_song:
-          widgets:
-          - type: video
-            video: htmb_miss_honky_tonk
-            end_behavior: loop
-            control_events:
-              - event: stop_song
-                action: stop
-            animations:
-              duck:
-                - property: volume
-                  value: .4
-                  duration: .01s
-              unduck:
-                - property: volume
-                  value: 1
-                  duration: .5s
-          target: stage
-
 achievements:
   htmb_jackpot:
     show_when_started: flash
@@ -235,9 +223,15 @@ scoring:
     htmb_jackpot_value:
       score: 250000
       action: set
+    htmb_balls_locked:
+      score: 0
+      action: set
   sw_jukebox:
-    htmb_jackpot_value: 150000
+    htmb_jackpot_value:
+      score: 150000
   jackpot_complete:
     score: current_player.htmb_jackpot_value
   double_jackpot_complete:
-    score: current_player.htmb_jackpot_value*2
+    score: current_player.htmb_jackpot_value * 2
+
+

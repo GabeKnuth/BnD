@@ -8,9 +8,11 @@ event_player:
   mode_jukebox_two_ball_started:
     fade_out_base_music
     stop_quarters_mode
+    block_jukebox_hits
   mode_jukebox_two_ball_stopping:
     fade_in_base_music
     start_quarters_mode
+    unblock_jukebox_hits
 
 multiballs:
   jukebox_two_ball:
