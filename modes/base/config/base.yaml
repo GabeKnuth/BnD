@@ -176,6 +176,8 @@ logic_blocks:
       events_when_complete: start_base_music_bed
       enable_events: mode_base_started
       disable_events: start_base_music_bed|1s
+#   started, mode_jukebox_hurryup_started, block_jukebox_hits
+
 
 scoring:
     shot_pops_hit:
@@ -237,7 +239,6 @@ scoring:
         mr_shot_score:
           score: 5
           action: set
-
 
 #slides:
 #  widgets:
@@ -372,9 +373,6 @@ show_player:
       ball_save: stop
 
 shots:
-#  album_rotator:
-#    hit_events: shot_pops_hit, shot_slings_hit
-#    profile: album_rotator
   shot_left_lane:
     switch: s_LeftLane
   shot_right_lane:
@@ -385,18 +383,12 @@ shots:
     switch: s_droptarget1, s_DropTarget2, s_droptarget3
   shot_right_drops: #Broken up so I can block this shot when I need to knock down targets
     switch:  s_droptarget4, s_droptarget5
-#  shot_standups:
-#    switch: s_rightbanktop, s_rightbankbottom, s_toprightstandup
   shot_slings:
     switch: s_leftsling, s_rightsling
   shot_pops_to_vuk:
     switch: s_TopRightVUK
     delay_switch:
       s_spinner: 2s # this matches the value in the spinner_to_vuk sequence.
-#  rotate_album_multipliers:
-#    switch: s_leftpop, s_rightpop, s_bottompop, s_leftsling, s_rightsling, s_bottomkickingtarget, s_topkickingtarget
-
-#Shot with sequences
   shot_right_ramp_full_loop:
     switch_sequence: s_rightRampOpto, s_LeftRampOpto
     time: 3000ms
@@ -414,31 +406,6 @@ shots:
     switch: s_jukeboxopto
 
 shot_profiles:
-#    album_rotator:
-#        states:
-#            - name: silver
-#              show: silver
-#            - name: gold
-#              show: gold
-#            - name: platinum
-#              show: platinum
-#            - name: double
-#              show: double
-#            - name: quintuple
-#              show: quintuple
-#        loop: yes
-
-#    album_rotator:
-#      show: album_rotator
-#      states:
-#        - name: silver
-#        - name: gold
-#        - name: platinum
-#        - name: double
-#        - name: quintuple
-#      loop: yes
-#      player_variable: lit_album
-
     managers_choice:
         states:
           - name: unlit
@@ -456,22 +423,6 @@ shot_profiles:
       advance_on_hit: false
 
 shows:
-#  album_rotator:
-#      - leds:
-#          l_silver: on
-#          l_quintuple_platinum: off
-#      - leds:
-#          l_gold: on
-#          l_silver: off
-#      - leds:
-#          l_single_platinum: on
-#          l_gold: off
-#      - leds:
-#          l_double_platinum: on
-#          l_single_platinum: off
-#      - leds:
-#          l_quintuple_platinum: on
-#          l_double_platinum: off
   flash_once:
     - duration: 200ms
       leds:

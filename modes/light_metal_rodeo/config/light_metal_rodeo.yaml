@@ -3,8 +3,8 @@
 # todo need to setup left vuk relay event
 
 mode:
-  start_events: light_hilo
-  stop_events: mode_hilo_stopped
+  start_events: light_metal_rodeo
+  stop_events: start_metal_rodeo
   priority: 400
   restart_on_next_ball: true
 
@@ -12,10 +12,12 @@ mode:
 # in the base mode when a ball is shot into the left vuk. This will start the
 # hilo mode, and when the hilo mode is over, it will release the queue so
 # processing for that vuk entry can continue
-queue_relay_player:
-  left_vuk_hit:
-      post: start_hilo
-      wait_for: mode_hilo_stopping
+#queue_relay_player: #todo do we need this here?
+#  left_vuk_hit:
+#      post: start_metal_rodeo
+#      wait_for: mode_hilo_stopping
+
+# todo @Brian - I just copied the light_hilo mode. This is all basically untouched until I figure out how to actually start it
 
 # Flash the insert when this mode starts to indicate that it can be shot. When
 # the hilo mode starts, switch the insert to solid on. The hilo mode stopping

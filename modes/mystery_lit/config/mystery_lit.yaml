@@ -3,23 +3,20 @@
 mode:
   priority: 300
   start_events: light_mystery
-  stop_events: stop_mystery
+  stop_events: stop_managers_choice
 
 event_player:
   shot_lower_vuk_from_playfield_hit:
       start_managers_choice
-      stop_mystery
 
 show_player:
   mode_mystery_lit_started: flash_mystery
-  collect_mystery:
+  stop_managers_choice:
     flash_mystery:
       action: stop
     on:
       show_tokens:
         led: l_mystery
-    collect_mystery_display_show:
-      loops: 0
 
 slide_player:
   mode_mystery_lit_started:
