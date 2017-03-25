@@ -59,6 +59,8 @@ class PlayPoker(Mode):
 
         self.player.poker_cards.append(self.player.poker_current_card)
 
+        self.machine.events.post('poker_card_locked')
+
         self.machine.events.post(
             'poker_card_{}_solid'.format(len(self.player.poker_cards)),
             image=self.player.poker_current_card.asset)
