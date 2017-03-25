@@ -14,7 +14,7 @@
 # The mode has a 30s timer, and the player can add 5s by collecting a card.
 
 # Scoring table:
-# High card = point value of card * 10. (hah!)
+# High card = 100,000 (can't use event params here)
 # 1 pair = 1,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
 # 2 pair = 2,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
 # 3 of a kind = 5,000,000 pts (he also says to award Managers Choice, but we haven't gotten that far)
@@ -82,7 +82,7 @@ scoring:
   poker_one_pair:
     score: 1000000
   poker_high_card:
-    score: value * 10
+    score: 100000
 
 extra_balls:
   poker:
