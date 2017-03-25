@@ -289,6 +289,21 @@ queue_event_player:
     events_when_finished: release_left_vuk_ball
 
 show_player:
+  flipper_cradle:  # play the status show when one flipper is active for 3s
+    flipper_status:
+      priority: 9900
+      loops: -1
+  flipper_cradle_release:  # stop the show when the active flipper is released
+    flipper_status:
+      action: stop
+  flipper_cancel.1:
+    # When the second flipper is active (which is flipper cancel), pause the show so it
+    # stops auto-advancing
+    flipper_status:
+      action: pause
+  flipper_cancel.2:  # and also manually advance the show to the next step (next slide)
+    flipper_status:
+      action: advance
   eject_flash:
     eject_alert:
       loops: 0

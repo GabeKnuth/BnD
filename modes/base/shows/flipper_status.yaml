@@ -1,0 +1,79 @@
+#show_version=4
+
+- duration: 2s
+  slides:
+    flipper_status_1:
+      widgets:
+        - type: text
+          text: STATUS REPORT
+          style: dmd_big
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_2:
+      widgets:
+        - type: text
+          text: (machine|credits_string)
+          style: dmd_big
+          y: 22
+        - type: text
+          text: BALL (ball)
+          style: dmd_big
+          y: 10
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_3:
+      widgets:
+        - type: text
+          text: "QUARTERS:"
+          style: dmd_big
+          y: 22
+        - type: text
+          text: (player|quarters)
+          style: dmd_big
+          y: 10
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_4:
+      widgets:
+        - type: text
+          text: "ALBUM VALUE:"
+          style: dmd_big
+          y: 22
+        - type: text
+          text: (player|album_value)
+          style: dmd_big
+          y: 10
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+
+
+# TODO this doesn't work since the score slide from this event player
+# will show at the base priority which will most likely not be on top
+# of whatever mode is playing. Is there a way around this without
+# manually re-entering all the score slides here?
+
+#- duration: 2s
+#  events:
+#    show_score_slide
