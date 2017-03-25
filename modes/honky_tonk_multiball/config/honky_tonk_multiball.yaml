@@ -4,18 +4,6 @@ mode:
   start_events: start_honky_tonk_multiball
   stop_events: multiball_honky_tonk_ended
 
-#Map this out.
-#
-#3 balls
-#Shooting jukebox adds 100k to jackpot score (default score 250k)
-#Jackpot awarded on ramp. Then switches to double jackpot. Awards 2x Jackpot, switches back. Can use Achievements from
-#Longhorn 2-ball.
-#
-#todo create player var with Jukebox value for slides and scoring
-#todo Add scoring
-#todo Add Jackpot sounds/slides
-#todo Need to set up ball locks and stuff. GLWAT
-
 event_player:
   mode_honky_tonk_multiball_started:
     fade_out_base_music
@@ -117,7 +105,7 @@ slides:
         color: red
       - type: text
         style: dmd_small
-        text: EACH SHOT = 250k
+        text: JACKPOT STARTS AT 250k
         anchor_y: bottom
         y: bottom
         animations:
@@ -226,7 +214,6 @@ achievements:
     show_tokens:
       led: jackpot
     reset_events: s_topkicker_active
-#    enable_events: mode_jukebox_two_ball_started
     start_events: mode_honky_tonk_multiball_started, htmb_double_jackpot_complete
     complete_events: shot_right_ramp_full_loop_hit
     events_when_completed: htmb_jackpot_complete
@@ -238,7 +225,6 @@ achievements:
     show_tokens:
       led: double_jackpot
     reset_events: shot_right_ramp_full_loop_hit
-#    enable_events: mode_jukebox_two_ball_started
     start_events: htmb_jackpot_complete
     complete_events: s_topkicker_active
     events_when_completed: htmb_double_jackpot_complete
@@ -246,11 +232,12 @@ achievements:
 
 scoring:
   mode_honky_tonk_multiball_started:
-    htmb_jackpot_value: 250000
+    htmb_jackpot_value:
+      score: 250000
       action: set
   sw_jukebox:
-    htmb_jackpot_value: 100000
+    htmb_jackpot_value: 150000
   jackpot_complete:
-    score: htmb_jackpot_value
+    score: current_player.htmb_jackpot_value
   double_jackpot_complete:
-    score: htmb_jackpot_value
+    score: current_player.htmb_jackpot_value*2
