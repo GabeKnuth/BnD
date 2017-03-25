@@ -12,11 +12,8 @@
   slides:
     mcsl_ball_saver_2:
       target: dmd
-#- duration: 1500ms # UNCOMMENT WHEN/IF WE GET GLOBAL SCORE MULTIPLIERS
-#  slides:
-#    mcsl_ball_saver_3:
   events:
     start_mc_ball_saver
 - duration: 1ms
   events:
-    stop_managers_choice
+    mc_done

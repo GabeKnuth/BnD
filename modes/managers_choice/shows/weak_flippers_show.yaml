@@ -12,11 +12,11 @@
   slides:
     mcsl_weak_flippers_2:
       target: dmd
-- duration: 1000ms
-  slides:
-    mcsl_weak_flippers_3:
-      target: dmd
+#- duration: 1000ms #todo uncomment this when we get double scores figured out
+#  slides:
+#    mcsl_weak_flippers_3:
+#      target: dmd
 - duration: 1ms
   events:
     start_weak_flippers
-    stop_managers_choice|100ms
+    mc_done|100ms

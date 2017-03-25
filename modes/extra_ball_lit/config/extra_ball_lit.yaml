@@ -1,7 +1,7 @@
 #config_version=4
 
 mode:
-  priority: 500
+  priority: 600
   start_events: extra_ball_lit
   stop_events: stop_extra_ball_lit_mode
 
@@ -83,6 +83,35 @@ slides:
              value: 1
              duration: 211ms
              repeat: true
+
+widgets:
+  extra_ball_inidcator:
+      - type: image
+        image: down_arrow
+        anchor_y: bottom
+        y: bottom
+        anchor_x: right
+        x: right-70
+        animations:
+          show_slide:
+            - property: y
+              value: 30
+              duration: 1s
+            - property: y
+              value: 0
+              duration: 1s
+              repeat: true
+      - type: text
+        text: EXTRA BALL IS LIT!
+        style: dmd_huge
+        font_size: 100
+        anchor_y: top
+        y: top
+
+widget_player:
+  mode_extra_ball_lit_started:
+    extra_ball_indicator:
+      target: stage
 
 shows:
   extra_ball_awarded:

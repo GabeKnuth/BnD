@@ -12,4 +12,4 @@
     award_extra_ball
 - duration: 1ms
   events:
-    stop_managers_choice
+    mc_done

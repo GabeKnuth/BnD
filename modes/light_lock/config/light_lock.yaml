@@ -1,0 +1,97 @@
+#config_version=4
+
+mode:
+  start_events: start_light_lock
+  stop_events: stop_light_lock
+  priority: 600
+  restart_on_next_ball: true
+
+event_player:
+  player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
+    start_honky_tonk_multiball
+    stop_light_lock|1s
+  shot_spinner_to_vuk_hit:
+    play_ball_locked_slide
+    stop_light_lock|2.5s
+
+show_player:
+  mode_light_lock_started:
+    lock_advertise:
+      loops: -1
+      show_tokens:
+        leds: l_center_lock
+
+slide_player:
+  play_lock_slide:
+    lock_lit_slide:
+      expire: 2.5s
+  play_ball_locked_slide:
+    ball_locked_slide:
+      expire: 2.5s
+
+sound_player:
+  mode_light_lock_started:
+    moo:
+      action: play
+      loops: 0
+      events_when_stopped: play_lock_slide
+  play_ball_locked_slide:
+    slam:
+      action: play
+      loops: 0
+
+slides:
+  lock_lit_slide:
+    widgets:
+      - type: text
+        text: LOCK IS LIT
+        style: dmd_huge
+        color: black
+        font_size: 30
+        animations:
+          show_slide:
+            - property: opacity
+              value: 0
+              duration: .2s
+            - property: opacity
+              value: 1
+              duration: .2s
+              repeat: true
+      - type: rectangle
+        width: 128
+        height: 32
+        color: lime
+  ball_locked_slide:
+    widgets:
+      - type: text
+        text: BALL (player|htmb_balls_locked) LOCKED
+        style: dmd_huge
+        color: black
+        font_size: 30
+        animations:
+          show_slide:
+            - property: opacity
+              value: 0
+              duration: .2s
+            - property: opacity
+              value: 1
+              duration: .2s
+              repeat: true
+      - type: rectangle
+        width: 128
+        height: 32
+        color: lime
+
+shows:
+  lock_advertise:
+    - duration: 200ms
+      leds:
+        (leds): lime-f100ms
+    - duration: 200ms
+      leds:
+        (leds): blue-f100ms
+
+scoring:
+  shot_spinner_to_vuk_hit:
+    htmb_balls_locked: 1
+    action: set

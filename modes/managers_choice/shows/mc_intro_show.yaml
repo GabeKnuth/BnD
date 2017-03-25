@@ -114,8 +114,10 @@
   slides:
     mcsl_hold_album_value:
       target: dmd
-- duration: 400ms
-  slides:
-    mcsl_white_box:
-      target: dmd
-      transition: fade
+      transition_out: fade
+
+#- duration: 400ms
+#  slides:
+#    mcsl_white_box:
+#      target: dmd
+#      transition: fade

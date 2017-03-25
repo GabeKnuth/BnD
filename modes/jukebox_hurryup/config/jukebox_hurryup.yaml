@@ -21,7 +21,7 @@ scoring:
      jukebox_hurryup_total: current_player.jukebox_hurryup_value  # tracks how many points the player got in this mode
   player_jukebox_hurryup_jb_score_timer_tick:
      jukebox_hurryup_value:  # does the math for the score, with "set" action to reset this var each time instead of adding to it
-        score: current_player.jukebox_hurryup_jb_score_timer_tick * current_player.jukebox_hurryup_score_multiplier * 6667
+        score: current_player.jukebox_hurryup_jb_score_timer_tick * current_player.jukebox_hurryup_score_multiplier * 6660
         action: set
   mode_jukebox_hurryup_started:
      jukebox_hurryup_total:  # resets the mode total each time the mode starts since this is in a player var
