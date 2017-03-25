@@ -97,7 +97,7 @@ sound_player:
 
 timers:
     poker_countdown:
-      start_value: 10  # todo TEMP CHANGE BACK TO 30
+      start_value: 30
       direction: down
       end_value: 0
       max_value: 30
