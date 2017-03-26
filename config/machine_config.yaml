@@ -1170,20 +1170,26 @@ keyboard:
   p:
     switch: s_plungerlane
     toggle: true
-  0:
-    event: start_play_poker_mode
   9:
     switch: s_spinner
-  8:
+  0:
     switch: s_lowervukopto
     toggle: true
-  7:
-    event: light_mystery
-  6:
-    event: start_quarters_multiball
-  5:
+  1:
     event: start_world_tour_mode
+  2:
+    event: start_money_bags_mode
+  3:
+    event: start_music_awards_mode
   4:
+    event: start_jukebox_mode
+  5:
+    event: start_play_poker_mode
+  6:
+    event: start_jukebox_hurryup
+  7:
+    event: start_metal_rodeo
+  8:
     event: start_honky_tonk_multiball
   z:
     switch: s_leftflipper
@@ -1199,10 +1205,10 @@ keyboard:
     switch: s_rightinlane
   ".":
     switch: s_rightoutlane
-  1:
+  d:
     switch: s_drain
     toggle: true
-  2:
+  t:
     switch: s_trough_enter
     toggle: true
   v:
@@ -1217,10 +1223,6 @@ keyboard:
     event: light_extra_ball
   j:
     switch: s_jukeboxopto
-  r:
-    switch: s_rightinlane
-  t:
-    switch: s_rightoutlane
 
 player_vars:
   album_value:

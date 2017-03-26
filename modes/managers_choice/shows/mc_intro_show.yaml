@@ -168,13 +168,14 @@
         type: move_out
         duration: 50ms
         direction: bottom
-- duration: 1s
-  widgets:
-    mcw_white_box:
-      target: dmd
   events:
     enable_mission_selection
-- duration: 100ms
+- duration: 1s
+  slides:
+    mcsl_last_slide:
+      target: dmd
+      transition:
+        type: fade
+        duration: .1s
   events:
-    start_mission
-    mc_done
+    start_mission|.7s

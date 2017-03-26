@@ -1,7 +1,7 @@
 #config_version=4
 
 mode:
-  priority: 500
+  priority: 450
   start_events: start_managers_choice
   stop_events: stop_managers_choice
 
@@ -88,6 +88,53 @@ slides:
         text: PLAY POKER
         color: red
         style: dmd_big
+  mcsl_last_slide:
+      widgets:
+        - type: rectangle
+          width: 128
+          height: 32
+          color: white
+          opacity: 0
+          animations:
+            show_slide:
+              - property: opacity
+                value: 0
+                duration: .8s
+              - property: opacity
+                value: 1
+                duration: .3s
+        - type: text
+          text: WORLD TOUR
+          color: red
+          style: dmd_small
+          x: center-33
+          y: bottom+5
+        - type: text
+          text: PLAY POKER
+          color: red
+          style: dmd_small
+          x: center-33
+          y: bottom+16
+        - type: text
+          text: MUSIC AWARDS
+          color: red
+          style: dmd_small
+          x: center+30
+          y: bottom+16
+        - type: text
+          text: MONEY BAGS
+          color: red
+          style: dmd_small
+          x: center+30
+          y: bottom+5
+        - type: text
+          text: JUKEBOX
+          color: red
+          style: dmd_small
+          x: center
+          y: top-5
+
+
 
 
 widgets:
@@ -101,6 +148,6 @@ widgets:
         add_to_slide:
           - property: opacity
             value: 1
-            duration: 800ms
+            duration: 300ms
 
 
