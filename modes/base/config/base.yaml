@@ -279,7 +279,7 @@ ball_holds:
     release_one_events: release_left_vuk_ball
     console_log: full
   top_kicker:
-    enable_events: mode_base_started, enable_base_top_kicker_hold
+    enable_events: enable_base_top_kicker_hold
     disable_events: disable_base_top_kicker_hold
     balls_to_hold: 1
     hold_devices: bd_top_kicker
