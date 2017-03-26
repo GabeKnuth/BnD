@@ -1,6 +1,7 @@
 from mpf.core.mode import Mode
 from random import choice
 
+
 class PlayPoker(Mode):
 
     def mode_start(self, **kwargs):

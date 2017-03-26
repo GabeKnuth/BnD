@@ -261,7 +261,7 @@ queue_relay_player:
 # When the left VUK is shot from the playfield, there could up to three inserts
 # lit and we want to service those one-by-one. So the first thing we have to
 # do is hold the ball, which we do here. Modes that may start from this shot
-# can post the release_left_vuk_ball event when they want to relase the ball.
+# can post the release_left_vuk_ball event when they want to release the ball.
 # They can also post the disable_base_left_vuk_hold if they don't want to
 # hold the ball there in their mode, and then post enable_base_left_vuk_hold
 # to re-enable it in the base mode when they're done.
