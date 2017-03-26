@@ -1,4 +1,50 @@
 # show_version=4
+
+- duration: 4
+  slides:
+    last_game_scores:
+    - type: text
+      text: (machine|player1_score)
+      number_grouping: true
+      min_digits: 2
+      style: dmd_small
+      anchor_y: top
+      anchor_x: right
+      x: right-80
+      y: top-1
+    - type: text
+      text: (machine|player2_score)
+      number_grouping: true
+      min_digits: 2
+      style: dmd_small
+      anchor_y: top
+      anchor_x: right
+      x: right-1
+      y: top-1
+    - type: text
+      text: (machine|player3_score)
+      number_grouping: true
+      min_digits: 2
+      style: dmd_small
+      anchor_y: bottom
+      anchor_x: right
+      x: right-80
+      y: bottom+10
+    - type: text
+      text: (machine|player4_score)
+      number_grouping: true
+      min_digits: 2
+      style: dmd_small
+      anchor_y: bottom
+      anchor_x: right
+      x: right-1
+      y: bottom+10
+    - type: text
+      text: (machine|credits_string)
+      style: dmd_small
+      anchor_y: bottom
+      y: bottom
+
 - duration: 2
   slides:
     attract_dmd_loop_slide_1:
@@ -72,7 +118,7 @@
 
 - duration: 2
   slides:
-    attract_dmd_loop_slide_5:
+    attract_dmd_loop_slide_6:
       widgets:
       - type: text
         text: BROUGHT BACK TO LIFE
@@ -83,47 +129,87 @@
         duration: 500ms
         direction: left
 
-#- duration: 2
-#  slides:
-#    attract_dmd_loop_slide_8:
-#    - type: text
-#      text: (machine|player1_score)
-#      number_grouping: true
-#      min_digits: 2
-#      style: dmd_small
-#      anchor_y: top
-#      anchor_x: right
-#      x: right-80
-#      y: top-1
-#    - type: text
-#      text: (machine|player2_score)
-#      number_grouping: true
-#      min_digits: 2
-#      style: dmd_small
-#      anchor_y: top
-#      anchor_x: right
-#      x: right-1
-#      y: top-1
-#    - type: text
-#      text: (machine|player3_score)
-#      number_grouping: true
-#      min_digits: 2
-#      style: dmd_small
-#      anchor_y: bottom
-#      anchor_x: right
-#      x: right-80
-#      y: bottom+10
-#    - type: text
-#      text: (machine|player4_score)
-#      number_grouping: true
-#      min_digits: 2
-#      style: dmd_small
-#      anchor_y: bottom
-#      anchor_x: right
-#      x: right-1
-#      y: bottom+10
-#    - type: text
-#      text: (machine|credits_string)
-#      style: dmd_small
-#      anchor_y: bottom
-#      y: bottom
+- duration: 3
+  slides:
+    attract_dmd_loop_gc:
+    - type: text
+      text: (machine|score1_label)
+      anchor_y: top
+      y: top-4
+      style: dmd_big
+    - type: text
+      text: (machine|score1_name) (machine|score1_value)
+      anchor_y: bottom
+      number_grouping: true
+      y: bottom+3
+      style: dmd_big
+    - type: rectangle
+      width: 126
+      height: 30
+      color: black
+    - type: rectangle
+      width: 128
+      height: 32
+      color: blue
+
+- duration: 4
+  slides:
+    attract_dmd_loop_hs1:
+      transition:
+        type: move_out
+        duration: 1s
+        direction: top
+      widgets:
+      - type: text
+        text: 1. (machine|score2_name) (machine|score2_value)
+        anchor_y: top
+        anchor_x: left
+        number_grouping: true
+        y: top-3
+        x: left+12
+        style: dmd_big
+      - type: text
+        text: 2. (machine|score3_name) (machine|score3_value)
+        anchor_y: bottom
+        anchor_x: left
+        number_grouping: true
+        y: bottom+3
+        x: left+10
+        style: dmd_big
+- duration: 4
+  slides:
+    attract_dmd_loop_hs2:
+      transition:
+        type: move_in
+        duration: 1s
+        direction: bottom
+      widgets:
+      - type: text
+        text: 3. (machine|score4_name) (machine|score4_value)
+        anchor_y: top
+        y: top-3
+        x: left+10
+        number_grouping: true
+        anchor_x: left
+        style: dmd_big
+      - type: text
+        text: 4. (machine|score5_name) (machine|score5_value)
+        anchor_y: bottom
+        number_grouping: true
+        y: bottom+3
+        x: left+10
+        anchor_x: left
+        style: dmd_big
+
+- duration: 3
+  slides:
+    attract_dmd_loop_quarters:
+    - type: text
+      text: QUARTERS CHAMP
+      min_digits: 2
+      style: dmd_med
+      y: 28
+    - type: text
+      text: (machine|quarters1_name) - (machine|quarters1_value) QUARTERS
+      style: dmd_huge
+      y: 13

@@ -19,6 +19,12 @@ show_player:
       loops: -1
       show_tokens:
         led: l_start_button
+  sw_right_flipper:
+    attract_dmd_loop:
+      action: advance
+  sw_left_flipper:
+    attract_dmd_loop:
+      action: step_back
 
 #slide_player:
 #  game_ended: # move this to match
@@ -48,6 +54,12 @@ show_player:
       target: stage
     attract_music_lights:
       action: stop
+
+slide_player:
+  flipper_cancel:
+    last_game_scores:
+      priority: 1
+      expire: 10s
 
 sound_player:
   mode_attract_started:
