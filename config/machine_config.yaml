@@ -80,32 +80,33 @@ assets:
             load: on_demand
 
 modes:
+  - albums
   - base
-  - jukebox_mode
-  - skill_shot
-  - jukebox_hurryup
-  - mystery_lit
-  - wizard_advance_lit
-  - mission_rotator
-  - light_mission_select
-  - play_poker
-  - money_bags
-  - world_tour
-  - music_awards
-  - jukebox_two_ball
   - bonus
+  - extra_ball_lit
   - hilo
   - hilo_lit
-  - metal_rodeo
-  - quarters
-  - extra_ball_lit
-  - albums
-  - weak_flippers
-  - managers_choice
-  - quarters_multiball
-  - light_lock
   - honky_tonk_multiball
+  - jukebox_hurryup
+  - jukebox_mode
+  - jukebox_two_ball
+  - light_lock
   - light_metal_rodeo
+  - light_mission_select
+  - managers_choice
+  - metal_rodeo
+  - mission_rotator
+  - money_bags
+  - music_awards
+  - mystery
+  - mystery_lit
+  - play_poker
+  - quarters
+  - quarters_multiball
+  - skill_shot
+  - weak_flippers
+  - wizard_advance_lit
+  - world_tour
 
 widget_styles:
   dmd_huge:
@@ -435,7 +436,7 @@ ball_devices:
   bd_plunger:
     tags: ball_add_live
     ball_switches: s_PlungerLane
-    entrance_count_delay: 1000ms
+    entrance_count_delay: 1s
     eject_coil: c_Plunger
     eject_targets: playfield
     eject_timeouts: 3s
@@ -461,6 +462,7 @@ ball_devices:
   bd_top_kicker:
     ball_switches: s_TopKicker
     entrance_count_delay: 1s
+    eject_timeouts: 2s
     eject_coil: c_TopKicker
     eject_targets: playfield, bd_top_right_vuk
     exit_count_delay: 500ms

@@ -1,0 +1,180 @@
+#show_version=4
+
+- duration: 1500ms
+  slides:
+    mcsl_title:
+      target: dmd
+- duration: 1500ms
+  slides:
+    mcsl_start_mission:
+      target: dmd
+- duration: 100ms
+  slides:
+    mcsl_world_tour:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_money_bags:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_music_awards:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_jukebox:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_play_poker:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_world_tour:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_money_bags:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_music_awards:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_jukebox:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_play_poker:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_world_tour:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_money_bags:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_music_awards:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_jukebox:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_play_poker:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_world_tour:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_money_bags:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_music_awards:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_jukebox:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 100ms
+  slides:
+    mcsl_play_poker:
+      target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: down
+- duration: 1s
+  widgets:
+    mcw_white_box:
+      target: dmd
+  events:
+    enable_mission_selection
+- duration: 100ms
+  events:
+    start_mission
+    mc_done

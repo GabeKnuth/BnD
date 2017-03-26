@@ -2,7 +2,7 @@
 
 - duration: 2200ms
   slides:
-    mcsl_10_points:
+    mys_sl_10_points:
       target: dmd
       #transition: fade
   events:

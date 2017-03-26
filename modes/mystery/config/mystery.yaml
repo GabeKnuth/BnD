@@ -75,6 +75,11 @@ event_player:
     disable_base_left_vuk_hold
     stop_mystery|2s
 
+queue_relay_player:
+  left_vuk_hit:
+      post: start_mystery
+      wait_for: stop_mystery
+
 slides:
 #  mys_sl_title:
 #    widgets:

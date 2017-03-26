@@ -2,7 +2,7 @@
 
 - duration: 2700ms
   slides:
-    mcsl_extra_ball:
+    mys_sl_extra_ball:
       target: dmd
       #transition: fade
   sounds:

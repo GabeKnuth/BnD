@@ -40,6 +40,9 @@ event_player:
     fade_out_base_music
   drop_target_bank_drop_targets_down:
     reset_drop_targets|1s
+  shot_top_kicker_managers_choice_lit_hit:
+    enable_base_top_kicker_hold
+    start_managers_choice
   # There was a few events here for light lock. That's done in mode code now.
 
 random_event_player:
@@ -275,6 +278,14 @@ ball_holds:
     hold_devices: bd_lower_vuk
     release_one_events: release_left_vuk_ball
     console_log: full
+  top_kicker:
+    enable_events: mode_base_started, enable_base_top_kicker_hold
+    disable_events: disable_base_top_kicker_hold
+    balls_to_hold: 1
+    hold_devices: bd_top_kicker
+    release_one_events: release_top_kicker_ball
+    console_log: full
+
 
 # Next we use a queue_event_player to watch for the ball being held, and then
 # we post the left_vuk_hit queue event. Any of the associated modes for those
@@ -287,6 +298,9 @@ queue_event_player:
   ball_hold_left_vuk_held_ball:
     queue_event: left_vuk_hit
     events_when_finished: release_left_vuk_ball
+#  ball_hold_top_kicker_held_ball:
+#    queue_event: top_kicker_hit
+#    events_when_finished: release_top_kicker_ball
 
 show_player:
   eject_flash:
@@ -403,17 +417,25 @@ shots:
     time: 2s
   shot_jukebox_loop:
     switch: s_jukeboxopto
+  shot_top_kicker:
+    hit_events: balldevice_bd_top_kicker_ball_enter
+    show_tokens:
+      leds: l_managers_choice
+    profile: managers_choice
+    disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits
+    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits
+    reset_events: reset_managers_choice
 
 shot_profiles:
-#    managers_choice:
-#        states:
-#          - name: unlit
-#            show: off
-#          - name: lit
-#            show: flash
-#          - name: active
-#            show: on
-#        loop: no
+    managers_choice:
+        states:
+          - name: unlit
+            show: off
+          - name: lit
+            show: flash
+          - name: active
+            show: on
+        loop: no
 
     stealth:
       states:

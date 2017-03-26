@@ -2,7 +2,7 @@
 
 - duration: 1000ms
   slides:
-    mcsl_ball_saver:
+    mys_sl_ball_saver:
       target: dmd
       #transition: fade
   sounds:
@@ -10,7 +10,7 @@
       action: play
 - duration: 1500ms
   slides:
-    mcsl_ball_saver_2:
+    mys_sl_ball_saver_2:
       target: dmd
   events:
     start_mc_ball_saver

@@ -1,0 +1,106 @@
+#config_version=4
+
+mode:
+  priority: 500
+  start_events: start_managers_choice
+  stop_events: stop_managers_choice
+
+event_player:
+  mc_done:
+    #disable_base_top_kicker_hold
+    stop_managers_choice|2s
+
+show_player:
+  mode_managers_choice_started:
+    mc_intro_show:
+      loops: 0
+
+slides:
+  mcsl_title:
+    widgets:
+      - type: line # part of an apostrophe
+        points: 65, 22, 65, 20
+        color: red
+      - type: line # part of an apostrophe
+        points: 66, 22, 66, 18
+        color: red
+      - type: points # part of an apostrophe
+        points: 65, 18
+        color: red
+        pointsize: .5
+      - type: text
+        text: S
+        style: dmd_big
+        anchor_y: center
+        y: center
+        anchor_x: left
+        x: 67
+        color: red
+      - type: text
+        text: MANAGER
+        style: dmd_big
+        anchor_y: center
+        y: center
+        anchor_x: right
+        x: 64
+        color: red
+      - type: text
+        text: CHOICE
+        style: dmd_big
+        anchor_y: center
+        y: center
+        anchor_x: left
+        x: 79
+        color: white
+  mcsl_start_mission:
+    widgets:
+      - type: text
+        text: STARTING ROUND...
+        color: red
+        style: dmd_big
+  mcsl_world_tour:
+    widgets:
+      - type: text
+        text: WORLD TOUR
+        color: red
+        style: dmd_big
+  mcsl_money_bags:
+    widgets:
+      - type: text
+        text: MONEY BAGS
+        color: red
+        style: dmd_big
+  mcsl_music_awards:
+    widgets:
+      - type: text
+        text: MUSIC AWARDS
+        color: red
+        style: dmd_big
+  mcsl_jukebox:
+    widgets:
+      - type: text
+        text: JUKEBOX
+        color: red
+        style: dmd_big
+  mcsl_play_poker:
+    widgets:
+      - type: text
+        text: PLAY POKER
+        color: red
+        style: dmd_big
+
+
+widgets:
+  mcw_white_box:
+    - type: rectangle
+      width: 128
+      height: 32
+      color: white
+      opacity: 0
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 1
+            duration: 800ms
+
+

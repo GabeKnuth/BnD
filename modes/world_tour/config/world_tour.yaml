@@ -36,6 +36,8 @@ event_player:
   timer_wt_intro_timer_complete:
     release_left_vuk_ball
     disable_base_left_vuk_hold
+    release_top_kicker_ball
+    disable_base_top_kicker_hold
 
 
 # We need to set up shots so that we start on the North America shot, then move on to

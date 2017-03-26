@@ -75,7 +75,7 @@ timers:
 show_player:
     mode_play_poker_started:
         play_poker_intro:
-            events_when_stopped: start_poker_countdown, release_left_vuk_ball, show_player_cards
+            events_when_stopped: start_poker_countdown, release_left_vuk_ball, show_player_cards, release_top_kicker_ball, disable_base_top_kicker_hold
             loops: 0
     flipper_cancel:
         play_poker_intro:

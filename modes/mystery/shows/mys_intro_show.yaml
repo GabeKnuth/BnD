@@ -2,122 +2,122 @@
 
 - duration: 1500ms
   slides:
-    mcsl_title:
+    mys_sl_title:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_spot_quarters:
+    mys_sl_spot_quarters:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_ball_saver:
+    mys_sl_ball_saver:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_10_points:
+    mys_sl_10_points:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_extra_ball:
+    mys_sl_extra_ball:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_big_points:
+    mys_sl_big_points:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_start_mission:
+    mys_sl_start_mission:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_weak_flippers:
+    mys_sl_weak_flippers:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_start_multiball:
+    mys_sl_start_multiball:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_hold_album_value:
+    mys_sl_hold_album_value:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_spot_quarters:
+    mys_sl_spot_quarters:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_ball_saver:
+    mys_sl_ball_saver:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_10_points:
+    mys_sl_10_points:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_extra_ball:
+    mys_sl_extra_ball:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_big_points:
+    mys_sl_big_points:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_start_mission:
+    mys_sl_start_mission:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_weak_flippers:
+    mys_sl_weak_flippers:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_start_multiball:
+    mys_sl_start_multiball:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_hold_album_value:
+    mys_sl_hold_album_value:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_spot_quarters:
+    mys_sl_spot_quarters:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_ball_saver:
+    mys_sl_ball_saver:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_10_points:
+    mys_sl_10_points:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_extra_ball:
+    mys_sl_extra_ball:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_big_points:
+    mys_sl_big_points:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_start_mission:
+    mys_sl_start_mission:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_weak_flippers:
+    mys_sl_weak_flippers:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_start_multiball:
+    mys_sl_start_multiball:
       target: dmd
   events:
     mc_choose_award
 - duration: 100ms
   slides:
-    mcsl_hold_album_value:
+    mys_sl_hold_album_value:
       target: dmd
       transition_out: fade
 
 #- duration: 400ms
 #  slides:
-#    mcsl_white_box:
+#    mys_sl_white_box:
 #      target: dmd
 #      transition: fade

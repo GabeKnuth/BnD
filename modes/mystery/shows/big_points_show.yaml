@@ -2,7 +2,7 @@
 
 - duration: 1000ms
   slides:
-    mcsl_big_points:
+    mys_sl_big_points:
       target: dmd
       #transition: fade
   sounds:
@@ -10,7 +10,7 @@
       action: play
 - duration: 1500ms
   slides:
-    mcsl_big_points_2:
+    mys_sl_big_points_2:
       target: dmd
   events:
     mc_score_big_points

@@ -2,7 +2,7 @@
 
 - duration: 1000ms
   slides:
-    mcsl_start_multiball:
+    mys_sl_start_multiball:
       target: dmd
       #transition: fade
 - duration: 1ms
