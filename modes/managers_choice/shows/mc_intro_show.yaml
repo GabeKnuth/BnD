@@ -15,7 +15,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_money_bags:
@@ -23,7 +23,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_music_awards:
@@ -31,7 +31,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_jukebox:
@@ -39,7 +39,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_play_poker:
@@ -47,7 +47,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_world_tour:
@@ -55,7 +55,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_money_bags:
@@ -63,7 +63,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_music_awards:
@@ -71,7 +71,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_jukebox:
@@ -79,7 +79,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_play_poker:
@@ -87,7 +87,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_world_tour:
@@ -95,7 +95,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_money_bags:
@@ -103,7 +103,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_music_awards:
@@ -111,7 +111,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_jukebox:
@@ -119,7 +119,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_play_poker:
@@ -127,7 +127,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_world_tour:
@@ -135,7 +135,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_money_bags:
@@ -143,7 +143,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_music_awards:
@@ -151,7 +151,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_jukebox:
@@ -159,7 +159,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 100ms
   slides:
     mcsl_play_poker:
@@ -167,7 +167,7 @@
       transition:
         type: move_out
         duration: 50ms
-        direction: down
+        direction: bottom
 - duration: 1s
   widgets:
     mcw_white_box:

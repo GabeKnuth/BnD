@@ -109,7 +109,7 @@
     mys_sl_start_multiball:
       target: dmd
   events:
-    mc_choose_award
+    mys_choose_award
 - duration: 100ms
   slides:
     mys_sl_hold_album_value:

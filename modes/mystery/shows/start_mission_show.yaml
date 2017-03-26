@@ -10,4 +10,4 @@
 - duration: 100ms
   events:
     start_mission
-    mc_done
+    mys_done

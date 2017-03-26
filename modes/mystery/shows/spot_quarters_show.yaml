@@ -13,7 +13,7 @@
     quarters:
       action: play
   events:
-    mc_score_quarter
+    mys_score_quarter
 - duration: 1000ms
   slides:
     mys_sl_quarter_2:
@@ -22,7 +22,7 @@
     quarters:
       action: play
   events:
-    mc_score_quarter
+    mys_score_quarter
 - duration: 1000ms
   slides:
     mys_sl_quarter_3:
@@ -31,10 +31,10 @@
     quarters:
       action: play
   events:
-    mc_score_quarter
+    mys_score_quarter
 - duration: 1ms
   events:
-    mc_done
+    mys_done
 
 
 

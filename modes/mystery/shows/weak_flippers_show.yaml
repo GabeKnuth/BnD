@@ -19,4 +19,4 @@
 - duration: 1ms
   events:
     start_weak_flippers
-    mc_done|100ms
+    mys_done|100ms
