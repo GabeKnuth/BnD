@@ -2,43 +2,42 @@
 
 mode:
   priority: 500
-  start_events: start_managers_choice
-  stop_events: stop_managers_choice
-
+  start_events: start_mystery
+  stop_events: stop_mystery
 
 show_player:
-  mode_managers_choice_started:
+  mode_mystery_started:
     rainbow:
       show_tokens:
         leds: l_mystery
       loops: -1
-    mc_intro_show:
+    mys_intro_show:
       loops: 0
-  mc_spot_quarters:
+  mys_spot_quarters:
     spot_quarters_show:
       loops: 0
-  mc_start_ball_saver:
+  mys_start_ball_saver:
     start_ball_saver_show:
       loops: 0
-  mc_hold_album_value:
+  mys_hold_album_value:
     hold_album_value_show:
       loops: 0
-  mc_start_multiball:
+  mys_start_multiball:
     start_multiball_show:
       loops: 0
-  mc_start_mission:
+  mys_start_mission:
     start_mission_show:
       loops: 0
-  mc_extra_ball:
+  mys_extra_ball:
     start_extra_ball_show:
       loops: 0
-  mc_10_points:
+  mys_10_points:
     10_points_show:
       loops: 0
-  mc_big_points:
+  mys_big_points:
     big_points_show:
       loops: 0
-  mc_weak_flippers:
+  mys_weak_flippers:
     weak_flippers_show:
       loops: 0
 
@@ -62,70 +61,82 @@ show_player:
 #  weak flippers todo need to figure out how to double scores globally
 
 scoring:
-  mc_score_10_points:
+  mys_score_10_points:
     score: 10
-  mc_score_big_points:
+  mys_score_big_points:
     score: 1000000
-  mc_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
+  mys_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
     quarters: 1
 
 event_player:
-  mode_managers_choice_stopping:
+  mode_mystery_stopping:
     enable_base_left_vuk_hold
-  mc_done:
+  mys_done:
     disable_base_left_vuk_hold
-    stop_managers_choice|2s
+    stop_mystery|2s
 
 slides:
-  mcsl_title:
+#  mys_sl_title:
+#    widgets:
+#      - type: line # part of an apostrophe
+#        points: 65, 22, 65, 20
+#        color: red
+#      - type: line # part of an apostrophe
+#        points: 66, 22, 66, 18
+#        color: red
+#      - type: points # part of an apostrophe
+#        points: 65, 18
+#        color: red
+#        pointsize: .5
+#      - type: text
+#        text: S
+#        style: dmd_big
+#        anchor_y: center
+#        y: center
+#        anchor_x: left
+#        x: 67
+#        color: red
+#      - type: text
+#        text: MANAGER
+#        style: dmd_big
+#        anchor_y: center
+#        y: center
+#        anchor_x: right
+#        x: 64
+#        color: red
+#      - type: text
+#        text: CHOICE
+#        style: dmd_big
+#        anchor_y: center
+#        y: center
+#        anchor_x: left
+#        x: 79
+#        color: white
+  mys_sl_title:
     widgets:
-      - type: line # part of an apostrophe
-        points: 65, 22, 65, 20
-        color: red
-      - type: line # part of an apostrophe
-        points: 66, 22, 66, 18
-        color: red
-      - type: points # part of an apostrophe
-        points: 65, 18
-        color: red
-        pointsize: .5
       - type: text
-        text: S
-        style: dmd_big
-        anchor_y: center
-        y: center
-        anchor_x: left
-        x: 67
+        text: MYSTERY AWARD
+        style: dmd_huge
         color: red
-      - type: text
-        text: MANAGER
-        style: dmd_big
-        anchor_y: center
-        y: center
-        anchor_x: right
-        x: 64
-        color: red
-      - type: text
-        text: CHOICE
-        style: dmd_big
-        anchor_y: center
-        y: center
-        anchor_x: left
-        x: 79
-        color: white
-  mcsl_spot_quarters:
+        font_size: 1
+        animations:
+          show_slide:
+            - property: font_size
+              value: 25
+              duration: .3s
+  mys_sl_spot_quarters:
     widgets:
       - type: text
         text: SPOT QUARTERS
         color: red
         style: dmd_big
-  mcsl_ball_saver:
+  mys_sl_ball_saver:
     widgets:
       - type: text
         text: START BALL SAVER
         color: red
         style: dmd_big
-  mcsl_ball_saver_2:
+  mys_sl_ball_saver_2:
     widgets:
       - type: text
         text: BALL SAVER ACTIVE
@@ -139,25 +150,25 @@ slides:
         y: bottom+4
         color: white
         style: dmd_big
-  mcsl_hold_album_value:
+  mys_sl_hold_album_value:
     widgets:
       - type: text
         text: HOLD ALBUM VALUE
         color: red
         style: dmd_big
-  mcsl_start_multiball:
+  mys_sl_start_multiball:
     widgets:
       - type: text
         text: START MULTIBALL
         color: red
         style: dmd_big
-  mcsl_start_mission:
+  mys_sl_start_mission:
     widgets:
       - type: text
         text: START MISSION
         color: red
         style: dmd_big
-  mcsl_extra_ball:
+  mys_sl_extra_ball:
     widgets:
       - type: text
         text: EXTRA BALL
@@ -185,31 +196,31 @@ slides:
            - property: font_size
              value: 35
              duration: .3s
-  mcsl_10_points:
+  mys_sl_10_points:
     widgets:
       - type: text
         text: 10 POINTS
         color: red
         style: dmd_big
-  mcsl_big_points:
+  mys_sl_big_points:
     widgets:
       - type: text
         text: BIG POINTS
         color: red
         style: dmd_big
-  mcsl_big_points_2:
+  mys_sl_big_points_2:
     widgets:
       - type: text
         text: "1,000,000!"
         color: gold
         style: dmd_big
-  mcsl_weak_flippers:
+  mys_sl_weak_flippers:
     widgets:
       - type: text
         text: WEAK FLIPPERS
         color: red
         style: dmd_big
-  mcsl_weak_flippers_2:
+  mys_sl_weak_flippers_2:
     widgets:
       - type: text
         text: LOW POWER FLIPPERS
@@ -223,7 +234,7 @@ slides:
         y: bottom+4
         color: white
         style: dmd_big
-  mcsl_weak_flippers_3:
+  mys_sl_weak_flippers_3:
     widgets:
       - type: text
         text: ALL SCORES
@@ -237,7 +248,7 @@ slides:
         anchor_x: right
         x: right-2
         style: dmd_big
-  mcsl_white_box:
+  mys_sl_white_box:
     widgets:
       - type: rectangle
         width: 128
@@ -246,7 +257,7 @@ slides:
         opacity: 0
         animations:
           show_slide: fade_in
-  mcsl_quarter_1:
+  mys_sl_quarter_1:
     widgets:
       - type: image
         image: quarter
@@ -256,7 +267,7 @@ slides:
         width: 128
         height: 32
         color: black
-  mcsl_quarter_2:
+  mys_sl_quarter_2:
     widgets:
       - type: image
         image: quarter
@@ -270,7 +281,7 @@ slides:
         width: 128
         height: 32
         color: black
-  mcsl_quarter_3:
+  mys_sl_quarter_3:
     widgets:
       - type: image
         image: quarter

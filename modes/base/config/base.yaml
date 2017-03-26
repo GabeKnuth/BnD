@@ -43,18 +43,17 @@ event_player:
   # There was a few events here for light lock. That's done in mode code now.
 
 random_event_player:
-  mc_choose_award:
+  mys_choose_award:
     force_all: true
     events:
-      mc_spot_quarters
-      mc_start_ball_saver
-      mc_start_mission
-      mc_extra_ball
-      mc_10_points
-      mc_big_points
-      mc_weak_flippers
-      mc_start_multiball
-      #mc_hold_album_value #todo need to figure this one out yet
+      mys_spot_quarters
+      mys_start_ball_saver
+      mys_extra_ball
+      mys_10_points
+      mys_big_points
+      mys_weak_flippers
+      mys_start_multiball
+      #mys_hold_album_value #todo need to figure this one out yet
 
 config:
   - display
@@ -358,18 +357,18 @@ show_player:
       speed: 2
   ball_save_main_disabled:
       ball_save: stop
-  ball_save_managers_choice_enabled:
+  ball_save_mystery_enabled:
     flash:
       show_tokens:
         leds: l_shoot, l_again
       key: ball_save
-  ball_save_managers_choice_hurry_up:
+  ball_save_mystery_hurry_up:
     flash:
       show_tokens:
         leds: l_shoot, l_again
       key: ball_save
       speed: 2
-  ball_save_managers_choice_disabled:
+  ball_save_mystery_disabled:
       ball_save: stop
 
 shots:
@@ -406,15 +405,15 @@ shots:
     switch: s_jukeboxopto
 
 shot_profiles:
-    managers_choice:
-        states:
-          - name: unlit
-            show: off
-          - name: lit
-            show: flash
-          - name: active
-            show: on
-        loop: no
+#    managers_choice:
+#        states:
+#          - name: unlit
+#            show: off
+#          - name: lit
+#            show: flash
+#          - name: active
+#            show: on
+#        loop: no
 
     stealth:
       states:
@@ -515,10 +514,10 @@ ball_saves:
     grace_period: 1s
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
     timer_start_events: playfield_active
-  managers_choice:
+  mystery:
     active_time: 15s
     hurry_up_time: 2s
     grace_period: 1s
-    enable_events: start_mc_ball_saver
+    enable_events: start_mys_ball_saver
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
     timer_start_events: balldevice_bd_lower_vuk_ball_eject_success

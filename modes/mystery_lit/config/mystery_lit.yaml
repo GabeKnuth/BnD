@@ -3,11 +3,12 @@
 mode:
   priority: 300
   start_events: light_mystery
-  stop_events: stop_managers_choice
+  stop_events: stop_mystery
 
-event_player:
-  shot_lower_vuk_from_playfield_hit:
-      start_managers_choice
+queue_relay_player:
+  left_vuk_hit:
+      post: start_mystery
+      wait_for: mode_mystery_lit_stopping
 
 show_player:
   mode_mystery_lit_started: flash_mystery
