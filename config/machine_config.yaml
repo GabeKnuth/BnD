@@ -144,6 +144,9 @@ switches:
   s_launch:
     number: 4
     tags: launch
+  s_tilt:
+    number: 5
+    tags: tilt, tilted
   s_plungerlane:
     number: 16
   s_rightbankbottom:
