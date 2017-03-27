@@ -1,0 +1,62 @@
+#config_version=4
+
+# todo need to setup left vuk relay event
+
+mode:
+  start_events: light_metal_rodeo
+  stop_events: metal_rodeo_go|.1s
+  priority: 400
+  restart_on_next_ball: true
+
+# Watch for the left_vuk_hit queue event which is posted by the queue_event_player
+# in the base mode when a ball is shot into the left vuk. This will start the
+# mr mode, and when the mr mode is ready to launch balls, it will release the queue so
+# processing for that vuk entry can continue
+
+queue_relay_player:
+  left_vuk_hit:
+      post: start_metal_rodeo
+      wait_for: mr_launch_balls #played via shows and other things in mr mode
+
+# Flash the insert when this mode starts to indicate that it can be shot.
+show_player:
+  mode_light_metal_rodeo_started:
+    flash:
+      loops: -1
+      show_tokens:
+        leds: l_begin_round
+  left_vuk_hit:
+    off:
+      show_tokens:
+        leds: l_begin_round
+
+# Tells the player that that the mode is lit
+slide_player:
+  mode_light_metal_rodeo_started:
+    mr_lit_advertise:
+      expire: 3s
+
+# The slide that is played above
+slides:
+  mr_lit_advertise:
+    widgets:
+      - type: text
+        style: dmd_huge
+        font_size: 21
+        text: METAL RODEO IS LIT!
+        color: yellow
+        animations:
+          show_slide:
+            - property: opacity
+              value: .3
+              duration: .4s
+            - property: opacity
+              value: 1
+              duration: .1s
+              repeat: true
+
+sound_player:
+  mode_light_metal_rodeo_started:
+    only_in_america:
+      action: play
+      loops: 0

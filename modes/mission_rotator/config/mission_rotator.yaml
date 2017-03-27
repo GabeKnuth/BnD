@@ -84,6 +84,7 @@ achievement_groups:
     achievements: world_tour, money_bags, music_awards, jukebox, play_poker
     auto_select: true
     enable_events: enable_mission_selection
+    select_random_achievement_events: mc_pick_mission
     start_selected_events: start_mission
     events_when_enabled: mission_rotator_ready
     rotate_right_events: sw_toggle
@@ -92,3 +93,9 @@ achievement_groups:
         l_begin_round
     show_when_enabled: flash
     enable_while_no_achievement_started: false
+    events_when_all_completed: light_metal_rodeo
+    events_when_no_more_enabled: light_metal_rodeo
+
+
+
+

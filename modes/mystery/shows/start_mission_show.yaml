@@ -2,7 +2,7 @@
 
 - duration: 1500ms
   slides:
-    mcsl_start_mission:
+    mys_sl_start_mission:
       target: dmd
       #transition: fade
   events:
@@ -10,4 +10,4 @@
 - duration: 100ms
   events:
     start_mission
-    mc_done
+    mys_done

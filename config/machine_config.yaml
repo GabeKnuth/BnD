@@ -10,7 +10,6 @@
 
 # Created by Brian Madden & Gabe Knuth
 
-
 #        ::::::::      :::       :::   :::   ::::::::::
 #      :+:    :+:   :+: :+:    :+:+: :+:+:  :+:
 #     +:+         +:+   +:+  +:+ +:+:+ +:+ +:+
@@ -27,14 +26,12 @@
 #  #+#    #+# #+#            #+#     #+#    #+# #+#
 #  ########  ##########     ###      ########  ###
 
-
 machine:
   balls_installed: 4
 
 kivy_config:
   graphics:
     show_cursor: false
-
 
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
@@ -66,7 +63,7 @@ sound_system:
 logging:
   file:
     event_manager: full
-    show_controller: full
+    #show_controller: full
 
 assets:
     sounds:
@@ -81,42 +78,40 @@ assets:
     videos:
         default:
             load: on_demand
-        #preload:
-        #    load: on_demand
 
 modes:
+  - albums
   - base
-  - jukebox_mode
-  - skill_shot
-  - jukebox_hurryup
-  - mystery_lit
-  - wizard_advance_lit
-  - mission_rotator
-  - light_mission_select
-  - play_poker
-  - money_bags
-  - world_tour
-  - music_awards
-  - jukebox_two_ball
   - bonus
+  - extra_ball_lit
   - hilo
   - hilo_lit
-  - metal_rodeo
-  - quarters
-  - extra_ball_lit
-  - albums
-  - weak_flippers
-  - managers_choice
-  - quarters_multiball
-  - light_lock
   - honky_tonk_multiball
+  - jukebox_hurryup
+  - jukebox_mode
+  - jukebox_two_ball
+  - light_lock
+  - light_metal_rodeo
+  - light_mission_select
+  - managers_choice
+  - metal_rodeo
+  - mission_rotator
+  - money_bags
+  - music_awards
+  - mystery
+  - mystery_lit
+  - play_poker
+  - quarters
+  - quarters_multiball
+  - skill_shot
+  - weak_flippers
+  - wizard_advance_lit
+  - world_tour
 
 widget_styles:
   dmd_huge:
       font_name: big_noodle_titling
       font_size: 20
-#      adjust_bottom: 5
-#      adjust_top: 2
 
 config:
   - display
@@ -127,7 +122,6 @@ playfields:
     enable_ball_search: true
     ball_search_interval: 150ms
 
-
 #        ::::::::  :::       ::: ::::::::::: ::::::::::: ::::::::  :::    ::: :::::::::: ::::::::
 #      :+:    :+: :+:       :+:     :+:         :+:    :+:    :+: :+:    :+: :+:       :+:    :+:
 #     +:+        +:+       +:+     +:+         +:+    +:+        +:+    +:+ +:+       +:+
@@ -135,7 +129,6 @@ playfields:
 #          +#+ +#+ +#+#+ +#+     +#+         +#+    +#+        +#+    +#+ +#+              +#+
 #  #+#    #+#  #+#+# #+#+#      #+#         #+#    #+#    #+# #+#    #+# #+#       #+#    #+#
 #  ########    ###   ###   ###########     ###     ########  ###    ### ########## ########
-
 
 switches:
   s_leftflipper:
@@ -152,6 +145,9 @@ switches:
   s_launch:
     number: 4
     tags: launch
+  s_tilt:
+    number: 5
+    tags: tilt, tilted
   s_plungerlane:
     number: 16
   s_rightbankbottom:
@@ -256,7 +252,6 @@ switches:
     number: 79
     tags: playfield_active, end_skill_shot, toggle, beat
 
-
 #        ::::::::   :::::::: ::::::::::: :::        ::::::::
 #      :+:    :+: :+:    :+:    :+:     :+:       :+:    :+:
 #     +:+        +:+    +:+    +:+     +:+       +:+
@@ -264,7 +259,6 @@ switches:
 #   +#+        +#+    +#+    +#+     +#+              +#+
 #  #+#    #+# #+#    #+#    #+#     #+#       #+#    #+#
 #  ########   ######## ########### ########## ########
-
 
 coils:
   c_leftflippermain:
@@ -287,10 +281,7 @@ coils:
   c_trougheject:
     number: 6
     allow_enable: true
-    #long_pulse_ms: 320
     pulse_ms: 1000
-    #debug: true
-    # hold_power: 7
   c_draineject:
     number: 7
     pulse_ms: 80
@@ -309,11 +300,6 @@ coils:
   c_diverter:
     number: 12
     allow_enable: true
-  # c_jukeboxmain:
-  #   number: 13
-  #   pulse_ms: 10
-  # c_JukeboxHold:
-  #   number: 14
   c_topkickingtarget:
     number: 15
     pulse_ms: 5
@@ -333,10 +319,8 @@ coils:
   c_upperrightflippermain:
     number: 29
     pulse_ms: 20
-    #debug: true
   c_upperrightflipperhold:
     number: 25
-    ##debug: true
     allow_enable: true
   c_bottompop:
     number: 26
@@ -348,7 +332,6 @@ coils:
     number: 28
     pulse_ms: 20
 
-
 #        :::::::::: :::        ::::::::::: :::::::::  :::::::::  :::::::::: :::::::::   ::::::::
 #       :+:        :+:            :+:     :+:    :+: :+:    :+: :+:        :+:    :+: :+:    :+:
 #      +:+        +:+            +:+     +:+    +:+ +:+    +:+ +:+        +:+    +:+ +:+
@@ -356,7 +339,6 @@ coils:
 #    +#+        +#+            +#+     +#+        +#+        +#+        +#+    +#+        +#+
 #   #+#        #+#            #+#     #+#        #+#        #+#        #+#    #+# #+#    #+#
 #  ###        ########## ########### ###        ###        ########## ###    ###  ########
-
 
 flippers:
   left_flipper:
@@ -428,7 +410,6 @@ flippers:
 #   #+#    #+# #+#          #+#+#+#       #+#    #+#    #+# #+#       #+#    #+#
 #  #########  ##########     ###     ########### ########  ########## ########
 
-
 ball_devices:
   bd_drain:
     tags: drain
@@ -455,7 +436,7 @@ ball_devices:
   bd_plunger:
     tags: ball_add_live
     ball_switches: s_PlungerLane
-    entrance_count_delay: 1000ms
+    entrance_count_delay: 1s
     eject_coil: c_Plunger
     eject_targets: playfield
     eject_timeouts: 3s
@@ -481,6 +462,7 @@ ball_devices:
   bd_top_kicker:
     ball_switches: s_TopKicker
     entrance_count_delay: 1s
+    eject_timeouts: 2s
     eject_coil: c_TopKicker
     eject_targets: playfield, bd_top_right_vuk
     exit_count_delay: 500ms
@@ -510,7 +492,6 @@ ball_devices:
 #   +#+        +#+    +#+    +#+     +#+              +#+
 #  #+#    #+# #+#    #+#    #+#     #+#       #+#    #+#
 #  ########   ######## ########### ########## ########
-
 
 autofire_coils:
   left_sling:
@@ -542,7 +523,6 @@ autofire_coils:
     switch: s_bottomkickingtarget
     enable_events: ball_starting
 
-
 #        :::::::::  :::::::::   ::::::::  :::::::::
 #       :+:    :+: :+:    :+: :+:    :+: :+:    :+:
 #      +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+
@@ -559,7 +539,6 @@ autofire_coils:
 #   #+# #+#     #+# #+#    #+# #+#    #+# #+#            #+#    #+#    #+#
 #  ### ###     ### ###    ###  ########  ##########     ###     ########
 
-
 drop_targets:
   dt_top:
     switch: s_droptarget1
@@ -575,8 +554,6 @@ drop_targets:
     switch: s_droptarget5
     knockdown_coil: c_OuterDropTargetDrop
     knockdown_events: knockdown_right, knockdown_both
-
-
 
 #        :::::::::  :::::::::   ::::::::  :::::::::
 #       :+:    :+: :+:    :+: :+:    :+: :+:    :+:
@@ -602,7 +579,6 @@ drop_targets:
 #   #+#    #+# #+#     #+# #+#   #+#+# #+#   #+# #+#    #+#
 #  #########  ###     ### ###    #### ###    ### ########
 
-
 drop_target_banks:
   drop_targets:
     drop_targets:
@@ -614,7 +590,6 @@ drop_target_banks:
     reset_coils: c_DropTargetReset
     reset_events: ball_starting, reset_drop_targets
 
-
 #        ::::::::  :::::::::: :::::::::  :::     :::  ::::::::   ::::::::
 #      :+:    :+: :+:        :+:    :+: :+:     :+: :+:    :+: :+:    :+:
 #     +:+        +:+        +:+    +:+ +:+     +:+ +:+    +:+ +:+
@@ -622,7 +597,6 @@ drop_target_banks:
 #          +#+ +#+        +#+    +#+  +#+   +#+  +#+    +#+        +#+
 #  #+#    #+# #+#        #+#    #+#   #+#+#+#   #+#    #+# #+#    #+#
 #  ########  ########## ###    ###     ###      ########   ########
-
 
 servos:
   jukebox_servo:
@@ -635,7 +609,6 @@ servos:
       0.0: jukebox_up
       1.0: jukebox_down
 
-
 #        ::::::::: ::::::::::: :::     ::: :::::::::: ::::::::: ::::::::::: :::::::::: :::::::::   ::::::::
 #       :+:    :+:    :+:     :+:     :+: :+:        :+:    :+:    :+:     :+:        :+:    :+: :+:    :+:
 #      +:+    +:+    +:+     +:+     +:+ +:+        +:+    +:+    +:+     +:+        +:+    +:+ +:+
@@ -643,7 +616,6 @@ servos:
 #    +#+    +#+    +#+      +#+   +#+  +#+        +#+    +#+    +#+     +#+        +#+    +#+        +#+
 #   #+#    #+#    #+#       #+#+#+#   #+#        #+#    #+#    #+#     #+#        #+#    #+# #+#    #+#
 #  ######### ###########     ###     ########## ###    ###    ###     ########## ###    ###  ########
-
 
 diverters:
   d_diverter:
@@ -653,18 +625,6 @@ diverters:
     activation_switches: s_LeftOrbit
     enable_events: enable_diverter
     disable_events: ball_ended, disable_diverter
-#  d_jukebox_magnet:
-#    activation_coil: c_JukeboxMagnet
-#    type: hold
-#    activation_time: 2.5s
-#    activation_switches: s_jukeboxOpto
-#    enable_events:
-#      diverter_d_jukebox_scoop_activated: 300ms
-#    disable_events: ball_ended
-#    targets_when_active: bd_jukebox_lock
-#    targets_when_inactive: playfield
-
-
 
 #        :::        :::::::::: :::::::::   ::::::::
 #       :+:        :+:        :+:    :+: :+:    :+:
@@ -673,7 +633,6 @@ diverters:
 #    +#+        +#+        +#+    +#+        +#+
 #   #+#        #+#        #+#    #+# #+#    #+#
 #  ########## ########## #########   ########
-
 
 leds:
   l_australia:
@@ -1170,25 +1129,6 @@ show_player:
     gi_on:
       leds: gi
 
-
-#        ::::::::  :::    :::  :::::::: :::::::::::
-#      :+:    :+: :+:    :+: :+:    :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+    +:+
-#    +#++:++#++ +#++:++#++ +#+    +:+    +#+
-#          +#+ +#+    +#+ +#+    +#+    +#+
-#  #+#    #+# #+#    #+# #+#    #+#    #+#
-#  ########  ###    ###  ########     ###
-#        :::::::::  :::::::::   ::::::::  :::::::::: ::::::::::: :::        :::::::::: ::::::::
-#       :+:    :+: :+:    :+: :+:    :+: :+:            :+:     :+:        :+:       :+:    :+:
-#      +:+    +:+ +:+    +:+ +:+    +:+ +:+            +:+     +:+        +:+       +:+
-#     +#++:++#+  +#++:++#:  +#+    +:+ :#::+::#       +#+     +#+        +#++:++#  +#++:++#++
-#    +#+        +#+    +#+ +#+    +#+ +#+            +#+     +#+        +#+              +#+
-#   #+#        #+#    #+# #+#    #+# #+#            #+#     #+#        #+#       #+#    #+#
-#  ###        ###    ###  ########  ###        ########### ########## ########## ########
-
-
-
-
 #            :::     :::    ::: ::::::::: ::::::::::: ::::::::::: ::::::::  :::::::::
 #         :+: :+:   :+:    :+: :+:    :+:    :+:         :+:    :+:    :+: :+:    :+:
 #       +:+   +:+  +:+    +:+ +:+    +:+    +:+         +:+    +:+    +:+ +:+    +:+
@@ -1197,8 +1137,24 @@ show_player:
 #   #+#     #+# #+#    #+# #+#    #+#    #+#         #+#    #+#    #+# #+#    #+#
 #  ###     ###  ########  ######### ###########     ###     ########  ###    ###
 
-
-
+auditor:
+    save_events:
+        ball_ended
+        game_ended
+    audit:
+        shots
+        switches
+        events
+        player
+    events:
+        ball_search_begin
+        machine_init_phase_1
+        game_started
+        game_ended
+        machine_reset
+    player:
+        score
+    num_player_top_records: 10
 
 #        :::    ::: :::::::::: :::   ::: :::::::::   ::::::::      :::     :::::::::  :::::::::
 #       :+:   :+:  :+:        :+:   :+: :+:    :+: :+:    :+:   :+: :+:   :+:    :+: :+:    :+:
@@ -1208,27 +1164,32 @@ show_player:
 #   #+#   #+#  #+#           #+#    #+#    #+# #+#    #+# #+#     #+# #+#    #+# #+#    #+#
 #  ###    ### ##########    ###    #########   ########  ###     ### ###    ### #########
 
-
 keyboard:
   s:
     switch: s_start
   p:
     switch: s_plungerlane
     toggle: true
-  0:
-    event: start_play_poker_mode
   9:
     switch: s_spinner
-  8:
+  0:
     switch: s_lowervukopto
     toggle: true
-  7:
-    event: light_mystery
-  6:
-    event: start_quarters_multiball
-  5:
+  1:
     event: start_world_tour_mode
+  2:
+    event: start_money_bags_mode
+  3:
+    event: start_music_awards_mode
   4:
+    event: start_jukebox_mode
+  5:
+    event: start_play_poker_mode
+  6:
+    event: start_jukebox_hurryup
+  7:
+    event: start_metal_rodeo
+  8:
     event: start_honky_tonk_multiball
   z:
     switch: s_leftflipper
@@ -1244,10 +1205,10 @@ keyboard:
     switch: s_rightinlane
   ".":
     switch: s_rightoutlane
-  1:
+  d:
     switch: s_drain
     toggle: true
-  2:
+  t:
     switch: s_trough_enter
     toggle: true
   v:
@@ -1262,62 +1223,6 @@ keyboard:
     event: light_extra_ball
   j:
     switch: s_jukeboxopto
-  r:
-    switch: s_rightinlane
-  t:
-    switch: s_rightoutlane
-
-
-
-#        :::::::::      :::     :::        :::
-#       :+:    :+:   :+: :+:   :+:        :+:
-#      +:+    +:+  +:+   +:+  +:+        +:+
-#     +#++:++#+  +#++:++#++: +#+        +#+
-#    +#+    +#+ +#+     +#+ +#+        +#+
-#   #+#    #+# #+#     #+# #+#        #+#
-#  #########  ###     ### ########## ##########
-#        ::::::::      :::     :::     ::: :::::::::: ::::::::
-#      :+:    :+:   :+: :+:   :+:     :+: :+:       :+:    :+:
-#     +:+         +:+   +:+  +:+     +:+ +:+       +:+
-#    +#++:++#++ +#++:++#++: +#+     +:+ +#++:++#  +#++:++#++
-#          +#+ +#+     +#+  +#+   +#+  +#+              +#+
-#  #+#    #+# #+#     #+#   #+#+#+#   #+#       #+#    #+#
-#  ########  ###     ###     ###     ########## ########
-
-
-
-
-
-
-#        ::::::::  :::    :::  :::::::: ::::::::::: ::::::::
-#      :+:    :+: :+:    :+: :+:    :+:    :+:    :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+    +:+    +:+
-#    +#++:++#++ +#++:++#++ +#+    +:+    +#+    +#++:++#++
-#          +#+ +#+    +#+ +#+    +#+    +#+          +#+
-#  #+#    #+# #+#    #+# #+#    #+#    #+#    #+#    #+#
-#  ########  ###    ###  ########     ###     ########
-
-
-
-
-
-
-
-#        ::::::::  :::    :::  :::::::: :::::::::::
-#      :+:    :+: :+:    :+: :+:    :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+    +:+
-#    +#++:++#++ +#++:++#++ +#+    +:+    +#+
-#          +#+ +#+    +#+ +#+    +#+    +#+
-#  #+#    #+# #+#    #+# #+#    #+#    #+#
-#  ########  ###    ###  ########     ###
-#        ::::::::  :::::::::   ::::::::  :::    ::: :::::::::   ::::::::
-#      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
-#     +:+        +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+ +:+
-#    :#:        +#++:++#:  +#+    +:+ +#+    +:+ +#++:++#+  +#++:++#++
-#   +#+   +#+# +#+    +#+ +#+    +#+ +#+    +#+ +#+               +#+
-#  #+#    #+# #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#
-#  ########  ###    ###  ########   ########  ###         ########
-
 
 player_vars:
   album_value:
@@ -1325,7 +1230,6 @@ player_vars:
   album_value_name:
     initial_value: INDY
     value_type: str
-
 
 animations:
   fade_in:

@@ -4,120 +4,178 @@
   slides:
     mcsl_title:
       target: dmd
-- duration: 100ms
-  slides:
-    mcsl_spot_quarters:
-      target: dmd
-- duration: 100ms
-  slides:
-    mcsl_ball_saver:
-      target: dmd
-- duration: 100ms
-  slides:
-    mcsl_10_points:
-      target: dmd
-- duration: 100ms
-  slides:
-    mcsl_extra_ball:
-      target: dmd
-- duration: 100ms
-  slides:
-    mcsl_big_points:
-      target: dmd
-- duration: 100ms
+- duration: 1500ms
   slides:
     mcsl_start_mission:
       target: dmd
 - duration: 100ms
   slides:
-    mcsl_weak_flippers:
+    mcsl_world_tour:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_start_multiball:
+    mcsl_money_bags:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_hold_album_value:
+    mcsl_music_awards:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_spot_quarters:
+    mcsl_jukebox:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_ball_saver:
+    mcsl_play_poker:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_10_points:
+    mcsl_world_tour:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_extra_ball:
+    mcsl_money_bags:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_big_points:
+    mcsl_music_awards:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_start_mission:
+    mcsl_jukebox:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_weak_flippers:
+    mcsl_play_poker:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_start_multiball:
+    mcsl_world_tour:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_hold_album_value:
+    mcsl_money_bags:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_spot_quarters:
+    mcsl_music_awards:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_ball_saver:
+    mcsl_jukebox:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_10_points:
+    mcsl_play_poker:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_extra_ball:
+    mcsl_world_tour:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_big_points:
+    mcsl_money_bags:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_start_mission:
+    mcsl_music_awards:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_weak_flippers:
+    mcsl_jukebox:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
 - duration: 100ms
   slides:
-    mcsl_start_multiball:
+    mcsl_play_poker:
       target: dmd
+      transition:
+        type: move_out
+        duration: 50ms
+        direction: bottom
   events:
-    mc_choose_award
-- duration: 100ms
+    enable_mission_selection
+- duration: 1s
   slides:
-    mcsl_hold_album_value:
+    mcsl_last_slide:
       target: dmd
-      transition_out: fade
-
-#- duration: 400ms
-#  slides:
-#    mcsl_white_box:
-#      target: dmd
-#      transition: fade
+      transition:
+        type: fade
+        duration: .1s
+  events:
+    start_mission|.7s

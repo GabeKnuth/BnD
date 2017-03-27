@@ -1,98 +1,19 @@
 #config_version=4
 
 mode:
-  priority: 500
+  priority: 450
   start_events: start_managers_choice
   stop_events: stop_managers_choice
 
+event_player:
+  mc_done:
+    #disable_base_top_kicker_hold
+    stop_managers_choice|2s
 
 show_player:
   mode_managers_choice_started:
-    rainbow:
-      show_tokens:
-        leds: l_mystery
-      loops: -1
     mc_intro_show:
       loops: 0
-  mc_spot_quarters:
-    spot_quarters_show:
-      loops: 0
-  mc_start_ball_saver:
-    start_ball_saver_show:
-      loops: 0
-  mc_hold_album_value:
-    hold_album_value_show:
-      loops: 0
-  mc_start_multiball:
-    start_multiball_show:
-      loops: 0
-  mc_start_mission:
-    start_mission_show:
-      loops: 0
-  mc_extra_ball:
-    start_extra_ball_show:
-      loops: 0
-  mc_10_points:
-    10_points_show:
-      loops: 0
-  mc_big_points:
-    big_points_show:
-      loops: 0
-  mc_weak_flippers:
-    weak_flippers_show:
-      loops: 0
-
-# @Brian - you can ignore the todo show
-
-# todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here...somehow
-
-# add a new player var called hold_album value that is 0 or 1. Use the scoring: section of the base mode with
-# a conditional event on something like ball_starting{curent_player.hold_album_value==0} to post a new event
-# "reset_album_value" or something, so if that is non zero then it won't reset.
-
-# Then have another scoring entry for reset_album value which sets that (action: set) to 0. And have another scoring
-# entry on ball_start that sets hold_album_value to 0 so it removes the hold at the start of each ball. And
-# use the event sequencing in your scoring section (ball_starting.1, ball_starting.2, etc.) so that the resetting
-# of it from the paragraph above runs first
-
-#Wouldn't this make more sense to set the logic block to false and have it not persist by default? Then have num_albums
-#set to previous value at ball_starting if player_hold_album_value is not zero? Maybe that's what he wrote, actually.
-#I'm tired.
-
-#  weak flippers todo need to figure out how to double scores globally
-
-scoring:
-  mc_score_10_points:
-    score: 10
-  mc_score_big_points:
-    score: 1000000
-  mc_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
-    quarters: 1
-
-event_player:
-  mode_managers_choice_stopping:
-    enable_base_left_vuk_hold
-  mc_done:
-    disable_base_left_vuk_hold
-    stop_managers_choice|2s
-
-
-
-
-
-
-#random_event_player:
-#  mc_choose_award:
-#    force_all: true
-#    events:
-#      mc_spot_quarters
-#      mc_start_ball_saver
-#      mc_start_mission
-#      mc_extra_ball
-#      mc_10_points
-#      mc_big_points
-#      mc_weak_flippers
-#      mc_start_multiball
 
 slides:
   mcsl_title:
@@ -131,179 +52,102 @@ slides:
         anchor_x: left
         x: 79
         color: white
-  mcsl_spot_quarters:
-    widgets:
-      - type: text
-        text: SPOT QUARTERS
-        color: red
-        style: dmd_big
-  mcsl_ball_saver:
-    widgets:
-      - type: text
-        text: START BALL SAVER
-        color: red
-        style: dmd_big
-  mcsl_ball_saver_2:
-    widgets:
-      - type: text
-        text: BALL SAVER ACTIVE
-        color: red
-        style: dmd_big
-        anchor_y: top
-        y: top-4
-      - type: text
-        text: FOR 15 SECONDS
-        anchor_y: bottom
-        y: bottom+4
-        color: white
-        style: dmd_big
-  mcsl_hold_album_value:
-    widgets:
-      - type: text
-        text: HOLD ALBUM VALUE
-        color: red
-        style: dmd_big
-  mcsl_start_multiball:
-    widgets:
-      - type: text
-        text: START MULTIBALL
-        color: red
-        style: dmd_big
   mcsl_start_mission:
     widgets:
       - type: text
-        text: START MISSION
+        text: STARTING ROUND...
         color: red
         style: dmd_big
-  mcsl_extra_ball:
+  mcsl_world_tour:
     widgets:
       - type: text
-        text: EXTRA BALL
-        style: dmd_huge
-        color: red
-        font_size: 0
-        reset_animations_events: pre_show_slide
-        animations:
-          show_slide:
-           - property: font_size
-             value: 100
-             duration: .3s
-           - property: font_size
-             value: 35
-             duration: .3s
-           - property: font_size
-             value: 100
-             duration: .3s
-           - property: font_size
-             value: 35
-             duration: .3s
-           - property: font_size
-             value: 100
-             duration: .3s
-           - property: font_size
-             value: 35
-             duration: .3s
-  mcsl_10_points:
-    widgets:
-      - type: text
-        text: 10 POINTS
+        text: WORLD TOUR
         color: red
         style: dmd_big
-  mcsl_big_points:
+  mcsl_money_bags:
     widgets:
       - type: text
-        text: BIG POINTS
+        text: MONEY BAGS
         color: red
         style: dmd_big
-  mcsl_big_points_2:
+  mcsl_music_awards:
     widgets:
       - type: text
-        text: "1,000,000!"
-        color: gold
-        style: dmd_big
-  mcsl_weak_flippers:
-    widgets:
-      - type: text
-        text: WEAK FLIPPERS
+        text: MUSIC AWARDS
         color: red
         style: dmd_big
-  mcsl_weak_flippers_2:
+  mcsl_jukebox:
     widgets:
       - type: text
-        text: LOW POWER FLIPPERS
-        anchor_y: top
-        y: top-4
+        text: JUKEBOX
         color: red
         style: dmd_big
-      - type: text
-        text: FOR 30 SECONDS
-        anchor_y: bottom
-        y: bottom+4
-        color: white
-        style: dmd_big
-  mcsl_weak_flippers_3:
+  mcsl_play_poker:
     widgets:
       - type: text
-        text: ALL SCORES
+        text: PLAY POKER
         color: red
         style: dmd_big
-        anchor_x: left
-        x: left+3
-      - type: text
-        text: DOUBLED!
-        color: white
-        anchor_x: right
-        x: right-2
-        style: dmd_big
-  mcsl_white_box:
-    widgets:
-      - type: rectangle
-        width: 128
-        height: 32
-        color: white
-        opacity: 0
-        animations:
-          show_slide: fade_in
-  mcsl_quarter_1:
-    widgets:
-      - type: image
-        image: quarter
-        anchor_x: left
-        x: left
-      - type: rectangle
-        width: 128
-        height: 32
-        color: black
-  mcsl_quarter_2:
-    widgets:
-      - type: image
-        image: quarter
-        anchor_x: left
-        x: left
-      - type: image
-        image: quarter
-        anchor_x: center
-        x: center
-      - type: rectangle
-        width: 128
-        height: 32
-        color: black
-  mcsl_quarter_3:
-    widgets:
-      - type: image
-        image: quarter
-        anchor_x: left
-        x: left
-      - type: image
-        image: quarter
-        anchor_x: center
-        x: center
-      - type: image
-        image: quarter
-        anchor_x: right
-        x: right
-      - type: rectangle
-        width: 128
-        height: 32
-        color: black
+  mcsl_last_slide:
+      widgets:
+        - type: rectangle
+          width: 128
+          height: 32
+          color: white
+          opacity: 0
+          animations:
+            show_slide:
+              - property: opacity
+                value: 0
+                duration: .8s
+              - property: opacity
+                value: 1
+                duration: .3s
+        - type: text
+          text: WORLD TOUR
+          color: red
+          style: dmd_small
+          x: center-33
+          y: bottom+5
+        - type: text
+          text: PLAY POKER
+          color: red
+          style: dmd_small
+          x: center-33
+          y: bottom+16
+        - type: text
+          text: MUSIC AWARDS
+          color: red
+          style: dmd_small
+          x: center+30
+          y: bottom+16
+        - type: text
+          text: MONEY BAGS
+          color: red
+          style: dmd_small
+          x: center+30
+          y: bottom+5
+        - type: text
+          text: JUKEBOX
+          color: red
+          style: dmd_small
+          x: center
+          y: top-5
+
+
+
+
+widgets:
+  mcw_white_box:
+    - type: rectangle
+      width: 128
+      height: 32
+      color: white
+      opacity: 0
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 1
+            duration: 300ms
+
 

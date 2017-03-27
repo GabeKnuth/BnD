@@ -2,7 +2,7 @@
 
 - duration: 1000ms
   slides:
-    mcsl_weak_flippers:
+    mys_sl_weak_flippers:
       target: dmd
       #transition: fade
   sounds:
@@ -10,13 +10,13 @@
       action: play
 - duration: 1000ms
   slides:
-    mcsl_weak_flippers_2:
+    mys_sl_weak_flippers_2:
       target: dmd
 #- duration: 1000ms #todo uncomment this when we get double scores figured out
 #  slides:
-#    mcsl_weak_flippers_3:
+#    mys_sl_weak_flippers_3:
 #      target: dmd
 - duration: 1ms
   events:
     start_weak_flippers
-    mc_done|100ms
+    mys_done|100ms

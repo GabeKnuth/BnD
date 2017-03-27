@@ -1,0 +1,123 @@
+#show_version=4
+
+- duration: 1500ms
+  slides:
+    mys_sl_title:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_spot_quarters:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_ball_saver:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_10_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_extra_ball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_big_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_start_mission:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_weak_flippers:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_start_multiball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_hold_album_value:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_spot_quarters:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_ball_saver:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_10_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_extra_ball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_big_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_start_mission:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_weak_flippers:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_start_multiball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_hold_album_value:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_spot_quarters:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_ball_saver:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_10_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_extra_ball:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_big_points:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_start_mission:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_weak_flippers:
+      target: dmd
+- duration: 100ms
+  slides:
+    mys_sl_start_multiball:
+      target: dmd
+  events:
+    mys_choose_award
+- duration: 100ms
+  slides:
+    mys_sl_hold_album_value:
+      target: dmd
+      transition_out: fade
+
+#- duration: 400ms
+#  slides:
+#    mys_sl_white_box:
+#      target: dmd
+#      transition: fade

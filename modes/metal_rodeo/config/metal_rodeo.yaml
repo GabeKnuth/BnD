@@ -55,8 +55,8 @@
 #Mode restarting just goes back to base mode.
 
 mode:
-  start_events: s_rightinlane_active
-  stop_events: s_rightoutlane_active
+  start_events: start_metal_rodeo
+  stop_events: metal_rodeo_done
   priority: 2000
 
 event_player:
@@ -65,7 +65,8 @@ event_player:
     play_intro
     block_jukebox_hits
     stop_quarters_mode
-  mode_meatl_rodeo_stopping:
+    mode_running|5s
+  mode_metal_rodeo_stopping:
     fade_in_base_music
     unblock_jukebox_hits
     start_quarters_mode

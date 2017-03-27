@@ -31,15 +31,37 @@ show_player:
       show_tokens:
         leds: l_hi_lo
 
+# Plays a sound when this mode is started. This is the same event that plays the slide. It's not necessary for them
+# to be in sync, but they should be close.
+sound_player:
+  mode_hilo_lit_started:
+    shuffle:
+      action: play
+      loops: 0
+
 # Tells the player that that hilo mode is lit
 slide_player:
   mode_hilo_lit_started:
     hilo_lit:
-      expire: 2s
+      expire: 3s
 
+# The slide that is played above
 slides:
   hilo_lit:
     widgets:
       - type: text
-        text: HI/LO LIT
-        style: dmd_med
+        style: dmd_huge
+        font_size: 25
+        text: HI-LO IS LIT
+        color: yellow
+        animations:
+          show_slide:
+            - property: opacity
+              value: .3
+              duration: .3s
+            - property: opacity
+              value: 1
+              duration: .3s
+              repeat: true
+      - type: image
+        image: hilo_lit

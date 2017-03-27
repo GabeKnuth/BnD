@@ -2,14 +2,14 @@
 
 - duration: 2200ms
   slides:
-    mcsl_10_points:
+    mys_sl_10_points:
       target: dmd
       #transition: fade
   events:
-    mc_score_10_points
+    mys_score_10_points
   sounds:
     broken_guitar:
       action: play
 - duration: 1ms
   events:
-    mc_done
+    mys_done

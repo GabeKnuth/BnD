@@ -1,19 +1,15 @@
 #show_version=4
 
-- duration: 1000ms
+- duration: 2700ms
   slides:
-    mcsl_big_points:
+    mys_sl_extra_ball:
       target: dmd
       #transition: fade
   sounds:
     yeehaw:
       action: play
-- duration: 1500ms
-  slides:
-    mcsl_big_points_2:
-      target: dmd
   events:
-    mc_score_big_points
+    award_extra_ball
 - duration: 1ms
   events:
-    mc_done
+    mys_done

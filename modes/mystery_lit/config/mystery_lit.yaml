@@ -5,21 +5,19 @@ mode:
   start_events: light_mystery
   stop_events: stop_mystery
 
-event_player:
-  shot_lower_vuk_from_playfield_hit:
-      start_managers_choice
-      stop_mystery
+queue_relay_player:
+  left_vuk_hit:
+      post: start_mystery
+      wait_for: mode_mystery_lit_stopping
 
 show_player:
   mode_mystery_lit_started: flash_mystery
-  collect_mystery:
+  stop_managers_choice:
     flash_mystery:
       action: stop
     on:
       show_tokens:
         led: l_mystery
-    collect_mystery_display_show:
-      loops: 0
 
 slide_player:
   mode_mystery_lit_started:

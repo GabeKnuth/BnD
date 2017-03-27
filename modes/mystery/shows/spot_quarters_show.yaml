@@ -2,39 +2,39 @@
 
 - duration: 1500ms
   slides:
-    mcsl_spot_quarters:
+    mys_sl_spot_quarters:
       target: dmd
       #transition: fade
 - duration: 1000ms
   slides:
-    mcsl_quarter_1:
+    mys_sl_quarter_1:
       target: dmd
   sounds:
     quarters:
       action: play
   events:
-    mc_score_quarter
+    mys_score_quarter
 - duration: 1000ms
   slides:
-    mcsl_quarter_2:
+    mys_sl_quarter_2:
       target: dmd
   sounds:
     quarters:
       action: play
   events:
-    mc_score_quarter
+    mys_score_quarter
 - duration: 1000ms
   slides:
-    mcsl_quarter_3:
+    mys_sl_quarter_3:
       target: dmd
   sounds:
     quarters:
       action: play
   events:
-    mc_score_quarter
+    mys_score_quarter
 - duration: 1ms
   events:
-    mc_done
+    mys_done
 
 
 

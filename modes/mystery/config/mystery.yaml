@@ -1,0 +1,307 @@
+#config_version=4
+
+mode:
+  priority: 500
+  start_events: start_mystery
+  stop_events: stop_mystery
+
+show_player:
+  mode_mystery_started:
+    rainbow:
+      show_tokens:
+        leds: l_mystery
+      loops: -1
+    mys_intro_show:
+      loops: 0
+  mys_spot_quarters:
+    spot_quarters_show:
+      loops: 0
+  mys_start_ball_saver:
+    start_ball_saver_show:
+      loops: 0
+  mys_hold_album_value:
+    hold_album_value_show:
+      loops: 0
+  mys_start_multiball:
+    start_multiball_show:
+      loops: 0
+  mys_start_mission:
+    start_mission_show:
+      loops: 0
+  mys_extra_ball:
+    start_extra_ball_show:
+      loops: 0
+  mys_10_points:
+    10_points_show:
+      loops: 0
+  mys_big_points:
+    big_points_show:
+      loops: 0
+  mys_weak_flippers:
+    weak_flippers_show:
+      loops: 0
+
+# @Brian - you can ignore the todo show
+
+# todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here...somehow
+
+# add a new player var called hold_album value that is 0 or 1. Use the scoring: section of the base mode with
+# a conditional event on something like ball_starting{curent_player.hold_album_value==0} to post a new event
+# "reset_album_value" or something, so if that is non zero then it won't reset.
+
+# Then have another scoring entry for reset_album value which sets that (action: set) to 0. And have another scoring
+# entry on ball_start that sets hold_album_value to 0 so it removes the hold at the start of each ball. And
+# use the event sequencing in your scoring section (ball_starting.1, ball_starting.2, etc.) so that the resetting
+# of it from the paragraph above runs first
+
+#Wouldn't this make more sense to set the logic block to false and have it not persist by default? Then have num_albums
+#set to previous value at ball_starting if player_hold_album_value is not zero? Maybe that's what he wrote, actually.
+#I'm tired.
+
+#  weak flippers todo need to figure out how to double scores globally
+
+scoring:
+  mys_score_10_points:
+    score: 10
+  mys_score_big_points:
+    score: 1000000
+  mys_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
+    quarters: 1
+
+event_player:
+  mode_mystery_stopping:
+    enable_base_left_vuk_hold
+  mys_done:
+    disable_base_left_vuk_hold
+    stop_mystery|2s
+
+queue_relay_player:
+  left_vuk_hit:
+      post: start_mystery
+      wait_for: stop_mystery
+
+slides:
+#  mys_sl_title:
+#    widgets:
+#      - type: line # part of an apostrophe
+#        points: 65, 22, 65, 20
+#        color: red
+#      - type: line # part of an apostrophe
+#        points: 66, 22, 66, 18
+#        color: red
+#      - type: points # part of an apostrophe
+#        points: 65, 18
+#        color: red
+#        pointsize: .5
+#      - type: text
+#        text: S
+#        style: dmd_big
+#        anchor_y: center
+#        y: center
+#        anchor_x: left
+#        x: 67
+#        color: red
+#      - type: text
+#        text: MANAGER
+#        style: dmd_big
+#        anchor_y: center
+#        y: center
+#        anchor_x: right
+#        x: 64
+#        color: red
+#      - type: text
+#        text: CHOICE
+#        style: dmd_big
+#        anchor_y: center
+#        y: center
+#        anchor_x: left
+#        x: 79
+#        color: white
+  mys_sl_title:
+    widgets:
+      - type: text
+        text: MYSTERY AWARD
+        style: dmd_huge
+        color: red
+        font_size: 1
+        animations:
+          show_slide:
+            - property: font_size
+              value: 25
+              duration: .3s
+  mys_sl_spot_quarters:
+    widgets:
+      - type: text
+        text: SPOT QUARTERS
+        color: red
+        style: dmd_big
+  mys_sl_ball_saver:
+    widgets:
+      - type: text
+        text: START BALL SAVER
+        color: red
+        style: dmd_big
+  mys_sl_ball_saver_2:
+    widgets:
+      - type: text
+        text: BALL SAVER ACTIVE
+        color: red
+        style: dmd_big
+        anchor_y: top
+        y: top-4
+      - type: text
+        text: FOR 15 SECONDS
+        anchor_y: bottom
+        y: bottom+4
+        color: white
+        style: dmd_big
+  mys_sl_hold_album_value:
+    widgets:
+      - type: text
+        text: HOLD ALBUM VALUE
+        color: red
+        style: dmd_big
+  mys_sl_start_multiball:
+    widgets:
+      - type: text
+        text: START MULTIBALL
+        color: red
+        style: dmd_big
+  mys_sl_start_mission:
+    widgets:
+      - type: text
+        text: START MISSION
+        color: red
+        style: dmd_big
+  mys_sl_extra_ball:
+    widgets:
+      - type: text
+        text: EXTRA BALL
+        style: dmd_huge
+        color: red
+        font_size: 0
+        reset_animations_events: pre_show_slide
+        animations:
+          show_slide:
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
+           - property: font_size
+             value: 100
+             duration: .3s
+           - property: font_size
+             value: 35
+             duration: .3s
+  mys_sl_10_points:
+    widgets:
+      - type: text
+        text: 10 POINTS
+        color: red
+        style: dmd_big
+  mys_sl_big_points:
+    widgets:
+      - type: text
+        text: BIG POINTS
+        color: red
+        style: dmd_big
+  mys_sl_big_points_2:
+    widgets:
+      - type: text
+        text: "1,000,000!"
+        color: gold
+        style: dmd_big
+  mys_sl_weak_flippers:
+    widgets:
+      - type: text
+        text: WEAK FLIPPERS
+        color: red
+        style: dmd_big
+  mys_sl_weak_flippers_2:
+    widgets:
+      - type: text
+        text: LOW POWER FLIPPERS
+        anchor_y: top
+        y: top-4
+        color: red
+        style: dmd_big
+      - type: text
+        text: FOR 30 SECONDS
+        anchor_y: bottom
+        y: bottom+4
+        color: white
+        style: dmd_big
+  mys_sl_weak_flippers_3:
+    widgets:
+      - type: text
+        text: ALL SCORES
+        color: red
+        style: dmd_big
+        anchor_x: left
+        x: left+3
+      - type: text
+        text: DOUBLED!
+        color: white
+        anchor_x: right
+        x: right-2
+        style: dmd_big
+  mys_sl_white_box:
+    widgets:
+      - type: rectangle
+        width: 128
+        height: 32
+        color: white
+        opacity: 0
+        animations:
+          show_slide: fade_in
+  mys_sl_quarter_1:
+    widgets:
+      - type: image
+        image: quarter
+        anchor_x: left
+        x: left
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+  mys_sl_quarter_2:
+    widgets:
+      - type: image
+        image: quarter
+        anchor_x: left
+        x: left
+      - type: image
+        image: quarter
+        anchor_x: center
+        x: center
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+  mys_sl_quarter_3:
+    widgets:
+      - type: image
+        image: quarter
+        anchor_x: left
+        x: left
+      - type: image
+        image: quarter
+        anchor_x: center
+        x: center
+      - type: image
+        image: quarter
+        anchor_x: right
+        x: right
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+
