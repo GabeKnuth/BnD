@@ -12,7 +12,6 @@ mode_settings:
         # 25k per wizard shot * num albums completed
         score: current_player.wizard_score * current_player.num_albums
 
-
 sound_player:
   bonus_start:
     bonus_bed:
