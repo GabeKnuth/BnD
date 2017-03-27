@@ -64,6 +64,8 @@ logging:
   file:
     event_manager: full
     device_manager: full
+    machine_controller: full
+    platform: full
 #    show_controller: full
 
 assets:
@@ -375,6 +377,7 @@ flippers:
     enable_events: weak_flippers_enabled
     disable_events: weak_flippers_disabled
     use_eos: false
+    debug: true
   weak_right_flipper:
     main_coil: c_RightFlipperMain
     main_coil_overwrite:
@@ -384,6 +387,7 @@ flippers:
     enable_events: weak_flippers_enabled
     disable_events: weak_flippers_disabled
     use_eos: false
+    debug: true
   weak_upper_right_flipper:
     main_coil: c_UpperRightFlipperMain
     main_coil_overwrite:
@@ -394,6 +398,7 @@ flippers:
     disable_events: weak_flippers_disabled
     use_eos: false
     include_in_ball_search: true
+    debug: true
 
 #        :::::::::      :::     :::        :::
 #       :+:    :+:   :+: :+:   :+:        :+:
