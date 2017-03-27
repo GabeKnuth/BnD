@@ -17,6 +17,9 @@ timers:
     start_value: 30
     tick_interval: 1s
     direction: down
+    control_events:
+      - event: mode_weak_flippers_started
+        action: start
 
 slides:
   weak_flippers:

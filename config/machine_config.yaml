@@ -377,7 +377,7 @@ flippers:
   weak_right_flipper:
     main_coil: c_RightFlipperMain
     main_coil_overwrite:
-      pulse_ms: 20
+      pulse_ms: 17
     hold_coil: c_RightFlipperHold
     activation_switch: s_RightFlipper
     enable_events: weak_flippers_enabled
