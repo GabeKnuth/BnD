@@ -6,7 +6,7 @@
 mode:
   start_events: ball_starting
   priority: 100
-  code: base.Base
+  #code: base.Base
 
 event_player:
   mode_base_started:
@@ -36,6 +36,8 @@ event_player:
     light_hilo
   hit_jukebox{count==45}:
     start_jukebox_hurryup
+  hit_jukebox{count%8==0}:
+    start_light_lock
   ball_ending:
     fade_out_base_music
   drop_target_bank_drop_targets_down:
@@ -55,8 +57,9 @@ random_event_player:
       mys_extra_ball
       mys_10_points
       mys_big_points
-      #mys_weak_flippers
       mys_start_multiball
+      #mys_weak_flippers
+
       #mys_hold_album_value #todo need to figure this one out yet
 
 config:

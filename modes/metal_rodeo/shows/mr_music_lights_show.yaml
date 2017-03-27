@@ -10,22 +10,22 @@
 # First strobe in video
 - time: 3.933
   leds:
-    l_lower_right_flasher: on
-    l_lower_left_flasher: on
-    l_right_ramp_flasher: on
-    l_left_ramp_flasher: on
+    l_lower_right_flasher: white
+    l_lower_left_flasher: white
+    l_right_ramp_flasher: white
+    l_left_ramp_flasher: white
 - time: 4.2
   leds:
-    l_lower_right_flasher: on%50
-    l_lower_left_flasher: on%50
-    l_right_ramp_flasher: on%50
-    l_left_ramp_flasher: on%50
+    l_lower_right_flasher: white%50
+    l_lower_left_flasher: white%50
+    l_right_ramp_flasher: white%50
+    l_left_ramp_flasher: white%50
 - time: 4.35
   leds:
-    l_lower_right_flasher: on
-    l_lower_left_flasher: on
-    l_right_ramp_flasher: on
-    l_left_ramp_flasher: on
+    l_lower_right_flasher: white
+    l_lower_left_flasher: white
+    l_right_ramp_flasher: white
+    l_left_ramp_flasher: white
 - time: 4.733
   leds:
     l_lower_right_flasher: off
@@ -36,22 +36,22 @@
 # Second strobe in video
 - time: 6.133
   leds:
-    l_lower_right_flasher: on
-    l_lower_left_flasher: on
-    l_right_ramp_flasher: on
-    l_left_ramp_flasher: on
+    l_lower_right_flasher: white
+    l_lower_left_flasher: white
+    l_right_ramp_flasher: white
+    l_left_ramp_flasher: white
 - time: 6.5
   leds:
-    l_lower_right_flasher: on%50
-    l_lower_left_flasher: on%50
-    l_right_ramp_flasher: on%50
-    l_left_ramp_flasher: on%50
+    l_lower_right_flasher: white%50
+    l_lower_left_flasher: white%50
+    l_right_ramp_flasher: white%50
+    l_left_ramp_flasher: white%50
 - time: 6.85
   leds:
-    l_lower_right_flasher: on
-    l_lower_left_flasher: on
-    l_right_ramp_flasher: on
-    l_left_ramp_flasher: on
+    l_lower_right_flasher: white
+    l_lower_left_flasher: white
+    l_right_ramp_flasher: white
+    l_left_ramp_flasher: white
 - time: 7.1
   leds:
     l_lower_right_flasher: off
@@ -62,22 +62,22 @@
 # Third strobe
 - time: 8.3
   leds:
-    l_lower_right_flasher: on
-    l_lower_left_flasher: on
-    l_right_ramp_flasher: on
-    l_left_ramp_flasher: on
+    l_lower_right_flasher: white
+    l_lower_left_flasher: white
+    l_right_ramp_flasher: white
+    l_left_ramp_flasher: white
 - time: 8.6
   leds:
-    l_lower_right_flasher: on%50
-    l_lower_left_flasher: on%50
-    l_right_ramp_flasher: on%50
-    l_left_ramp_flasher: on%50
+    l_lower_right_flasher: white%50
+    l_lower_left_flasher: white%50
+    l_right_ramp_flasher: white%50
+    l_left_ramp_flasher: white%50
 - time: 8.75
   leds:
-    l_lower_right_flasher: on
-    l_lower_left_flasher: on
-    l_right_ramp_flasher: on
-    l_left_ramp_flasher: on
+    l_lower_right_flasher: white
+    l_lower_left_flasher: white
+    l_right_ramp_flasher: white
+    l_left_ramp_flasher: white
 - time: 9.1
   leds:
     l_lower_right_flasher: off
