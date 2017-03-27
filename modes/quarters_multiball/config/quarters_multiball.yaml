@@ -27,6 +27,7 @@ event_player:
     start_qmb|4.9s
     stop_quarters_mode
     block_jukebox_hits
+    disable_base_left_vuk_hold
   mode_quarters_multiball_stopping:
     start_quarters_mode
     fade_in_base_music

@@ -345,6 +345,22 @@ show_player:
         led: l_right_pop
       priority: 1000000
       sync_ms: 0
+  disable_base_left_vuk_hold:
+    off:
+      key: mute_left_hole_lights
+      show_tokens:
+        leds: l_hi_lo, l_begin_round, l_mystery
+      priority: 1000000
+  enable_base_left_vuk_hold:
+    mute_left_hole_lights: stop
+  disable_base_top_kicker_hold:
+    off:
+      key: mute_managers_choice_light
+      show_tokens:
+        leds: l_managers_choice
+      priority: 1000000
+  enabled_base_top_kicker_hold:
+    mute_managers_choice_light: stop
   s_rightrampopto_active:
     flash_once:
       loops: 3
