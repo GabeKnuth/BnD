@@ -318,7 +318,7 @@ coils:
     pulse_ms: 8
   c_upperrightflippermain:
     number: 29
-    pulse_ms: 20
+    pulse_ms: 15
   c_upperrightflipperhold:
     number: 25
     allow_enable: true
@@ -368,7 +368,7 @@ flippers:
   weak_left_flipper:
     main_coil: c_LeftFlipperMain
     main_coil_overwrite:
-      pulse_ms: 15
+      pulse_ms: 17
     hold_coil: c_LeftFlipperHold
     activation_switch: s_LeftFlipper
     enable_events: weak_flippers_enabled
@@ -377,7 +377,7 @@ flippers:
   weak_right_flipper:
     main_coil: c_RightFlipperMain
     main_coil_overwrite:
-      pulse_ms: 15
+      pulse_ms: 20
     hold_coil: c_RightFlipperHold
     activation_switch: s_RightFlipper
     enable_events: weak_flippers_enabled
