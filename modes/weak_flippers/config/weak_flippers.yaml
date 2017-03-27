@@ -2,7 +2,7 @@
 
 mode:
   priority: 300
-  start_events: start_weak_flippers
+  start_events: start_weak_flippers, s_right_inlane_active
   stop_events: stop_weak_flippers
 
 event_player:
