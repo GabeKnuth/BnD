@@ -1,0 +1,23 @@
+#config_version=4
+
+high_score:
+  _overwrite: True
+  categories:
+  - score:
+    - GRAND CHAMPION
+    - HIGH SCORE 1
+    - HIGH SCORE 2
+    - HIGH SCORE 3
+    - HIGH SCORE 4
+  - quarters:
+    - QUARTERS CHAMP
+
+  defaults:
+    score:
+      - GHK: 10000000
+      - BSM: 8000000
+      - JAB: 6000000
+      - QDG: 4000000
+      - MPF: 2000000
+    quarters:
+      - JON: 5

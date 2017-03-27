@@ -265,7 +265,7 @@ queue_relay_player:
 # When the left VUK is shot from the playfield, there could up to three inserts
 # lit and we want to service those one-by-one. So the first thing we have to
 # do is hold the ball, which we do here. Modes that may start from this shot
-# can post the release_left_vuk_ball event when they want to relase the ball.
+# can post the release_left_vuk_ball event when they want to release the ball.
 # They can also post the disable_base_left_vuk_hold if they don't want to
 # hold the ball there in their mode, and then post enable_base_left_vuk_hold
 # to re-enable it in the base mode when they're done.
@@ -304,6 +304,21 @@ queue_event_player:
 #    events_when_finished: release_top_kicker_ball
 
 show_player:
+  flipper_cradle:  # play the status show when one flipper is active for 3s
+    flipper_status:
+      priority: 9900
+      loops: -1
+  flipper_cradle_release:  # stop the show when the active flipper is released
+    flipper_status:
+      action: stop
+  flipper_cancel.1:
+    # When the second flipper is active (which is flipper cancel), pause the show so it
+    # stops auto-advancing
+    flipper_status:
+      action: pause
+  flipper_cancel.2:  # and also manually advance the show to the next step (next slide)
+    flipper_status:
+      action: advance
   eject_flash:
     eject_alert:
       loops: 0

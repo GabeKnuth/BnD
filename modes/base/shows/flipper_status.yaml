@@ -1,0 +1,132 @@
+#show_version=4
+
+- duration: 2s
+  slides:
+    flipper_status_intro:
+      widgets:
+        - type: text
+          text: STATUS REPORT
+          style: dmd_big
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_ball:
+      widgets:
+        - type: text
+          text: (machine|credits_string)
+          style: dmd_big
+          y: 22
+        - type: text
+          text: BALL (ball)
+          style: dmd_big
+          y: 10
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_jackpot:
+      widgets:
+        - type: text
+          text: "JACKPOT VALUE:"
+          style: dmd_big
+          y: 22
+        - type: text
+          text: (player|jackpot)
+          style: dmd_big
+          y: 10
+          number_grouping: true
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_quarters:
+      widgets:
+        - type: text
+          text: "QUARTERS: (player|quarters)"
+          style: dmd_big
+          y: 22
+        - type: text
+          text: "BONUS MULTIPLIER: (player|bonus_multiplier)X"
+          style: dmd_big
+          y: 10
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_wizard:
+      widgets:
+        - type: text
+          text: "WIZARD VALUE:"
+          style: dmd_big
+          y: 22
+        - type: text
+          text: (player|wizard_score)
+          style: dmd_big
+          y: 10
+          number_grouping: true
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+- duration: 2s
+  slides:
+    flipper_status_jukebox:
+      widgets:
+        - type: text
+          text: "JUKEBOX HITS: (player|lb_jukebox_counter_count)"
+          style: dmd_big
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+
+- duration: 2s
+  slides:
+    flipper_status_albums:
+      widgets:
+        - type: text
+          text: "ALBUMS: (player|num_albums)"
+          style: dmd_big
+          y: 22
+        - type: text
+          text: "ALBUM VALUE: (player|album_value)"
+          style: dmd_med
+          y: 10
+          number_grouping: true
+        - type: line
+          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+          color: red
+        - type: line
+          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+          color: violet
+
+
+# TODO this doesn't work since the score slide from this event player
+# will show at the base priority which will most likely not be on top
+# of whatever mode is playing. Is there a way around this without
+# manually re-entering all the score slides here?
+
+#- duration: 2s
+#  events:
+#    show_score_slide
