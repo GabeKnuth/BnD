@@ -62,8 +62,8 @@ sound_system:
 
 logging:
   file:
-    event_manager: full
-    #show_controller: full
+    event_manager: basic
+#    show_controller: full
 
 assets:
     sounds:
