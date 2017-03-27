@@ -10,7 +10,7 @@
     mys_sl_quarter_1:
       target: dmd
   sounds:
-    quarters:
+    quarter:
       action: play
   events:
     mys_score_quarter
@@ -19,7 +19,7 @@
     mys_sl_quarter_2:
       target: dmd
   sounds:
-    quarters:
+    quarter:
       action: play
   events:
     mys_score_quarter
@@ -28,7 +28,7 @@
     mys_sl_quarter_3:
       target: dmd
   sounds:
-    quarters:
+    quarter:
       action: play
   events:
     mys_score_quarter

@@ -55,7 +55,7 @@ random_event_player:
       mys_extra_ball
       mys_10_points
       mys_big_points
-      mys_weak_flippers
+      #mys_weak_flippers
       mys_start_multiball
       #mys_hold_album_value #todo need to figure this one out yet
 
@@ -191,15 +191,15 @@ scoring:
     sw_jukebox:
         score: 9070
     shot_left_lane_hit:
-        score: 500
+        score: 560
     shot_right_lane_hit:
-        score: 500
+        score: 560
     upper_lanes_default_lit_complete:
         score: 10000
     shot_left_drops_hit:
-        score: 500
+        score: 750
     shot_right_drops_hit:
-        score: 500
+        score: 750
     s_spinner_active:
         score: 1000
     shot_right_ramp_full_loop_hit:

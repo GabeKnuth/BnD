@@ -62,12 +62,12 @@ sound_system:
 
 logging:
   file:
-    event_manager: full
-    device_manager: full
-    machine_controller: full
-    platforms: full
-    service_controller: full
-    settings_controller: full
+    event_manager: basic
+    device_manager: basic
+#    machine_controller: full
+#    platforms: full
+#    service_controller: full
+#    settings_controller: full
 #    show_controller: full
 
 assets:
@@ -109,7 +109,7 @@ modes:
   - quarters
   - quarters_multiball
   - skill_shot
-  - weak_flippers
+#  - weak_flippers
   - wizard_advance_lit
   - world_tour
 
@@ -301,13 +301,13 @@ coils:
     pulse_ms: 40
   c_bottomkickingtarget:
     number: 11
-    pulse_ms: 5
+    pulse_ms: 4
   c_diverter:
     number: 12
     allow_enable: true
   c_topkickingtarget:
     number: 15
-    pulse_ms: 5
+    pulse_ms: 4
   c_outerdroptargetdrop:
     number: 16
   c_innerdroptargetdrop:
