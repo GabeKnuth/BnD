@@ -1223,6 +1223,8 @@ keyboard:
     event: light_extra_ball
   j:
     switch: s_jukeboxopto
+  b:
+    event: timer_video_timer_complete
 
 player_vars:
   album_value:

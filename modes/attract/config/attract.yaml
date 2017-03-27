@@ -19,12 +19,93 @@ show_player:
       loops: -1
       show_tokens:
         led: l_start_button
+<<<<<<< HEAD
+  full_bed_of_roses:
+    full_bed_of_roses:
+      key: music_video
+      loops: 0
+  full_achy_breaky:
+    full_achy_breaky:
+      key: music_video
+      loops: 0
+  full_convoy:
+    full_convoy:
+      key: music_video
+      loops: 0
+  full_every_little_thing:
+    full_every_little_thing:
+      key: music_video
+      loops: 0
+  full_boots_are_made_for_walkin:
+    full_boots_are_made_for_walkin:
+      key: music_video
+      loops: 0
+  full_hello_darlin:
+    full_hello_darlin:
+      key: music_video
+      loops: 0
+  full_louisiana_woman:
+    full_louisiana_woman:
+      key: music_video
+      loops: 0
+  full_rhinestone_cowboy:
+    full_rhinestone_cowboy:
+      loops: 0
+      key: music_video
+  full_stand_by_your_man:
+    full_stand_by_your_man:
+      loops: 0
+      key: music_video
+  ma_my_maria:
+    ma_my_maria:
+      loops: 0
+      key: music_video
+  jb_hard_workin_man:
+    jb_hard_workin_man:
+      loops: 0
+      key: music_video
+  mb_beer_thirty:
+    mb_beer_thirty:
+      loops: 0
+      key: music_video
+  wt_boot_scoot:
+    wt_boot_scoot:
+      loops: 0
+      key: music_video
+  pp_honky_tonk_stomp:
+    pp_honky_tonk_stomp:
+      loops: 0
+      key: music_video
+  mr_bed:
+    mr_bed:
+      loops: 0
+      key: music_video
+  htmb_miss_honky_tonk:
+    htmb_miss_honky_tonk:
+      loops: 0
+      key: music_video
+  qmb_put_a_girl_in_it:
+    qmb_put_a_girl_in_it:
+      loops: 0
+      key: music_video
+  how_long_gone:
+    how_long_gone:
+      loops: 0
+      key: music_video
+  jb_hurry_up_foggy_mountain:
+    jb_hurry_up_foggy_mountain:
+      loops: 0
+      key: music_video
+  flipper_cancel:
+    music_video: stop
+=======
   sw_right_flipper:
     attract_dmd_loop:
       action: advance
   sw_left_flipper:
     attract_dmd_loop:
       action: step_back
+>>>>>>> master
 
 #slide_player:
 #  game_ended: # move this to match
@@ -54,6 +135,8 @@ show_player:
       target: stage
     attract_music_lights:
       action: stop
+    music_video: stop
+    
 
 slide_player:
   flipper_cancel:
@@ -68,34 +151,41 @@ sound_player:
       loops: -1
       mode_end_action: stop
 
-#timers:
-#  video_timer:
-#    start_value: 0
-#    end_value: 480
-#    direction: up
-#    tick_interval: 1s
-#    start_running: true
-#    restart_on_complete: true
+timers:
+  video_timer:
+    start_value: 0
+    end_value: 480
+    direction: up
+    tick_interval: 1s
+    start_running: true
+    restart_on_complete: true
+    control_events:
+      - event: flipper_cancel
+        action: stop
 
-random_event_player:
-    timer_video_timer_complete:
-      force_all: true
-      events:
-        full_bed_of_roses
-        full_achy_breaky
-        full_convoy
-        full_every_little_thing
-        full_boots_are_made_for_walkin
-        full_hello_darlin
-        full_louisiana_woman
-        full_rhinestone_cowboy
-        full_stand_by_your_man
-        ma_my_maria
-        jb_hard_workin_man
-        mb_beer_thirty
-        wt_boot_scoot
-        pp_honky_tonk_stomp
-        mr_bed
+#random_event_player:
+#    timer_video_timer_complete:
+#      force_all: true
+#      events:
+#        full_bed_of_roses
+#        full_achy_breaky
+#        full_convoy
+#        full_every_little_thing
+#        full_boots_are_made_for_walkin
+#        full_hello_darlin
+#        full_louisiana_woman
+#        full_rhinestone_cowboy
+#        full_stand_by_your_man
+#        ma_my_maria
+#        jb_hard_workin_man
+#        mb_beer_thirty
+#        wt_boot_scoot
+#        pp_honky_tonk_stomp
+#        mr_bed
+#        htmb_miss_honky_tonk
+#        qmb_put_a_girl_in_it
+#        how_long_gone
+#        jb_hurry_up_foggy_mountain
 
 shows:
   attract_music_lights:
@@ -124,6 +214,74 @@ shows:
         (left): off
         (right): off
         (center): off
+  jb_hurry_up_foggy_mountain:
+    - duration: -1
+      slides:
+        jb_hurry_up_foggy_mountain:
+          widgets:
+          - type: video
+            video: jb_hurry_up_foggy_mountain
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
+            control_events:
+              - event: flipper_cancel
+                action: stop
+          target: stage
+  how_long_gone:
+    - duration: -1
+      slides:
+        how_long_gone:
+          widgets:
+          - type: video
+            video: how_long_gone
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
+            control_events:
+              - event: flipper_cancel
+                action: stop
+          target: stage
+  qmb_put_a_girl_in_it:
+    - duration: -1
+      slides:
+        qmb_put_a_girl_in_it:
+          widgets:
+          - type: video
+            video: qmb_put_a_girl_in_it
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
+            control_events:
+              - event: flipper_cancel
+                action: stop
+          target: stage
+  htmb_miss_honky_tonk:
+    - duration: -1
+      slides:
+        htmb_miss_honky_tonk:
+          widgets:
+          - type: video
+            video: htmb_miss_honky_tonk
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
+            control_events:
+              - event: flipper_cancel
+                action: stop
+          target: stage
   full_stand_by_your_man:
     - duration: -1
       slides:
@@ -131,8 +289,14 @@ shows:
           widgets:
           - type: video
             video: full_stand_by_your_man
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -143,8 +307,14 @@ shows:
           widgets:
           - type: video
             video: full_bed_of_roses
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -155,8 +325,14 @@ shows:
           widgets:
           - type: video
             video: full_achy_breaky
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -167,8 +343,14 @@ shows:
           widgets:
           - type: video
             video: full_convoy
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -179,8 +361,14 @@ shows:
           widgets:
           - type: video
             video: full_every_little_thing
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -191,8 +379,14 @@ shows:
           widgets:
           - type: video
             video: full_boots_are_made_for_walkin
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -203,8 +397,14 @@ shows:
           widgets:
           - type: video
             video: full_hello_darlin
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -215,8 +415,14 @@ shows:
           widgets:
           - type: video
             video: full_louisiana_woman
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -227,8 +433,14 @@ shows:
           widgets:
           - type: video
             video: full_rhinestone_cowboy
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -239,8 +451,14 @@ shows:
           widgets:
           - type: video
             video: ma_my_maria
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -251,8 +469,14 @@ shows:
           widgets:
           - type: video
             video: jb_hard_workin_man
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -263,8 +487,14 @@ shows:
           widgets:
           - type: video
             video: ma_beer_thirty
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -275,8 +505,14 @@ shows:
           widgets:
           - type: video
             video: wt_boot_scoot
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -287,8 +523,14 @@ shows:
           widgets:
           - type: video
             video: pp_honky_tonk_stomp
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
@@ -299,8 +541,14 @@ shows:
           widgets:
           - type: video
             video: mr_bed
+            volume: 0
+            animations:
+              show_slide:
+                - property: volume
+                  value: 1
+                  duration: 2s
             control_events:
-              - event: stop_song
+              - event: flipper_cancel
                 action: stop
           target: stage
 
