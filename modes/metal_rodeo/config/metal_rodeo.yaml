@@ -62,6 +62,7 @@ mode:
 event_player:
   mode_metal_rodeo_started:
     fade_out_base_music
+    mission_started
     play_intro
     block_jukebox_hits
     stop_quarters_mode

@@ -45,4 +45,8 @@
         direction: right
 - time: 14
   events:
+    release_left_vuk_ball
+    disable_base_left_vuk_hold
+    release_top_kicker_ball
+    disable_base_top_kicker_hold
     mr_go

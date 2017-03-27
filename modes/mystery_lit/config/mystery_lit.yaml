@@ -33,44 +33,15 @@ sound_player:
 slides:
   mystery_lit:
     widgets:
-      - type: line # part of an apostrophe
-        points: 65, 32, 65, 30
-        color: white
-      - type: line # part of an apostrophe
-        points: 66, 32, 66, 28
-        color: white
-      - type: points # part of an apostrophe
-        points: 65, 28
-        color: white
-        pointsize: .5
       - type: text
-        text: S
-        style: dmd_big
-        anchor_y: top
-        y: top-1
-        anchor_x: left
-        x: 67
-      - type: text
-        text: MANAGER
+        text: MYSTERY IS LIT
         style: dmd_big
         anchor_y: top
         y: top-1
         anchor_x: right
         x: 64
       - type: text
-        text: CHOICE
-        style: dmd_big
-        anchor_y: top
-        y: top-1
-        anchor_x: left
-        x: 79
-      - type: text
-        text: IS LIT!
-        style: dmd_big
-        anchor_y: top
-        y: center+2
-      - type: text
-        text: SHOOT LEFT POPPER
+        text: SHOOT LEFT HOLE
         style: dmd_small
         anchor_y: bottom
         y: bottom

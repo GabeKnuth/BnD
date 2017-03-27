@@ -346,21 +346,21 @@ flippers:
     hold_coil: c_LeftFlipperHold
     activation_switch: s_LeftFlipper
     enable_events: ball_starting, weak_flippers_disabled
-    disable_events: weak_flippers_enabled, ball_ending
+    disable_events: weak_flippers_enabled, mode_bonus_starting
     use_eos: false
   right_flipper:
     main_coil: c_RightFlipperMain
     hold_coil: c_RightFlipperHold
     activation_switch: s_RightFlipper
     enable_events: ball_starting, weak_flippers_disabled
-    disable_events: weak_flippers_enabled, ball_ending
+    disable_events: weak_flippers_enabled, mode_bonus_starting
     use_eos: false
   upper_right_flipper:
     main_coil: c_UpperRightFlipperMain
     hold_coil: c_UpperRightFlipperHold
     activation_switch: s_RightFlipper
     enable_events: ball_starting, weak_flippers_disabled
-    disable_events: weak_flippers_enabled, ball_ending
+    disable_events: weak_flippers_enabled, mode_bonus_starting
     use_eos: false
     include_in_ball_search: true
 
@@ -1224,7 +1224,7 @@ keyboard:
   j:
     switch: s_jukeboxopto
   b:
-    event: timer_video_timer_complete
+    event: start_weak_flippers
 
 player_vars:
   album_value:
