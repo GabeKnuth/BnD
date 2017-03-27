@@ -19,7 +19,6 @@ show_player:
       loops: -1
       show_tokens:
         led: l_start_button
-<<<<<<< HEAD
   full_bed_of_roses:
     full_bed_of_roses:
       key: music_video
@@ -98,14 +97,12 @@ show_player:
       key: music_video
   flipper_cancel:
     music_video: stop
-=======
   sw_right_flipper:
     attract_dmd_loop:
       action: advance
   sw_left_flipper:
     attract_dmd_loop:
       action: step_back
->>>>>>> master
 
 #slide_player:
 #  game_ended: # move this to match
