@@ -17,3 +17,14 @@ timers:
     start_value: 30
     tick_interval: 1s
     direction: down
+
+slides:
+  weak_flippers:
+    widgets:
+      - type: text
+        text: weak
+
+slide_player:
+  mode_weak_flippers_started:
+    weak_flippers:
+      target: stage
