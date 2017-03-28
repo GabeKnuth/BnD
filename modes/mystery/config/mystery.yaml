@@ -70,7 +70,7 @@ scoring:
     score: 1000000
   mys_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
     quarters: 1
-  mys_award_lock:
+  award_mystery_lock:
     htmb_balls_locked: 1
 
 event_player:

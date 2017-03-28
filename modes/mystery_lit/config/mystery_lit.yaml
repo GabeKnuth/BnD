@@ -34,17 +34,26 @@ slides:
   mystery_lit:
     widgets:
       - type: text
-        text: MYSTERY IS LIT
-        style: dmd_big
+        text: "MYSTERY IS LIT"
+        style: dmd_huge
         anchor_y: top
         y: top-1
-        anchor_x: right
-        x: 64
+        color: lime
+        animations:
+          show_slide:
+            - property: opacity
+              value: .2
+              duration: .3s
+            - property: opacity
+              value: 1
+              duration: .3s
+              repeat: true
       - type: text
         text: SHOOT LEFT HOLE
         style: dmd_small
+        color: yellow
         anchor_y: bottom
-        y: bottom
+        y: bottom+2
 
 shows:
   flash_mystery:
