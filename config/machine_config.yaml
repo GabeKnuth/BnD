@@ -1231,6 +1231,8 @@ keyboard:
     event: light_extra_ball
   j:
     switch: s_jukeboxopto
+  k:
+    event: shot_spinner_to_vuk_hit
   b:
     event: start_weak_flippers
 
