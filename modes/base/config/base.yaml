@@ -16,6 +16,12 @@ event_player:
     light_mystery
   mode_mission_rotator_started:
     stop_mystery
+  mode_jukebox_two_ball_stopped:
+    light_mission_select
+  mode_metal_rodeo_stopped:
+    light_mission_select
+  mode_honky_tonk_multiball_stopped:
+    light_mission_select
   world_tour_fail:
     light_mission_select
   money_bags_fail:

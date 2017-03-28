@@ -7,7 +7,7 @@
 
 mode:
   start_events: light_mission_select
-  stop_events: mission_started
+  stop_events: mission_started, stop_mission_select
   priority: 200
 
 show_player:

@@ -9,6 +9,8 @@ event_player:
     fade_out_base_music
     stop_quarters_mode
     block_jukebox_hits
+    start_hkmb_achievements|2s
+    stop_mission_select
   mode_honky_tonk_multiball_stopping:
     fade_in_base_music
     start_quarters_mode
@@ -53,9 +55,11 @@ slide_player:
   htmb_jackpot_complete:
     jackpot_slide:
       target: dmd
+      expire: 1.5s
   htmb_double_jackpot_complete:
     double_jackpot_slide:
       target: dmd
+      expire: 1.5s
 
 slides:
   honky_tonk_dmd:
@@ -68,7 +72,7 @@ slides:
         anchor_y: top
         y: top+3
       - type: text
-        text: JACKPOT = (player|ht_jackpot)
+        text: JACKPOT = (player|htmb_jackpot_value)
         number_grouping: true
         style: dmd_med
         color: gold
@@ -202,7 +206,7 @@ achievements:
     show_tokens:
       led: jackpot
     reset_events: s_topkicker_active
-    start_events: mode_honky_tonk_multiball_started, htmb_double_jackpot_complete
+    start_events: start_hkmb_achievements, htmb_double_jackpot_complete
     complete_events: shot_right_ramp_full_loop_hit
     events_when_completed: htmb_jackpot_complete
     restart_after_stop_possible: true
@@ -229,9 +233,9 @@ scoring:
   sw_jukebox:
     htmb_jackpot_value:
       score: 150000
-  jackpot_complete:
+  htmb_jackpot_complete:
     score: current_player.htmb_jackpot_value
-  double_jackpot_complete:
+  htmb_double_jackpot_complete:
     score: current_player.htmb_jackpot_value * 2
 
 

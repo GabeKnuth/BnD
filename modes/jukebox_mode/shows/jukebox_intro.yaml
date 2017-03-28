@@ -3,6 +3,4 @@
 - duration: 5s
   slides:
     jb_intro:
-      widgets:
-        - type: text
-          text: JUKEBOX INSTRUCTIONS
+      target: dmd
