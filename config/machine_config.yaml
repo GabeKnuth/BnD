@@ -109,6 +109,7 @@ modes:
   - quarters
   - quarters_multiball
   - skill_shot
+  - tilt
 #  - weak_flippers
   - wizard_advance_lit
   - world_tour
@@ -152,7 +153,7 @@ switches:
     tags: launch
   s_tilt:
     number: 5
-    tags: tilt, tilted
+    tags: tilt_warning
   s_plungerlane:
     number: 16
   s_rightbankbottom:
@@ -1219,6 +1220,8 @@ keyboard:
   t:
     switch: s_trough_enter
     toggle: true
+  shift+t:
+    switch: s_tilt
   v:
     switch: s_leftsling
   m:

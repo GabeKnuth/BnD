@@ -1,0 +1,36 @@
+#config_version=4
+
+# Settings here overwrite the defaults in mpf/modes/tilt
+
+tilt:
+  warnings_to_tilt: 3
+  multiple_hit_window: 300ms
+  settle_time: 5s
+
+slide_player:
+  tilt_warning_1: tilt_warning_1
+  tilt_warning_2: tilt_warning_2
+  tilt: tilt
+  tilt_clear:
+    tilt:
+      action: remove
+slides:
+  tilt_warning_1:
+    widgets:
+    - type: text
+      text: WARNING
+    expire: 1s
+  tilt_warning_2:
+    widgets:
+    - type: text
+      text: WARNING
+      y: top-2
+      anchor_y: top
+    - type: text
+      text: WARNING
+      y: top-18
+      anchor_y: top
+    expire: 2s
+  tilt:
+  - type: text
+    text: TILT
