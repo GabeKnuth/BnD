@@ -93,7 +93,7 @@ widgets:
         anchor_x: right
         x: right-70
         animations:
-          show_slide:
+          add_to_slide:
             - property: y
               value: 30
               duration: 1s
