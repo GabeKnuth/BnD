@@ -204,7 +204,6 @@ slides:
         x: right-1
     target: dmd
 
-
   play_poker_fail:
     widgets:
       - type: text
@@ -215,35 +214,6 @@ slides:
         text: PLAY POKER AGAIN TO FINISH
         style: dmd_small
         y: 3
-
-  pp_stage:  # This plays the music video on the stage
-    widgets:
-      - type: video
-        video: pp_play_something_country
-        end_behavior: loop
-        animations:
-          music_awards_fade_out:
-            - property: volume
-              value: 0
-              duration: 2s
-
-  full_cards:
-        widgets:
-          - type: image
-            image: nine_clubs
-            x: 14
-          - type: image
-            image: eight_clubs
-            x: 39
-          - type: image
-            image: seven_clubs
-            x: 64
-          - type: image
-            image: six_clubs
-            x: 89
-          - type: image
-            image: five_clubs
-            x: 114
 
   card_background:
     widgets:
