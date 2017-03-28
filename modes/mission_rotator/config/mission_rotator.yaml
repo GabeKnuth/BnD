@@ -94,7 +94,6 @@ achievement_groups:
     show_when_enabled: flash
     enable_while_no_achievement_started: false
     events_when_all_completed: light_metal_rodeo
-    #events_when_no_more_enabled: light_metal_rodeo
 
 
 
