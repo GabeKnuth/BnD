@@ -215,19 +215,19 @@ switches:
     tags: playfield_active, end_skill_shot
   s_droptarget1:
     number: 64
-    tags: playfield_active, end_skill_shot, beat
+    tags: playfield_active, beat
   s_droptarget2:
     number: 65
-    tags: playfield_active, end_skill_shot, beat
+    tags: playfield_active, beat
   s_droptarget3:
     number: 66
-    tags: playfield_active, end_skill_shot, beat
+    tags: playfield_active, beat
   s_droptarget4:
     number: 67
-    tags: playfield_active, end_skill_shot, beat
+    tags: playfield_active, beat
   s_droptarget5:
     number: 68
-    tags: playfield_active, end_skill_shot, beat
+    tags: playfield_active, beat
   s_toprightvuk:
     number: 69
     tags: end_skill_shot

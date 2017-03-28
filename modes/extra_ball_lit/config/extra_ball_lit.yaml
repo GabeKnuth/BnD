@@ -10,8 +10,9 @@ led_player:
     l_extra_ball: on
 
 event_player:
-  shot_pops_to_vuk_hit: award_lit_extra_ball
-  extra_ball_unlit: stop_extra_ball_lit_mode|2s
+  shot_pops_to_vuk_hit:
+    award_lit_extra_ball
+    stop_extra_ball_lit_mode|3.3s
 
 sound_player:
   extra_ball_awarded:
@@ -112,6 +113,9 @@ widget_player:
   mode_extra_ball_lit_started:
     extra_ball_indicator:
       target: stage
+  shot_pops_to_vuk_hit:
+    extra_ball_indicator:
+      action: remove
 
 shows:
   extra_ball_awarded:

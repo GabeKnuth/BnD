@@ -460,8 +460,8 @@ shots:
     show_tokens:
       leds: l_managers_choice
     profile: managers_choice
-    disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits
-    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits
+    disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits, light_metal_rodeo
+    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits, mode_metal_rodeo_stopping
     reset_events: reset_managers_choice
 
 shot_profiles:
