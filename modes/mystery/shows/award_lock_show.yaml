@@ -1,0 +1,20 @@
+#show_version=4
+
+- duration: 1000ms
+  slides:
+    mys_sl_award_lock:
+      target: dmd
+      #transition: fade
+  sounds:
+    broken_guitar:
+      action: play
+- duration: 1000ms
+  slides:
+    mys_sl_ball_locked_slide:
+      target: dmd
+      #transition: fade
+  events:
+    mys_award_lock
+- duration: 1ms
+  events:
+    mys_done

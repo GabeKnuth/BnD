@@ -46,7 +46,9 @@ event_player:
     enable_base_top_kicker_hold
   shot_top_kicker_managers_choice_lit_hit:
     start_managers_choice
-  # There was a few events here for light lock. That's done in mode code now.
+  player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
+    start_honky_tonk_multiball
+    stop_light_lock|1s
 
 random_event_player:
   mys_choose_award:
@@ -58,6 +60,7 @@ random_event_player:
       mys_10_points
       mys_big_points
       mys_start_multiball
+      mys_award_lock
       #mys_weak_flippers
 
       #mys_hold_album_value #todo need to figure this one out yet

@@ -7,9 +7,10 @@ mode:
   restart_on_next_ball: true
 
 event_player:
-  player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
-    start_honky_tonk_multiball
-    stop_light_lock|1s
+# We do this in base now
+#  player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
+#    start_honky_tonk_multiball
+#    stop_light_lock|1s
   shot_spinner_to_vuk_hit:
     play_ball_locked_slide
     stop_light_lock|2.5s
@@ -94,4 +95,3 @@ shows:
 scoring:
   shot_spinner_to_vuk_hit:
     htmb_balls_locked: 1
-    action: set

@@ -40,6 +40,9 @@ show_player:
   mys_weak_flippers:
     weak_flippers_show:
       loops: 0
+  mys_award_lock:
+    award_lock_show:
+      loops: 0
 
 # @Brian - you can ignore the todo show
 
@@ -67,6 +70,8 @@ scoring:
     score: 1000000
   mys_score_quarter: # doing one at a time in hopes that we can avoid skipping a quarter award.
     quarters: 1
+  mys_award_lock:
+    htmb_balls_locked: 1
 
 event_player:
   mode_mystery_stopping:
@@ -304,4 +309,29 @@ slides:
         width: 128
         height: 32
         color: black
-
+  mys_sl_award_lock:
+    widgets:
+      - type: text
+        text: AWARD LOCK
+        color: red
+        style: dmd_big
+  mys_sl_ball_locked_slide:
+    widgets:
+      - type: text
+        text: BALL (player|htmb_balls_locked) LOCKED
+        style: dmd_huge
+        color: black
+        font_size: 30
+        animations:
+          show_slide:
+            - property: opacity
+              value: 0
+              duration: .2s
+            - property: opacity
+              value: 1
+              duration: .2s
+              repeat: true
+      - type: rectangle
+        width: 128
+        height: 32
+        color: lime
