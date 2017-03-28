@@ -52,6 +52,9 @@ slide_player:
   slide_honky_tonk_instructions_removed:
     honky_tonk_dmd:
       target: dmd
+  sw_jukebox_hit:
+    honky_tonk_dmd:
+      target: dmd
   htmb_jackpot_complete:
     jackpot_slide:
       target: dmd
@@ -230,7 +233,7 @@ scoring:
     htmb_balls_locked:
       score: 0
       action: set
-  sw_jukebox:
+  sw_jukebox_hit:
     htmb_jackpot_value:
       score: 150000
   htmb_jackpot_complete:
