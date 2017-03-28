@@ -85,7 +85,7 @@ slides:
              repeat: true
 
 widgets:
-  extra_ball_inidcator:
+  extra_ball_indicator:
       - type: image
         image: down_arrow
         anchor_y: bottom
