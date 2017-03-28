@@ -4,7 +4,7 @@
 # single on-screen window.
 
 # To use, run the mpf-mc like this:
-# mpf mc -c config,desktop
+# mpf mc -c desktop
 
 
 displays:
