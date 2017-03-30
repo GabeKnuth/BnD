@@ -133,7 +133,7 @@ timers:
             value: 1.5
           - event: add_time
             action: add
-            value: 3
+            value: 10
           - event: s_subwayopto_active
             action: stop
           - event: stop_world_tour_timer

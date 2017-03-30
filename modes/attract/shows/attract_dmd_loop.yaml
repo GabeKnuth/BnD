@@ -4,13 +4,6 @@
   slides:
     last_game_scores:
     - type: text
-      text: Hi Donald!
-      style: dmd_big
-
-- duration: 4
-  slides:
-    last_game_scores:
-    - type: text
       text: (machine|player1_score)
       number_grouping: true
       min_digits: 2
