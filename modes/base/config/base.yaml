@@ -55,6 +55,14 @@ event_player:
   player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
     start_honky_tonk_multiball
     stop_light_lock|1s
+  ball_hold_left_vuk_held_ball{mode.mystery_lit.active}:
+    start_mystery
+  ball_hold_left_vuk_held_ball{mode.hilo_lit.active and not mode.mystery_lit.active}:
+    start_hilo
+  ball_hold_left_vuk_held_ball{device.achievement_groups.missions["enabled"] and not mode.mystery_lit.active and not mode.hilo_lit.active}:
+    start_mission
+  ball_hold_left_vuk_held_ball{not mode.mystery_lit.active and not device.achievement_groups.missions["enabled"] and not mode.hilo_lit.active}:
+    release_left_vuk_ball
 
 random_event_player:
   mys_choose_award:
@@ -300,6 +308,10 @@ ball_holds:
     console_log: full
 
 
+# ------------------------------------------------------------------------------------
+# Save the below until we write a tutorial, but this has been replaced with simpler
+# event_player entries since we only want to start one per shot
+
 # Next we use a queue_event_player to watch for the ball being held, and then
 # we post the left_vuk_hit queue event. Any of the associated modes for those
 # three inserts can service this, and when they're all done, we post
@@ -307,13 +319,15 @@ ball_holds:
 # This nice thing about this is we don't care how many (or even if any) other
 # modes grab this queue event. If they don't, then the release event will be
 # posted right away.
-queue_event_player:
-  ball_hold_left_vuk_held_ball:
-    queue_event: left_vuk_hit
-    events_when_finished: release_left_vuk_ball
-#  ball_hold_top_kicker_held_ball:
-#    queue_event: top_kicker_hit
-#    events_when_finished: release_top_kicker_ball
+
+
+#queue_event_player:
+#  ball_hold_left_vuk_held_ball:
+#    queue_event: left_vuk_hit
+#    events_when_finished: release_left_vuk_ball
+
+
+# End section to save ---------------------------------------------------------------
 
 show_player:
   flipper_cradle:  # play the status show when one flipper is active for 3s

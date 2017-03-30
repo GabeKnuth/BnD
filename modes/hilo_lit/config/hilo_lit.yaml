@@ -8,14 +8,16 @@ mode:
   priority: 400
   restart_on_next_ball: true
 
+# save until tutorial is written -------------------------------------------------
 # Watch for the left_vuk_hit queue event which is posted by the queue_event_player
 # in the base mode when a ball is shot into the left vuk. This will start the
 # hilo mode, and when the hilo mode is over, it will release the queue so
 # processing for that vuk entry can continue
-queue_relay_player:
-  left_vuk_hit:
-      post: start_hilo
-      wait_for: mode_hilo_stopping
+#queue_relay_player:
+#  left_vuk_hit:
+#      post: start_hilo
+#      wait_for: mode_hilo_stopping
+# end of section to save ---------------------------------------------------------
 
 # Flash the insert when this mode starts to indicate that it can be shot. When
 # the hilo mode starts, switch the insert to solid on. The hilo mode stopping

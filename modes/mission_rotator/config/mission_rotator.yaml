@@ -8,10 +8,12 @@ mode:
   start_events: mode_base_started
   priority: 200
 
-queue_relay_player:
-  left_vuk_hit{device.achievement_groups.missions["enabled"]}:
-      post: start_mission
-      wait_for: mode_hilo_stopping
+# save for tutorial ----------------------------------------------------
+#queue_relay_player:
+#  left_vuk_hit{device.achievement_groups.missions["enabled"]}:
+#      post: start_mission
+#      wait_for: mode_hilo_stopping
+# end of save ----------------------------------------------------------
 
 achievements:
   world_tour:

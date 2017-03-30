@@ -8,15 +8,18 @@ mode:
   priority: 400
   restart_on_next_ball: true
 
+
+# save for tutorial ---------------------------------------------------------------
 # Watch for the left_vuk_hit queue event which is posted by the queue_event_player
 # in the base mode when a ball is shot into the left vuk. This will start the
 # mr mode, and when the mr mode is ready to launch balls, it will release the queue so
 # processing for that vuk entry can continue
 
-queue_relay_player:
-  left_vuk_hit:
-      post: start_metal_rodeo
-      wait_for: mr_launch_balls #played via shows and other things in mr mode
+#queue_relay_player:
+#  left_vuk_hit:
+#      post: start_metal_rodeo
+#      wait_for: mr_launch_balls #played via shows and other things in mr mode
+# end of save -----------------------------------------------------------------------
 
 # Flash the insert when this mode starts to indicate that it can be shot.
 show_player:
