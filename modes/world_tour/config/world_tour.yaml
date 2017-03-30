@@ -355,12 +355,12 @@ logic_blocks:
             persist_state: true
 
 scoring:
-    shot_south_america_hit:
+    wt_south_america_complete:
       score: 2000000
-    shot_north_america_hit:
+    wt_north_america_complete:
       score: 2000000
-    shot_europe_hit:
+    wt_europe_complete:
       score: 2000000
-    shot_australia_hit:
+    wt_australia_complete:
       score: 2000000
 

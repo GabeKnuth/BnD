@@ -89,6 +89,7 @@ modes:
   - base
   - bonus
   - extra_ball_lit
+  - high_score
   - hilo
   - hilo_lit
   - honky_tonk_multiball
@@ -425,7 +426,7 @@ ball_devices:
     ball_switches: s_drain
     eject_coil: c_draineject
     eject_targets: bd_trough
-    eject_timeouts: 3s # was 1500ms. changed because fast multiball drains confused it into thinking an eject failed
+    eject_timeouts: 4s # was 1500ms. changed because fast multiball drains confused it into thinking an eject failed
     debug: true
     target_on_unexpected_ball: bd_trough
     console_log: Full
