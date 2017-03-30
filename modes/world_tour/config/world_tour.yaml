@@ -284,7 +284,7 @@ slides:
         y: middle
         style: tall title
       - type: text
-        text: Each hit = 100k
+        text: Each hit = 1 million
         anchor_y: top
         style: dmd_small
         y: top-1
@@ -356,11 +356,11 @@ logic_blocks:
 
 scoring:
     wt_south_america_complete:
-      score: 2000000
+      score: 1000000
     wt_north_america_complete:
-      score: 2000000
+      score: 1000000
     wt_europe_complete:
-      score: 2000000
+      score: 1000000
     wt_australia_complete:
-      score: 2000000
+      score: 1000000
 
