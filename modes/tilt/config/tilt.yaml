@@ -14,23 +14,58 @@ slide_player:
   tilt_clear:
     tilt:
       action: remove
+
 slides:
+
   tilt_warning_1:
     widgets:
     - type: text
-      text: WARNING
+      text: WARNING!
+      style: dmd_big
+      color: red
+    - type: line
+      points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+      color: orange
+    - type: line
+      points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+      color: yellow
     expire: 1s
+
   tilt_warning_2:
     widgets:
     - type: text
-      text: WARNING
-      y: top-2
-      anchor_y: top
+      text: WARNING!
+      style: dmd_big
+      color: red
+      y: 22
     - type: text
-      text: WARNING
-      y: top-18
-      anchor_y: top
+      text: WARNING!
+      style: dmd_big
+      color: red
+      y: 10
+    - type: line
+      points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+      color: orange
+    - type: line
+      points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+      color: yellow
     expire: 2s
+
   tilt:
-  - type: text
-    text: TILT
+    widgets:
+    - type: text
+      text: TIL
+      style: dmd_med
+      color: red
+      x: 60
+    - type: text
+      text: T
+      style: dmd_med
+      color: red
+      x: 69
+    - type: line
+      points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+      color: orange
+    - type: line
+      points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+      color: yellow
