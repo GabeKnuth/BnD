@@ -52,11 +52,12 @@ class PlayPoker(Mode):
         self.machine.events.post(
             'poker_card_{}_flash'.format(len(self.player.poker_cards) + 1),
             image=new_card.asset)
-        # self.machine.events.post(
-        #     'poker_flash_card_{}'.format(len(self.player.poker_cards) + 1))
 
     def lock_card(self, **kwargs):
         del kwargs
+
+        if not self.player.poker_current_card:
+            self.pick_new_card()
 
         self.player.poker_cards.append(self.player.poker_current_card)
 
