@@ -200,7 +200,7 @@ shows:
       leds:
         (left): off
         (right): off
-        (center): on
+        (center): pink
     - duration: .20s
       leds:
         (left): on
