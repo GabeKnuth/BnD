@@ -91,8 +91,8 @@ logic_blocks:
 
 timers:
     jukebox_mode_timer:
-        start_value: 10
-        max_value: 15
+        start_value: 20
+        max_value: 25
         tick_interval: 1.25s
         direction: down
         control_events:
@@ -104,7 +104,7 @@ timers:
             action: stop
           - event: sw_jukebox_hit
             action: add
-            value: 3
+            value: 10
     jb_intro_timer:
         start_value: 3
         end_value: 0

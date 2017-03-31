@@ -55,8 +55,8 @@ random_event_player:
 
 timers:
     music_awards_timer:
-        start_value: 10
-        max_value: 10
+        start_value: 20
+        max_value: 20
         tick_interval: 1.25s
         direction: down
         control_events:
@@ -64,7 +64,7 @@ timers:
             action: start
           - event: add_time
             action: add
-            value: 5
+            value: 8
           - event: s_subwayopto_active
             action: stop
           - event: balldevice_bd_lower_vuk_ball_eject_success

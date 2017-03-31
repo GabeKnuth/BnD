@@ -64,10 +64,9 @@ timers:
             - action: start
               event: mode_money_bags_started
     money_bags_timer:
-        start_value: 15
+        start_value: 30
         end_value: 0
         direction: down
-        max_value: 10
         tick_interval: 1.25s
         control_events:
             - action: start
@@ -85,7 +84,7 @@ logic_blocks:
             count_events: money_bags_advertise_flashing_hit
             persist_state: true
             player_variable: money_bags_hit
-            count_complete_value: 7
+            count_complete_value: 5
             starting_count: 0
             direction: up
 
