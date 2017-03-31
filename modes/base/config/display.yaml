@@ -10,6 +10,7 @@ event_player:
   show_score_slide{current_player.number==2}: multi_player_p2_score
   show_score_slide{current_player.number==3}: multi_player_p3_score
   show_score_slide{current_player.number==4}: multi_player_p4_score
+  slide_dmd_blank_active: show_score_slide
 
 slide_player:
   single_player_ball_started: single_player_score
