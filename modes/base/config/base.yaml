@@ -601,3 +601,7 @@ ball_saves:
     enable_events: start_mys_ball_saver
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
     timer_start_events: balldevice_bd_lower_vuk_ball_eject_success
+  vuk_eject:
+    active_time: 4s
+    enable_events: balldevice_bd_lower_vuk_ball_eject_attempt
+    disable_events: sw_playfield_active
