@@ -603,6 +603,7 @@ ball_saves:
     timer_start_events: balldevice_bd_lower_vuk_ball_eject_success
   vuk_eject:
     active_time: 4s
-    enable_events: mode_base_started
+    enable_events: balldevice_bd_lower_vuk_ball_enter
     timer_start_events: balldevice_bd_lower_vuk_ball_eject_attempt
     disable_events: sw_playfield_active
+
