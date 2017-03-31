@@ -6,7 +6,7 @@ event_player:
   multiplayer_game: player_1_multiplayer_slide
   player_1_ball_started: player_1_multiplayer_slide
   show_score_slide{game.num_players==1}: single_player_score
-  show_score_slide{game.num_players==1 and current_player.number==1}: multi_player_p1_score
+  show_score_slide{game.num_players>1 and current_player.number==1}: multi_player_p1_score
   show_score_slide{current_player.number==2}: multi_player_p2_score
   show_score_slide{current_player.number==3}: multi_player_p3_score
   show_score_slide{current_player.number==4}: multi_player_p4_score
