@@ -589,9 +589,9 @@ shot_groups:
 
 ball_saves:
   main:
-    active_time: 8s
+    active_time: 10s
     hurry_up_time: 2s
-    grace_period: 1s
+    grace_period: 2s
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
     timer_start_events: playfield_active
   mystery:
