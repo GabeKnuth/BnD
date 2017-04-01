@@ -77,6 +77,7 @@ event_player:
   mode_mystery_stopping:
     enable_base_left_vuk_hold
   mys_done:
+    release_left_vuk_ball
     disable_base_left_vuk_hold
     stop_mystery|2s
 
