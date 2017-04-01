@@ -204,22 +204,22 @@ logic_blocks:
 
 scoring:
     shot_pops_hit:
-        score: 10
+        score: 110
         jackpot: 5000
     bd_lower_vuk_ball_enter:
-        score: 500
+        score: 1500
     sw_jukebox:
-        score: 9070
+        score: 19070
     shot_left_lane_hit:
-        score: 560
+        score: 1560
     shot_right_lane_hit:
-        score: 560
+        score: 1560
     upper_lanes_default_lit_complete:
         score: 10000
     shot_left_drops_hit:
-        score: 750
+        score: 1750
     shot_right_drops_hit:
-        score: 750
+        score: 1750
     s_spinner_active:
         score: 1000
     shot_right_ramp_full_loop_hit:
@@ -230,22 +230,22 @@ scoring:
 #    shot_standups_hit:
 #        score: 500
     shot_slings_hit:
-        score: 10
+        score: 110
     s_topkickingtarget_active:
-        score: 10
+        score: 110
     s_bottomkickingtarget_active:
-        score: 500
+        score: 1500
         jackpot: 50000
     shot_spinner_to_vuk_hit:
-        score: 500
+        score: 1560
     shot_pops_to_vuk_hit:
-        score: 300
+        score: 1370
     s_leftinlane_active:
-        score: 5000
+        score: 5320
     s_rightinlane_active:
-        score: 5000
+        score: 5320
     s_topkicker_active:
-        score: 5000
+        score: 5320
     player_quarters{value < 7}:
         mr_shot_score:
           score: 1

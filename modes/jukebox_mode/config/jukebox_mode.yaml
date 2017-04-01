@@ -43,6 +43,10 @@ event_player:
     release_top_kicker_ball
     disable_base_top_kicker_hold
 
+scoring:
+  sw_jukebox_hit:
+    score: 500000
+
 
 # Kind of random jukebox scoop positioning. When it's in the down position, and a
 # ball enters the subway, it might move to the up position or stay down
@@ -141,7 +145,7 @@ slides:
         anchor_x: center
         x: center
       - type: text
-        text: Each hit = 100k
+        text: Each hit = 500k
         anchor_y: top
         style: dmd_small
         y: top-1
