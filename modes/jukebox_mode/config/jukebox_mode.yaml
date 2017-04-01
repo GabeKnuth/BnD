@@ -137,20 +137,31 @@ slides:
       - type: text
         text: Change the song!
         style: dmd_big
+        animations:
+          show_slide:
+            - property: opacity
+              value: 1
+              duration: 2s
+            - property: opacity
+              value: 0
+              duration: 2s
+              repeat: true
+      - type: text
+        text: (score)
+        style: dmd_big
+        opacity: 0
+        animations:
+          show_slide:
+            - property: opacity
+              value: 0
+              duration: 2s
+            - property: opacity
+              value: 1
+              duration: 2s
+              repeat: true
       - type: text
         text: Time left (jukebox_mode_jukebox_mode_timer_tick)
         anchor_y: bottom
-        style: dmd_small
-        y: bottom+1
-        anchor_x: center
-        x: center
-      - type: text
-        text: Each hit = 500k
-        anchor_y: top
-        style: dmd_small
-        y: top-1
-        anchor_x: center
-        x: center
   jb_intro:
       - type: text
         text: BAD TUNES JUKEBOX!
