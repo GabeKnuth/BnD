@@ -33,9 +33,6 @@ slide_player:
     - type: text
       text: END OF BALL BONUS
       style: dmd_big
-#    - type: line
-#      points: 1, 1, 1, 32, 128, 32, 128, 1
-#      color: green
   quarter_bonus:
     quarter_bonus:
     - type: image

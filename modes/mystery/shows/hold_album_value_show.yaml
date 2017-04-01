@@ -1,5 +1,12 @@
 #show_version=4
 
-- duration: 100ms
+- duration: 2000ms
+  slides:
+    mys_sl_hold_album_value:
+      target: dmd
+      #transition: fade
   events:
-    hold_album_show # Just so this isn't an empty show
+    hold_album_value
+- duration: 1ms
+  events:
+    mys_done

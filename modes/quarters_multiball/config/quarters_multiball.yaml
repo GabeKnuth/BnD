@@ -269,5 +269,5 @@ slides:
 scoring:
   sw_quarter:
     score: 13720
-  sw_jukebox:
+  sw_jukebox_hit:
     score: 750000
