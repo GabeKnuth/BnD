@@ -604,4 +604,5 @@ ball_saves:
   vuk_eject:
     active_time: 4s
     enable_events: balldevice_bd_lower_vuk_ejecting_ball
+    disable_events: s_leftsling_active, s_rightsling_active
 
