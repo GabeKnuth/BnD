@@ -97,14 +97,14 @@ sound_player:
 
 timers:
     poker_countdown:
-      start_value: 30
+      start_value: 40
       direction: down
       end_value: 0
-      max_value: 30
+      max_value: 40
       control_events:
         - event: poker_card_locked
           action: add
-          value: 5
+          value: 20
         - event: poker_card_locked
           action: stop
         - event: balldevice_bd_lower_vuk_ball_eject_success

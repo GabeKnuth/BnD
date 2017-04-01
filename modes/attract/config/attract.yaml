@@ -148,6 +148,7 @@ sound_player:
       loops: -1
       mode_end_action: stop
 
+
 timers:
   video_timer:
     start_value: 0
@@ -160,30 +161,30 @@ timers:
       - event: flipper_cancel
         action: stop
 
-random_event_player:
-    timer_video_timer_complete:
-      scope: machine
-      force_all: true
-      events:
-        full_bed_of_roses
-        full_achy_breaky
-        full_convoy
-        full_every_little_thing
-        full_boots_are_made_for_walkin
-        full_hello_darlin
-        full_louisiana_woman
-        full_rhinestone_cowboy
-        full_stand_by_your_man
-        ma_my_maria
-        jb_hard_workin_man
-        mb_beer_thirty
-        wt_boot_scoot
-        pp_honky_tonk_stomp
-        mr_bed
-        htmb_miss_honky_tonk
-        qmb_put_a_girl_in_it
-        how_long_gone
-        jb_hurry_up_foggy_mountain
+#random_event_player:
+#    timer_video_timer_complete:
+#      scope: machine
+#      force_all: true
+#      events:
+#        full_bed_of_roses
+#        full_achy_breaky
+#        full_convoy
+#        full_every_little_thing
+#        full_boots_are_made_for_walkin
+#        full_hello_darlin
+#        full_louisiana_woman
+#        full_rhinestone_cowboy
+#        full_stand_by_your_man
+#        ma_my_maria
+#        jb_hard_workin_man
+#        mb_beer_thirty
+#        wt_boot_scoot
+#        pp_honky_tonk_stomp
+#        mr_bed
+#        htmb_miss_honky_tonk
+#        qmb_put_a_girl_in_it
+#        how_long_gone
+#        jb_hurry_up_foggy_mountain
 
 shows:
   attract_music_lights:
