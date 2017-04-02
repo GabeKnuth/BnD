@@ -137,11 +137,18 @@ slides:
       - type: text
         text: Change the song!
         style: dmd_big
+        y: center+3
         animations:
           show_slide:
             - property: opacity
               value: 1
+              duration: .4s
+            - property: opacity
+              value: 1
               duration: 2s
+            - property: opacity
+              value: 0
+              duration: .4s
             - property: opacity
               value: 0
               duration: 2s
@@ -150,11 +157,18 @@ slides:
         text: (score)
         style: dmd_big
         opacity: 0
+        y: center+3
         animations:
           show_slide:
             - property: opacity
               value: 0
+              duration: .4s
+            - property: opacity
+              value: 0
               duration: 2s
+            - property: opacity
+              value: 1
+              duration: .4s
             - property: opacity
               value: 1
               duration: 2s
@@ -162,6 +176,8 @@ slides:
       - type: text
         text: Time left (jukebox_mode_jukebox_mode_timer_tick)
         anchor_y: bottom
+        y: bottom+2
+        style: dmd_small
   jb_intro:
       - type: text
         text: BAD TUNES JUKEBOX!

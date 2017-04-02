@@ -1,14 +1,9 @@
 #config_version=4
 
 mode:
-  priority: 450
+  priority: 600
   start_events: start_managers_choice
   stop_events: stop_managers_choice
-
-event_player:
-  mc_done:
-    #disable_base_top_kicker_hold
-    stop_managers_choice|2s
 
 show_player:
   mode_managers_choice_started:

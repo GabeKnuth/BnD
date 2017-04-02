@@ -179,3 +179,4 @@
         duration: .1s
   events:
     start_mission|.7s
+    stop_managers_choice|1s
