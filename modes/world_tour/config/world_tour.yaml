@@ -263,11 +263,6 @@ slides:
               duration: 2s
   world_tour_dmd:
     widgets:
-      - type: video
-        video: wt_spinny_globe_dmd
-        end_behavior: loop
-        anchor_x: left
-        x: left
       - type: text
         text: Time left (world_tour_world_tour_timer_tick)
         anchor_y: bottom
@@ -290,6 +285,11 @@ slides:
         y: top-1
         anchor_x: right
         x: right-1
+      - type: video
+        video: wt_spinny_globe_dmd
+        end_behavior: loop
+        anchor_x: left
+        x: left
   world_tour_complete:
     widgets:
       - type: video
