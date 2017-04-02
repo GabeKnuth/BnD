@@ -1,7 +1,7 @@
 #config_version=4
 mode:
   start_events: ball_starting
-  stop_events: end_skill_shot, collect_managers_choice, sw_end_skill_shot
+  stop_events: end_skill_shot, collect_managers_choice
   priority: 700
 
 timers:
@@ -18,6 +18,8 @@ event_player:
   timer_skill_shot_timer_complete:
     - end_managers_choice
     - end_skill_shot
+  s_topkicker_active:
+    - end_skill_shot|3s
 
 slides:
   skill_shot_stage:
@@ -64,6 +66,50 @@ slides:
         y: 0
         anchor_x: right
         x: right
+  skill_shot_made:
+    widgets:
+      - type: text
+        text: SKILL
+        style: dmd_big
+        color: yellow
+        anchor_y: top
+        y: top-4
+        anchor_x: left
+        x: left
+      - type: text
+        text: SHOT
+        style: dmd_big
+        color: yellow
+        anchor_y: top
+        y: top-4
+        anchor_x: left
+        x: 34
+      - type: text
+        text: COLLECTED
+        style: dmd_big
+        color: yellow
+        anchor_y: top
+        y: top-4
+        anchor_x: right
+        x: right
+      - type: text
+        text: 500000
+        number_grouping: true
+        style: dmd_big
+        anchor_y: bottom
+        y: bottom+4
+        animations:
+          show_slide:
+            - property: opacity
+              value: .3
+              duration: 150ms
+            - property: opacity
+              value: 1
+              duration: 150ms
+              repeat: true
+
+
+
 
 slide_player:
   mode_skill_shot_starting:
@@ -71,7 +117,14 @@ slide_player:
       target: stage
     player_start:
       target: dmd
+  s_topkicker_active:
+    skill_shot_made:
+      target: dmd
+      expires: 3s
 
   balldevice_bd_plunger_ball_eject_success:
     player_start:
       action: remove
+
+scoring:
+  s_topkicker_active: 500000
