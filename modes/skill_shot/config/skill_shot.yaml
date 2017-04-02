@@ -120,11 +120,12 @@ slide_player:
   s_topkicker_active:
     skill_shot_made:
       target: dmd
-      expires: 3s
+      expire: 3s
 
   balldevice_bd_plunger_ball_eject_success:
     player_start:
       action: remove
 
 scoring:
-  s_topkicker_active: 500000
+  s_topkicker_active:
+    score: 500000
