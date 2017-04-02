@@ -270,7 +270,7 @@ switches:
 coils:
   c_leftflippermain:
     number: 0
-    pulse_ms: 55
+    pulse_ms: 60
   c_leftflipperhold:
     number: 1
     allow_enable: true
@@ -278,7 +278,7 @@ coils:
     number: 2
   c_rightflippermain:
     number: 3
-    pulse_ms: 40
+    pulse_ms: 60
   c_rightflipperhold:
     number: 4
     allow_enable: true
