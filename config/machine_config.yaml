@@ -772,6 +772,7 @@ leds:
     number: 1-31
     tags: left
     type: grb
+    default_color: green
   l_north_america:
     number: 1-32
     tags: left, left_orbit
