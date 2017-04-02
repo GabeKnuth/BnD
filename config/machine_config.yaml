@@ -771,6 +771,7 @@ leds:
   l_lower_left_flasher:
     number: 1-31
     tags: left
+    type: grb
   l_north_america:
     number: 1-32
     tags: left, left_orbit
