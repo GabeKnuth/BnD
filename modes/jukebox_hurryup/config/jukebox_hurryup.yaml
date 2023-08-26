@@ -1,4 +1,5 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 
 # todo we should add a light show that disables any other lights that might
 # be flashing since really all we want the player to do is shoot the JB
@@ -15,7 +16,8 @@ event_player:
     fade_in_base_music|3s
     stop_jukebox_hurryup_mode|4s
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
   jukebox_hurryup_hit:  # fires when the JB is hit
      score: current_player.jukebox_hurryup_value  # adds the score
      jukebox_hurryup_total: current_player.jukebox_hurryup_value  # tracks how many points the player got in this mode
@@ -78,7 +80,7 @@ timers:
           action: add
           value: 70
 
-logic_blocks:
+#logic_blocks:
   counters:
     jukebox_hurryup_score_multiplier:
       count_events: sw_jukebox_hit

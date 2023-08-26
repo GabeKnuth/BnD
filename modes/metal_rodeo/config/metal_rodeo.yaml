@@ -1,4 +1,5 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 
 # Wizard mode. Let's map this out:
 
@@ -249,7 +250,8 @@ slides:
         anchor_y: bottom
         y: bottom
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
   sw_jukebox:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000

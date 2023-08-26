@@ -1,7 +1,11 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 
 #todo
 # Sound pool for kickers, slings, and pops
+# voice callouts
+# Speed up eject from left vuk. seems to take too long
+# Figure out Weak Flippers mode. What was I doing there? Why didn't it work?
 
 mode:
   start_events: ball_starting
@@ -80,7 +84,7 @@ random_event_player:
       #mys_hold_album_value #todo need to figure this one out yet
 
 config:
-  - display
+  - display.yaml
 
 sound_pools:
     beats:
@@ -180,7 +184,7 @@ timers:
       - event: fade_out_base_music
         action: start
 
-logic_blocks:
+#logic_blocks:
   counters:
     lb_jukebox_counter:
       count_events: sw_jukebox_hit
@@ -202,7 +206,8 @@ logic_blocks:
 #   started, mode_jukebox_hurryup_started, block_jukebox_hits
 
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
     shot_pops_hit:
         score: 110
         jackpot: 5000
@@ -316,7 +321,7 @@ ball_holds:
 # we post the left_vuk_hit queue event. Any of the associated modes for those
 # three inserts can service this, and when they're all done, we post
 # release_left_vuk_ball which will cause the ball_hold to release the ball.
-# This nice thing about this is we don't care how many (or even if any) other
+# The nice thing about this is we don't care how many (or even if any) other
 # modes grab this queue event. If they don't, then the release event will be
 # posted right away.
 

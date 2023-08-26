@@ -1,4 +1,5 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 
 mode:
   priority: 500
@@ -48,7 +49,7 @@ show_player:
 
 # todo Hold Album Value (not sure how to do this) Looks like it persists now. Need to set that to false, then change here...somehow
 
-# add a new player var called hold_album value that is 0 or 1. Use the scoring: section of the base mode with
+# add a new player var called hold_album value that is 0 or 1. Use the #scoring: section of the base mode with
 # a conditional event on something like ball_starting{curent_player.hold_album_value==0} to post a new event
 # "reset_album_value" or something, so if that is non zero then it won't reset.
 
@@ -63,7 +64,8 @@ show_player:
 
 #  weak flippers todo need to figure out how to double scores globally
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
   mys_score_10_points:
     score: 10
   mys_score_big_points:
