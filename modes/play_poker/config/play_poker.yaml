@@ -1,4 +1,5 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 
 # player needs to build a poker hand of 5 cards. The current selected card is
 # changed by hitting the spinner, and that card is "locked in" by hitting the
@@ -24,6 +25,11 @@
 # 4 of a kind = 1 Special (don't know what that is yet)
 # Straight Flush = 3 Specials (ditto)
 # Royal Flush = Extra Ball, Special, Complete BROOKS N DUNN, 10M pts, and double score (?)
+
+#todo
+# Need to make this move faster - maybe a timeout of 10s to shoot the spinner before the card 
+# is automatically locked in, at which point it moves on to the next card.  
+
 
 mode:
   start_events: start_play_poker_mode
@@ -62,7 +68,8 @@ event_player:
   poker_straight:
     light_poker_extra_ball
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
   poker_royal_flush:
     score: 10000000
   poker_straight_flush:

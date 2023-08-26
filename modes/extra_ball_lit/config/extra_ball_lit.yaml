@@ -1,11 +1,12 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 
 mode:
   priority: 600
   start_events: extra_ball_lit
   stop_events: stop_extra_ball_lit_mode
 
-led_player:
+light_player:
   mode_extra_ball_lit_started:
     l_extra_ball: on
 

@@ -1,4 +1,5 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 mode:
   start_events: ball_starting
   stop_events: end_skill_shot, collect_managers_choice
@@ -126,6 +127,7 @@ slide_player:
     player_start:
       action: remove
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
   s_topkicker_active:
     score: 500000

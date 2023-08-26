@@ -1,7 +1,10 @@
 #config_version=5
 
+mpf:
+  report_crashes: never
+
 config:
-  - machine_config
+  - machine_config.yaml
 #  - desktop.yaml
 
 

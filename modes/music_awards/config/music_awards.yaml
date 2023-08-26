@@ -1,4 +1,5 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 mode:
   priority: 500
   start_events: start_music_awards_mode
@@ -252,7 +253,7 @@ show_player:
 
 #Need a counter to count shots made. Mode is complete at 6. Need to figure out what happens when the mode is over.
 
-logic_blocks:
+#logic_blocks:
     counters:
         stop_adding_time:
             count_events: s_rightrampopto_active, s_leftorbit_active
@@ -457,7 +458,8 @@ slides:
         anchor_x: left
         x: left
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
     add_time:
       score: 500000
 

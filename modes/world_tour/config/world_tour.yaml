@@ -1,4 +1,5 @@
-#config_version=4
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
 mode:
   priority: 500
   start_events: start_world_tour_mode
@@ -111,7 +112,7 @@ shot_profiles:
       advance_on_hit: yes
       block: yes
 
-ball_locks:
+ball_holds:
   wt_complete:
     balls_to_lock: 1
     lock_devices: bd_top_right_vuk
@@ -342,7 +343,7 @@ sound_player:
 # just so that the song plays longer.
 
 # Might not need the sequence
-logic_blocks:
+#logic_blocks:
     counters:
         stop_adding_time:
             count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit
@@ -354,7 +355,8 @@ logic_blocks:
             multiple_hit_window: 500ms
             persist_state: true
 
-scoring:
+#scoring: #leaving for reference
+variable_player:
     wt_south_america_complete:
       score: 1000000
     wt_north_america_complete:
