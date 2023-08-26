@@ -1,16 +1,14 @@
-#config_version=4
+#config_version=5
 
 # Mission Pinball Framework display configuration file for Brooks & Dunn
 
 # ASCII art headings generated from
-# http://patorjk.com/software/taag/#p=display&c=bash&f=Alligator&t=Mission%0APinball%0AFramework
+# http://patorjk.com/software/taag/#p=display&h=0&v=2&c=bash&f=Univers&t=game%0Asetup%0A%0A
 
 # Instructions for this config file:
 # http://docs.missionpinball.org/en/latest/config/index.html
 
 # Created by Brian Madden & Gabe Knuth
-
-
 
 mpf-mc:
   fps: 60
