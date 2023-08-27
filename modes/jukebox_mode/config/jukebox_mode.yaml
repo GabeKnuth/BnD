@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 mode:
   priority: 500
   start_events: start_jukebox_mode
@@ -14,7 +13,7 @@ mode:
 #Need to fix show and video code so videos stop when show stops
 #Need fo fix video pools in assets
 
-ball_holds:
+ball_locks:
   jb_intro_lock:
     balls_to_lock: 1
     lock_devices: bd_lower_vuk
@@ -44,8 +43,7 @@ event_player:
     release_top_kicker_ball
     disable_base_top_kicker_hold
 
-#scoring: #leaving for reference
-variable_player:
+scoring:
   sw_jukebox_hit:
     score: 500000
 
@@ -78,7 +76,7 @@ random_event_player:
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
 # events to change videos, as well as to fire off the complete mode logic
 
-#logic_blocks:
+logic_blocks:
     counters:
         jukebox_mode_hit_counter:
             enable_events: mode_jukebox_mode_started

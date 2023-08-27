@@ -1,6 +1,4 @@
-#show_version=5
-#show_version=4 # Left for reference. Did NOT double check
-
+#show_version=4
 
 - duration: 1000ms
   slides:

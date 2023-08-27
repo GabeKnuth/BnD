@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 
 # todo spot quarter feature
 # QIO for quarter_25m
@@ -19,8 +18,7 @@ sound_player:
         action: play
         loops: 0
 
-#scoring: #leaving for reference
-variable_player:
+scoring:
   mode_quarters_started:
     quarters_this_ball:
       score: 0
@@ -93,7 +91,7 @@ event_player:
   player_quarters{current_player.quarters >= 33}: quarters_maxed
 
 
-#logic_blocks:
+logic_blocks:
   counters:
     bonus_multiplier:
       count_events: quarters_quarters_collected_complete  # posted by the shot group

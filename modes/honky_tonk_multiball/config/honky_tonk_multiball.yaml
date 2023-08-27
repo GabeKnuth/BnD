@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 mode:
   priority: 600
   start_events: start_honky_tonk_multiball
@@ -226,8 +225,7 @@ achievements:
     events_when_completed: htmb_double_jackpot_complete
     restart_after_stop_possible: true
 
-#scoring: #leaving for reference
-variable_player:
+scoring:
   mode_honky_tonk_multiball_started:
     htmb_jackpot_value:
       score: 250000

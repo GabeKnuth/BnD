@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 mode:
   priority: 600
   start_events: start_jukebox_two_ball
@@ -237,8 +236,7 @@ achievements:
     events_when_completed: double_jackpot_complete
     restart_after_stop_possible: true
 
-#scoring: #leaving for reference
-variable_player:
+scoring:
   jackpot_complete:
     score: 1000000
   double_jackpot_complete:

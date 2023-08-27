@@ -1,10 +1,10 @@
-#config_version=5
+#config_version=4
 
 mode:
   priority: 160
   start_events: mode_base_starting
 
-#logic_blocks:
+logic_blocks:
   counters:
     albums:
       count_events: drop_target_bank_drop_targets_down
@@ -14,7 +14,7 @@ mode:
 event_player:
   player_num_albums: show_album_slide|.1s
 
-light_player:
+led_player:
   # These light the LEDs when they're awarded during this ball
   player_num_albums{value == 1}:
     l_silver: on
@@ -39,8 +39,7 @@ light_player:
   mode_albums_started{current_player.num_albums >= 5}:
     l_quintuple_platinum: on
 
-#scoring: #leaving for reference
-variable_player:
+scoring:
   player_num_albums{value == 1}:
     album_value:
       score: 25000
