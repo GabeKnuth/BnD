@@ -71,13 +71,13 @@ timers:
         event: start_qmb
 
 #logic_blocks:
-  accruals:
-    qmb_ball_adder:
-      events: sw_quarter
-      events_when_complete: add_qmb_ball
-      enable_events: qmb_go
-      disable_events: timer_add_ball_complete
-      disable_on_complete: false
+accruals:
+  qmb_ball_adder:
+    events: sw_quarter
+    events_when_complete: add_qmb_ball
+    enable_events: qmb_go
+    disable_events: timer_add_ball_complete
+    disable_on_complete: false
 
 show_player:
   mode_quarters_multiball_started:

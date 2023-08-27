@@ -94,32 +94,34 @@ event_player:
 
 
 #logic_blocks:
-  counters:
-    bonus_multiplier:
-      count_events: quarters_quarters_collected_complete  # posted by the shot group
-      player_variable: bonus_multiplier
-      starting_count: 1
-      count_complete_value: 4
-      reset_on_complete: false
+counters:
+  bonus_multiplier:
+    count_events: quarters_quarters_collected_complete  # posted by the shot group
+    #player_variable: bonus_multiplier
+    starting_count: 1
+    count_complete_value: 4
+    reset_on_complete: false
 
 shots:
   quarter_1:
     switch: s_toprightstandup
+    profile: quarters
     show_tokens:
       leds: l_top_quarter
   quarter_2:
     switch: s_rightbanktop
+    profile: quarters
     show_tokens:
       leds: l_middle_quarter
   quarter_3:
     switch: s_rightbankbottom
+    profile: quarters
     show_tokens:
       leds: l_bottom_quarter
 
 shot_groups:
   quarters:
     shots: quarter_1, quarter_2, quarter_3
-    profile: quarters
     reset_events: quarters_quarters_collected_complete
 
 shot_profiles:
