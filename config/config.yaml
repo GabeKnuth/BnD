@@ -1,28 +1,4 @@
-#config_version=5
-
-mpf:
-  report_crashes: never
-
-config:
-  - machine_config.yaml
-#  - desktop.yaml
-
-
-#                                                                                                            
-#   ,adPPYb,d8  ,adPPYYba,  88,dPYba,,adPYba,    ,adPPYba,                                                   
-#  a8"    `Y88  ""     `Y8  88P'   "88"    "8a  a8P_____88                                                   
-#  8b       88  ,adPPPPP88  88      88      88  8PP"""""""                                                   
-#  "8a,   ,d88  88,    ,88  88      88      88  "8b,   ,aa                                                   
-#   `"YbbdP"Y8  `"8bbdP"Y8  88      88      88   `"Ybbd8"'                                                   
-#  88a,    ,88                                   88                                                          
-#  88"Y8bbdP"                                    88                                                          
-#  88                                            88                                                          
-#  88,dPPYba,   ,adPPYYba,  8b,dPPYba,   ,adPPYb,88  8b      db      d8  ,adPPYYba,  8b,dPPYba,   ,adPPYba,  
-#  88P'    "8a  ""     `Y8  88P'   "Y8  a8"    `Y88  `8b    d88b    d8'  ""     `Y8  88P'   "Y8  a8P_____88  
-#  88       88  ,adPPPPP88  88          8b       88   `8b  d8'`8b  d8'   ,adPPPPP88  88          8PP"""""""  
-#  88       88  88,    ,88  88          "8a,   ,d88    `8bd8'  `8bd8'    88,    ,88  88          "8b,   ,aa  
-#  88       88  `"8bbdP"Y8  88           `"8bbdP"Y8      YP      YP      `"8bbdP"Y8  88           `"Ybbd8"'  
-#  
+#config_version=4
 
 hardware:
   platform: fast
@@ -46,6 +22,9 @@ smartmatrix:
 #led_settings:
 #    default_led_fade_ms: 100
 
+config:
+  - machine_config
+
 window:
   width: 800
   height: 480
@@ -65,26 +44,8 @@ displays:
     height: 32
     default: true
 
-rgb_dmds:
+physical_rgb_dmds:
   smartmatrix:
     brightness: .5
     fps: 25
     gamma: 2.2
-#                                              88           88                           
-#                                              88           ""                           
-#                                              88                                        
-#  88,dPYba,,adPYba,   ,adPPYYba,   ,adPPYba,  88,dPPYba,   88  8b,dPPYba,    ,adPPYba,  
-#  88P'   "88"    "8a  ""     `Y8  a8"     ""  88P'    "8a  88  88P'   `"8a  a8P_____88  
-#  88      88      88  ,adPPPPP88  8b          88       88  88  88       88  8PP"""""""  
-#  88      88      88  88,    ,88  "8a,   ,aa  88       88  88  88       88  "8b,   ,aa  
-#  88      88      88  `"8bbdP"Y8   `"Ybbd8"'  88       88  88  88       88   `"Ybbd8"'  
-#                                                                                                                             
-#  8b       d8  ,adPPYYba,  8b,dPPYba,  ,adPPYba,                                        
-#  `8b     d8'  ""     `Y8  88P'   "Y8  I8[    ""                                        
-#   `8b   d8'   ,adPPPPP88  88           `"Y8ba,                                         
-#    `8b,d8'    88,    ,88  88          aa    ]8I                                        
-#      "8"      `"8bbdP"Y8  88          `"YbbdP"'                                        
-
-machine_vars:
-  master_volume:
-    initial_value: 1.0

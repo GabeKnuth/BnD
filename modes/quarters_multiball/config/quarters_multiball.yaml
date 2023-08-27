@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 
 mode:
   start_events: start_quarters_multiball
@@ -9,7 +8,7 @@ mode:
 #Map this out.
 #
 ######Need a multiballs section. 2 Balls.
-#######scoring: 750k per quarter target, 1.5M per money bags target
+######Scoring: 750k per quarter target, 1.5M per money bags target
 #
 ######Music - qmb_put_a_girl_in_it
 #
@@ -70,7 +69,7 @@ timers:
       - action: start
         event: start_qmb
 
-#logic_blocks:
+logic_blocks:
   accruals:
     qmb_ball_adder:
       events: sw_quarter
@@ -267,8 +266,7 @@ slides:
         anchor_x: right
         x: right
 
-#scoring: #leaving for reference
-variable_player:
+scoring:
   sw_quarter:
     score: 13720
   sw_jukebox_hit:

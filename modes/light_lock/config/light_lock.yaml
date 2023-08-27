@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 
 mode:
   start_events: start_light_lock
@@ -93,7 +92,6 @@ shows:
       leds:
         (leds): blue-f100ms
 
-#scoring: #leaving for reference
-variable_player:
+scoring:
   shot_spinner_to_vuk_hit:
     htmb_balls_locked: 1

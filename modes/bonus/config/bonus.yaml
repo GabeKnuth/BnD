@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 
 mode_settings:
   display_delay_ms: 1500

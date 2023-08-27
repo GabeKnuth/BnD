@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=4
 
 mode:
   priority: 300
