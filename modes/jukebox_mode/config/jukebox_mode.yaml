@@ -16,10 +16,10 @@ mode:
 
 ball_holds:
   jb_intro_lock:
-    balls_to_hold: 1
-    hold_devices: bd_lower_vuk
+    balls_to_lock: 1
+    lock_devices: bd_lower_vuk
     enable_events: mode_jukebox_mode_started
-    #request_new_balls_to_pf: False # Don't know what this was replaced with, if at all
+    request_new_balls_to_pf: False
     release_one_events: timer_jb_intro_timer_complete
     disable_events: timer_jb_intro_timer_complete|1
 
@@ -79,17 +79,17 @@ random_event_player:
 # events to change videos, as well as to fire off the complete mode logic
 
 #logic_blocks:
-counters:
-    jukebox_mode_hit_counter:
-        enable_events: mode_jukebox_mode_started
-        reset_on_complete: true
-        disable_on_complete: true
-        persist_state: true # keep status between balls
-        count_events: sw_jukebox_hit
-        count_complete_value: 9
-        multiple_hit_window: 1s
-        events_when_hit: change_song, play_jukebox_video, stop_song
-        events_when_complete: start_jukebox_two_ball, jukebox_success
+    counters:
+        jukebox_mode_hit_counter:
+            enable_events: mode_jukebox_mode_started
+            reset_on_complete: true
+            disable_on_complete: true
+            persist_state: true # keep status between balls
+            count_events: sw_jukebox_hit
+            count_complete_value: 9
+            multiple_hit_window: 1s
+            events_when_hit: change_song, play_jukebox_video, stop_song
+            events_when_complete: start_jukebox_two_ball, jukebox_success
 
 # Mode timer so we know when time runs out. We'll count down at 1.25s intervals.
 # This also pauses when the ball enters the subway until it ejects from the vuk.

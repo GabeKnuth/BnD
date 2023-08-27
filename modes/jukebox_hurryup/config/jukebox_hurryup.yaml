@@ -81,21 +81,21 @@ timers:
           value: 70
 
 #logic_blocks:
-counters:
-  jukebox_hurryup_score_multiplier:
-    count_events: sw_jukebox_hit
-    events_when_hit: jukebox_hurryup_hit
-    direction: up
-    # The next three lines ensure that the value of this counter is 1, 3, and
-    # 5, which gives us the multipliers we need for the scoring math
-    starting_count: 1
-    count_complete_value: 6  # updated with each hit, but has to be higher than 5 because we want to count the final hit, not end on it
-    count_interval: 2
-    disable_on_complete: true
-    disable_events: jukebox_hurryup_done
-    events_when_complete: jukebox_hurryup_done
-    # player_variable: jukebox_hurryup_score_multiplier # removed. Why? Probably have to fix.
-    console_log: full
+  counters:
+    jukebox_hurryup_score_multiplier:
+      count_events: sw_jukebox_hit
+      events_when_hit: jukebox_hurryup_hit
+      direction: up
+      # The next three lines ensure that the value of this counter is 1, 3, and
+      # 5, which gives us the multipliers we need for the scoring math
+      starting_count: 1
+      count_complete_value: 6  # updated with each hit, but has to be higher than 5 because we want to count the final hit, not end on it
+      count_interval: 2
+      disable_on_complete: true
+      disable_events: jukebox_hurryup_done
+      events_when_complete: jukebox_hurryup_done
+      player_variable: jukebox_hurryup_score_multiplier
+      console_log: full
 
 slide_player:
   mode_jukebox_hurryup_started:
