@@ -1,17 +1,15 @@
 #config_version=5
-#todo probably have to redo this mode since player vars aren't in counters anymore.
+
 mode:
   priority: 160
   start_events: mode_base_starting
 
-
-
 #logic_blocks:
-counters:
-  albums:
-    count_events: drop_target_bank_drop_targets_down
-    #player_variable: num_albums
-    persist_state: false
+  counters:
+    albums:
+      count_events: drop_target_bank_drop_targets_down
+      player_variable: num_albums
+      persist_state: false
 
 event_player:
   player_num_albums: show_album_slide|.1s
@@ -90,8 +88,6 @@ variable_player:
     album_name:
       string: OFF THE CHARTS
     score: 2500000
-
-
 
 slide_player:
   show_album_slide{current_player.num_albums == 1}:

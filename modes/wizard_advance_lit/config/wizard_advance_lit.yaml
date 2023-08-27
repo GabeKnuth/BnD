@@ -1,5 +1,5 @@
 #config_version=5
-#config_version=4 # left for reference. did not double check
+#config_version=4 # Left for reference. Did NOT double check
 
 mode:
   priority: 400
@@ -21,11 +21,11 @@ shot_profiles:
 
 shots:
   # redefine the left lane shot here, since there are several "shots" which use the left lane, so if we applied a
-  # profile to the machine-wide shot here, we wouldn't be able to tie it to different leds since those are set in the
+  # profile to the machine-wide shot here, we wouldn't be able to tie it to different LEDs since those are set in the
   # show_tokens section of the shot
   advance_wizard:
     profile: wizard
-    switch: s_leftorbit
+    switch: s_LeftOrbit
     show_tokens:
       led: l_advance_wizard
 
@@ -35,7 +35,7 @@ slides:
   advance_wizard_bonus:
     widgets:
       - type: text
-        text: wizard bonus qio
+        text: WIZARD BONUS QIO
         style: dmd_med
 
 #show_player:

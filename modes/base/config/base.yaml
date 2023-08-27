@@ -1,35 +1,16 @@
 #config_version=5
-#config_version=4 # left for reference. did not double check
+#config_version=4 # Left for reference. Did NOT double check
 
 #todo
-# sound pool for kickers, slings, and pops
+# Sound pool for kickers, slings, and pops
 # voice callouts
-# speed up eject from left vuk. seems to take too long
-# figure out weak flippers mode. what was i doing there? why didn't it work?
+# Speed up eject from left vuk. seems to take too long
+# Figure out Weak Flippers mode. What was I doing there? Why didn't it work?
 
 mode:
   start_events: ball_starting
   priority: 100
-  #code: base.base
-
-
-
-#                                                      ,d            
-#                                                      88            
-#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
-#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
-#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
-#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
-#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
-#               88                                                   
-#               88                                                   
-#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
-#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
-#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
-#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
-#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
-#  88                               d8'                              
-#  88                              d8' 
+  #code: base.Base
 
 event_player:
   mode_base_started:
@@ -87,31 +68,6 @@ event_player:
   ball_hold_left_vuk_held_ball{not mode.mystery_lit.active and not device.achievement_groups.missions["enabled"] and not mode.hilo_lit.active}:
     release_left_vuk_ball
 
-#                                                88                                   
-#                                                88                                   
-#                                                88                                   
-#  8b,dPPYba,  ,adPPYYba,  8b,dPPYba,    ,adPPYb,88   ,adPPYba,   88,dPYba,,adPYba,   
-#  88P'   "Y8  ""     `Y8  88P'   `"8a  a8"    `Y88  a8"     "8a  88P'   "88"    "8a  
-#  88          ,adPPPPP88  88       88  8b       88  8b       d8  88      88      88  
-#  88          88,    ,88  88       88  "8a,   ,d88  "8a,   ,a8"  88      88      88  
-#  88          `"8bbdP"Y8  88       88   `"8bbdP"Y8   `"YbbdP"'   88      88      88  
-#                                                      ,d                             
-#                                                      88                             
-#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM                          
-#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88                             
-#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88                             
-#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,                            
-#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888                          
-#               88                                                                    
-#               88                                                                    
-#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                   
-#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                   
-#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                           
-#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                           
-#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                           
-#  88                               d8'                                               
-#  88                              d8' 
-
 random_event_player:
   mys_choose_award:
     force_all: true
@@ -127,23 +83,8 @@ random_event_player:
 
       #mys_hold_album_value #todo need to figure this one out yet
 
-#                                                             88  
-#                                                             88  
-#                                                             88  
-#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88  
-#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88  
-#   `"Y8ba,   8b       d8  88       88  88       88  8b       88  
-#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88  
-#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8                                                                                      
-#                                         88                      
-#                                         88                      
-#  8b,dPPYba,    ,adPPYba,    ,adPPYba,   88  ,adPPYba,           
-#  88P'    "8a  a8"     "8a  a8"     "8a  88  I8[    ""           
-#  88       d8  8b       d8  8b       d8  88   `"Y8ba,            
-#  88b,   ,a8"  "8a,   ,a8"  "8a,   ,a8"  88  aa    ]8I           
-#  88`YbbdP"'    `"YbbdP"'    `"YbbdP"'   88  `"YbbdP"'           
-#  88                                                             
-#  88  
+config:
+  - display.yaml
 
 sound_pools:
     beats:
@@ -164,24 +105,6 @@ sound_pools:
           drum14
           drum15
           drum16
-
-#                                                             88     
-#                                                             88     
-#                                                             88     
-#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
-#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
-#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
-#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
-#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8                                                                                                                          
-#               88                                                   
-#               88                                                   
-#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
-#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
-#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
-#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
-#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
-#  88                               d8'                              
-#  88                              d8' 
 
 sound_player:
   mode_base_started:
@@ -251,15 +174,6 @@ sound_player:
       action: play
       loops: 0
 
-#           88                                                         
-#    ,d     ""                                                         
-#    88                                                                
-#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
-#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
-#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
-#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
-#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"'  
-
 timers:
   sound_timer:
     start_value: 1
@@ -270,52 +184,27 @@ timers:
       - event: fade_out_base_music
         action: start
 
-#                                                       ,d                                        
-#                                                       88                                        
-#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
-#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
-#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
-#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
-#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"' 
-
 #logic_blocks:
-counters:
-  lb_jukebox_counter:
-    count_events: sw_jukebox_hit
-    events_when_hit: hit_jukebox #hook the "count" parameter of this event ?? can i do that in config?
-    starting_count: 0
+  counters:
+    lb_jukebox_counter:
+      count_events: sw_jukebox_hit
+      events_when_hit: hit_jukebox #Hook the "count" parameter of this event ?? Can I do that in config?
+      starting_count: 0
 #      count_complete_value: 100
-    direction: up
-    # brian: i think there is no max to this? just keep counting
-#      events_when_complete: jukebox_maxed #maybe this lights everything for 15 secs. extra ball, super jets, special, etc...
-    disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits
-    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits
-  lb_music_gate:
-    count_events: s_plungerlane_inactive
-    starting_count: 0
-    count_complete_value: 1
-    events_when_complete: start_base_music_bed
-    enable_events: mode_base_started
-    disable_events: start_base_music_bed|1s
+      direction: up
+      # Brian: I think there is no max to this? Just keep counting
+#      events_when_complete: jukebox_maxed #Maybe this lights everything for 15 secs. Extra ball, super jets, special, etc...
+      disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits
+      enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits
+    lb_music_gate:
+      count_events: s_plungerlane_inactive
+      starting_count: 0
+      count_complete_value: 1
+      events_when_complete: start_base_music_bed
+      enable_events: mode_base_started
+      disable_events: start_base_music_bed|1s
 #   started, mode_jukebox_hurryup_started, block_jukebox_hits
 
-#                                       88              88           88              
-#                                       ""              88           88              
-#                                                       88           88              
-#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
-#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
-#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
-#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
-#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'                                                                                                                                                    
-#               88                                                                   
-#               88                                                                   
-#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
-#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
-#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
-#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
-#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
-#  88                               d8'                                              
-#  88                              d8' 
 
 #scoring: #leaving for reference
 variable_player:
@@ -390,28 +279,6 @@ variable_player:
 #    camera:
 #      target: stage
 
-#   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
-#  a8"    `Y88  88       88  a8P_____88  88       88  a8P_____88     
-#  8b       88  88       88  8PP"""""""  88       88  8PP"""""""     
-#  "8a    ,d88  "8a,   ,a88  "8b,   ,aa  "8a,   ,a88  "8b,   ,aa     
-#   `"YbbdP'88   `"YbbdP'Y888 `"Ybbd8"'   `"YbbdP'Y8   `"Ybbd8"'     
-#           88             88                                        
-#           88             88                                        
-#  8b,dPPYba,   ,adPPYba,  88  ,adPPYYba,  8b       d8               
-#  88P'   "Y8  a8P_____88  88  ""     `Y8  `8b     d8'               
-#  88          8PP"""""""  88  ,adPPPPP88   `8b   d8'                
-#  88          "8b,   ,aa  88  88,    ,88    `8b,d8'                 
-#  88           `"Ybbd8"'  88  `"8bbdP"Y8      Y88'                   
-#               88                            d8'                    
-#               88                           d8'                         
-#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
-#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
-#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
-#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
-#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
-#  88                               d8'                              
-#  88                              d8' 
-
 queue_relay_player:
   balldevice_bd_lower_vuk_ball_eject_attempt:
     post: eject_flash
@@ -420,31 +287,11 @@ queue_relay_player:
     post: top_eject_flash
     wait_for: top_eject_alert_over
 
-
-#  88                       88  88                       
-#  88                       88  88                       
-#  88                       88  88                       
-#  88,dPPYba,   ,adPPYYba,  88  88                       
-#  88P'    "8a  ""     `Y8  88  88                       
-#  88       d8  ,adPPPPP88  88  88                       
-#  88b,   ,a8"  88,    ,88  88  88                       
-#  8Y"Ybbd8"'   `"8bbdP"Y8  88  88                                 
-#
-#  88                        88           88
-#  88                        88           88             
-#  88                        88           88             
-#  88,dPPYba,    ,adPPYba,   88   ,adPPYb,88  ,adPPYba,  
-#  88P'    "8a  a8"     "8a  88  a8"    `Y88  I8[    ""  
-#  88       88  8b       d8  88  8b       88   `"Y8ba,   
-#  88       88  "8a,   ,a8"  88  "8a,   ,d88  aa    ]8I  
-#  88       88   `"YbbdP"'   88   `"8bbdP"Y8  `"YbbdP"'  
-
-
-# when the left vuk is shot from the playfield, there could up to three inserts
-# lit and we want to service those one-by-one. so the first thing we have to
-# do is hold the ball, which we do here. modes that may start from this shot
+# When the left VUK is shot from the playfield, there could up to three inserts
+# lit and we want to service those one-by-one. So the first thing we have to
+# do is hold the ball, which we do here. Modes that may start from this shot
 # can post the release_left_vuk_ball event when they want to release the ball.
-# they can also post the disable_base_left_vuk_hold if they don't want to
+# They can also post the disable_base_left_vuk_hold if they don't want to
 # hold the ball there in their mode, and then post enable_base_left_vuk_hold
 # to re-enable it in the base mode when they're done.
 ball_holds:
@@ -467,15 +314,15 @@ ball_holds:
 
 
 # ------------------------------------------------------------------------------------
-# save the below until we write a tutorial, but this has been replaced with simpler
+# Save the below until we write a tutorial, but this has been replaced with simpler
 # event_player entries since we only want to start one per shot
 
-# next we use a queue_event_player to watch for the ball being held, and then
-# we post the left_vuk_hit queue event. any of the associated modes for those
+# Next we use a queue_event_player to watch for the ball being held, and then
+# we post the left_vuk_hit queue event. Any of the associated modes for those
 # three inserts can service this, and when they're all done, we post
 # release_left_vuk_ball which will cause the ball_hold to release the ball.
-# the nice thing about this is we don't care how many (or even if any) other
-# modes grab this queue event. if they don't, then the release event will be
+# The nice thing about this is we don't care how many (or even if any) other
+# modes grab this queue event. If they don't, then the release event will be
 # posted right away.
 
 
@@ -485,278 +332,7 @@ ball_holds:
 #    events_when_finished: release_left_vuk_ball
 
 
-# end section to save ---------------------------------------------------------------
-
-
-
-
-#             88                                            
-#             88                          ,d                
-#             88                          88                
-#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM  ,adPPYba,  
-#  I8[    ""  88P'    "8a  a8"     "8a    88     I8[    ""  
-#   `"Y8ba,   88       88  8b       d8    88      `"Y8ba,   
-#  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I  
-#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"'  
-#                                                          
-
-shots:
-  shot_left_lane:
-    switch: s_leftlane
-  shot_right_lane:
-    switch: s_rightlane
-  shot_pops:
-    switch: s_leftpop, s_rightpop, s_bottompop
-  shot_left_drops:
-    switch: s_droptarget1, s_droptarget2, s_droptarget3
-  shot_right_drops: #broken up so i can block this shot when i need to knock down targets
-    switch:  s_droptarget4, s_droptarget5
-  shot_slings:
-    switch: s_leftsling, s_rightsling
-  shot_pops_to_vuk:
-    switch: s_toprightvuk
-    delay_switch:
-      s_spinner: 2s # this matches the value in the spinner_to_vuk sequence.
-  shot_lower_vuk_from_playfield:
-    hit_events: balldevice_bd_lower_vuk_ball_enter
-    delay_switch:
-      s_subwayopto: 2s
-  shot_jukebox_loop:
-    switch: s_jukeboxopto
-  shot_top_kicker:
-    hit_events: balldevice_bd_top_kicker_ball_enter
-    show_tokens:
-      leds: l_managers_choice
-    profile: managers_choice
-    disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits, light_metal_rodeo
-    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits, mode_metal_rodeo_stopping
-    reset_events: reset_managers_choice   
-
-#  ,adPPYba,   ,adPPYba,   ,adPPYb,d8  88       88   ,adPPYba,  8b,dPPYba,    ,adPPYba,   ,adPPYba,  
-#  I8[    ""  a8P_____88  a8"    `Y88  88       88  a8P_____88  88P'   `"8a  a8"     ""  a8P_____88  
-#   `"Y8ba,   8PP"""""""  8b       88  88       88  8PP"""""""  88       88  8b          8PP"""""""  
-#  aa    ]8I  "8b,   ,aa  "8a    ,d88  "8a,   ,a88  "8b,   ,aa  88       88  "8a,   ,aa  "8b,   ,aa  
-#  `"YbbdP"'    "Ybbd8"'   `"YbbdP'88   `"YbbdP'Y8   `"Ybbd8"'  88       88   `"Ybbd8"'   `"Ybbd8"'  
-#             88                   88
-#             88                   88     ,d                                                         
-#             88                          88                                                         
-#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM  ,adPPYba,                                           
-#  I8[    ""  88P'    "8a  a8"     "8a    88     I8[    ""                                           
-#   `"Y8ba,   88       88  8b       d8    88      `"Y8ba,                                            
-#  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I                                           
-#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"' 
-
-sequence_shots:
-  shot_right_ramp_full_loop:
-    switch_sequence: s_rightrampopto, s_leftrampopto
-    time: 3000ms
-  shot_subway_shot:   # seems like a weird name, but probably should have this one
-    switch_sequence: s_subwayopto, s_lowervukopto
-    time: 500ms
-  shot_spinner_to_vuk:
-    switch_sequence: s_spinner, s_toprightvuk
-    time: 2s
-  
-
-#             88                                                                 
-#             88                          ,d                                     
-#             88                          88                                     
-#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM                                  
-#  I8[    ""  88P'    "8a  a8"     "8a    88                                     
-#   `"Y8ba,   88       88  8b       d8    88                                     
-#  aa    ]8I  88       88  "8a,   ,a8"    88,                                    
-#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888                                                                                                           
-#                                           ad88  88  88                         
-#                                          d8"    ""  88                         
-#                                          88         88                         
-#  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   MM88MMM  88  88   ,adPPYba,  ,adPPYba,  
-#  88P'    "8a  88P'   "Y8  a8"     "8a    88     88  88  a8P_____88  I8[    ""  
-#  88       d8  88          8b       d8    88     88  88  8PP"""""""   `"Y8ba,   
-#  88b,   ,a8"  88          "8a,   ,a8"    88     88  88  "8b,   ,aa  aa    ]8I  
-#  88`YbbdP"'   88           `"YbbdP"'     88     88  88   `"Ybbd8"'  `"YbbdP"'  
-#  88                                                                            
-#  88   
-
-shot_profiles:
-    managers_choice:
-        states:
-          - name: unlit
-            show: off
-          - name: lit
-            show: flash
-          - name: active
-            show: on
-        loop: no
-
-    stealth:
-      states:
-        - name: off
-          show: off
-      advance_on_hit: false
-
-#             88                                                              
-#             88                          ,d                                  
-#             88                          88                                  
-#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM                               
-#  I8[    ""  88P'    "8a  a8"     "8a    88                                  
-#   `"Y8ba,   88       88  8b       d8    88                                  
-#  aa    ]8I  88       88  "8a,   ,a8"    88,                                 
-#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888                               
-#                                                                                                                                                       
-#   ,adPPYb,d8  8b,dPPYba,   ,adPPYba,   88       88  8b,dPPYba,   ,adPPYba,  
-#  a8"    `Y88  88P'   "Y8  a8"     "8a  88       88  88P'    "8a  I8[    ""  
-#  8b       88  88          8b       d8  88       88  88       d8   `"Y8ba,   
-#  "8a,   ,d88  88          "8a,   ,a8"  "8a,   ,a88  88b,   ,a8"  aa    ]8I  
-#   `"YbbdP"Y8  88           `"YbbdP"'    `"YbbdP'Y8  88`YbbdP"'   `"YbbdP"'  
-#   aa,    ,88                                        88                      
-#    "Y8bbdP"                                         88
-
-shot_groups:
-    upper_lanes:
-        shots: shot_left_lane, shot_right_lane
-        profile: default
-        rotate_left_events: s_leftflipper_active
-        rotate_right_events: s_rightflipper_active
-        reset_events: upper_lanes_default_lit_complete
-        enable_events: ball_started
-        disable_events: ball_ending
-
-#  88                       88  88                            
-#  88                       88  88                            
-#  88                       88  88                            
-#  88,dPPYba,   ,adPPYYba,  88  88                            
-#  88P'    "8a  ""     `Y8  88  88                            
-#  88       d8  ,adPPPPP88  88  88                            
-#  88b,   ,a8"  88,    ,88  88  88                            
-#  8Y"Ybbd8"'   `"8bbdP"Y8  88  88                            
-#                                                                                                                        
-#  ,adPPYba,  ,adPPYYba,  8b       d8   ,adPPYba,  ,adPPYba,  
-#  I8[    ""  ""     `Y8  `8b     d8'  a8P_____88  I8[    ""  
-#   `"Y8ba,   ,adPPPPP88   `8b   d8'   8PP"""""""   `"Y8ba,   
-#  aa    ]8I  88,    ,88    `8b,d8'    "8b,   ,aa  aa    ]8I  
-#  `"YbbdP"'  `"8bbdP"Y8      "8"       `"Ybbd8"'  `"YbbdP"'
-
-ball_saves:
-  main:
-    active_time: 10s
-    hurry_up_time: 2s
-    grace_period: 2s
-    early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
-    timer_start_events: playfield_active
-  mystery:
-    active_time: 15s
-    hurry_up_time: 2s
-    grace_period: 1s
-    enable_events: start_mys_ball_saver
-    early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
-    timer_start_events: balldevice_bd_lower_vuk_ball_eject_success
-  vuk_eject:
-    active_time: 2s
-    enable_events: balldevice_bd_lower_vuk_ejecting_ball
-    disable_events: s_leftsling_active, s_rightsling_active
-
-#             88                                                       
-#             88                                                       
-#             88                                                       
-#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
-#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
-#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
-#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
-#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"'
-
-shows:
-  flash_once:
-    - duration: 200ms
-      leds:
-        (led): off
-  flash_jukebox:
-    - duration: 125ms
-      leds:
-        l_jukebox_left: on-f0
-        l_jukebox_right: off-f0
-    - duration: 125ms
-      leds:
-        l_jukebox_left: off-f0
-        l_jukebox_right: on-f0
-  eject_alert:
-    - time: 0
-      leds:
-        (led): on
-    - time: 300ms
-      leds:
-        (led): off
-    - time: 450ms
-      leds:
-        (led): on
-    - time: 750ms
-      leds:
-        (led): off
-    - time: 900ms
-      leds:
-        (led): on
-    - time: 1200ms
-      leds:
-        (led): off
-    - time: 1350ms
-      events: eject_alert_over
-  top_eject_alert:
-    - time: 0
-      leds:
-        (led): on
-    - time: 300ms
-      leds:
-        (led): off
-    - time: 450ms
-      leds:
-        (led): on
-    - time: 750ms
-      leds:
-        (led): off
-    - time: 900ms
-      leds:
-        (led): on
-    - time: 1200ms
-      leds:
-        (led): off
-    - time: 1350ms
-      events: top_eject_alert_over
-  rainbow:
-    - duration: 150ms
-      leds:
-        (leds): red-f100ms
-    - duration: 150ms
-      leds:
-        (leds): orange-f100ms
-    - duration: 150ms
-      leds:
-        (leds): yellow-f100ms
-    - duration: 150ms
-      leds:
-        (leds): green-f100ms
-    - duration: 150ms
-      leds:
-        (leds): blue-f100ms
-    - duration: 150ms
-      leds:
-        (leds): purple-f100ms
-
-#             88                                                     
-#             88                                                     
-#             88                                                     
-#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8           
-#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'           
-#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'            
-#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'             
-#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP                                                               
-#               88                                                   
-#               88                                                   
-#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
-#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
-#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
-#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
-#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
-#  88                               d8'                              
-#  88                              d8' 
+# End section to save ---------------------------------------------------------------
 
 show_player:
   flipper_cradle:  # play the status show when one flipper is active for 3s
@@ -767,7 +343,7 @@ show_player:
     flipper_status:
       action: stop
   flipper_cancel.1:
-    # when the second flipper is active (which is flipper cancel), pause the show so it
+    # When the second flipper is active (which is flipper cancel), pause the show so it
     # stops auto-advancing
     flipper_status:
       action: pause
@@ -871,3 +447,167 @@ show_player:
       speed: 2
   ball_save_mystery_disabled:
       ball_save: stop
+
+shots:
+  shot_left_lane:
+    switch: s_LeftLane
+  shot_right_lane:
+    switch: s_RightLane
+  shot_pops:
+    switch: s_leftpop, s_rightpop, s_bottompop
+  shot_left_drops:
+    switch: s_droptarget1, s_DropTarget2, s_droptarget3
+  shot_right_drops: #Broken up so I can block this shot when I need to knock down targets
+    switch:  s_droptarget4, s_droptarget5
+  shot_slings:
+    switch: s_leftsling, s_rightsling
+  shot_pops_to_vuk:
+    switch: s_TopRightVUK
+    delay_switch:
+      s_spinner: 2s # this matches the value in the spinner_to_vuk sequence.
+  shot_right_ramp_full_loop:
+    switch_sequence: s_rightRampOpto, s_LeftRampOpto
+    time: 3000ms
+  shot_subway_shot:   # Seems like a weird name, but probably should have this one
+    switch_sequence: s_SubwayOpto, s_LowerVUKOpto
+    time: 500ms
+  shot_lower_vuk_from_playfield:
+    hit_events: balldevice_bd_lower_vuk_ball_enter
+    delay_switch:
+      s_subwayopto: 2s
+  shot_spinner_to_vuk:
+    switch_sequence: s_spinner, s_TopRightVUK
+    time: 2s
+  shot_jukebox_loop:
+    switch: s_jukeboxopto
+  shot_top_kicker:
+    hit_events: balldevice_bd_top_kicker_ball_enter
+    show_tokens:
+      leds: l_managers_choice
+    profile: managers_choice
+    disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits, light_metal_rodeo
+    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits, mode_metal_rodeo_stopping
+    reset_events: reset_managers_choice
+
+shot_profiles:
+    managers_choice:
+        states:
+          - name: unlit
+            show: off
+          - name: lit
+            show: flash
+          - name: active
+            show: on
+        loop: no
+
+    stealth:
+      states:
+        - name: off
+          show: off
+      advance_on_hit: false
+
+shows:
+  flash_once:
+    - duration: 200ms
+      leds:
+        (led): off
+  flash_jukebox:
+    - duration: 125ms
+      leds:
+        l_jukebox_left: on-f0
+        l_jukebox_right: off-f0
+    - duration: 125ms
+      leds:
+        l_jukebox_left: off-f0
+        l_jukebox_right: on-f0
+  eject_alert:
+    - time: 0
+      leds:
+        (led): on
+    - time: 300ms
+      leds:
+        (led): off
+    - time: 450ms
+      leds:
+        (led): on
+    - time: 750ms
+      leds:
+        (led): off
+    - time: 900ms
+      leds:
+        (led): on
+    - time: 1200ms
+      leds:
+        (led): off
+    - time: 1350ms
+      events: eject_alert_over
+  top_eject_alert:
+    - time: 0
+      leds:
+        (led): on
+    - time: 300ms
+      leds:
+        (led): off
+    - time: 450ms
+      leds:
+        (led): on
+    - time: 750ms
+      leds:
+        (led): off
+    - time: 900ms
+      leds:
+        (led): on
+    - time: 1200ms
+      leds:
+        (led): off
+    - time: 1350ms
+      events: top_eject_alert_over
+  rainbow:
+    - duration: 150ms
+      leds:
+        (leds): red-f100ms
+    - duration: 150ms
+      leds:
+        (leds): orange-f100ms
+    - duration: 150ms
+      leds:
+        (leds): yellow-f100ms
+    - duration: 150ms
+      leds:
+        (leds): green-f100ms
+    - duration: 150ms
+      leds:
+        (leds): blue-f100ms
+    - duration: 150ms
+      leds:
+        (leds): purple-f100ms
+
+shot_groups:
+    upper_lanes:
+        shots: shot_left_lane, shot_right_lane
+        profile: default
+        rotate_left_events: s_leftflipper_active
+        rotate_right_events: s_rightflipper_active
+        reset_events: upper_lanes_default_lit_complete
+        enable_events: ball_started
+        disable_events: ball_ending
+
+ball_saves:
+  main:
+    active_time: 10s
+    hurry_up_time: 2s
+    grace_period: 2s
+    early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
+    timer_start_events: playfield_active
+  mystery:
+    active_time: 15s
+    hurry_up_time: 2s
+    grace_period: 1s
+    enable_events: start_mys_ball_saver
+    early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
+    timer_start_events: balldevice_bd_lower_vuk_ball_eject_success
+  vuk_eject:
+    active_time: 2s
+    enable_events: balldevice_bd_lower_vuk_ejecting_ball
+    disable_events: s_leftsling_active, s_rightsling_active
+
