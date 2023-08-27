@@ -7,7 +7,7 @@ show_player:
       loops: -1
     attract_stage_loop:
       loops: -1
-    gi_on: {}
+    gi_on: #{} #This was in there...not sure why.
     center_light_sweep:
       speed: 2
     attract_music_lights:

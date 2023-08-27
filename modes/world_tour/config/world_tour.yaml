@@ -344,16 +344,16 @@ sound_player:
 
 # Might not need the sequence
 #logic_blocks:
-    counters:
-        stop_adding_time:
-            count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit
-            events_when_hit: add_time
-            count_complete_value: 3
-            events_when_complete: world_tour_stop_adding_time
-            enable_events: mode_world_tour_started
-            disable_events: logicblock_stop_adding_time_complete
-            multiple_hit_window: 500ms
-            persist_state: true
+counters:
+    stop_adding_time:
+        count_events: shot_north_america_hit, shot_europe_hit, shot_south_america_hit, shot_australia_hit
+        events_when_hit: add_time
+        count_complete_value: 3
+        events_when_complete: world_tour_stop_adding_time
+        enable_events: mode_world_tour_started
+        disable_events: logicblock_stop_adding_time_complete
+        multiple_hit_window: 500ms
+        persist_state: true
 
 #scoring: #leaving for reference
 variable_player:

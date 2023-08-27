@@ -126,6 +126,7 @@ config:
 
 playfields:
   playfield:
+    default_source_device: bd_plunger
     tags: default
     enable_ball_search: true
     ball_search_interval: 150ms
@@ -274,7 +275,7 @@ switches:
 coils:
   c_leftflippermain:
     number: 0
-    pulse_ms: 60
+    default_pulse_ms: 60
   c_leftflipperhold:
     number: 1
     allow_enable: true
@@ -282,66 +283,66 @@ coils:
     number: 2
   c_rightflippermain:
     number: 3
-    pulse_ms: 60
+    default_pulse_ms: 60
   c_rightflipperhold:
     number: 4
     allow_enable: true
   c_plunger:
     number: 5
-    pulse_ms: 20
+    default_pulse_ms: 20
   c_trougheject:
     number: 6
     allow_enable: true
-    pulse_ms: 1000
+    default_pulse_ms: 1000
   c_draineject:
     number: 7
-    pulse_ms: 80
+    default_pulse_ms: 80
   c_jukeboxmagnet:
     number: 8
-    pulse_ms: 10
-    hold_power: 1
+    default_pulse_ms: 10
+    default_hold_power: 1
   c_leftsling:
     number: 9
   c_lowervuk:
     number: 10
-    pulse_ms: 40
+    default_pulse_ms: 40
   c_bottomkickingtarget:
     number: 11
-    pulse_ms: 4
+    default_pulse_ms: 4
   c_diverter:
     number: 12
     allow_enable: true
   c_topkickingtarget:
     number: 15
-    pulse_ms: 4
+    default_pulse_ms: 4
   c_outerdroptargetdrop:
     number: 16
   c_innerdroptargetdrop:
     number: 17
   c_droptargetreset:
     number: 18
-    pulse_ms: 80
+    default_pulse_ms: 80
   c_topkicker:
     number: 20
-    pulse_ms: 30
+    default_pulse_ms: 30
   c_toprightvuk:
     number: 19
-    pulse_ms: 8
+    default_pulse_ms: 8
   c_upperrightflippermain:
     number: 29
-    pulse_ms: 15
+    default_pulse_ms: 15
   c_upperrightflipperhold:
     number: 25
     allow_enable: true
   c_bottompop:
     number: 26
-    pulse_ms: 20
+    default_pulse_ms: 20
   c_rightpop:
     number: 27
-    pulse_ms: 20
+    default_pulse_ms: 20
   c_leftpop:
     number: 28
-    pulse_ms: 20
+    default_pulse_ms: 20
 
 #                                                                                
 #     ad88  88  88                                                               
@@ -357,33 +358,34 @@ coils:
 
 flippers:
   left_flipper:
-    main_coil: c_LeftFlipperMain
-    hold_coil: c_LeftFlipperHold
-    activation_switch: s_LeftFlipper
+    main_coil: c_leftflippermain
+    hold_coil: c_leftflipperhold
+    activation_switch: s_leftflipper
     enable_events: ball_starting #, weak_flippers_disabled
     disable_events: mode_bonus_starting #, weak_flippers_enabled
     use_eos: false
   right_flipper:
-    main_coil: c_RightFlipperMain
-    hold_coil: c_RightFlipperHold
-    activation_switch: s_RightFlipper
+    main_coil: c_rightflippermain
+    hold_coil: c_rightflipperhold
+    activation_switch: s_rightflipper
     enable_events: ball_starting #, weak_flippers_disabled
     disable_events: mode_bonus_starting #, weak_flippers_enabled
     use_eos: false
   upper_right_flipper:
-    main_coil: c_UpperRightFlipperMain
-    hold_coil: c_UpperRightFlipperHold
-    activation_switch: s_RightFlipper
+    main_coil: c_upperrightflippermain
+    hold_coil: c_upperrightflipperhold
+    activation_switch: s_rightflipper
     enable_events: ball_starting #, weak_flippers_disabled
     disable_events: mode_bonus_starting #, weak_flippers_enabled
     use_eos: false
     include_in_ball_search: true
 
+
 # Weak Flippers
 #  weak_left_flipper:
 #    main_coil: c_LeftFlipperMain
 #    main_coil_overwrite:
-#      pulse_ms: 17
+#      default_pulse_ms: 17
 #    hold_coil: c_LeftFlipperHold
 #    activation_switch: s_LeftFlipper
 #    enable_events: weak_flippers_enabled
@@ -393,7 +395,7 @@ flippers:
 #  weak_right_flipper:
 #    main_coil: c_RightFlipperMain
 #    main_coil_overwrite:
-#      pulse_ms: 19
+#      default_pulse_ms: 19
 #    hold_coil: c_RightFlipperHold
 #    activation_switch: s_RightFlipper
 #    enable_events: weak_flippers_enabled
@@ -403,7 +405,7 @@ flippers:
 #  weak_upper_right_flipper:
 #    main_coil: c_UpperRightFlipperMain
 #    main_coil_overwrite:
-#      pulse_ms: 7
+#      default_pulse_ms: 7
 #    hold_coil: c_UpperRightFlipperHold
 #    activation_switch: s_RightFlipper
 #    enable_events: weak_flippers_enabled
@@ -438,55 +440,56 @@ ball_devices:
     eject_timeouts: 4s # was 1500ms. changed because fast multiball drains confused it into thinking an eject failed
     debug: true
     target_on_unexpected_ball: bd_trough
-    console_log: Full
+    console_log: full
     eject_coil_retry_pulse: 140
     retries_before_increasing_pulse: 1
   bd_trough:
     tags: trough, home
     entrance_switch: s_trough_enter
     entrance_switch_full_timeout: 500ms
-    eject_coil: c_Trougheject
+    eject_coil: c_trougheject
     ball_capacity: 3
     eject_targets: bd_plunger
     eject_timeouts: 3s
     exit_count_delay: 1.5s
-    console_log: Full
+    console_log: full
     debug: true
   bd_plunger:
     tags: ball_add_live
-    ball_switches: s_PlungerLane
+    ball_switches: s_plungerlane
     entrance_count_delay: 1s
-    eject_coil: c_Plunger
+    eject_coil: c_plunger
     eject_targets: playfield
     eject_timeouts: 3s
     player_controlled_eject_event: sw_launch
     mechanical_eject: true
-    console_log: Full
+    console_log: full
   bd_top_right_vuk:
-    ball_switches: s_TopRightVUK
+    ball_switches: s_toprightvuk
     entrance_count_delay: 500ms
-    eject_coil: c_TopRightVUK
+    eject_coil: c_toprightvuk
     eject_targets: playfield
     exit_count_delay: 500ms
     confirm_eject_type: target
     eject_timeouts: 2s
-    console_log: Full
+    console_log: full
   bd_lower_vuk:
-    ball_switches: s_LowerVUKOpto
-    eject_coil: c_LowerVUK
+    ball_switches: s_lowervukopto
+    eject_coil: c_lowervuk
     eject_targets: playfield
     confirm_eject_type: target
     eject_timeouts: 500ms
-    console_log: Full
+    console_log: full
   bd_top_kicker:
-    ball_switches: s_TopKicker
+    ball_switches: s_topkicker
     entrance_count_delay: 1s
     eject_timeouts: 2s
-    eject_coil: c_TopKicker
+    eject_coil: c_topkicker
     eject_targets: playfield, bd_top_right_vuk
     exit_count_delay: 500ms
     confirm_eject_type: target
-    console_log: Full
+    console_log: full
+
 
 #                                                                                                
 #                                                              ad88  88                          
@@ -529,11 +532,11 @@ autofire_coils:
     switch: s_bottompop
     enable_events: ball_starting
   top_kicking_target:
-    coil: c_topKickingTarget
-    switch: s_topKickingTarget
+    coil: c_topkickingtarget
+    switch: s_topkickingtarget
     enable_events: ball_starting
   bottom_kicking_target:
-    coil: c_bottomKickingTarget
+    coil: c_bottomkickingtarget
     switch: s_bottomkickingtarget
     enable_events: ball_starting
 
@@ -559,17 +562,18 @@ drop_targets:
   dt_top:
     switch: s_droptarget1
   dt_top_center:
-    switch: s_DropTarget2
+    switch: s_droptarget2
   dt_center:
     switch: s_droptarget3
   dt_bottom_center:
     switch: s_droptarget4
-    knockdown_coil: c_InnerDropTargetDrop
+    knockdown_coil: c_innerdroptargetdrop
     knockdown_events: knockdown_left, knockdown_both
   dt_bottom:
     switch: s_droptarget5
-    knockdown_coil: c_OuterDropTargetDrop
+    knockdown_coil: c_outerdroptargetdrop
     knockdown_events: knockdown_right, knockdown_both
+
                                                                    
 #           88                                                        
 #           88                                                        
@@ -604,7 +608,7 @@ drop_target_banks:
     - dt_center
     - dt_bottom_center
     - dt_bottom
-    reset_coils: c_DropTargetReset
+    reset_coils: c_droptargetreset
     reset_events: ball_starting, reset_drop_targets
 
 #                                                                          
@@ -636,10 +640,10 @@ servos:
 #  
 diverters:
   d_diverter:
-    activation_coil: c_Diverter
+    activation_coil: c_diverter
     type: hold
     activation_time: 3s
-    activation_switches: s_LeftOrbit
+    activation_switches: s_leftorbit
     enable_events: enable_diverter
     disable_events: ball_ended, disable_diverter
                                                       
@@ -658,190 +662,190 @@ lights:
   l_australia:
     number: 1-0
     tags: right
-    default_color: red
+    default_on_color: red
   l_top_quarter:
     number: 1-1
     tags: right, quarter
-    default_color: aaaaaa
+    default_on_color: aaaaaa
   l_quintuple_platinum:
     number: 1-2
     tags: center
-    default_color: aaaaaa
+    default_on_color: aaaaaa
   l_jukebox_insert:
     number: 1-3
     tags: center
-    default_color: ffcc00
+    default_on_color: ffcc00
   l_play_poker:
     number: 1-4
     tags: right
-    default_color: ff9027
+    default_on_color: ff9027
   l_right_music_award:
     number: 1-5
     tags: right, right_ramp, jackpot
-    default_color: ff9027
+    default_on_color: ff9027
   l_ramp_jackpot:
     number: 1-6
     tags: right, right_ramp, jackpot
-    default_color: ff9027
+    default_on_color: ff9027
   l_south_america:
     number: 1-7
     tags: right, right_ramp, jackpot
-    default_color: red
+    default_on_color: red
   l_middle_quarter:
     number: 1-8
     tags: right, quarter
-    default_color: aaaaaaa
+    default_on_color: aaaaaaa
   l_bottom_quarter:
     number: 1-9
     tags: right, quarter
-    default_color: aaaaaa
+    default_on_color: aaaaaa
   l_lower_right_flasher:
     number: 1-10
     tags: right
   l_right_lane_special:
     number: 1-11
     tags: right
-    default_color: red
+    default_on_color: red
   l_right_lane_spot_quarter:
     number: 1-12
     tags: right
-    default_color: ff9027
+    default_on_color: ff9027
   l_again:
     number: 1-13
     tags: center
-    default_color: red
+    default_on_color: red
   l_shoot:
     number: 1-14
     tags: center
-    default_color: red
+    default_on_color: red
   l_left_lane_spot_quarter:
     number: 1-15
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_left_lane_special:
     number: 1-16
     tags: left
-    default_color: red
+    default_on_color: red
   l_mystery:
     number: 1-17
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_begin_round:
     number: 1-18
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_hi_lo:
     number: 1-19
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_world_tour:
     number: 1-20
     tags: center
-    default_color: red
+    default_on_color: red
   l_money_bags:
     number: 1-21
     tags: center
-    default_color: ff9027
+    default_on_color: ff9027
   l_music_awards:
     number: 1-22
     tags: center
-    default_color: ff9027
+    default_on_color: ff9027
   l_double_platinum:
     number: 1-23
     tags: center
-    default_color: aaaaaa
+    default_on_color: aaaaaa
   l_single_platinum:
     number: 1-24
     tags: center
-    default_color: aaaaaa
+    default_on_color: aaaaaa
   l_gold:
     number: 1-25
     tags: center
-    default_color: ffcc00
+    default_on_color: ffcc00
   l_silver:
     number: 1-26
     tags: center
-    default_color: aaaaaa
+    default_on_color: aaaaaa
   l_wizard_shot:
     number: 1-27
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_left_longhorn:
     number: 1-28
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_double_jackpot:
     number: 1-29
     tags: left, double_jackpot
-    default_color: ff9027
+    default_on_color: ff9027
   l_advance_wizard:
     number: 1-30
     tags: left, left_orbit
-    default_color: ff9027
+    default_on_color: ff9027
   l_lower_left_flasher:
     number: 1-31
     tags: left
     type: grb
-    default_color: green
+    default_on_color: green
   l_north_america:
     number: 1-32
     tags: left, left_orbit
-    default_color: red
+    default_on_color: red
   l_left_ramp_flasher:
     number: 1-33
     tags: left
   l_left_music_award:
     number: 1-34
     tags: left, left_orbit
-    default_color: ff9027
+    default_on_color: ff9027
   l_managers_choice:
     number: 1-35
     tags: left, double_jackpot
-    default_color: ff9027
+    default_on_color: ff9027
   l_jukebox_left:
     number: 1-36
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_jukebox_right:
     number: 1-37
     tags: left
-    default_color: ff9027
+    default_on_color: ff9027
   l_europe:
     number: 1-38
     tags: center
-    default_color: red
+    default_on_color: red
   l_center_lock:
     number: 1-39
     tags: center
-    default_color: ff9027
+    default_on_color: ff9027
   l_center_longhorn:
     number: 1-40
     tags: center
-    default_color: ff9027
+    default_on_color: ff9027
   l_left_pop:
     number: 1-41
     tags: right
-    default_color: ff9027
+    default_on_color: ff9027
   l_right_pop:
     number: 1-42
     tags: right
-    default_color: ff9027
+    default_on_color: ff9027
   l_bottom_pop:
     number: 1-43
     tags: right
-    default_color: ff9027
+    default_on_color: ff9027
   l_collect_wizard:
     number: 1-44
     tags: right
-    default_color: ff9027
+    default_on_color: ff9027
   l_extra_ball:
     number: 1-45
     tags: right
-    default_color: ff9027
+    default_on_color: ff9027
   l_ramp_fire:
     number: 1-46
     tags: right, ramp_indicator, jackpot
-    default_color: red
+    default_on_color: red
   l_right_ramp_flasher:
     number: 1-47
     tags: right
