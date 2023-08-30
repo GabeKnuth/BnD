@@ -107,17 +107,17 @@ shots:
     switch: s_toprightstandup
     profile: quarters
     show_tokens:
-      leds: l_top_quarter
+      lights: l_top_quarter
   quarter_2:
     switch: s_rightbanktop
     profile: quarters
     show_tokens:
-      leds: l_middle_quarter
+      lights: l_middle_quarter
   quarter_3:
     switch: s_rightbankbottom
     profile: quarters
     show_tokens:
-      leds: l_bottom_quarter
+      lights: l_bottom_quarter
 
 shot_groups:
   quarters:

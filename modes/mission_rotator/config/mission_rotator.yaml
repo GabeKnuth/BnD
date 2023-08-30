@@ -19,7 +19,7 @@ mode:
 achievements:
   world_tour:
     show_tokens:
-      leds: l_world_tour
+      lights: l_world_tour
     show_when_selected: flash
     show_when_started: flash
     show_when_completed: on
@@ -32,7 +32,7 @@ achievements:
 
   money_bags:
     show_tokens:
-      leds: l_money_bags
+      lights: l_money_bags
     show_when_selected: flash
     show_when_started: flash
     show_when_completed: on
@@ -45,7 +45,7 @@ achievements:
 
   music_awards:
     show_tokens:
-      leds: l_music_awards
+      lights: l_music_awards
     show_when_selected: flash
     show_when_started: flash
     show_when_completed: on
@@ -58,7 +58,7 @@ achievements:
 
   jukebox:
     show_tokens:
-      leds: l_jukebox_insert
+      lights: l_jukebox_insert
     show_when_selected: flash
     show_when_started: flash
     show_when_completed: on
@@ -71,7 +71,7 @@ achievements:
 
   play_poker:
     show_tokens:
-      leds: l_play_poker
+      lights: l_play_poker
     show_when_selected: flash
     show_when_started: flash
     show_when_completed: on
@@ -92,7 +92,7 @@ achievement_groups:
     events_when_enabled: mission_rotator_ready
     rotate_right_events: sw_toggle
     show_tokens:
-      leds:
+      lights:
         l_begin_round
     show_when_enabled: flash
     enable_while_no_achievement_started: false

@@ -7,7 +7,7 @@ show_player:
       loops: -1
     attract_stage_loop:
       loops: -1
-    gi_on: #{} #This was in there...not sure why.
+    ######gi_on: #{} #This was in there...not sure why.
     center_light_sweep:
       speed: 2
     attract_music_lights:
@@ -130,7 +130,7 @@ show_player:
       action: stop
     attract_stage_loop:  # todo test if we have to do this?
       action: stop
-      target: stage
+      #target: stage
     attract_music_lights:
       action: stop
     music_video: stop
@@ -190,27 +190,27 @@ timers:
 shows:
   attract_music_lights:
     - duration: .39s
-      leds:
+      lights:
         (left): on
         (right): off
         (center): off
     - duration: .39s
-      leds:
+      lights:
         (left): off
         (right): on
         (center): off
     - duration: .39s
-      leds:
+      lights:
         (left): off
         (right): off
         (center): on
     - duration: .20s
-      leds:
+      lights:
         (left): on
         (right): on
         (center): on
     - duration: .19s
-      leds:
+      lights:
         (left): off
         (right): off
         (center): off

@@ -39,34 +39,34 @@ mode:
 
 event_player:
   mode_play_poker_started:
-      - fade_out_base_music
-      - start_poker_music|1s
+    - fade_out_base_music
+    - start_poker_music|1s
   mode_play_poker_stopping:
-    fade_in_base_music
-    enable_base_left_vuk_hold
+    - fade_in_base_music
+    - enable_base_left_vuk_hold
   ball_will_end:
-    play_poker_fail
+    - play_poker_fail
   timer_poker_countdown_complete:
-    play_poker_fail|2s
-    play_poker_done|2s
+    - play_poker_fail|2s
+    - play_poker_done|2s
   poker_deck_complete:
-    play_poker_success
-    play_poker_done|2s
+    - play_poker_success
+    - play_poker_done|2s
   poker_royal_flush:
-    light_poker_extra_ball
-    light_special
+    - light_poker_extra_ball
+    - light_special
   poker_straight_flush:
-    light_special
-    light_special
-    light_special
+    - light_special
+    #- light_special
+    #- light_special
   poker_four_of_a_kind:
-    light_special
+    - light_special
   poker_full_house:
-    light_poker_extra_ball
+    - light_poker_extra_ball
   poker_flush:
-    light_poker_extra_ball
+    - light_poker_extra_ball
   poker_straight:
-    light_poker_extra_ball
+    - light_poker_extra_ball
 
 #scoring: #leaving for reference
 variable_player:
@@ -129,7 +129,7 @@ show_player:
         flash:
             loops: -1
             show_tokens:
-              leds: l_mystery, l_begin_round, l_hi_lo
+              lights: l_mystery, l_begin_round, l_hi_lo
     flipper_cancel:
         play_poker_intro:
             action: stop

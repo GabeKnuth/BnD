@@ -23,19 +23,19 @@ mode:
 
 event_player:
   mode_quarters_multiball_started:
-    qmb_go|5s
-    fade_out_base_music
-    start_qmb|4.9s
-    stop_quarters_mode
-    block_jukebox_hits
-    disable_base_left_vuk_hold
-    stop_mission_select
+    - qmb_go|5s
+    - fade_out_base_music
+    - start_qmb|4.9s
+    - stop_quarters_mode
+    - block_jukebox_hits
+    - disable_base_left_vuk_hold
+    - stop_mission_select
   mode_quarters_multiball_stopping:
-    start_quarters_mode
-    fade_in_base_music
-    enable_base_left_vuk_hold
-    qmb_fade_out
-    enable_jukebox_hits
+    - start_quarters_mode
+    - fade_in_base_music
+    - enable_base_left_vuk_hold
+    - qmb_fade_out
+    - enable_jukebox_hits
 
 random_event_player:
     s_subwayopto_active:

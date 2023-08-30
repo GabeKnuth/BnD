@@ -62,16 +62,16 @@ mode:
 
 event_player:
   mode_metal_rodeo_started:
-    fade_out_base_music
-    mission_started
-    play_intro
-    block_jukebox_hits
-    stop_quarters_mode
-    mode_running|5s
+    - fade_out_base_music
+    - mission_started
+    - play_intro
+    - block_jukebox_hits
+    - stop_quarters_mode
+    - mode_running|5s
   mode_metal_rodeo_stopping:
-    fade_in_base_music
-    unblock_jukebox_hits
-    start_quarters_mode
+    - fade_in_base_music
+    - unblock_jukebox_hits
+    - start_quarters_mode
 
 multiballs:
   mr_launch_balls:

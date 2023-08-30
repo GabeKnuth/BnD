@@ -3,7 +3,7 @@
 
 # Everything Off
 - time: 0
-  leds:
+  lights:
     (right): off
     (center): off
     (left): off
@@ -11,25 +11,25 @@
 
 # First strobe in video
 - time: 3.933
-  leds:
+  lights:
     l_lower_right_flasher: white
     l_lower_left_flasher: white
     l_right_ramp_flasher: white
     l_left_ramp_flasher: white
 - time: 4.2
-  leds:
+  lights:
     l_lower_right_flasher: white%50
     l_lower_left_flasher: white%50
     l_right_ramp_flasher: white%50
     l_left_ramp_flasher: white%50
 - time: 4.35
-  leds:
+  lights:
     l_lower_right_flasher: white
     l_lower_left_flasher: white
     l_right_ramp_flasher: white
     l_left_ramp_flasher: white
 - time: 4.733
-  leds:
+  lights:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
@@ -37,25 +37,25 @@
 
 # Second strobe in video
 - time: 6.133
-  leds:
+  lights:
     l_lower_right_flasher: white
     l_lower_left_flasher: white
     l_right_ramp_flasher: white
     l_left_ramp_flasher: white
 - time: 6.5
-  leds:
+  lights:
     l_lower_right_flasher: white%50
     l_lower_left_flasher: white%50
     l_right_ramp_flasher: white%50
     l_left_ramp_flasher: white%50
 - time: 6.85
-  leds:
+  lights:
     l_lower_right_flasher: white
     l_lower_left_flasher: white
     l_right_ramp_flasher: white
     l_left_ramp_flasher: white
 - time: 7.1
-  leds:
+  lights:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
@@ -63,25 +63,25 @@
 
 # Third strobe
 - time: 8.3
-  leds:
+  lights:
     l_lower_right_flasher: white
     l_lower_left_flasher: white
     l_right_ramp_flasher: white
     l_left_ramp_flasher: white
 - time: 8.6
-  leds:
+  lights:
     l_lower_right_flasher: white%50
     l_lower_left_flasher: white%50
     l_right_ramp_flasher: white%50
     l_left_ramp_flasher: white%50
 - time: 8.75
-  leds:
+  lights:
     l_lower_right_flasher: white
     l_lower_left_flasher: white
     l_right_ramp_flasher: white
     l_left_ramp_flasher: white
 - time: 9.1
-  leds:
+  lights:
     l_lower_right_flasher: off
     l_lower_left_flasher: off
     l_right_ramp_flasher: off
@@ -89,13 +89,13 @@
 
 # Light up playfield again
 - time: 9.233
-  leds:
+  lights:
     (right): on-f2433ms
     (center): on-f2433ms
     (left): on-f2433ms
     (gi): on-f2433ms
 - time: 11.666
-  leds:
+  lights:
     (right): off-f200ms
     (center): off-f200ms
     (left): off-f200ms

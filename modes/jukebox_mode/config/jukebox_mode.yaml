@@ -25,24 +25,24 @@ ball_holds:
 
 event_player:
   mode_jukebox_mode_started:
-    play_jukebox_video
-    fade_out_base_music
-    block_jukebox_hits
+    - play_jukebox_video
+    - fade_out_base_music
+    - block_jukebox_hits
   timer_jukebox_mode_timer_complete:
-    end_jukebox_mode|3s
-    jukebox_fail|1s
+    - end_jukebox_mode|3s
+    - jukebox_fail|1s
   jukebox_fail:
-    fade_in_base_music
-    enable_base_left_vuk_hold
-    unblock_jukebox_hits
+    - fade_in_base_music
+    - enable_base_left_vuk_hold
+    - unblock_jukebox_hits
   ball_will_end:
-    jukebox_fail
+    - jukebox_fail
   timer_jb_intro_timer_complete:
-    start_jukebox_timer
-    release_left_vuk_ball
-    disable_base_left_vuk_hold
-    release_top_kicker_ball
-    disable_base_top_kicker_hold
+    - start_jukebox_timer
+    - release_left_vuk_ball
+    - disable_base_left_vuk_hold
+    - release_top_kicker_ball
+    - disable_base_top_kicker_hold
 
 #scoring: #leaving for reference
 variable_player:

@@ -13,15 +13,15 @@ event_player:
 #    start_honky_tonk_multiball
 #    stop_light_lock|1s
   shot_spinner_to_vuk_hit:
-    play_ball_locked_slide
-    stop_light_lock|2.5s
+    - play_ball_locked_slide
+    - stop_light_lock|2.5s
 
 show_player:
   mode_light_lock_started:
     lock_advertise:
       loops: -1
       show_tokens:
-        leds: l_center_lock
+        lights: l_center_lock
 
 slide_player:
   play_lock_slide:
@@ -87,10 +87,10 @@ slides:
 shows:
   lock_advertise:
     - duration: 200ms
-      leds:
+      lights:
         (leds): lime-f100ms
     - duration: 200ms
-      leds:
+      lights:
         (leds): blue-f100ms
 
 #scoring: #leaving for reference

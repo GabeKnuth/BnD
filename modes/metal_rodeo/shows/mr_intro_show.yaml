@@ -8,7 +8,7 @@
       target: stage
     mr_intro_dmd_1:
       target: dmd
-  leds:
+  lights:
     (right): off
     (center): off
     (left): off

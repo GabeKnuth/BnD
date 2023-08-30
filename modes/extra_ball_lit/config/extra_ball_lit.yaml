@@ -12,8 +12,8 @@ light_player:
 
 event_player:
   shot_pops_to_vuk_hit:
-    award_lit_extra_ball
-    stop_extra_ball_lit_mode|3.3s
+    - award_lit_extra_ball
+    - stop_extra_ball_lit_mode|3.3s
 
 sound_player:
   extra_ball_awarded:
@@ -125,38 +125,38 @@ shows:
         extra_ball:
           target: dmd
     - time: 150ms
-      leds:
+      lights:
         (right): red-f150ms
         (center): red-f150ms
         (left): red-f150ms
         (gi): red-f150ms
     - time: 300ms
-      leds:
+      lights:
         (right): off-f150ms
         (center): off-f150ms
         (left): off-f150ms
         (gi): off-f150ms
     - time: 750ms
-      leds:
+      lights:
         (right): red-f150ms
         (center): red-f150ms
         (left): red-f150ms
         (gi): red-f150ms
     - time: 900ms
-      leds:
+      lights:
         (right): off-f150ms
         (center): off-f150ms
         (left): off-f150ms
         (gi): off-f150ms
     - time: 1050ms
-      leds:
+      lights:
         (right): red-f150ms
         (center): red-f150ms
         (left): red-f150ms
         (gi): red-f150ms
     - time: 1200ms
       duration: 150ms
-      leds:
+      lights:
         (right): off-f150ms
         (center): off-f150ms
         (left): off-f150ms

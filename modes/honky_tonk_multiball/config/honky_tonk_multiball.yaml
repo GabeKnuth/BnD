@@ -7,21 +7,21 @@ mode:
 
 event_player:
   mode_honky_tonk_multiball_started:
-    fade_out_base_music
-    stop_quarters_mode
-    block_jukebox_hits
-    start_hkmb_achievements|2s
-    stop_mission_select
+    - fade_out_base_music
+    - stop_quarters_mode
+    - block_jukebox_hits
+    - start_hkmb_achievements|2s
+    - stop_mission_select
   mode_honky_tonk_multiball_stopping:
-    fade_in_base_music
-    start_quarters_mode
-    unblock_jukebox_hits
+    - fade_in_base_music
+    - start_quarters_mode
+    - unblock_jukebox_hits
   htmb_double_jackpot_complete:
-    duck
-    unduck|1.5s
+    - duck
+    - unduck|1.5s
   htmb_jackpot_complete:
-    duck
-    unduck|1.5s
+    - duck
+    - unduck|1.5s
 
 sound_player:
   htmb_jackpot_complete:

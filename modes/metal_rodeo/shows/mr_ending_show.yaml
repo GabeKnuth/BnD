@@ -6,7 +6,7 @@
   slides:
     mr_good_job:
       target: dmd
-  leds:
+  lights:
     (right): off-f150
     (center): off-f150
     (left): off-f150

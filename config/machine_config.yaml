@@ -163,44 +163,44 @@ switches:
     number: 16
   s_rightbankbottom:
     number: 17
-    tags: playfield_active, end_skill_shot, quarter, qmb
+    tags: end_skill_shot, quarter, qmb
   s_trough_enter:
     number: 18
   s_rightoutlane:
     number: 19
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_leftoutlane:
     number: 20
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_drain:
     number: 21
     tags: drain
   s_leftinlane:
     number: 22
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_rightinlane:
     number: 24
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_rightsling:
     number: 25
-    tags: playfield_active, end_skill_shot, toggle, beat
+    tags: end_skill_shot, toggle, beat
   s_rightbanktop:
     number: 26
-    tags: playfield_active, end_skill_shot, quarter, qmb
+    tags: end_skill_shot, quarter, qmb
   s_toprightstandup:
     number: 27
-    tags: playfield_active, end_skill_shot, quarter, qmb
+    tags: end_skill_shot, quarter, qmb
   s_jukeboxopto:
     number: 40
     type: NC
     ignore_window_ms: 500
-    tags: jukebox, playfield_active, end_skill_shot, jukebox_hit
+    tags: jukebox, end_skill_shot, jukebox_hit
   s_topkickingtarget:
     number: 41
-    tags: playfield_active, end_skill_shot, toggle, beat, qmb
+    tags: end_skill_shot, toggle, beat, qmb
   s_subwayopto:
     number: 42
-    tags: subway, playfield_active, end_skill_shot, jukebox_hit
+    tags: subway, end_skill_shot, jukebox_hit
     type: NC
   s_lowervukopto:
     number: 43
@@ -208,32 +208,32 @@ switches:
     tags: end_skill_shot
   s_leftsling:
     number: 44
-    tags: playfield_active, end_skill_shot, toggle, beat
+    tags: end_skill_shot, toggle, beat
   s_leftrampopto:
     number: 45
     type: NC
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_bottomkickingtarget:
     number: 46
-    tags: playfield_active, end_skill_shot, toggle, beat, qmb
+    tags: end_skill_shot, toggle, beat, qmb
   s_leftorbit:
     number: 47
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_droptarget1:
     number: 64
-    tags: playfield_active, beat
+    tags: beat
   s_droptarget2:
     number: 65
-    tags: playfield_active, beat
+    tags: beat
   s_droptarget3:
     number: 66
-    tags: playfield_active, beat
+    tags: beat
   s_droptarget4:
     number: 67
-    tags: playfield_active, beat
+    tags: beat
   s_droptarget5:
     number: 68
-    tags: playfield_active, beat
+    tags: beat
   s_toprightvuk:
     number: 69
     tags: end_skill_shot
@@ -243,25 +243,25 @@ switches:
     tags: playfield_active
   s_rightlane:
     number: 73
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_leftlane:
     number: 74
-    tags: playfield_active, end_skill_shot
+    tags: end_skill_shot
   s_topkicker:
     number: 75
     tags:
   s_spinner:
     number: 76
-    tags: playfield_active, end_skill_shot, beat
+    tags: end_skill_shot, beat
   s_leftpop:
     number: 77
-    tags: playfield_active, end_skill_shot, toggle, beat
+    tags: end_skill_shot, toggle, beat
   s_rightpop:
     number: 78
-    tags: playfield_active, end_skill_shot, toggle, beat
+    tags: end_skill_shot, toggle, beat
   s_bottompop:
     number: 79
-    tags: playfield_active, end_skill_shot, toggle, beat
+    tags: end_skill_shot, toggle, beat
 
 #                           88  88             
 #                           ""  88             
@@ -455,7 +455,6 @@ ball_devices:
     console_log: full
     debug: true
   bd_plunger:
-    tags: ball_add_live
     ball_switches: s_plungerlane
     entrance_count_delay: 1s
     eject_coil: c_plunger
@@ -1119,17 +1118,17 @@ lights:
 shows:
     gi_on:
     - duration: -1
-      leds:
+      lights:
         gi: ff9027
     flash_color:
         - time: 0
-          leds:
+          lights:
             (led):
               color: (color)
             (leds):
               color: (color)
         - time: 1
-          leds:
+          lights:
             (led):
               color: black
             (leds):
@@ -1138,22 +1137,21 @@ shows:
     flash:  #overwrite default so we can tune our machine-wide flashing in one place
         - _overwrite: true
         - duration: 250ms
-          leds:
+          lights:
             (led):
               color: on
             (leds):
               color: on
         - duration: 250ms
-          leds:
+          lights:
             (led):
               color: black
             (leds):
               color: black
 
 show_player:
-  mode_attract_started:
-    gi_on:
-      leds: gi
+  mode_attract_started: gi_on
+
 
 #                                    88  88                                    
 #                                    88  ""    ,d                              

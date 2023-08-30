@@ -28,11 +28,11 @@ show_player:
     flash:
       loops: -1
       show_tokens:
-        leds: l_hi_lo
+        lights: l_hi_lo
   mode_hilo_started:
     on:
       show_tokens:
-        leds: l_hi_lo
+        lights: l_hi_lo
 
 # Plays a sound when this mode is started. This is the same event that plays the slide. It's not necessary for them
 # to be in sync, but they should be close.

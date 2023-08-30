@@ -14,30 +14,26 @@ mode:
 
 event_player:
   mode_money_bags_started:
-    mode_running|5s
-    fade_out_base_music
+    - mode_running|5s
+    - fade_out_base_music
 #  logicblock_stop_adding_time_complete:
   logicblock_money_bags_counter_complete:  # brian added
-    money_bags_done|5s
-    money_bags_fade_out|3s
-    money_bags_success|4s   # is there a fail mode todo
+    - money_bags_done|5s
+    - money_bags_fade_out|3s
+    - money_bags_success|4s   # is there a fail mode todo
   timer_money_bags_timer_complete:
-    money_bags_fail
-    money_bags_done|1
+    - money_bags_fail
+    - money_bags_done|1
   mode_money_bags_stopping:
-    fade_in_base_music
-    enable_base_left_vuk_hold
+    - fade_in_base_music
+    - enable_base_left_vuk_hold
   ball_will_end:
-    money_bags_fail
+    - money_bags_fail
   timer_mb_intro_timer_complete:
-    release_left_vuk_ball
-    disable_base_left_vuk_hold
-    release_top_kicker_ball
-    disable_base_top_kicker_hold
-
-#############################################
-## Area mentioned in my Slack question
-#############################################
+    - release_left_vuk_ball
+    - disable_base_left_vuk_hold
+    - release_top_kicker_ball
+    - disable_base_top_kicker_hold
 
 shots:
     left_kicking_target:
@@ -47,33 +43,18 @@ shots:
         advance_events: mode_money_bags_started
         disable_events: timer_money_bags_timer_complete
     
-    # # Old 0.33 config for reference
-    # spinner_to_vuk:
-    #     switch_sequence: s_spinner, s_toprightvuk
-    #     show_tokens:
-    #         led: l_center_longhorn
-    #     disable_events: timer_money_bags_timer_complete
-
-
-sequence_shots: # New for 0.56
     spinner_to_vuk:
-        switch_sequence: s_spinner, s_toprightvuk
-        # Commented this out since it won't pass config validation. Need to replicate it though.
-        # Why aren't show_tokens in sequence_shots, but they are in shots?
-        # show_tokens:  
-        #     light: l_center_longhorn
-      cancel_events: timer_money_bags_timer_complete
-
+      hit_events: seq_spinner_to_vuk_hit
+      disable_events: timer_money_bags_timer_complete
+      show_tokens:
+        light: l_center_longhorn
 
 shot_groups:
     money_bags: 
-        shots: left_kicking_target, spinner_to_vuk #<<< spinner_to_vuk not valid anymore since it's a sequence_shot
-        # profile: advertise # <<< Where did specifying a profile go? It was in 0.50, but gone after that.
+        shots: left_kicking_target, spinner_to_vuk
+        # profile: advertise # <<< todo: Where did specifying a profile go? It was in 0.50, but gone after that.
         disable_events: timer_money_bags_timer_complete
         rotate_events: money_bags_advertise_flashing_hit
-
-#############################################
-
 
 timers:
     mb_intro_timer:
@@ -103,7 +84,7 @@ counters:
         disable_events: mode_money_bags_ended
         count_events: money_bags_advertise_flashing_hit
         persist_state: true
-        player_variable: money_bags_hit
+        #player_variable: money_bags_hit
         count_complete_value: 5
         starting_count: 0
         direction: up

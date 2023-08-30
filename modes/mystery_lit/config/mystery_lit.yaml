@@ -59,10 +59,10 @@ slides:
 shows:
   flash_mystery:
     - duration: 250ms
-      leds:
+      lights:
         l_mystery: on
     - duration: 250ms
-      leds:
+      lights:
         l_mystery: off
 
 

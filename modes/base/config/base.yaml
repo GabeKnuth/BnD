@@ -33,59 +33,59 @@ mode:
 
 event_player:
   mode_base_started:
-    jukebox_up
-    light_mission_select
+    - jukebox_up
+    - light_mission_select
   light_mission_select_started:
-    light_mystery
+    - light_mystery
   mode_mission_rotator_started:
-    stop_mystery
+    - stop_mystery
   mode_jukebox_two_ball_stopped:
-    light_mission_select
+    - light_mission_select
   mode_metal_rodeo_stopped:
-    light_mission_select
+    - light_mission_select
   mode_honky_tonk_multiball_stopped:
-    light_mission_select
+    - light_mission_select
   world_tour_fail:
-    light_mission_select
+    - light_mission_select
   money_bags_fail:
-    light_mission_select
+    - light_mission_select
   music_awards_fail: #made
-    light_mission_select
+    - light_mission_select
   jukebox_fail: #made
-    light_mission_select
+    - light_mission_select
   play_poker_fail:
-    light_mission_select
+    - light_mission_select
   hit_jukebox{count==5}:
-    start_jukebox_hurryup
+    - start_jukebox_hurryup
   hit_jukebox{count==13}:
-    light_hilo
+    - light_hilo
   hit_jukebox{count==23}:
-    start_jukebox_hurryup
+    - start_jukebox_hurryup
   hit_jukebox{count==35}:
-    light_hilo
+    - light_hilo
   hit_jukebox{count==45}:
-    start_jukebox_hurryup
+    - start_jukebox_hurryup
   hit_jukebox{count%4==0}:
-    start_light_lock
+    - start_light_lock
   ball_ending:
-    fade_out_base_music
+    - fade_out_base_music
   drop_target_bank_drop_targets_down:
-    reset_drop_targets|1s
+    - reset_drop_targets|1s
   shot_top_kicker_managers_choice_unlit_hit:
-    enable_base_top_kicker_hold
+    - enable_base_top_kicker_hold
   shot_top_kicker_managers_choice_lit_hit:
-    start_managers_choice
+    - start_managers_choice
   player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
-    start_honky_tonk_multiball
-    stop_light_lock|1s
+    - start_honky_tonk_multiball
+    - stop_light_lock|1s
   ball_hold_left_vuk_held_ball{mode.mystery_lit.active}:
-    start_mystery
+    - start_mystery
   ball_hold_left_vuk_held_ball{mode.hilo_lit.active and not mode.mystery_lit.active}:
-    start_hilo
+    - start_hilo
   ball_hold_left_vuk_held_ball{device.achievement_groups.missions["enabled"] and not mode.mystery_lit.active and not mode.hilo_lit.active}:
-    start_mission
+    - start_mission
   ball_hold_left_vuk_held_ball{not mode.mystery_lit.active and not device.achievement_groups.missions["enabled"] and not mode.hilo_lit.active}:
-    release_left_vuk_ball
+    - release_left_vuk_ball
 
 #                                                88                                   
 #                                                88                                   
@@ -364,20 +364,20 @@ variable_player:
         score: 5320
     player_quarters{value < 7}:
         mr_shot_score:
-          score: 1
-          action: set
+            int: 1 # used to be score:
+            action: set
     player_quarters{value >= 7 and value <= 12}:
         mr_shot_score:
-          score: 2
-          action: set
+            int: 2 # used to be score:
+            action: set
     player_quarters{value >= 13 and value <= 24}:
         mr_shot_score:
-          score: 3
-          action: set
+            int: 3 # used to be score:
+            action: set
     player_quarters{value >= 25}:
         mr_shot_score:
-          score: 5
-          action: set
+            int: 5 # used to be score:
+            action: set
 
 #slides:
 #  widgets:
@@ -526,7 +526,7 @@ shots:
   shot_top_kicker:
     hit_events: balldevice_bd_top_kicker_ball_enter
     show_tokens:
-      leds: l_managers_choice
+      lights: l_managers_choice
     profile: managers_choice
     disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits, light_metal_rodeo
     enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits, mode_metal_rodeo_stopping
@@ -546,16 +546,18 @@ shots:
 #  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I                                           
 #  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"' 
 
+# Defining all sequence shots in the game right here.
+
 sequence_shots:
-  shot_right_ramp_full_loop:
+  seq_shot_right_ramp_full_loop:
     switch_sequence: s_rightrampopto, s_leftrampopto
-    time: 3000ms
-  shot_subway_shot:   # seems like a weird name, but probably should have this one
+    sequence_timeout: 2s
+  seq_shot_subway_shot:   # seems like a weird name, but probably should have this one
     switch_sequence: s_subwayopto, s_lowervukopto
-    time: 500ms
-  shot_spinner_to_vuk:
+    sequence_timeout: 500ms
+  seq_shot_spinner_to_vuk:
     switch_sequence: s_spinner, s_toprightvuk
-    time: 2s
+    sequence_timeout: 2s
   
 
 #             88                                                                 
@@ -614,7 +616,7 @@ shot_profiles:
 shot_groups:
     upper_lanes:
         shots: shot_left_lane, shot_right_lane
-        profile: default
+        #profile: default
         rotate_left_events: s_leftflipper_active
         rotate_right_events: s_rightflipper_active
         reset_events: upper_lanes_default_lit_complete
@@ -667,77 +669,77 @@ ball_saves:
 shows:
   flash_once:
     - duration: 200ms
-      leds:
+      lights:
         (led): off
   flash_jukebox:
     - duration: 125ms
-      leds:
+      lights:
         l_jukebox_left: on-f0
         l_jukebox_right: off-f0
     - duration: 125ms
-      leds:
+      lights:
         l_jukebox_left: off-f0
         l_jukebox_right: on-f0
   eject_alert:
     - time: 0
-      leds:
+      lights:
         (led): on
     - time: 300ms
-      leds:
+      lights:
         (led): off
     - time: 450ms
-      leds:
+      lights:
         (led): on
     - time: 750ms
-      leds:
+      lights:
         (led): off
     - time: 900ms
-      leds:
+      lights:
         (led): on
     - time: 1200ms
-      leds:
+      lights:
         (led): off
     - time: 1350ms
       events: eject_alert_over
   top_eject_alert:
     - time: 0
-      leds:
+      lights:
         (led): on
     - time: 300ms
-      leds:
+      lights:
         (led): off
     - time: 450ms
-      leds:
+      lights:
         (led): on
     - time: 750ms
-      leds:
+      lights:
         (led): off
     - time: 900ms
-      leds:
+      lights:
         (led): on
     - time: 1200ms
-      leds:
+      lights:
         (led): off
     - time: 1350ms
       events: top_eject_alert_over
   rainbow:
     - duration: 150ms
-      leds:
+      lights:
         (leds): red-f100ms
     - duration: 150ms
-      leds:
+      lights:
         (leds): orange-f100ms
     - duration: 150ms
-      leds:
+      lights:
         (leds): yellow-f100ms
     - duration: 150ms
-      leds:
+      lights:
         (leds): green-f100ms
     - duration: 150ms
-      leds:
+      lights:
         (leds): blue-f100ms
     - duration: 150ms
-      leds:
+      lights:
         (leds): purple-f100ms
 
 #             88                                                     
@@ -819,7 +821,7 @@ show_player:
     off:
       key: mute_left_hole_lights
       show_tokens:
-        leds: l_hi_lo, l_begin_round, l_mystery
+        lights: l_hi_lo, l_begin_round, l_mystery
       priority: 1000000
   enable_base_left_vuk_hold:
     mute_left_hole_lights: stop
@@ -827,7 +829,7 @@ show_player:
     off:
       key: mute_managers_choice_light
       show_tokens:
-        leds: l_managers_choice
+        lights: l_managers_choice
       priority: 1000000
   enabled_base_top_kicker_hold:
     mute_managers_choice_light: stop
@@ -848,12 +850,12 @@ show_player:
   ball_save_main_enabled:
     flash:
       show_tokens:
-        leds: l_shoot, l_again
+        lights: l_shoot, l_again
       key: ball_save
   ball_save_main_hurry_up:
     flash:
       show_tokens:
-        leds: l_shoot, l_again
+        lights: l_shoot, l_again
       key: ball_save
       speed: 2
   ball_save_main_disabled:
@@ -861,12 +863,12 @@ show_player:
   ball_save_mystery_enabled:
     flash:
       show_tokens:
-        leds: l_shoot, l_again
+        lights: l_shoot, l_again
       key: ball_save
   ball_save_mystery_hurry_up:
     flash:
       show_tokens:
-        leds: l_shoot, l_again
+        lights: l_shoot, l_again
       key: ball_save
       speed: 2
   ball_save_mystery_disabled:

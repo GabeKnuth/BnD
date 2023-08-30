@@ -3,25 +3,25 @@
 
 
 - duration: 69ms
-  leds:
+  lights:
     l_right_lane_spot_quarter: on
     l_left_lane_spot_quarter: on
 - duration: 69ms
-  leds:
+  lights:
     l_shoot: on
     l_again: on
 - duration: 69ms
-  leds:
+  lights:
     l_left_lane_special: on
     l_right_lane_special: on
 - duration: 69ms
-  leds:
+  lights:
     l_mystery: on
     l_world_tour: on
     l_play_poker: on
     l_bottom_quarter: on
 - duration: 69ms
-  leds:
+  lights:
     l_begin_round: on
     l_hi_lo: on
     l_money_bags: on
@@ -29,7 +29,7 @@
     l_jukebox_insert: on
     l_right_music_award: on
 - duration: 69ms
-  leds:
+  lights:
     l_silver: on
     l_gold: on
     l_single_platinum: on
@@ -38,72 +38,72 @@
     l_ramp_jackpot: on
     l_middle_quarter: on
 - duration: 69ms
-  leds:
+  lights:
     l_lower_left_flasher: on
     l_wizard_shot: on
     l_top_quarter: on
     l_south_america: on
     l_lower_right_flasher: on
 - duration: 69ms
-  leds:
+  lights:
     l_left_longhorn: on
 - duration: 69ms
-  leds:
+  lights:
     l_advance_wizard: on
     l_australia: on
     l_ramp_fire: on
 - duration: 69ms
-  leds:
+  lights:
     l_north_america: on
     l_double_jackpot: on
 - duration: 69ms
-  leds:
+  lights:
     l_managers_choice: on
 - duration: 69ms
-  leds:
+  lights:
     l_left_music_award: on
     l_europe: on
     l_extra_ball: on
     l_bottom_pop: on
 - duration: 69ms
-  leds:
+  lights:
     l_center_lock: on
     l_collect_wizard: on
 - duration: 69ms
-  leds:
+  lights:
     l_jukebox_left: on
     l_left_pop: on
 - duration: 69ms
-  leds:
+  lights:
     l_jukebox_right: on
     l_center_longhorn: on
     l_right_pop: on
 - duration: 69ms
-  leds:
+  lights:
     l_right_ramp_flasher: on
 - duration: 69ms
-  leds:
+  lights:
     l_left_ramp_flasher: on
 - duration: 69ms
-  leds:
+  lights:
     l_right_lane_spot_quarter: off
     l_left_lane_spot_quarter: off
 - duration: 69ms
-  leds:
+  lights:
     l_shoot: off
     l_again: off
 - duration: 69ms
-  leds:
+  lights:
     l_left_lane_special: off
     l_right_lane_special: off
 - duration: 69ms
-  leds:
+  lights:
     l_mystery: off
     l_world_tour: off
     l_play_poker: off
     l_bottom_quarter: off
 - duration: 69ms
-  leds:
+  lights:
     l_begin_round: off
     l_hi_lo: off
     l_money_bags: off
@@ -111,7 +111,7 @@
     l_jukebox_insert: off
     l_right_music_award: off
 - duration: 69ms
-  leds:
+  lights:
     l_silver: off
     l_gold: off
     l_single_platinum: off
@@ -120,49 +120,49 @@
     l_ramp_jackpot: off
     l_middle_quarter: off
 - duration: 69ms
-  leds:
+  lights:
     l_lower_left_flasher: off
     l_wizard_shot: off
     l_top_quarter: off
     l_south_america: off
     l_lower_right_flasher: off
 - duration: 69ms
-  leds:
+  lights:
     l_left_longhorn: off
 - duration: 69ms
-  leds:
+  lights:
     l_advance_wizard: off
     l_australia: off
     l_ramp_fire: off
 - duration: 69ms
-  leds:
+  lights:
     l_north_america: off
     l_double_jackpot: off
 - duration: 69ms
-  leds:
+  lights:
     l_managers_choice: off
 - duration: 69ms
-  leds:
+  lights:
     l_left_music_award: off
     l_europe: off
     l_extra_ball: off
     l_bottom_pop: off
 - duration: 69ms
-  leds:
+  lights:
     l_center_lock: off
     l_collect_wizard: off
 - duration: 69ms
-  leds:
+  lights:
     l_jukebox_left: off
     l_left_pop: off
 - duration: 69ms
-  leds:
+  lights:
     l_jukebox_right: off
     l_center_longhorn: off
     l_right_pop: off
 - duration: 69ms
-  leds:
+  lights:
     l_right_ramp_flasher: off
 - duration: 69ms
-  leds:
+  lights:
     l_left_ramp_flasher: off

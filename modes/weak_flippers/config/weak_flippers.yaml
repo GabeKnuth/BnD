@@ -8,12 +8,12 @@ mode:
 
 event_player:
   mode_weak_flippers_started: # THESE ARE PLACEHOLDERS. SHOW WILL PLAY THESE EVENTS
-    weak_flippers_enabled
+    - weak_flippers_enabled
   timer_weak_flippers_complete:
-    weak_flippers_disabled
-    stop_weak_flippers|100ms
+    - weak_flippers_disabled
+    - stop_weak_flippers|100ms
   mode_weak_flippers_stopping:
-    weak_flippers_disabled
+    - weak_flippers_disabled
 
 timers:
   weak_flippers:

@@ -28,11 +28,11 @@ show_player:
     flash:
       loops: -1
       show_tokens:
-        leds: l_begin_round
+        lights: l_begin_round
   left_vuk_hit:
     off:
       show_tokens:
-        leds: l_begin_round
+        lights: l_begin_round
 
 # Tells the player that that the mode is lit
 slide_player:

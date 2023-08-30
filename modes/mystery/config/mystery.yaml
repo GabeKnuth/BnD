@@ -10,7 +10,7 @@ show_player:
   mode_mystery_started:
     rainbow:
       show_tokens:
-        leds: l_mystery
+        lights: l_mystery
       loops: -1
     mys_intro_show:
       loops: 0
@@ -77,11 +77,11 @@ variable_player:
 
 event_player:
   mode_mystery_stopping:
-    enable_base_left_vuk_hold
+    - enable_base_left_vuk_hold
   mys_done:
-    release_left_vuk_ball
-    disable_base_left_vuk_hold
-    stop_mystery|2s
+    - release_left_vuk_ball
+    - disable_base_left_vuk_hold
+    - stop_mystery|2s
 
 queue_relay_player:
   left_vuk_hit:

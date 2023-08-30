@@ -16,27 +16,27 @@ mode:
 
 event_player:
   mode_music_awards_started:
-    mode_running|5s
-    fade_out_base_music
+    - mode_running|5s
+    - fade_out_base_music
   music_awards_stop_adding_time:  # success
-    music_awards_done|5s
-    music_awards_fade_out|3s
-    music_awards_success|1s
-    fade_in_base_music|4s
+    - music_awards_done|5s
+    - music_awards_fade_out|3s
+    - music_awards_success|1s
+    - fade_in_base_music|4s
   timer_music_awards_timer_complete:  # fail
-    music_awards_done|5s
-    music_awards_fade_out|3s
-    music_awards_fail|1s
+    - music_awards_done|5s
+    - music_awards_fade_out|3s
+    - music_awards_fail|1s
   mode_music_awards_stopping:
-    fade_in_base_music
-    enable_base_left_vuk_hold
+    - fade_in_base_music
+    - enable_base_left_vuk_hold
   ball_will_end:
-    music_awards_fail
+    - music_awards_fail
   timer_ma_intro_timer_complete:
-    release_left_vuk_ball
-    disable_base_left_vuk_hold
-    release_top_kicker_ball
-    disable_base_top_kicker_hold
+    - release_left_vuk_ball
+    - disable_base_left_vuk_hold
+    - release_top_kicker_ball
+    - disable_base_top_kicker_hold
 
 random_event_player:
     add_time:
@@ -87,51 +87,51 @@ timers:
 shows:
   ma_advertise_show_left:
     - duration: 150ms
-      leds:
+      lights:
         (led3): off
         (led1): on
     - duration: 150ms
-      leds:
+      lights:
         (led1): on
         (led2): on
     - duration: 150ms
-      leds:
+      lights:
         (led1): off
         (led2): on
         (led3): on
     - duration: 150ms
-      leds:
+      lights:
         (led2): off
     - duration: 150ms
-      leds:
+      lights:
         (led3): off
     - duration: 250ms
-      leds:
+      lights:
         (led1): off
         (led2): off
         (led3): off
   ma_advertise_show_right:
     - duration: 150ms
-      leds:
+      lights:
         (led3): off
         (led1): on
     - duration: 150ms
-      leds:
+      lights:
         (led1): on
         (led2): on
     - duration: 150ms
-      leds:
+      lights:
         (led1): off
         (led2): on
         (led3): on
     - duration: 150ms
-      leds:
+      lights:
         (led2): off
     - duration: 150ms
-      leds:
+      lights:
         (led3): off
     - duration: 250ms
-      leds:
+      lights:
         (led1): off
         (led2): off
         (led3): off
