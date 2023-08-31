@@ -230,14 +230,14 @@ achievements:
 variable_player:
   mode_honky_tonk_multiball_started:
     htmb_jackpot_value:
-      score: 250000
+      int: 250000
       action: set
     htmb_balls_locked:
-      score: 0
+      int: 0
       action: set
   sw_jukebox_hit:
     htmb_jackpot_value:
-      score: 150000
+      int: 150000
   htmb_jackpot_complete:
     score: current_player.htmb_jackpot_value
   htmb_double_jackpot_complete:

@@ -43,53 +43,53 @@ light_player:
 
 #scoring: #leaving for reference
 variable_player:
-  player_num_albums{value == 1}:
+  player_num_albums{value==1}:
     album_value:
-      score: 25000
+      int: 25000
       action: set
     album_name:
       string: SILVER
-    #score: 25000
+    score: 25000
 
-  player_num_albums{value == 2}:
+  player_num_albums{value==2}:
     album_value:
-      score: 50000
+      int: 50000
       action: set
     album_name:
       string: GOLD
-    #score: 50000
+    score: 50000
 
-  player_num_albums{value == 3}:
+  player_num_albums{value==3}:
     album_value:
-      score: 100000
+      int: 100000
       action: set
     album_name:
       string: PLATINUM
-    #score: 100000
+    score: 100000
 
-  player_num_albums{value == 4}:
+  player_num_albums{value==4}:
     album_value:
-      score: 200000
+      int: 200000
       action: set
     album_name:
       string: DOUBLE PLATINUM
-    #score: 200000
+    score: 200000
 
-  player_num_albums{value == 5}:
+  player_num_albums{value==5}:
     album_value:
-      score: 500000
+      int: 500000
       action: set
     album_name:
       string: QUINTUPLE PLATINUM
-    #score: 500000
+    score: 500000
 
-  player_num_albums{value >= 6}:  # beyond 6 we don't increase anymore
+  player_num_albums{value>=6}:  # beyond 6 we don't increase anymore
     album_value:
-      score: 2500000
+      int: 2500000
       action: set
     album_name:
       string: OFF THE CHARTS
-    #score: 2500000
+    score: 2500000
 
 
 

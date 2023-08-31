@@ -9,16 +9,15 @@ tilt:
   settle_time: 5s
 
 slide_player:
-  tilt_warning_1: tilt_warning_1
-  tilt_warning_2: tilt_warning_2
-  tilt: tilt
+  tilt_warning_1: tilt_warning_1_slide
+  tilt_warning_2: tilt_warning_2_slide
+  tilt: tilt_slide
   tilt_clear:
     tilt:
       action: remove
 
 slides:
-
-  tilt_warning_1:
+  tilt_warning_1_slide:
     widgets:
     - type: text
       text: WARNING!
@@ -32,7 +31,7 @@ slides:
       color: yellow
     expire: 1s
 
-  tilt_warning_2:
+  tilt_warning_2_slide:
     widgets:
     - type: text
       text: WARNING!
@@ -52,7 +51,7 @@ slides:
       color: yellow
     expire: 2s
 
-  tilt:
+  tilt_slide:
     widgets:
     - type: text
       text: TIL

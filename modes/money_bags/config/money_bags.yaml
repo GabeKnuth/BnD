@@ -219,12 +219,12 @@ slides:
 
 #scoring: #leaving for reference
 variable_player:
-    mode_money_bags_started:
-      mb_shot_score:
-        score: (current_player.money_bags_hit + 1) * 1000000
-        action: set
-    money_bags_advertise_flashing_hit:
-      score: (current_player.money_bags_hit + 1) * 1000000
+  mode_money_bags_started:
+    mb_shot_score:
+      int: (current_player.money_bags_hit + 1) * 1000000
+      action: set
+  money_bags_advertise_flashing_hit:
+    score: (current_player.money_bags_hit + 1) * 1000000
 
 shot_profiles:
     advertise:

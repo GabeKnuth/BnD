@@ -23,7 +23,7 @@ sound_player:
 variable_player:
   mode_quarters_started:
     quarters_this_ball:
-      score: 0
+      int: 0
       action: set
   quarters_quarters_lit_hit:
     score: 2570

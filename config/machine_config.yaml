@@ -111,8 +111,8 @@ modes:
   - quarters
   - quarters_multiball
   - skill_shot
-  # - tilt
-#  - weak_flippers
+  - tilt
+# #  - weak_flippers
   - wizard_advance_lit
   - world_tour
 

@@ -5,7 +5,7 @@ mpf:
 
 config:
   - machine_config.yaml
-#  - desktop.yaml
+ # - desktop.yaml
 
 
 #                                                                                                            
