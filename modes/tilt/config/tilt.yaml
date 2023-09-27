@@ -21,7 +21,7 @@ slides:
     widgets:
     - type: text
       text: WARNING!
-      style: dmd_big
+      style: big #dmd_big
       color: red
     - type: line
       points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
@@ -35,12 +35,12 @@ slides:
     widgets:
     - type: text
       text: WARNING!
-      style: dmd_big
+      style: big #dmd_big
       color: red
       y: 22
     - type: text
       text: WARNING!
-      style: dmd_big
+      style: big #dmd_big
       color: red
       y: 10
     - type: line
@@ -55,12 +55,12 @@ slides:
     widgets:
     - type: text
       text: TIL
-      style: dmd_med
+      style: medium #dmd_med
       color: red
       x: 60
     - type: text
       text: T
-      style: dmd_med
+      style: medium #dmd_med
       color: red
       x: 69
     - type: line

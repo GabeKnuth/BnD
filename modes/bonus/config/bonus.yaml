@@ -33,7 +33,7 @@ slide_player:
       y: top
     - type: text
       text: END OF BALL BONUS
-      style: dmd_big
+      style: big #dmd_big
   quarter_bonus:
     quarter_bonus:
     - type: image
@@ -46,16 +46,16 @@ slide_player:
       text: (quarters) QUARTERS
       y: top-7
       anchor_y: top
-      style: dmd_big
+      style: big #dmd_big
     - type: text
       y: middle-4
       text: X
-      style: dmd_small
+      style: small #dmd_small
     - type: text
       text: "(album_name) VALUE: (album_value)"
       y: bottom+1
       anchor_y: bottom
-      style: dmd_small
+      style: small #dmd_small
       number_grouping: true
   wizard_bonus:
     wizard_bonus:
@@ -67,29 +67,29 @@ slide_player:
       y: top
     - type: text
       text: (num_albums) ALBUMS
-      style: dmd_big
+      style: big #dmd_big
       anchor_x: right
       x: 67
     - type: text
       text: 25,000
-      style: dmd_big
+      style: big #dmd_big
       anchor_x: left
       x: 78
     - type: text
       text: x
-      style: dmd_med
+      style: medium #dmd_med
       x: 72
   bonus_subtotal:
     bonus_subtotal:
       - type: text
         text: (score)
-        style: dmd_big
+        style: big #dmd_big
         number_grouping: true
   bonus_multiplier:
     bonus_multiplier:
       - type: text
         text: (multiplier)X
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 40
         color: red
   bonus_total:
@@ -102,11 +102,11 @@ slide_player:
       y: top
     - type: text
       text: "TOTAL BONUS"
-      style: dmd_big
+      style: big #dmd_big
       y: 64%
     - type: text
       text: (score)
-      style: dmd_big
+      style: big #dmd_big
       number_grouping: true
       color: gold
       y: 24%

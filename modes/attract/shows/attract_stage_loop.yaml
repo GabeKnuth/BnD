@@ -1,31 +1,27 @@
 #show_version=5
-#show_version=4 # Left for reference. Did NOT double check
-
 
 - duration: 2
   slides:
     stage_attract_1:
-#        widgets:
-#            - type: video
-#              video: mr_bed
-#              end_behavior: loop
-        widgets:
-            - type: text
-              style: tall title
-              text: MISSION PINBALL FRAMEWORK
-              anchor_y: top
-              y: top-3
-              font_size: 30
-              color: white
-            - type: text
-              style: tall title
-              text: "Brooks n Dunn"
-              anchor_x: center
-              anchor_y: middle-15
-              font_size: 30
-              color: red
-            - type: image
-              image: bnd_background
-              anchor_x: center
-              anchor_y: middle
-        target: stage
+      widgets:
+      - type: text
+        #font_name: big_noodle_titling
+        text: MISSION PINBALL FRAMEWORK
+        style: bubba
+        anchor_y: top
+        y: top-3
+        font_size: 30
+        color: white
+      - type: text
+        #font_name: big_noodle_titling
+        text: "Brooks n Dunn"
+        style: tall_title
+        font_size: 30
+        anchor_x: center
+        anchor_y: middle-15
+        color: red
+      # - type: image
+      #   image: bnd_background
+      #   anchor_x: center
+      #   anchor_y: middle
+      target: stage

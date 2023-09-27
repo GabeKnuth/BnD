@@ -108,20 +108,20 @@ slides:
       - type: text
         text: Shooting lit shots
         anchor_y: top
-        style: dmd_small
+        style: small #dmd_small
         y: top-1
         anchor_x: right
         x: right-1
       - type: text
         text: collects and increases
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: center
         anchor_x: right
         x: right-1
       - type: text
         text: Money Bags Value
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: bottom
         y: bottom+1
         anchor_x: right
@@ -152,7 +152,7 @@ slides:
       - type: text
         text: Time left (money_bags_money_bags_timer_tick)
         anchor_y: bottom
-        style: dmd_small
+        style: small #dmd_small
         y: bottom+1
         anchor_x: right
         x: right-1
@@ -163,18 +163,18 @@ slides:
         anchor_x: right
         x: right-1
         y: middle
-        style: tall title
+        style: tall_title
       - type: text
         text: Each hit =
         anchor_y: top
-        style: dmd_small
+        style: small #dmd_small
         y: top-1
         anchor_x: right
         x: center+16
       - type: text
         text: (player|mb_shot_score)
         anchor_y: top
-        style: dmd_small
+        style: small #dmd_small
         y: top-1
         anchor_x: right
         x: right-1
@@ -193,7 +193,7 @@ slides:
       - type: text
         text: Money Bags
         anchor_y: top
-        style: dmd_med
+        style: medium #dmd_med
         y: top-4
         anchor_x: right
         x: right-9
@@ -205,7 +205,7 @@ slides:
         x: right-6
         anchor_y: bottom
         y: bottom+1
-        style: tall title
+        style: tall_title
       - type: rectangle
         color: 000000
         height: 32

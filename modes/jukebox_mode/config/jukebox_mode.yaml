@@ -138,7 +138,7 @@ slides:
   jb_instructions:
       - type: text
         text: Change the song!
-        style: dmd_big
+        style: big #dmd_big
         y: center+3
         animations:
           show_slide:
@@ -157,7 +157,7 @@ slides:
               repeat: true
       - type: text
         text: (score)
-        style: dmd_big
+        style: big #dmd_big
         opacity: 0
         y: center+3
         animations:
@@ -179,22 +179,22 @@ slides:
         text: Time left (jukebox_mode_jukebox_mode_timer_tick)
         anchor_y: bottom
         y: bottom+2
-        style: dmd_small
+        style: small #dmd_small
   jb_intro:
       - type: text
         text: BAD TUNES JUKEBOX!
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: top
         y: top-1
         color: red
       - type: text
         text: HIT JUKEBOX TO CHANGE SONG
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: left+1
       - type: text
         text: 9 HITS
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: bottom
         y: bottom+1
         anchor_x: left
@@ -202,7 +202,7 @@ slides:
         color: yellow
       - type: text
         text: "="
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: bottom
         y: bottom+3
         anchor_x: left
@@ -210,7 +210,7 @@ slides:
         color: yellow
       - type: text
         text: MULTIBALL!
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: bottom
         y: bottom+1
         anchor_x: left

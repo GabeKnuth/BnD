@@ -104,6 +104,15 @@ show_player:
   sw_left_flipper:
     attract_dmd_loop:
       action: step_back
+  mode_attract_stopped:
+    attract_dmd_loop:
+      action: stop
+    attract_stage_loop:  # todo test if we have to do this?
+      action: stop
+      #target: stage
+    attract_music_lights:
+      action: stop
+    music_video: stop
 
 #slide_player:
 #  game_ended: # move this to match
@@ -125,25 +134,14 @@ show_player:
 #              value: 0
 #              duration: 2s
 
-  mode_attract_stopped:
-    attract_dmd_loop:
-      action: stop
-    attract_stage_loop:  # todo test if we have to do this?
-      action: stop
-      #target: stage
-    attract_music_lights:
-      action: stop
-    music_video: stop
-    
-
-slide_player:
-  flipper_cancel:
-    last_game_scores:
-      priority: 1
-      expire: 10s
+# slide_player:
+#   flipper_cancel:
+#     last_game_scores:
+#       priority: 1
+#       expire: 10s
 
 sound_player:
-  mode_attract_started:
+  init_done:
     base_bed_loop:
       action: play
       loops: -1

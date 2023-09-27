@@ -31,7 +31,7 @@ slide_player:
       widgets:
         - type: text
           text: BALL SAVED!
-          style: dmd_big
+          style: big #dmd_big
       expire: 2s
       priority: 5000
   player_add_success:
@@ -39,7 +39,7 @@ slide_player:
       widgets:
         - type: text
           text: PLAYER (num) ADDED
-          style: dmd_huge
+          style: huge #dmd_huge
       expire: 2s
       priority: 5500
 
@@ -56,11 +56,11 @@ slides:
     number_grouping: true
     min_digits: 2
     y: middle+2
-    style: dmd_huge
+    style: huge #dmd_huge
   - type: text
     text: BALL (player1|ball)    (machine|credits_string)
     anchor_y: bottom
-    style: dmd_small
+    style: small #dmd_small
     y: bottom+1
 
   multi_player_p1_score:
@@ -72,10 +72,10 @@ slides:
     anchor_x: right
     x: right-60
     y: top-2
-    style: dmd_big
+    style: big #dmd_big
   - type: text
     text: (player2|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: top
     anchor_x: right
     number_grouping: true
@@ -84,7 +84,7 @@ slides:
     y: top-2
   - type: text
     text: (player3|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -93,7 +93,7 @@ slides:
     min_digits: 2
   - type: text
     text: (player4|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -103,13 +103,13 @@ slides:
   - type: text
     text: BALL (player1|ball)    (machine|credits_string)
     anchor_y: bottom
-    style: dmd_small
+    style: small #dmd_small
     y: bottom+1
 
   multi_player_p2_score:
   - type: text
     text: (player1|score)
-    style: dmd_med
+    style: medium #dmd_med
     number_grouping: true
     min_digits: 2
     anchor_y: top
@@ -118,7 +118,7 @@ slides:
     y: top-2
   - type: text
     text: (player2|score)
-    style: dmd_big
+    style: big #dmd_big
     anchor_y: top
     anchor_x: right
     number_grouping: true
@@ -127,7 +127,7 @@ slides:
     y: top-2
   - type: text
     text: (player3|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -136,7 +136,7 @@ slides:
     min_digits: 2
   - type: text
     text: (player4|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -146,13 +146,13 @@ slides:
   - type: text
     text: BALL (player2|ball)    (machine|credits_string)
     anchor_y: bottom
-    style: dmd_small
+    style: small #dmd_small
     y: bottom+1
 
   multi_player_p3_score:
   - type: text
     text: (player1|score)
-    style: dmd_med
+    style: medium #dmd_med
     number_grouping: true
     min_digits: 2
     anchor_y: top
@@ -161,7 +161,7 @@ slides:
     y: top-2
   - type: text
     text: (player2|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: top
     anchor_x: right
     number_grouping: true
@@ -170,7 +170,7 @@ slides:
     y: top-2
   - type: text
     text: (player3|score)
-    style: dmd_big
+    style: big #dmd_big
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -179,7 +179,7 @@ slides:
     min_digits: 2
   - type: text
     text: (player4|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -189,13 +189,13 @@ slides:
   - type: text
     text: BALL (player3|ball)    (machine|credits_string)
     anchor_y: bottom
-    style: dmd_small
+    style: small #dmd_small
     y: bottom+1
 
   multi_player_p4_score:
   - type: text
     text: (player1|score)
-    style: dmd_med
+    style: medium #dmd_med
     number_grouping: true
     min_digits: 2
     anchor_y: top
@@ -204,7 +204,7 @@ slides:
     y: top-2
   - type: text
     text: (player2|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: top
     anchor_x: right
     number_grouping: true
@@ -213,7 +213,7 @@ slides:
     y: top-2
   - type: text
     text: (player3|score)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -222,7 +222,7 @@ slides:
     min_digits: 2
   - type: text
     text: (player4|score)
-    style: dmd_big
+    style: big #dmd_big
     anchor_y: bottom
     anchor_x: right
     y: bottom+10
@@ -232,11 +232,11 @@ slides:
   - type: text
     text: BALL (player4|ball)    (machine|credits_string)
     anchor_y: bottom
-    style: dmd_small
+    style: small #dmd_small
     y: bottom+1
 
   phantom_ball_save:
     widgets:
       type: text
       text: SIT TIGHT!
-      style: dmd_big
+      style: big #dmd_big

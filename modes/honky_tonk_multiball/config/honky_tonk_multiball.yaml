@@ -71,14 +71,14 @@ slides:
       - type: text
         text: (score)
         number_grouping: true
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 24
         anchor_y: top
         y: top+3
       - type: text
         text: JACKPOT = (player|htmb_jackpot_value)
         number_grouping: true
-        style: dmd_med
+        style: medium #dmd_med
         color: gold
         anchor_y: bottom
         y: bottom+1
@@ -103,18 +103,18 @@ slides:
     widgets:
       - type: text
         text: HONKY TONK
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: top
         y: top
         color: yellow
       - type: text
         text: MULTIBALL
-        style: dmd_huge
+        style: huge #dmd_huge
         anchor_y: top
         y: top-8
         color: red
       - type: text
-        style: dmd_small
+        style: small #dmd_small
         text: JACKPOT STARTS AT 250k
         anchor_y: bottom
         y: bottom
@@ -126,7 +126,7 @@ slides:
             - property: opacity
               value: 0
       - type: text
-        style: dmd_small
+        style: small #dmd_small
         opacity: 0
         anchor_y: bottom
         y: bottom
@@ -149,7 +149,7 @@ slides:
       - type: text
         text: BALL SAVED!
         expire: 2s
-        style: dmd_huge
+        style: huge #dmd_huge
   honky_tonk_stage:
     widgets:
       - type: video

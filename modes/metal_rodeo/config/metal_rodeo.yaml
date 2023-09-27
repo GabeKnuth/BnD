@@ -140,14 +140,14 @@ slides:
       - type: text
         text: "METAL RODEO TOTAL:"
         color: black
-        style: dmd_med
+        style: medium #dmd_med
         anchor_y: top
         y: top-2
       - type: text
         number_grouping: True
         text: (player|mr_score)
         color: black
-        style: dmd_huge
+        style: huge #dmd_huge
         anchor_y: bottom
         y: bottom
       - type: rectangle
@@ -158,7 +158,7 @@ slides:
     widgets:
       - type: text
         text: KEEP SHOOTING
-        style: dmd_huge
+        style: huge #dmd_huge
         color: ff4400
         anchor_y: center
         y: center-1
@@ -175,13 +175,13 @@ slides:
             easing: in_quint
       - type: text
         text: "PLAYER (number):"
-        style: dmd_med
+        style: medium #dmd_med
         anchor_y: top
         y: top
         color: red
       - type: text
         text: BALL (ball)
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: 0
   mr_good_job:
@@ -190,7 +190,7 @@ slides:
         color: red
         y: center-1
         font_size: 30
-        style: dmd_huge
+        style: huge #dmd_huge
         text: GOOD JOB!
   mr_intro_stage:
     widgets:
@@ -212,19 +212,19 @@ slides:
         color: red
         y: center-1
         font_size: 30
-        style: dmd_huge
+        style: huge #dmd_huge
   unlimited_balls:
     widgets:
       - type: text
         text: Unlimited balls
         color: red
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: top
         y: top-4
       - type: text
         text: for 40 seconds
         color: yellow
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: bottom
         y: bottom+4
   quarter_count:
@@ -232,7 +232,7 @@ slides:
       - type: text
         text: (player|quarters) QUARTERS
         color: gray
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 30
         y: center-1
   shot_score:
@@ -240,13 +240,13 @@ slides:
       - type: text
         text: EACH SHOT SCORES
         color: gray
-        style: dmd_med
+        style: medium #dmd_med
         anchor_y: top
         y: top-2
       - type: text
         text: (player|mr_shot_score) MILLION!
         color: red
-        style: dmd_huge
+        style: huge #dmd_huge
         anchor_y: bottom
         y: bottom
 

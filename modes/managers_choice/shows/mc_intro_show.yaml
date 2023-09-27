@@ -171,7 +171,7 @@
         duration: 50ms
         direction: bottom
   events:
-    enable_mission_selection
+    - enable_mission_selection
 - duration: 1s
   slides:
     mcsl_last_slide:
@@ -180,5 +180,5 @@
         type: fade
         duration: .1s
   events:
-    start_mission|.7s
-    stop_managers_choice|1s
+    - start_mission|.7s
+    - stop_managers_choice|1s

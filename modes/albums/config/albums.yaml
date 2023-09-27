@@ -118,12 +118,12 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 22
         color: aaaaaa
       - type: text
         text: (player|album_value)
-        style: dmd_big
+        style: big #dmd_big
         y: 7
         color: aaaaaa
         number_grouping: true
@@ -142,12 +142,12 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 22
         color: gold
       - type: text
         text: (player|album_value)
-        style: dmd_big
+        style: big #dmd_big
         y: 7
         color: gold
         number_grouping: true
@@ -166,12 +166,12 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 22
         color: black
       - type: text
         text: (player|album_value)
-        style: dmd_big
+        style: big #dmd_big
         y: 7
         color: black
         number_grouping: true
@@ -193,12 +193,12 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 22
         color: black
       - type: text
         text: (player|album_value)
-        style: dmd_big
+        style: big #dmd_big
         y: 7
         color: black
         number_grouping: true

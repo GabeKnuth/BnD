@@ -32,7 +32,7 @@ slides:
     widgets:
       - type: text
         text: PLAYER (number) UP
-        style: dmd_huge
+        style: huge #dmd_huge
         color: ff4400
         animations:
           pre_show_slide:
@@ -47,20 +47,20 @@ slides:
             easing: in_quint
       - type: text
         text: SEE STAGE FOR SKILLSHOT!
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: top
         y: top
         color: red
       - type: text
         text: BALL (ball)
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: 0
         anchor_x: left
         x: left
       - type: text
         text: (score)
-        style: dmd_small
+        style: small #dmd_small
         min_digits: 2
         number_grouping: true
         anchor_y: bottom
@@ -71,7 +71,7 @@ slides:
     widgets:
       - type: text
         text: SKILL
-        style: dmd_big
+        style: big #dmd_big
         color: yellow
         anchor_y: top
         y: top-4
@@ -79,7 +79,7 @@ slides:
         x: left
       - type: text
         text: SHOT
-        style: dmd_big
+        style: big #dmd_big
         color: yellow
         anchor_y: top
         y: top-4
@@ -87,7 +87,7 @@ slides:
         x: 34
       - type: text
         text: COLLECTED
-        style: dmd_big
+        style: big #dmd_big
         color: yellow
         anchor_y: top
         y: top-4
@@ -96,7 +96,7 @@ slides:
       - type: text
         text: 500000
         number_grouping: true
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: bottom
         y: bottom+4
         animations:

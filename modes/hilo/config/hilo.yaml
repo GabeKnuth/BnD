@@ -51,15 +51,15 @@ slides:
       - type: text
         text: LET'S PLAY SOME HI/LO!
         color: red
-        style: dmd_med
+        style: medium #dmd_med
         y: 25
       - type: text
         text: WILL THE NEXT CARD
-        style: dmd_small
+        style: small #dmd_small
         y: 13
       - type: text
         text: BE HIGHER OR LOWER?
-        style: dmd_small
+        style: small #dmd_small
         y: 5
       - type: line
         points: 1, 1, 1, 32, 128, 32, 128, 1, 1, 1
@@ -69,13 +69,13 @@ slides:
     widgets:
       - type: text
         text: "YOUR"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: left+1
         y: 22
       - type: text
         text: "CARD"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: left+1
         y: 15
@@ -84,7 +84,7 @@ slides:
         anchor_x: left
         x: 49
         y: 29
-        style: dmd_small
+        style: small #dmd_small
         color: lime
         animations:
           show_slide:
@@ -101,7 +101,7 @@ slides:
         reset_animations_events: pre_show_slide, hilo_gamble
       - type: text
         text: CASH OUT (cash_out)
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: 49
         y: 23
@@ -124,7 +124,7 @@ slides:
         anchor_x: right
         x: right
         y: 10
-        style: dmd_small
+        style: small #dmd_small
         color: yellow
         opacity: 0
         animations:
@@ -142,7 +142,7 @@ slides:
         reset_animations_events: pre_show_slide, hilo_gamble
       - type: text
         text: GAMBLE FOR (next_bet)
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: right
         x: right
         y: 3
@@ -173,13 +173,13 @@ slides:
     widgets:
       - type: text
         text: "YOUR"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: left+1
         y: 22
       - type: text
         text: "CARD"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: left+1
         y: 15
@@ -188,7 +188,7 @@ slides:
         anchor_x: left
         x: 49
         y: 29
-        style: dmd_small
+        style: small #dmd_small
         color: lime
         animations:
           show_slide:
@@ -208,7 +208,7 @@ slides:
         reset_animations_events: pre_show_slide, hilo_guess_higher
       - type: text
         text: NEXT CARD LOWER
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: 49
         y: 23
@@ -241,7 +241,7 @@ slides:
         anchor_x: right
         x: right
         y: 10
-        style: dmd_small
+        style: small #dmd_small
         color: yellow
         opacity: 0
         animations:
@@ -262,7 +262,7 @@ slides:
         reset_animations_events: pre_show_slide, hilo_guess_lower
       - type: text
         text: NEXT CARD HIGHER
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: right
         x: right
         y: 3
@@ -296,25 +296,25 @@ slides:
     widgets:
       - type: text
         text: "YOUR"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: left+1
         y: 22
       - type: text
         text: "CARD"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: left+1
         y: 15
       - type: text
         text: "DEALER'S"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: 50
         y: 22
       - type: text
         text: "CARD"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: left
         x: 50
         y: 15
@@ -323,12 +323,12 @@ slides:
     widgets:
       - type: text
         text: CASH OUT!
-        style: dmd_big
+        style: big #dmd_big
         y: 20
         color: yellow
       - type: text
         text: "WINNINGS: (points)"
-        style: dmd_med
+        style: medium #dmd_med
         y: 10
         color: lime
         number_grouping: true
@@ -337,7 +337,7 @@ slides:
     widgets:
       - type: text
         text: WINNER!
-        style: dmd_big
+        style: big #dmd_big
         y: 20
         color: yellow
         animations:
@@ -353,7 +353,7 @@ slides:
             easing: in_quint
       - type: text
         text: NEXT BET WORTH (points)
-        style: dmd_med
+        style: medium #dmd_med
         y: 10
         color: lime
         number_grouping: true
@@ -362,19 +362,19 @@ slides:
     widgets:
       - type: text
         text: YOU LOST IT ALL
-        style: dmd_big
+        style: big #dmd_big
         y: 20
         color: red
       - type: text
         text: YOU GET NOTHING
-        style: dmd_med
+        style: medium #dmd_med
         y: 10
 
   hilo_game_win:
     widgets:
       - type: text
         text: BIG WINNER!
-        style: dmd_big
+        style: big #dmd_big
         y: 17
         color: yellow
         animations:
@@ -393,12 +393,12 @@ slides:
     widgets:
       - type: text
         text: HI/LO GAME TOTAL
-        style: dmd_med
+        style: medium #dmd_med
         y: 28
         color: red
       - type: text
         text: (score)
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 13
         color: yellow
         number_grouping: true

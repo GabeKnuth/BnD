@@ -8,7 +8,7 @@
       target: dmd
       #transition: fade
   events:
-    hold_album_value
+    - hold_album_value
 - duration: 1ms
   events:
-    mys_done
+    - mys_done

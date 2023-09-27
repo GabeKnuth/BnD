@@ -26,7 +26,7 @@ slides:
         pointsize: .5
       - type: text
         text: S
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: center
         y: center
         anchor_x: left
@@ -34,7 +34,7 @@ slides:
         color: red
       - type: text
         text: MANAGER
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: center
         y: center
         anchor_x: right
@@ -42,7 +42,7 @@ slides:
         color: red
       - type: text
         text: CHOICE
-        style: dmd_big
+        style: big #dmd_big
         anchor_y: center
         y: center
         anchor_x: left
@@ -53,37 +53,37 @@ slides:
       - type: text
         text: STARTING ROUND...
         color: red
-        style: dmd_big
+        style: big #dmd_big
   mcsl_world_tour:
     widgets:
       - type: text
         text: WORLD TOUR
         color: red
-        style: dmd_big
+        style: big #dmd_big
   mcsl_money_bags:
     widgets:
       - type: text
         text: MONEY BAGS
         color: red
-        style: dmd_big
+        style: big #dmd_big
   mcsl_music_awards:
     widgets:
       - type: text
         text: MUSIC AWARDS
         color: red
-        style: dmd_big
+        style: big #dmd_big
   mcsl_jukebox:
     widgets:
       - type: text
         text: JUKEBOX
         color: red
-        style: dmd_big
+        style: big #dmd_big
   mcsl_play_poker:
     widgets:
       - type: text
         text: PLAY POKER
         color: red
-        style: dmd_big
+        style: big #dmd_big
   mcsl_last_slide:
       widgets:
         - type: rectangle
@@ -102,31 +102,31 @@ slides:
         - type: text
           text: WORLD TOUR
           color: red
-          style: dmd_small
+          style: small #dmd_small
           x: center-33
           y: bottom+5
         - type: text
           text: PLAY POKER
           color: red
-          style: dmd_small
+          style: small #dmd_small
           x: center-33
           y: bottom+16
         - type: text
           text: MUSIC AWARDS
           color: red
-          style: dmd_small
+          style: small #dmd_small
           x: center+30
           y: bottom+16
         - type: text
           text: MONEY BAGS
           color: red
-          style: dmd_small
+          style: small #dmd_small
           x: center+30
           y: bottom+5
         - type: text
           text: JUKEBOX
           color: red
-          style: dmd_small
+          style: small #dmd_small
           x: center
           y: top-5
 

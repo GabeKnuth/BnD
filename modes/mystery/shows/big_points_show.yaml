@@ -15,7 +15,7 @@
     mys_sl_big_points_2:
       target: dmd
   events:
-    mys_score_big_points
+    - mys_score_big_points
 - duration: 1ms
   events:
-    mys_done
+    - mys_done

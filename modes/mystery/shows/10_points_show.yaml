@@ -8,10 +8,10 @@
       target: dmd
       #transition: fade
   events:
-    mys_score_10_points
+    - mys_score_10_points
   sounds:
     broken_guitar:
       action: play
 - duration: 1ms
   events:
-    mys_done
+    - mys_done

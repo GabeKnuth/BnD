@@ -8,8 +8,8 @@
       target: dmd
       #transition: fade
   events:
-    enable_mission_selection
+    - enable_mission_selection
 - duration: 100ms
   events:
-    start_mission
-    mys_done
+    - start_mission
+    - mys_done

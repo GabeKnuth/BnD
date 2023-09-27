@@ -114,7 +114,7 @@ slides:
     widgets:
       - type: text
         text: SHOOT THE JUKEBOX
-        style: dmd_huge
+        style: huge #dmd_huge
         color: yellow
         animations:
           pre_show_slide:
@@ -129,7 +129,7 @@ slides:
             easing: in_quint
       - type: text
         text: JAMBOREE!
-        style: dmd_huge
+        style: huge #dmd_huge
         color: red
         font_size: 41
         y: 15
@@ -163,30 +163,30 @@ slides:
       - type: text
         text: NEXT HIT = (player|jukebox_hurryup_value)
         color: red
-        style: dmd_small
+        style: small #dmd_small
         y: 29
         number_grouping: true
         anchor_x: left
         x: 25
       - type: text
         text: "TIME REMAINING: (player|jukebox_hurryup_jb_display_timer_tick)"
-        style: dmd_huge
+        style: huge #dmd_huge
         anchor_x: left
         x: 8
       - type: text
         text: "YOUR SCORE (player|score)"
-        style: dmd_small
+        style: small #dmd_small
         y: 3
         number_grouping: true
   jukebox_hurryup_done:
     widgets:
       - type: text
         text: PHEW!
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 20
       - type: text
         text: "JAMBOREE TOTAL: (player|jukebox_hurryup_total)"
-        style: dmd_small
+        style: small #dmd_small
         y: 8
         number_grouping: true
 

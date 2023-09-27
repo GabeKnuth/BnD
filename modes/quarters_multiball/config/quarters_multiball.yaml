@@ -111,14 +111,14 @@ slides:
       - type: text
         text: QUARTER MULTIBALL
         anchor_y: top
-        style: dmd_big
+        style: big #dmd_big
         y: top-1
         anchor_x: right
         x: right
         color: lime
       - type: text
         text: QUARTERS ADD BALLS
-        style: dmd_med
+        style: medium #dmd_med
         anchor_y: bottom
         y: bottom+10
         anchor_x: right
@@ -126,7 +126,7 @@ slides:
         color: gold
       - type: text
         text: JUKEBOX SCORES 750K
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: bottom+1
         anchor_x: right
@@ -161,10 +161,10 @@ slides:
         anchor_x: right
         x: right-1
         y: middle+5
-        style: tall title
+        style: tall_title
       - type: text
         text: JUKEBOX = 750,000
-        style: dmd_med
+        style: medium #dmd_med
         anchor_y: bottom
         y: bottom+3
         anchor_x: right
@@ -194,10 +194,10 @@ slides:
         anchor_x: right
         x: right-1
         y: middle+5
-        style: tall title
+        style: tall_title
       - type: text
         text: JUKEBOX = 750,000
-        style: dmd_med
+        style: medium #dmd_med
         anchor_y: bottom
         y: bottom+3
         anchor_x: right
@@ -232,10 +232,10 @@ slides:
         anchor_x: right
         x: right-1
         y: middle+5
-        style: tall title
+        style: tall_title
       - type: text
         text: JUKEBOX = 750,000
-        style: dmd_med
+        style: medium #dmd_med
         anchor_y: bottom
         y: bottom+3
         anchor_x: right

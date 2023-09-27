@@ -8,23 +8,38 @@
 
 
 displays:
-  # _overwrite: true will completely replace the existing displays: section
+  #_overwrite: true will completely replace the existing displays: section
   window:
     width: 1024
     height: 768
+  stage:
+    width: 800
+    height: 480
   dmd:
     width: 128
     height: 32
     default: true
 
+# Todo: Does -x do this already? Do I need this?
 hardware:
+  #_overwrite: true will completely replace the existing hardware: section
   platform: smart_virtual
   rgb_dmd: smart_virtual
 
+window:
+  width: 1024
+  height: 768
+  title: Mission Pinball Framework - Brooks & Dunn
+  resizable: false
+  fullscreen: false
+  borderless: false
+  exit_on_escape: true
+  source_display: window  
+
 slides:
   desktop:
-    - type: slide_frame
-      name: stage
+    - type: display
+      source_display: stage
       width: 800
       height: 480
       y: top-50
@@ -36,37 +51,140 @@ slides:
       corner_radius: 20
       anchor_y: top
       y: top-30
-    - type: color_dmd
+    - type: display
+      source_display: dmd
       width: 640
       height: 160
       y: 31
       anchor_y: bottom
+      effects:
+        - type: color_dmd
+          dots_x: 128
+          dots_y: 32
+          #dot size: .75
+          background_color: 000000
     - type: rectangle
       width: 642
       height: 162
       anchor_y: bottom
       y: 30
+    - type: text
+      text: MISSION PINBALL FRAMEWORK
+      anchor_y: top
+      y: top-3
+      font_size: 30
+  
+
 
 slide_player:
-  mc_ready:
+  init_done:
     desktop:
       target: window
 
-# config:
-#   - machine_config
 
-window:
-  width: 1024
-  height: 768
-  title: Mission Pinball Framework - Brooks & Dunn
-  resizable: false
-  fullscreen: false
-  borderless: false
-  exit_on_escape: true
-  source_display: window
+
 
 mpf:
-  default_light_hw_update_hz: 20
+    default_led_hw_update_hz: 20
 
 light_settings:
-  default_fade_ms: 0
+    default_light_fade_ms: 0
+
+# # Override config for "desktop" mode which renders both the LCD and DMD in a
+# # single on-screen window.
+
+# # To use, run the mpf-mc like this:
+# # mpf mc -c desktop
+
+# hardware:
+#   platform: smart_virtual
+#   rgb_dmd: smart_virtual
+
+# window:
+#   _overwrite: true #will completely replace the existing displays: section
+#   width: 1024
+#   height: 768
+#   title: Mission Pinball Framework - Brooks & Dunn
+#   resizable: false
+#   fullscreen: false
+#   borderless: false
+#   exit_on_escape: true
+
+# displays:
+#   _overwrite: true #will completely replace the existing displays: section
+#   window:
+#     height: 480
+#     width: 800
+#   dmd:
+#     width: 128
+#     height: 32
+#     default: true
+
+# slides:
+#   window_slide_1:
+#     - type: display
+#       effects:
+#         - type: color_dmd
+#       width: 512
+#       height: 128
+#     - type: text
+#       text: MISSION PINBALL FRAMEWORK
+#       anchor_y: top
+#       y: top-3
+#       font_size: 30
+#       color: white
+#     - type: rectangle
+#       width: 514
+#       height: 130
+#       color: 444444
+
+# slide_player:
+#   init_done:
+#     window_slide_1:
+#       target: dmd
+
+
+#   # layout:
+#   #   background_color: black
+#   #   widgets:
+#   #     - type: display
+#   #       width: 800
+#   #       height: 480
+#   #       y: top-50
+#   #       anchor_y: top
+#   #       source_display: stage
+#   #     - type: rectangle
+#   #       color: aa0000
+#   #       width: 810
+#   #       height: 490
+#   #       corner_radius: 20
+#   #       anchor_y: top
+#   #       y: top-30
+#   #     - type: display
+#   #       width: 640
+#   #       height: 160
+#   #       y: 31
+#   #       anchor_y: bottom
+#   #       source_display: dmd
+#   #     - type: rectangle
+#   #       width: 642
+#   #       height: 162
+#   #       anchor_y: bottom
+#   #       y: 30
+
+# #slide_player:
+#   #mc_ready: layout
+#     # layout:
+#     #   target: window
+#     #   #target: stage
+
+# # config:
+# #   - machine_config
+
+
+
+# mpf:
+#   default_light_hw_update_hz: 20
+
+# light_settings:
+#   default_fade_ms: 0

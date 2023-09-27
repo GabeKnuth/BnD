@@ -145,30 +145,30 @@ slides:
     widgets:
       - type: text
         text: QUARTER COLLECTED!
-        style: dmd_big
+        style: big #dmd_big
         color: lime
         y: 25
       - type: text
         text: (player|bonus_multiplier)X
-        style: dmd_huge
+        style: huge #dmd_huge
         anchor_x: left
         x: 0
         y: 8
         color: yellow
       - type: text
         text: BONUS
-        style: dmd_small
+        style: small #dmd_small
         x: 29
         y: 3
         color: yellow
       - type: text
         text: "TOTAL QUARTERS: (player|quarters)"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: right
         x: right-1
       - type: text
         text: (next_award_name) AT (next_award_quarters)
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: right
         x: right-1
         y: 10
@@ -176,30 +176,30 @@ slides:
     widgets:
       - type: text
         text: QUARTER COLLECTED!
-        style: dmd_big
+        style: big #dmd_big
         color: lime
         y: 25
       - type: text
         text: (player|bonus_multiplier)X
-        style: dmd_huge
+        style: huge #dmd_huge
         anchor_x: left
         x: 0
         y: 8
         color: yellow
       - type: text
         text: BONUS
-        style: dmd_small
+        style: small #dmd_small
         x: 29
         y: 3
         color: yellow
       - type: text
         text: "TOTAL QUARTERS: (player|quarters)"
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: right
         x: right-1
       - type: text
         text: NEXT QUARTER 250K
-        style: dmd_small
+        style: small #dmd_small
         anchor_x: right
         x: right-1
         y: 10

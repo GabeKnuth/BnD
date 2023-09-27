@@ -47,4 +47,4 @@
         direction: right
 - time: 14
   events:
-    mr_go
+    - mr_go

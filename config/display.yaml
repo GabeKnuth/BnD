@@ -14,34 +14,34 @@ mpf-mc:
   fps: 60
 
 assets:
-    images:
-        default:
-            load: preload
-        preload:
-            load: preload
-            test_key: test_value
-        on_demand:
-            load: on_demand
-        mode_start:
-            load: mode_start
+  images:
+    default:
+      load: preload
+    preload:
+      load: preload
+      test_key: test_value
+    on_demand:
+      load: on_demand
+    mode_start:
+      load: mode_start
 
 slides:
-  dmd_boot:
+  dmd_boot_slide:
     widgets:
       - type: text
         text: MISSION PINBALL FRAMEWORK
-        style: dmd_small
+        style: small #dmd_small
         color: red
         y: 23
         x: 65
       - type: text
         text: MPF-MC (machine|mpfmc_ver)
         color: red
-        style: dmd_small
+        style: small #dmd_small
         y: 16
       - type: text
         text: WAITING FOR MPF CONNECTION
-        style: dmd_small
+        style: small #dmd_small
         color: red
         x: 65
         y: 3
@@ -50,40 +50,20 @@ slides:
     widgets:
       - type: text
         text: BROOKS 'N DUNN
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 160
 
-slide_player:
-  init_done:
-    dmd_boot:
-      target: dmd
-    stage_boot:
-      target: stage
-  mode_attract_started:
-    dmd_boot:
-      action: remove
-      target: dmd
-    stage_boot:
-      action: remove
-      target: stage
-
-widget_styles:
-  space title huge:
-    font_name: DEADJIM
-    font_size: 29
-    antialias: true
-    adjust_top: 3
-    adjust_bottom: 3
-  space title:
-    font_name: DEADJIM
-    font_size: 21
-    antialias: true
-    adjust_top: 2
-    adjust_bottom: 3
-  tall title:
-    font_name: big_noodle_titling
-    font_size: 20
-  stage:
-    font_size: 30
-
+# slide_player:
+#   init_done:
+#     dmd_boot_slide:
+#       target: dmd
+#     stage_boot:
+#       target: stage
+#   mode_attract_started:
+#     dmd_boot_slide:
+#       action: remove
+#       target: dmd
+#     stage_boot:
+#       action: remove
+#       target: stage
 

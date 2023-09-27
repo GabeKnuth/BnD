@@ -7,11 +7,11 @@
       widgets:
       - type: text
         text: PLAY POKER!
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 19
       - type: text
         text: COLLECT THE BEST HAND
-        style: dmd_med
+        style: medium #dmd_med
         y: 4
 - duration: 2s
   slides:
@@ -19,11 +19,11 @@
       widgets:
       - type: text
         text: SHOOT THE SPINNER
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 19
       - type: text
         text: TO PICK A NEW CARD
-        style: dmd_med
+        style: medium #dmd_med
         y: 4
 - duration: 2s
   slides:
@@ -31,12 +31,12 @@
       widgets:
       - type: text
         text: SHOOT THE LEFT HOLE
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 19
         x: 63
       - type: text
         text: TO LOCK IN THE CARD
-        style: dmd_med
+        style: medium #dmd_med
         y: 4
 - duration: 2s
   slides:
@@ -44,10 +44,10 @@
       widgets:
       - type: text
         text: BEST POKER HAND
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 19
         x: 63
       - type: text
         text: MEANS BIG PRIZES
-        style: dmd_med
+        style: medium #dmd_med
         y: 4

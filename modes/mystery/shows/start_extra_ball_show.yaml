@@ -11,7 +11,7 @@
     yeehaw:
       action: play
   events:
-    award_extra_ball
+    - award_extra_ball
 - duration: 1ms
   events:
-    mys_done
+    - mys_done

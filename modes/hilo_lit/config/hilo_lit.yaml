@@ -53,7 +53,7 @@ slides:
   hilo_lit:
     widgets:
       - type: text
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 25
         text: HI-LO IS LIT
         color: yellow

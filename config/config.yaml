@@ -1,12 +1,10 @@
 #config_version=5
 
-mpf:
-  report_crashes: never
-
 config:
   - machine_config.yaml
- # - desktop.yaml
 
+mpf:
+  report_crashes: never
 
 #                                                                                                            
 #   ,adPPYb,d8  ,adPPYYba,  88,dPYba,,adPYba,    ,adPPYba,                                                   
@@ -88,3 +86,11 @@ rgb_dmds:
 machine_vars:
   master_volume:
     initial_value: 1.0
+
+widget_styles:
+  tall_title:
+    font_name: blockade
+    font_size: 20
+  dmd_huge:
+    font_name: blockade
+    font_size: 20

@@ -15,7 +15,7 @@
     mys_sl_ball_saver_2:
       target: dmd
   events:
-    start_mys_ball_saver
+    - start_mys_ball_saver
 - duration: 1ms
   events:
-    mys_done
+    - mys_done

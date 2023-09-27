@@ -10,6 +10,10 @@
 
 # Created by Brian Madden & Gabe Knuth
 
+config:
+  - display.yaml
+ # - desktop.yaml # Shouldn't ever have to have this uncommented...
+
 #                                                            
 #   ,adPPYb,d8  ,adPPYYba,  88,dPYba,,adPYba,    ,adPPYba,   
 #  a8"    `Y88  ""     `Y8  88P'   "88"    "8a  a8P_____88   
@@ -86,43 +90,36 @@ assets:
             load: on_demand
 
 modes:
-  - albums
-  - base
-  - bonus
-  - extra_ball_lit
-  - high_score
-  - hilo
-  - hilo_lit
-  - honky_tonk_multiball
-  - jukebox_hurryup
-  - jukebox_mode
-  - jukebox_two_ball
-  - light_lock
-  - light_metal_rodeo
-  - light_mission_select
-  - managers_choice
-  - metal_rodeo
-  - mission_rotator
-  - money_bags
-  - music_awards
-  - mystery
-  - mystery_lit
-  - play_poker
-  - quarters
-  - quarters_multiball
-  - skill_shot
-  - tilt
+  # - albums
+  - attract
+  # - base
+  # - bonus
+  # - extra_ball_lit
+  # - high_score
+  # - hilo
+  # - hilo_lit
+  # - honky_tonk_multiball
+  # - jukebox_hurryup
+  # - jukebox_mode
+  # - jukebox_two_ball
+  # - light_lock
+  # - light_metal_rodeo
+  # - light_mission_select
+  # - managers_choice
+  # - metal_rodeo
+  # - mission_rotator
+  # - money_bags
+  # - music_awards
+  # - mystery
+  # - mystery_lit
+  # - play_poker
+  # - quarters
+  # - quarters_multiball
+  # - skill_shot
+  # - tilt
 # #  - weak_flippers
-  - wizard_advance_lit
-  - world_tour
-
-widget_styles:
-  dmd_huge:
-      font_name: big_noodle_titling
-      font_size: 20
-
-config:
-  - display.yaml
+  # - wizard_advance_lit
+  # - world_tour
 
 playfields:
   playfield:
@@ -852,242 +849,302 @@ lights:
     number: 2-0
     tags: gi, gi18
     type: grb
+    #subtype: gi
   l_gi_right_4:
     number: 2-1
     type: grb
     tags: gi, gi19
+    #subtype: gi
   l_gi_right_3:
     number: 2-2
     tags: gi, gi20
     type: grb
+    #subtype: gi
   l_gi_right_2:
     number: 2-3
     tags: gi, gi21
     type: grb
+    #subtype: gi
   l_gi_right_1:
     number: 2-4
     tags: gi, gi22
     type: grb
+    #subtype: gi
   l_gi_left_2:
     number: 2-5
     tags: gi, gi2
     type: grb
+    #subtype: gi
   l_gi_left_1:
     number: 2-6
     tags: gi, gi1
     type: grb
+    #subtype: gi
   l_gi_left_3:
     number: 2-7
     tags: gi, gi3
     type: grb
+    #subtype: gi
   l_gi_left_4:
     number: 2-8
     tags: gi, gi4
     type: grb
+    #subtype: gi
   l_gi_left_5:
     number: 2-9
     tags: gi, gi5
     type: grb
+    #subtype: gi
   l_gi_left_6:
     number: 2-10
     tags: gi, gi6
     type: grb
+    #subtype: gi
   l_gi_left_7:
     number: 2-11
     tags: gi, gi7
     type: grb
+    #subtype: gi
   l_gi_left_8:
     number: 2-12
     tags: gi, gi8
     type: grb
+    #subtype: gi
   l_gi_left_9:
     number: 2-13
     tags: gi, gi9
     type: grb
+    #subtype: gi
   l_gi_left_10:
     number: 2-14
     tags: gi, gi10
     type: grb
+    #subtype: gi
   l_gi_left_lane:
     number: 2-15
     tags: gi, gi11
     type: grb
+    #subtype: gi
   l_gi_center_lane:
     number: 2-16
     tags: gi, gi12
     type: grb
+    #subtype: gi
   l_gi_right_lane:
     number: 2-17
     tags: gi, gi13
     type: grb
+    #subtype: gi
   l_gi_right_9:
     number: 2-18
     tags: gi, gi14
     type: grb
+    #subtype: gi
   l_gi_right_8:
     number: 2-19
     tags: gi, gi15
     type: grb
+    #subtype: gi
   l_gi_right_7:
     number: 2-20
     tags: gi, gi16
     type: grb
+    #subtype: gi
   l_gi_right_6:
     number: 2-21
     tags: gi, gi17
     type: grb
+    #subtype: gi
   l_backbox_1:
     number: 3-0
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_2:
     number: 3-1
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_3:
     number: 3-2
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_4:
     number: 3-3
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_5:
     number: 3-4
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_6:
     number: 3-5
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_7:
     number: 3-6
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_8:
     number: 3-7
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_9:
     number: 3-8
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_10:
     number: 3-9
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_11:
     number: 3-10
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_12:
     number: 3-11
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_13:
     number: 3-12
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_14:
     number: 3-13
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_15:
     number: 3-14
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_16:
     number: 3-15
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_17:
     number: 3-16
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_18:
     number: 3-17
     tags: gi
     type: grb
+    ##subtype: gi
   l_backbox_19:
     number: 3-18
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_20:
     number: 3-19
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_21:
     number: 3-20
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_22:
     number: 3-21
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_23:
     number: 3-22
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_24:
     number: 3-23
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_25:
     number: 3-24
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_26:
     number: 3-25
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_27:
     number: 3-26
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_28:
     number: 3-27
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_29:
     number: 3-28
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_30:
     number: 3-29
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_31:
     number: 3-30
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_32:
     number: 3-31
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_33:
     number: 3-32
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_34:
     number: 3-33
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_35:
     number: 3-34
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_36:
     number: 3-35
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_37:
     number: 3-36
     tags: gi
     type: grb
+    #subtype: gi
   l_backbox_38:
     number: 3-37
     tags: gi
     type: grb
+    #subtype: gi
   l_left_apron_flasher:
     number: 0-0
     tags: left
@@ -1101,10 +1158,12 @@ lights:
     number: 0-3
     type: grb
     tags: gi
+    #subtype: gi
   l_coin_2:
     number: 0-4
     type: grb
     tags: gi
+    #subtype: gi
 
 #             88                                                       
 #             88                                                       
@@ -1116,41 +1175,46 @@ lights:
 #  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"'  
 
 shows:
-    gi_on:
+  _overwrite: true
+  gi_on:
     - duration: -1
       lights:
         gi: ff9027
-    flash_color:
-        - time: 0
-          lights:
-            (led):
-              color: (color)
-            (leds):
-              color: (color)
-        - time: 1
-          lights:
-            (led):
-              color: black
-            (leds):
-              color: black
-        - time: 2
-    flash:  #overwrite default so we can tune our machine-wide flashing in one place
-        - _overwrite: true
-        - duration: 250ms
-          lights:
-            (led):
-              color: on
-            (leds):
-              color: on
-        - duration: 250ms
-          lights:
-            (led):
-              color: black
-            (leds):
-              color: black
+
+  # flash_color:
+  #   - time: 0
+  #     lights:
+  #       (light):
+  #         color: (color)
+  #       (lights):
+  #         color: (color)
+  #   - time: 1
+  #     lights:
+  #       (light):
+  #         color: black
+  #       (lights):
+  #         color: black
+  #   - time: 2
+
+  # flash:
+  #   # Uncomment to overwrite default
+  #   #- _overwrite: true
+  #   - duration: 250ms
+  #     lights:
+  #       (light):
+  #         color: on
+  #       (lights):
+  #         color: on
+  #   - duration: 250ms
+  #     lights:
+  #       (light):
+  #         color: black
+  #       (lights):
+  #         color: black
 
 show_player:
   mode_attract_started: gi_on
+
 
 
 #                                    88  88                                    

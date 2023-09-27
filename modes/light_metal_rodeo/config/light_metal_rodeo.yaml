@@ -45,7 +45,7 @@ slides:
   mr_lit_advertise:
     widgets:
       - type: text
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 21
         text: METAL RODEO IS LIT!
         color: yellow

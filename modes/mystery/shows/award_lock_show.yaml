@@ -16,7 +16,7 @@
       target: dmd
       #transition: fade
   events:
-    award_mystery_lock
+    - award_mystery_lock
 - duration: 1ms
   events:
-    mys_done
+    - mys_done

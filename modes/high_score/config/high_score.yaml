@@ -28,19 +28,19 @@ slides:
   high_score_enter_initials:
   - type: text
     text: PLAYER (player_num)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     x: center-27
     y: bottom+21
   - type: text
     text: (award)
-    style: dmd_small
+    style: small #dmd_small
     anchor_y: bottom
     x: center-27
     y: bottom+12
   - type: text_input
     key: high_score
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: bottom
     max_chars: 3
     y: 1
@@ -61,13 +61,13 @@ slides:
     key: high_score
     anchor_x: left
     x: left+90
-    style: dmd_big
+    style: big #dmd_big
 
   high_score_award_display:
   - type: text
     text: (player_name)
     color: 0
-    style: dmd_huge
+    style: huge #dmd_huge
     y: middle-2
     animations:
       show_slide:
@@ -80,6 +80,6 @@ slides:
         repeat: true
   - type: text
     text: (award)
-    style: dmd_med
+    style: medium #dmd_med
     anchor_y: top
     y: top-2

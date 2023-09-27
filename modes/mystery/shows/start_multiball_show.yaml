@@ -9,5 +9,5 @@
       #transition: fade
 - duration: 1ms
   events:
-    start_honky_tonk_multiball
-    mys_done
+    - start_honky_tonk_multiball
+    - mys_done

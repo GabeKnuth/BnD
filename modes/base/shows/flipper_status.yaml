@@ -8,7 +8,7 @@
       widgets:
         - type: text
           text: STATUS REPORT
-          style: dmd_big
+          style: big #dmd_big
         - type: line
           points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
           color: red
@@ -21,11 +21,11 @@
       widgets:
         - type: text
           text: (machine|credits_string)
-          style: dmd_big
+          style: big #dmd_big
           y: 22
         - type: text
           text: BALL (ball)
-          style: dmd_big
+          style: big #dmd_big
           y: 10
         - type: line
           points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
@@ -39,11 +39,11 @@
       widgets:
         - type: text
           text: "JACKPOT VALUE:"
-          style: dmd_big
+          style: big #dmd_big
           y: 22
         - type: text
           text: (player|jackpot)
-          style: dmd_big
+          style: big #dmd_big
           y: 10
           number_grouping: true
         - type: line
@@ -58,11 +58,11 @@
       widgets:
         - type: text
           text: "QUARTERS: (player|quarters)"
-          style: dmd_big
+          style: big #dmd_big
           y: 22
         - type: text
           text: "BONUS MULTIPLIER: (player|bonus_multiplier)X"
-          style: dmd_big
+          style: big #dmd_big
           y: 10
         - type: line
           points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
@@ -76,11 +76,11 @@
       widgets:
         - type: text
           text: "WIZARD VALUE:"
-          style: dmd_big
+          style: big #dmd_big
           y: 22
         - type: text
           text: (player|wizard_score)
-          style: dmd_big
+          style: big #dmd_big
           y: 10
           number_grouping: true
         - type: line
@@ -95,7 +95,7 @@
       widgets:
         - type: text
           text: "JUKEBOX HITS: (player|lb_jukebox_counter_count)"
-          style: dmd_big
+          style: big #dmd_big
         - type: line
           points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
           color: red
@@ -109,11 +109,11 @@
       widgets:
         - type: text
           text: "ALBUMS: (player|num_albums)"
-          style: dmd_big
+          style: big #dmd_big
           y: 22
         - type: text
           text: "ALBUM VALUE: (player|album_value)"
-          style: dmd_med
+          style: medium #dmd_med
           y: 10
           number_grouping: true
         - type: line

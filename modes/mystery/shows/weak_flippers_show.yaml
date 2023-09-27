@@ -20,5 +20,5 @@
 #      target: dmd
 - duration: 1ms
   events:
-    start_weak_flippers
-    mys_done|100ms
+    - start_weak_flippers
+    - mys_done|100ms

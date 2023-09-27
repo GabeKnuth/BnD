@@ -177,13 +177,13 @@ slides:
       - type: text
         text: Hit spinner to
         anchor_y: top
-        style: dmd_small
+        style: small #dmd_small
         y: top-1
         anchor_x: right
         x: right-1
       - type: text
         text: get card
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: center
         anchor_x: right
@@ -198,13 +198,13 @@ slides:
       - type: text
         text: Shoot left hole
         anchor_y: top
-        style: dmd_small
+        style: small #dmd_small
         y: top-1
         anchor_x: right
         x: right-1
       - type: text
         text: to collect
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: center
         anchor_x: right
@@ -215,11 +215,11 @@ slides:
     widgets:
       - type: text
         text: TIME'S UP!
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 18
       - type: text
         text: PLAY POKER AGAIN TO FINISH
-        style: dmd_small
+        style: small #dmd_small
         y: 3
 
   card_background:
@@ -289,17 +289,17 @@ slides:
     widgets:
       - type: text
         text: (ticks)
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 400
         y: 300
       - type: text
         text: LEFT HOLE = LOCK SELECTED CARD
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 30
         font_size: 70
       - type: text
         text: SPINNER = PICK NEW CARD
-        style: dmd_huge
+        style: huge #dmd_huge
         y: 90
         font_size: 70
 
@@ -307,52 +307,52 @@ slides:
     widgets:
       - type: text
         text: ROYAL FLUSH!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_straight_flush:
     widgets:
       - type: text
         text: STRAIGHT FLUSH!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_four_of_a_kind:
     widgets:
       - type: text
         text: FOUR OF A KIND!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_full_house:
     widgets:
       - type: text
         text: FULL HOUSE!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_flush:
     widgets:
       - type: text
         text: FLUSH!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_straight:
     widgets:
       - type: text
         text: STRAIGHT!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_three_of_a_kind:
     widgets:
       - type: text
         text: 3 OF A KIND!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_two_pairs:
     widgets:
       - type: text
         text: TWO PAIRS!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_one_pair:
     widgets:
       - type: text
         text: ONE PAIR!
-        style: dmd_huge
+        style: huge #dmd_huge
   poker_high_card:
     widgets:
       - type: text
         text: (value_name) HIGH
-        style: dmd_huge
+        style: huge #dmd_huge
 
 widgets:
   card_1_solid:
@@ -467,7 +467,7 @@ widgets:
   time_extended:
       - type: text
         text: TIME EXTENDED
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 100
         color: red
         z: 1

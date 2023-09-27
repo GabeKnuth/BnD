@@ -58,14 +58,14 @@ slides:
       - type: text
         text: (score)
         anchor_y: top
-        style: dmd_huge
+        style: huge #dmd_huge
         number_grouping: true
         y: top-2
         anchor_x: right
         x: right-1
       - type: text
         text: SHOOT JUKEBOX LOOP!
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: bottom+1
         anchor_x: right
@@ -80,14 +80,14 @@ slides:
       - type: text
         text: (score)
         anchor_y: top
-        style: dmd_huge
+        style: huge #dmd_huge
         number_grouping: true
         y: top-2
         anchor_x: right
         x: right-1
       - type: text
         text: SHOOT RIGHT RAMP!
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: bottom+1
         anchor_x: right
@@ -101,7 +101,7 @@ slides:
     widgets:
       - type: text
         text: MULTIBALL
-        style: dmd_huge
+        style: huge #dmd_huge
         font_size: 0
         color: yellow
         animations:
@@ -136,20 +136,20 @@ slides:
       - type: text
         text: "LONGHORN MULTIBALL!"
         anchor_y: top
-        style: dmd_big
+        style: big #dmd_big
         y: top-1
         anchor_x: right
         x: right-1
       - type: text
         text: "Shoot         to"
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: center-5
         anchor_x: right
         x: right-10
       - type: text
         text: JACKPOT
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: center-5
         anchor_x: right
@@ -157,14 +157,14 @@ slides:
         color: lime
       - type: text
         text: light
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: bottom+4
         anchor_x: right
         x: right-74
       - type: text
         text: Double Jackpot
-        style: dmd_small
+        style: small #dmd_small
         anchor_y: bottom
         y: bottom+4
         anchor_x: right
@@ -180,7 +180,7 @@ slides:
       - type: text
         text: BALL SAVED!
         expire: 2s
-        style: dmd_huge
+        style: huge #dmd_huge
 
 show_player:
   mode_jukebox_two_ball_started:

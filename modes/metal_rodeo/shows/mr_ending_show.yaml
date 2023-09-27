@@ -28,10 +28,10 @@
         duration: 250ms
         direction: right
   events:
-    mr_advertise_plunger
+    - mr_advertise_plunger
 - time: 8.5
   slides:
     mr_keep_shooting:
       target: dmd
   events:
-    mr_resume_game
+    - mr_resume_game
