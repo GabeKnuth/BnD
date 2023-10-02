@@ -3,9 +3,6 @@
 config:
   - machine_config.yaml
 
-mpf:
-  report_crashes: never
-
 #                                                                                                            
 #   ,adPPYb,d8  ,adPPYYba,  88,dPYba,,adPYba,    ,adPPYba,                                                   
 #  a8"    `Y88  ""     `Y8  88P'   "88"    "8a  a8P_____88                                                   
@@ -41,8 +38,8 @@ smartmatrix:
     #port: /dev/tty.usbmodem1030681
     port: com3
 
-#led_settings:
-#    default_led_fade_ms: 100
+# led_settings:
+#   default_led_fade_ms: 100
 
 window:
   width: 800
@@ -68,29 +65,3 @@ rgb_dmds:
     brightness: .5
     fps: 25
     gamma: 2.2
-#                                              88           88                           
-#                                              88           ""                           
-#                                              88                                        
-#  88,dPYba,,adPYba,   ,adPPYYba,   ,adPPYba,  88,dPPYba,   88  8b,dPPYba,    ,adPPYba,  
-#  88P'   "88"    "8a  ""     `Y8  a8"     ""  88P'    "8a  88  88P'   `"8a  a8P_____88  
-#  88      88      88  ,adPPPPP88  8b          88       88  88  88       88  8PP"""""""  
-#  88      88      88  88,    ,88  "8a,   ,aa  88       88  88  88       88  "8b,   ,aa  
-#  88      88      88  `"8bbdP"Y8   `"Ybbd8"'  88       88  88  88       88   `"Ybbd8"'  
-#                                                                                                                             
-#  8b       d8  ,adPPYYba,  8b,dPPYba,  ,adPPYba,                                        
-#  `8b     d8'  ""     `Y8  88P'   "Y8  I8[    ""                                        
-#   `8b   d8'   ,adPPPPP88  88           `"Y8ba,                                         
-#    `8b,d8'    88,    ,88  88          aa    ]8I                                        
-#      "8"      `"8bbdP"Y8  88          `"YbbdP"'                                        
-
-machine_vars:
-  master_volume:
-    initial_value: 1.0
-
-widget_styles:
-  tall_title:
-    font_name: blockade
-    font_size: 20
-  dmd_huge:
-    font_name: blockade
-    font_size: 20

@@ -14,6 +14,10 @@ config:
   - display.yaml
  # - desktop.yaml # Shouldn't ever have to have this uncommented...
 
+light_settings:
+    default_fade_ms: 0
+
+
 #                                                            
 #   ,adPPYb,d8  ,adPPYYba,  88,dPYba,,adPYba,    ,adPPYba,   
 #  a8"    `Y88  ""     `Y8  88P'   "88"    "8a  a8P_____88   
@@ -46,6 +50,8 @@ scriptlets: cards.Cards
 mpf:
   default_show_sync_ms: 500 #Why is this here?
   default_light_hw_update_hz: 10
+  report_crashes: never
+
 
 game:
   balls_per_game: 3
@@ -1228,21 +1234,21 @@ show_player:
 
 auditor:
     save_events:
-        ball_ended
-        game_ended
+      - ball_ended
+      - game_ended
     audit:
-        shots
-        switches
-        events
-        player
+      - shots
+      - switches
+      - events
+      - player
     events:
-        ball_search_begin
-        machine_init_phase_1
-        game_started
-        game_ended
-        machine_reset
+      - ball_search_begin
+      - machine_init_phase_1
+      - game_started
+      - game_ended
+      - machine_reset
     player:
-        score
+      - score
     num_player_top_records: 10
                                                                                                    
 #  88                                  88                                                         88  
@@ -1339,3 +1345,30 @@ animations:
     property: opacity
     value: 0
     duration: 400ms
+
+widget_styles:
+  tall_title:
+    font_name: big_noodle_titling
+    font_size: 20
+  huge:
+    font_name: big_noodle_titling
+    font_size: 20
+
+#                                              88           88                           
+#                                              88           ""                           
+#                                              88                                        
+#  88,dPYba,,adPYba,   ,adPPYYba,   ,adPPYba,  88,dPPYba,   88  8b,dPPYba,    ,adPPYba,  
+#  88P'   "88"    "8a  ""     `Y8  a8"     ""  88P'    "8a  88  88P'   `"8a  a8P_____88  
+#  88      88      88  ,adPPPPP88  8b          88       88  88  88       88  8PP"""""""  
+#  88      88      88  88,    ,88  "8a,   ,aa  88       88  88  88       88  "8b,   ,aa  
+#  88      88      88  `"8bbdP"Y8   `"Ybbd8"'  88       88  88  88       88   `"Ybbd8"'  
+#                                                                                                                             
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  ,adPPYba,                                        
+#  `8b     d8'  ""     `Y8  88P'   "Y8  I8[    ""                                        
+#   `8b   d8'   ,adPPPPP88  88           `"Y8ba,                                         
+#    `8b,d8'    88,    ,88  88          aa    ]8I                                        
+#      "8"      `"8bbdP"Y8  88          `"YbbdP"'                                        
+
+machine_vars:
+  master_volume:
+    initial_value: 1.0
