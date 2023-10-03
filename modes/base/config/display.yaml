@@ -1,6 +1,8 @@
 #config_version=5
 #config_version=4 # Left for reference. Did NOT double check
 
+###### WTF? IS THIS CONFIG EVEN USED????? ######
+
 # base mode display-related configs
 
 event_player:

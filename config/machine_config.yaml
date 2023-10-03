@@ -1328,6 +1328,11 @@ keyboard:
     event: shot_spinner_to_vuk_hit
   b:
     event: start_weak_flippers
+  f:
+    event: play_sound_test
+
+sound_player:
+  play_sound_test: poker_loop
 
 player_vars:
   album_value:

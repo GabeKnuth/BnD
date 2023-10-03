@@ -141,7 +141,7 @@ show_player:
 #       expire: 10s
 
 sound_player:
-  init_done:
+  mode_attract_started:
     base_bed_loop:
       action: play
       loops: -1
