@@ -50,7 +50,7 @@ scriptlets: cards.Cards
 mpf:
   default_show_sync_ms: 500 #Why is this here?
   default_light_hw_update_hz: 10
-  report_crashes: never
+
 
 
 game:
@@ -96,36 +96,36 @@ assets:
             load: on_demand
 
 modes:
-  # - albums
+  - albums
   - attract
-  # - base
-  # - bonus
-  # - extra_ball_lit
-  # - high_score
-  # - hilo
-  # - hilo_lit
-  # - honky_tonk_multiball
-  # - jukebox_hurryup
-  # - jukebox_mode
-  # - jukebox_two_ball
-  # - light_lock
-  # - light_metal_rodeo
-  # - light_mission_select
-  # - managers_choice
-  # - metal_rodeo
-  # - mission_rotator
-  # - money_bags
-  # - music_awards
-  # - mystery
-  # - mystery_lit
+  - base
+  - bonus
+  - extra_ball_lit
+  - high_score
+  - hilo
+  - hilo_lit
+  - honky_tonk_multiball
+  - jukebox_hurryup
+  - jukebox_mode
+  - jukebox_two_ball
+  - light_lock
+  - light_metal_rodeo
+  - light_mission_select
+  - managers_choice
+  - metal_rodeo
+  - mission_rotator
+  - money_bags
+  - music_awards
+  - mystery
+  - mystery_lit
   # - play_poker
-  # - quarters
-  # - quarters_multiball
-  # - skill_shot
-  # - tilt
-# #  - weak_flippers
-  # - wizard_advance_lit
-  # - world_tour
+  - quarters
+  - quarters_multiball
+  - skill_shot
+  - tilt
+#  - weak_flippers
+  - wizard_advance_lit
+  - world_tour
 
 playfields:
   playfield:
@@ -1329,7 +1329,7 @@ keyboard:
   b:
     event: start_weak_flippers
   f:
-    event: play_sound_test
+    event: s_topkicker_active
 
 sound_player:
   play_sound_test: poker_loop

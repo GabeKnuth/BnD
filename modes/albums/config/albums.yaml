@@ -1,5 +1,5 @@
 #config_version=5
-#todo probably have to redo this mode since player vars aren't in counters anymore.
+
 mode:
   priority: 160
   start_events: mode_base_starting

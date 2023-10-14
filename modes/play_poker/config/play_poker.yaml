@@ -26,11 +26,6 @@
 # Straight Flush = 3 Specials (ditto)
 # Royal Flush = Extra Ball, Special, Complete BROOKS N DUNN, 10M pts, and double score (?)
 
-#todo
-# Need to make this move faster - maybe a timeout of 10s to shoot the spinner before the card 
-# is automatically locked in, at which point it moves on to the next card.  
-
-
 mode:
   start_events: start_play_poker_mode
   stop_events: play_poker_done

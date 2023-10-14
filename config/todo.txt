@@ -1,0 +1,32 @@
+#ToDo 
+
+- Fix play_poker mode. Config has empty image: widgets, that I think are placeholders for code. 
+  This was probably non-standard YAML before, and it's tripping up the new config validator.
+
+     - Also need to make this move faster - maybe a timeout of 10s to shoot the spinner before the card 
+       is automatically locked in, at which point it moves on to the next card. 
+
+     - Maybe it should lock the current card after 10s whether you shoot the left VUK or not, without
+       extending the timer (like would happen if you shot the lock). 
+
+- Albums mode probably needs redone since player vars aren't in counters anymore.
+
+- Voice callouts
+
+- Speed up eject from left vuk. seems to take too long. As I recall, this varies throughout the game.
+  Could have been a 0.33 thing.
+
+- Figure out weak flippers mode. what was i doing there? why didn't it work?
+
+    - Can we slow down music with code so we don't lose the spot in the track?
+      Worst case, we can cross-fade to the next track, but that's a lot of work.
+
+    - Mode should double all scores during mode (not bonus, in case the ball drains) 
+
+- Random videos in jukebox_mode? See note line 123 in jukebox_mode.yaml
+
+- Figure out how to add "hold album value" to Mystery awards. Also add weak flippers to mystery
+  awards when figured out
+
+- Music Awards slide (line 389 in music_awards.yaml) needs to show whatever the actual score is 
+  that we calculate as the mode progresses. Was this fixed? It's an old note.

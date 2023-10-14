@@ -10,7 +10,7 @@ timers:
         start_value: 5
         direction: down
         control_events:
-          - event: balldevice_bd_plunger_ball_eject_success
+          - event: succesful_eject
             action: start
 
 event_player:
@@ -21,6 +21,13 @@ event_player:
     - end_skill_shot
   s_topkicker_active:
     - end_skill_shot|3s
+  balldevice_bd_plunger_ball_eject_success:
+    - succesful_eject #workaround for MC crashing in 0.56
+
+sound_player:
+  s_topkicker_active:
+    skill_shot_made:
+      action: play
 
 slides:
   skill_shot_stage:
@@ -28,6 +35,7 @@ slides:
       - type: video
         video: ss_skill_shot
         end_behavior: loop
+    target: stage
   player_start:
     widgets:
       - type: text
@@ -67,6 +75,7 @@ slides:
         y: 0
         anchor_x: right
         x: right
+    target: dmd
   skill_shot_made:
     widgets:
       - type: text
@@ -109,11 +118,8 @@ slides:
               duration: 150ms
               repeat: true
 
-
-
-
 slide_player:
-  mode_skill_shot_starting:
+  mode_skill_shot_started:
     skill_shot_stage:
       target: stage
     player_start:
@@ -122,10 +128,10 @@ slide_player:
     skill_shot_made:
       target: dmd
       expire: 3s
-
-  balldevice_bd_plunger_ball_eject_success:
+  succesful_eject:
     player_start:
       action: remove
+      target: dmd
 
 #scoring: #leaving for reference
 variable_player:

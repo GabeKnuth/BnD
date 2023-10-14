@@ -1,16 +1,15 @@
 #config_version=5
 #config_version=4 # left for reference. did not double check
 
-#todo
-# sound pool for kickers, slings, and pops
-# voice callouts
-# speed up eject from left vuk. seems to take too long
-# figure out weak flippers mode. what was i doing there? why didn't it work?
+
 
 mode:
   start_events: ball_starting
   priority: 100
   #code: base.base
+
+config:
+  - display.yaml
 #
 #
 #
@@ -116,16 +115,16 @@ random_event_player:
   mys_choose_award:
     force_all: true
     events:
-      mys_spot_quarters
-      mys_start_ball_saver
-      mys_extra_ball
-      mys_10_points
-      mys_big_points
-      mys_start_multiball
-      mys_award_lock
+      - mys_spot_quarters
+      - mys_start_ball_saver
+      - mys_extra_ball
+      - mys_10_points
+      - mys_big_points
+      - mys_start_multiball
+      - mys_award_lock
       #mys_weak_flippers
 
-      #mys_hold_album_value #todo need to figure this one out yet
+      #mys_hold_album_value 
 
 #                                                             88  
 #                                                             88  
@@ -146,24 +145,26 @@ random_event_player:
 #  88  
 
 sound_pools:
-    beats:
-        type: random
-        sounds:
-          drum1
-          drum2
-          drum3
-          drum5
-          drum6
-          drum7
-          drum8
-          drum9
-          drum10
-          drum11
-          drum12
-          drum13
-          drum14
-          drum15
-          drum16
+  beats:
+    type: random
+    track: sfx
+    sounds:
+      - drum1
+      - drum2
+      - drum3
+      - drum5
+      - drum6
+      - drum7
+      - drum8
+      - drum9
+      - drum10
+      - drum11
+      - drum12
+      - drum13
+      - drum14
+      - drum15
+      - drum16
+
 
 #                                                             88     
 #                                                             88     
@@ -246,7 +247,7 @@ sound_player:
     left_loop:
       action: play
       loops: 0
-  s_rightrampopto:
+  s_rightrampopto_active:
     fire_whoosh:
       action: play
       loops: 0
@@ -343,8 +344,6 @@ variable_player:
     s_leftorbit_active:
         score: 25000
         wizard_score: 25000
-#    shot_standups_hit:
-#        score: 500
     shot_slings_hit:
         score: 110
     s_topkickingtarget_active:
@@ -378,17 +377,6 @@ variable_player:
         mr_shot_score:
             int: 5 # used to be score:
             action: set
-
-#slides:
-#  widgets:
-#    - type: camera
-#      width: 800
-#      height: 480
-#
-#slide_player:
-#  s_spinner_active:
-#    camera:
-#      target: stage
 
 #   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
 #  a8"    `Y88  88       88  a8P_____88  88       88  a8P_____88     
@@ -440,7 +428,7 @@ queue_relay_player:
 #  88       88   `"YbbdP"'   88   `"8bbdP"Y8  `"YbbdP"'  
 
 
-# when the left vuk is shot from the playfield, there could up to three inserts
+# when the left vuk is shot from the playfield, there could be up to three inserts
 # lit and we want to service those one-by-one. so the first thing we have to
 # do is hold the ball, which we do here. modes that may start from this shot
 # can post the release_left_vuk_ball event when they want to release the ball.
