@@ -255,7 +255,7 @@ variable_player:
   sw_jukebox:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000
-  shot_spinner_to_vuk_hit:
+  seq_shot_spinner_to_vuk_hit:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000
   shot_right_ramp_full_loop_hit:
@@ -276,7 +276,7 @@ sound_player:
     boom:
       action: play
       loops: 0
-  shot_spinner_to_vuk_hit:
+  seq_shot_spinner_to_vuk_hit:
     boom:
       action: play
       loops: 0
