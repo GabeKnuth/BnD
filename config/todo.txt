@@ -23,10 +23,11 @@
 
     - Mode should double all scores during mode (not bonus, in case the ball drains) 
 
-- Random videos in jukebox_mode? See note line 123 in jukebox_mode.yaml
-
 - Figure out how to add "hold album value" to Mystery awards. Also add weak flippers to mystery
   awards when figured out
 
 - Music Awards slide (line 389 in music_awards.yaml) needs to show whatever the actual score is 
   that we calculate as the mode progresses. Was this fixed? It's an old note.
+
+- Skill shot needs to end as soon as another switch it hit. It's configured to remove the slide from the stage
+  but it doesn't do it right away.

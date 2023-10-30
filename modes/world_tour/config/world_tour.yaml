@@ -11,21 +11,20 @@ mode:
   stop_events: stop_world_tour, start_jukebox_two_ball
 
 # todo
-# - mode slow to start, but maybe that's only when I start it by posting the event via keyboard
+# - mode slow to start, but maybe that's only when I start it by posting the event via keyboard #### Should be better now
 #
-# - when timer runs out, mode slide stays on dmd for a bit
+# - when timer runs out, mode slide stays on dmd for a bit. #### Should be better now
 #
 # - slide instructions to shoot each shot
 #
 # - ok, not quite. Need to find a way to fade down the video when the mode ends instead of just
-#   killing it.
+#   killing it. I should have it, but the animation section in widget config isn't working.
 
 event_player:
   mode_world_tour_started:
-    - wt_mode_running|5s
+    - wt_mode_running|3s
     - enable_north_america|1s
     - fade_out_base_music
-
   player_world_tour_world_tour_timer_tick{value == 5}:
     - slow_down_timer
   wt_australia_complete:
@@ -35,11 +34,11 @@ event_player:
     - release_wt_ball|3.7s
     - stop_world_tour|3.7s
   timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
-    - stop_world_tour|5s
-    - world_tour_fade_out|3s
+    - stop_world_tour|1s
+    #- world_tour_fade_out
     - stop_world_tour_timer
-    - world_tour_fail|3s
-    - fade_in_base_music|3s
+    - world_tour_fail|1s
+    - fade_in_base_music|1s
   mode_world_tour_stopping:
     - enable_base_left_vuk_hold
   ball_will_end:
@@ -267,10 +266,8 @@ slides:
         video: wt_boot_scoot
         end_behavior: loop
         animations:
-          world_tour_fade_out:
-            - property: volume
-              value: 0
-              duration: 2s
+          test_event_video_fade: video_fade_out
+
   world_tour_dmd:
     widgets:
       - type: text
@@ -328,7 +325,7 @@ slide_player:
   #mode_world_tour_starting:
   mode_world_tour_started:
     wt_intro_dmd:
-      target: dmd
+      target: dmd      
     world_tour_stage: 
       target: stage
   wt_mode_running:

@@ -65,20 +65,20 @@ random_event_player:
     play_jukebox_video:
       force_all: true
       events:
-        jb_bed_of_roses
-        jb_achy_breaky
-        jb_convoy
-        jb_every_little_thing
-        jb_boots_are_made_for_walkin
-        jb_hello_darlin
-        jb_louisiana_woman
-        jb_rhinestone_cowboy
-        jb_stand_by_your_man
+        - jb_bed_of_roses
+        - jb_achy_breaky
+        - jb_convoy
+        - jb_every_little_thing
+        - jb_boots_are_made_for_walkin
+        - jb_hello_darlin
+        - jb_louisiana_woman
+        - jb_rhinestone_cowboy
+        - jb_stand_by_your_man
 
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
 # events to change videos, as well as to fire off the complete mode logic
 
-#logic_blocks:
+
 counters:
     jukebox_mode_hit_counter:
         enable_events: mode_jukebox_mode_started
@@ -120,16 +120,9 @@ timers:
             action: start
 
 
-# I think we'll play the videos randomly, so let's try that. That way everyone in
-# this mode can hear/see differnet songs. This is broken right now, per Quinn #todo
-
 # Now we need to play the video. The first event needs to be just the song. Each one
 # after that should be record scratch, then song, so we also have a sound_player config
 # that plays the sound only after the first time the jukebox is hit.
-
-# Two things right now (besides video pool thing:
-#   When jukebox is hit, the video leaves the stage, but nothing replaces it (though the sound still plays).
-#   The video in a show isn't stopping.
 
 slide_player:
   player_jukebox_mode_jukebox_mode_timer_tick: jb_instructions

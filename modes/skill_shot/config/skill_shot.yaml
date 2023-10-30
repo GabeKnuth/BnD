@@ -12,6 +12,7 @@ timers:
         control_events:
           - event: succesful_eject
             action: start
+            
 
 event_player:
   mode_skill_shot_started:
@@ -132,6 +133,11 @@ slide_player:
     player_start:
       action: remove
       target: dmd
+  end_skill_shot:
+    skill_shot_stage:
+      action: remove
+      target: stage
+
 
 #scoring: #leaving for reference
 variable_player:
