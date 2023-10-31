@@ -128,7 +128,7 @@ modes:
   - music_awards
   - mystery
   - mystery_lit
-  # - play_poker
+  - play_poker
   - quarters
   - quarters_multiball
   - skill_shot
