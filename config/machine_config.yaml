@@ -131,7 +131,7 @@ modes:
   - play_poker
   - quarters
   - quarters_multiball
-  - skill_shot
+  # - skill_shot
   - tilt
 #  - weak_flippers
   - wizard_advance_lit
@@ -155,6 +155,8 @@ playfields:
     tags: default
     enable_ball_search: true
     ball_search_interval: 150ms
+
+  
 
 #                                 88                       88                                  
 #                                 ""    ,d                 88                                  
@@ -1370,7 +1372,7 @@ keyboard:
   b:
     event: start_weak_flippers
   f:
-    event: test_event_video_fade
+    event: poker_four_of_a_kind
   g:
     event: seq_shot_spinner_to_vuk_hit
   h:

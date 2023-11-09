@@ -1,13 +1,7 @@
 #ToDo 
 
-- Fix play_poker mode. Config has empty image: widgets, that I think are placeholders for code. 
-  This was probably non-standard YAML before, and it's tripping up the new config validator.
-
-     - Also need to make this move faster - maybe a timeout of 10s to shoot the spinner before the card 
-       is automatically locked in, at which point it moves on to the next card. 
-
-     - Maybe it should lock the current card after 10s whether you shoot the left VUK or not, without
-       extending the timer (like would happen if you shot the lock). 
+- Fix play_poker mode. Mode just kind of ends...I had 4 tens and it just ended without any fanfare.
+  Also - I busted mode end, so it never ends
 
 - Albums mode probably needs redone since player vars aren't in counters anymore.
 
@@ -31,3 +25,6 @@
 
 - Skill shot needs to end as soon as another switch it hit. It's configured to remove the slide from the stage
   but it doesn't do it right away.
+
+
+  

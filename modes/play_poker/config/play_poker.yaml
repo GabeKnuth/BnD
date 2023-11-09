@@ -17,20 +17,53 @@
 # Scoring table:
 # High card = 100,000 (can't use event params here)
 # 1 pair = 1,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
-# 2 pair = 2,000,000 pts (he also says to award Mystery, but we haven't gotten that far)
-# 3 of a kind = 5,000,000 pts (he also says to award Managers Choice, but we haven't gotten that far)
-# Straight = Extra Ball
-# Flush = Extra Ball
-# Full House = Extra Ball
-# 4 of a kind = 1 Special (don't know what that is yet)
-# Straight Flush = 3 Specials (ditto)
-# Royal Flush = Extra Ball, Special, Complete BROOKS N DUNN, 10M pts, and double score (?)
+# 2 pair = 1,500,000 pts (he also says to award Mystery, but we haven't gotten that far)
+# 3 of a kind = 2,000,000 pts (he also says to award Managers Choice, but we haven't gotten that far)
+# Straight = 3,000,000 and light Extra Ball
+# Flush = 4,000,000 and light Extra Ball
+# Full House = 4,000,000 and light Extra Ball
+# 4 of a kind = 5,000,000, Extra Ball, and Special (don't know what that is yet)
+# Straight Flush = 5,000,000, Extra Ball, and Special
+# Royal Flush = 10,000,000, Extra Ball, Special, Complete BROOKS N DUNN (does that mode even work?)
+
+# todo: 
+# 4 of a kind slide shows on the stage, but I want it to show OVER the chips video.
+# Tried One Pair - chips video doesn't even play, but it says "one pair" and ends the mode with nothing on the stage. Maybe it ended too fast?
+# Countdown on stage needs to be removed. Tried with one pair and it didn't work. 
+
+
+
+#                                            88              
+#                                            88              
+#                                            88              
+#  88,dPYba,,adPYba,    ,adPPYba,    ,adPPYb,88   ,adPPYba,  
+#  88P'   "88"    "8a  a8"     "8a  a8"    `Y88  a8P_____88  
+#  88      88      88  8b       d8  8b       88  8PP"""""""  
+#  88      88      88  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  
+#  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"' 
 
 mode:
   start_events: start_play_poker_mode
   stop_events: play_poker_done
   priority: 500
   code: play_poker.PlayPoker
+
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'        
 
 event_player:
   mode_play_poker_started:
@@ -42,26 +75,41 @@ event_player:
   ball_will_end:
     - play_poker_fail
   timer_poker_countdown_complete:
-    - play_poker_fail|2s
-    - play_poker_done|2s
-  poker_deck_complete:
-    - play_poker_success
-    - play_poker_done|2s
+    - play_poker_fail|1s
   poker_royal_flush:
     - light_poker_extra_ball
     - light_special
   poker_straight_flush:
     - light_special
-    #- light_special
-    #- light_special
   poker_four_of_a_kind:
     - light_special
+    - light_poker_extra_ball
+    - poker_four_of_a_kind_stage
   poker_full_house:
     - light_poker_extra_ball
   poker_flush:
     - light_poker_extra_ball
   poker_straight:
     - light_poker_extra_ball
+
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'  
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
 
 #scoring: #leaving for reference
 variable_player:
@@ -72,23 +120,38 @@ variable_player:
   poker_four_of_a_kind:
     score: 5000000
   poker_full_house:
-    score: 5000000
+    score: 4000000
   poker_flush:
-    score: 5000000
+    score: 4000000
   poker_straight:
-    score: 5000000
+    score: 3000000
   poker_three_of_a_kind:
-    score: 5000000
-  poker_two_pairs:
     score: 2000000
+  poker_two_pairs:
+    score: 1500000
   poker_one_pair:
     score: 1000000
   poker_high_card:
     score: 100000
 
-extra_balls:
-  poker:
-    light_events: light_poker_extra_ball
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   start_poker_music:
@@ -96,10 +159,63 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
+  poker_high_card:
+    poker_high_card:
+      action: play
+      events_when_stopped: play_poker_done|5.5s 
+  poker_one_pair:
+    poker_one_pair:
+      action: play
+      events_when_stopped: play_poker_done|5.5s 
+  poker_two_pairs:
+    poker_two_pairs:
+      action: play
+      events_when_stopped: play_poker_done|5.5s
+  poker_three_of_a_kind:
+    poker_three_of_a_kind:
+      action: play
+      events_when_stopped: play_poker_done|5.5s  
+  poker_straight: 
+    poker_straight:
+      action: play
+      events_when_stopped: play_poker_done|5.5s 
+  poker_flush:
+    poker_flush:
+      action: play 
+      events_when_stopped: play_poker_done|5.5s 
+  poker_full_house:  
+    poker_full_house:
+      action: play 
+      events_when_stopped: play_poker_done|5.5s 
+  poker_four_of_a_kind:
+    poker_four_of_a_kind:
+      action: play  
+      events_when_stopped: play_poker_done|5.5s 
+  poker_straight_flush:
+    poker_straight_flush:
+      action: play
+      events_when_stopped: play_poker_done|5.5s 
+  poker_royal_flush:  
+    poker_royal_flush:
+      action: play  
+      events_when_stopped: play_poker_done|5.5s 
+  play_poker_fail:  
+    poker_try_again_later:
+      action: play 
+      events_when_stopped: play_poker_done|5.5s  
+
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
 
 timers:
     poker_countdown:
-      start_value: 40
+      start_value: 30
       direction: down
       end_value: 0
       max_value: 40
@@ -116,6 +232,25 @@ timers:
         - event: poker_deck_complete
           action: stop
 
+#             88                                                     
+#             88                                                     
+#             88                                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8           
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'           
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'            
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'             
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP                                                                             
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
 show_player:
     mode_play_poker_started:
         play_poker_intro:
@@ -129,42 +264,43 @@ show_player:
         play_poker_intro:
             action: stop
 
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'                                                                                       
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 slide_player:
   timer_poker_countdown_tick:
     poker_countdown:
       target: stage
+  poker_deck_complete:
+    poker_countdown:
+      action: remove
   show_player_cards: card_background
-  play_poker_fail: play_poker_fail
-  poker_royal_flush:
-    poker_royal_flush:
-      expire: 2s
-  poker_straight_flush:
-    poker_straight_flush:
-      expire: 2s
-  poker_four_of_a_kind:
-    poker_four_of_a_kind:
-      expire: 2s
-  poker_full_house:
-    poker_full_house:
-      expire: 2s
-  poker_flush:
-    poker_flush:
-      expire: 2s
-  poker_straight:
-    poker_straight:
-      expire: 2s
-  poker_three_of_a_kind:
-    poker_three_of_a_kind:
-      expire: 2s
-  poker_two_pairs:
-    poker_two_pairs:
-      expire: 2s
-  poker_one_pair:
-    poker_one_pair:
-      expire: 2s
-  poker_high_card:
-    poker_high_card:
-      expire: 2s
+  play_poker_fail: play_poker_fail_slide
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   pp_intro_dmd_1:
@@ -184,7 +320,6 @@ slides:
         anchor_x: right
         x: right-1
     target: dmd
-
   pp_intro_dmd_2:  # This will transition in over the first slide, right to left.
     transition: # I think this is how to do this?
         type: push
@@ -205,8 +340,7 @@ slides:
         anchor_x: right
         x: right-1
     target: dmd
-
-  play_poker_fail:
+  play_poker_fail_slide:
     widgets:
       - type: text
         text: TIME'S UP!
@@ -216,7 +350,6 @@ slides:
         text: PLAY POKER AGAIN TO FINISH
         style: small #dmd_small
         y: 3
-
   card_background:
     widgets:
       - type: rectangle
@@ -279,7 +412,6 @@ slides:
         height: 32
         color: white
         corner_radius: 3
-
   poker_countdown:
     widgets:
       - type: text
@@ -298,56 +430,16 @@ slides:
         y: 90
         font_size: 70
 
-  poker_royal_flush:
-    widgets:
-      - type: text
-        text: ROYAL FLUSH!
-        style: huge #dmd_huge
-  poker_straight_flush:
-    widgets:
-      - type: text
-        text: STRAIGHT FLUSH!
-        style: huge #dmd_huge
-  poker_four_of_a_kind:
-    widgets:
-      - type: text
-        text: FOUR OF A KIND!
-        style: huge #dmd_huge
-  poker_full_house:
-    widgets:
-      - type: text
-        text: FULL HOUSE!
-        style: huge #dmd_huge
-  poker_flush:
-    widgets:
-      - type: text
-        text: FLUSH!
-        style: huge #dmd_huge
-  poker_straight:
-    widgets:
-      - type: text
-        text: STRAIGHT!
-        style: huge #dmd_huge
-  poker_three_of_a_kind:
-    widgets:
-      - type: text
-        text: 3 OF A KIND!
-        style: huge #dmd_huge
-  poker_two_pairs:
-    widgets:
-      - type: text
-        text: TWO PAIRS!
-        style: huge #dmd_huge
-  poker_one_pair:
-    widgets:
-      - type: text
-        text: ONE PAIR!
-        style: huge #dmd_huge
-  poker_high_card:
-    widgets:
-      - type: text
-        text: (value_name) HIGH
-        style: huge #dmd_huge
+#                      88           88                                               
+#                      ""           88                             ,d                
+#                                   88                             88                
+#  8b      db      d8  88   ,adPPYb,88   ,adPPYb,d8   ,adPPYba,  MM88MMM  ,adPPYba,  
+#  `8b    d88b    d8'  88  a8"    `Y88  a8"    `Y88  a8P_____88    88     I8[    ""  
+#   `8b  d8'`8b  d8'   88  8b       88  8b       88  8PP"""""""    88      `"Y8ba,   
+#    `8bd8'  `8bd8'    88  "8a,   ,d88  "8a,   ,d88  "8b,   ,aa    88,    aa    ]8I  
+#      YP      YP      88   `"8bbdP"Y8   `"YbbdP"Y8   `"Ybbd8"'    "Y888  `"YbbdP"'  
+#                                        aa,    ,88                                  
+#                                         "Y8bbdP" 
 
 widgets:
   card_1_solid:
@@ -355,6 +447,7 @@ widgets:
       image:
       x: 14
       z: 1
+
   card_1_flash:
     - type: image
       image:
@@ -362,21 +455,22 @@ widgets:
       z: 1
       animations:
         add_to_slide:
-        - property: opacity
-          value: 0
-          duration: 300ms
-          easing: in_quint
-        - property: opacity
-          value: 1
-          duration: 300ms
-          repeat: true
-          easing: in_quint
+          - property: opacity
+            value: 0
+            duration: 300ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 300ms
+            repeat: true
+            easing: in_quint
 
   card_2_solid:
     - type: image
       image:
       x: 39
       z: 1
+
   card_2_flash:
     - type: image
       image:
@@ -384,21 +478,22 @@ widgets:
       z: 1
       animations:
         add_to_slide:
-        - property: opacity
-          value: 0
-          duration: 300ms
-          easing: in_quint
-        - property: opacity
-          value: 1
-          duration: 300ms
-          repeat: true
-          easing: in_quint
+          - property: opacity
+            value: 0
+            duration: 300ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 300ms
+            repeat: true
+            easing: in_quint
 
   card_3_solid:
     - type: image
       image:
       x: 64
       z: 1
+
   card_3_flash:
     - type: image
       image:
@@ -406,21 +501,22 @@ widgets:
       z: 1
       animations:
         add_to_slide:
-        - property: opacity
-          value: 0
-          duration: 300ms
-          easing: in_quint
-        - property: opacity
-          value: 1
-          duration: 300ms
-          repeat: true
-          easing: in_quint
+          - property: opacity
+            value: 0
+            duration: 300ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 300ms
+            repeat: true
+            easing: in_quint
 
   card_4_solid:
     - type: image
       image:
       x: 89
       z: 1
+
   card_4_flash:
     - type: image
       image:
@@ -428,21 +524,22 @@ widgets:
       z: 1
       animations:
         add_to_slide:
-        - property: opacity
-          value: 0
-          duration: 300ms
-          easing: in_quint
-        - property: opacity
-          value: 1
-          duration: 300ms
-          repeat: true
-          easing: in_quint
+          - property: opacity
+            value: 0
+            duration: 300ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 300ms
+            repeat: true
+            easing: in_quint
 
   card_5_solid:
     - type: image
       image:
       x: 114
       z: 1
+
   card_5_flash:
     - type: image
       image:
@@ -450,76 +547,229 @@ widgets:
       z: 1
       animations:
         add_to_slide:
-        - property: opacity
-          value: 0
-          duration: 300ms
-          easing: in_quint
-        - property: opacity
-          value: 1
-          duration: 300ms
-          repeat: true
-          easing: in_quint
+          - property: opacity
+            value: 0
+            duration: 300ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 300ms
+            repeat: true
+            easing: in_quint
+
   time_extended:
-      - type: text
-        text: TIME EXTENDED
-        style: huge #dmd_huge
-        font_size: 100
-        color: red
-        z: 1
+    - type: text
+      text: TIME EXTENDED
+      style: huge #dmd_huge
+      font_size: 100
+      color: red
+      z: 1
+
+  wid_chips_falling:
+    - type: video
+      video: poker_complete_stage
+      # events_when_stopped: poker_done
+  
+  wid_chips_draining:
+    - type: video
+      video: poker_chips_draining
+      # events_when_stopped: poker_done
+
+  wid_one_pair:
+    - type: text
+      text: ONE PAIR!
+      style: huge #dmd_huge
+
+  wid_two_pairs:
+    - type: text
+      text: TWO PAIRS!
+      style: huge #dmd_huge 
+
+  wid_three_of_a_kind:
+    - type: text
+      text: 3 OF A KIND!
+      style: huge #dmd_huge
+
+  wid_straight:
+    - type: text
+      text: STRAIGHT!
+      style: huge #dmd_huge   
+
+  wid_flush:
+    - type: text
+      text: FLUSH!
+      style: huge #dmd_huge 
+
+  wid_full_house:
+    - type: text
+      text: FULL HOUSE!
+      style: huge #dmd_huge
+
+  wid_four_of_a_kind:
+    - type: text
+      text: FOUR OF A KIND!
+      style: huge #dmd_huge       
+
+  wid_straight_flush:
+    - type: text
+      text: STRAIGHT FLUSH!
+      style: huge #dmd_huge 
+
+  wid_royal_flush:
+    - type: text
+      text: ROYAL FLUSH!
+      style: huge #dmd_huge 
+
+  wid_high_card:
+    - type: text
+      text: (value_name) HIGH
+      style: huge
+
+
+
+#                      88           88                                    
+#                      ""           88                             ,d     
+#                                   88                             88     
+#  8b      db      d8  88   ,adPPYb,88   ,adPPYb,d8   ,adPPYba,  MM88MMM  
+#  `8b    d88b    d8'  88  a8"    `Y88  a8"    `Y88  a8P_____88    88     
+#   `8b  d8'`8b  d8'   88  8b       88  8b       88  8PP"""""""    88     
+#    `8bd8'  `8bd8'    88  "8a,   ,d88  "8a,   ,d88  "8b,   ,aa    88,    
+#      YP      YP      88   `"8bbdP"Y8   `"YbbdP"Y8   `"Ybbd8"'    "Y888  
+#               88                       aa,    ,88                                                     
+#               88                        "Y8bbdP"                               
+#               88                                                        
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,       
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8       
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88               
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88               
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88               
+#  88                               d8'                                   
+#  88                              d8' 
 
 widget_player:
-
   poker_card_locked:
     time_extended:
       target: stage
       widget_settings:
-        y: 275  # todo WHY IS THIS WIDGET ON THE BOTTOM INSTEAD OF THE MIDDLE???
+        y: 275
         expire: 3s
-
+  
   poker_card_1_solid:
     card_1_solid:
       slide: card_background
+  
   poker_card_2_solid:
     card_2_solid:
       slide: card_background
+  
   poker_card_3_solid:
     card_3_solid:
       slide: card_background
+  
   poker_card_4_solid:
     card_4_solid:
       slide: card_background
+  
   poker_card_5_solid:
     card_5_solid:
       slide: card_background
-
+  
   poker_card_1_flash:
     card_1_flash:
       slide: card_background
+  
   poker_card_2_flash:
     card_2_flash:
       slide: card_background
+  
   poker_card_3_flash:
     card_3_flash:
       slide: card_background
+  
   poker_card_4_flash:
     card_4_flash:
       slide: card_background
+  
   poker_card_5_flash:
     card_5_flash:
       slide: card_background
-
+  
   poker_remove_card_1:
     card_1_flash:
       action: remove
+  
   poker_remove_card_2:
     card_2_flash:
       action: remove
+  
   poker_remove_card_3:
     card_3_flash:
       action: remove
+  
   poker_remove_card_4:
     card_4_flash:
       action: remove
+  
   poker_remove_card_5:
     card_5_flash:
       action: remove
+  
+  poker_one_pair:
+    wid_chips_falling:
+      target: stage
+    wid_one_pair:
+      target: stage
+  
+  poker_two_pairs:
+    wid_chips_falling:
+      target: stage
+    wid_two_pairs:
+      target: stage
+  
+  poker_three_of_a_kind:
+    wid_chips_falling:
+      target: stage
+    wid_three_of_a_kind:
+      target: stage
+  
+  poker_straight:
+    wid_chips_falling:
+      target: stage
+    wid_straight:
+      target: stage
+  
+  poker_flush:  
+    wid_chips_falling:
+      target: stage
+    wid_flush:
+      target: stage
+  
+  poker_full_house:    
+    wid_chips_falling:
+      target: stage
+    wid_full_house:
+      target: stage 
+  
+  poker_four_of_a_kind:   
+    wid_chips_falling:
+      target: stage
+    wid_four_of_a_kind:
+      target: stage
+  
+  poker_straight_flush:  
+    wid_chips_falling:
+      target: stage
+    wid_straight_flush:
+      target: stage
+  
+  poker_royal_flush:  
+    wid_chips_falling:
+      target: stage
+    wid_royal_flush:
+      target: stage 
+  
+  poker_high_card:  
+    wid_chips_draining:
+      target: stage
+    wid_high_card:
+      target: stage 

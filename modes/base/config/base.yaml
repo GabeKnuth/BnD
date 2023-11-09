@@ -1,8 +1,6 @@
 #config_version=5
 #config_version=4 # left for reference. did not double check
 
-
-
 mode:
   start_events: ball_starting
   priority: 100
@@ -10,8 +8,7 @@ mode:
 
 config:
   - display.yaml
-#
-#
+  
 #
 #                                                      ,d            
 #                                                      88            
@@ -861,3 +858,24 @@ show_player:
       speed: 2
   ball_save_mystery_disabled:
       ball_save: stop
+
+
+#                             ,d                             
+#                             88                             
+#   ,adPPYba,  8b,     ,d8  MM88MMM  8b,dPPYba,  ,adPPYYba,  
+#  a8P_____88   `Y8, ,8P'     88     88P'   "Y8  ""     `Y8  
+#  8PP"""""""     )888(       88     88          ,adPPPPP88  
+#  "8b,   ,aa   ,d8" "8b,     88,    88          88,    ,88  
+#   `"Ybbd8"'  8P'     `Y8    "Y888  88          `"8bbdP"Y8  
+#  88                       88  88                           
+#  88                       88  88                           
+#  88                       88  88                           
+#  88,dPPYba,   ,adPPYYba,  88  88  ,adPPYba,                
+#  88P'    "8a  ""     `Y8  88  88  I8[    ""                
+#  88       d8  ,adPPPPP88  88  88   `"Y8ba,                 
+#  88b,   ,a8"  88,    ,88  88  88  aa    ]8I                
+#  8Y"Ybbd8"'   `"8bbdP"Y8  88  88  `"YbbdP"' 
+
+extra_balls:
+  poker:
+    light_events: light_poker_extra_ball  
