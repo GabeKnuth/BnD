@@ -26,17 +26,19 @@ hardware:
 
 fast:
   #ports: /dev/tty.usbserial-141C, /dev/tty.usbserial-141B #, /dev/tty.usbserial-141A
-  ports: com12, com13
+  ports: /dev/ttyUSB1, /dev/ttyUSB2 #, /dev/ttyUSB4, /dev/ttyUSB5, /dev/ttyUSB6, /dev/ttyUSB7
   # Brian, comment out for Gabe
   #  ports: /dev/tty.usbserial-1415C, /dev/tty.usbserial-1415B #, /dev/tty.usbserial-1415A
-  config_number_format: int
+  #config_number_format: int
   rgb_buffer: 10
   hardware_led_fade_time: 65ms
+  console_log: full
 
 smartmatrix:
+  smartmatrix_1:
     baud: 3400000
-    #port: /dev/tty.usbmodem1030681
-    port: com3
+    port: /dev/ttyUSB4
+   #port: com3
 
 # led_settings:
 #   default_led_fade_ms: 100
@@ -46,7 +48,7 @@ window:
   height: 480
   title: Mission Pinball Framework - Brooks & Dunn
   resizable: false
-  fullscreen: false
+  fullscreen: true
   borderless: false
   exit_on_escape: true
   source_display: stage
@@ -61,7 +63,7 @@ displays:
     default: true
 
 rgb_dmds:
-  smartmatrix:
+  smartmatrix_1:
     brightness: .5
     fps: 25
     gamma: 2.2
