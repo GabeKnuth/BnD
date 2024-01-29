@@ -131,7 +131,7 @@ modes:
   - play_poker
   - quarters
   - quarters_multiball
-  # - skill_shot
+  - skill_shot
   - tilt
 #  - weak_flippers
   - wizard_advance_lit

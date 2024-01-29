@@ -284,14 +284,74 @@ show_player:
 #  88                              d8'
 
 slide_player:
-  timer_poker_countdown_tick:
-    poker_countdown:
-      target: stage
+  # timer_poker_countdown_tick:
+  #   poker_countdown:
+  #     target: stage
   poker_deck_complete:
     poker_countdown:
       action: remove
   show_player_cards: card_background
   play_poker_fail: play_poker_fail_slide
+
+  poker_one_pair:
+    sl_chips_falling:
+      target: stage
+    sl_one_pair:
+      target: stage
+  
+  poker_two_pairs:
+    sl_chips_falling:
+      target: stage
+    sl_two_pairs:
+      target: stage
+  
+  poker_three_of_a_kind:
+    sl_chips_falling:
+      target: stage
+    sl_three_of_a_kind:
+      target: stage
+  
+  poker_straight:
+    sl_chips_falling:
+      target: stage
+    sl_straight:
+      target: stage
+  
+  poker_flush:  
+    sl_chips_falling:
+      target: stage
+    sl_flush:
+      target: stage
+  
+  poker_full_house:    
+    sl_chips_falling:
+      target: stage
+    sl_full_house:
+      target: stage 
+  
+  poker_four_of_a_kind:   
+    sl_chips_falling:
+      target: stage
+    sl_four_of_a_kind:
+      target: stage
+  
+  poker_straight_flush:  
+    sl_chips_falling:
+      target: stage
+    sl_straight_flush:
+      target: stage
+  
+  poker_royal_flush:  
+    sl_chips_falling:
+      target: stage
+    sl_royal_flush:
+      target: stage 
+  
+  poker_high_card:  
+    sl_chips_draining:
+      target: stage
+    sl_high_card:
+      target: stage 
 
 #             88  88           88                         
 #             88  ""           88                         
@@ -320,6 +380,7 @@ slides:
         anchor_x: right
         x: right-1
     target: dmd
+  
   pp_intro_dmd_2:  # This will transition in over the first slide, right to left.
     transition: # I think this is how to do this?
         type: push
@@ -340,6 +401,7 @@ slides:
         anchor_x: right
         x: right-1
     target: dmd
+  
   play_poker_fail_slide:
     widgets:
       - type: text
@@ -350,6 +412,7 @@ slides:
         text: PLAY POKER AGAIN TO FINISH
         style: small #dmd_small
         y: 3
+  
   card_background:
     widgets:
       - type: rectangle
@@ -412,6 +475,7 @@ slides:
         height: 32
         color: white
         corner_radius: 3
+  
   poker_countdown:
     widgets:
       - type: text
@@ -429,6 +493,80 @@ slides:
         style: huge #dmd_huge
         y: 90
         font_size: 70
+
+  sl_chips_falling:
+    widgets:
+      - type: video
+        video: poker_complete_stage
+        # events_when_stopped: poker_done
+  
+  sl_chips_draining:
+    widgets:
+      - type: video
+        video: poker_chips_draining
+        # events_when_stopped: poker_done
+
+  sl_one_pair:
+    widgets:
+      - type: video
+        video: poker_complete_stage
+      - type: text
+        text: ONE PAIR!
+        style: huge #dmd_huge
+
+  sl_two_pairs:
+    widgets:
+      - type: text
+        text: TWO PAIRS!
+        style: huge #dmd_huge 
+
+  sl_three_of_a_kind:
+    widgets:
+      - type: text
+        text: 3 OF A KIND!
+        style: huge #dmd_huge
+
+  sl_straight:
+    widgets:
+      - type: text
+        text: STRAIGHT!
+        style: huge #dmd_huge   
+
+  sl_flush:
+    widgets:
+      - type: text
+        text: FLUSH!
+        style: huge #dmd_huge 
+
+  sl_full_house:
+    widgets:
+      - type: text
+        text: FULL HOUSE!
+        style: huge #dmd_huge
+
+  sl_four_of_a_kind:
+    widgets:
+      - type: text
+        text: FOUR OF A KIND!
+        style: huge #dmd_huge       
+
+  sl_straight_flush:
+    widgets:
+      - type: text
+        text: STRAIGHT FLUSH!
+        style: huge #dmd_huge 
+
+  sl_royal_flush:
+    widgets:
+      - type: text
+        text: ROYAL FLUSH!
+        style: huge #dmd_huge 
+
+  sl_high_card:
+    widgets:
+      - type: text
+        text: (value_name) HIGH
+        style: huge
 
 #                      88           88                                               
 #                      ""           88                             ,d                
@@ -565,65 +703,7 @@ widgets:
       color: red
       z: 1
 
-  wid_chips_falling:
-    - type: video
-      video: poker_complete_stage
-      # events_when_stopped: poker_done
-  
-  wid_chips_draining:
-    - type: video
-      video: poker_chips_draining
-      # events_when_stopped: poker_done
 
-  wid_one_pair:
-    - type: text
-      text: ONE PAIR!
-      style: huge #dmd_huge
-
-  wid_two_pairs:
-    - type: text
-      text: TWO PAIRS!
-      style: huge #dmd_huge 
-
-  wid_three_of_a_kind:
-    - type: text
-      text: 3 OF A KIND!
-      style: huge #dmd_huge
-
-  wid_straight:
-    - type: text
-      text: STRAIGHT!
-      style: huge #dmd_huge   
-
-  wid_flush:
-    - type: text
-      text: FLUSH!
-      style: huge #dmd_huge 
-
-  wid_full_house:
-    - type: text
-      text: FULL HOUSE!
-      style: huge #dmd_huge
-
-  wid_four_of_a_kind:
-    - type: text
-      text: FOUR OF A KIND!
-      style: huge #dmd_huge       
-
-  wid_straight_flush:
-    - type: text
-      text: STRAIGHT FLUSH!
-      style: huge #dmd_huge 
-
-  wid_royal_flush:
-    - type: text
-      text: ROYAL FLUSH!
-      style: huge #dmd_huge 
-
-  wid_high_card:
-    - type: text
-      text: (value_name) HIGH
-      style: huge
 
 
 
@@ -714,62 +794,4 @@ widget_player:
     card_5_flash:
       action: remove
   
-  poker_one_pair:
-    wid_chips_falling:
-      target: stage
-    wid_one_pair:
-      target: stage
-  
-  poker_two_pairs:
-    wid_chips_falling:
-      target: stage
-    wid_two_pairs:
-      target: stage
-  
-  poker_three_of_a_kind:
-    wid_chips_falling:
-      target: stage
-    wid_three_of_a_kind:
-      target: stage
-  
-  poker_straight:
-    wid_chips_falling:
-      target: stage
-    wid_straight:
-      target: stage
-  
-  poker_flush:  
-    wid_chips_falling:
-      target: stage
-    wid_flush:
-      target: stage
-  
-  poker_full_house:    
-    wid_chips_falling:
-      target: stage
-    wid_full_house:
-      target: stage 
-  
-  poker_four_of_a_kind:   
-    wid_chips_falling:
-      target: stage
-    wid_four_of_a_kind:
-      target: stage
-  
-  poker_straight_flush:  
-    wid_chips_falling:
-      target: stage
-    wid_straight_flush:
-      target: stage
-  
-  poker_royal_flush:  
-    wid_chips_falling:
-      target: stage
-    wid_royal_flush:
-      target: stage 
-  
-  poker_high_card:  
-    wid_chips_draining:
-      target: stage
-    wid_high_card:
-      target: stage 
+
