@@ -3,15 +3,14 @@
 # Override config for "desktop" mode which renders both the LCD and DMD in a
 # single on-screen window.
 
-# To use, run the mpf-mc like this:
-# mpf mc -c desktop
+# To use, run like this:
+# mpf both -c desktop
 
 config:
   - machine_config.yaml
 
 # Todo: Does -x do this already? Do I need this?
 hardware:
-  #_overwrite: true will completely replace the existing hardware: section
   platform: smart_virtual
   rgb_dmd: smart_virtual
 
@@ -62,7 +61,6 @@ slides:
         - type: color_dmd
           dots_x: 128
           dots_y: 32
-          #dot size: .75
           background_color: 000000
     - type: rectangle
       width: 642

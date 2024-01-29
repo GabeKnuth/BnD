@@ -11,7 +11,7 @@
 # Created by Brian Madden & Gabe Knuth
 
 mpf-mc:
-  fps: 60
+  fps: 30
 
 assets:
   images:

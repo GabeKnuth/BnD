@@ -12,7 +12,6 @@
 
 config:
   - display.yaml
- # - desktop.yaml # Shouldn't ever have to have this uncommented...
 
 light_settings:
     default_fade_ms: 0
@@ -51,8 +50,6 @@ mpf:
   default_show_sync_ms: 500 #Why is this here?
   default_light_hw_update_hz: 10
 
-
-
 game:
   balls_per_game: 3
   allow_start_with_loose_balls: True
@@ -60,16 +57,16 @@ game:
   max_players: 4
 
 sound_system:
-    tracks:
-       music:
-          simultaneous_sounds: 1
-          volume: .8
-       voice:
-          simultaneous_sounds: 1
-          volume: 1.0
-       sfx:
-          simultaneous_sounds: 8
-          volume: 1.0
+  tracks:
+    music:
+      simultaneous_sounds: 1
+      volume: .8
+    voice:
+      simultaneous_sounds: 1
+      volume: 1.0
+    sfx:
+      simultaneous_sounds: 8
+      volume: 1.0
 
 logging:
   file:
@@ -82,18 +79,18 @@ logging:
     show_controller: full
 
 assets:
-    sounds:
-        default:
-            load: preload
-        music:
-            track: music
-        sfx:
-            track: sfx
-        voice:
-            track: voice
-    videos:
-        default:
-            load: on_demand
+  sounds:
+    default:
+      load: preload
+    music:
+      track: music
+    sfx:
+      track: sfx
+    voice:
+      track: voice
+  videos:
+    default:
+      load: on_demand
 
 #                                            88                         
 #                                            88                         
@@ -1265,7 +1262,6 @@ show_player:
   mode_attract_started: gi_on
 
 
-
 #                                    88  88                                    
 #                                    88  ""    ,d                              
 #                                    88        88                              
@@ -1276,23 +1272,23 @@ show_player:
 #  `"8bbdP"Y8   `"YbbdP'Y8   `"8bbdP"Y8  88    "Y888   `"YbbdP"'   88          
 
 auditor:
-    save_events:
-      - ball_ended
-      - game_ended
-    audit:
-      - shots
-      - switches
-      - events
-      - player
-    events:
-      - ball_search_begin
-      - machine_init_phase_1
-      - game_started
-      - game_ended
-      - machine_reset
-    player:
-      - score
-    num_player_top_records: 10
+  save_events:
+    - ball_ended
+    - game_ended
+  audit:
+    - shots
+    - switches
+    - events
+    - player
+  events:
+    - ball_search_begin
+    - machine_init_phase_1
+    - game_started
+    - game_ended
+    - machine_reset
+  player:
+    - score
+  num_player_top_records: 10
                                                                                                    
 #  88                                  88                                                         88  
 #  88                                  88                                                         88  
