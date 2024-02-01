@@ -21,7 +21,7 @@ ball_holds:
     enable_events: mode_jukebox_mode_started
     #request_new_balls_to_pf: False # Don't know what this was replaced with, if at all
     release_one_events: timer_jb_intro_timer_complete 
-    disable_events: timer_jb_intro_timer_complete|1
+    disable_events: disable_jb_intro_hold
 
 event_player:
   mode_jukebox_mode_started:
@@ -43,6 +43,8 @@ event_player:
     - disable_base_left_vuk_hold
     - release_top_kicker_ball
     - disable_base_top_kicker_hold
+    - disable_jb_intro_hold
+      
 
 #scoring: #leaving for reference
 variable_player:
