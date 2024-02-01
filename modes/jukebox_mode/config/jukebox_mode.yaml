@@ -20,7 +20,7 @@ ball_holds:
     hold_devices: bd_lower_vuk
     enable_events: mode_jukebox_mode_started
     #request_new_balls_to_pf: False # Don't know what this was replaced with, if at all
-    release_one_events: timer_jb_intro_timer_complete
+    release_one_events: timer_jb_intro_timer_complete 
     disable_events: timer_jb_intro_timer_complete|1
 
 event_player:
