@@ -1,0 +1,6 @@
+while true; do
+  mpf mc -c desktop -X
+  #echo "Process crashed with exit code $?.  Respawning.." >&2
+  sleep 1
+done
+
