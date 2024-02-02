@@ -1,5 +1,4 @@
 #config_version=5
-#config_version=4 # left for reference. did not double check
 
 mode:
   start_events: ball_starting

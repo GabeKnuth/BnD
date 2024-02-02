@@ -12,12 +12,10 @@ mode:
 # is resumed. This is probably the hardest part of this mode. Can do in mode code, though 100% not sure how.
 # Possible to do in config??
 
-# Also need to add in a music awards video pool type thing. It will hook the add_time event.
-
 event_player:
   mode_music_awards_started:
     - mode_running|5s
-    - fade_out_base_music
+    # - fade_out_base_music
   music_awards_stop_adding_time:  # success
     - music_awards_done|5s
     - music_awards_fade_out|3s
@@ -42,12 +40,12 @@ random_event_player:
     add_time:
       force_all: true
       events:
-          play_ma_award1
-          play_ma_award2
-          play_ma_award3
-          play_ma_award4
-          play_ma_award5
-          play_ma_award6
+        - play_ma_award1
+        - play_ma_award2
+        - play_ma_award3
+        - play_ma_award4
+        - play_ma_award5
+        - play_ma_award6
 
 #Need a timer that starts at 10 secs. Need to add 5 secs per successful shot. Max 10 secs, though.
 

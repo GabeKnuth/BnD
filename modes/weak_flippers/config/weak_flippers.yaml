@@ -1,6 +1,11 @@
 #config_version=5
 #config_version=4 # Left for reference. Did NOT double check
 
+# What might be fun is to have to make a shot to end Weak Flipper mode. Maybe a shot to the left orbit? 
+# It should be getable, but hard.
+# Or maybe the flippers randomly get strong again for a second (or just random flipper switch hits)
+# But while weak flippers is on, scores double
+
 mode:
   priority: 300
   start_events: start_weak_flippers, s_right_inlane_active

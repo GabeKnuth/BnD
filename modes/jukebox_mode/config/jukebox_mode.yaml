@@ -1,5 +1,5 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+
 mode:
   priority: 500
   start_events: start_jukebox_mode

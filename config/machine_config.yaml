@@ -404,6 +404,7 @@ flippers:
     use_eos: false
     include_in_ball_search: true
 
+# Some day I want to make this work as a mystery award. They can't all be fun, right? :)
 
 # Weak Flippers
 #  weak_left_flipper:
