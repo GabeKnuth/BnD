@@ -38,9 +38,9 @@ machine:
   balls_installed: 4
 
 # Why is this here?? Let's take it out and see what happens
-# kivy_config:
-#   graphics:
-#     show_cursor: false
+kivy_config:
+  graphics:
+    show_cursor: false
 
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
@@ -106,7 +106,7 @@ modes:
   - albums
   - attract
   - base
-  - bonus
+ # - bonus This breaks the game. Enable after fixed. See bonus_problem branch
   - extra_ball_lit
   - high_score
   - hilo
