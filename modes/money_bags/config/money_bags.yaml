@@ -42,22 +42,24 @@ shots:
       light: l_left_longhorn
     profile: advertise
     #advance_events: mode_money_bags_started
-    disable_events: timer_money_bags_timer_complete
+    disable_events: timer_money_bags_timer_complete, shot_left_kicking_target_flashing_hit, mode_money_bags_ending
+    enable_events: mode_money_bags_started, shot_spinner_to_vuk_advertise_flashing_hit
   
   shot_spinner_to_vuk:
-    hit_events: seq_spinner_to_vuk_hit
-    disable_events: timer_money_bags_timer_complete
+    hit_events: seq_shot_spinner_to_vuk_hit
     profile: advertise
     show_tokens:
       light: l_center_longhorn
+    disable_events: timer_money_bags_timer_complete, shot_spinner_to_vuk_flashing_hit, mode_money_bags_ending
+    enable_events: shot_left_kicking_target_advertise_flashing_hit
 
-shot_groups:
-  money_bags:
-    shots: shot_left_kicking_target, shot_spinner_to_vuk
-    #profile: advertise # <<< todo: Where did specifying a profile go? It was in 0.50, but gone after that.
-    rotate_left_events: shot_group_money_bags_flashing_hit
-    disable_events: timer_money_bags_timer_complete
-    rotate_events: money_bags_advertise_flashing_hit
+# shot_groups:
+#   money_bags:
+#     shots: shot_left_kicking_target, shot_spinner_to_vuk
+#     #profile: advertise # <<< todo: Where did specifying a profile go? It was in 0.50, but gone after that.
+#     rotate_left_events: shot_group_money_bags_flashing_hit
+#     disable_events: timer_money_bags_timer_complete
+#     rotate_events: money_bags_advertise_flashing_hit
 
 timers:
   mb_intro_timer:
@@ -76,7 +78,7 @@ timers:
       - action: start
         event: timer_mb_intro_timer_complete
       - action: reset
-        event: money_bags_advertise_flashing_hit
+        event: money_bags_hit
       - action: stop
         event: logicblock_money_bags_counter_complete
 
@@ -85,9 +87,9 @@ counters:
   money_bags_counter:
     enable_events: mode_money_bags_started
     disable_events: mode_money_bags_ended
-    count_events: money_bags_advertise_flashing_hit
+    count_events: shot_spinner_to_vuk_advertise_flashing_hit, shot_left_kicking_target_advertise_flashing_hit
     persist_state: true
-    #player_variable: money_bags_hit
+    events_when_hit: money_bags_hit
     count_complete_value: 5
     starting_count: 0
     direction: up
@@ -225,7 +227,7 @@ variable_player:
     mb_shot_score:
       int: (current_player.money_bags_hit + 1) * 1000000
       action: set
-  money_bags_advertise_flashing_hit:
+  money_bags_hit:
     score: (current_player.money_bags_hit + 1) * 1000000
 
 shot_profiles:
@@ -233,7 +235,7 @@ shot_profiles:
     states:
       - name: flashing
         show: flash
-      - name: unlit
-        show: off
-    loop: yes
-    advance_on_hit: true
+    #   # - name: unlit
+    #   #   show: off
+    # loop: yes
+    # advance_on_hit: true
