@@ -6,11 +6,9 @@ mode:
   stop_events: music_awards_done
 
 # todo
-# What to do when the mode is over. No ball captured. Thinking hurry up. 7 seconds to get extra ball?
-
-# Scoring starts at 500k per shot. Both VUKs add 500k to the value. Value needs to reset when mode
-# is resumed. This is probably the hardest part of this mode. Can do in mode code, though 100% not sure how.
-# Possible to do in config??
+# Re think this mode: build a song to win an award. Mode starts with some intro text...maybe footage
+# of BnD at a studio. Player has to hit some shots to add layers to the song. Drums turn on at start,
+# then bass, then vocals. 
 
 event_player:
   mode_music_awards_started:
