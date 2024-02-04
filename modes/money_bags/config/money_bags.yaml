@@ -16,7 +16,7 @@ event_player:
   mode_money_bags_started:
     - mode_running|5s
     - fade_out_base_music
-#  logicblock_stop_adding_time_complete:
+  #logicblock_stop_adding_time_complete:
   logicblock_money_bags_counter_complete:  # brian added
     - money_bags_done|5s
     - money_bags_fade_out|3s
@@ -36,61 +36,64 @@ event_player:
     - disable_base_top_kicker_hold
 
 shots:
-    left_kicking_target:
-        switch: s_bottomkickingtarget
-        show_tokens:
-            light: l_left_longhorn
-        advance_events: mode_money_bags_started
-        disable_events: timer_money_bags_timer_complete
-    
-    spinner_to_vuk:
-      hit_events: seq_spinner_to_vuk_hit
-      disable_events: timer_money_bags_timer_complete
-      show_tokens:
-        light: l_center_longhorn
+  shot_left_kicking_target:
+    switch: s_bottomkickingtarget
+    show_tokens:
+      light: l_left_longhorn
+    profile: advertise
+    #advance_events: mode_money_bags_started
+    disable_events: timer_money_bags_timer_complete
+  
+  shot_spinner_to_vuk:
+    hit_events: seq_spinner_to_vuk_hit
+    disable_events: timer_money_bags_timer_complete
+    profile: advertise
+    show_tokens:
+      light: l_center_longhorn
 
 shot_groups:
-    money_bags: 
-        shots: left_kicking_target, spinner_to_vuk
-        # profile: advertise # <<< todo: Where did specifying a profile go? It was in 0.50, but gone after that.
-        disable_events: timer_money_bags_timer_complete
-        rotate_events: money_bags_advertise_flashing_hit
+  money_bags:
+    shots: shot_left_kicking_target, shot_spinner_to_vuk
+    #profile: advertise # <<< todo: Where did specifying a profile go? It was in 0.50, but gone after that.
+    rotate_left_events: shot_group_money_bags_flashing_hit
+    disable_events: timer_money_bags_timer_complete
+    rotate_events: money_bags_advertise_flashing_hit
 
 timers:
-    mb_intro_timer:
-        start_value: 3
-        end_value: 0
-        direction: down
-        control_events:
-            - action: start
-              event: mode_money_bags_started
-    money_bags_timer:
-        start_value: 30
-        end_value: 0
-        direction: down
-        tick_interval: 1.25s
-        control_events:
-            - action: start
-              event: timer_mb_intro_timer_complete
-            - action: reset
-              event: money_bags_advertise_flashing_hit
-            - action: stop
-              event: logicblock_money_bags_counter_complete
+  mb_intro_timer:
+    start_value: 3
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_money_bags_started
+  money_bags_timer:
+    start_value: 30
+    end_value: 0
+    direction: down
+    tick_interval: 1.25s
+    control_events:
+      - action: start
+        event: timer_mb_intro_timer_complete
+      - action: reset
+        event: money_bags_advertise_flashing_hit
+      - action: stop
+        event: logicblock_money_bags_counter_complete
 
 #logic_blocks:
 counters:
-    money_bags_counter:
-        enable_events: mode_money_bags_started
-        disable_events: mode_money_bags_ended
-        count_events: money_bags_advertise_flashing_hit
-        persist_state: true
-        #player_variable: money_bags_hit
-        count_complete_value: 5
-        starting_count: 0
-        direction: up
+  money_bags_counter:
+    enable_events: mode_money_bags_started
+    disable_events: mode_money_bags_ended
+    count_events: money_bags_advertise_flashing_hit
+    persist_state: true
+    #player_variable: money_bags_hit
+    count_complete_value: 5
+    starting_count: 0
+    direction: up
 
 slide_player:
-  mode_money_bags_starting:
+  mode_money_bags_started:
     mb_intro_dmd:
       target: dmd
     money_bags_stage:
@@ -136,7 +139,6 @@ slides:
         end_behavior: loop
         anchor_x: left
         x: left
-    target: dmd
   money_bags_stage:
     widgets:
       - type: video
@@ -227,12 +229,11 @@ variable_player:
     score: (current_player.money_bags_hit + 1) * 1000000
 
 shot_profiles:
-    advertise:
-      states:
-        - name: flashing
-          show: flash
-        - name: unlit
-          show: off
-      loop: yes
-      advance_on_hit: false
-
+  advertise:
+    states:
+      - name: flashing
+        show: flash
+      - name: unlit
+        show: off
+    loop: yes
+    advance_on_hit: true
