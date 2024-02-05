@@ -67,6 +67,45 @@ sound_system:
     sfx:
       simultaneous_sounds: 8
       volume: 1.0
+    ma_bass_track: # the bass track for the Music Awards mode
+      simultaneous_sounds: 1
+      volume: 0.0
+    ma_drums_track: # the drums track for the Music Awards mode
+      simultaneous_sounds: 1
+      volume: 1.0
+    ma_other_track: # the track for the rest of the music in the Music Awards mode
+      simultaneous_sounds: 1
+      volume: 0.0
+    ma_vocal_track:
+      simultaneous_sounds: 1
+      volume: 0.0
+      
+sounds:
+  ma_vocal_layer:
+    file: ma_vocal_layer.wav
+    streaming: false
+    track: ma_vocal_track
+    volume: 0.8
+    max_queue_time: None
+  ma_bass_layer:
+    file: ma_bass_layer.wav
+    streaming: false
+    track: ma_bass_track
+    volume: 0.8
+    max_queue_time: None
+  ma_other_layer:
+    file: ma_other_layer.wav
+    streaming: false
+    track: ma_other_track
+    volume: 0.8
+    max_queue_time: None
+  ma_drums_layer:
+    file: ma_drums_layer.wav
+    streaming: false
+    track: ma_drums_track
+    volume: 0.8
+    max_queue_time: None
+
 
 logging:
   file:
@@ -88,6 +127,13 @@ assets:
       track: sfx
     voice:
       track: voice
+    ma_bass_track:
+      track: ma_bass_track
+    ma_drums_track:
+      track: ma_drums_track
+    ma_other_track:
+      track: ma_other_track
+
   videos:
     default:
       load: on_demand
@@ -106,7 +152,7 @@ modes:
   - albums
   - attract
   - base
- # - bonus This breaks the game. Enable after fixed. See bonus_problem branch
+ # - bonus # This breaks the game. Enable after fixed. See bonus_problem branch
   - extra_ball_lit
   - high_score
   - hilo
@@ -1477,9 +1523,12 @@ widget_styles:
   tall_title:
     font_name: big_noodle_titling
     font_size: 20
+    number_grouping: true
   huge:
     font_name: big_noodle_titling
     font_size: 20
+    number_grouping: true
+
 
 #                                              88           88                           
 #                                              88           ""                           
