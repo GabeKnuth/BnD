@@ -60,19 +60,19 @@ sound_system:
   tracks:
     music:
       simultaneous_sounds: 1
-      volume: .8
+      volume: 0.8
     voice:
       simultaneous_sounds: 1
-      volume: 1.0
+      volume: 0.8
     sfx:
       simultaneous_sounds: 8
-      volume: 1.0
+      volume: 0.8
     ma_bass_track: # the bass track for the Music Awards mode
       simultaneous_sounds: 1
       volume: 0.0
     ma_drums_track: # the drums track for the Music Awards mode
       simultaneous_sounds: 1
-      volume: 1.0
+      volume: 0.8
     ma_other_track: # the track for the rest of the music in the Music Awards mode
       simultaneous_sounds: 1
       volume: 0.0

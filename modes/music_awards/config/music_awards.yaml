@@ -52,15 +52,15 @@ track_player:
   add_bass:
     ma_bass_track:
       action: set_volume
-      volume: 1.0
+      volume: 0.8
   add_other:
     ma_other_track: 
       action: set_volume
-      volume: 1.0
+      volume: 0.8
   add_vocals:
     ma_vocal_track:
       action: set_volume
-      volume: 1.0
+      volume: 0.8
 
 
 #Need a timer that starts at 10 secs. Need to add 5 secs per successful shot. Max 10 secs, though.
