@@ -1,28 +1,14 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+
 mode:
   priority: 500
   start_events: start_music_awards_mode
   stop_events: music_awards_fail, mode_ma_two_ball_stopping, ball_ending
 
-# todo
-# Re think this mode: build a song to win an award. Mode starts with some intro text...maybe footage
-# of BnD at a studio. Player has to hit some shots to add layers to the song. Drums turn on at start,
-# then bass, then vocals. 
-
 event_player:
   mode_music_awards_started:
     - mode_running|5s
     - fade_out_base_music
-  #music_awards_stop_adding_time:  # success
-    #- music_awards_done|5s
-    #- music_awards_fade_out|3s
-    #- music_awards_success|1s
-    #- fade_in_base_music|4s
-  #timer_music_awards_timer_complete:  # fail
-    #- music_awards_done|5s
-    #- music_awards_fade_out|3s
-    #- music_awards_fail|1s
   mode_music_awards_stopping:
     - fade_in_base_music
     - enable_base_left_vuk_hold
@@ -64,40 +50,28 @@ track_player:
       action: set_volume
       volume: 0.8
 
-
-#Need a timer that starts at 10 secs. Need to add 5 secs per successful shot. Max 10 secs, though.
-
-# /// This timer is a boilerplate mode timer for this game. Specifically, it pauses the timer
-# /// the ball goes into the subway and re-starts it when the ball ejects.
-
 timers:
-    music_awards_timer:
-        start_value: 20
-        max_value: 20
-        tick_interval: 1.25s
-        direction: down
-        control_events:
-          - event: timer_ma_intro_timer_complete
-            action: start
-          - event: add_time
-            action: add
-            value: 8
-          - event: s_subwayopto_active
-            action: stop
-          - event: balldevice_bd_lower_vuk_ball_eject_success
-            action: start
-    ma_intro_timer:
-        start_value: 5
-        direction: down
-        control_events:
-          - event: mode_music_awards_started
-            action: start
-
-# Two shots: Music Awards are made through either the left orbit or right ramp. Both shots are lit all the time.
-# We won't actually create shots for this since we don't need them. 
-
-# Each time a shot is hit, the logic block fires an add_time event. We'll hook that with the timer above, as well
-# as with the show player to play a wipe of lights.
+  music_awards_timer:
+    start_value: 20
+    max_value: 20
+    tick_interval: 1.25s
+    direction: down
+    control_events:
+      - event: timer_ma_intro_timer_complete
+        action: start
+      - event: add_time
+        action: add
+        value: 8
+      - event: s_subwayopto_active
+        action: stop
+      - event: balldevice_bd_lower_vuk_ball_eject_success
+        action: start
+  ma_intro_timer:
+    start_value: 5
+    direction: down
+    control_events:
+      - event: mode_music_awards_started
+        action: start
 
 shows:
   ma_advertise_show_left:
@@ -155,61 +129,64 @@ shows:
       slides:
         ma_stage_video:
           widgets:
-          - type: video
-            video: ma_12many_full_no_audio
-            end_behavior: stop
+            - type: video
+              video: ma_12many_full_no_audio
+              end_behavior: stop
           target: stage
       sounds:
         ma_bass_layer:
           action: play
         ma_other_layer:
-          action: play 
-        ma_drums_layer: 
+          action: play
+        ma_drums_layer:
           action: play
         ma_vocal_layer:
           action: play
     - duration: 1
       events:
-      - play_real_video
+        - play_real_video
 
 show_player:
-    mode_music_awards_started:
-        ma_advertise_show_right:
-            loops: -1
-            show_tokens:
-                led1: l_right_music_award
-                led2: l_ramp_jackpot
-                led3: l_south_america
-        ma_advertise_show_left:
-            loops: -1
-            show_tokens:
-                led1: l_advance_wizard
-                led2: l_north_america
-                led3: l_left_music_award
-        ma_stage_show:
-            loops: 1
-    ma_shot_made:
-        australia_lights:
-            loops: 0
-            speed: 2
-    mode_music_awards_stopping:
-        ma_stage_show:
-          action: stop  
+  mode_music_awards_started:
+    ma_advertise_show_right:
+      loops: -1
+      show_tokens:
+        led1: l_right_music_award
+        led2: l_ramp_jackpot
+        led3: l_south_america
+    ma_advertise_show_left:
+      loops: -1
+      show_tokens:
+        led1: l_advance_wizard
+        led2: l_north_america
+        led3: l_left_music_award
+    ma_stage_show:
+      loops: 1
+  ma_shot_made:
+    australia_lights:
+      loops: 0
+      speed: 2
+  mode_music_awards_stopping:
+    ma_stage_show:
+      action: stop
 
-#Need a counter to count shots made. Mode is complete at 6. Need to figure out what happens when the mode is over.
+# Two shots: Music Awards are made through either the left orbit or right ramp. Both shots are lit all the time.
+# We won't actually create shots for this since we don't need them. 
 
-#logic_blocks:
+# Each time a shot is hit, the logic block fires an add_time event. We'll hook that with the timer above, as well
+# as with the show player to play a wipe of lights.
+
+# Need a counter to count shots made. Mode is complete at 6. Need to figure out what happens when the mode is over.
+
 counters:
-    ma_shot_counter:
-        count_events: s_rightrampopto_active, s_leftorbit_active
-        events_when_hit: ma_shot_made
-        count_complete_value: 3
-        events_when_complete: music_awards_stop_adding_time, start_ma_two_ball
-        enable_events: mode_music_awards_started
-        disable_events: counter_ma_shot_counter_complete
-        multiple_hit_window: 500ms
-
-# This is where we set up the slides that play the different dots and stage slides during the mode.
+  ma_shot_counter:
+    count_events: s_rightrampopto_active, s_leftorbit_active
+    events_when_hit: ma_shot_made
+    count_complete_value: 3
+    events_when_complete: music_awards_stop_adding_time, start_ma_two_ball
+    enable_events: mode_music_awards_started
+    disable_events: counter_ma_shot_counter_complete
+    multiple_hit_window: 500ms
 
 slide_player:
   play_real_video:
@@ -230,20 +207,20 @@ slides:
       - type: text
         text: Build a hit song
         anchor_y: top
-        style: small #dmd_small
+        style: small 
         y: top-1
         anchor_x: right
         x: right-1
       - type: text
         text: to win a
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: center
         anchor_x: right
         x: right-1
       - type: text
         text: Music Award
-        style: big #dmd_big
+        style: big 
         anchor_y: bottom
         y: bottom+1
         anchor_x: right
@@ -269,7 +246,7 @@ slides:
       - type: text
         text: Time left (music_awards_music_awards_timer_tick)
         anchor_y: bottom
-        style: small #dmd_small
+        style: small 
         y: bottom+1
         anchor_x: right
         x: right-1
@@ -282,9 +259,9 @@ slides:
         y: middle
         style: tall_title
       - type: text
-        text: Each hit = 500k #todo this needs to show whatever the actual score is that we calculate as the mode progresses
+        text: Each hit = 500k
         anchor_y: top
-        style: small #dmd_small
+        style: small 
         y: top-1
         anchor_x: right
         x: right-1
@@ -299,7 +276,7 @@ slides:
       - type: text
         text: Music Awards
         anchor_y: top
-        style: medium #dmd_med
+        style: medium 
         y: top-4
         anchor_x: right
         x: right-9
@@ -313,7 +290,6 @@ slides:
         y: bottom+1
         style: tall_title
 
-#scoring: #leaving for reference
 variable_player:
   mode_music_awards_started:
     song_layer:
@@ -330,7 +306,3 @@ variable_player:
     score: 
       int: 5000000
       action: add
-     
-
-
-
