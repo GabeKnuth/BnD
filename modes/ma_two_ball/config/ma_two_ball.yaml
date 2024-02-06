@@ -1,0 +1,331 @@
+#config_version=5
+
+mode:
+  priority: 600
+  start_events: start_ma_two_ball
+  stop_events: multiball_ma_two_ball_ended
+
+event_player:
+  mode_ma_two_ball_started:
+    - stop_quarters_mode
+    - stop_mission_select
+  mode_ma_two_ball_stopping:
+    - fade_in_base_music
+    - start_quarters_mode
+    - enable_base_left_vuk_hold
+  s_rightrampopto_active:
+    - ma_jackpot
+  s_leftorbit_active:
+    - ma_jackpot
+
+multiballs:
+  ma_two_ball:
+    ball_count: 2
+    shoot_again: 5s
+    start_events: mode_ma_two_ball_started
+
+track_player:
+  music_awards_quick_fade_out:
+    ma_bass_track:
+      action: set_volume
+      volume: 0.2
+      fade: .5s
+    ma_drums_track:
+      action: set_volume
+      volume: 0.2
+      fade: .5s
+    ma_vocal_track:
+      action: set_volume
+      volume: 0.2
+      fade: .5s
+    ma_other_track:
+      action: set_volume
+      volume: 0.2
+      fade: .5s
+  music_awards_quick_fade_in:
+    ma_bass_track:
+      action: set_volume
+      volume: 1.0
+      fade: .5s
+    ma_drums_track:
+      action: set_volume
+      volume: 1.0
+      fade: .5s
+    ma_vocal_track:
+      action: set_volume
+      volume: 1.0
+      fade: .5s
+    ma_other_track:
+      action: set_volume
+      volume: 1.0
+      fade: .5s
+
+slide_player:
+  mode_ma_two_ball_started:
+    ma2b_dmd_intro:
+      expire: 3s
+      target: dmd
+
+random_event_player:
+  ma_jackpot:
+    force_all: true
+    events:
+      - show_ma_award1
+      - show_ma_award2
+      - show_ma_award3
+      - show_ma_award4
+      - show_ma_award5
+      - show_ma_award6
+
+slides:
+  award_1:
+    widgets:
+      - type: video
+        video: ma_award1
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_2:
+    widgets:
+      - type: video
+        video: ma_award2
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_3:
+    widgets:
+      - type: video
+        video: ma_award3
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_4:
+    widgets:
+      - type: video
+        video: ma_award4
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_5:
+    widgets:
+      - type: video
+        video: ma_award5
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  award_6:
+    widgets:
+      - type: video
+        video: ma_award6
+        end_behavior: stop
+        anchor_x: left
+        x: left
+  ma2b_dmd_shoot_loop:
+    widgets:
+      - type: text
+        text: (score)
+        anchor_y: top
+        style: huge #dmd_huge
+        number_grouping: true
+        y: top-2
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: Hit Music Award Shots!
+        style: small #dmd_small
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: video
+        video: ma_grammy_loop_3
+        anchor_x: left
+        x: left
+        end_behavior: loop
+  ma2b_dmd_shoot_ramp:
+    widgets:
+      - type: text
+        text: (score)
+        anchor_y: top
+        style: huge #dmd_huge
+        number_grouping: true
+        y: top-2
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: SHOOT RIGHT RAMP!
+        style: small #dmd_small
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: video
+        video: ma2b_jukebox
+        anchor_x: left
+        x: left
+        end_behavior: loop
+  ma2b_dmd_intro:
+    widgets:
+      - type: text
+        text: MULTIBALL
+        style: huge #dmd_huge
+        font_size: 0
+        color: yellow
+        animations:
+          show_slide:
+            - property: font_size
+              value: 60
+              duration: .3s
+            - property: font_size
+              value: 30
+              duration: .1s
+            - property: font_size
+              value: 60
+              duration: .2s
+            - property: font_size
+              value: 40
+              duration: .1s
+            - property: opacity
+              value: 0
+              duration: .3s
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
+        animations:
+          show_slide:
+            - property: opacity
+              value: 100
+              duration: .7s
+            - property: opacity
+              value: 0
+              duration: .3s
+      - type: text
+        text: "MUSIC AWARDS MULTIBALL!"
+        anchor_y: top
+        style: big #dmd_big
+        y: top-1
+        anchor_x: right
+        x: right-1
+
+  ball_saved:
+    widgets:
+      - type: text
+        text: BALL SAVED!
+        expire: 2s
+        style: huge #dmd_huge
+
+show_player:
+  mode_ma_two_ball_started:
+    flash_jukebox:
+      action: play
+      loops: 0
+  show_ma_award1:
+    ma_award1:
+      action: play
+      loops: 0
+  show_ma_award2:
+    ma_award2:
+      action: play
+      loops: 0
+  show_ma_award3:
+    ma_award3:
+      action: play
+      loops: 0
+  show_ma_award4:
+    ma_award4:
+      action: play
+      loops: 0
+  show_ma_award5:
+    ma_award5:
+      action: play
+      loops: 0
+  show_ma_award6:
+    ma_award6:
+      action: play
+      loops: 0
+
+shows:
+  ma_award1:
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_out
+    - duration: 2600ms
+      slides:
+        award_1:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_in
+  ma_award2:
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_out
+    - duration: 6300ms
+      slides:
+        award_2:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_in
+  ma_award3:
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_out
+    - duration: 4430ms
+      slides:
+        award_3:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_in
+  ma_award4:
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_out
+    - duration: 3570ms
+      slides:
+        award_4:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_in
+  ma_award5:
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_out
+    - duration: 6000ms
+      slides:
+        award_5:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_in
+  ma_award6:
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_out
+    - duration: 4000ms
+      slides:
+        award_6:
+          target: stage
+          priority: 501
+          transition_out: fade
+    - duration: 200ms
+      events:
+        - music_awards_quick_fade_in
+
+#scoring: #leaving for reference
+variable_player:
+  ma_jackpot:
+    score: 100000

@@ -58,12 +58,6 @@ variable_player:
 # a ball inside or in the back. If it traps inside, it will likely break the servo
 
 random_event_player:
-    s_subwayopto_active:
-        - jukebox_up
-        - jukebox_down
-    shot_jukebox_loop_hit:
-        - jukebox_up
-        - jukebox_down
     play_jukebox_video:
       force_all: true
       events:
@@ -76,6 +70,13 @@ random_event_player:
         - jb_louisiana_woman
         - jb_rhinestone_cowboy
         - jb_stand_by_your_man
+    s_subwayopto_active:
+        - jukebox_up
+        - jukebox_down
+    shot_jukebox_loop_hit:
+        - jukebox_up
+        - jukebox_down
+
 
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
 # events to change videos, as well as to fire off the complete mode logic

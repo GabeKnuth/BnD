@@ -3,7 +3,7 @@
 mode:
   priority: 500
   start_events: start_music_awards_mode
-  stop_events: music_awards_done_BLOCK
+  stop_events: music_awards_fail, mode_ma_two_ball_stopping
 
 # todo
 # Re think this mode: build a song to win an award. Mode starts with some intro text...maybe footage
@@ -19,10 +19,10 @@ event_player:
     #- music_awards_fade_out|3s
     #- music_awards_success|1s
     #- fade_in_base_music|4s
-  timer_music_awards_timer_complete:  # fail
+  #timer_music_awards_timer_complete:  # fail
     #- music_awards_done|5s
     #- music_awards_fade_out|3s
-    - music_awards_fail|1s
+    #- music_awards_fail|1s
   mode_music_awards_stopping:
     - fade_in_base_music
     - enable_base_left_vuk_hold
@@ -37,16 +37,16 @@ event_player:
   player_song_layer{value==2}: add_other
   player_song_layer{value==3}: add_vocals
 
-sound_player:
-  mode_music_awards_started: 
-    ma_bass_layer:
-      action: play
-    ma_other_layer:
-      action: play
-    ma_drums_layer:
-      action: play
-    ma_vocal_layer:
-      action: play
+# sound_player:
+#   mode_music_awards_started: 
+#     ma_bass_layer:
+#       action: play
+#     ma_other_layer:
+#       action: play
+#     ma_drums_layer:
+#       action: play
+#     ma_vocal_layer:
+#       action: play
 
 track_player:
   add_bass:
@@ -148,6 +148,27 @@ shows:
         (led1): off
         (led2): off
         (led3): off
+  ma_stage_show:
+    - duration: 179s
+      slides:
+        ma_stage_video:
+          widgets:
+          - type: video
+            video: ma_12many_full_no_audio
+            end_behavior: stop
+          target: stage
+      sounds:
+        ma_bass_layer:
+          action: play
+        ma_other_layer:
+          action: play 
+        ma_drums_layer: 
+          action: play
+        ma_vocal_layer:
+          action: play
+    - duration: 1
+      events:
+      - play_real_video
 
 show_player:
     mode_music_awards_started:
@@ -163,10 +184,13 @@ show_player:
                 led1: l_advance_wizard
                 led2: l_north_america
                 led3: l_left_music_award
+        ma_stage_show:
+            loops: 1
     ma_shot_made:
         australia_lights:
             loops: 0
             speed: 2
+    
 
 
 #Need a counter to count shots made. Mode is complete at 6. Need to figure out what happens when the mode is over.
@@ -177,7 +201,7 @@ counters:
         count_events: s_rightrampopto_active, s_leftorbit_active
         events_when_hit: ma_shot_made
         count_complete_value: 3
-        events_when_complete: music_awards_stop_adding_time
+        events_when_complete: music_awards_stop_adding_time, start_ma_two_ball
         enable_events: mode_music_awards_started
         disable_events: counter_ma_shot_counter_complete
         multiple_hit_window: 500ms
@@ -186,8 +210,8 @@ counters:
 # This is where we set up the slides that play the different dots and stage slides during the mode.
 
 slide_player:
-  mode_music_awards_started:
-    music_awards_stage:
+  play_real_video:
+    music_awards_full_audio_stage:
       target: stage
     ma_intro_dmd:
       target: dmd
@@ -228,10 +252,10 @@ slides:
         anchor_x: left
         x: left
     target: dmd
-  music_awards_stage:
+  music_awards_full_audio_stage:
     widgets:
       - type: video
-        video: ma_12many_full_no_audio
+        video: ma_12many_full
         end_behavior: loop
   music_awards_dmd:
     widgets:
