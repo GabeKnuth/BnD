@@ -25,7 +25,7 @@ hardware:
   rgb_dmd: smartmatrix
 
 fast:
-  ports: /dev/ttyUSB5, /dev/ttyUSB6
+  ports: /dev/FASTnet, /dev/FASTrgb
   rgb_buffer: 10
   hardware_led_fade_time: 65ms
   console_log: full
@@ -33,7 +33,7 @@ fast:
 smartmatrix:
   smartmatrix_1:
     baud: 3400000
-    port: /dev/ttyUSB0
+    port: /dev/smartmatrix
 
 light_settings:
   default_fade_ms: 100
