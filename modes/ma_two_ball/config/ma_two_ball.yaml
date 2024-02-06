@@ -120,50 +120,6 @@ slides:
         end_behavior: stop
         anchor_x: left
         x: left
-  ma2b_dmd_shoot_loop:
-    widgets:
-      - type: text
-        text: (score)
-        anchor_y: top
-        style: huge #dmd_huge
-        number_grouping: true
-        y: top-2
-        anchor_x: right
-        x: right-1
-      - type: text
-        text: Hit Music Award Shots!
-        style: small #dmd_small
-        anchor_y: bottom
-        y: bottom+1
-        anchor_x: right
-        x: right-1
-      - type: video
-        video: ma_grammy_loop_3
-        anchor_x: left
-        x: left
-        end_behavior: loop
-  ma2b_dmd_shoot_ramp:
-    widgets:
-      - type: text
-        text: (score)
-        anchor_y: top
-        style: huge #dmd_huge
-        number_grouping: true
-        y: top-2
-        anchor_x: right
-        x: right-1
-      - type: text
-        text: SHOOT RIGHT RAMP!
-        style: small #dmd_small
-        anchor_y: bottom
-        y: bottom+1
-        anchor_x: right
-        x: right-1
-      - type: video
-        video: ma2b_jukebox
-        anchor_x: left
-        x: left
-        end_behavior: loop
   ma2b_dmd_intro:
     widgets:
       - type: text
