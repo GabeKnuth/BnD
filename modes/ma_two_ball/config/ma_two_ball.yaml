@@ -9,6 +9,7 @@ event_player:
   mode_ma_two_ball_started:
     - stop_quarters_mode
     - stop_mission_select
+    - show_default_slide|3s
   mode_ma_two_ball_stopping:
     - fade_in_base_music
     - start_quarters_mode
@@ -63,15 +64,21 @@ track_player:
 slide_player:
   mode_ma_two_ball_started:
     ma2b_dmd_intro:
-      expire: 3s
       target: dmd
     music_awards_dmd:
       action: remove
+  show_default_slide:
     ma_two_ball_dmd:
       target: dmd
+    ma2b_dmd_intro:
+      action: remove
+  ma_jackpot:
+    ma_jackpot_dmd:
+      target: dmd
+      expire: 1.5s
 
 random_event_player:
-  ma_jackpot:
+  play_award_video:
     force_all: true
     events:
       - show_ma_award1
@@ -80,6 +87,13 @@ random_event_player:
       - show_ma_award4
       - show_ma_award5
       - show_ma_award6
+
+sound_player:
+  ma_jackpot:
+    jackpots:
+      action: play
+      loops: 0
+      events_when_played: play_award_video
 
 slides:
   award_1:
@@ -174,7 +188,7 @@ slides:
         y: middle
         style: tall_title
       - type: text
-        text: Each hit = 500k
+        text: Each hit = 100k
         anchor_y: top
         style: small 
         y: top-1
@@ -187,6 +201,28 @@ slides:
         text: BALL SAVED!
         expire: 2s
         style: huge #dmd_huge
+
+  ma_jackpot_dmd:
+    widgets:
+      - type: text
+        text: JACKPOT!!!
+        style: huge #dmd_huge
+        font_size: 0
+        color: red
+        animations:
+          show_slide:
+            - property: font_size
+              value: 60
+              duration: .3s
+            - property: font_size
+              value: 30
+              duration: .1s
+            - property: font_size
+              value: 60
+              duration: .2s
+            - property: font_size
+              value: 40
+              duration: .1s
 
 show_player:
   ma_jackpot:

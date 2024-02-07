@@ -63,7 +63,7 @@ sound_system:
       volume: 0.8
     voice:
       simultaneous_sounds: 1
-      volume: 0.8
+      volume: 1.0
     sfx:
       simultaneous_sounds: 8
       volume: 0.8

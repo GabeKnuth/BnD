@@ -162,6 +162,19 @@ sound_pools:
       - drum14
       - drum15
       - drum16
+  jackpots:
+    type: random
+    track: voice
+    sounds:
+      - jackpot
+      - jackpot2
+      - jackpot3
+      - jackpot4
+      - jackpot5
+      - jackpot6
+      - jackpot7
+
+      
 
 
 #                                                             88     
