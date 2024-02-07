@@ -65,6 +65,10 @@ slide_player:
     ma2b_dmd_intro:
       expire: 3s
       target: dmd
+    music_awards_dmd:
+      action: remove
+    ma_two_ball_dmd:
+      target: dmd
 
 random_event_player:
   ma_jackpot:
@@ -123,43 +127,56 @@ slides:
   ma2b_dmd_intro:
     widgets:
       - type: text
-        text: MULTIBALL
-        style: huge #dmd_huge
-        font_size: 0
-        color: yellow
-        animations:
-          show_slide:
-            - property: font_size
-              value: 60
-              duration: .3s
-            - property: font_size
-              value: 30
-              duration: .1s
-            - property: font_size
-              value: 60
-              duration: .2s
-            - property: font_size
-              value: 40
-              duration: .1s
-            - property: opacity
-              value: 0
-              duration: .3s
-      - type: rectangle
-        width: 128
-        height: 32
-        color: black
-        animations:
-          show_slide:
-            - property: opacity
-              value: 100
-              duration: .7s
-            - property: opacity
-              value: 0
-              duration: .3s
-      - type: text
-        text: "MUSIC AWARDS MULTIBALL!"
+        text: "MUSIC AWARDS"
         anchor_y: top
         style: big #dmd_big
+        y: top-1
+        anchor_x: left
+        x: left+22
+      - type: text
+        text: MULTIBALL
+        style: big #dmd_huge
+        font_size: 0
+        color: red
+        y: bottom-3
+        x: left+65
+        anchor_y: bottom
+        animations:
+          show_slide:
+            - property: font_size
+              value: 10
+              duration: .1s
+            - property: font_size
+              value: 40
+              duration: .2s
+            - property: font_size
+              value: 10
+              duration: .2s
+            - property: font_size
+              value: 20
+              duration: .1s
+            - property: opacity
+              value: 1
+              duration: .3s
+  ma_two_ball_dmd:
+    widgets:
+      - type: video
+        video: ma_grammy_loop_3
+        end_behavior: loop
+        anchor_x: left
+        x: left
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-1
+        y: middle
+        style: tall_title
+      - type: text
+        text: Each hit = 500k
+        anchor_y: top
+        style: small 
         y: top-1
         anchor_x: right
         x: right-1
@@ -172,6 +189,11 @@ slides:
         style: huge #dmd_huge
 
 show_player:
+  ma_jackpot:
+    yellow_radar:
+      action: play
+      loops: 1
+      speed: 60
   mode_ma_two_ball_started:
     flash_jukebox:
       action: play

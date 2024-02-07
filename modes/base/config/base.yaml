@@ -808,7 +808,7 @@ show_player:
       key: mute_left_hole_lights
       show_tokens:
         lights: l_hi_lo, l_begin_round, l_mystery
-      priority: 1000000
+      priority: 499 # modes run at 500, so this will stop anything under the mode from showing up
   enable_base_left_vuk_hold:
     mute_left_hole_lights: stop
   disable_base_top_kicker_hold:

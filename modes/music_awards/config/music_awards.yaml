@@ -8,6 +8,8 @@ mode:
 event_player:
   mode_music_awards_started:
     - mode_running|5s
+    - play_intro_slide
+    - play_intro_slide2|2.5s
     - fade_out_base_music
   mode_music_awards_stopping:
     - fade_in_base_music
@@ -192,7 +194,11 @@ slide_player:
   play_real_video:
     music_awards_full_audio_stage:
       target: stage
+  play_intro_slide:
     ma_intro_dmd:
+      target: dmd
+  play_intro_slide2:
+    ma_intro_dmd2:
       target: dmd
   mode_running:
     music_awards_dmd:
@@ -201,28 +207,58 @@ slide_player:
     music_awards_complete:
       target: dmd
 
+
 slides:
   ma_intro_dmd:
     widgets:
       - type: text
-        text: Build a hit song
+        text: Ramp and Left Orbit
         anchor_y: top
         style: small 
-        y: top-1
+        y: top-17
         anchor_x: right
         x: right-1
       - type: text
-        text: to win a
+        text: add tracks to song
         style: small 
         anchor_y: bottom
-        y: center
+        y: top-28
         anchor_x: right
         x: right-1
       - type: text
-        text: Music Award
+        text: Music Awards
         style: big 
+        anchor_y: top
+        y: top-3
+        anchor_x: right
+        x: right-1
+      - type: video
+        video: ma_grammy_loop_3
+        end_behavior: loop
+        anchor_x: left
+        x: left
+    target: dmd
+  ma_intro_dmd2:
+    widgets:
+      - type: text
+        text: Complete song for 5M
+        anchor_y: top
+        style: small 
+        y: top-17
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: and multiball!
+        style: small 
         anchor_y: bottom
-        y: bottom+1
+        y: top-28
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: Music Awards
+        style: big 
+        anchor_y: top
+        y: top-3
         anchor_x: right
         x: right-1
       - type: video

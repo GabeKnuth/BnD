@@ -64,7 +64,7 @@ slides:
         text: BALL (ball)
         style: small #dmd_small
         anchor_y: bottom
-        y: 0
+        y: bottom+1
         anchor_x: left
         x: left
       - type: text
@@ -73,7 +73,7 @@ slides:
         min_digits: 2
         number_grouping: true
         anchor_y: bottom
-        y: 0
+        y: bottom+1
         anchor_x: right
         x: right
     target: dmd

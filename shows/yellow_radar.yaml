@@ -1,0 +1,215 @@
+#show_version=5
+- time: 0
+  lights:
+    l_again: 'FFFD00'
+    l_double_platinum: 'FFFD00'
+    l_gi_center_lane: 'FFFD00'
+    l_jukebox_insert: 'FFFD00'
+    l_left_lane_spot_quarter: 'FFFD00'
+    l_money_bags: 'FFFD00'
+    l_music_awards: 'FFFD00'
+    l_play_poker: 'FFFD00'
+    l_quintuple_platinum: 'FFFD00'
+    l_right_lane_spot_quarter: 'FFFD00'
+    l_shoot: 'FFFD00'
+    l_world_tour: '0A0A00'
+    
+- time: '+1'
+  lights:
+    l_left_lane_special: 'FFFD00'
+    l_single_platinum: 'FFFD00'
+    l_world_tour: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_begin_round: 'FFFD00'
+    l_gold: 'FFFD00'
+    l_hi_lo: 'FFFD00'
+    l_mystery: 'FFFD00'
+    l_play_poker: '000000'
+    l_quintuple_platinum: '5E5D00'
+    l_right_lane_spot_quarter: '000000'
+    l_silver: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_quintuple_platinum: '000000'
+    
+- time: '+1'
+  lights:
+    l_again: '000000'
+    l_jukebox_insert: '000000'
+    l_lower_left_flasher: 'FFFD00'
+    l_wizard_shot: 'FFFD00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_advance_wizard: 'E2E100'
+    l_double_platinum: 'C3C200'
+    l_left_longhorn: 'FFFD00'
+    l_shoot: '000000'
+    
+- time: '+1'
+  lights:
+    l_advance_wizard: 'FFFD00'
+    l_double_platinum: '000000'
+    l_gi_center_lane: '000000'
+    l_left_lane_spot_quarter: '000000'
+    l_left_music_award: '6D6C00'
+    l_music_awards: '000000'
+    l_north_america: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_double_jackpot: 'FFFD00'
+    l_left_music_award: 'FFFD00'
+    l_managers_choice: 'FFFD00'
+    l_money_bags: '000000'
+    
+- time: '+1'
+  lights:
+    l_jukebox_left: 'FFFD00'
+    l_left_lane_special: '000000'
+    l_single_platinum: '000000'
+    l_world_tour: '000000'
+    
+- time: '+1'
+  lights:
+    l_begin_round: '000000'
+    l_gold: '000000'
+    l_hi_lo: '000000'
+    l_jukebox_right: 'FFFD00'
+    l_mystery: '000000'
+    l_silver: '000000'
+    
+- time: '+1'
+  lights:
+    l_center_lock: 'FFFD00'
+    l_center_longhorn: 'FFFD00'
+    l_europe: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_lower_left_flasher: '000000'
+    l_wizard_shot: '000000'
+    
+- time: '+1'
+  lights:
+    l_australia: '4B4A00'
+    l_collect_wizard: 'FFFD00'
+    l_left_pop: 'FFFD00'
+    l_right_ramp_flasher: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_australia: 'FFFD00'
+    l_bottom_pop: 'FFFD00'
+    l_extra_ball: 'FFFD00'
+    l_left_longhorn: '000000'
+    l_right_pop: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_advance_wizard: '000000'
+    l_north_america: '000000'
+    
+- time: '+1'
+  lights:
+    l_double_jackpot: '000000'
+    l_left_music_award: '000000'
+    l_managers_choice: '000000'
+    l_ramp_fire: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_jukebox_left: '000000'
+    
+- time: '+1'
+  lights:
+    l_jukebox_right: '000000'
+    l_top_quarter: '171700'
+    
+- time: '+1'
+  lights:
+    l_center_lock: '000000'
+    l_center_longhorn: '000000'
+    l_europe: '000000'
+    l_lower_right_flasher: 'FFFD00'
+    l_south_america: '0F0F00'
+    l_top_quarter: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_south_america: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_australia: 'FEFC00'
+    l_collect_wizard: '000000'
+    l_left_pop: '000000'
+    l_middle_quarter: '0D0D00'
+    l_ramp_jackpot: 'E7E500'
+    l_right_ramp_flasher: '060500'
+    
+- time: '+1'
+  lights:
+    l_australia: '000000'
+    l_bottom_pop: '121200'
+    l_bottom_quarter: '353500'
+    l_extra_ball: '000000'
+    l_middle_quarter: 'FFFD00'
+    l_ramp_jackpot: 'FFFD00'
+    l_right_pop: '000000'
+    l_right_ramp_flasher: '000000'
+    
+- time: '+1'
+  lights:
+    l_bottom_pop: '000000'
+    l_bottom_quarter: 'FFFD00'
+    l_right_lane_special: 'FFFD00'
+    l_right_music_award: 'B8B700'
+    
+- time: '+1'
+  lights:
+    l_ramp_fire: '000000'
+    l_right_music_award: 'FFFD00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_play_poker: 'FFFD00'
+    l_quintuple_platinum: '303000'
+    l_right_lane_spot_quarter: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    l_lower_right_flasher: '5D5C00'
+    l_quintuple_platinum: 'FFFD00'
+    l_top_quarter: '000000'
+    
+- time: '+1'
+  lights:
+    l_again: 'FFFD00'
+    l_jukebox_insert: 'EBEA00'
+    l_lower_right_flasher: '000000'
+    l_south_america: '000000'
+    
+- time: '+1'
+  lights:
+    l_jukebox_insert: 'FFFD00'
+    l_ramp_jackpot: '888700'
+    
+- time: '+1'
+  lights:
+    l_double_platinum: '020200'
+    l_middle_quarter: '000000'
+    l_ramp_jackpot: '000000'
+    l_shoot: 'FFFD00'
+    
