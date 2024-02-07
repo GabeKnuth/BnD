@@ -67,8 +67,8 @@ event_player:
 achievements:
   wt_north_america:
     show_tokens:
-      led: l_north_america
-    show_when_started: flash
+      light: l_north_america
+    show_when_started: flash_red
     show_when_completed: on
     enable_events: enable_north_america
     start_events: enable_north_america
@@ -82,8 +82,8 @@ achievements:
     complete_events: seq_shot_spinner_to_vuk_hit
     events_when_completed: wt_europe_complete, add_time
     show_tokens:
-      led: l_europe
-    show_when_started: flash
+      light: l_europe
+    show_when_started: flash_red
     show_when_completed: on
     restart_after_stop_possible: true
 
@@ -93,8 +93,8 @@ achievements:
     complete_events: s_rightrampopto_active
     events_when_completed: wt_south_america_complete, add_time
     show_tokens:
-      led: l_south_america
-    show_when_started: flash
+      light: l_south_america
+    show_when_started: flash_red
     show_when_completed: on
     restart_after_stop_possible: true
 
@@ -104,21 +104,10 @@ achievements:
     complete_events: shot_pops_to_vuk_hit
     events_when_completed: wt_australia_complete
     show_tokens:
-      led: l_australia
-    show_when_started: flash
+      light: l_australia
+    show_when_started: flash_red
     show_when_completed: on
     restart_after_stop_possible: true
-
-shot_profiles:
-    wt_advertise:
-      states:
-        - name: flashing
-          show: flash
-        - name: complete
-          show: on
-      loop: no
-      advance_on_hit: yes
-      block: yes
 
 ball_holds:
   wt_complete:
@@ -162,6 +151,16 @@ timers:
 #
 # Each shot has a specific video. When the player hits the Australia shot, it plays the
 # wt_australia video, etc...
+shows:
+  flash_red:
+    - time: 0
+      lights:
+        (light): red
+    - time: +1
+      lights:
+        (light): off
+    - time: +1
+
 
 show_player:
   wt_south_america_complete:

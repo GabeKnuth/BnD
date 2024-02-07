@@ -5,6 +5,23 @@ mode:
   start_events: start_ma_two_ball
   stop_events: multiball_ma_two_ball_ended
 
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 event_player:
   mode_ma_two_ball_started:
     - stop_quarters_mode
@@ -19,11 +36,37 @@ event_player:
   s_leftorbit_active:
     - ma_jackpot
 
+#                                   88           88  88                       88  88             
+#                                   88    ,d     ""  88                       88  88             
+#                                   88    88         88                       88  88             
+#  88,dPYba,,adPYba,   88       88  88  MM88MMM  88  88,dPPYba,   ,adPPYYba,  88  88  ,adPPYba,  
+#  88P'   "88"    "8a  88       88  88    88     88  88P'    "8a  ""     `Y8  88  88  I8[    ""  
+#  88      88      88  88       88  88    88     88  88       d8  ,adPPPPP88  88  88   `"Y8ba,   
+#  88      88      88  "8a,   ,a88  88    88,    88  88b,   ,a8"  88,    ,88  88  88  aa    ]8I  
+#  88      88      88   `"YbbdP'Y8  88    "Y888  88  8Y"Ybbd8"'   `"8bbdP"Y8  88  88  `"YbbdP"'  
+
 multiballs:
   ma_two_ball:
     ball_count: 2
     shoot_again: 5s
     start_events: mode_ma_two_ball_started
+
+#                                               88                   
+#    ,d                                         88                   
+#    88                                         88                   
+#  MM88MMM  8b,dPPYba,  ,adPPYYba,   ,adPPYba,  88   ,d8             
+#    88     88P'   "Y8  ""     `Y8  a8"     ""  88 ,a8"              
+#    88     88         ,adPPPPP88  8b          8888[                
+#    88,    88  88      88,    ,88  "8a,   ,aa  88`"Yba,             
+#    "Y888  88  88      `"8bbdP"Y8   `"Ybbd8"'  88   `Y8a 
+#               88
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 track_player:
   music_awards_quick_fade_out:
@@ -61,6 +104,25 @@ track_player:
       volume: 1.0
       fade: .5s
 
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 slide_player:
   mode_ma_two_ball_started:
     ma2b_dmd_intro:
@@ -77,6 +139,31 @@ slide_player:
       target: dmd
       expire: 1.5s
 
+#                                                88                                   
+#                                                88                                   
+#                                                88                                   
+#  8b,dPPYba,  ,adPPYYba,  8b,dPPYba,    ,adPPYb,88   ,adPPYba,   88,dPYba,,adPYba,   
+#  88P'   "Y8  ""     `Y8  88P'   `"8a  a8"    `Y88  a8"     "8a  88P'   "88"    "8a  
+#  88          ,adPPPPP88  88       88  8b       88  8b       d8  88      88      88  
+#  88          88,    ,88  88       88  "8a,   ,d88  "8a,   ,a8"  88      88      88  
+#  88          `"8bbdP"Y8  88       88   `"8bbdP"Y8   `"YbbdP"'   88      88      88  
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 random_event_player:
   play_award_video:
     force_all: true
@@ -88,12 +175,40 @@ random_event_player:
       - show_ma_award5
       - show_ma_award6
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 sound_player:
   ma_jackpot:
     jackpots:
       action: play
       loops: 0
       events_when_played: play_award_video
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   award_1:
@@ -194,14 +309,12 @@ slides:
         y: top-1
         anchor_x: right
         x: right-1
-
   ball_saved:
     widgets:
       - type: text
         text: BALL SAVED!
         expire: 2s
         style: huge #dmd_huge
-
   ma_jackpot_dmd:
     widgets:
       - type: text
@@ -223,6 +336,25 @@ slides:
             - property: font_size
               value: 40
               duration: .1s
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 show_player:
   ma_jackpot:
@@ -258,6 +390,15 @@ show_player:
     ma_award6:
       action: play
       loops: 0
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
 
 shows:
   ma_award1:
@@ -339,7 +480,25 @@ shows:
       events:
         - music_awards_quick_fade_in
 
-#scoring: #leaving for reference
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8'
+
 variable_player:
   ma_jackpot:
     score: 100000

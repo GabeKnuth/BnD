@@ -13,10 +13,6 @@
 config:
   - display.yaml
 
-light_settings:
-    default_fade_ms: 0
-
-
 #                                                            
 #   ,adPPYb,d8  ,adPPYYba,  88,dPYba,,adPYba,    ,adPPYba,   
 #  a8"    `Y88  ""     `Y8  88P'   "88"    "8a  a8P_____88   
@@ -37,7 +33,7 @@ light_settings:
 machine:
   balls_installed: 4
 
-# Why is this here?? Let's take it out and see what happens
+# Hide mouse cursor from screen in game
 kivy_config:
   graphics:
     show_cursor: false
@@ -55,6 +51,24 @@ game:
   allow_start_with_loose_balls: True
   allow_start_with_ball_in_drain: True
   max_players: 4
+
+#                                                             88               
+#                                                             88               
+#                                                             88               
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88               
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88               
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88               
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88               
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8               
+#                                       ,d                                     
+#                                       88                                     
+#  ,adPPYba,  8b       d8  ,adPPYba,  MM88MMM   ,adPPYba,  88,dPYba,,adPYba,   
+#  I8[    ""  `8b     d8'  I8[    ""    88     a8P_____88  88P'   "88"    "8a  
+#   `"Y8ba,    `8b   d8'    `"Y8ba,     88     8PP"""""""  88      88      88  
+#  aa    ]8I    `8b,d8'    aa    ]8I    88,    "8b,   ,aa  88      88      88  
+#  `"YbbdP"'      Y88'     `"YbbdP"'    "Y888   `"Ybbd8"'  88      88      88  
+#                 d8'                                                          
+#                d8' 
 
 sound_system:
   tracks:
@@ -80,6 +94,15 @@ sound_system:
       simultaneous_sounds: 1
       volume: 0.0
       
+#                                                             88             
+#                                                             88             
+#                                                             88             
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88  ,adPPYba,  
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88  I8[    ""  
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88   `"Y8ba,   
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88  aa    ]8I  
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8  `"YbbdP"'
+
 sounds:
   ma_vocal_layer:
     file: ma_vocal_layer.wav
@@ -106,6 +129,16 @@ sounds:
     volume: 0.8
     max_queue_time: None
 
+#  88                                         88                            
+#  88                                         ""                            
+#  88                                                                       
+#  88   ,adPPYba,    ,adPPYb,d8   ,adPPYb,d8  88  8b,dPPYba,    ,adPPYb,d8  
+#  88  a8"     "8a  a8"    `Y88  a8"    `Y88  88  88P'   `"8a  a8"    `Y88  
+#  88  8b       d8  8b       88  8b       88  88  88       88  8b       88  
+#  88  "8a,   ,a8"  "8a,   ,d88  "8a,   ,d88  88  88       88  "8a,   ,d88  
+#  88   `"YbbdP"'    `"YbbdP"Y8   `"YbbdP"Y8  88  88       88   `"YbbdP"Y8  
+#                    aa,    ,88   aa,    ,88                    aa,    ,88  
+#                     "Y8bbdP"     "Y8bbdP"                      "Y8bbdP"  
 
 logging:
   file:
@@ -116,6 +149,15 @@ logging:
     service_controller: full
     settings_controller: full
     show_controller: full
+
+#                                                                    
+#                                                  ,d                
+#                                                  88                
+#  ,adPPYYba,  ,adPPYba,  ,adPPYba,   ,adPPYba,  MM88MMM  ,adPPYba,  
+#  ""     `Y8  I8[    ""  I8[    ""  a8P_____88    88     I8[    ""  
+#  ,adPPPPP88   `"Y8ba,    `"Y8ba,   8PP"""""""    88      `"Y8ba,   
+#  88,    ,88  aa    ]8I  aa    ]8I  "8b,   ,aa    88,    aa    ]8I  
+#  `"8bbdP"Y8  `"YbbdP"'  `"YbbdP"'   `"Ybbd8"'    "Y888  `"YbbdP"' 
 
 assets:
   sounds:
@@ -133,7 +175,6 @@ assets:
       track: ma_drums_track
     ma_other_track:
       track: ma_other_track
-
   videos:
     default:
       load: on_demand
@@ -716,7 +757,28 @@ diverters:
     activation_switches: s_leftorbit
     enable_events: enable_diverter
     disable_events: ball_ended, disable_diverter
-                                                      
+
+#  88  88               88                                                           
+#  88  ""               88             ,d                                            
+#  88                   88             88                                            
+#  88  88   ,adPPYb,d8  88,dPPYba,   MM88MMM                                         
+#  88  88  a8"    `Y88  88P'    "8a    88                                            
+#  88  88  8b       88  88       88    88                                            
+#  88  88  "8a,   ,d88  88       88    88,                                           
+#  88  88   `"YbbdP"Y8  88       88    "Y88888                                       
+#           aa,    ,88      ,d       ,d     ""                                       
+#            "Y8bbdP"       88       88                                              
+#  ,adPPYba,   ,adPPYba,  MM88MMM  MM88MMM  88  8b,dPPYba,    ,adPPYb,d8  ,adPPYba,  
+#  I8[    ""  a8P_____88    88       88     88  88P'   `"8a  a8"    `Y88  I8[    ""  
+#   `"Y8ba,   8PP"""""""    88       88     88  88       88  8b       88   `"Y8ba,   
+#  aa    ]8I  "8b,   ,aa    88,      88,    88  88       88  "8a,   ,d88  aa    ]8I  
+#  `"YbbdP"'   `"Ybbd8"'    "Y888    "Y888  88  88       88   `"YbbdP"Y8  `"YbbdP"'  
+#                                                             aa,    ,88             
+#                                                              "Y8bbdP"  
+
+light_settings:
+    default_fade_ms: 0
+
 #  88  88               88                               
 #  88  ""               88             ,d                
 #  88                   88             88                
@@ -732,7 +794,7 @@ lights:
   l_australia:
     number: 1-0
     tags: right
-    default_on_color: red
+    default_on_color: ff0000
   l_top_quarter:
     number: 1-1
     tags: right, quarter
@@ -760,7 +822,7 @@ lights:
   l_south_america:
     number: 1-7
     tags: right, right_ramp, jackpot
-    default_on_color: red
+    default_on_color: ff0000
   l_middle_quarter:
     number: 1-8
     tags: right, quarter
@@ -775,7 +837,7 @@ lights:
   l_right_lane_special:
     number: 1-11
     tags: right
-    default_on_color: red
+    default_on_color: ff0000
   l_right_lane_spot_quarter:
     number: 1-12
     tags: right
@@ -783,11 +845,11 @@ lights:
   l_again:
     number: 1-13
     tags: center
-    default_on_color: red
+    default_on_color: ff0000
   l_shoot:
     number: 1-14
     tags: center
-    default_on_color: red
+    default_on_color: ff0000
   l_left_lane_spot_quarter:
     number: 1-15
     tags: left
@@ -795,7 +857,7 @@ lights:
   l_left_lane_special:
     number: 1-16
     tags: left
-    default_on_color: red
+    default_on_color: ff0000
   l_mystery:
     number: 1-17
     tags: left
@@ -811,7 +873,7 @@ lights:
   l_world_tour:
     number: 1-20
     tags: center
-    default_on_color: red
+    default_on_color: ff0000
   l_money_bags:
     number: 1-21
     tags: center
@@ -860,7 +922,7 @@ lights:
   l_north_america:
     number: 1-32
     tags: left, left_orbit
-    default_on_color: red
+    default_on_color: ff0000
   l_left_ramp_flasher:
     number: 1-33
     tags: left
@@ -883,7 +945,7 @@ lights:
   l_europe:
     number: 1-38
     tags: center
-    default_on_color: red
+    default_on_color: ff0000
   l_center_lock:
     number: 1-39
     tags: center
@@ -915,7 +977,7 @@ lights:
   l_ramp_fire:
     number: 1-46
     tags: right, ramp_indicator, jackpot
-    default_on_color: red
+    default_on_color: ff0000
   l_right_ramp_flasher:
     number: 1-47
     tags: right
@@ -1254,37 +1316,6 @@ shows:
     - duration: -1
       lights:
         gi: ff9027
-
-  # flash_color:
-  #   - time: 0
-  #     lights:
-  #       (light):
-  #         color: (color)
-  #       (lights):
-  #         color: (color)
-  #   - time: 1
-  #     lights:
-  #       (light):
-  #         color: black
-  #       (lights):
-  #         color: black
-  #   - time: 2
-
-  # flash:
-  #   # Uncomment to overwrite default
-  #   #- _overwrite: true
-  #   - duration: 250ms
-  #     lights:
-  #       (light):
-  #         color: on
-  #       (lights):
-  #         color: on
-  #   - duration: 250ms
-  #     lights:
-  #       (light):
-  #         color: black
-  #       (lights):
-  #         color: black
 
 
 #             88                                                     

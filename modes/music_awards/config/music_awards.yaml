@@ -5,6 +5,23 @@ mode:
   start_events: start_music_awards_mode
   stop_events: music_awards_fail, mode_ma_two_ball_stopping, ball_ending
 
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 event_player:
   mode_music_awards_started:
     - mode_running|5s
@@ -25,6 +42,25 @@ event_player:
   player_song_layer{value==2}: add_other
   player_song_layer{value==3}: add_vocals
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
 # apparently I can't stop sounds when they're played by show with show_player: show_name: action: stop
 # so I have to do it here
 sound_player:
@@ -37,6 +73,23 @@ sound_player:
       action: stop
     ma_vocal_layer:
       action: stop
+
+#                                               88                   
+#    ,d                                         88                   
+#    88                                         88                   
+#  MM88MMM  8b,dPPYba,  ,adPPYYba,   ,adPPYba,  88   ,d8             
+#    88     88P'   "Y8  ""     `Y8  a8"     ""  88 ,a8"              
+#    88     88         ,adPPPPP88  8b          8888[                
+#    88,    88  88      88,    ,88  "8a,   ,aa  88`"Yba,             
+#    "Y888  88  88      `"8bbdP"Y8   `"Ybbd8"'  88   `Y8a 
+#               88
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 track_player:
   add_bass:
@@ -52,6 +105,15 @@ track_player:
       action: set_volume
       volume: 0.8
 
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
+
 timers:
   music_awards_timer:
     start_value: 20
@@ -61,7 +123,7 @@ timers:
     control_events:
       - event: timer_ma_intro_timer_complete
         action: start
-      - event: add_time
+      - event: ma_shot_made
         action: add
         value: 8
       - event: s_subwayopto_active
@@ -74,6 +136,15 @@ timers:
     control_events:
       - event: mode_music_awards_started
         action: start
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
 
 shows:
   ma_advertise_show_left:
@@ -148,6 +219,25 @@ shows:
       events:
         - play_real_video
 
+#             88                                                     
+#             88                                                     
+#             88                                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8           
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'           
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'            
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'             
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP                                                                                
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
 show_player:
   mode_music_awards_started:
     ma_advertise_show_right:
@@ -172,6 +262,14 @@ show_player:
     ma_stage_show:
       action: stop
 
+#                                                       ,d                                        
+#                                                       88                                        
+#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
+#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
+#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
+#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"'  
+
 # Two shots: Music Awards are made through either the left orbit or right ramp. Both shots are lit all the time.
 # We won't actually create shots for this since we don't need them. 
 
@@ -190,6 +288,25 @@ counters:
     disable_events: counter_ma_shot_counter_complete
     multiple_hit_window: 500ms
 
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'                                                                                     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 slide_player:
   play_real_video:
     music_awards_full_audio_stage:
@@ -207,6 +324,14 @@ slide_player:
     music_awards_complete:
       target: dmd
 
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   ma_intro_dmd:
@@ -325,6 +450,25 @@ slides:
         anchor_y: bottom
         y: bottom+1
         style: tall_title
+
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'                                                                                  
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
 
 variable_player:
   mode_music_awards_started:
