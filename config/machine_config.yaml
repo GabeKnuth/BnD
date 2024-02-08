@@ -792,7 +792,7 @@ light_settings:
 
 lights:
   l_left_apron_flasher:
-    start_channel: 0
+    #start_channel: 0
     number: 0
     tags: left
   l_right_apron_flasher:
@@ -813,7 +813,7 @@ lights:
     #subtype: gi
 
   l_australia:
-    start_channel: 1
+    #start_channel: 1
     number: 64
     subtype: led
     tags: right
@@ -1054,7 +1054,7 @@ lights:
   
   
   l_gi_right_5:
-    start_channel: 1
+    #start_channel: 1
     number: 128
     subtype: led
     tags: gi, gi18
@@ -1189,7 +1189,7 @@ lights:
   
   
   l_backbox_1:
-    start_channel: 3
+    #start_channel: 3
     number: 192
     subtype: led
     tags: gi
