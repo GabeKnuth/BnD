@@ -791,515 +791,633 @@ light_settings:
 #            "Y8bbdP"
 
 lights:
-  l_australia:
-    number: 1-0
-    tags: right
-    default_on_color: ff0000
-  l_top_quarter:
-    number: 1-1
-    tags: right, quarter
-    default_on_color: aaaaaa
-  l_quintuple_platinum:
-    number: 1-2
-    tags: center
-    default_on_color: aaaaaa
-  l_jukebox_insert:
-    number: 1-3
-    tags: center
-    default_on_color: ffcc00
-  l_play_poker:
-    number: 1-4
-    tags: right
-    default_on_color: ff9027
-  l_right_music_award:
-    number: 1-5
-    tags: right, right_ramp, jackpot
-    default_on_color: ff9027
-  l_ramp_jackpot:
-    number: 1-6
-    tags: right, right_ramp, jackpot
-    default_on_color: ff9027
-  l_south_america:
-    number: 1-7
-    tags: right, right_ramp, jackpot
-    default_on_color: ff0000
-  l_middle_quarter:
-    number: 1-8
-    tags: right, quarter
-    default_on_color: aaaaaaa
-  l_bottom_quarter:
-    number: 1-9
-    tags: right, quarter
-    default_on_color: aaaaaa
-  l_lower_right_flasher:
-    number: 1-10
-    tags: right
-  l_right_lane_special:
-    number: 1-11
-    tags: right
-    default_on_color: ff0000
-  l_right_lane_spot_quarter:
-    number: 1-12
-    tags: right
-    default_on_color: ff9027
-  l_again:
-    number: 1-13
-    tags: center
-    default_on_color: ff0000
-  l_shoot:
-    number: 1-14
-    tags: center
-    default_on_color: ff0000
-  l_left_lane_spot_quarter:
-    number: 1-15
-    tags: left
-    default_on_color: ff9027
-  l_left_lane_special:
-    number: 1-16
-    tags: left
-    default_on_color: ff0000
-  l_mystery:
-    number: 1-17
-    tags: left
-    default_on_color: ff9027
-  l_begin_round:
-    number: 1-18
-    tags: left
-    default_on_color: ff9027
-  l_hi_lo:
-    number: 1-19
-    tags: left
-    default_on_color: ff9027
-  l_world_tour:
-    number: 1-20
-    tags: center
-    default_on_color: ff0000
-  l_money_bags:
-    number: 1-21
-    tags: center
-    default_on_color: ff9027
-  l_music_awards:
-    number: 1-22
-    tags: center
-    default_on_color: ff9027
-  l_double_platinum:
-    number: 1-23
-    tags: center
-    default_on_color: aaaaaa
-  l_single_platinum:
-    number: 1-24
-    tags: center
-    default_on_color: aaaaaa
-  l_gold:
-    number: 1-25
-    tags: center
-    default_on_color: ffcc00
-  l_silver:
-    number: 1-26
-    tags: center
-    default_on_color: aaaaaa
-  l_wizard_shot:
-    number: 1-27
-    tags: left
-    default_on_color: ff9027
-  l_left_longhorn:
-    number: 1-28
-    tags: left
-    default_on_color: ff9027
-  l_double_jackpot:
-    number: 1-29
-    tags: left, double_jackpot
-    default_on_color: ff9027
-  l_advance_wizard:
-    number: 1-30
-    tags: left, left_orbit
-    default_on_color: ff9027
-  l_lower_left_flasher:
-    number: 1-31
-    tags: left
-    type: grb
-    default_on_color: green
-  l_north_america:
-    number: 1-32
-    tags: left, left_orbit
-    default_on_color: ff0000
-  l_left_ramp_flasher:
-    number: 1-33
-    tags: left
-  l_left_music_award:
-    number: 1-34
-    tags: left, left_orbit
-    default_on_color: ff9027
-  l_managers_choice:
-    number: 1-35
-    tags: left, double_jackpot
-    default_on_color: ff9027
-  l_jukebox_left:
-    number: 1-36
-    tags: left
-    default_on_color: ff9027
-  l_jukebox_right:
-    number: 1-37
-    tags: left
-    default_on_color: ff9027
-  l_europe:
-    number: 1-38
-    tags: center
-    default_on_color: ff0000
-  l_center_lock:
-    number: 1-39
-    tags: center
-    default_on_color: ff9027
-  l_center_longhorn:
-    number: 1-40
-    tags: center
-    default_on_color: ff9027
-  l_left_pop:
-    number: 1-41
-    tags: right
-    default_on_color: ff9027
-  l_right_pop:
-    number: 1-42
-    tags: right
-    default_on_color: ff9027
-  l_bottom_pop:
-    number: 1-43
-    tags: right
-    default_on_color: ff9027
-  l_collect_wizard:
-    number: 1-44
-    tags: right
-    default_on_color: ff9027
-  l_extra_ball:
-    number: 1-45
-    tags: right
-    default_on_color: ff9027
-  l_ramp_fire:
-    number: 1-46
-    tags: right, ramp_indicator, jackpot
-    default_on_color: ff0000
-  l_right_ramp_flasher:
-    number: 1-47
-    tags: right
-  l_gi_right_5:
-    number: 2-0
-    tags: gi, gi18
-    type: grb
-    #subtype: gi
-  l_gi_right_4:
-    number: 2-1
-    type: grb
-    tags: gi, gi19
-    #subtype: gi
-  l_gi_right_3:
-    number: 2-2
-    tags: gi, gi20
-    type: grb
-    #subtype: gi
-  l_gi_right_2:
-    number: 2-3
-    tags: gi, gi21
-    type: grb
-    #subtype: gi
-  l_gi_right_1:
-    number: 2-4
-    tags: gi, gi22
-    type: grb
-    #subtype: gi
-  l_gi_left_2:
-    number: 2-5
-    tags: gi, gi2
-    type: grb
-    #subtype: gi
-  l_gi_left_1:
-    number: 2-6
-    tags: gi, gi1
-    type: grb
-    #subtype: gi
-  l_gi_left_3:
-    number: 2-7
-    tags: gi, gi3
-    type: grb
-    #subtype: gi
-  l_gi_left_4:
-    number: 2-8
-    tags: gi, gi4
-    type: grb
-    #subtype: gi
-  l_gi_left_5:
-    number: 2-9
-    tags: gi, gi5
-    type: grb
-    #subtype: gi
-  l_gi_left_6:
-    number: 2-10
-    tags: gi, gi6
-    type: grb
-    #subtype: gi
-  l_gi_left_7:
-    number: 2-11
-    tags: gi, gi7
-    type: grb
-    #subtype: gi
-  l_gi_left_8:
-    number: 2-12
-    tags: gi, gi8
-    type: grb
-    #subtype: gi
-  l_gi_left_9:
-    number: 2-13
-    tags: gi, gi9
-    type: grb
-    #subtype: gi
-  l_gi_left_10:
-    number: 2-14
-    tags: gi, gi10
-    type: grb
-    #subtype: gi
-  l_gi_left_lane:
-    number: 2-15
-    tags: gi, gi11
-    type: grb
-    #subtype: gi
-  l_gi_center_lane:
-    number: 2-16
-    tags: gi, gi12
-    type: grb
-    #subtype: gi
-  l_gi_right_lane:
-    number: 2-17
-    tags: gi, gi13
-    type: grb
-    #subtype: gi
-  l_gi_right_9:
-    number: 2-18
-    tags: gi, gi14
-    type: grb
-    #subtype: gi
-  l_gi_right_8:
-    number: 2-19
-    tags: gi, gi15
-    type: grb
-    #subtype: gi
-  l_gi_right_7:
-    number: 2-20
-    tags: gi, gi16
-    type: grb
-    #subtype: gi
-  l_gi_right_6:
-    number: 2-21
-    tags: gi, gi17
-    type: grb
-    #subtype: gi
-  l_backbox_1:
-    number: 3-0
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_2:
-    number: 3-1
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_3:
-    number: 3-2
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_4:
-    number: 3-3
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_5:
-    number: 3-4
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_6:
-    number: 3-5
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_7:
-    number: 3-6
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_8:
-    number: 3-7
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_9:
-    number: 3-8
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_10:
-    number: 3-9
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_11:
-    number: 3-10
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_12:
-    number: 3-11
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_13:
-    number: 3-12
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_14:
-    number: 3-13
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_15:
-    number: 3-14
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_16:
-    number: 3-15
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_17:
-    number: 3-16
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_18:
-    number: 3-17
-    tags: gi
-    type: grb
-    ##subtype: gi
-  l_backbox_19:
-    number: 3-18
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_20:
-    number: 3-19
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_21:
-    number: 3-20
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_22:
-    number: 3-21
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_23:
-    number: 3-22
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_24:
-    number: 3-23
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_25:
-    number: 3-24
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_26:
-    number: 3-25
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_27:
-    number: 3-26
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_28:
-    number: 3-27
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_29:
-    number: 3-28
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_30:
-    number: 3-29
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_31:
-    number: 3-30
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_32:
-    number: 3-31
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_33:
-    number: 3-32
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_34:
-    number: 3-33
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_35:
-    number: 3-34
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_36:
-    number: 3-35
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_37:
-    number: 3-36
-    tags: gi
-    type: grb
-    #subtype: gi
-  l_backbox_38:
-    number: 3-37
-    tags: gi
-    type: grb
-    #subtype: gi
   l_left_apron_flasher:
-    number: 0-0
+    start_channel: 0
+    number: 0
     tags: left
   l_right_apron_flasher:
-    number: 0-1
+    number: 1
     tags: right
   l_start_button:
-    number: 0-2
+    number: 2
     type: grb
   l_coin_1:
-    number: 0-3
+    number: 3
     type: grb
     tags: gi
     #subtype: gi
   l_coin_2:
-    number: 0-4
+    number: 4
     type: grb
     tags: gi
     #subtype: gi
+
+  l_australia:
+    start_channel: 1
+    number: 64
+    subtype: led
+    tags: right
+    default_on_color: ff0000
+  l_top_quarter:
+    number: 65
+    subtype: led
+    tags: right, quarter
+    default_on_color: aaaaaa
+  l_quintuple_platinum:
+    number: 66
+    subtype: led
+    tags: center
+    default_on_color: aaaaaa
+  l_jukebox_insert:
+    number: 67
+    subtype: led
+    tags: center
+    default_on_color: ffcc00
+  l_play_poker:
+    number: 68
+    subtype: led
+    tags: right
+    default_on_color: ff9027
+  l_right_music_award:
+    number: 69
+    subtype: led
+    tags: right, right_ramp, jackpot
+    default_on_color: ff9027
+  l_ramp_jackpot:
+    number: 70
+    subtype: led
+    tags: right, right_ramp, jackpot
+    default_on_color: ff9027
+  l_south_america:
+    number: 71
+    subtype: led
+    tags: right, right_ramp, jackpot
+    default_on_color: ff0000
+  l_middle_quarter:
+    number: 72
+    subtype: led
+    tags: right, quarter
+    default_on_color: aaaaaaa
+  l_bottom_quarter:
+    number: 73
+    subtype: led
+    tags: right, quarter
+    default_on_color: aaaaaa
+  l_lower_right_flasher:
+    number: 74
+    subtype: led
+    tags: right
+  l_right_lane_special:
+    number: 75
+    subtype: led
+    tags: right
+    default_on_color: ff0000
+  l_right_lane_spot_quarter:
+    number: 76
+    subtype: led
+    tags: right
+    default_on_color: ff9027
+  l_again:
+    number: 77
+    subtype: led
+    tags: center
+    default_on_color: ff0000
+  l_shoot:
+    number: 78
+    subtype: led
+    tags: center
+    default_on_color: ff0000
+  l_left_lane_spot_quarter:
+    number: 79
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_left_lane_special:
+    number: 80
+    subtype: led
+    tags: left
+    default_on_color: ff0000
+  l_mystery:
+    number: 81
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_begin_round:
+    number: 82
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_hi_lo:
+    number: 83
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_world_tour:
+    number: 84
+    subtype: led
+    tags: center
+    default_on_color: ff0000
+  l_money_bags:
+    number: 85
+    subtype: led
+    tags: center
+    default_on_color: ff9027
+  l_music_awards:
+    number: 86
+    subtype: led
+    tags: center
+    default_on_color: ff9027
+  l_double_platinum:
+    number: 87
+    subtype: led
+    tags: center
+    default_on_color: aaaaaa
+  l_single_platinum:
+    number: 88
+    subtype: led
+    tags: center
+    default_on_color: aaaaaa
+  l_gold:
+    number: 89
+    subtype: led
+    tags: center
+    default_on_color: ffcc00
+  l_silver:
+    number: 90
+    subtype: led
+    tags: center
+    default_on_color: aaaaaa
+  l_wizard_shot:
+    number: 91
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_left_longhorn:
+    number: 92
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_double_jackpot:
+    number: 93
+    subtype: led
+    tags: left, double_jackpot
+    default_on_color: ff9027
+  l_advance_wizard:
+    number: 94
+    subtype: led
+    tags: left, left_orbit
+    default_on_color: ff9027
+  l_lower_left_flasher:
+    number: 95
+    subtype: led
+    tags: left
+    type: grb
+    default_on_color: green
+  l_north_america:
+    number: 96
+    subtype: led
+    tags: left, left_orbit
+    default_on_color: ff0000
+  l_left_ramp_flasher:
+    number: 97
+    subtype: led
+    tags: left
+  l_left_music_award:
+    number: 98
+    subtype: led
+    tags: left, left_orbit
+    default_on_color: ff9027
+  l_managers_choice:
+    number: 99
+    subtype: led
+    tags: left, double_jackpot
+    default_on_color: ff9027
+  l_jukebox_left:
+    number: 100
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_jukebox_right:
+    number: 101
+    subtype: led
+    tags: left
+    default_on_color: ff9027
+  l_europe:
+    number: 102
+    subtype: led
+    tags: center
+    default_on_color: ff0000
+  l_center_lock:
+    number: 103
+    subtype: led
+    tags: center
+    default_on_color: ff9027
+  l_center_longhorn:
+    number: 104
+    subtype: led
+    tags: center
+    default_on_color: ff9027
+  l_left_pop:
+    number: 105
+    subtype: led
+    tags: right
+    default_on_color: ff9027
+  l_right_pop:
+    number: 106
+    subtype: led
+    tags: right
+    default_on_color: ff9027
+  l_bottom_pop:
+    number: 107
+    subtype: led
+    tags: right
+    default_on_color: ff9027
+  l_collect_wizard:
+    number: 108
+    subtype: led
+    tags: right
+    default_on_color: ff9027
+  l_extra_ball:
+    number: 109
+    subtype: led
+    tags: right
+    default_on_color: ff9027
+  l_ramp_fire:
+    number: 110
+    subtype: led
+    tags: right, ramp_indicator, jackpot
+    default_on_color: ff0000
+  l_right_ramp_flasher:
+    number: 111
+    subtype: led
+    tags: right
+  
+  
+  l_gi_right_5:
+    start_channel: 1
+    number: 128
+    subtype: led
+    tags: gi, gi18
+    type: grb
+    #subtype: gi
+  l_gi_right_4:
+    number: 129
+    subtype: led
+    type: grb
+    tags: gi, gi19
+    #subtype: gi
+  l_gi_right_3:
+    number: 130
+    subtype: led
+    tags: gi, gi20
+    type: grb
+    #subtype: gi
+  l_gi_right_2:
+    number: 131
+    subtype: led
+    tags: gi, gi21
+    type: grb
+    #subtype: gi
+  l_gi_right_1:
+    number: 132
+    subtype: led
+    tags: gi, gi22
+    type: grb
+    #subtype: gi
+  l_gi_left_2:
+    number: 133
+    subtype: led
+    tags: gi, gi2
+    type: grb
+    #subtype: gi
+  l_gi_left_1:
+    number: 134
+    subtype: led
+    tags: gi, gi1
+    type: grb
+    #subtype: gi
+  l_gi_left_3:
+    number: 135
+    subtype: led
+    tags: gi, gi3
+    type: grb
+    #subtype: gi
+  l_gi_left_4:
+    number: 136
+    subtype: led
+    tags: gi, gi4
+    type: grb
+    #subtype: gi
+  l_gi_left_5:
+    number: 137
+    subtype: led
+    tags: gi, gi5
+    type: grb
+    #subtype: gi
+  l_gi_left_6:
+    number: 138
+    subtype: led
+    tags: gi, gi6
+    type: grb
+    #subtype: gi
+  l_gi_left_7:
+    number: 139
+    subtype: led
+    tags: gi, gi7
+    type: grb
+    #subtype: gi
+  l_gi_left_8:
+    number: 140
+    subtype: led
+    tags: gi, gi8
+    type: grb
+    #subtype: gi
+  l_gi_left_9:
+    number: 141
+    subtype: led
+    tags: gi, gi9
+    type: grb
+    #subtype: gi
+  l_gi_left_10:
+    number: 142
+    subtype: led
+    tags: gi, gi10
+    type: grb
+    #subtype: gi
+  l_gi_left_lane:
+    number: 143
+    subtype: led
+    tags: gi, gi11
+    type: grb
+    #subtype: gi
+  l_gi_center_lane:
+    number: 144
+    subtype: led
+    tags: gi, gi12
+    type: grb
+    #subtype: gi
+  l_gi_right_lane:
+    number: 145
+    subtype: led
+    tags: gi, gi13
+    type: grb
+    #subtype: gi
+  l_gi_right_9:
+    number: 146
+    subtype: led
+    tags: gi, gi14
+    type: grb
+    #subtype: gi
+  l_gi_right_8:
+    number: 147
+    subtype: led
+    tags: gi, gi15
+    type: grb
+    #subtype: gi
+  l_gi_right_7:
+    number: 148
+    subtype: led
+    tags: gi, gi16
+    type: grb
+    #subtype: gi
+  l_gi_right_6:
+    number: 149
+    subtype: led
+    tags: gi, gi17
+    type: grb
+    #subtype: gi
+  
+  
+  l_backbox_1:
+    start_channel: 3
+    number: 192
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_2:
+    number: 193
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_3:
+    number: 194
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_4:
+    number: 195
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_5:
+    number: 196
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_6:
+    number: 197
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_7:
+    number: 198
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_8:
+    number: 199
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_9:
+    number: 200
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_10:
+    number: 201
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_11:
+    number: 202
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_12:
+    number: 203
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_13:
+    number: 204
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_14:
+    number: 205
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_15:
+    number: 206
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_16:
+    number: 207
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_17:
+    number: 208
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_18:
+    number: 209
+    subtype: led
+    tags: gi
+    type: grb
+    ##subtype: gi
+  l_backbox_19:
+    number: 210
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_20:
+    number: 211
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_21:
+    number: 212
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_22:
+    number: 213
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_23:
+    number: 214
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_24:
+    number: 215
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_25:
+    number: 216
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_26:
+    number: 217
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_27:
+    number: 218
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_28:
+    number: 219
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_29:
+    number: 220
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_30:
+    number: 221
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_31:
+    number: 222
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_32:
+    number: 223
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_33:
+    number: 224
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_34:
+    number: 225
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_35:
+    number: 226
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_36:
+    number: 227
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_37:
+    number: 228
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+  l_backbox_38:
+    number: 229
+    subtype: led
+    tags: gi
+    type: grb
+    #subtype: gi
+
 
 #             88                                                       
 #             88                                                       
