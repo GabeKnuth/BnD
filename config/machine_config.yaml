@@ -794,10 +794,12 @@ lights:
   l_left_apron_flasher:
     #start_channel: 0
     number: 0
+    type: grb
     tags: left
   l_right_apron_flasher:
     number: 1
     tags: right
+    type: grb
   l_start_button:
     number: 2
     type: grb
@@ -818,155 +820,186 @@ lights:
     subtype: led
     tags: right
     default_on_color: ff0000
+    type: grb
   l_top_quarter:
     number: 65
     subtype: led
     tags: right, quarter
     default_on_color: aaaaaa
+    type: grb
   l_quintuple_platinum:
     number: 66
     subtype: led
     tags: center
     default_on_color: aaaaaa
+    type: grb
   l_jukebox_insert:
     number: 67
     subtype: led
     tags: center
     default_on_color: ffcc00
+    type: grb
   l_play_poker:
     number: 68
     subtype: led
     tags: right
     default_on_color: ff9027
+    type: grb
   l_right_music_award:
     number: 69
     subtype: led
     tags: right, right_ramp, jackpot
     default_on_color: ff9027
+    type: grb
   l_ramp_jackpot:
     number: 70
     subtype: led
     tags: right, right_ramp, jackpot
     default_on_color: ff9027
+    type: grb
   l_south_america:
     number: 71
     subtype: led
     tags: right, right_ramp, jackpot
     default_on_color: ff0000
+    type: grb
   l_middle_quarter:
     number: 72
     subtype: led
     tags: right, quarter
     default_on_color: aaaaaaa
+    type: grb
   l_bottom_quarter:
     number: 73
     subtype: led
     tags: right, quarter
     default_on_color: aaaaaa
+    type: grb
   l_lower_right_flasher:
     number: 74
     subtype: led
     tags: right
+    type: grb
   l_right_lane_special:
     number: 75
     subtype: led
     tags: right
     default_on_color: ff0000
+    type: grb
   l_right_lane_spot_quarter:
     number: 76
     subtype: led
     tags: right
     default_on_color: ff9027
+    type: grb
   l_again:
     number: 77
     subtype: led
     tags: center
     default_on_color: ff0000
+    type: grb
   l_shoot:
     number: 78
     subtype: led
     tags: center
     default_on_color: ff0000
+    type: grb
   l_left_lane_spot_quarter:
     number: 79
     subtype: led
     tags: left
     default_on_color: ff9027
+    type: grb
   l_left_lane_special:
     number: 80
     subtype: led
     tags: left
     default_on_color: ff0000
+    type: grb
   l_mystery:
     number: 81
     subtype: led
     tags: left
     default_on_color: ff9027
+    type: grb
   l_begin_round:
     number: 82
     subtype: led
     tags: left
     default_on_color: ff9027
+    type: grb
   l_hi_lo:
     number: 83
     subtype: led
     tags: left
     default_on_color: ff9027
+    type: grb
   l_world_tour:
     number: 84
     subtype: led
     tags: center
     default_on_color: ff0000
+    type: grb
   l_money_bags:
     number: 85
     subtype: led
     tags: center
     default_on_color: ff9027
+    type: grb
   l_music_awards:
     number: 86
     subtype: led
     tags: center
     default_on_color: ff9027
+    type: grb
   l_double_platinum:
     number: 87
     subtype: led
     tags: center
     default_on_color: aaaaaa
+    type: grb
   l_single_platinum:
     number: 88
     subtype: led
     tags: center
     default_on_color: aaaaaa
+    type: grb
   l_gold:
     number: 89
     subtype: led
     tags: center
     default_on_color: ffcc00
+    type: grb
   l_silver:
     number: 90
     subtype: led
     tags: center
     default_on_color: aaaaaa
+    type: grb
   l_wizard_shot:
     number: 91
     subtype: led
     tags: left
     default_on_color: ff9027
+    type: grb
   l_left_longhorn:
     number: 92
     subtype: led
     tags: left
     default_on_color: ff9027
+    type: grb
   l_double_jackpot:
     number: 93
     subtype: led
     tags: left, double_jackpot
     default_on_color: ff9027
+    type: grb
   l_advance_wizard:
     number: 94
     subtype: led
     tags: left, left_orbit
     default_on_color: ff9027
+    type: grb
   l_lower_left_flasher:
     number: 95
     subtype: led
@@ -978,79 +1011,95 @@ lights:
     subtype: led
     tags: left, left_orbit
     default_on_color: ff0000
+    type: grb
   l_left_ramp_flasher:
     number: 97
     subtype: led
     tags: left
+    type: grb
   l_left_music_award:
     number: 98
     subtype: led
     tags: left, left_orbit
     default_on_color: ff9027
+    type: grb
   l_managers_choice:
     number: 99
     subtype: led
     tags: left, double_jackpot
+    type: grb
     default_on_color: ff9027
   l_jukebox_left:
     number: 100
     subtype: led
     tags: left
+    type: grb
     default_on_color: ff9027
   l_jukebox_right:
     number: 101
     subtype: led
     tags: left
     default_on_color: ff9027
+    type: grb
   l_europe:
     number: 102
     subtype: led
     tags: center
     default_on_color: ff0000
+    type: grb
   l_center_lock:
     number: 103
     subtype: led
     tags: center
     default_on_color: ff9027
+    type: grb
   l_center_longhorn:
     number: 104
     subtype: led
     tags: center
     default_on_color: ff9027
+    type: grb
   l_left_pop:
     number: 105
     subtype: led
     tags: right
     default_on_color: ff9027
+    type: grb
   l_right_pop:
     number: 106
     subtype: led
     tags: right
     default_on_color: ff9027
+    type: grb
   l_bottom_pop:
     number: 107
     subtype: led
     tags: right
     default_on_color: ff9027
+    type: grb
   l_collect_wizard:
     number: 108
     subtype: led
     tags: right
     default_on_color: ff9027
+    type: grb
   l_extra_ball:
     number: 109
     subtype: led
     tags: right
     default_on_color: ff9027
+    type: grb
   l_ramp_fire:
     number: 110
     subtype: led
     tags: right, ramp_indicator, jackpot
     default_on_color: ff0000
+    type: grb
   l_right_ramp_flasher:
     number: 111
     subtype: led
     tags: right
+    type: grb
   
   
   l_gi_right_5:
