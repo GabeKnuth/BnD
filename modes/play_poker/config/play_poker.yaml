@@ -97,10 +97,20 @@ event_player:
   poker_straight:
     - light_poker_extra_ball
     - play_poker_success
+  poker_three_of_a_kind:
+    - play_poker_success
+  poker_two_pairs:
+    - play_poker_success
+  poker_one_pair:
+    - play_poker_success
+  poker_high_card:
+    - play_poker_success
   play_poker_success:
     - enable_base_left_vuk_hold
   play_poker_done:
     - release_left_vuk_ball
+  play_poker_ready_to_end:
+    - play_poker_done|5.5s
 
 #                                       88              88           88              
 #                                       ""              88           88              
@@ -172,47 +182,47 @@ sound_player:
   poker_high_card:
     poker_high_card:
       action: play
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end
   poker_one_pair:
     poker_one_pair:
       action: play
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end
   poker_two_pairs:
     poker_two_pairs:
       action: play
-      events_when_stopped: play_poker_done|5.5s
+      events_when_stopped: play_poker_ready_to_end
   poker_three_of_a_kind:
     poker_three_of_a_kind:
       action: play
-      events_when_stopped: play_poker_done|5.5s  
+      events_when_stopped: play_poker_ready_to_end
   poker_straight: 
     poker_straight:
       action: play
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end
   poker_flush:
     poker_flush:
       action: play 
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end
   poker_full_house:  
     poker_full_house:
       action: play 
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end
   poker_four_of_a_kind:
     poker_four_of_a_kind:
       action: play  
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end 
   poker_straight_flush:
     poker_straight_flush:
       action: play
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end
   poker_royal_flush:  
     poker_royal_flush:
       action: play  
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end 
   play_poker_fail:  
     poker_try_again_later:
       action: play 
-      events_when_stopped: play_poker_done|5.5s 
+      events_when_stopped: play_poker_ready_to_end
   play_shuffle_sound:
     shuffle:
       action: play
@@ -239,7 +249,7 @@ timers:
           value: 20
         - event: poker_card_locked
           action: stop
-        - event: balldevice_bd_lower_vuk_ball_eject_success
+        - event: restart_timer
           action: start
         - event: start_poker_countdown
           action: start
@@ -298,7 +308,7 @@ show_player:
 #  88                              d8'
 
 slide_player:
-  timer_poker_countdown_tick:
+  update_countdown_timer:
     poker_countdown:
       target: stage
   poker_deck_complete:
@@ -1009,3 +1019,9 @@ counters:
     count_events: s_spinner_active
     multiple_hit_window: 2s
     events_when_hit: play_shuffle_sound
+  # Since I can't find a way to just disable a counter, I'm going to use this count and trigger release ball events that
+  # trigger the time to start. Then I can disable this counter when I want to "stop" the timer from restarting.
+  timer_disable_counter:
+    count_events: balldevice_bd_lower_vuk_ball_eject_success
+    events_when_hit: restart_timer
+    disable_events: play_poker_fail, play_poker_success

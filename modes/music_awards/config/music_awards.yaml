@@ -287,7 +287,6 @@ counters:
     events_when_complete: music_awards_stop_adding_time, start_ma_two_ball
     enable_events: mode_music_awards_started
     disable_events: counter_ma_shot_counter_complete
-    multiple_hit_window: 500ms
 
 #             88  88           88                                    
 #             88  ""           88                                    
