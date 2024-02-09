@@ -200,7 +200,7 @@ sound_player:
       action: play
       loops: 0
       events_when_played: play_award_video
-  start_ma_two_ball:
+  mode_ma_two_ball_started:
     ma_ronnie_music_award_multiball:
       action: play
       loops: 0
