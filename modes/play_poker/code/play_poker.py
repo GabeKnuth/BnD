@@ -119,10 +119,11 @@ class PlayPoker(Mode):
 
     def _is_flush(self):
         suits = [x.suit for x in self.player.poker_cards]
-        if len(suits) == 1:
+        if len(set(suits)) == 1:
             return True
         else:
             return False
+
 
     def _is_straight(self):
         vals = [x.value for x in self.player.poker_cards]

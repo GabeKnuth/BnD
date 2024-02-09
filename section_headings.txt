@@ -1,0 +1,250 @@
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+
+
+
+
+
+
+                                                                                    
+#                                                88                                   
+#                                                88                                   
+#                                                88                                   
+#  8b,dPPYba,  ,adPPYYba,  8b,dPPYba,    ,adPPYb,88   ,adPPYba,   88,dPYba,,adPYba,   
+#  88P'   "Y8  ""     `Y8  88P'   `"8a  a8"    `Y88  a8"     "8a  88P'   "88"    "8a  
+#  88          ,adPPPPP88  88       88  8b       88  8b       d8  88      88      88  
+#  88          88,    ,88  88       88  "8a,   ,d88  "8a,   ,a8"  88      88      88  
+#  88          `"8bbdP"Y8  88       88   `"8bbdP"Y8   `"YbbdP"'   88      88      88  
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+
+
+
+
+
+
+
+
+
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+
+
+
+
+
+
+#                                               88                   
+#    ,d                                         88                   
+#    88                                         88                   
+#  MM88MMM  8b,dPPYba,  ,adPPYYba,   ,adPPYba,  88   ,d8             
+#    88     88P'   "Y8  ""     `Y8  a8"     ""  88 ,a8"              
+#    88     88         ,adPPPPP88  8b          8888[                
+#    88,    88  88      88,    ,88  "8a,   ,aa  88`"Yba,             
+#    "Y888  88  88      `"8bbdP"Y8   `"Ybbd8"'  88   `Y8a 
+#               88
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
+
+
+
+
+
+
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
+
+
+
+
+
+
+
+
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
+
+
+
+
+
+
+
+
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
+
+
+
+
+
+
+#                                                       ,d                                        
+#                                                       88                                        
+#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
+#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
+#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
+#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"'  
+
+
+
+
+
+
+
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+
+
+
+
+
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
+
+
+
+
+
+
+
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
+
+
+
+
+
+#                                   88           88  88                       88  88             
+#                                   88    ,d     ""  88                       88  88             
+#                                   88    88         88                       88  88             
+#  88,dPYba,,adPYba,   88       88  88  MM88MMM  88  88,dPPYba,   ,adPPYYba,  88  88  ,adPPYba,  
+#  88P'   "88"    "8a  88       88  88    88     88  88P'    "8a  ""     `Y8  88  88  I8[    ""  
+#  88      88      88  88       88  88    88     88  88       d8  ,adPPPPP88  88  88   `"Y8ba,   
+#  88      88      88  "8a,   ,a88  88    88,    88  88b,   ,a8"  88,    ,88  88  88  aa    ]8I  
+#  88      88      88   `"YbbdP'Y8  88    "Y888  88  8Y"Ybbd8"'   `"8bbdP"Y8  88  88  `"YbbdP"'  

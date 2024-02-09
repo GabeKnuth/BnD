@@ -1107,133 +1107,133 @@ lights:
     number: 128
     subtype: led
     tags: gi, gi18
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_4:
     number: 129
     subtype: led
-    type: grb
+    type: rgb
     tags: gi, gi19
     #subtype: gi
   l_gi_right_3:
     number: 130
     subtype: led
     tags: gi, gi20
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_2:
     number: 131
     subtype: led
     tags: gi, gi21
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_1:
     number: 132
     subtype: led
     tags: gi, gi22
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_2:
     number: 133
     subtype: led
     tags: gi, gi2
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_1:
     number: 134
     subtype: led
     tags: gi, gi1
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_3:
     number: 135
     subtype: led
     tags: gi, gi3
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_4:
     number: 136
     subtype: led
     tags: gi, gi4
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_5:
     number: 137
     subtype: led
     tags: gi, gi5
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_6:
     number: 138
     subtype: led
     tags: gi, gi6
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_7:
     number: 139
     subtype: led
     tags: gi, gi7
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_8:
     number: 140
     subtype: led
     tags: gi, gi8
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_9:
     number: 141
     subtype: led
     tags: gi, gi9
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_10:
     number: 142
     subtype: led
     tags: gi, gi10
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_left_lane:
     number: 143
     subtype: led
     tags: gi, gi11
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_center_lane:
     number: 144
     subtype: led
     tags: gi, gi12
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_lane:
     number: 145
     subtype: led
     tags: gi, gi13
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_9:
     number: 146
     subtype: led
     tags: gi, gi14
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_8:
     number: 147
     subtype: led
     tags: gi, gi15
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_7:
     number: 148
     subtype: led
     tags: gi, gi16
-    type: grb
+    type: rgb
     #subtype: gi
   l_gi_right_6:
     number: 149
     subtype: led
     tags: gi, gi17
-    type: grb
+    type: rgb
     #subtype: gi
   
   
@@ -1242,229 +1242,229 @@ lights:
     number: 192
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_2:
     number: 193
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_3:
     number: 194
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_4:
     number: 195
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_5:
     number: 196
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_6:
     number: 197
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_7:
     number: 198
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_8:
     number: 199
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_9:
     number: 200
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_10:
     number: 201
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_11:
     number: 202
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_12:
     number: 203
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_13:
     number: 204
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_14:
     number: 205
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_15:
     number: 206
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_16:
     number: 207
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_17:
     number: 208
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_18:
     number: 209
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     ##subtype: gi
   l_backbox_19:
     number: 210
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_20:
     number: 211
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_21:
     number: 212
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_22:
     number: 213
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_23:
     number: 214
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_24:
     number: 215
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_25:
     number: 216
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_26:
     number: 217
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_27:
     number: 218
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_28:
     number: 219
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_29:
     number: 220
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_30:
     number: 221
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_31:
     number: 222
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_32:
     number: 223
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_33:
     number: 224
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_34:
     number: 225
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_35:
     number: 226
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_36:
     number: 227
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_37:
     number: 228
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
   l_backbox_38:
     number: 229
     subtype: led
     tags: gi
-    type: grb
+    type: rgb
     #subtype: gi
 
 

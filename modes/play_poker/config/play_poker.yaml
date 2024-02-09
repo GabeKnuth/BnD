@@ -75,29 +75,32 @@ event_player:
   ball_will_end:
     - play_poker_fail
   timer_poker_countdown_complete:
-    - play_poker_fail|1s
-    - play_poker_done
+    - play_poker_fail
   poker_royal_flush:
     - light_poker_extra_ball
     - light_special
-    - play_poker_done
+    - play_poker_success
   poker_straight_flush:
     - light_special
-    - play_poker_done
+    - play_poker_success
   poker_four_of_a_kind:
     - light_special
     - light_poker_extra_ball
     - poker_four_of_a_kind_stage
-    - play_poker_done
+    - play_poker_success
   poker_full_house:
     - light_poker_extra_ball
-    - play_poker_done
+    - play_poker_success
   poker_flush:
     - light_poker_extra_ball
-    - play_poker_done
+    - play_poker_success
   poker_straight:
     - light_poker_extra_ball
-    - play_poker_done
+    - play_poker_success
+  play_poker_success:
+    - enable_base_left_vuk_hold
+  play_poker_done:
+    - release_left_vuk_ball
 
 #                                       88              88           88              
 #                                       ""              88           88              
@@ -123,7 +126,7 @@ variable_player:
   poker_royal_flush:
     score: 10000000
   poker_straight_flush:
-    score: 5000000
+    score: 8000000
   poker_four_of_a_kind:
     score: 5000000
   poker_full_house:
@@ -209,7 +212,11 @@ sound_player:
   play_poker_fail:  
     poker_try_again_later:
       action: play 
-      events_when_stopped: play_poker_done|5.5s  
+      events_when_stopped: play_poker_done|5.5s 
+  play_shuffle_sound:
+    shuffle:
+      action: play
+
 
 #           88                                                         
 #    ,d     ""                                                         
@@ -301,64 +308,64 @@ slide_player:
   play_poker_fail: play_poker_fail_slide
 
   poker_one_pair:
-    sl_chips_falling:
-      target: stage
     sl_one_pair:
       target: stage
+    sl_dmd_one_pair:
+      target: dmd
   
   poker_two_pairs:
-    sl_chips_falling:
-      target: stage
     sl_two_pairs:
       target: stage
-  
+    sl_dmd_two_pairs:
+      target: dmd
+
   poker_three_of_a_kind:
-    sl_chips_falling:
-      target: stage
     sl_three_of_a_kind:
       target: stage
-  
+    sl_dmd_three_of_a_kind:
+      target: dmd
+
   poker_straight:
-    sl_chips_falling:
-      target: stage
     sl_straight:
       target: stage
-  
+    sl_dmd_straight:
+      target: dmd
+
   poker_flush:  
-    sl_chips_falling:
-      target: stage
     sl_flush:
       target: stage
-  
+    sl_dmd_flush:
+      target: dmd
+
   poker_full_house:    
-    sl_chips_falling:
-      target: stage
     sl_full_house:
       target: stage 
+    sl_dmd_full_house:
+      target: dmd
   
   poker_four_of_a_kind:   
-    sl_chips_falling:
-      target: stage
     sl_four_of_a_kind:
       target: stage
+    sl_dmd_four_of_a_kind:
+      target: dmd
   
   poker_straight_flush:  
-    sl_chips_falling:
-      target: stage
     sl_straight_flush:
       target: stage
+    sl_dmd_straight_flush:
+      target: dmd
   
   poker_royal_flush:  
-    sl_chips_falling:
-      target: stage
     sl_royal_flush:
       target: stage 
+    sl_dmd_royal_flush:
+      target: dmd
   
   poker_high_card:  
-    sl_chips_draining:
-      target: stage
     sl_high_card:
       target: stage 
+    sl_dmd_high_card:
+      target: dmd
 
 #             88  88           88                         
 #             88  ""           88                         
@@ -370,45 +377,6 @@ slide_player:
 #  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
-  pp_intro_dmd_1:
-    widgets:
-      - type: text
-        text: Hit spinner to
-        anchor_y: top
-        style: small #dmd_small
-        y: top-1
-        anchor_x: right
-        x: right-1
-      - type: text
-        text: get card
-        style: small #dmd_small
-        anchor_y: bottom
-        y: center
-        anchor_x: right
-        x: right-1
-    target: dmd
-  
-  pp_intro_dmd_2:  # This will transition in over the first slide, right to left.
-    transition: # I think this is how to do this?
-        type: push
-        direction: left
-    widgets:
-      - type: text
-        text: Shoot left hole
-        anchor_y: top
-        style: small #dmd_small
-        y: top-1
-        anchor_x: right
-        x: right-1
-      - type: text
-        text: to collect
-        style: small #dmd_small
-        anchor_y: bottom
-        y: center
-        anchor_x: right
-        x: right-1
-    target: dmd
-  
   play_poker_fail_slide:
     widgets:
       - type: text
@@ -501,79 +469,309 @@ slides:
         y: 90
         font_size: 70
 
-  sl_chips_falling:
-    widgets:
-      - type: video
-        video: poker_complete_stage
-        # events_when_stopped: poker_done
-  
-  sl_chips_draining:
-    widgets:
-      - type: video
-        video: poker_chips_draining
-        # events_when_stopped: poker_done
-
   sl_one_pair:
     widgets:
-      - type: video
-        video: poker_complete_stage
       - type: text
         text: ONE PAIR!
         style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_complete_stage
+
+  sl_dmd_one_pair:
+    widgets:
+      - type: text
+        text: 1 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_two_pairs:
     widgets:
       - type: text
         text: TWO PAIRS!
-        style: huge #dmd_huge 
+        style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_complete_stage
+
+  sl_dmd_two_pairs:
+    widgets:
+      - type: text
+        text: 1.5 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_three_of_a_kind:
     widgets:
       - type: text
         text: 3 OF A KIND!
         style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_complete_stage
+
+  sl_dmd_three_of_a_kind:
+    widgets:
+      - type: text
+        text: 2 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_straight:
     widgets:
       - type: text
         text: STRAIGHT!
-        style: huge #dmd_huge   
+        style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_complete_stage 
+
+  sl_dmd_straight:
+    widgets:
+      - type: text
+        text: 3 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_flush:
     widgets:
       - type: text
         text: FLUSH!
-        style: huge #dmd_huge 
+        style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_complete_stage
+
+  sl_dmd_flush:
+    widgets:
+      - type: text
+        text: 4 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_full_house:
     widgets:
       - type: text
         text: FULL HOUSE!
         style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_complete_stage
+
+  sl_dmd_full_house:
+    widgets:
+      - type: text
+        text: 4 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_four_of_a_kind:
     widgets:
       - type: text
-        text: FOUR OF A KIND!
-        style: huge #dmd_huge       
+        text: 4 OF A KIND!
+        style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_complete_stage       
+
+  sl_dmd_four_of_a_kind:
+    widgets:
+      - type: text
+        text: 5 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_straight_flush:
     widgets:
       - type: text
-        text: STRAIGHT FLUSH!
-        style: huge #dmd_huge 
+        text: STRAIGHT FLUSH
+        style: huge #dmd_huge
+        font_size: 160
+        y: bottom+320
+      - type: video
+        video: poker_complete_stage
+
+  sl_dmd_straight_flush:
+    widgets:
+      - type: text
+        text: 8 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
+
 
   sl_royal_flush:
     widgets:
       - type: text
-        text: ROYAL FLUSH!
-        style: huge #dmd_huge 
+        text: ROYAL FLUSH!!
+        style: huge #dmd_huge
+        font_size: 160
+        y: bottom+320
+      - type: video
+        video: poker_complete_stage
+
+  sl_dmd_royal_flush:
+    widgets:
+      - type: text
+        text: 10 MILLION!
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
   sl_high_card:
     widgets:
       - type: text
-        text: (value_name) HIGH
-        style: huge
+        text: HIGH CARD
+        style: huge #dmd_huge
+        font_size: 220
+        y: bottom+300
+      - type: video
+        video: poker_chips_draining
+
+  sl_dmd_high_card:
+    widgets:
+      - type: text
+        text: 100,000
+        style: huge #dmd_huge
+        font_size: 10
+        color: yellow
+        animations: 
+          show_slide:       
+            - property: rotation, font_size
+              value: 1440, 60
+              duration: .7s
+
 
 #                      88           88                                               
 #                      ""           88                             ,d                
@@ -711,9 +909,6 @@ widgets:
       z: 1
 
 
-
-
-
 #                      88           88                                    
 #                      ""           88                             ,d     
 #                                   88                             88     
@@ -801,4 +996,16 @@ widget_player:
     card_5_flash:
       action: remove
   
+#                                                       ,d                                        
+#                                                       88                                        
+#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
+#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
+#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
+#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"'  
 
+counters:
+  spinner_noise_reduction:
+    count_events: s_spinner_active
+    multiple_hit_window: 2s
+    events_when_hit: play_shuffle_sound

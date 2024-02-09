@@ -8,11 +8,11 @@
       - type: text
         text: PLAY POKER!
         style: huge #dmd_huge
-        y: 19
+        y: 21
       - type: text
         text: COLLECT THE BEST HAND
         style: medium #dmd_med
-        y: 4
+        y: 6
 - duration: 2s
   slides:
     poker_intro_2:
@@ -20,11 +20,11 @@
       - type: text
         text: SHOOT THE SPINNER
         style: huge #dmd_huge
-        y: 19
+        y: 21
       - type: text
         text: TO PICK A NEW CARD
         style: medium #dmd_med
-        y: 4
+        y: 6
 - duration: 2s
   slides:
     poker_intro_3:
@@ -32,12 +32,12 @@
       - type: text
         text: SHOOT THE LEFT HOLE
         style: huge #dmd_huge
-        y: 19
+        y: 21
         x: 63
       - type: text
         text: TO LOCK IN THE CARD
         style: medium #dmd_med
-        y: 4
+        y: 6
 - duration: 2s
   slides:
     poker_intro_4:
@@ -45,9 +45,15 @@
       - type: text
         text: BEST POKER HAND
         style: huge #dmd_huge
-        y: 19
+        y: 21
         x: 63
       - type: text
-        text: MEANS BIG PRIZES
+        text: MEANS      PRIZES
         style: medium #dmd_med
-        y: 4
+        y: 6
+      - type: text
+        text:     BIG
+        style: medium #dmd_med
+        y: 6
+        x: left+62
+        color: RED
