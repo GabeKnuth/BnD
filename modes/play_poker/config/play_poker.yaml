@@ -179,6 +179,12 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
+  poker_card_locked:
+    poker_locked_in:
+      action: play
+  restart_timer:
+    spinner:
+      action: play
   poker_high_card:
     poker_high_card:
       action: play

@@ -1,5 +1,5 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+
 
 show_player:
   mode_attract_started:
@@ -146,7 +146,18 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
+  s_start_active:
+    start_pool:
+      action: play
 
+sound_pools:
+  start_pool:
+    type: random
+    track: voice
+    sounds:
+      - start_let_the_horses_burn
+      - start_get_down
+      - start_lets_go_boot_scoot
 
 timers:
   video_timer:
