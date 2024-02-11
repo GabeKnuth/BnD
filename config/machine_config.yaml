@@ -473,59 +473,59 @@ flippers:
     main_coil: c_leftflippermain
     hold_coil: c_leftflipperhold
     activation_switch: s_leftflipper
-    enable_events: ball_starting #, weak_flippers_disabled
-    disable_events: mode_bonus_starting #, weak_flippers_enabled
+    enable_events: ball_starting, weak_flippers_disabled
+    disable_events: mode_bonus_starting, weak_flippers_enabled
     use_eos: false
   right_flipper:
     main_coil: c_rightflippermain
     hold_coil: c_rightflipperhold
     activation_switch: s_rightflipper
-    enable_events: ball_starting #, weak_flippers_disabled
-    disable_events: mode_bonus_starting #, weak_flippers_enabled
+    enable_events: ball_starting, weak_flippers_disabled
+    disable_events: mode_bonus_starting, weak_flippers_enabled
     use_eos: false
   upper_right_flipper:
     main_coil: c_upperrightflippermain
     hold_coil: c_upperrightflipperhold
     activation_switch: s_rightflipper
-    enable_events: ball_starting #, weak_flippers_disabled
-    disable_events: mode_bonus_starting #, weak_flippers_enabled
+    enable_events: ball_starting, weak_flippers_disabled
+    disable_events: mode_bonus_starting, weak_flippers_enabled
     use_eos: false
     include_in_ball_search: true
 
 # Some day I want to make this work as a mystery award. They can't all be fun, right? :)
 
 # Weak Flippers
-#  weak_left_flipper:
-#    main_coil: c_LeftFlipperMain
-#    main_coil_overwrite:
-#      default_pulse_ms: 17
-#    hold_coil: c_LeftFlipperHold
-#    activation_switch: s_LeftFlipper
-#    enable_events: weak_flippers_enabled
-#    disable_events: weak_flippers_disabled, ball_starting
-#    use_eos: false
-#    debug: true
-#  weak_right_flipper:
-#    main_coil: c_RightFlipperMain
-#    main_coil_overwrite:
-#      default_pulse_ms: 19
-#    hold_coil: c_RightFlipperHold
-#    activation_switch: s_RightFlipper
-#    enable_events: weak_flippers_enabled
-#    disable_events: weak_flippers_disabled, ball_starting
-#    use_eos: false
-#    debug: true
-#  weak_upper_right_flipper:
-#    main_coil: c_UpperRightFlipperMain
-#    main_coil_overwrite:
-#      default_pulse_ms: 7
-#    hold_coil: c_UpperRightFlipperHold
-#    activation_switch: s_RightFlipper
-#    enable_events: weak_flippers_enabled
-#    disable_events: weak_flippers_disabled, ball_starting
-#    use_eos: false
-#    include_in_ball_search: true
-#    debug: true
+  weak_left_flipper:   
+    main_coil: c_leftflippermain
+    main_coil_overwrite:
+      pulse_ms: 17
+    hold_coil: c_leftflipperhold
+    activation_switch: s_leftflipper
+    enable_events: weak_flippers_enabled
+    disable_events: weak_flippers_disabled, ball_starting
+    use_eos: false
+    debug: true
+  weak_right_flipper:
+    main_coil: c_rightflippermain
+    main_coil_overwrite:
+      pulse_ms: 17
+    hold_coil: c_rightflipperhold
+    activation_switch: s_rightflipper
+    enable_events: weak_flippers_enabled
+    disable_events: weak_flippers_disabled, ball_starting
+    use_eos: false
+    debug: true
+  weak_upper_right_flipper:
+    main_coil: c_upperrightflippermain
+    main_coil_overwrite:
+      pulse_ms: 7
+    hold_coil: c_upperrightflipperhold
+    activation_switch: s_rightflipper
+    enable_events: weak_flippers_enabled
+    disable_events: weak_flippers_disabled, ball_starting
+    use_eos: false
+    include_in_ball_search: true
+    debug: true
 
 #  88                       88  88                                              
 #  88                       88  88                                              
@@ -1621,6 +1621,10 @@ keyboard:
     event: s_rightrampopto_active
   j:
     event: shot_pops_to_vuk_hit
+  w:
+    event: weak_flippers_enabled
+  e:
+    event: weak_flippers_disabled
 
 #                                                             88     
 #                                                             88     
