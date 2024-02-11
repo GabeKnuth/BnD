@@ -34,9 +34,9 @@ machine:
   balls_installed: 4
 
 # Hide mouse cursor from screen in game
-kivy_config:
-  graphics:
-    show_cursor: false
+# kivy_config:
+#   graphics:
+#     show_cursor: false
 
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
@@ -178,6 +178,7 @@ assets:
   videos:
     default:
       load: on_demand
+
 
 #                                            88                         
 #                                            88                         
@@ -1611,8 +1612,6 @@ keyboard:
   #   switch: s_jukeboxopto
   # k:
   #   event: seq_shot_spinner_to_vuk_hit
-  b:
-    event: start_weak_flippers
   f:
     event: poker_four_of_a_kind
   g:
