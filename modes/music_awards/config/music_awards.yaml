@@ -40,7 +40,11 @@ event_player:
     - disable_base_top_kicker_hold
   player_song_layer{value==1}: add_bass
   player_song_layer{value==2}: add_other
-  player_song_layer{value==3}: add_vocals
+  player_song_layer{value==3}: 
+    - add_vocals
+    - music_awards_success
+  mode_music_awards_stopping:
+    - reset_track_volume
 
 #                                                             88     
 #                                                             88     
@@ -104,6 +108,16 @@ track_player:
     ma_vocal_track:
       action: set_volume
       volume: 0.8
+  reset_track_volume:
+    ma_bass_track:
+      action: set_volume
+      volume: 0.0
+    ma_other_track: 
+      action: set_volume
+      volume: 0.0
+    ma_vocal_track:
+      action: set_volume
+      volume: 0.0
 
 #           88                                                         
 #    ,d     ""                                                         
@@ -282,7 +296,7 @@ counters:
   ma_shot_counter:
     count_events: s_rightrampopto_active, s_leftorbit_active
     events_when_hit: ma_shot_made
-    multiple_hit_window: 1s # Needed because lazy shots hit the switch twice
+    multiple_hit_window: 2s # Needed because lazy shots hit the switch twice
     count_complete_value: 3
     events_when_complete: music_awards_stop_adding_time, start_ma_two_ball
     enable_events: mode_music_awards_started
