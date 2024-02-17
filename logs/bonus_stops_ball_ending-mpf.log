@@ -1793,6 +1793,13 @@
 2024-02-17 01:08:03,086 : INFO : ball_device.bd_drain : State: waiting_for_target_ready
 2024-02-17 01:08:03,086 : INFO : EventManager : Event: ======'balldevice_bd_drain_ball_eject_attempt'====== Args={'balls': 1, 'target': <ball_device.bd_trough>, 'source': <ball_device.bd_drain>, 'mechanical_eject': False, 'num_attempts': 0}
 2024-02-17 01:08:03,087 : DEBUG : ball_device.bd_trough : Not ready to receive from <ball_device.bd_drain>. Not enough space. Free space 0 (Capacity: 3, Balls: 3), incoming_balls: 0
+##################################################################################################
+################################################################################################
+##############################################################################################
+######################### GABE STARTED JIGGLING THE BALL IN THE DRAIN ######################
+##############################################################################################
+################################################################################################
+##################################################################################################
 2024-02-17 01:08:16,398 : INFO : SwitchController : <<<<<<< 's_drain' inactive >>>>>>>
 2024-02-17 01:08:16,900 : DEBUG : ball_device.bd_drain : SC: Counted 0 balls. Active switches: []. Old: 1
 2024-02-17 01:08:16,900 : DEBUG : ball_device.bd_drain : SC: New count 0 last: 1
