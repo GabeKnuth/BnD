@@ -1,0 +1,5 @@
+2024-02-04 23:31:14,554 : INFO : root : Loading config.
+2024-02-04 23:31:14,556 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2024-02-04 23:31:14,557 : INFO : ConfigProcessor : Loading config from file /Users/gabe/Documents/GitHub/mpf/mpf/mpfconfig.yaml.
+2024-02-04 23:31:14,627 : INFO : ConfigProcessor : Loading config: /Users/gabe/Documents/GitHub/mpf/mpf/mpfconfig.yaml
+2024-02-04 23:31:14,628 : INFO : ConfigProcessor : Loading config from file /Users/gabe/Documents/GitHub/BnD/monitor/config/config.yaml.
