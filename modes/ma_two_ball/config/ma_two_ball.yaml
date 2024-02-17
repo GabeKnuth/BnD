@@ -31,6 +31,7 @@ event_player:
     - fade_in_base_music
     - start_quarters_mode
     - enable_base_left_vuk_hold
+    - light_mission_select
   s_rightrampopto_active:
     - ma_jackpot
   s_leftorbit_active:

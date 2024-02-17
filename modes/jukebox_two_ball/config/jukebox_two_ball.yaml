@@ -16,6 +16,7 @@ event_player:
     - fade_in_base_music
     - start_quarters_mode
     - unblock_jukebox_hits
+    - light_mission_select
 
 multiballs:
   jukebox_two_ball:

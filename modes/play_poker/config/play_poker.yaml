@@ -347,13 +347,16 @@ show_player:
 #  88                              d8'
 
 slide_player:
-  update_countdown_timer:
+  timer_poker_countdown_tick: 
     poker_countdown:
       target: stage
+  
   poker_deck_complete:
     poker_countdown:
       action: remove
+  
   show_player_cards: card_background
+  
   play_poker_fail: play_poker_fail_slide
 
   poker_one_pair:
@@ -978,7 +981,7 @@ widgets:
 #  88                              d8' 
 
 widget_player:
-  poker_card_locked:
+  timer_poker_countdown_time_added:
     time_extended:
       target: stage
       widget_settings:
@@ -1059,7 +1062,7 @@ counters:
     multiple_hit_window: 2s
     events_when_hit: play_shuffle_sound
   # Since I can't find a way to just disable a counter, I'm going to use this count and trigger release ball events that
-  # trigger the time to start. Then I can disable this counter when I want to "stop" the timer from restarting.
+  # trigger the timer to start. Then I can disable this counter when I want to "stop" the timer from restarting.
   timer_disable_counter:
     count_events: balldevice_bd_lower_vuk_ball_eject_success
     events_when_hit: restart_timer

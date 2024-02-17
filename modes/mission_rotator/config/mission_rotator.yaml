@@ -50,7 +50,7 @@ achievements:
     show_when_started: flash
     show_when_completed: on
     events_when_started: start_music_awards_mode, mission_started
-    events_when_completed: light_mission_select
+    # events_when_completed: light_mission_select  # Commented out because we start a multiball
     events_when_enabled: light_mission_select
     restart_after_stop_possible: true
     complete_events: music_awards_success
@@ -63,7 +63,7 @@ achievements:
     show_when_started: flash
     show_when_completed: on
     events_when_started: start_jukebox_mode, mission_started
-#    events_when_completed: light_mission_select  # Commented out because we start a multiball
+    # events_when_completed: light_mission_select  # Commented out because we start a multiball
     events_when_enabled: light_mission_select
     restart_after_stop_possible: true
     complete_events: jukebox_success
