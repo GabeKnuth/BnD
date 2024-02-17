@@ -31,6 +31,7 @@ event_player:
   mode_music_awards_stopping:
     - fade_in_base_music
     - enable_base_left_vuk_hold
+    - reset_track_volume
   ball_will_end:
     - music_awards_fail
   timer_ma_intro_timer_complete:
@@ -43,8 +44,7 @@ event_player:
   player_song_layer{value==3}: 
     - add_vocals
     - music_awards_success
-  mode_music_awards_stopping:
-    - reset_track_volume
+
 
 #                                                             88     
 #                                                             88     
