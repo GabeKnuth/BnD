@@ -1,16 +1,35 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+
+#                                            88              
+#                                            88              
+#                                            88              
+#  88,dPYba,,adPYba,    ,adPPYba,    ,adPPYb,88   ,adPPYba,  
+#  88P'   "88"    "8a  a8"     "8a  a8"    `Y88  a8P_____88  
+#  88      88      88  8b       d8  8b       88  8PP"""""""  
+#  88      88      88  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  
+#  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'
 
 mode:
   priority: 500
   start_events: start_money_bags_mode
   stop_events: money_bags_done
 
-#todo
-# intro dots
-# mode timer
-# money bag animation
-# stage video?
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 event_player:
   mode_money_bags_started:
@@ -34,6 +53,15 @@ event_player:
     - disable_base_left_vuk_hold
     - release_top_kicker_ball
     - disable_base_top_kicker_hold
+
+#             88                                            
+#             88                          ,d                
+#             88                          88                
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a    88     I8[    ""  
+#   `"Y8ba,   88       88  8b       d8    88      `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"'  
 
 shots:
   shot_left_kicking_target:
@@ -82,7 +110,14 @@ timers:
       - action: stop
         event: logicblock_money_bags_counter_complete
 
-#logic_blocks:
+#                                                       ,d                                        
+#                                                       88                                        
+#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
+#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
+#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
+#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"' 
+
 counters:
   money_bags_counter:
     enable_events: mode_money_bags_started
@@ -93,6 +128,25 @@ counters:
     count_complete_value: 5
     starting_count: 0
     direction: up
+
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 slide_player:
   mode_money_bags_started:
@@ -106,6 +160,15 @@ slide_player:
   logicblock_money_bags_counter_complete:
     money_bags_complete:
       target: dmd
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'      
 
 slides:
   mb_intro_dmd:
@@ -221,7 +284,25 @@ slides:
         anchor_x: left
         x: left
 
-#scoring: #leaving for reference
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
+
 variable_player:
   mode_money_bags_started:
     mb_shot_score:
@@ -229,6 +310,8 @@ variable_player:
       action: set
   money_bags_hit:
     score: (current_player.money_bags_hit + 1) * 1000000
+
+
 
 shot_profiles:
   advertise:

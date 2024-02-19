@@ -36,6 +36,8 @@ event_player:
     - stop_mystery
   mode_jukebox_two_ball_stopped:
     - light_mission_select
+  mode_play_poker_stopped:
+    - light_mission_select
   mode_metal_rodeo_stopped:
     - light_mission_select
   mode_honky_tonk_multiball_stopped:
@@ -120,9 +122,15 @@ random_event_player:
       - mys_big_points
       - mys_start_multiball
       - mys_award_lock
-      #mys_weak_flippers
+      #- mys_weak_flippers
+      #- mys_hold_album_value 
+  s_subwayopto_active:
+      - jukebox_up
+      - jukebox_down
+  shot_jukebox_loop_hit:
+      - jukebox_up
+      - jukebox_down
 
-      #mys_hold_album_value 
 
 #                                                             88  
 #                                                             88  

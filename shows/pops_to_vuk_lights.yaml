@@ -1,0 +1,65 @@
+#show_version=5
+- time: 0
+  lights:
+    l_australia: on
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_australia: off
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_extra_ball: on
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_bottom_pop: on
+    
+- time: '+1'
+  lights:
+    l_collect_wizard: on
+    l_extra_ball: off
+    
+- time: '+1'
+  lights:
+    l_left_pop: on
+    
+- time: '+1'
+  lights:
+    l_bottom_pop: off
+    
+- time: '+1'
+  lights:
+    l_collect_wizard: off
+    l_left_pop: off
+    l_right_pop: on
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_right_pop: off
+    l_right_ramp_flasher: on
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

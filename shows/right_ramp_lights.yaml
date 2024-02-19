@@ -1,0 +1,61 @@
+#show_version=5
+- time: 0
+  lights:
+    l_right_music_award: on
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_ramp_jackpot: on
+    
+- time: '+1'
+  lights:
+    l_south_america: on
+    
+- time: '+1'
+  lights:
+    l_right_music_award: off
+    
+- time: '+1'
+  lights:
+    l_ramp_jackpot: off
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_south_america: off
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_ramp_fire: on
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_ramp_fire: off
+    

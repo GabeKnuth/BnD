@@ -1,9 +1,39 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+
+# Doesn't stop super jackpot show or award based on timer
+# Light shows need to be FASTER
+
+
+#                                            88              
+#                                            88              
+#                                            88              
+#  88,dPYba,,adPYba,    ,adPPYba,    ,adPPYb,88   ,adPPYba,  
+#  88P'   "88"    "8a  a8"     "8a  a8"    `Y88  a8P_____88  
+#  88      88      88  8b       d8  8b       88  8PP"""""""  
+#  88      88      88  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  
+#  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'
+
 mode:
   priority: 600
   start_events: start_jukebox_two_ball
   stop_events: multiball_jukebox_two_ball_ended
+
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'   
 
 event_player:
   mode_jukebox_two_ball_started:
@@ -12,17 +42,114 @@ event_player:
     - block_jukebox_hits
     - start_achievements|2s
     - stop_mission_select
+    - enable_jb_single_jackpot
   mode_jukebox_two_ball_stopping:
     - fade_in_base_music
     - start_quarters_mode
     - unblock_jukebox_hits
     - light_mission_select
+  jb_single_jackpot_hit:
+    - enable_jb_double_jackpot
+    - disable_jb_single_jackpot
+  jb_double_jackpot_hit:
+    - enable_jb_super_jackpot
+    - start_jb_super_jackpot_timer
+    - disable_jb_double_jackpot
+  jb_super_jackpot_hit:
+    - enable_jb_single_jackpot
+    - disable_jb_super_jackpot
+    - stop_jb_super_jackpot_timer
+    - reset_jb_super_jackpot_timer|0.1s
+  timer_jb_super_jackpot_timer_complete:
+    - enable_jb_single_jackpot
+    - disable_jb_super_jackpot
+    - reset_jb_super_jackpot_timer|0.1s
+  multiball_jukebox_two_ball_ending:
+    - disable_jb_single_jackpot
+    - disable_jb_double_jackpot
+    - disable_jb_super_jackpot
+    
+#             88                                            
+#             88                          ,d                
+#             88                          88                
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a    88     I8[    ""  
+#   `"Y8ba,   88       88  8b       d8    88      `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"'  
+
+# need sound instructions and slides
+
+shots:
+  jb_single_jackpot:
+    hit_events: sw_jukebox_hit
+    disable_events: disable_jb_single_jackpot
+    enable_events: enable_jb_single_jackpot
+  jb_double_jackpot:
+    hit_events: seq_shot_right_ramp_full_loop_hit
+    disable_events: disable_jb_double_jackpot
+    enable_events: enable_jb_double_jackpot
+  jb_super_jackpot:
+    hit_events: shot_pops_to_vuk_hit
+    disable_events: disable_jb_super_jackpot
+    enable_events: enable_jb_super_jackpot  
+
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
+
+timers:
+  jb_super_jackpot_timer:
+    start_value: 6
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - event: start_jb_super_jackpot_timer
+        action: start
+      - event: stop_jb_super_jackpot_timer
+        action: stop
+      - event: reset_jb_super_jackpot_timer
+        action: reset
+
+#                                   88           88  88                       88  88             
+#                                   88    ,d     ""  88                       88  88             
+#                                   88    88         88                       88  88             
+#  88,dPYba,,adPYba,   88       88  88  MM88MMM  88  88,dPPYba,   ,adPPYYba,  88  88  ,adPPYba,  
+#  88P'   "88"    "8a  88       88  88    88     88  88P'    "8a  ""     `Y8  88  88  I8[    ""  
+#  88      88      88  88       88  88    88     88  88       d8  ,adPPPPP88  88  88   `"Y8ba,   
+#  88      88      88  "8a,   ,a88  88    88,    88  88b,   ,a8"  88,    ,88  88  88  aa    ]8I  
+#  88      88      88   `"YbbdP'Y8  88    "Y888  88  8Y"Ybbd8"'   `"8bbdP"Y8  88  88  `"YbbdP"' 
 
 multiballs:
   jukebox_two_ball:
     ball_count: 2
     shoot_again: 5s
     start_events: mode_jukebox_two_ball_started
+
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 slide_player:
   mode_jukebox_two_ball_started:
@@ -39,19 +166,57 @@ slide_player:
     jb2b_dmd_shoot_loop:
       target: dmd
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 sound_player:
-  jackpot_complete:
-    woo_baby:
+  jb_single_jackpot_hit:
+    jackpot:
       action: play
       loops: 0
       events_when_played: duck
       events_when_stopped: unduck
-  double_jackpot_complete:
+  jb_double_jackpot_hit:
+    double_jackpot2:
+      action: play
+      loops: 0
+      events_when_played: duck
     woo_baby:
+      action: play
+      loops: 0
+      events_when_stopped: unduck
+  jb_super_jackpot_hit:
+    super_jackpot:
       action: play
       loops: 0
       events_when_played: duck
       events_when_stopped: unduck
+
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   jb2b_dmd_shoot_loop:
@@ -175,7 +340,6 @@ slides:
         image: jb2b_still
         anchor_x: left
         x: left
-
   ball_saved:
     widgets:
       - type: text
@@ -183,12 +347,60 @@ slides:
         expire: 2s
         style: huge #dmd_huge
 
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
 show_player:
   mode_jukebox_two_ball_started:
     jb_play_bnd_song:
       key: jb_active_video
+  enable_jb_single_jackpot:  
     flash_jukebox:
       action: play
+  disable_jb_single_jackpot:
+    flash_jukebox:
+      action: stop
+  enable_jb_double_jackpot:
+    right_ramp_lights:
+      action: play
+      speed: 20
+  disable_jb_double_jackpot:
+    right_ramp_lights:
+      action: stop
+  enable_jb_super_jackpot:
+    pops_to_vuk_lights:
+      action: play
+      speed: 20
+  disable_jb_super_jackpot:
+    pops_to_vuk_lights:
+      action: stop
+
+
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
 
 shows:
   jb_play_bnd_song:
@@ -213,34 +425,29 @@ shows:
                   duration: .5s
           target: stage
 
-achievements:
-  jackpot:
-    show_when_started: flash
-    show_when_completed: off
-    show_tokens:
-      led: jackpot
-    reset_events: s_topkicker_active
-#    enable_events: mode_jukebox_two_ball_started
-    start_events: start_achievements, double_jackpot_complete
-    complete_events: shot_right_ramp_full_loop_hit
-    events_when_completed: jackpot_complete
-    restart_after_stop_possible: true
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
 
-  double_jackpot:
-    show_when_started: flash
-    show_when_completed: off
-    show_tokens:
-      led: double_jackpot
-    reset_events: shot_right_ramp_full_loop_hit
-#    enable_events: mode_jukebox_two_ball_started
-    start_events: jackpot_complete
-    complete_events: s_topkicker_active
-    events_when_completed: double_jackpot_complete
-    restart_after_stop_possible: true
-
-#scoring: #leaving for reference
 variable_player:
-  jackpot_complete:
+  jb_single_jackpot_hit:
+    score: 100000
+  jb_double_jackpot_hit:
+    score: 200000
+  jb_super_jackpot_hit:
     score: 1000000
-  double_jackpot_complete:
-    score: 2000000

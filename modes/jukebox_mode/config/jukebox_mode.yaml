@@ -70,12 +70,7 @@ random_event_player:
         - jb_louisiana_woman
         - jb_rhinestone_cowboy
         - jb_stand_by_your_man
-    s_subwayopto_active:
-        - jukebox_up
-        - jukebox_down
-    shot_jukebox_loop_hit:
-        - jukebox_up
-        - jukebox_down
+
 
 
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
@@ -89,7 +84,7 @@ counters:
         disable_on_complete: true
         persist_state: true # keep status between balls
         count_events: sw_jukebox_hit
-        count_complete_value: 9
+        count_complete_value: 6
         multiple_hit_window: 1s
         events_when_hit: change_song, play_jukebox_video, stop_song
         events_when_complete: start_jukebox_two_ball, jukebox_success
@@ -156,6 +151,7 @@ slides:
         style: big #dmd_big
         opacity: 0
         y: center+3
+        number_grouping: true
         animations:
           show_slide:
             - property: opacity
@@ -230,6 +226,9 @@ show_player:
       loops: 0
     flash_jukebox:
       loops: -1  # we don't really need this, but yaml needs something here
+  jukebox_success:
+    flash_jukebox:
+      action: stop  # we don't really need this, but yaml needs something here
   flipper_cancel:
     jukebox_mode_intro:
       action: stop

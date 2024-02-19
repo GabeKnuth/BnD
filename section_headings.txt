@@ -1,3 +1,19 @@
+# ASCII art headings generated from
+# http://patorjk.com/software/taag/#p=display&h=0&v=2&c=bash&f=Univers&t=game%0Asetup%0A%0A
+
+#                                            88              
+#                                            88              
+#                                            88              
+#  88,dPYba,,adPYba,    ,adPPYba,    ,adPPYb,88   ,adPPYba,  
+#  88P'   "88"    "8a  a8"     "8a  a8"    `Y88  a8P_____88  
+#  88      88      88  8b       d8  8b       88  8PP"""""""  
+#  88      88      88  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  
+#  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'
+
+
+
+
+
 #                                                      ,d            
 #                                                      88            
 #   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
@@ -47,6 +63,44 @@
 #  88                               d8'                              
 #  88                              d8'
 
+
+
+
+
+
+#             88                                            
+#             88                          ,d                
+#             88                          88                
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a    88     I8[    ""  
+#   `"Y8ba,   88       88  8b       d8    88      `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"'  
+
+
+
+
+
+
+
+#             88                                                                 
+#             88                          ,d                                     
+#             88                          88                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM                                  
+#  I8[    ""  88P'    "8a  a8"     "8a    88                                     
+#   `"Y8ba,   88       88  8b       d8    88                                     
+#  aa    ]8I  88       88  "8a,   ,a8"    88,                                    
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888                                  
+#                                           ad88  88  88                         
+#                                          d8"    ""  88                         
+#                                          88         88                         
+#  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   MM88MMM  88  88   ,adPPYba,  ,adPPYba,  
+#  88P'    "8a  88P'   "Y8  a8"     "8a    88     88  88  a8P_____88  I8[    ""  
+#  88       d8  88          8b       d8    88     88  88  8PP"""""""   `"Y8ba,   
+#  88b,   ,a8"  88          "8a,   ,a8"    88     88  88  "8b,   ,aa  aa    ]8I  
+#  88`YbbdP"'   88           `"YbbdP"'     88     88  88   `"Ybbd8"'  `"YbbdP"'  
+#  88                                                                            
+#  88 
 
 
 
