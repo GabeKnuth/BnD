@@ -12,12 +12,28 @@ class PlayPoker(Mode):
         if not self.player.poker_deck:
             self.reset_poker()
 
+        self.completed = False
+
         self.add_mode_event_handler('s_spinner_active', self.pick_new_card)
         self.add_mode_event_handler('shot_lower_vuk_from_playfield_hit',
                                     self.lock_card)
-
+        self.add_mode_event_handler('poker_automatic_completion', self.auto_complete)
         self.add_mode_event_handler('slide_card_background_active',
                                     self.populate_player_cards)
+
+    def auto_complete(self, **kwargs):
+        if not self.completed:
+            while len(self.player.poker_cards) < 5:
+                self.lock_card()
+                # self.pick_new_card()
+                # self.machine.events.post('slide_card_background_active')
+                # self.machine.events.post('slide_card_{}_active'.format(self.player.poker_current_card.value_name))
+                # #self.populate_player_cards()
+                # if self.player.poker_current_card:  # Check if a card was picked
+                #     self.lock_card()
+                # else:
+                #     break  # Break the loop if no card was picked
+
 
     def populate_player_cards(self, **kwargs):
         for i, x in enumerate(self.player.poker_cards):
@@ -79,7 +95,8 @@ class PlayPoker(Mode):
 
         # evaluate from most valuable to least with elifs so that only the
         # highest hand is awarded
-
+        
+        self.completed = True
         self.machine.events.post('poker_deck_complete')
 
         if self._is_flush() and self._is_straight():

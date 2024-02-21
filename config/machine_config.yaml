@@ -1624,6 +1624,8 @@ keyboard:
     event: weak_flippers_enabled
   e:
     event: weak_flippers_disabled
+  "`":
+    event: poker_automatic_completion
 
 #                                                             88     
 #                                                             88     

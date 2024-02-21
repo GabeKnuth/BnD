@@ -85,6 +85,9 @@ shots:
     hit_events: sw_jukebox_hit
     disable_events: disable_jb_single_jackpot
     enable_events: enable_jb_single_jackpot
+    delay_switch: 
+      s_plungerlane: 1s
+
   jb_double_jackpot:
     hit_events: seq_shot_right_ramp_full_loop_hit
     disable_events: disable_jb_double_jackpot
