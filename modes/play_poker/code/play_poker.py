@@ -22,17 +22,10 @@ class PlayPoker(Mode):
                                     self.populate_player_cards)
 
     def auto_complete(self, **kwargs):
+        self.auto_complete_flag = True
         if not self.completed:
             while len(self.player.poker_cards) < 5:
                 self.lock_card()
-                # self.pick_new_card()
-                # self.machine.events.post('slide_card_background_active')
-                # self.machine.events.post('slide_card_{}_active'.format(self.player.poker_current_card.value_name))
-                # #self.populate_player_cards()
-                # if self.player.poker_current_card:  # Check if a card was picked
-                #     self.lock_card()
-                # else:
-                #     break  # Break the loop if no card was picked
 
 
     def populate_player_cards(self, **kwargs):
@@ -132,7 +125,8 @@ class PlayPoker(Mode):
             self.machine.events.post('poker_high_card', value=card.value,
                                      value_name=card.value_name)
 
-        self.reset_poker()
+        if not self.auto_complete_flag:
+            self.reset_poker()
 
     def _is_flush(self):
         suits = [x.suit for x in self.player.poker_cards]
