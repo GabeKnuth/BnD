@@ -13,6 +13,7 @@ class PlayPoker(Mode):
             self.reset_poker()
 
         self.completed = False
+        self.auto_complete_flag = False
 
         self.add_mode_event_handler('s_spinner_active', self.pick_new_card)
         self.add_mode_event_handler('shot_lower_vuk_from_playfield_hit',
