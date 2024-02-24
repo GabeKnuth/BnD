@@ -1724,14 +1724,11 @@ animations:
 #                         d8' 
 
 widget_styles:
-  tall_title:
-    font_name: big_noodle_titling
-    font_size: 20
-    number_grouping: true
   huge:
     font_name: big_noodle_titling
     font_size: 20
     number_grouping: true
+
 
 
 #                                              88           88                           

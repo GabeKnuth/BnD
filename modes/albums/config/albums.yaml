@@ -118,7 +118,7 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: huge #dmd_huge
+        style: huge 
         y: 22
         color: aaaaaa
       - type: text
@@ -142,7 +142,7 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: huge #dmd_huge
+        style: huge 
         y: 22
         color: gold
       - type: text
@@ -166,7 +166,7 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: huge #dmd_huge
+        style: huge 
         y: 22
         color: black
       - type: text
@@ -193,7 +193,7 @@ slides:
     widgets:
       - type: text
         text: (player|album_name)
-        style: huge #dmd_huge
+        style: huge 
         y: 22
         color: black
       - type: text

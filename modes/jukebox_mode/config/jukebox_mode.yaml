@@ -171,7 +171,7 @@ slides:
         text: Time left (jukebox_mode_jukebox_mode_timer_tick)
         anchor_y: bottom
         y: bottom+2
-        style: small #dmd_small
+        style: small 
   jb_intro:
       - type: text
         text: BAD TUNES JUKEBOX!
@@ -181,7 +181,7 @@ slides:
         color: red
       - type: text
         text: HIT JUKEBOX TO CHANGE SONG
-        style: small #dmd_small
+        style: small 
         anchor_x: left
         x: left+1
       - type: text

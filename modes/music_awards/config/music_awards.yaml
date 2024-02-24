@@ -432,7 +432,7 @@ slides:
         anchor_x: right
         x: right-1
         y: middle
-        style: tall_title
+        style: huge
       - type: text
         text: Each hit = 500k
         anchor_y: top
@@ -463,7 +463,7 @@ slides:
         x: right-6
         anchor_y: bottom
         y: bottom+1
-        style: tall_title
+        style: huge
 
 #                                       88              88           88              
 #                                       ""              88           88              

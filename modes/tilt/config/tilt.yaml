@@ -55,12 +55,12 @@ slides:
     widgets:
     - type: text
       text: TIL
-      style: medium #dmd_med
+      style: medium 
       color: red
       x: 60
     - type: text
       text: T
-      style: medium #dmd_med
+      style: medium 
       color: red
       x: 69
     - type: line

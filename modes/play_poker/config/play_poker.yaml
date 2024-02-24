@@ -78,7 +78,7 @@ event_player:
     # - play_poker_fail
     - poker_high_card # added this so that mode completes when timer ends
   poker_royal_flush:
-    - light_poker_extra_ball
+    - light_poker_extra_ball|5s
     - light_special
     - play_poker_success
   poker_straight_flush:
@@ -86,17 +86,17 @@ event_player:
     - play_poker_success
   poker_four_of_a_kind:
     - light_special
-    - light_poker_extra_ball
+    - light_poker_extra_ball|5s
     - poker_four_of_a_kind_stage
     - play_poker_success
   poker_full_house:
-    - light_poker_extra_ball
+    - light_poker_extra_ball|5s
     - play_poker_success
   poker_flush:
-    - light_poker_extra_ball
+    - light_poker_extra_ball|5s
     - play_poker_success
   poker_straight:
-    - light_poker_extra_ball
+    - light_poker_extra_ball|5s
     - play_poker_success
   poker_three_of_a_kind:
     - play_poker_success
@@ -434,11 +434,11 @@ slides:
     widgets:
       - type: text
         text: TIME'S UP!
-        style: huge #dmd_huge
+        style: huge 
         y: 18
       - type: text
         text: PLAY POKER AGAIN TO FINISH
-        style: small #dmd_small
+        style: small 
         y: 3
   
   card_background:
@@ -508,17 +508,17 @@ slides:
     widgets:
       - type: text
         text: (ticks)
-        style: huge #dmd_huge
+        style: huge 
         font_size: 400
         y: 300
       - type: text
         text: LEFT HOLE = LOCK SELECTED CARD
-        style: huge #dmd_huge
+        style: huge 
         y: 30
         font_size: 70
       - type: text
         text: SPINNER = PICK NEW CARD
-        style: huge #dmd_huge
+        style: huge 
         y: 90
         font_size: 70
 
@@ -526,7 +526,7 @@ slides:
     widgets:
       - type: text
         text: ONE PAIR!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -536,7 +536,7 @@ slides:
     widgets:
       - type: text
         text: 1 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -557,7 +557,7 @@ slides:
     widgets:
       - type: text
         text: TWO PAIRS!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -567,7 +567,7 @@ slides:
     widgets:
       - type: text
         text: 1.5 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -588,7 +588,7 @@ slides:
     widgets:
       - type: text
         text: 3 OF A KIND!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -598,7 +598,7 @@ slides:
     widgets:
       - type: text
         text: 2 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -619,7 +619,7 @@ slides:
     widgets:
       - type: text
         text: STRAIGHT!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -629,7 +629,7 @@ slides:
     widgets:
       - type: text
         text: 3 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -650,7 +650,7 @@ slides:
     widgets:
       - type: text
         text: FLUSH!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -660,7 +660,7 @@ slides:
     widgets:
       - type: text
         text: 4 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -681,7 +681,7 @@ slides:
     widgets:
       - type: text
         text: FULL HOUSE!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -691,7 +691,7 @@ slides:
     widgets:
       - type: text
         text: 4 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -712,7 +712,7 @@ slides:
     widgets:
       - type: text
         text: 4 OF A KIND!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -722,7 +722,7 @@ slides:
     widgets:
       - type: text
         text: 5 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -743,7 +743,7 @@ slides:
     widgets:
       - type: text
         text: STRAIGHT FLUSH
-        style: huge #dmd_huge
+        style: huge 
         font_size: 160
         y: bottom+320
       - type: video
@@ -753,7 +753,7 @@ slides:
     widgets:
       - type: text
         text: 8 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -775,7 +775,7 @@ slides:
     widgets:
       - type: text
         text: ROYAL FLUSH!!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 160
         y: bottom+320
       - type: video
@@ -785,7 +785,7 @@ slides:
     widgets:
       - type: text
         text: 10 MILLION!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -806,7 +806,7 @@ slides:
     widgets:
       - type: text
         text: HIGH CARD
-        style: huge #dmd_huge
+        style: huge 
         font_size: 220
         y: bottom+300
       - type: video
@@ -816,7 +816,7 @@ slides:
     widgets:
       - type: text
         text: 100,000
-        style: huge #dmd_huge
+        style: huge 
         font_size: 10
         color: yellow
         animations: 
@@ -956,7 +956,7 @@ widgets:
   time_extended:
     - type: text
       text: TIME EXTENDED
-      style: huge #dmd_huge
+      style: huge 
       font_size: 100
       color: red
       z: 1

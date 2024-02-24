@@ -269,7 +269,7 @@ slides:
         x: left+22
       - type: text
         text: MULTIBALL
-        style: big #dmd_huge
+        style: big 
         font_size: 0
         color: red
         y: bottom-3
@@ -306,7 +306,7 @@ slides:
         anchor_x: right
         x: right-1
         y: middle
-        style: tall_title
+        style: huge
       - type: text
         text: Each hit = 100k
         anchor_y: top
@@ -319,12 +319,12 @@ slides:
       - type: text
         text: BALL SAVED!
         expire: 2s
-        style: huge #dmd_huge
+        style: huge 
   ma_jackpot_dmd:
     widgets:
       - type: text
         text: JACKPOT!!!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 0
         color: red
         animations:

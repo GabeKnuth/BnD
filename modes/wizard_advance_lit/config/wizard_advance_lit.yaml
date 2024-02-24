@@ -36,7 +36,7 @@ slides:
     widgets:
       - type: text
         text: wizard bonus qio
-        style: medium #dmd_med
+        style: medium 
 
 #show_player:
 #  advance_wizard_bonus: advance_wizard_bonus

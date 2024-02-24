@@ -36,7 +36,7 @@ slides:
     widgets:
       - type: text
         text: "MYSTERY IS LIT"
-        style: huge #dmd_huge
+        style: huge 
         anchor_y: top
         y: top-1
         color: lime
@@ -51,7 +51,7 @@ slides:
               repeat: true
       - type: text
         text: SHOOT LEFT HOLE
-        style: small #dmd_small
+        style: small 
         color: yellow
         anchor_y: bottom
         y: bottom+2

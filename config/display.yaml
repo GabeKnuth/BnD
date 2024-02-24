@@ -30,18 +30,18 @@ slides:
     widgets:
       - type: text
         text: MISSION PINBALL FRAMEWORK
-        style: small #dmd_small
+        style: small 
         color: red
         y: 23
         x: 65
       - type: text
         text: MPF-MC (machine|mpfmc_ver)
         color: red
-        style: small #dmd_small
+        style: small 
         y: 16
       - type: text
         text: WAITING FOR MPF CONNECTION
-        style: small #dmd_small
+        style: small 
         color: red
         x: 65
         y: 3
@@ -50,7 +50,7 @@ slides:
     widgets:
       - type: text
         text: BROOKS 'N DUNN
-        style: huge #dmd_huge
+        style: huge 
         font_size: 160
 
 # slide_player:

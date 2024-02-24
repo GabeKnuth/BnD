@@ -113,7 +113,7 @@
           y: 22
         - type: text
           text: "ALBUM VALUE: (player|album_value)"
-          style: medium #dmd_med
+          style: medium 
           y: 10
           number_grouping: true
         - type: line
