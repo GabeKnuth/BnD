@@ -32,6 +32,7 @@ event_player:
     - light_mission_select
   light_mission_select_started:
     - light_mystery
+    # - enable_managers_choice_shot # commenting out since not sure what starting this will actually do.
   mode_mission_rotator_started:
     - stop_mystery
   mode_jukebox_two_ball_stopped:
@@ -544,7 +545,7 @@ shots:
       lights: l_managers_choice
     profile: managers_choice
     disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits, light_metal_rodeo
-    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits, mode_metal_rodeo_stopping
+    enable_events: enable_managers_choice_shot 
     reset_events: reset_managers_choice   
 
 #  ,adPPYba,   ,adPPYba,   ,adPPYb,d8  88       88   ,adPPYba,  8b,dPPYba,    ,adPPYba,   ,adPPYba,  
