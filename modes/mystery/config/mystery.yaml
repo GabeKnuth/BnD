@@ -129,7 +129,7 @@ slides:
     widgets:
       - type: text
         text: MYSTERY AWARD
-        style: huge #dmd_huge
+        style: huge 
         color: red
         font_size: 1
         animations:
@@ -185,7 +185,7 @@ slides:
     widgets:
       - type: text
         text: EXTRA BALL
-        style: huge #dmd_huge
+        style: huge 
         color: red
         font_size: 0
         reset_animations_events: pre_show_slide
@@ -322,7 +322,7 @@ slides:
     widgets:
       - type: text
         text: BALL (player|htmb_balls_locked) LOCKED
-        style: huge #dmd_huge
+        style: huge 
         color: black
         font_size: 30
         animations:

@@ -32,6 +32,7 @@ event_player:
     - light_mission_select
   light_mission_select_started:
     - light_mystery
+    # - enable_managers_choice_shot # commenting out since not sure what starting this will actually do.
   mode_mission_rotator_started:
     - stop_mystery
   mode_jukebox_two_ball_stopped:
@@ -204,6 +205,14 @@ sound_pools:
 #  88                              d8' 
 
 sound_player:
+  light_poker_extra_ball: 
+    get_the_extra_ball:
+      action: play
+      loops: 0
+  extra_ball_poker_awarded:
+    extra_ball:
+      action: play
+      loops: 0
   mode_base_started:
     wait_to_plunge:
         action: play
@@ -536,7 +545,7 @@ shots:
       lights: l_managers_choice
     profile: managers_choice
     disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits, light_metal_rodeo
-    enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits, mode_metal_rodeo_stopping
+    enable_events: enable_managers_choice_shot 
     reset_events: reset_managers_choice   
 
 #  ,adPPYba,   ,adPPYba,   ,adPPYb,d8  88       88   ,adPPYba,  8b,dPPYba,    ,adPPYba,   ,adPPYba,  
@@ -665,6 +674,7 @@ ball_saves:
     early_ball_save_events: s_drain_active # I want this instant, not when the ball device thinks it's got a ball
     disable_events: s_leftsling_active, s_rightsling_active
 
+
 #             88                                                       
 #             88                                                       
 #             88                                                       
@@ -675,6 +685,35 @@ ball_saves:
 #  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"'
 
 shows:
+  # poker_extra_ball:
+  #   - duration: -1
+  #     slides:
+  #       poker_extra_ball:
+  #         widgets:
+  #         - type: video
+  #           video: poker_extra_ball
+  #           end_behavior: loop
+  #         target: stage
+  # award_extra_ball_stage:
+  #   - duration: -1
+  #     slides:
+  #       extra_ball_awarded_stage:
+  #         widgets:
+  #         - type: video
+  #           video: extra_ball_awarded_stage
+  #           end_behavior: stop
+  #         target: stage
+  # award_extra_ball_dmd:
+  #   - duration: -1
+  #     slides:
+  #       extra_ball_awarded_dmd:
+  #         widgets:
+  #         - type: video
+  #           video: extra_ball_awarded_dmd
+  #           height: 32
+  #           width: 128
+  #           end_behavior: stop
+  #         target: dmd
   flash_once:
     - duration: 200ms
       lights:
@@ -769,6 +808,21 @@ shows:
 #  88                              d8' 
 
 show_player:
+  light_poker_extra_ball:
+    rainbow:
+      show_tokens:
+        led: l_extra_ball
+  #   poker_extra_ball:
+  #     priority: 601
+  # extra_ball_poker_awarded:
+  #   poker_extra_ball:
+  #     action: stop
+  #   award_extra_ball_stage:
+  #     priority: 601
+  #     loops: 0
+  #   award_extra_ball_dmd:
+  #     priority: 601
+  #     loops: 0
   flipper_cradle:  # play the status show when one flipper is active for 3s
     flipper_status:
       priority: 9900
@@ -787,12 +841,14 @@ show_player:
   eject_flash:
     eject_alert:
       loops: 0
+      speed: 2
       show_tokens:
         led: l_lower_left_flasher
       priority: 1000000
   top_eject_flash:
     top_eject_alert:
       loops: 0
+      speed: 2
       show_tokens:
         led: l_right_ramp_flasher
       priority: 1000000
@@ -844,14 +900,14 @@ show_player:
   s_rightrampopto_active:
     flash_once:
       loops: 3
-      speed: 1
+      speed: 2
       show_tokens:
         led: l_right_ramp_flasher
       sync_ms: 0
   s_leftrampopto_active:
     flash_once:
       loops: 3
-      speed: 1
+      speed: 2
       show_tokens:
         led: l_left_ramp_flasher
       sync_ms: 0
@@ -882,6 +938,69 @@ show_player:
   ball_save_mystery_disabled:
       ball_save: stop
 
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
+
+slides:
+  poker_extra_ball_stage:
+    widgets:
+      - type: video
+        video: poker_extra_ball
+        end_behavior: loop
+  award_extra_ball_stage:
+    widgets:
+      - type: video
+        video: extra_ball_awarded_stage
+        end_behavior: stop   
+  award_extra_ball_dmd:
+    widgets:
+      - type: video
+        video: extra_ball_awarded_dmd
+        height: 32
+        width: 128
+        end_behavior: stop
+
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+slide_player:
+  light_poker_extra_ball:
+    poker_extra_ball_stage:
+      priority: 601
+      target: stage
+  extra_ball_poker_awarded:
+    award_extra_ball_stage:
+      priority: 601
+      target: stage
+      expire: 2.1s
+    award_extra_ball_dmd:
+      priority: 601
+      target: dmd
+      expire: 2.1s
+    poker_extra_ball_stage:
+      action: remove
 
 #                             ,d                             
 #                             88                             
@@ -901,4 +1020,10 @@ show_player:
 
 extra_balls:
   poker:
-    light_events: light_poker_extra_ball  
+    light_events: light_poker_extra_ball
+    award_events: shot_pops_to_vuk_hit
+    enabled: false
+  mystery:
+    light_events: light_mystery_extra_ball
+    award_events: shot_pops_to_vuk_hit
+    enabled: false

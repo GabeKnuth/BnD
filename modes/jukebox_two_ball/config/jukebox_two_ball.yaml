@@ -85,6 +85,9 @@ shots:
     hit_events: sw_jukebox_hit
     disable_events: disable_jb_single_jackpot
     enable_events: enable_jb_single_jackpot
+    delay_switch: 
+      s_plungerlane: 1s
+
   jb_double_jackpot:
     hit_events: seq_shot_right_ramp_full_loop_hit
     disable_events: disable_jb_double_jackpot
@@ -224,14 +227,14 @@ slides:
       - type: text
         text: (score)
         anchor_y: top
-        style: huge #dmd_huge
+        style: huge 
         number_grouping: true
         y: top-2
         anchor_x: right
         x: right-1
       - type: text
         text: SHOOT JUKEBOX LOOP!
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: bottom+1
         anchor_x: right
@@ -246,14 +249,14 @@ slides:
       - type: text
         text: (score)
         anchor_y: top
-        style: huge #dmd_huge
+        style: huge 
         number_grouping: true
         y: top-2
         anchor_x: right
         x: right-1
       - type: text
         text: SHOOT RIGHT RAMP!
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: bottom+1
         anchor_x: right
@@ -267,7 +270,7 @@ slides:
     widgets:
       - type: text
         text: MULTIBALL
-        style: huge #dmd_huge
+        style: huge 
         font_size: 0
         color: yellow
         animations:
@@ -308,14 +311,14 @@ slides:
         x: right-1
       - type: text
         text: "Shoot         to"
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: center-5
         anchor_x: right
         x: right-10
       - type: text
         text: JACKPOT
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: center-5
         anchor_x: right
@@ -323,14 +326,14 @@ slides:
         color: lime
       - type: text
         text: light
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: bottom+4
         anchor_x: right
         x: right-74
       - type: text
         text: Double Jackpot
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: bottom+4
         anchor_x: right
@@ -345,7 +348,7 @@ slides:
       - type: text
         text: BALL SAVED!
         expire: 2s
-        style: huge #dmd_huge
+        style: huge 
 
 #             88                                                       
 #             88                                                       

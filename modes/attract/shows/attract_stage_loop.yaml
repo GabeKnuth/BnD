@@ -7,7 +7,7 @@
       - type: text
         #font_name: big_noodle_titling
         text: MISSION PINBALL FRAMEWORK
-        style: tall_title
+        style: huge
         anchor_y: top
         y: top-3
         font_size: 30
@@ -15,7 +15,7 @@
       - type: text
         #font_name: big_noodle_titling
         text: "Brooks n Dunn"
-        style: tall_title
+        style: huge
         font_size: 30
         anchor_x: center
         anchor_y: middle-15

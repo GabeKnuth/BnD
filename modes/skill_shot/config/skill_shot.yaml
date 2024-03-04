@@ -41,7 +41,7 @@ slides:
     widgets:
       - type: text
         text: PLAYER (number) UP
-        style: huge #dmd_huge
+        style: huge 
         color: ff4400
         animations:
           pre_show_slide:
@@ -56,20 +56,20 @@ slides:
             easing: in_quint
       - type: text
         text: SEE STAGE FOR SKILLSHOT!
-        style: small #dmd_small
+        style: small 
         anchor_y: top
         y: top
         color: red
       - type: text
         text: BALL (ball)
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: bottom+1
         anchor_x: left
         x: left
       - type: text
         text: (score)
-        style: small #dmd_small
+        style: small 
         min_digits: 2
         number_grouping: true
         anchor_y: bottom

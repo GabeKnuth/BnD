@@ -47,7 +47,7 @@ slides:
     widgets:
       - type: text
         text: LOCK IS LIT
-        style: huge #dmd_huge
+        style: huge 
         color: black
         font_size: 30
         animations:
@@ -67,7 +67,7 @@ slides:
     widgets:
       - type: text
         text: BALL (player|htmb_balls_locked) LOCKED
-        style: huge #dmd_huge
+        style: huge 
         color: black
         font_size: 30
         animations:

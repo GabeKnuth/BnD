@@ -276,33 +276,33 @@ switches:
     number: 16
   s_rightbankbottom:
     number: 17
-    tags: end_skill_shot, quarter, qmb
+    tags: end_skill_shot, quarter, qmb, playfield_active
   s_trough_enter:
     number: 18
   s_rightoutlane:
     number: 19
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_leftoutlane:
     number: 20
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_drain:
     number: 21
     tags: drain
   s_leftinlane:
     number: 22
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_rightinlane:
     number: 24
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_rightsling:
     number: 25
     tags: end_skill_shot, toggle, beat
   s_rightbanktop:
     number: 26
-    tags: end_skill_shot, quarter, qmb
+    tags: end_skill_shot, quarter, qmb, playfield_active
   s_toprightstandup:
     number: 27
-    tags: end_skill_shot, quarter, qmb
+    tags: end_skill_shot, quarter, qmb, playfield_active
   s_jukeboxopto:
     number: 40
     type: NC
@@ -313,7 +313,7 @@ switches:
     tags: end_skill_shot, toggle, beat, qmb
   s_subwayopto:
     number: 42
-    tags: subway, end_skill_shot, jukebox_hit
+    tags: subway, end_skill_shot, jukebox_hit, playfield_active
     type: NC
   s_lowervukopto:
     number: 43
@@ -325,13 +325,13 @@ switches:
   s_leftrampopto:
     number: 45
     type: NC
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_bottomkickingtarget:
     number: 46
     tags: end_skill_shot, toggle, beat, qmb
   s_leftorbit:
     number: 47
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_droptarget1:
     number: 64
     tags: beat
@@ -353,19 +353,18 @@ switches:
   s_rightrampopto:
     number: 72
     type: NC
-    tags: playfield_active
+    tags: playfield_active, playfield_active
   s_rightlane:
     number: 73
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_leftlane:
     number: 74
-    tags: end_skill_shot
+    tags: end_skill_shot, playfield_active
   s_topkicker:
     number: 75
-    tags:
   s_spinner:
     number: 76
-    tags: end_skill_shot, beat
+    tags: end_skill_shot, beat, playfield_active
   s_leftpop:
     number: 77
     tags: end_skill_shot, toggle, beat
@@ -1554,7 +1553,12 @@ keyboard:
     switch: s_plungerlane
     toggle: true
   9:
-    switch: s_spinner
+    events:
+      - world_tour_success
+      - money_bags_success|1s
+      - music_awards_success|2s
+      - jukebox_success|3s
+      - play_poker_success|4s
   0:
     switch: s_lowervukopto
     toggle: true
@@ -1624,6 +1628,8 @@ keyboard:
     event: weak_flippers_enabled
   e:
     event: weak_flippers_disabled
+  "`":
+    event: poker_automatic_completion
 
 #                                                             88     
 #                                                             88     
@@ -1722,14 +1728,11 @@ animations:
 #                         d8' 
 
 widget_styles:
-  tall_title:
-    font_name: big_noodle_titling
-    font_size: 20
-    number_grouping: true
   huge:
     font_name: big_noodle_titling
     font_size: 20
     number_grouping: true
+
 
 
 #                                              88           88                           

@@ -5,7 +5,7 @@
 
 mode:
   start_events: light_metal_rodeo
-  stop_events: metal_rodeo_go|.1s
+  stop_events: metal_rodeo_go|0.1s
   priority: 400
   restart_on_next_ball: true
 
@@ -45,7 +45,7 @@ slides:
   mr_lit_advertise:
     widgets:
       - type: text
-        style: huge #dmd_huge
+        style: huge 
         font_size: 21
         text: METAL RODEO IS LIT!
         color: yellow
@@ -56,7 +56,7 @@ slides:
               duration: .4s
             - property: opacity
               value: 1
-              duration: .1s
+              duration: 0.1s
               repeat: true
 
 sound_player:

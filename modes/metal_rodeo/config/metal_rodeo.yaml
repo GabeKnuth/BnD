@@ -140,14 +140,14 @@ slides:
       - type: text
         text: "METAL RODEO TOTAL:"
         color: black
-        style: medium #dmd_med
+        style: medium 
         anchor_y: top
         y: top-2
       - type: text
         number_grouping: True
         text: (player|mr_score)
         color: black
-        style: huge #dmd_huge
+        style: huge 
         anchor_y: bottom
         y: bottom
       - type: rectangle
@@ -158,7 +158,7 @@ slides:
     widgets:
       - type: text
         text: KEEP SHOOTING
-        style: huge #dmd_huge
+        style: huge 
         color: ff4400
         anchor_y: center
         y: center-1
@@ -175,13 +175,13 @@ slides:
             easing: in_quint
       - type: text
         text: "PLAYER (number):"
-        style: medium #dmd_med
+        style: medium 
         anchor_y: top
         y: top
         color: red
       - type: text
         text: BALL (ball)
-        style: small #dmd_small
+        style: small 
         anchor_y: bottom
         y: 0
   mr_good_job:
@@ -190,7 +190,7 @@ slides:
         color: red
         y: center-1
         font_size: 30
-        style: huge #dmd_huge
+        style: huge 
         text: GOOD JOB!
   mr_intro_stage:
     widgets:
@@ -212,7 +212,7 @@ slides:
         color: red
         y: center-1
         font_size: 30
-        style: huge #dmd_huge
+        style: huge 
   unlimited_balls:
     widgets:
       - type: text
@@ -232,7 +232,7 @@ slides:
       - type: text
         text: (player|quarters) QUARTERS
         color: gray
-        style: huge #dmd_huge
+        style: huge 
         font_size: 30
         y: center-1
   shot_score:
@@ -240,13 +240,13 @@ slides:
       - type: text
         text: EACH SHOT SCORES
         color: gray
-        style: medium #dmd_med
+        style: medium 
         anchor_y: top
         y: top-2
       - type: text
         text: (player|mr_shot_score) MILLION!
         color: red
-        style: huge #dmd_huge
+        style: huge 
         anchor_y: bottom
         y: bottom
 

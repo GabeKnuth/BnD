@@ -50,12 +50,12 @@ slide_player:
     - type: text
       y: middle-4
       text: X
-      style: small #dmd_small
+      style: small 
     - type: text
       text: "(album_name) VALUE: (album_value)"
       y: bottom+1
       anchor_y: bottom
-      style: small #dmd_small
+      style: small 
       number_grouping: true
   wizard_bonus:
     wizard_bonus:
@@ -77,7 +77,7 @@ slide_player:
       x: 78
     - type: text
       text: x
-      style: medium #dmd_med
+      style: medium 
       x: 72
   bonus_subtotal:
     bonus_subtotal:
@@ -89,7 +89,7 @@ slide_player:
     bonus_multiplier:
       - type: text
         text: (multiplier)X
-        style: huge #dmd_huge
+        style: huge 
         font_size: 40
         color: red
   bonus_total:

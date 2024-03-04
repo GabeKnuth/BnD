@@ -45,7 +45,7 @@ slides:
     widgets:
       - type: text
         text: EXTRA BALL
-        style: huge #dmd_huge
+        style: huge 
         color: red
         font_size: 0
         reset_animations_events: pre_show_slide
@@ -72,7 +72,7 @@ slides:
   extra_ball_lit:
       - type: text
         text: EXTRA BALL IS LIT!
-        style: huge #dmd_huge
+        style: huge 
         color: red
         font_size: 25
         reset_animations_events: pre_show_slide
@@ -105,7 +105,7 @@ widgets:
               repeat: true
       - type: text
         text: EXTRA BALL IS LIT!
-        style: huge #dmd_huge
+        style: huge 
         font_size: 100
         anchor_y: top
         y: top

@@ -7,7 +7,7 @@
       text: (machine|player1_score)
       number_grouping: true
       min_digits: 2
-      style: small #dmd_small
+      style: small 
       anchor_y: top
       anchor_x: right
       x: right-80
@@ -16,7 +16,7 @@
       text: (machine|player2_score)
       number_grouping: true
       min_digits: 2
-      style: small #dmd_small
+      style: small 
       anchor_y: top
       anchor_x: right
       x: right-1
@@ -25,7 +25,7 @@
       text: (machine|player3_score)
       number_grouping: true
       min_digits: 2
-      style: small #dmd_small
+      style: small 
       anchor_y: bottom
       anchor_x: right
       x: right-80
@@ -34,14 +34,14 @@
       text: (machine|player4_score)
       number_grouping: true
       min_digits: 2
-      style: small #dmd_small
+      style: small 
       anchor_y: bottom
       anchor_x: right
       x: right-1
       y: bottom+10
     - type: text
       text: (machine|credits_string)
-      style: small #dmd_small
+      style: small 
       anchor_y: bottom
       y: bottom+3
 
@@ -71,7 +71,7 @@
       - type: text
         text: "BROOKS 'N' DUNN"
         color: ff4400
-        style: medium #dmd_med
+        style: medium 
       transition:
         type: push
         duration: 500ms
@@ -84,7 +84,7 @@
       - type: text
         text: "GOTTLIEB'S LAST MACHINE"
         color: ff4400
-        style: medium #dmd_med
+        style: medium 
       transition:
         type: push
         duration: 500ms
@@ -97,7 +97,7 @@
       - type: text
         text: "(NEVER FINISHED)"
         color: ff4400
-        style: medium #dmd_med
+        style: medium 
       transition:
         type: push
         duration: 500ms
@@ -110,7 +110,7 @@
       - type: text
         text: FROM 1996!
         color: ff4400
-        style: medium #dmd_med
+        style: medium 
       transition:
         type: push
         duration: 500ms
@@ -123,7 +123,7 @@
       - type: text
         text: BROUGHT BACK TO LIFE
         color: ff4400
-        style: medium #dmd_med
+        style: medium 
       transition:
         type: push
         duration: 500ms
@@ -207,9 +207,9 @@
     - type: text
       text: QUARTERS CHAMP
       min_digits: 2
-      style: medium #dmd_med
+      style: medium 
       y: 28
     - type: text
       text: (machine|quarters1_name) - (machine|quarters1_value) QUARTERS
-      style: huge #dmd_huge
+      style: huge 
       y: 13

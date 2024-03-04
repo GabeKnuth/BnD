@@ -102,31 +102,31 @@ slides:
         - type: text
           text: WORLD TOUR
           color: red
-          style: small #dmd_small
+          style: small 
           x: center-33
           y: bottom+5
         - type: text
           text: PLAY POKER
           color: red
-          style: small #dmd_small
+          style: small 
           x: center-33
           y: bottom+16
         - type: text
           text: MUSIC AWARDS
           color: red
-          style: small #dmd_small
+          style: small 
           x: center+30
           y: bottom+16
         - type: text
           text: MONEY BAGS
           color: red
-          style: small #dmd_small
+          style: small 
           x: center+30
           y: bottom+5
         - type: text
           text: JUKEBOX
           color: red
-          style: small #dmd_small
+          style: small 
           x: center
           y: top-5
 
