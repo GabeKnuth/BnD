@@ -1553,7 +1553,12 @@ keyboard:
     switch: s_plungerlane
     toggle: true
   9:
-    switch: s_spinner
+    events:
+      - world_tour_success
+      - money_bags_success|1s
+      - music_awards_success|2s
+      - jukebox_success|3s
+      - play_poker_success|4s
   0:
     switch: s_lowervukopto
     toggle: true
