@@ -27,7 +27,7 @@ event_player:
     - fade_out_base_music
   player_world_tour_world_tour_timer_tick{value == 5}:
     - slow_down_timer
-  wt_australia_complete:
+  ag_world_tour_complete:
     - world_tour_success|2.5s
     - world_tour_fade_out|3.7s
     - start_jukebox_two_ball|3.7s
@@ -108,6 +108,13 @@ achievements:
     show_when_started: flash_red
     show_when_completed: on
     restart_after_stop_possible: true
+
+achievement_groups:
+  wt_group:
+    achievements: wt_north_america, wt_europe, wt_south_america, wt_australia
+    enable_events: mode_world_tour_started
+    events_when_all_completed: ag_world_tour_complete
+
 
 ball_holds:
   wt_complete:
@@ -330,7 +337,7 @@ slide_player:
   wt_mode_running:
     world_tour_dmd:
       target: dmd
-  wt_australia_complete:
+  ag_world_tour_complete:
     world_tour_complete:
       target: dmd
   world_tour_success:
