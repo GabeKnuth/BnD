@@ -34,9 +34,9 @@ machine:
   balls_installed: 4
 
 # Hide mouse cursor from screen in game
-# kivy_config:
-#   graphics:
-#     show_cursor: false
+kivy_config:
+  graphics:
+    show_cursor: false
 
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
