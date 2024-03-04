@@ -5,7 +5,7 @@
 
 mode:
   start_events: light_metal_rodeo
-  stop_events: metal_rodeo_go|0.1s
+  stop_events: metal_rodeo_go
   priority: 400
   restart_on_next_ball: true
 
@@ -61,6 +61,10 @@ slides:
 
 sound_player:
   mode_light_metal_rodeo_started:
-    only_in_america:
+    metal_rode_is_lit:
       action: play
       loops: 0
+    only_in_america:
+      action: play
+      loops: -1
+  
