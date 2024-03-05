@@ -207,7 +207,7 @@ slides:
     widgets:
       - type: video
         video: mr_bed3
-        end_behavior: stop
+        end_behavior: loop
         animations:
           mr_fade_out:
             - property: volume

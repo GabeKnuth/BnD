@@ -1,18 +1,17 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+
 mode:
   start_events: ball_starting
-  stop_events: end_skill_shot, collect_managers_choice
+  stop_events: end_skill_shot, collect_managers_choice, sw_skill_shot_fail
   priority: 700
 
 timers:
-    skill_shot_timer:
-        start_value: 5
-        direction: down
-        control_events:
-          - event: succesful_eject
-            action: start
-            
+  skill_shot_timer:
+    start_value: 5
+    direction: down
+    control_events:
+      - event: succesful_eject
+        action: start            
 
 event_player:
   mode_skill_shot_started:
@@ -137,6 +136,11 @@ slide_player:
     skill_shot_stage:
       action: remove
       target: stage
+  skill_shot_fail:
+    skill_shot_stage:
+      action: remove
+      target: stage
+      force: true
 
 
 #scoring: #leaving for reference

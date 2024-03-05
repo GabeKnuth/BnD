@@ -27,7 +27,7 @@ mode:
 #  88                              d8'
 
 event_player:
-  left_vuk_hit:
+  shot_lower_vuk_from_playfield_hit:
     - start_metal_rodeo
 
 #             88                                                       
@@ -135,10 +135,13 @@ slides:
 
 sound_player:
   mode_light_metal_rodeo_started:
-    metal_rodeo_is_lit:
-      action: play
-      loops: 0
     only_in_america:
       action: play
-      loops: -1
-  
+      loops: 0
+      events_when_played: duck_base
+      events_when_stopped: play_metal_rodeo_is_lit
+  play_metal_rodeo_is_lit:  
+    metal_rodeo_is_lit:
+      action: play
+      loops: 0  
+      events_when_stopped: unduck_base

@@ -128,6 +128,12 @@ sounds:
     track: ma_drums_track
     volume: 0.8
     max_queue_time: None
+  # base_bed_loop:
+  #   file: base_bed_loop.wav
+  #   streaming: true
+  #   track: music
+  #   volume: 0.8
+  #   max_queue_time: None
 
 #  88                                         88                            
 #  88                                         ""                            
@@ -276,104 +282,104 @@ switches:
     number: 16
   s_rightbankbottom:
     number: 17
-    tags: end_skill_shot, quarter, qmb, playfield_active
+    tags: skill_shot_fail, quarter, qmb, playfield_active
   s_trough_enter:
     number: 18
   s_rightoutlane:
     number: 19
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_leftoutlane:
     number: 20
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_drain:
     number: 21
     tags: drain
   s_leftinlane:
     number: 22
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_rightinlane:
     number: 24
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_rightsling:
     number: 25
-    tags: end_skill_shot, toggle, beat
+    tags: skill_shot_fail, toggle
   s_rightbanktop:
     number: 26
-    tags: end_skill_shot, quarter, qmb, playfield_active
+    tags: skill_shot_fail, quarter, qmb, playfield_active
   s_toprightstandup:
     number: 27
-    tags: end_skill_shot, quarter, qmb, playfield_active
+    tags: skill_shot_fail, quarter, qmb, playfield_active
   s_jukeboxopto:
     number: 40
     type: NC
     ignore_window_ms: 500
-    tags: jukebox, end_skill_shot, jukebox_hit
+    tags: jukebox, skill_shot_fail, jukebox_hit
   s_topkickingtarget:
     number: 41
-    tags: end_skill_shot, toggle, beat, qmb
+    tags: skill_shot_fail, toggle, qmb
   s_subwayopto:
     number: 42
-    tags: subway, end_skill_shot, jukebox_hit, playfield_active
+    tags: subway, skill_shot_fail, jukebox_hit, playfield_active
     type: NC
   s_lowervukopto:
     number: 43
     type: NC
-    tags: end_skill_shot
+    tags: skill_shot_fail
   s_leftsling:
     number: 44
-    tags: end_skill_shot, toggle, beat
+    tags: skill_shot_fail, toggle
   s_leftrampopto:
     number: 45
     type: NC
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_bottomkickingtarget:
     number: 46
-    tags: end_skill_shot, toggle, beat, qmb
+    tags: skill_shot_fail, toggle, qmb
   s_leftorbit:
     number: 47
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_droptarget1:
     number: 64
-    tags: beat
+    tags: skill_shot_fail
   s_droptarget2:
     number: 65
-    tags: beat
+    tags: skill_shot_fail
   s_droptarget3:
     number: 66
-    tags: beat
+    tags: skill_shot_fail
   s_droptarget4:
     number: 67
-    tags: beat
+    tags: skill_shot_fail
   s_droptarget5:
     number: 68
-    tags: beat
+    tags: skill_shot_fail
   s_toprightvuk:
     number: 69
-    tags: end_skill_shot
+    tags: skill_shot_fail
   s_rightrampopto:
     number: 72
     type: NC
     tags: playfield_active, playfield_active
   s_rightlane:
     number: 73
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_leftlane:
     number: 74
-    tags: end_skill_shot, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_topkicker:
     number: 75
   s_spinner:
     number: 76
-    tags: end_skill_shot, beat, playfield_active
+    tags: skill_shot_fail, playfield_active
   s_leftpop:
     number: 77
-    tags: end_skill_shot, toggle, beat
+    tags: skill_shot_fail, toggle
   s_rightpop:
     number: 78
-    tags: end_skill_shot, toggle, beat
+    tags: skill_shot_fail, toggle
   s_bottompop:
     number: 79
-    tags: end_skill_shot, toggle, beat
+    tags: skill_shot_fail, toggle
 
 #                           88  88             
 #                           ""  88             
@@ -1553,12 +1559,7 @@ keyboard:
     switch: s_plungerlane
     toggle: true
   9:
-    events:
-      - world_tour_success
-      - money_bags_success|1s
-      - music_awards_success|2s
-      - jukebox_success|3s
-      - play_poker_success|4s
+    event: light_metal_rodeo
   0:
     switch: s_lowervukopto
     toggle: true
@@ -1630,29 +1631,6 @@ keyboard:
     event: weak_flippers_disabled
   "`":
     event: poker_automatic_completion
-
-#                                                             88     
-#                                                             88     
-#                                                             88     
-#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
-#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
-#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
-#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
-#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8                                                                     
-#               88                                                   
-#               88                                                   
-#               88                                                   
-#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
-#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
-#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
-#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
-#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
-#  88                               d8'                              
-#  88                              d8'
-
-
-sound_player:
-  play_sound_test: poker_loop
 
 
 #               88                                                   

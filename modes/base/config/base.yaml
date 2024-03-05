@@ -280,6 +280,36 @@ sound_player:
       action: play
       loops: 0
 
+#                                               88                   
+#    ,d                                         88                   
+#    88                                         88                   
+#  MM88MMM  8b,dPPYba,  ,adPPYYba,   ,adPPYba,  88   ,d8             
+#    88     88P'   "Y8  ""     `Y8  a8"     ""  88 ,a8"              
+#    88     88         ,adPPPPP88  8b          8888[                
+#    88,    88  88      88,    ,88  "8a,   ,aa  88`"Yba,             
+#    "Y888  88  88      `"8bbdP"Y8   `"Ybbd8"'  88   `Y8a 
+#               88
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
+track_player:
+  duck_base:
+    music:
+      action: set_volume
+      volume: 0.2
+      fade: 0.1s
+  unduck_base:
+    music:
+      action: set_volume
+      volume: 0.8
+      fade: 0.1s
+
+
 #           88                                                         
 #    ,d     ""                                                         
 #    88                                                                
@@ -348,63 +378,64 @@ counters:
 
 #scoring: #leaving for reference
 variable_player:
-    shot_pops_hit:
-        score: 110
-        jackpot: 5000
-    bd_lower_vuk_ball_enter:
-        score: 1500
-    sw_jukebox:
-        score: 19070
-    shot_left_lane_hit:
-        score: 1560
-    shot_right_lane_hit:
-        score: 1560
-    upper_lanes_default_lit_complete:
-        score: 10000
-    shot_left_drops_hit:
-        score: 1750
-    shot_right_drops_hit:
-        score: 1750
-    s_spinner_active:
-        score: 1000
-    shot_right_ramp_full_loop_hit:
-        score: 150000
-    s_leftorbit_active:
-        score: 25000
-        wizard_score: 25000
-    shot_slings_hit:
-        score: 110
-    s_topkickingtarget_active:
-        score: 1100
-    s_bottomkickingtarget_active:
-        score: 1500
-        jackpot: 50000
-    seq_shot_spinner_to_vuk_hit:
-        score: 1560
-    shot_pops_to_vuk_hit:
-        score: 1370
-    s_leftinlane_active:
-        score: 5320
-    s_rightinlane_active:
-        score: 5320
-    s_topkicker_active:
-        score: 5320
-    player_quarters{value < 7}:
-        mr_shot_score:
-            int: 1 # used to be score:
-            action: set
-    player_quarters{value >= 7 and value <= 12}:
-        mr_shot_score:
-            int: 2 # used to be score:
-            action: set
-    player_quarters{value >= 13 and value <= 24}:
-        mr_shot_score:
-            int: 3 # used to be score:
-            action: set
-    player_quarters{value >= 25}:
-        mr_shot_score:
-            int: 5 # used to be score:
-            action: set
+  shot_pops_hit:
+    score: 110
+    jackpot: 5000
+  bd_lower_vuk_ball_enter:
+    score: 1500
+  sw_jukebox:
+    score: 19070
+  shot_left_lane_hit:
+    score: 1560
+  shot_right_lane_hit:
+    score: 1560
+  upper_lanes_default_lit_complete:
+    score: 10000
+  shot_left_drops_hit:
+    score: 1750
+  shot_right_drops_hit:
+    score: 1750
+  s_spinner_active:
+    score: 1000
+  shot_right_ramp_full_loop_hit:
+    score: 150000
+  s_leftorbit_active:
+    score: 25000
+    wizard_score: 25000
+  shot_slings_hit:
+    score: 110
+  s_topkickingtarget_active:
+    score: 1100
+  s_bottomkickingtarget_active:
+    score: 1500
+    jackpot: 50000
+  seq_shot_spinner_to_vuk_hit:
+    score: 1560
+  shot_pops_to_vuk_hit:
+    score: 1370
+  s_leftinlane_active:
+    score: 5320
+  s_rightinlane_active:
+    score: 5320
+  s_topkicker_active:
+    score: 5320
+  player_quarters{value < 7}:
+    mr_shot_score:
+      int: 1 # used to be score:
+      action: set
+  player_quarters{value >= 7 and value <= 12}:
+    mr_shot_score:
+      int: 2 # used to be score:
+      action: set
+  player_quarters{value >= 13 and value <= 24}:
+    mr_shot_score:
+      int: 3 # used to be score:
+      action: set
+  player_quarters{value >= 25}:
+    mr_shot_score:
+      int: 5 # used to be score:
+      action: set
+
 
 #   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
 #  a8"    `Y88  88       88  a8P_____88  88       88  a8P_____88     
@@ -596,21 +627,21 @@ sequence_shots:
 #  88   
 
 shot_profiles:
-    managers_choice:
-        states:
-          - name: unlit
-            show: off
-          - name: lit
-            show: flash
-          - name: active
-            show: on
-        loop: no
+  managers_choice:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: flash
+      - name: active
+        show: on
+    loop: no
+  stealth:
+    states:
+      - name: off
+        show: off
+    advance_on_hit: false
 
-    stealth:
-      states:
-        - name: off
-          show: off
-      advance_on_hit: false
 
 #             88                                                              
 #             88                          ,d                                  
@@ -630,14 +661,14 @@ shot_profiles:
 #    "Y8bbdP"                                         88
 
 shot_groups:
-    upper_lanes:
-        shots: shot_left_lane, shot_right_lane
-        #profile: default
-        rotate_left_events: s_leftflipper_active
-        rotate_right_events: s_rightflipper_active
-        reset_events: upper_lanes_default_lit_complete
-        enable_events: ball_started
-        disable_events: ball_ending
+  upper_lanes:
+    shots: shot_left_lane, shot_right_lane
+    #profile: default
+    rotate_left_events: s_leftflipper_active
+    rotate_right_events: s_rightflipper_active
+    reset_events: upper_lanes_default_lit_complete
+    enable_events: ball_started
+    disable_events: ball_ending
 
 #  88                       88  88                            
 #  88                       88  88                            
