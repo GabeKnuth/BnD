@@ -5,22 +5,49 @@
 
 mode:
   start_events: light_metal_rodeo
-  stop_events: metal_rodeo_go
-  priority: 400
+  stop_events: mode_metal_rodeo_started
+  priority: 500
   restart_on_next_ball: true
 
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
-# save for tutorial ---------------------------------------------------------------
-# Watch for the left_vuk_hit queue event which is posted by the queue_event_player
-# in the base mode when a ball is shot into the left vuk. This will start the
-# mr mode, and when the mr mode is ready to launch balls, it will release the queue so
-# processing for that vuk entry can continue
+event_player:
+  left_vuk_hit:
+    - start_metal_rodeo
 
-#queue_relay_player:
-#  left_vuk_hit:
-#      post: start_metal_rodeo
-#      wait_for: mr_launch_balls #played via shows and other things in mr mode
-# end of save -----------------------------------------------------------------------
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 # Flash the insert when this mode starts to indicate that it can be shot.
 show_player:
@@ -34,11 +61,39 @@ show_player:
       show_tokens:
         lights: l_begin_round
 
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 # Tells the player that that the mode is lit
 slide_player:
   mode_light_metal_rodeo_started:
     mr_lit_advertise:
       expire: 3s
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 # The slide that is played above
 slides:
@@ -59,9 +114,28 @@ slides:
               duration: 0.1s
               repeat: true
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 sound_player:
   mode_light_metal_rodeo_started:
-    metal_rode_is_lit:
+    metal_rodeo_is_lit:
       action: play
       loops: 0
     only_in_america:

@@ -3,11 +3,11 @@
 
 # Wizard mode. Let's map this out:
 
-#We need the initial show/dots/whatever after Begin Round is shot. This shows METAL RODEO! > NUM QUARTERS >
-#SCORE PER SHOT > UNLIMITED BALLS FOR 60 SECONDS on DMD while playing light show synchronized with the Only in America
-#video on the LCD.
+#  We need the initial show/dots/whatever after Begin Round is shot. This shows METAL RODEO! > NUM QUARTERS >
+#  SCORE PER SHOT > UNLIMITED BALLS FOR 60 SECONDS on DMD while playing light show synchronized with the Only in America
+#  video on the LCD.
 #
-#Eject from lower VUK kicks off multiball. This is a timed multiball, so need to figure that out.
+#  Eject from lower VUK kicks off multiball. This is a timed multiball, so need to figure that out.
 #  I think we can just use a shoot_again time of 60s or whatever. After that runs out, though, we need
 #  a way to stop the game, collect the balls, and continue the ball. Maybe we just disable flippers? I don't want
 #  the ball to end, though, so that has to be worked around. We could just change timer to 30s, then let the round play
@@ -48,17 +48,34 @@
 #
 #  Also, shooting Collect Wizard shot (Australia) collects wizard bonus as well as shot score.
 #
-#Need light show for shots hit during this. Maybe also a big sound, like STTNG's sound during FF.
+#  Need light show for shots hit during this. Maybe also a big sound, like STTNG's sound during FF.
 #
-#Keep track of score during MR. When over, before launching ball to continue playing, darken playfield, show on DMD:
+#  Keep track of score during MR. When over, before launching ball to continue playing, darken playfield, show on DMD:
 #  MODE SCORE > PLAYER NUM > KEEP SHOOTING
 #
-#Mode restarting just goes back to base mode.
+# Mode restarting just goes back to base mode.
 
 mode:
   start_events: start_metal_rodeo
   stop_events: metal_rodeo_done
   priority: 2000
+
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 event_player:
   mode_metal_rodeo_started:
@@ -73,6 +90,15 @@ event_player:
     - unblock_jukebox_hits
     - start_quarters_mode
 
+#                                   88           88  88                       88  88             
+#                                   88    ,d     ""  88                       88  88             
+#                                   88    88         88                       88  88             
+#  88,dPYba,,adPYba,   88       88  88  MM88MMM  88  88,dPPYba,   ,adPPYYba,  88  88  ,adPPYba,  
+#  88P'   "88"    "8a  88       88  88    88     88  88P'    "8a  ""     `Y8  88  88  I8[    ""  
+#  88      88      88  88       88  88    88     88  88       d8  ,adPPPPP88  88  88   `"Y8ba,   
+#  88      88      88  "8a,   ,a88  88    88,    88  88b,   ,a8"  88,    ,88  88  88  aa    ]8I  
+#  88      88      88   `"YbbdP'Y8  88    "Y888  88  8Y"Ybbd8"'   `"8bbdP"Y8  88  88  `"YbbdP"'  
+
 multiballs:
   mr_launch_balls:
     ball_count: 4
@@ -80,20 +106,63 @@ multiballs:
     start_events: mr_launch_balls
     stop_events: timer_mr_multiball_timer_complete, mode_metal_rodeo_stopping
 
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
+
 timers:
   mr_multiball_timer:
-    start_value: 30 # This is how long unlimited balls goes for
+    start_value: 40 # This is how long unlimited balls goes for
     end_value: 0
     direction: down
     control_events:
       - action: start
         event: mr_launch_balls
 
+#  88                       88  88                            
+#  88                       88  88                            
+#  88                       88  88                            
+#  88,dPPYba,   ,adPPYYba,  88  88                            
+#  88P'    "8a  ""     `Y8  88  88                            
+#  88       d8  ,adPPPPP88  88  88                            
+#  88b,   ,a8"  88,    ,88  88  88                            
+#  8Y"Ybbd8"'   `"8bbdP"Y8  88  88    
+#                        
+#  ,adPPYba,  ,adPPYYba,  8b       d8   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  ""     `Y8  `8b     d8'  a8P_____88  I8[    ""  
+#   `"Y8ba,   ,adPPPPP88   `8b   d8'   8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88,    ,88    `8b,d8'    "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  `"8bbdP"Y8      "8"       `"Ybbd8"'  `"YbbdP"' 
+
 ball_saves:
   mr_ball_save:
     active_time: 30s # This just gives time to collect balls from the playfield.
     timer_start_events: timer_mr_multiball_timer_complete
     auto_launch: False
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 show_player:
   play_intro:
@@ -123,6 +192,15 @@ show_player:
 #  mode_metal_rodeo_started:
 #    mr_stage:
 #      target: stage
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   mr_stage:
@@ -250,6 +328,25 @@ slides:
         anchor_y: bottom
         y: bottom
 
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
+
 #scoring: #leaving for reference
 variable_player:
   sw_jukebox:
@@ -270,6 +367,25 @@ variable_player:
   shot_lower_vuk_from_playfield_hit:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000
+
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   sw_jukebox:
