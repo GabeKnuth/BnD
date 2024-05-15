@@ -1,5 +1,4 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
 
 # Quick description: Hit the four shots in order to complete the World Tour. North America first, then
 # Europe, S. America, and Australia. Each shot adds time to the timer. If you run out of time, you fail 
@@ -111,7 +110,7 @@ achievements:
 
 achievement_groups:
   wt_group:
-    achievements: wt_north_america, wt_europe, wt_south_america, wt_australia
+    achievements: wt_north_america, wt_europe, wt_south_america
     enable_events: mode_world_tour_started
     events_when_all_completed: ag_world_tour_complete
 

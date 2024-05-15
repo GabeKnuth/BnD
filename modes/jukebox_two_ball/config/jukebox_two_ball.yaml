@@ -84,7 +84,7 @@ shots:
   jb_single_jackpot:
     hit_events: sw_jukebox_hit
     disable_events: disable_jb_single_jackpot
-    enable_events: enable_jb_single_jackpot
+    enable_events: enable_jb_single_jackpot 
     delay_switch: 
       s_plungerlane: 1s
 
@@ -92,6 +92,7 @@ shots:
     hit_events: seq_shot_right_ramp_full_loop_hit
     disable_events: disable_jb_double_jackpot
     enable_events: enable_jb_double_jackpot
+  
   jb_super_jackpot:
     hit_events: shot_pops_to_vuk_hit
     disable_events: disable_jb_super_jackpot
@@ -162,12 +163,22 @@ slide_player:
   slide_jb2b_dmd_intro_removed:
     jb2b_dmd_shoot_ramp:
       target: dmd
-  double_jackpot_complete:
+  enable_jb_single_jackpot:
+    jb2b_dmd_shoot_jukebox:
+      target: dmd
+  enable_jb_double_jackpot:
     jb2b_dmd_shoot_ramp:
       target: dmd
-  jackpot_complete:
-    jb2b_dmd_shoot_loop:
+  enable_jb_super_jackpot:
+    jb2b_dmd_shoot_under_stage:
       target: dmd
+      
+  # double_jackpot_complete:
+  #   jb2b_dmd_shoot_ramp:
+  #     target: dmd
+  # jackpot_complete:
+  #   jb2b_dmd_shoot_loop:
+  #     target: dmd
 
 #                                                             88     
 #                                                             88     
@@ -222,7 +233,7 @@ sound_player:
 #  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
-  jb2b_dmd_shoot_loop:
+  jb2b_dmd_shoot_under_stage:
     widgets:
       - type: text
         text: (score)
@@ -233,7 +244,29 @@ slides:
         anchor_x: right
         x: right-1
       - type: text
-        text: SHOOT JUKEBOX LOOP!
+        text: SHOOT UNDER STAGE!
+        style: small 
+        anchor_y: bottom
+        y: bottom+1
+        anchor_x: right
+        x: right-1
+      - type: video
+        video: jb2b_jukebox
+        anchor_x: left
+        x: left
+        end_behavior: loop
+  jb2b_dmd_shoot_jukebox:
+    widgets:
+      - type: text
+        text: (score)
+        anchor_y: top
+        style: huge 
+        number_grouping: true
+        y: top-2
+        anchor_x: right
+        x: right-1
+      - type: text
+        text: SHOOT JUKEBOX!
         style: small 
         anchor_y: bottom
         y: bottom+1

@@ -32,10 +32,30 @@ event_player:
     - start_quarters_mode
     - enable_base_left_vuk_hold
     - light_mission_select
-  s_rightrampopto_active:
+  shot_ma_ramp_hit:
     - ma_jackpot
   s_leftorbit_active:
     - ma_jackpot
+  s_plungerlane_inactive:
+    - disable_ma_ramp_jackpot|1s # crude way to prevent ball launch from scoring jackpot
+    - enable_ma_ramp_jackpot|1.1s # cruder way to re-enable jackpot after ball launch
+
+
+#             88                                            
+#             88                          ,d                
+#             88                          88                
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a    88     I8[    ""  
+#   `"Y8ba,   88       88  8b       d8    88      `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"'  
+
+shots:
+  shot_ma_ramp:
+    hit_events: s_leftrampopto_active
+    disable_events: disable_ma_ramp_jackpot
+    enable_events: enable_ma_ramp_jackpot
+
 
 #                                   88           88  88                       88  88             
 #                                   88    ,d     ""  88                       88  88             

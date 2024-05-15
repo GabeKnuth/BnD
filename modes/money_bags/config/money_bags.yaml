@@ -245,6 +245,7 @@ slides:
         y: top-1
         anchor_x: right
         x: right-1
+        number_grouping: true
       - type: rectangle
         color: 000000
         height: 32

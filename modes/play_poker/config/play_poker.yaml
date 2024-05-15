@@ -824,6 +824,14 @@ slides:
             - property: rotation, font_size
               value: 1440, 60
               duration: .7s
+            - property: font_size
+              value: 20
+              timing: after_previous
+              duration: .2s
+            - property: font_size
+              value: 35
+              timing: after_previous
+              duration: .2s
 
 
 #                      88           88                                               
