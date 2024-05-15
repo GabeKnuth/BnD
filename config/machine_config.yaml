@@ -148,8 +148,8 @@ sounds:
 
 logging:
   file:
-    event_manager: basic
-    device_manager: basic
+    event_manager: full
+    device_manager: full
     machine_controller: full
     platforms: full
     service_controller: full

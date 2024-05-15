@@ -1,3 +1,7 @@
+#########
+## These are big picture things, for the most part. None of this is required to get the game running. 
+#########
+
 - Add sounds for random target hits. (I think this is done, but need to test. Using random drum sounds right now)
 
 - Add sounds for ramp shot. Helicopter maybe? Woosh? Thunder/lightning (flashers?)
