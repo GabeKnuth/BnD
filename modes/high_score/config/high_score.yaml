@@ -4,14 +4,14 @@
 high_score:
   _overwrite: True
   categories:
-  - score:
-    - GRAND CHAMPION
-    - HIGH SCORE 1
-    - HIGH SCORE 2
-    - HIGH SCORE 3
-    - HIGH SCORE 4
-  - quarters:
-    - QUARTERS CHAMP
+    score:
+      - GRAND CHAMPION
+      - HIGH SCORE 1
+      - HIGH SCORE 2
+      - HIGH SCORE 3
+      - HIGH SCORE 4
+    quarters:
+      - QUARTERS CHAMP
 
   defaults:
     score:
