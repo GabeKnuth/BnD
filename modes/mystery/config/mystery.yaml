@@ -6,6 +6,10 @@ mode:
   start_events: start_mystery
   stop_events: stop_mystery
 
+sound_player:
+  mode_mystery_started:
+    
+
 show_player:
   mode_mystery_started:
     rainbow:

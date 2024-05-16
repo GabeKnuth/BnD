@@ -9,6 +9,10 @@
   slides:
     mys_sl_spot_quarters:
       target: dmd
+  sounds:
+    game_wheel:
+      action: play
+      loops: 0
 - duration: 100ms
   slides:
     mys_sl_ball_saver:

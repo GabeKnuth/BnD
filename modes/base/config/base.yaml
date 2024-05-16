@@ -30,9 +30,9 @@ event_player:
   mode_base_started:
     - jukebox_up
     - light_mission_select
-  light_mission_select_started:
-    - light_mystery
-    # - enable_managers_choice_shot # commenting out since not sure what starting this will actually do.
+  #light_mission_select_started:
+    #- light_mystery
+    #- enable_managers_choice_shot # commenting out since not sure what starting this will actually do.
   mode_mission_rotator_started:
     - stop_mystery
   mode_jukebox_two_ball_stopped:
@@ -419,19 +419,19 @@ variable_player:
     score: 5320
   s_topkicker_active:
     score: 5320
-  player_quarters{value < 7}:
+  player_quarters{value < 5}:
     mr_shot_score:
       int: 1 # used to be score:
       action: set
-  player_quarters{value >= 7 and value <= 12}:
+  player_quarters{value >= 5 and value <= 10}:
     mr_shot_score:
       int: 2 # used to be score:
       action: set
-  player_quarters{value >= 13 and value <= 24}:
+  player_quarters{value >= 11 and value <= 20}:
     mr_shot_score:
       int: 3 # used to be score:
       action: set
-  player_quarters{value >= 25}:
+  player_quarters{value >= 21}:
     mr_shot_score:
       int: 5 # used to be score:
       action: set
@@ -872,14 +872,14 @@ show_player:
   eject_flash:
     eject_alert:
       loops: 0
-      speed: 2
+      speed: 3
       show_tokens:
         led: l_lower_left_flasher
       priority: 1000000
   top_eject_flash:
     top_eject_alert:
       loops: 0
-      speed: 2
+      speed: 3
       show_tokens:
         led: l_right_ramp_flasher
       priority: 1000000
@@ -968,6 +968,7 @@ show_player:
       speed: 2
   ball_save_mystery_disabled:
       ball_save: stop
+
 
 #             88  88           88                         
 #             88  ""           88                         

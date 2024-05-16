@@ -1,6 +1,15 @@
 #config_version=5
 #config_version=4 # Left for reference. Did NOT double check
 
+#                                            88              
+#                                            88              
+#                                            88              
+#  88,dPYba,,adPYba,    ,adPPYba,    ,adPPYb,88   ,adPPYba,  
+#  88P'   "88"    "8a  a8"     "8a  a8"    `Y88  a8P_____88  
+#  88      88      88  8b       d8  8b       88  8PP"""""""  
+#  88      88      88  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  
+#  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'
+
 mode:
   start_events: start_quarters_multiball
   stop_events: multiball_qmb_ended
@@ -21,6 +30,23 @@ mode:
 ####Hitting quarters targets adds a ball. One ball per target is fine.
 ####Deposit quarters in jukebox to score. 750k per shot. Jukebox scoop on random.
 
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 event_player:
   mode_quarters_multiball_started:
     - qmb_go|5s
@@ -37,6 +63,31 @@ event_player:
     - qmb_fade_out
     - enable_jukebox_hits
 
+#                                                88                                   
+#                                                88                                   
+#                                                88                                   
+#  8b,dPPYba,  ,adPPYYba,  8b,dPPYba,    ,adPPYb,88   ,adPPYba,   88,dPYba,,adPYba,   
+#  88P'   "Y8  ""     `Y8  88P'   `"8a  a8"    `Y88  a8"     "8a  88P'   "88"    "8a  
+#  88          ,adPPPPP88  88       88  8b       88  8b       d8  88      88      88  
+#  88          88,    ,88  88       88  "8a,   ,d88  "8a,   ,a8"  88      88      88  
+#  88          `"8bbdP"Y8  88       88   `"8bbdP"Y8   `"YbbdP"'   88      88      88  
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 random_event_player:
     s_subwayopto_active:
         - jukebox_up
@@ -44,6 +95,26 @@ random_event_player:
     shot_jukebox_loop_hit:
         - jukebox_up
         - jukebox_down
+
+
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   sw_qmb:
@@ -55,11 +126,29 @@ sound_player:
       action: play
       loops: 0
 
+#                                   88           88  88                       88  88             
+#                                   88    ,d     ""  88                       88  88             
+#                                   88    88         88                       88  88             
+#  88,dPYba,,adPYba,   88       88  88  MM88MMM  88  88,dPPYba,   ,adPPYYba,  88  88  ,adPPYba,  
+#  88P'   "88"    "8a  88       88  88    88     88  88P'    "8a  ""     `Y8  88  88  I8[    ""  
+#  88      88      88  88       88  88    88     88  88       d8  ,adPPPPP88  88  88   `"Y8ba,   
+#  88      88      88  "8a,   ,a88  88    88,    88  88b,   ,a8"  88,    ,88  88  88  aa    ]8I  
+#  88      88      88   `"YbbdP'Y8  88    "Y888  88  8Y"Ybbd8"'   `"8bbdP"Y8  88  88  `"YbbdP"'  
+
 multiballs:
   qmb:
     ball_count: 2
     start_events: start_qmb
     add_a_ball_events: add_qmb_ball
+
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
 
 timers:
   add_ball:
@@ -70,7 +159,15 @@ timers:
       - action: start
         event: start_qmb
 
-#logic_blocks:
+#                                                                           88             
+#                                                                           88             
+#                                                                           88             
+#  ,adPPYYba,   ,adPPYba,   ,adPPYba,  8b,dPPYba,  88       88  ,adPPYYba,  88  ,adPPYba,  
+#  ""     `Y8  a8"     ""  a8"     ""  88P'   "Y8  88       88  ""     `Y8  88  I8[    ""  
+#  ,adPPPPP88  8b          8b          88          88       88  ,adPPPPP88  88   `"Y8ba,   
+#  88,    ,88  "8a,   ,aa  "8a,   ,aa  88          "8a,   ,a88  88,    ,88  88  aa    ]8I  
+#  `"8bbdP"Y8   `"Ybbd8"'   `"Ybbd8"'  88           `"YbbdP'Y8  `"8bbdP"Y8  88  `"YbbdP"'
+
 accruals:
   qmb_ball_adder:
     events: sw_quarter
@@ -78,6 +175,25 @@ accruals:
     enable_events: qmb_go
     disable_events: timer_add_ball_complete
     disable_on_complete: false
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 show_player:
   mode_quarters_multiball_started:
@@ -88,6 +204,39 @@ show_player:
         led: quarter
     flash_jukebox:
       loops: -1
+  qmb_go:
+    flash:
+      show_tokens:
+        lights: l_shoot, l_again
+      key: qmb_ball_save
+      speed: 1.5
+  timer_add_ball_tick{ticks==5}:
+    flash:
+      show_tokens:
+        lights: l_shoot, l_again
+      key: qmb_ball_save
+      speed: 3
+  timer_add_ball_complete:
+      qmb_ball_save: stop
+
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 slide_player:
   mode_quarters_multiball_started:
@@ -104,6 +253,15 @@ slide_player:
   balls_in_play{balls==4}:
     qmb_dmd_4_balls:
       target: dmd
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   qmb_intro_dmd:
@@ -125,7 +283,7 @@ slides:
         x: right-1
         color: gold
       - type: text
-        text: JUKEBOX SCORES 750K
+        text: JUKEBOX SCORES 250K
         style: small 
         anchor_y: bottom
         y: bottom+1
@@ -163,7 +321,7 @@ slides:
         y: middle+5
         style: huge
       - type: text
-        text: JUKEBOX = 750,000
+        text: JUKEBOX = 250,000
         style: medium 
         anchor_y: bottom
         y: bottom+3
@@ -196,7 +354,7 @@ slides:
         y: middle+5
         style: huge
       - type: text
-        text: JUKEBOX = 750,000
+        text: JUKEBOX = 250,000
         style: medium 
         anchor_y: bottom
         y: bottom+3
@@ -234,7 +392,7 @@ slides:
         y: middle+5
         style: huge
       - type: text
-        text: JUKEBOX = 750,000
+        text: JUKEBOX = 250,000
         style: medium 
         anchor_y: bottom
         y: bottom+3
@@ -267,9 +425,28 @@ slides:
         anchor_x: right
         x: right
 
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
+
 #scoring: #leaving for reference
 variable_player:
   sw_quarter:
-    score: 13720
+    score: 30720
   sw_jukebox_hit:
-    score: 750000
+    score: 250000

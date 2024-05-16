@@ -30,6 +30,9 @@ sound_player:
     mystery_riff:
       action: play
       loops: 0
+    mystery_callout:
+      action: play
+      loops: 0
 
 slides:
   mystery_lit:

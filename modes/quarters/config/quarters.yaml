@@ -4,6 +4,8 @@
 # todo spot quarter feature
 # QIO for quarter_25m
 
+
+
 #                                            88              
 #                                            88              
 #                                            88              
@@ -38,11 +40,11 @@ mode:
 #  88                              d8'
 
 sound_player:
-  quarters_quarters_lit_hit:
+  quarters_lit_hit:
       quarter:
           action: play
           loops: 0
-  quarters_quarters_collected_hit:
+  quarters_collected_hit:
       beats:
         action: play
         loops: 0
@@ -72,17 +74,21 @@ variable_player:
     quarters_this_ball:
       int: 0
       action: set
-  quarters_quarters_lit_hit:
+  quarters_lit_hit:
     score: 2510
     quarters: 1 
-  quarters_quarters_collected_complete:
+  quarters_lit_complete:
     score: 15170
-  quarters_quarters_collected_hit:
+    #quarters: 3
+  quarters_collected_hit:
     score: 30 
   quarter_25m:
     score: 25000000
   super_quarters:
     score: 250000
+  counter_bonus_multiplier_hit:
+    bonus_multiplier:
+      int: 1
 
 #                                                      ,d            
 #                                                      88            
@@ -168,7 +174,7 @@ event_player:
 #logic_blocks:
 counters:
   bonus_multiplier:
-    count_events: quarters_quarters_collected_complete  # posted by the shot group
+    count_events: quarters_collected_complete  # posted by the shot group
     #player_variable: bonus_multiplier
     starting_count: 1
     count_complete_value: 4
@@ -220,7 +226,8 @@ shots:
 shot_groups:
   quarters:
     shots: quarter_1, quarter_2, quarter_3
-    reset_events: quarters_quarters_collected_complete
+    enable_events: mode_quarters_started
+    restart_events: quarters_collected_complete
 
 #             88                                                                 
 #             88                          ,d                                     

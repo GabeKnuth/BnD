@@ -148,6 +148,14 @@ sounds:
 
 logging:
   file:
+    # asset_manager: full
+    # ball_controller: full
+    # ball_search: full
+    # bcp: full
+    # bcp_client: full
+    # bcp_interface: full
+    # bcp_server: full
+
     event_manager: full
     device_manager: full
     machine_controller: full
@@ -783,7 +791,7 @@ diverters:
 #                                                              "Y8bbdP"  
 
 light_settings:
-    default_fade_ms: 0
+    default_fade_ms: 40
 
 #  88  88               88                               
 #  88  ""               88             ,d                
@@ -1630,7 +1638,7 @@ keyboard:
   e:
     event: weak_flippers_disabled
   "`":
-    event: poker_automatic_completion
+    event: light_mystery
 
 
 #               88                                                   
@@ -1657,6 +1665,9 @@ player_vars:
   album_value_name:
     initial_value: INDY
     value_type: str
+  bonus_multiplier:
+    initial_value: 1
+
 
 
 #                           88                                           88                                       
