@@ -1,5 +1,4 @@
-#config_version=5
-
+#config_version=6
 mode:
   priority: 160
   start_events: mode_base_starting

@@ -1,5 +1,4 @@
-#config_version=5
-
+#config_version=6
 #                                            88              
 #                                            88              
 #                                            88              
@@ -195,7 +194,7 @@ slides:
         anchor_x: right
         x: right-1
       - type: rectangle
-        color: 000000
+        color: "000000"        
         height: 32
         width: 128
         opacity: .2
@@ -247,7 +246,7 @@ slides:
         x: right-1
         number_grouping: true
       - type: rectangle
-        color: 000000
+        color: "000000"        
         height: 32
         width: 128
         opacity: .2
@@ -275,7 +274,7 @@ slides:
         y: bottom+1
         style: huge
       - type: rectangle
-        color: 000000
+        color: "000000"        
         height: 32
         width: 128
         opacity: .2

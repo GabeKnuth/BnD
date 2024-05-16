@@ -1,5 +1,4 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=6#config_version=4 # Left for reference. Did NOT double check
 
 # player needs to build a poker hand of 5 cards. The current selected card is
 # changed by hitting the spinner, and that card is "locked in" by hitting the

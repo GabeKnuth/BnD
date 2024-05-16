@@ -1,5 +1,4 @@
-#config_version=5
-
+#config_version=6
 # Quick description: Hit the four shots in order to complete the World Tour. North America first, then
 # Europe, S. America, and Australia. Each shot adds time to the timer. If you run out of time, you fail 
 # the mode. Mode should pick up where left off. Must complete mode for Metal Rodeo (I think?)
@@ -162,10 +161,10 @@ shows:
     - time: 0
       lights:
         (light): red
-    - time: +1
+    - time: "+1"
       lights:
         (light): off
-    - time: +1
+    - time: "+1"
 
 
 show_player:

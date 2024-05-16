@@ -1,5 +1,4 @@
-#show_version=5
-
+#show_version=6
 # Everything Off
 - time: 0
   lights:

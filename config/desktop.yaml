@@ -1,5 +1,4 @@
-#config_version=5
-
+#config_version=6
 # Override config for "desktop" mode which renders both the LCD and DMD in a
 # single on-screen window.
 
@@ -61,7 +60,7 @@ slides:
         - type: color_dmd
           dots_x: 128
           dots_y: 32
-          background_color: 000000
+          background_color: "000000"    
     - type: rectangle
       width: 642
       height: 162

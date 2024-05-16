@@ -1,5 +1,4 @@
-#config_version=5
-
+#config_version=6
 config:
   - machine_config.yaml
 

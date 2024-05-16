@@ -1,9 +1,9 @@
 """Test scriptlet identify lights"""
 from collections import deque
-from mpf.system.scriptlet import Scriptlet
+from mpf.core.custom_code import CustomCode
 import thread
 
-class LightTest(Scriptlet):
+class LightTest(CustomCode):
     def on_load(self):
         #self.config_name = None
         #led_config_file = open("leds.txt", "w") # to create a new file for writing

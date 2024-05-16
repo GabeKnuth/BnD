@@ -1,5 +1,4 @@
-#show_version=5
-- time: 0
+#show_version=6- time: 0
   lights:
     l_again: 'FFFD00'
     l_double_platinum: 'FFFD00'

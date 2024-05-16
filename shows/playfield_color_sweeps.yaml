@@ -1,5 +1,4 @@
-#show_version=5
-- time: 0
+#show_version=6- time: 0
   lights:
     l_advance_wizard: 'F30000'
     l_gi_center_lane: '710000'

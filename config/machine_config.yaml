@@ -1,5 +1,4 @@
-#config_version=5
-
+#config_version=6
 # Mission Pinball Framework machine configuration file for Brooks & Dunn
 
 # ASCII art headings generated from
@@ -40,7 +39,7 @@ kivy_config:
 
 virtual_platform_start_active_switches: s_drain, s_trough_enter
 
-scriptlets: cards.Cards
+custom_code: code.cards.Cards
 
 mpf:
   default_show_sync_ms: 500 #Why is this here?

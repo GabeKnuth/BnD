@@ -1,9 +1,8 @@
-#config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+#config_version=6#config_version=4 # Left for reference. Did NOT double check
 
 high_score:
   _overwrite: True
-  categories: !!omap
+  categories:
   - score:
     - GRAND CHAMPION
     - HIGH SCORE 1

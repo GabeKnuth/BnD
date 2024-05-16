@@ -1,10 +1,10 @@
 from collections import namedtuple
 
-from mpf.core.scriptlet import Scriptlet
+from mpf.core.custom_code import CustomCode
 
 Card = namedtuple('Card', ['asset', 'value_name', 'value', 'suit'])
 
-class Cards(Scriptlet):
+class Cards(CustomCode):
 
     def on_load(self):
         cards = list()
