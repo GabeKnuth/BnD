@@ -1,12 +1,14 @@
-#config_version=6#config_version=4 # Left for reference. Did NOT double check
+#config_version=6
+
 
 mode:
   priority: 500
   start_events: start_mystery
   stop_events: stop_mystery
 
-sound_player:
-  mode_mystery_started:
+# sound_player:
+#   mode_mystery_started:
+
     
 
 show_player:
