@@ -44,6 +44,7 @@ custom_code: code.cards.Cards
 mpf:
   default_show_sync_ms: 500 #Why is this here?
   default_light_hw_update_hz: 10
+  report_crashes: never
 
 game:
   balls_per_game: 3
@@ -207,7 +208,7 @@ modes:
   - albums
   - attract
   - base
-  #- bonus # This breaks the game. Enable after fixed. See bonus_problem branch
+  - bonus # This breaks the game. Enable after fixed. See bonus_problem branch
   - extra_ball_lit
   - high_score
   - hilo
@@ -487,21 +488,21 @@ flippers:
     hold_coil: c_leftflipperhold
     activation_switch: s_leftflipper
     enable_events: ball_starting, weak_flippers_disabled
-    disable_events: mode_bonus_starting, weak_flippers_enabled
+    disable_events: ball_will_end, weak_flippers_enabled
     use_eos: false
   right_flipper:
     main_coil: c_rightflippermain
     hold_coil: c_rightflipperhold
     activation_switch: s_rightflipper
     enable_events: ball_starting, weak_flippers_disabled
-    disable_events: mode_bonus_starting, weak_flippers_enabled
+    disable_events: ball_will_end, weak_flippers_enabled
     use_eos: false
   upper_right_flipper:
     main_coil: c_upperrightflippermain
     hold_coil: c_upperrightflipperhold
     activation_switch: s_rightflipper
     enable_events: ball_starting, weak_flippers_disabled
-    disable_events: mode_bonus_starting, weak_flippers_enabled
+    disable_events: ball_will_end, weak_flippers_enabled
     use_eos: false
     include_in_ball_search: true
 
