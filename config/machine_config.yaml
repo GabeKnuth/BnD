@@ -208,7 +208,7 @@ modes:
   - albums
   - attract
   - base
-  - bonus # This breaks the game. Enable after fixed. See bonus_problem branch
+  - bonus
   - extra_ball_lit
   - high_score
   - hilo
