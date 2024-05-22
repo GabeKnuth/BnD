@@ -20,14 +20,32 @@ config:
 
 hardware:
   platform: fast
-  driverboards: fast
   rgb_dmd: smartmatrix
 
 fast:
-  ports: /dev/FASTnet, /dev/FASTrgb
-  rgb_buffer: 10
-  hardware_led_fade_time: 65ms
-  console_log: full
+  net:
+    controller: nano
+    port: /dev/FASTnet
+    io_loop:
+      front:
+        model: FP-I/O-3208
+        order: 1
+      back:
+        model: FP-I/O-3208
+        order: 2      
+      mid:
+        model: FP-I/O-1616
+        order: 3
+
+  rgb:
+    port: /dev/FASTrgb
+      
+  
+  
+  # ports: /dev/FASTnet, /dev/FASTrgb
+  # rgb_buffer: 10
+  # hardware_led_fade_time: 65ms
+  # console_log: full
 
 smartmatrix:
   smartmatrix_1:

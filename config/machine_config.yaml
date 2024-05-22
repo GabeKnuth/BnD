@@ -270,123 +270,123 @@ playfields:
 
 switches:
   s_leftflipper:
-    number: 0
+    number: front-0
     tags: left_flipper
   s_rightupperflipper:
-    number: 1
+    number: front-1
   s_rightflipper:
-    number: 2
+    number: front-2
     tags: right_flipper
   s_start:
-    number: 3
+    number: front-3
     tags: start
   s_launch:
-    number: 4
+    number: front-4
     tags: launch
   s_tilt:
-    number: 5
+    number: front-5
     tags: tilt_warning
   s_plungerlane:
-    number: 16
+    number: front-0
   s_rightbankbottom:
-    number: 17
+    number: front-1
     tags: skill_shot_fail, quarter, qmb, playfield_active
   s_trough_enter:
-    number: 18
+    number: front-2
   s_rightoutlane:
-    number: 19
+    number: front-3
     tags: skill_shot_fail, playfield_active
   s_leftoutlane:
-    number: 20
+    number: front-4
     tags: skill_shot_fail, playfield_active
   s_drain:
-    number: 21
+    number: front-5
     tags: drain
   s_leftinlane:
-    number: 22
+    number: front-6
     tags: skill_shot_fail, playfield_active
   s_rightinlane:
-    number: 24
+    number: front-7
     tags: skill_shot_fail, playfield_active
   s_rightsling:
-    number: 25
+    number: front-8
     tags: skill_shot_fail, toggle
   s_rightbanktop:
-    number: 26
+    number: front-9
     tags: skill_shot_fail, quarter, qmb, playfield_active
   s_toprightstandup:
-    number: 27
+    number: front-10
     tags: skill_shot_fail, quarter, qmb, playfield_active
   s_jukeboxopto:
-    number: 40
+    number: mid-8
     type: NC
     ignore_window_ms: 500
     tags: jukebox, skill_shot_fail, jukebox_hit
   s_topkickingtarget:
-    number: 41
+    number: mid-9
     tags: skill_shot_fail, toggle, qmb
   s_subwayopto:
-    number: 42
+    number: mid-10
     tags: subway, skill_shot_fail, jukebox_hit, playfield_active
     type: NC
   s_lowervukopto:
-    number: 43
+    number: mid-11
     type: NC
     tags: skill_shot_fail
   s_leftsling:
-    number: 44
+    number: mid-12
     tags: skill_shot_fail, toggle
   s_leftrampopto:
-    number: 45
+    number: mid-13
     type: NC
     tags: skill_shot_fail, playfield_active
   s_bottomkickingtarget:
-    number: 46
+    number: mid-14
     tags: skill_shot_fail, toggle, qmb
   s_leftorbit:
-    number: 47
+    number: mid-15
     tags: skill_shot_fail, playfield_active
   s_droptarget1:
-    number: 64
+    number: back-16
     tags: skill_shot_fail
   s_droptarget2:
-    number: 65
+    number: back-17
     tags: skill_shot_fail
   s_droptarget3:
-    number: 66
+    number: back-18
     tags: skill_shot_fail
   s_droptarget4:
-    number: 67
+    number: back-19
     tags: skill_shot_fail
   s_droptarget5:
-    number: 68
+    number: back-20
     tags: skill_shot_fail
   s_toprightvuk:
-    number: 69
+    number: back-21
     tags: skill_shot_fail
   s_rightrampopto:
-    number: 72
+    number: back-22
     type: NC
     tags: playfield_active, playfield_active
   s_rightlane:
-    number: 73
+    number: back-23
     tags: skill_shot_fail, playfield_active
   s_leftlane:
-    number: 74
+    number: back-24
     tags: skill_shot_fail, playfield_active
   s_topkicker:
-    number: 75
+    number: back-25
   s_spinner:
-    number: 76
+    number: back-26
     tags: skill_shot_fail, playfield_active
   s_leftpop:
-    number: 77
+    number: back-27
     tags: skill_shot_fail, toggle
   s_rightpop:
-    number: 78
+    number: back-28
     tags: skill_shot_fail, toggle
   s_bottompop:
-    number: 79
+    number: back-29
     tags: skill_shot_fail, toggle
 
 #                           88  88             
@@ -400,75 +400,75 @@ switches:
 
 coils:
   c_leftflippermain:
-    number: 0
+    number: front-0
     default_pulse_ms: 60
   c_leftflipperhold:
-    number: 1
+    number: front-1
     allow_enable: true
   c_rightsling:
-    number: 2
+    number: front-2
   c_rightflippermain:
-    number: 3
+    number: front-3
     default_pulse_ms: 60
   c_rightflipperhold:
-    number: 4
+    number: front-4
     allow_enable: true
   c_plunger:
-    number: 5
+    number: front-5
     default_pulse_ms: 20
   c_trougheject:
-    number: 6
+    number: front-6
     allow_enable: true
     default_pulse_ms: 1000
   c_draineject:
-    number: 7
+    number: front-7
     default_pulse_ms: 80
   c_jukeboxmagnet:
-    number: 8
+    number: mid-0
     default_pulse_ms: 10
     default_hold_power: 1
   c_leftsling:
-    number: 9
+    number: mid-1
   c_lowervuk:
-    number: 10
+    number: mid-2
     default_pulse_ms: 40
   c_bottomkickingtarget:
-    number: 11
+    number: mid-3
     default_pulse_ms: 4
   c_diverter:
-    number: 12
+    number: mid-4
     allow_enable: true
   c_topkickingtarget:
-    number: 15
+    number: mid-7
     default_pulse_ms: 4
   c_outerdroptargetdrop:
-    number: 16
+    number: mid-8
   c_innerdroptargetdrop:
-    number: 17
+    number: mid-9
   c_droptargetreset:
-    number: 18
+    number: mid-10
     default_pulse_ms: 80
-  c_topkicker:
-    number: 20
-    default_pulse_ms: 30
   c_toprightvuk:
-    number: 19
+    number: back-11
     default_pulse_ms: 8
-  c_upperrightflippermain:
-    number: 29
-    default_pulse_ms: 15
+  c_topkicker:
+    number: mid-12
+    default_pulse_ms: 30
   c_upperrightflipperhold:
-    number: 25
+    number: back-1
     allow_enable: true
   c_bottompop:
-    number: 26
+    number: back-2
     default_pulse_ms: 20
   c_rightpop:
-    number: 27
+    number: back-3
     default_pulse_ms: 20
   c_leftpop:
-    number: 28
+    number: back-4
     default_pulse_ms: 20
+  c_upperrightflippermain:
+    number: back-5
+    default_pulse_ms: 15
 
 #                                                                                
 #     ad88  88  88                                                               
@@ -508,38 +508,38 @@ flippers:
 
 # Some day I want to make this work as a mystery award. They can't all be fun, right? :)
 
-# Weak Flippers
-  weak_left_flipper:   
-    main_coil: c_leftflippermain
-    main_coil_overwrite:
-      pulse_ms: 17
-    hold_coil: c_leftflipperhold
-    activation_switch: s_leftflipper
-    enable_events: weak_flippers_enabled
-    disable_events: weak_flippers_disabled, ball_starting
-    use_eos: false
-    debug: true
-  weak_right_flipper:
-    main_coil: c_rightflippermain
-    main_coil_overwrite:
-      pulse_ms: 17
-    hold_coil: c_rightflipperhold
-    activation_switch: s_rightflipper
-    enable_events: weak_flippers_enabled
-    disable_events: weak_flippers_disabled, ball_starting
-    use_eos: false
-    debug: true
-  weak_upper_right_flipper:
-    main_coil: c_upperrightflippermain
-    main_coil_overwrite:
-      pulse_ms: 7
-    hold_coil: c_upperrightflipperhold
-    activation_switch: s_rightflipper
-    enable_events: weak_flippers_enabled
-    disable_events: weak_flippers_disabled, ball_starting
-    use_eos: false
-    include_in_ball_search: true
-    debug: true
+# # Weak Flippers
+#   weak_left_flipper:   
+#     main_coil: c_leftflippermain
+#     main_coil_overwrite:
+#       pulse_ms: 17
+#     hold_coil: c_leftflipperhold
+#     activation_switch: s_leftflipper
+#     enable_events: weak_flippers_enabled
+#     disable_events: weak_flippers_disabled, ball_starting
+#     use_eos: false
+#     debug: true
+#   weak_right_flipper:
+#     main_coil: c_rightflippermain
+#     main_coil_overwrite:
+#       pulse_ms: 17
+#     hold_coil: c_rightflipperhold
+#     activation_switch: s_rightflipper
+#     enable_events: weak_flippers_enabled
+#     disable_events: weak_flippers_disabled, ball_starting
+#     use_eos: false
+#     debug: true
+#   weak_upper_right_flipper:
+#     main_coil: c_upperrightflippermain
+#     main_coil_overwrite:
+#       pulse_ms: 7
+#     hold_coil: c_upperrightflipperhold
+#     activation_switch: s_rightflipper
+#     enable_events: weak_flippers_enabled
+#     disable_events: weak_flippers_disabled, ball_starting
+#     use_eos: false
+#     include_in_ball_search: true
+#     debug: true
 
 #  88                       88  88                                              
 #  88                       88  88                                              
