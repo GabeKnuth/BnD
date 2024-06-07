@@ -89,16 +89,16 @@
 # Light up playfield again
 - time: 9.233
   lights:
-    (right): on-f2433ms
-    (center): on-f2433ms
-    (left): on-f2433ms
-    (gi): on-f2433ms
+    (right): on
+    (center): on
+    (left): on
+    (gi): on
 - time: 11.666
   lights:
-    (right): off-f200ms
-    (center): off-f200ms
-    (left): off-f200ms
-    (gi): off-f200ms
+    (right): off
+    (center): off
+    (left): off
+    (gi): off
   events:
     - release_left_vuk_ball
     - disable_base_left_vuk_hold

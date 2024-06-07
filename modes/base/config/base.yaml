@@ -752,12 +752,12 @@ shows:
   flash_jukebox:
     - duration: 125ms
       lights:
-        l_jukebox_left: on-f0
-        l_jukebox_right: off-f0
+        l_jukebox_left: on
+        l_jukebox_right: off
     - duration: 125ms
       lights:
-        l_jukebox_left: off-f0
-        l_jukebox_right: on-f0
+        l_jukebox_left: off
+        l_jukebox_right: on
   eject_alert:
     - time: 0
       lights:
@@ -803,22 +803,22 @@ shows:
   rainbow:
     - duration: 150ms
       lights:
-        (leds): red-f100ms
+        (leds): red
     - duration: 150ms
       lights:
-        (leds): orange-f100ms
+        (leds): orange
     - duration: 150ms
       lights:
-        (leds): yellow-f100ms
+        (leds): yellow
     - duration: 150ms
       lights:
-        (leds): green-f100ms
+        (leds): green
     - duration: 150ms
       lights:
-        (leds): blue-f100ms
+        (leds): blue
     - duration: 150ms
       lights:
-        (leds): purple-f100ms
+        (leds): purple
 
 #             88                                                     
 #             88                                                     

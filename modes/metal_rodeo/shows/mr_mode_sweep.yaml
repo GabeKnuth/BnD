@@ -3,58 +3,58 @@
 
 - duration: 150ms
   lights:
-    l_world_tour: ffffff-f75
-    l_money_bags: 363636-f75
-    l_music_awards: 151515-f75
-    l_jukebox_insert: 151515-f75
-    l_play_poker: 151515-f75
+    l_world_tour: ffffff
+    l_money_bags: 363636
+    l_music_awards: 151515
+    l_jukebox_insert: 151515
+    l_play_poker: 151515
 - duration: 150ms
   lights:
-    l_world_tour: 363636-f75
-    l_money_bags: ffffff-f75
-    l_music_awards: 363636-f75
-    l_jukebox_insert: 151515-f75
-    l_play_poker: 151515-f75
+    l_world_tour: 363636
+    l_money_bags: ffffff
+    l_music_awards: 363636
+    l_jukebox_insert: 151515
+    l_play_poker: 151515
 - duration: 150ms
   lights:
-    l_world_tour: 151515-f75
-    l_money_bags: 363636-f75
-    l_music_awards: ffffff-f75
-    l_jukebox_insert: 363636-f75
-    l_play_poker: 151515-f75
+    l_world_tour: 151515
+    l_money_bags: 363636
+    l_music_awards: ffffff
+    l_jukebox_insert: 363636
+    l_play_poker: 151515
 - duration: 150ms
   lights:
-    l_world_tour: 151515-f75
-    l_money_bags: 151515-f75
-    l_music_awards: 363636-f75
-    l_jukebox_insert: ffffff-f75
-    l_play_poker: 363636-f75
+    l_world_tour: 151515
+    l_money_bags: 151515
+    l_music_awards: 363636
+    l_jukebox_insert: ffffff
+    l_play_poker: 363636
 - duration: 150ms
   lights:
-    l_world_tour: 151515-f75
-    l_money_bags: 151515-f75
-    l_music_awards: 151515-f75
-    l_jukebox_insert: 363636-f75
-    l_play_poker: ffffff-f75
+    l_world_tour: 151515
+    l_money_bags: 151515
+    l_music_awards: 151515
+    l_jukebox_insert: 363636
+    l_play_poker: ffffff
 - duration: 150ms
   lights:
-    l_world_tour: 151515-f75
-    l_money_bags: 151515-f75
-    l_music_awards: 363636-f75
-    l_jukebox_insert: ffffff-f75
-    l_play_poker: 363636-f75
+    l_world_tour: 151515
+    l_money_bags: 151515
+    l_music_awards: 363636
+    l_jukebox_insert: ffffff
+    l_play_poker: 363636
 - duration: 150ms
   lights:
-    l_world_tour: 151515-f75
-    l_money_bags: 363636-f75
-    l_music_awards: ffffff-f75
-    l_jukebox_insert: 363636-f75
-    l_play_poker: 151515-f75
+    l_world_tour: 151515
+    l_money_bags: 363636
+    l_music_awards: ffffff
+    l_jukebox_insert: 363636
+    l_play_poker: 151515
 - duration: 150ms
   lights:
-    l_world_tour: 363636-f75
-    l_money_bags: ffffff-f75
-    l_music_awards: 363636-f75
-    l_jukebox_insert: 151515-f75
-    l_play_poker: 151515-f75
+    l_world_tour: 363636
+    l_money_bags: ffffff
+    l_music_awards: 363636
+    l_jukebox_insert: 151515
+    l_play_poker: 151515
 

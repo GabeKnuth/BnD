@@ -126,38 +126,38 @@ shows:
           target: dmd
     - time: 150ms
       lights:
-        (right): red-f150ms
-        (center): red-f150ms
-        (left): red-f150ms
-        (gi): red-f150ms
+        (right): red
+        (center): red
+        (left): red
+        (gi): red
     - time: 300ms
       lights:
-        (right): off-f150ms
-        (center): off-f150ms
-        (left): off-f150ms
-        (gi): off-f150ms
+        (right): off
+        (center): off
+        (left): off
+        (gi): off
     - time: 750ms
       lights:
-        (right): red-f150ms
-        (center): red-f150ms
-        (left): red-f150ms
-        (gi): red-f150ms
+        (right): red
+        (center): red
+        (left): red
+        (gi): red
     - time: 900ms
       lights:
-        (right): off-f150ms
-        (center): off-f150ms
-        (left): off-f150ms
-        (gi): off-f150ms
+        (right): off
+        (center): off
+        (left): off
+        (gi): off
     - time: 1050ms
       lights:
-        (right): red-f150ms
-        (center): red-f150ms
-        (left): red-f150ms
-        (gi): red-f150ms
+        (right): red
+        (center): red
+        (left): red
+        (gi): red
     - time: 1200ms
       duration: 150ms
       lights:
-        (right): off-f150ms
-        (center): off-f150ms
-        (left): off-f150ms
-        (gi): off-f150ms
+        (right): off
+        (center): off
+        (left): off
+        (gi): off

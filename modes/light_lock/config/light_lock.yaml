@@ -102,10 +102,10 @@ shows:
   lock_advertise:
     - duration: 200ms
       lights:
-        (leds): green
+        (lights): green
     - duration: 200ms
       lights:
-        (leds): black
+        (lights): black
 
 #scoring: #leaving for reference
 variable_player:

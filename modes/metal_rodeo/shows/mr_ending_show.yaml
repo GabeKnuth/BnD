@@ -6,10 +6,10 @@
     mr_good_job:
       target: dmd
   lights:
-    (right): off-f150
-    (center): off-f150
-    (left): off-f150
-    (gi): off-f150
+    (right): off
+    (center): off
+    (left): off
+    (gi): off
 - time: 5
   slides:
     mr_total_score:
