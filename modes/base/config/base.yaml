@@ -39,6 +39,8 @@ event_player:
     - light_mission_select
   mode_play_poker_stopped:
     - light_mission_select
+  mode_jukebox_hurryup_stopped:
+    - light_mission_select
   mode_metal_rodeo_stopped:
     - light_mission_select
   mode_honky_tonk_multiball_stopped:

@@ -10,7 +10,9 @@ mode:
   priority: 1000
 
 event_player:
-  mode_jukebox_hurryup_started: fade_out_base_music
+  mode_jukebox_hurryup_started: 
+    - fade_out_base_music
+    - stop_mission_select
   timer_jb_display_timer_complete: jukebox_hurryup_done
   jukebox_hurryup_done:
     - fade_in_base_music|3s
