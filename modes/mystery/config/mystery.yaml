@@ -35,6 +35,9 @@ show_player:
   mys_start_mission:
     start_mission_show:
       loops: 0
+  mys_jukebox_jamboree:
+    start_jukebox_jamboree_show:
+      loops: 0
   mys_extra_ball:
     start_extra_ball_show:
       loops: 0
@@ -147,6 +150,12 @@ slides:
     widgets:
       - type: text
         text: SPOT QUARTERS
+        color: red
+        style: big #dmd_big
+  mys_sl_jukebox_jamboree:
+    widgets:
+      - type: text
+        text: Jukebox Jamboree
         color: red
         style: big #dmd_big
   mys_sl_ball_saver:

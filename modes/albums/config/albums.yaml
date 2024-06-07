@@ -10,106 +10,145 @@ mode:
 counters:
   albums:
     count_events: drop_target_bank_drop_targets_down
-    #player_variable: num_albums
+    events_when_hit: num_albums
     persist_state: false
 
 event_player:
   player_num_albums: show_album_slide|.1s
 
 light_player:
-  # These light the LEDs when they're awarded during this ball
-  player_num_albums{value == 1}:
+  num_albums{count == 1}:
     l_silver: on
-  player_num_albums{value == 2}:
+  num_albums{count == 2}:
     l_gold: on
-  player_num_albums{value == 3}:
+  num_albums{count == 3}:
     l_single_platinum: on
-  player_num_albums{value == 4}:
+  num_albums{count == 4}:
     l_double_platinum: on
-  player_num_albums{value == 5}:
+  num_albums{count == 5}:
     l_quintuple_platinum: on
+
+  # # These light the LEDs when they're awarded during this ball
+  # player_num_albums{value == 1}:
+  #   l_silver: on
+  # player_num_albums{value == 2}:
+  #   l_gold: on
+  # player_num_albums{value == 3}:
+  #   l_single_platinum: on
+  # player_num_albums{value == 4}:
+  #   l_double_platinum: on
+  # player_num_albums{value == 5}:
+  #   l_quintuple_platinum: on
 
   # these restore the LEDs when the ball starts
-  mode_albums_started{current_player.num_albums >= 1}:
+  mode_albums_started{current_player.album_name == "SILVER"}:
     l_silver: on
-  mode_albums_started{current_player.num_albums >= 2}:
+  mode_albums_started{current_player.album_name == "GOLD"}:
     l_gold: on
-  mode_albums_started{current_player.num_albums >= 3}:
+    l_silver: on
+  mode_albums_started{current_player.album_name == "SINGLE PLATINUM"}:
     l_single_platinum: on
-  mode_albums_started{current_player.num_albums >= 4}:
+    l_gold: on
+    l_silver: on
+  mode_albums_started{current_player.album_name == "DOUBLE PLATINUM"}:
     l_double_platinum: on
-  mode_albums_started{current_player.num_albums >= 5}:
+    l_single_platinum: on
+    l_gold: on
+    l_silver: on
+  mode_albums_started{current_player.album_name == "QUINTUPLE PLATINUM"}:
     l_quintuple_platinum: on
+    l_double_platinum: on
+    l_single_platinum: on
+    l_gold: on
+    l_silver: on
+  mode_albums_started{current_player.album_name == "OFF THE CHARTS"}:
+    l_quintuple_platinum: on
+    l_double_platinum: on
+    l_single_platinum: on
+    l_gold: on
+    l_silver: on
 
-#scoring: #leaving for reference
+
 variable_player:
-  player_num_albums{value==1}:
+  num_albums{count==1}:
     album_value:
       int: 25000
       action: set
     album_name:
       string: SILVER
+      action: set
     score: 25000
 
-  player_num_albums{value==2}:
+
+  num_albums{count==2}:
     album_value:
       int: 50000
       action: set
     album_name:
       string: GOLD
+      action: set
     score: 50000
 
-  player_num_albums{value==3}:
+
+  num_albums{count==3}:
     album_value:
       int: 100000
       action: set
     album_name:
       string: PLATINUM
+      action: set
     score: 100000
 
-  player_num_albums{value==4}:
+  num_albums{count==4}:
     album_value:
       int: 200000
       action: set
     album_name:
       string: DOUBLE PLATINUM
+      action: set
     score: 200000
 
-  player_num_albums{value==5}:
+
+  num_albums{count==5}:
     album_value:
       int: 500000
       action: set
     album_name:
       string: QUINTUPLE PLATINUM
+      action: set
     score: 500000
 
-  player_num_albums{value>=6}:  # beyond 6 we don't increase anymore
+
+  num_albums{count>=6}:  # beyond 6 we don't increase anymore
     album_value:
       int: 2500000
       action: set
     album_name:
       string: OFF THE CHARTS
+      action: set
     score: 2500000
+    album_int:
+      int: 6
 
 
 
 slide_player:
-  show_album_slide{current_player.num_albums == 1}:
+  num_albums{count == 1}:
     album_silver:
       expire: 2s
-  show_album_slide{current_player.num_albums == 2}:
+  num_albums{count == 2}:
       album_gold:
         expire: 2s
-  show_album_slide{current_player.num_albums == 3}:
+  num_albums{count == 3}:
       album_platinum:
         expire: 2s
-  show_album_slide{current_player.num_albums == 4}:
+  num_albums{count == 4}:
       album_platinum:
         expire: 2s
-  show_album_slide{current_player.num_albums == 5}:
+  num_albums{count == 5}:
       album_platinum:
         expire: 2s
-  show_album_slide{current_player.num_albums >= 6}:
+  num_albums{count >= 6}:
       album_off_the_charts:
         expire: 2s
 

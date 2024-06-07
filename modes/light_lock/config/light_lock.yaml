@@ -1,5 +1,4 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
 
 mode:
   start_events: start_light_lock
@@ -41,6 +40,9 @@ sound_player:
     slam:
       action: play
       loops: 0
+    ball_locked:
+      action: play
+      loops: 0  
 
 slides:
   lock_lit_slide:

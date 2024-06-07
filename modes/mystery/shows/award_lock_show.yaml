@@ -7,7 +7,7 @@
       target: dmd
       #transition: fade
   sounds:
-    broken_guitar:
+    ball_locked:
       action: play
 - duration: 1000ms
   slides:

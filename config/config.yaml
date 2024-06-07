@@ -56,6 +56,8 @@ displays:
     width: 128
     height: 32
     default: true
+    round_anchor_x: left
+    round_anchor_y: bottom
 
 rgb_dmds:
   smartmatrix_1:
