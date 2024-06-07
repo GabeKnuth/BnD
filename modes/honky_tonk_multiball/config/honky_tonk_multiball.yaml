@@ -46,7 +46,7 @@ multiballs:
   honky_tonk:
     ball_count: 3
     shoot_again: 10s
-    start_events: mode_honky_tonk_multiball_started
+    start_events: slide_honky_tonk_instructions_removed
 
 slide_player:
   mode_honky_tonk_multiball_started:
