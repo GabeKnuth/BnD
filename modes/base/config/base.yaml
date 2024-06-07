@@ -749,6 +749,13 @@ shows:
     - duration: 200ms
       lights:
         (led): off
+  flash_fast:
+    - duration: 100ms
+      lights:
+        (led): on
+    - duration: 100ms
+      lights:
+        (led): off
   flash_jukebox:
     - duration: 125ms
       lights:

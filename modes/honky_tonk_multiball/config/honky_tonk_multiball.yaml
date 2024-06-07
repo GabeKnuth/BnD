@@ -16,12 +16,21 @@ event_player:
     - fade_in_base_music
     - start_quarters_mode
     - unblock_jukebox_hits
+    - disable_htmb_intro_lock
   htmb_double_jackpot_complete:
     - duck
     - unduck|1.5s
   htmb_jackpot_complete:
     - duck
     - unduck|1.5s
+
+ball_holds:
+  htmb_intro_lock:
+    balls_to_hold: 1
+    hold_devices: bd_top_right_vuk
+    enable_events: mode_honky_tonk_multiball_started
+    release_one_events: slide_honky_tonk_instructions_removed
+    disable_events: disable_htmb_intro_lock
 
 sound_player:
   htmb_jackpot_complete:
@@ -205,7 +214,7 @@ slides:
 
 achievements:
   htmb_jackpot:
-    show_when_started: flash
+    show_when_started: flash_fast
     show_when_completed: off
     show_tokens:
       led: jackpot
@@ -216,13 +225,13 @@ achievements:
     restart_after_stop_possible: true
 
   htmb_double_jackpot:
-    show_when_started: flash
+    show_when_started: flash_fast
     show_when_completed: off
     show_tokens:
       led: double_jackpot
     reset_events: htmb_double_jackpot_complete
     start_events: htmb_jackpot_complete
-    complete_events: seq_shot_right_ramp_full_loop_hit
+    complete_events: s_topkicker_active
     events_when_completed: htmb_double_jackpot_complete
     restart_after_stop_possible: true
 
