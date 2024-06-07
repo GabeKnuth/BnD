@@ -101,7 +101,7 @@ slide_player:
       x: middle
       y: top
     - type: text
-      text: (quarters) QUARTERS
+      text: (player|quarters) QUARTERS
       y: top-7
       anchor_y: top
       style: big #dmd_big
@@ -110,7 +110,7 @@ slide_player:
       text: X
       style: small 
     - type: text
-      text: "(album_name) VALUE: (album_value)"
+      text: "(player|album_name) VALUE: (player|album_value)"
       y: bottom+1
       anchor_y: bottom
       style: small 
@@ -124,7 +124,7 @@ slide_player:
       x: middle
       y: top
     - type: text
-      text: (num_albums) ALBUMS
+      text: (player|num_albums) ALBUMS
       style: big #dmd_big
       anchor_x: right
       x: 67
@@ -140,13 +140,13 @@ slide_player:
   bonus_subtotal:
     bonus_subtotal:
       - type: text
-        text: (score)
+        text: (player|score)
         style: big #dmd_big
         number_grouping: true
   bonus_multiplier:
     bonus_multiplier:
       - type: text
-        text: (multiplier)X
+        text: (player|multiplier)X
         style: huge 
         font_size: 40
         color: red
@@ -163,7 +163,7 @@ slide_player:
       style: big #dmd_big
       y: 64%
     - type: text
-      text: (score)
+      text: (player|score)
       style: big #dmd_big
       number_grouping: true
       color: gold
