@@ -209,9 +209,9 @@ achievements:
     show_when_completed: off
     show_tokens:
       led: jackpot
-    reset_events: s_topkicker_active
+    reset_events: htmb_jackpot_complete
     start_events: start_hkmb_achievements, htmb_double_jackpot_complete
-    complete_events: shot_right_ramp_full_loop_hit
+    complete_events: seq_shot_right_ramp_full_loop_hit
     events_when_completed: htmb_jackpot_complete
     restart_after_stop_possible: true
 
@@ -220,9 +220,9 @@ achievements:
     show_when_completed: off
     show_tokens:
       led: double_jackpot
-    reset_events: shot_right_ramp_full_loop_hit
+    reset_events: htmb_double_jackpot_complete
     start_events: htmb_jackpot_complete
-    complete_events: s_topkicker_active
+    complete_events: seq_shot_right_ramp_full_loop_hit
     events_when_completed: htmb_double_jackpot_complete
     restart_after_stop_possible: true
 
@@ -237,7 +237,7 @@ variable_player:
       action: set
   sw_jukebox_hit:
     htmb_jackpot_value:
-      int: 150000
+      int: 50000
   htmb_jackpot_complete:
     score: current_player.htmb_jackpot_value
   htmb_double_jackpot_complete:
