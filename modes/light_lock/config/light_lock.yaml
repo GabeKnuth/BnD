@@ -49,7 +49,8 @@ slides:
         text: LOCK IS LIT
         style: huge 
         color: black
-        font_size: 30
+        font_size: 28
+        y: 21
         animations:
           show_slide:
             - property: opacity
@@ -59,9 +60,22 @@ slides:
               value: 1
               duration: .2s
               repeat: true
+      - type: text
+        text: "SHOOT THROUGH "
+        color: white
+        style: small
+        x: 38
+        y: 5
+      - type: text
+        text: "THE SPINNER "
+        color: white
+        style: small
+        y: 5
+        x: 101
       - type: rectangle
         width: 128
-        height: 32
+        height: 26
+        y: 21
         color: lime
   ball_locked_slide:
     widgets:
@@ -88,10 +102,10 @@ shows:
   lock_advertise:
     - duration: 200ms
       lights:
-        (leds): lime-f100ms
+        (leds): green
     - duration: 200ms
       lights:
-        (leds): blue-f100ms
+        (leds): black
 
 #scoring: #leaving for reference
 variable_player:
