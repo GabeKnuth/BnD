@@ -5,6 +5,13 @@ mode:
   start_events: mode_base_started
 
 
+#                                                       ,d                                        
+#                                                       88                                        
+#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
+#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
+#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
+#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"' 
 
 
 #logic_blocks:
@@ -15,12 +22,45 @@ counters:
     persist_state: false
     starting_count: current_player.temp_num_albums
     
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 
 event_player:
   player_num_albums: show_album_slide|.1s
 
-
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
 
 
 variable_player:
@@ -122,7 +162,24 @@ variable_player:
       int: 6
       action: set
 
-
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 slide_player:
   num_albums{count == 1}:
@@ -143,6 +200,16 @@ slide_player:
   num_albums{count >= 6}:
       album_off_the_charts:
         expire: 2s
+
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   album_silver:
@@ -248,3 +315,47 @@ slides:
             repeat: true
             easing: in_quint
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+sound_player:
+  num_albums{count == 1}:
+    ma_silver:
+      action: play
+      loops: 0
+  num_albums{count == 2}:
+    ma_gold:
+      action: play
+      loops: 0
+  num_albums{count == 3}:
+    ma_platinum:
+      action: play
+      loops: 0
+  num_albums{count == 4}:
+    ma_double_platinum:
+      action: play
+      loops: 0
+  num_albums{count == 5}:
+    ma_quintuple_platinum:
+      action: play
+      loops: 0
+  num_albums{count >= 6}:
+    ma_off_the_charts:
+      action: play
+      loops: 0

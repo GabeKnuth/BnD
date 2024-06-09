@@ -2,24 +2,6 @@ $$$$$$$$$
 $$ Shorter Term things
 $$$$$$$$$
 
-Hold Multiplier? 
-	Still not being held. MULTIPLIER is, but the album status isn’t, and it probably should be.
-
-HTMB needs to alternate between Ramp (Jackpot) and Top Kicker (Double Jackpot)
-	This should work now?
-
-
-QMB was running while Lock 3 was lit. HTMB started during QMB. Things got WEIRD. Make sure when QMB is running, other MB’s can’t
-	Basically, I want to make it so that the light_lock mode can only be running when no other missions/modes are running. Kind of like Road Show. So work out that logic after a coffee or two.
-
-
-Album award callouts need to be added (platinum! Etc.)
-
-Make voice callout for High Score (or just use Yeehaw or whatever)
-
-
-
-
 
 #########
 ## These are big picture things, for the most part. None of this is required to get the game running. 

@@ -11,9 +11,16 @@ event_player:
 #  player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
 #    start_honky_tonk_multiball
 #    stop_light_lock|1s
-  seq_shot_spinner_to_vuk_hit:
+  ball_lock_counter_complete:
     - play_ball_locked_slide
     - stop_light_lock|2.5s
+  
+  # Basically, we only want lock to be lit when no game modes are running, and all game modes stop mission select when they start.
+  # Base turns mission select back on when a mode is done. 
+  stop_mission_select:
+    - pause_light_lock
+  light_mission_select:
+    - resume_light_lock
 
 show_player:
   mode_light_lock_started:
@@ -21,6 +28,14 @@ show_player:
       loops: -1
       show_tokens:
         lights: l_center_lock
+  pause_light_lock:
+    lock_advertise: 
+      action: stop
+  resume_light_lock:
+    lock_advertise:
+      loops: -1
+      show_tokens:
+        lights: l_center_lock  
 
 slide_player:
   play_lock_slide:
@@ -110,6 +125,29 @@ shows:
         (lights): black
 
 #scoring: #leaving for reference
+# Maybe we should use an achievement or counter or something?
+
 variable_player:
-  seq_shot_spinner_to_vuk_hit:
+  ball_lock_counter_complete:
     htmb_balls_locked: 1
+
+# This intervenes before htmb_balls_locked is incremented. Counter watches for shot, and if the counter is enabled, posts the event
+# that the variable player is listening for. (The var player used to just watch for the shot directly.)
+
+# This lets me pause the counter whenever, just by posting "pause_light_lock" and resume it with "resume_light_lock," without having
+# to stop/start the mode. Also see the show player above for stopping/starting lights based on these events.
+
+# Actual pausing/resuming is done in base, I think? Or maybe it should be done here in case this mode is running. I guess it doesn't matter.
+# If it's done in base, I can just post the events along with other things that are already done on a mode start/stop basis.
+
+# If I do it here, I can be sure that it only happens while this mode is running. 
+
+counters:
+  ball_lock_counter:
+    count_events: seq_shot_spinner_to_vuk_hit
+    count_complete_value: 1
+    events_when_complete: ball_lock_counter_complete
+    disable_events: pause_light_lock
+    enable_events: resume_light_lock, mode_light_lock_started
+    start_enabled: true
+
