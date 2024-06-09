@@ -36,6 +36,10 @@ mode_settings:
       #   score: current_player.wizard_score * current_player.num_albums
 
 variable_player:
+  mode_bonus_started:
+    bonus_multiplier:
+      int: current_player.multiplier
+      action: set
   quarter_bonus:
     quarter_value:
       int: current_player.quarters * 25000
