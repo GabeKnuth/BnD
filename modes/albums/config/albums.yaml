@@ -2,7 +2,8 @@
 
 mode:
   priority: 160
-  start_events: mode_base_starting
+  start_events: mode_base_started
+
 
 
 
@@ -12,6 +13,9 @@ counters:
     count_events: drop_target_bank_drop_targets_down
     events_when_hit: num_albums
     persist_state: false
+    starting_count: current_player.temp_num_albums
+    
+
 
 event_player:
   player_num_albums: show_album_slide|.1s
@@ -20,6 +24,7 @@ event_player:
 
 
 variable_player:
+ 
   num_albums{count==1}:
     album_value:
       int: 25000
@@ -31,6 +36,10 @@ variable_player:
     multiplier:
       int: 2
       action: set
+    temp_num_albums: # Used to help preserve album status when multiplier is held. See base mode code.
+      int: 1
+      action: set
+  
   
 
   num_albums{count==2}:
@@ -43,6 +52,9 @@ variable_player:
     score: 50000
     multiplier:
       int: 3
+      action: set
+    temp_num_albums:
+      int: 2
       action: set
 
 
@@ -57,6 +69,9 @@ variable_player:
     multiplier:
       int: 4
       action: set
+    temp_num_albums:
+      int: 3
+      action: set
 
   num_albums{count==4}:
     album_value:
@@ -68,6 +83,9 @@ variable_player:
     score: 200000
     multiplier:
       int: 5
+      action: set
+    temp_num_albums:
+      int: 4
       action: set
 
 
@@ -81,6 +99,9 @@ variable_player:
     score: 500000
     multiplier:
       int: 6
+      action: set
+    temp_num_albums:
+      int: 5
       action: set
 
 
@@ -96,6 +117,9 @@ variable_player:
       int: 6
     multiplier:
       int: 9
+      action: set
+    temp_num_albums:
+      int: 6
       action: set
 
 

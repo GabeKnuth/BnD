@@ -42,8 +42,16 @@ variable_player:
     total_bonus_value:
       int: current_player.quarters * 25000 * current_player.multiplier
       action: set
+    
+    # These are set every time, but not always used. Base mode custom code uses these to determine what to do.
     temp_multiplier:
       int: current_player.multiplier
+      action: set
+    temp_album_value:
+      int: current_player.album_value
+      action: set
+    temp_album_name:
+      string: (player|album_name)
       action: set
   bonus_total:
     score: current_player.total_bonus_value
