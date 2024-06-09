@@ -23,6 +23,15 @@ high_score:
     quarters:
       - JON: 5
 
+sound_player:
+  mode_high_score_started:
+    bonus_bed:
+        action: play
+        loops: -1
+  mode_high_score_stopping:
+    bonus_bed:
+      action: stop
+
 # slides:
 #   high_score_enter_initials:
 #   - type: text

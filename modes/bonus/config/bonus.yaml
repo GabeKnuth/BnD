@@ -28,10 +28,29 @@ mode_settings:
   bonus_entries:
       - event: quarter_bonus
         # number quarters * album value
-        score: current_player.quarters * current_player.album_value
-      - event: wizard_bonus
-        # 25k per wizard shot * num albums completed
-        score: current_player.wizard_score * current_player.num_albums
+        score: current_player.quarters * 25000 #
+      # - event: album_bonus
+      #   score: current_player.quarter_bonus_total * current_player.num_albums
+      # - event: wizard_bonus
+      #   # 25k per wizard shot * num albums completed
+      #   score: current_player.wizard_score * current_player.num_albums
+
+variable_player:
+  quarter_bonus:
+    quarter_value:
+      int: current_player.quarters * 25000
+    total_bonus_value:
+      int: current_player.quarters * 25000 * current_player.multiplier
+      action: set
+    temp_multiplier:
+      int: current_player.multiplier
+      action: set
+  bonus_total:
+    score: current_player.total_bonus_value
+
+
+
+
 
 #                                                             88     
 #                                                             88     
@@ -106,50 +125,75 @@ slide_player:
       anchor_y: top
       style: big #dmd_big
     - type: text
-      y: middle-4
+      y: middle-5
       text: X
       style: small 
     - type: text
-      text: "(player|album_name) VALUE: (player|album_value)"
-      y: bottom+1
+      text: "25,000"
+      #text: "(player|album_name) VALUE: (player|album_value)"
+      y: bottom+2
       anchor_y: bottom
       style: small 
       number_grouping: true
-  wizard_bonus:
-    wizard_bonus:
-    - type: image
-      image: bonus_bg_cc
-      anchor_x: middle
-      anchor_y: top
-      x: middle
-      y: top
-    - type: text
-      text: (player|num_albums) ALBUMS
-      style: big #dmd_big
-      anchor_x: right
-      x: 67
-    - type: text
-      text: 25,000
-      style: big #dmd_big
-      anchor_x: left
-      x: 78
-    - type: text
-      text: x
-      style: medium 
-      x: 72
+
+
+
+
+
+      
+  # wizard_bonus:
+  #   wizard_bonus:
+  #   - type: image
+  #     image: bonus_bg_cc
+  #     anchor_x: middle
+  #     anchor_y: top
+  #     x: middle
+  #     y: top
+  #   - type: text
+  #     text: (player|num_albums) ALBUMS
+  #     style: big #dmd_big
+  #     anchor_x: right
+  #     x: 67
+  #   - type: text
+  #     text: 25,000
+  #     style: big #dmd_big
+  #     anchor_x: left
+  #     x: 78
+  #   - type: text
+  #     text: x
+  #     style: medium 
+  #     x: 72
   bonus_subtotal:
     bonus_subtotal:
       - type: text
-        text: (player|score)
+        text: (player|quarter_value)
         style: big #dmd_big
         number_grouping: true
   bonus_multiplier:
     bonus_multiplier:
       - type: text
         text: (player|multiplier)X
-        style: huge 
-        font_size: 40
+        style: huge
+        x: left+20
+        anchor_x: left
+        font_size: 44
         color: red
+      - type: text
+        text: ALBUM
+        style: huge
+        font_size: 21
+        y: top+4
+        anchor_y: top
+        color: red
+        x: 82
+      - type: text
+        text: AWARDS
+        style: huge
+        font_size: 21
+        y: bottom-4
+        anchor_y: bottom
+        color: red
+        x: 82
   bonus_total:
     bonus_total:
     - type: image
@@ -163,7 +207,7 @@ slide_player:
       style: big #dmd_big
       y: 64%
     - type: text
-      text: (player|score)
+      text: (player|total_bonus_value)
       style: big #dmd_big
       number_grouping: true
       color: gold

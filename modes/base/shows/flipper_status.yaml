@@ -60,7 +60,7 @@
           style: big #dmd_big
           y: 22
         - type: text
-          text: "BONUS MULTIPLIER: (player|bonus_multiplier)X"
+          text: "BONUS MULTIPLIER: (player|multiplier)X"
           style: big #dmd_big
           y: 10
         - type: line
@@ -69,25 +69,25 @@
         - type: line
           points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
           color: violet
-- duration: 2s
-  slides:
-    flipper_status_wizard:
-      widgets:
-        - type: text
-          text: "WIZARD VALUE:"
-          style: big #dmd_big
-          y: 22
-        - type: text
-          text: (player|wizard_score)
-          style: big #dmd_big
-          y: 10
-          number_grouping: true
-        - type: line
-          points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
-          color: red
-        - type: line
-          points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
-          color: violet
+# - duration: 2s
+#   slides:
+#     flipper_status_wizard:
+#       widgets:
+#         - type: text
+#           text: "WIZARD VALUE:"
+#           style: big #dmd_big
+#           y: 22
+#         - type: text
+#           text: (player|wizard_score)
+#           style: big #dmd_big
+#           y: 10
+#           number_grouping: true
+#         - type: line
+#           points: 1, 0, 1, 32, 128, 32, 128, 1, 1, 1
+#           color: red
+#         - type: line
+#           points: 2, 1, 2, 31, 127, 31, 127, 2, 2, 2
+#           color: violet
 - duration: 2s
   slides:
     flipper_status_jukebox:
@@ -107,7 +107,7 @@
     flipper_status_albums:
       widgets:
         - type: text
-          text: "ALBUMS: (player|num_albums)"
+          text: "ALBUMS: (player|multiplier)" # Multiplier is the same, so we'll just use it here, too.
           style: big #dmd_big
           y: 22
         - type: text

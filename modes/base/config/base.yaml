@@ -3,7 +3,7 @@
 mode:
   start_events: ball_starting
   priority: 100
-  #code: base.base
+  code: base.Base
 
 config:
   - display.yaml
@@ -88,6 +88,7 @@ event_player:
     - start_mission
   ball_hold_left_vuk_held_ball{not mode.mystery_lit.active and not device.achievement_groups.missions["enabled"] and not mode.hilo_lit.active}:
     - release_left_vuk_ball
+  
 
 #                                                88                                   
 #                                                88                                   
@@ -126,7 +127,7 @@ random_event_player:
       - mys_start_multiball
       - mys_award_lock
       #- mys_weak_flippers
-      #- mys_hold_album_value 
+      - mys_hold_album_value 
   s_subwayopto_active:
       - jukebox_up
       - jukebox_down
@@ -436,6 +437,10 @@ variable_player:
   player_quarters{value >= 21}:
     mr_shot_score:
       int: 5 # used to be score:
+      action: set
+  hold_album_value:
+    hold_multiplier:
+      int: 1
       action: set
 
 
@@ -1068,3 +1073,69 @@ extra_balls:
     light_events: light_mystery_extra_ball
     award_events: shot_pops_to_vuk_hit
     enabled: false
+
+
+
+#  88  88               88                                           
+#  88  ""               88             ,d                            
+#  88                   88             88                            
+#  88  88   ,adPPYb,d8  88,dPPYba,   MM88MMM                         
+#  88  88  a8"    `Y88  88P'    "8a    88                            
+#  88  88  8b       88  88       88    88                            
+#  88  88  "8a,   ,d88  88       88    88,                           
+#  88  88   `"YbbdP"Y8  88       88    "Y888                         
+#           aa,    ,88                                               
+#            "Y8bbdP"                                                
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
+
+light_player:
+  num_albums{count == 1}:
+    l_silver: on
+  num_albums{count == 2}:
+    l_gold: on
+  num_albums{count == 3}:
+    l_single_platinum: on
+  num_albums{count == 4}:
+    l_double_platinum: on
+  num_albums{count == 5}:
+    l_quintuple_platinum: on
+
+  
+  reset_album_lights:
+    l_silver: off
+    l_gold: off
+    l_single_platinum: off
+    l_double_platinum: off
+    l_quintuple_platinum: off
+
+# these restore the LEDs when the ball starts
+  mode_base_started{current_player.multiplier == 2}:
+    l_silver: on
+  mode_base_started{current_player.multiplier == 3}:
+    l_gold: on
+    l_silver: on
+  mode_base_started{current_player.multiplier == 4}:
+    l_single_platinum: on
+    l_gold: on
+    l_silver: on
+  mode_base_started{current_player.multiplier == 5}:
+    l_double_platinum: on
+    l_single_platinum: on
+    l_gold: on
+    l_silver: on
+  mode_base_started{current_player.multiplier >= 6}:
+    l_quintuple_platinum: on
+    l_double_platinum: on
+    l_single_platinum: on
+    l_gold: on
+    l_silver: on

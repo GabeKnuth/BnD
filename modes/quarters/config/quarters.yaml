@@ -301,19 +301,6 @@ slides:
         color: lime
         y: 25
       - type: text
-        text: (player|bonus_multiplier)X
-        style: huge 
-        anchor_x: left
-        x: 0
-        y: 8
-        color: yellow
-      - type: text
-        text: BONUS
-        style: small 
-        x: 29
-        y: 3
-        color: yellow
-      - type: text
         text: "TOTAL QUARTERS: (player|quarters)"
         style: small 
         anchor_x: right
@@ -331,19 +318,6 @@ slides:
         style: big #dmd_big
         color: lime
         y: 25
-      - type: text
-        text: (player|bonus_multiplier)X
-        style: huge 
-        anchor_x: left
-        x: 0
-        y: 8
-        color: yellow
-      - type: text
-        text: BONUS
-        style: small 
-        x: 29
-        y: 3
-        color: yellow
       - type: text
         text: "TOTAL QUARTERS: (player|quarters)"
         style: small 

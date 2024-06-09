@@ -1638,7 +1638,7 @@ keyboard:
   e:
     event: weak_flippers_disabled
   "`":
-    event: light_mystery
+    event: hold_album_value
 
 
 #               88                                                   

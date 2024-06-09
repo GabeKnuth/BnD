@@ -84,6 +84,7 @@ variable_player:
   award_mystery_lock:
     htmb_balls_locked: 1
 
+
 event_player:
   mode_mystery_stopping:
     - enable_base_left_vuk_hold
@@ -181,9 +182,17 @@ slides:
   mys_sl_hold_album_value:
     widgets:
       - type: text
-        text: HOLD ALBUM VALUE
+        text: HOLD BONUS
         color: red
-        style: big #dmd_big
+        style: huge
+        anchor_y: top
+        y: top+3
+      - type: text
+        text: MULTIPLIER
+        color: red
+        style: huge
+        anchor_y: bottom
+        y: bottom-3
   mys_sl_start_multiball:
     widgets:
       - type: text

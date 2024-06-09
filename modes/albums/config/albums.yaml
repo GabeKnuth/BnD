@@ -16,57 +16,7 @@ counters:
 event_player:
   player_num_albums: show_album_slide|.1s
 
-light_player:
-  num_albums{count == 1}:
-    l_silver: on
-  num_albums{count == 2}:
-    l_gold: on
-  num_albums{count == 3}:
-    l_single_platinum: on
-  num_albums{count == 4}:
-    l_double_platinum: on
-  num_albums{count == 5}:
-    l_quintuple_platinum: on
 
-  # # These light the LEDs when they're awarded during this ball
-  # player_num_albums{value == 1}:
-  #   l_silver: on
-  # player_num_albums{value == 2}:
-  #   l_gold: on
-  # player_num_albums{value == 3}:
-  #   l_single_platinum: on
-  # player_num_albums{value == 4}:
-  #   l_double_platinum: on
-  # player_num_albums{value == 5}:
-  #   l_quintuple_platinum: on
-
-  # these restore the LEDs when the ball starts
-  mode_albums_started{current_player.album_name == "SILVER"}:
-    l_silver: on
-  mode_albums_started{current_player.album_name == "GOLD"}:
-    l_gold: on
-    l_silver: on
-  mode_albums_started{current_player.album_name == "SINGLE PLATINUM"}:
-    l_single_platinum: on
-    l_gold: on
-    l_silver: on
-  mode_albums_started{current_player.album_name == "DOUBLE PLATINUM"}:
-    l_double_platinum: on
-    l_single_platinum: on
-    l_gold: on
-    l_silver: on
-  mode_albums_started{current_player.album_name == "QUINTUPLE PLATINUM"}:
-    l_quintuple_platinum: on
-    l_double_platinum: on
-    l_single_platinum: on
-    l_gold: on
-    l_silver: on
-  mode_albums_started{current_player.album_name == "OFF THE CHARTS"}:
-    l_quintuple_platinum: on
-    l_double_platinum: on
-    l_single_platinum: on
-    l_gold: on
-    l_silver: on
 
 
 variable_player:
@@ -78,7 +28,10 @@ variable_player:
       string: SILVER
       action: set
     score: 25000
-
+    multiplier:
+      int: 2
+      action: set
+  
 
   num_albums{count==2}:
     album_value:
@@ -88,6 +41,9 @@ variable_player:
       string: GOLD
       action: set
     score: 50000
+    multiplier:
+      int: 3
+      action: set
 
 
   num_albums{count==3}:
@@ -98,6 +54,9 @@ variable_player:
       string: PLATINUM
       action: set
     score: 100000
+    multiplier:
+      int: 4
+      action: set
 
   num_albums{count==4}:
     album_value:
@@ -107,6 +66,9 @@ variable_player:
       string: DOUBLE PLATINUM
       action: set
     score: 200000
+    multiplier:
+      int: 5
+      action: set
 
 
   num_albums{count==5}:
@@ -117,6 +79,9 @@ variable_player:
       string: QUINTUPLE PLATINUM
       action: set
     score: 500000
+    multiplier:
+      int: 6
+      action: set
 
 
   num_albums{count>=6}:  # beyond 6 we don't increase anymore
@@ -129,6 +94,9 @@ variable_player:
     score: 2500000
     album_int:
       int: 6
+    multiplier:
+      int: 9
+      action: set
 
 
 
