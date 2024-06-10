@@ -134,6 +134,12 @@ random_event_player:
       - mys_award_lock
       #- mys_weak_flippers
       - mys_hold_album_value 
+  
+  # Kind of random jukebox scoop positioning. When it's in the down position, and a
+  # ball enters the subway, it might move to the up position or stay down
+  # You can't confidently do this on the jukebox opto event because it could trap
+  # a ball inside or in the back. If it traps inside, it will likely break the servo
+  
   s_subwayopto_active:
       - jukebox_up
       - jukebox_down
@@ -294,7 +300,8 @@ sound_player:
       loops: 0
     diesel_start:
       action: stop
-
+  
+  
 
 #                                               88                   
 #    ,d                                         88                   
@@ -344,6 +351,16 @@ timers:
     control_events:
       - event: fade_out_base_music
         action: start
+  loop_timer:
+    start_value: 3
+    end_value: 0
+    direction: down
+    control_events:
+      - event: seq_shot_right_ramp_full_loop_hit
+        action: start
+      - event: seq_shot_right_ramp_full_loop_hit
+        action: restart
+      
 
 #                                                       ,d                                        
 #                                                       88                                        
@@ -373,6 +390,13 @@ counters:
     enable_events: mode_base_started
     disable_events: start_base_music_bed|1s
 #   started, mode_jukebox_hurryup_started, block_jukebox_hits
+  lb_ramp_loops:
+    count_events: seq_shot_right_ramp_full_loop_hit
+    starting_count: 0
+    multiple_hit_window: 400ms
+    events_when_hit: loop_combo_happened
+    restart_events: timer_loop_timer_complete 
+    
 
 #                                       88              88           88              
 #                                       ""              88           88              
@@ -455,6 +479,16 @@ variable_player:
     hold_multiplier:
       int: 1
       action: set
+  seq_shot_right_ramp_full_loop_hit:
+    score: 12500
+  s_rightrampopto_active:
+    score: 1000
+  logicblock_lb_ramp_loop_updated:
+    lb_ramp_loop_score:
+      int: value * 75000
+      action: set
+  loop_combo_happened:
+    score: lb_ramp_loop_score
 
 
 #   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
@@ -1024,6 +1058,38 @@ slides:
         height: 32
         width: 128
         end_behavior: stop
+  ramp_loop_combo:
+    widgets:
+      - type: text
+        text: RAMP COMBO
+        style: big #dmd_big
+        anchor_y: top
+        y: top
+        anchor_x: left
+        x: left+29
+      - type: rectangle
+        width: 28
+        height: 10
+        color: red
+        anchor_x: left
+        x: left
+        anchor_y: top
+        y: top
+      - type: rectangle
+        width: 28
+        height: 10
+        color: red
+        anchor_x: right
+        x: right
+        anchor_y: top
+        y: top
+      - type: text
+        text: (player|lb_ramp_loop_score)
+        style: huge
+        y: top-20
+        font_size: 23
+
+
 
 #             88  88           88                                    
 #             88  ""           88                                    
@@ -1060,6 +1126,12 @@ slide_player:
       expire: 2.1s
     poker_extra_ball_stage:
       action: remove
+    loop_combo_happened:
+      ramp_loop_combo:
+        priority: 601
+        target: dmd
+        expire: 1s
+        
 
 #                             ,d                             
 #                             88                             

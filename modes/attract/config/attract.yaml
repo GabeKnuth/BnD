@@ -1,5 +1,23 @@
 #config_version=5
 
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 show_player:
   mode_attract_started:
@@ -114,31 +132,24 @@ show_player:
       action: stop
     music_video: stop
 
-#slide_player:
-#  game_ended: # move this to match
-#    how_long_gone_stage:
-#      target: stage
-#
-#slides:
-#  how_long_gone_stage: # move this to match
-#    widgets:
-#      - type: video
-#        video: how_long_gone
-#        end_behavior: stop
-#        animations:
-#          show_slide:
-#            - property: opacity
-#              value: 1
-#              duration: 10s
-#            - property: opacity
-#              value: 0
-#              duration: 2s
-
-# slide_player:
-#   flipper_cancel:
-#     last_game_scores:
-#       priority: 1
-#       expire: 10s
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   mode_attract_started:
@@ -150,6 +161,23 @@ sound_player:
     start_pool:
       action: play
 
+#                                                             88  
+#                                                             88  
+#                                                             88  
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88  
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88  
+#   `"Y8ba,   8b       d8  88       88  8888     88  8b       88  
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  8888     88  "8a,   ,d88  
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  8888     88   `"8bbdP"Y8  
+#
+#  8b,dPPYba,    ,adPPYba,    ,adPPYba,   88  ,adPPYba,           
+#  88P'    "8a  a8"     "8a  a8"     "8a  88  I8[    ""           
+#  88       d8  8b       d8  8b       d8  88   `"Y8ba,            
+#  88b,   ,a8"  "8a,   ,a8"  "8a,   ,a8"  88  aa    ]8I           
+#  88`YbbdP"'    `"YbbdP"'    `"YbbdP"'   88  `"YbbdP"'           
+#  88                                                             
+#  88
+
 sound_pools:
   start_pool:
     type: random
@@ -158,6 +186,15 @@ sound_pools:
       - start_let_the_horses_burn
       - start_get_down
       - start_lets_go_boot_scoot
+
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"'
 
 timers:
   video_timer:
@@ -171,30 +208,14 @@ timers:
       - event: flipper_cancel
         action: stop
 
-#random_event_player:
-#    timer_video_timer_complete:
-#      scope: machine
-#      force_all: true
-#      events:
-#        full_bed_of_roses
-#        full_achy_breaky
-#        full_convoy
-#        full_every_little_thing
-#        full_boots_are_made_for_walkin
-#        full_hello_darlin
-#        full_louisiana_woman
-#        full_rhinestone_cowboy
-#        full_stand_by_your_man
-#        ma_my_maria
-#        jb_hard_workin_man
-#        mb_beer_thirty
-#        wt_boot_scoot
-#        pp_honky_tonk_stomp
-#        mr_bed
-#        htmb_miss_honky_tonk
-#        qmb_put_a_girl_in_it
-#        how_long_gone
-#        jb_hurry_up_foggy_mountain
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
 
 shows:
   attract_music_lights:
@@ -561,30 +582,3 @@ shows:
                 action: stop
           target: stage
 
-
-#slide_player:
-#  mode_attract_started:
-#    jukebox_hurryup_stage:
-#      target: stage
-#
-#slides:
-#  jukebox_hurryup_stage:
-#    widgets:
-#      - type: image
-#        image: jb_hurryup_arrow
-#        anchor_x: middle
-#        anchor_y: top
-#        x: middle
-#        y: top
-#        animations:
-#          show_slide:
-#            - property: y
-#              value: 0
-#              duration: 800ms
-#            - property: y
-#              value: 289
-#              duration: 800ms
-#              repeat: true
-#      - type: video
-#        video: jb_hurry_up_foggy_mountain
-#        end_behavior: loop

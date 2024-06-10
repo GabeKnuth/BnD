@@ -5,6 +5,17 @@ mode:
   priority: 1000
   code: hilo.HiLo
 
+#                      88           88                                               
+#                      ""           88                             ,d                
+#                                   88                             88                
+#  8b      db      d8  88   ,adPPYb,88   ,adPPYb,d8   ,adPPYba,  MM88MMM  ,adPPYba,  
+#  `8b    d88b    d8'  88  a8"    `Y88  a8"    `Y88  a8P_____88    88     I8[    ""  
+#   `8b  d8'`8b  d8'   88  8b       88  8b       88  8PP"""""""    88      `"Y8ba,   
+#    `8bd8'  `8bd8'    88  "8a,   ,d88  "8a,   ,d88  "8b,   ,aa    88,    aa    ]8I  
+#      YP      YP      88   `"8bbdP"Y8   `"YbbdP"Y8   `"Ybbd8"'    "Y888  `"YbbdP"'  
+#                                        aa,    ,88                                  
+#                                         "Y8bbdP"   
+
 widgets:
   hilo_players_card:
       - type: image
@@ -15,11 +26,47 @@ widgets:
         image:
         x: 100
 
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 event_player:
   mode_hilo_stopping: 
     - fade_in_base_music
     - release_left_vuk_ball
     - disable_base_left_vuk_hold
+
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   mode_hilo_started:
@@ -27,6 +74,26 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
+
+
+#                      88           88                                    
+#                      ""           88                             ,d     
+#                                   88                             88     
+#  8b      db      d8  88   ,adPPYb,88   ,adPPYb,d8   ,adPPYba,  MM88MMM  
+#  `8b    d88b    d8'  88  a8"    `Y88  a8"    `Y88  a8P_____88    88     
+#   `8b  d8'`8b  d8'   88  8b       88  8b       88  8PP"""""""    88     
+#    `8bd8'  `8bd8'    88  "8a,   ,d88  "8a,   ,d88  "8b,   ,aa    88,    
+#      YP      YP      88   `"8bbdP"Y8   `"YbbdP"Y8   `"Ybbd8"'    "Y888  
+#               88                       aa,    ,88                       
+#               88                        "Y8bbdP"                        
+#               88                                                        
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,       
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8       
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88               
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88               
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88               
+#  88                               d8'                                   
+#  88                              d8'
 
 widget_player:
   show_player_card: hilo_players_card
@@ -36,6 +103,25 @@ widget_player:
       action: remove
     hilo_dealer_card:
       action: remove
+
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 slide_player:
   hilo_intro: hilo_intro
@@ -47,6 +133,15 @@ slide_player:
   hilo_lose: hilo_lose
   hilo_game_win: hilo_game_win
   hilo_total: hilo_total
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   hilo_intro:

@@ -6,10 +6,52 @@ mode:
   start_events: light_mystery
   stop_events: stop_mystery
 
+#   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
+#  a8"    `Y88  88       88  a8P_____88  88       88  a8P_____88     
+#  8b       88  88       88  8PP"""""""  88       88  8PP"""""""     
+#  "8a    ,d88  "8a,   ,a88  "8b,   ,aa  "8a,   ,a88  "8b,   ,aa     
+#   `"YbbdP'88   `"YbbdP'Y888 `"Ybbd8"'   `"YbbdP'Y8   `"Ybbd8"'     
+#           88                                                     
+#           88             88                                        
+#
+#  8b,dPPYba,   ,adPPYba,  88  ,adPPYYba,  8b       d8               
+#  88P'   "Y8  a8P_____88  88  ""     `Y8  `8b     d8'               
+#  88          8PP"""""""  88  ,adPPPPP88   `8b   d8'                
+#  88          "8b,   ,aa  88  88,    ,88    `8b,d8'                 
+#  88           `"Ybbd8"'  88  `"8bbdP"Y8      Y88'                  
+#                                              d8'                   
+#               88                            d8'                    
+#               88
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'  
+
 queue_relay_player:
   left_vuk_hit:
       post: start_mystery
       wait_for: mode_mystery_lit_stopping
+
+#             88                                                     
+#             88                                                     
+#             88                                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8           
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'           
+#   `"Y8ba,   8888     88  8b       d8   `8b  d8'`8b  d8'            
+#  aa    ]8I  8888     88  "8a,   ,a8"    `8bd8'  `8bd8'             
+#  `"YbbdP"'  8888     88   `"YbbdP"'       YP      YP               
+#
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 show_player:
   mode_mystery_lit_started: flash_mystery
@@ -20,10 +62,48 @@ show_player:
       show_tokens:
         led: l_mystery
 
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
 slide_player:
   mode_mystery_lit_started:
     mystery_lit:
       expire: 2s
+
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   mode_mystery_lit_started:
@@ -33,6 +113,15 @@ sound_player:
     mystery_callout:
       action: play
       loops: 0
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   mystery_lit:
@@ -58,6 +147,15 @@ slides:
         color: yellow
         anchor_y: bottom
         y: bottom+2
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
 
 shows:
   flash_mystery:

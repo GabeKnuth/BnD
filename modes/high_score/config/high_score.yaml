@@ -23,6 +23,23 @@ high_score:
     quarters:
       - JON: 5
 
+#                                                             88  
+#                                                             88  
+#                                                             88  
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88  
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88  
+#   `"Y8ba,   8b       d8  88       88  8888     88  8b       88  
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  8888     88  "8a,   ,d88  
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  8888     88   `"8bbdP"Y8  
+#
+#  8b,dPPYba,    ,adPPYba,    ,adPPYba,   88  ,adPPYba,           
+#  88P'    "8a  a8"     "8a  a8"     "8a  88  I8[    ""           
+#  88       d8  8b       d8  8b       d8  88   `"Y8ba,            
+#  88b,   ,a8"  "8a,   ,a8"  "8a,   ,a8"  88  aa    ]8I           
+#  88`YbbdP"'    `"YbbdP"'    `"YbbdP"'   88  `"YbbdP"'           
+#  88                                                             
+#  88
+
 sound_pools:
   congrats:
     type: random
@@ -32,6 +49,24 @@ sound_pools:
       - hs_amazing
       - hs_nice_work
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   mode_high_score_started:
@@ -44,63 +79,3 @@ sound_player:
   mode_high_score_stopping:
     bonus_bed:
       action: stop
-
-# slides:
-#   high_score_enter_initials:
-#   - type: text
-#     text: PLAYER (player_num)
-#     style: medium 
-#     anchor_y: bottom
-#     x: center-27
-#     y: bottom+21
-#   - type: text
-#     text: (award)
-#     style: small 
-#     anchor_y: bottom
-#     x: center-27
-#     y: bottom+12
-#   - type: text_input
-#     key: high_score
-#     style: medium 
-#     anchor_y: bottom
-#     max_chars: 3
-#     y: 1
-#     animations:
-#       show_slide:
-#       - property: opacity
-#         value: 1
-#         duration: 0.3s
-#         easing: in_out_quint
-#       - property: opacity
-#         value: 0
-#         duration: 0.3s
-#         repeat: true
-#         easing: in_out_quint
-
-#   - type: text
-#     text: ""
-#     key: high_score
-#     anchor_x: left
-#     x: left+90
-#     style: big #dmd_big
-
-#   high_score_award_display:
-#   - type: text
-#     text: (player_name)
-#     color: 0
-#     style: huge 
-#     y: middle-2
-#     animations:
-#       show_slide:
-#       - property: opacity
-#         value: 1
-#         duration: 0.05s
-#       - property: opacity
-#         value: 0
-#         duration: 0.05s
-#         repeat: true
-#   - type: text
-#     text: (award)
-#     style: medium 
-#     anchor_y: top
-#     y: top-2

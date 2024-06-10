@@ -5,14 +5,22 @@ mode:
   start_events: start_jukebox_mode
   stop_events: start_jukebox_two_ball, end_jukebox_mode
 
-# todo
-#Intro dots
-#DMD dots during mode
-#when over, has to start multiball mode
-#jukebox lights need to do something
-#scoring
-#Need to fix show and video code so videos stop when show stops
-#Need fo fix video pools in assets
+#  88                       88  88                       
+#  88                       88  88                       
+#  88                       88  88                       
+#  88,dPPYba,   ,adPPYYba,  88  88                       
+#  88P'    "8a  ""     `Y8  88  88                       
+#  88       d8  ,adPPPPP88  88  88                       
+#  88b,   ,a8"  88,    ,88  88  88                       
+#  8Y"Ybbd8"'   `"8bbdP"Y8  88  88                       
+#  88                        88           88             
+#  88                        88           88             
+#  88                        88           88             
+#  88,dPPYba,    ,adPPYba,   88   ,adPPYb,88  ,adPPYba,  
+#  88P'    "8a  a8"     "8a  88  a8"    `Y88  I8[    ""  
+#  88       88  8b       d8  88  8b       88   `"Y8ba,   
+#  88       88  "8a,   ,a8"  88  "8a,   ,d88  aa    ]8I  
+#  88       88   `"YbbdP"'   88   `"8bbdP"Y8  `"YbbdP"'
 
 ball_holds:
   jb_intro_lock:
@@ -22,6 +30,23 @@ ball_holds:
     #request_new_balls_to_pf: False # Don't know what this was replaced with, if at all
     release_one_events: timer_jb_intro_timer_complete 
     disable_events: disable_jb_intro_hold
+
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 event_player:
   mode_jukebox_mode_started:
@@ -47,16 +72,53 @@ event_player:
     - disable_jb_intro_hold
       
 
-#scoring: #leaving for reference
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8' 
+
 variable_player:
   sw_jukebox_hit:
     score: 500000
 
-
-# Kind of random jukebox scoop positioning. When it's in the down position, and a
-# ball enters the subway, it might move to the up position or stay down
-# You can't confidently do this on the jukebox opto event because it could trap
-# a ball inside or in the back. If it traps inside, it will likely break the servo
+#                                                88                                   
+#                                                88                                   
+#                                                88                                   
+#  8b,dPPYba,  ,adPPYYba,  8b,dPPYba,    ,adPPYb,88   ,adPPYba,   88,dPYba,,adPYba,   
+#  88P'   "Y8  ""     `Y8  88P'   `"8a  a8"    `Y88  a8"     "8a  88P'   "88"    "8a  
+#  88          ,adPPPPP88  88       88  8b       88  8b       d8  88      88      88  
+#  88          88,    ,88  88       88  "8a,   ,d88  "8a,   ,a8"  88      88      88  
+#  88          `"8bbdP"Y8  88       88   `"8bbdP"Y8   `"YbbdP"'   88      88      88  
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 random_event_player:
     play_jukebox_video:
@@ -72,11 +134,16 @@ random_event_player:
         - jb_rhinestone_cowboy
         - jb_stand_by_your_man
 
-
+#                                                       ,d                                        
+#                                                       88                                        
+#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
+#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
+#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
+#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"'
 
 # Now let's make a logic block that counts jukebox hit events. We can use the hit
 # events to change videos, as well as to fire off the complete mode logic
-
 
 counters:
     jukebox_mode_hit_counter:
@@ -89,6 +156,15 @@ counters:
         multiple_hit_window: 1s
         events_when_hit: change_song, play_jukebox_video, stop_song
         events_when_complete: start_jukebox_two_ball, jukebox_success
+
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
 
 # Mode timer so we know when time runs out. We'll count down at 1.25s intervals.
 # This also pauses when the ball enters the subway until it ejects from the vuk.
@@ -118,6 +194,24 @@ timers:
           - event: mode_jukebox_mode_started
             action: start
 
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 # Now we need to play the video. The first event needs to be just the song. Each one
 # after that should be record scratch, then song, so we also have a sound_player config
@@ -125,6 +219,15 @@ timers:
 
 slide_player:
   player_jukebox_mode_jukebox_mode_timer_tick: jb_instructions
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
   jb_instructions:
@@ -219,6 +322,24 @@ slides:
               duration: .05
               repeat: true
 
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8   
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'   
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'     
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'     
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 show_player:
   mode_jukebox_mode_started:
@@ -226,22 +347,13 @@ show_player:
       events_when_stopped: start_jukebox_timer, release_jb_ball
       loops: 0
     flash_jukebox:
-      loops: -1  # we don't really need this, but yaml needs something here
+      loops: -1  
   jukebox_success:
     flash_jukebox:
-      action: stop  # we don't really need this, but yaml needs something here
+      action: stop  
   flipper_cancel:
     jukebox_mode_intro:
       action: stop
-#  stop_song:
-#    play_video:
-#      action: stop
-#  change_song:
-#    play_video:
-#      loops: -1
-#  mode_jukebox_mode_started:
-#    play_video:
-#      loops: -1
   jb_bed_of_roses:
     jb_bed_of_roses:
       key: jb_active_video
@@ -270,11 +382,38 @@ show_player:
     jb_stand_by_your_man:
       key: jb_active_video
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 sound_player:
   change_song:
     jb_record_scratch:
       loops: 0
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"'
 
 shows:
   jb_bed_of_roses:

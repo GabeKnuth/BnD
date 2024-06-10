@@ -9,15 +9,22 @@ mode:
   start_events: start_world_tour_mode
   stop_events: stop_world_tour, start_jukebox_two_ball
 
-# todo
-# - mode slow to start, but maybe that's only when I start it by posting the event via keyboard #### Should be better now
-#
-# - when timer runs out, mode slide stays on dmd for a bit. #### Should be better now
-#
-# - slide instructions to shoot each shot
-#
-# - ok, not quite. Need to find a way to fade down the video when the mode ends instead of just
-#   killing it. I should have it, but the animation section in widget config isn't working.
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
 
 event_player:
   mode_world_tour_started:
@@ -48,20 +55,14 @@ event_player:
     - release_top_kicker_ball
     - disable_base_top_kicker_hold
 
-# We need to set up shots so that we start on the North America shot, then move on to
-# Europe, then South America, and finally Australia
-
-#  jackpot:
-#    show_when_started: flash
-#    show_when_completed: off
-#    show_tokens:
-#      led: jackpot
-#    reset_events: double_jackpot_complete
-##    enable_events: mode_jukebox_two_ball_started
-#    start_events: mode_jukebox_two_ball_started, double_jackpot_complete
-#    complete_events: shot_right_ramp_full_loop_hit
-#    events_when_completed: jackpot_complete
-#    restart_after_stop_possible: true
+#                          88           88                                                                                                        
+#                          88           ""                                                                                      ,d                
+#                          88                                                                                                   88                
+#  ,adPPYYba,   ,adPPYba,  88,dPPYba,   88   ,adPPYba,  8b       d8   ,adPPYba,  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,   MM88MMM  ,adPPYba,  
+#  ""     `Y8  a8"     ""  88P'    "8a  88  a8P_____88  `8b     d8'  a8P_____88  88P'   "88"    "8a  a8P_____88  88P'   `"8a    88     I8[    ""  
+#  ,adPPPPP88  8b          88       88  88  8PP"""""""   `8b   d8'   8PP"""""""  88      88      88  8PP"""""""  88       88    88      `"Y8ba,   
+#  88,    ,88  "8a,   ,aa  88       88  88  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88      88      88  "8b,   ,aa  88       88    88,    aa    ]8I  
+#  `"8bbdP"Y8   `"Ybbd8"'  88       88  88   `"Ybbd8"'      "8"       `"Ybbd8"'  88      88      88   `"Ybbd8"'  88       88    "Y888  `"YbbdP"'
 
 achievements:
   wt_north_america:
@@ -108,12 +109,46 @@ achievements:
     show_when_completed: on
     restart_after_stop_possible: true
 
+
+#                          88           88                                                                                             
+#                          88           ""                                                                                      ,d     
+#                          88                                                                                                   88     
+#  ,adPPYYba,   ,adPPYba,  88,dPPYba,   88   ,adPPYba,  8b       d8   ,adPPYba,  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,   MM88MMM  
+#  ""     `Y8  a8"     ""  88P'    "8a  88  a8P_____88  `8b     d8'  a8P_____88  88P'   "88"    "8a  a8P_____88  88P'   `"8a    88     
+#  ,adPPPPP88  8b          88       88  88  8PP"""""""   `8b   d8'   8PP"""""""  88      88      88  8PP"""""""  88       88    88     
+#  88,    ,88  "8a,   ,aa  88       88  88  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88      88      88  "8b,   ,aa  88       88    88,    
+#  `"8bbdP"Y8   `"Ybbd8"'  88       88  88   `"Ybbd8"'      "8"       `"Ybbd8"'  88      88      88   `"Ybbd8"'  88       88    "Y888  
+#
+#   ,adPPYb,d8  8b,dPPYba,   ,adPPYba,   88       88  8b,dPPYba,   ,adPPYba,                                                           
+#  a8"    `Y88  88P'   "Y8  a8"     "8a  88       88  88P'    "8a  I8[    ""                                                           
+#  8b       88  88          8b       d8  88       88  88       d8   `"Y8ba,                                                            
+#  "8a,   ,d88  88          "8a,   ,a8"  "8a,   ,a88  88b,   ,a8"  aa    ]8I                                                           
+#   `"YbbdP"Y8  88           `"YbbdP"'    `"YbbdP'Y8  88`YbbdP"'   `"YbbdP"'                                                           
+#   aa,    ,88                                        88                                                                               
+#    "Y8bbdP"                                         88
+
 achievement_groups:
   wt_group:
     achievements: wt_north_america, wt_europe, wt_south_america
     enable_events: mode_world_tour_started
     events_when_all_completed: ag_world_tour_complete
 
+#  88                       88  88                       
+#  88                       88  88                       
+#  88                       88  88                       
+#  88,dPPYba,   ,adPPYYba,  88  88                       
+#  88P'    "8a  ""     `Y8  88  88                       
+#  88       d8  ,adPPPPP88  88  88                       
+#  88b,   ,a8"  88,    ,88  88  88                       
+#  8Y"Ybbd8"'   `"8bbdP"Y8  88  88                       
+#  88                        88           88             
+#  88                        88           88             
+#  88                        88           88             
+#  88,dPPYba,    ,adPPYba,   88   ,adPPYb,88  ,adPPYba,  
+#  88P'    "8a  a8"     "8a  88  a8"    `Y88  I8[    ""  
+#  88       88  8b       d8  88  8b       88   `"Y8ba,   
+#  88       88  "8a,   ,a8"  88  "8a,   ,d88  aa    ]8I  
+#  88       88   `"YbbdP"'   88   `"8bbdP"Y8  `"YbbdP"' 
 
 ball_holds:
   wt_complete:
@@ -122,6 +157,15 @@ ball_holds:
     enable_events: wt_south_america_complete
     #request_new_balls_to_pf: false
     release_one_events: release_wt_ball
+
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
 
 timers:
     world_tour_timer:
@@ -151,6 +195,17 @@ timers:
           - event: mode_world_tour_started
             action: start
 
+
+#             88                                                       
+#             88                                                       
+#             88                                                       
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'  I8[    ""  
+#   `"Y8ba,   88       88  8b       d8   `8b  d8'`8b  d8'    `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
+
+
 # We need a show for each shot. There are four shots, so four shows. Each show will do a light
 # sweep (one up-down, one down-up, one left-right, one right-left) and play a video of a plane
 # flying across the earth.
@@ -167,6 +222,22 @@ shows:
         (light): off
     - time: +1
 
+#             88                                                     
+#             88                                                     
+#             88                                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8           
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'           
+#   `"Y8ba,   8888     88  8b       d8   `8b  d8'`8b  d8'            
+#  aa    ]8I  8888     88  "8a,   ,a8"    `8bd8'  `8bd8'             
+#  `"YbbdP"'  8888     88   `"YbbdP"'       YP      YP               
+#
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
 
 show_player:
   wt_south_america_complete:
@@ -189,6 +260,15 @@ show_player:
       loops: 0
     north_america_lights:
       loops: 0
+
+#             88  88           88                         
+#             88  ""           88                         
+#             88               88                         
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,  ,adPPYba,  
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88  I8[    ""  
+#   `"Y8ba,   88  88  8b       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 # We also have a video bed for this mode, so we have to figure out a way to play that video bed
 # first, then play the plane animations over that, returning to the video when they're done. Let's
@@ -326,6 +406,25 @@ slides:
         y: bottom+1
         style: huge
 
+#             88  88           88                                    
+#             88  ""           88                                    
+#             88               88                                    
+#  ,adPPYba,  88  88   ,adPPYb,88   ,adPPYba,                        
+#  I8[    ""  88  88  a8"    `Y88  a8P_____88                        
+#   `"Y8ba,   88  88  8b       88  8PP"""""""                        
+#  aa    ]8I  88  88  "8a,   ,d88  "8b,   ,aa                        
+#  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
 slide_player:
   #mode_world_tour_starting:
   mode_world_tour_started:
@@ -343,12 +442,39 @@ slide_player:
     wt_complete:
       target: dmd
 
+#                                                             88     
+#                                                             88     
+#                                                             88     
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88     
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88     
+#   `"Y8ba,   8b       d8  88       88  88       88  8b       88     
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  88       88  "8a,   ,d88     
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  88       88   `"8bbdP"Y8     
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+
 sound_player:
   world_tour_success:
     slam:
       action: play
       loops: 1
 
+#                                                       ,d                                        
+#                                                       88                                        
+#   ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#  a8"     ""  a8"     "8a  88       88  88P'   `"8a    88     a8P_____88  88P'   "Y8  I8[    ""  
+#  8b          8b       d8  88       88  88       88    88     8PP"""""""  88           `"Y8ba,   
+#  "8a,   ,aa  "8a,   ,a8"  "8a,   ,a88  88       88    88,    "8b,   ,aa  88          aa    ]8I  
+#   `"Ybbd8"'   `"YbbdP"'    `"YbbdP'Y8  88       88    "Y888   `"Ybbd8"'  88          `"YbbdP"' 
 
 # Now we need a logic block to keep track of shots. When all four are hit, we're done!
 # It's not in the rules, but I also added something to extend the time when you hit a shot
@@ -367,7 +493,25 @@ counters:
         multiple_hit_window: 500ms
         persist_state: true
 
-#scoring: #leaving for reference
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8'
+
 variable_player:
     wt_south_america_complete:
       score: 1000000

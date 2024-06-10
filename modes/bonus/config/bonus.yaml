@@ -35,6 +35,25 @@ mode_settings:
       #   # 25k per wizard shot * num albums completed
       #   score: current_player.wizard_score * current_player.num_albums
 
+#                                       88              88           88              
+#                                       ""              88           88              
+#                                                       88           88              
+#  8b       d8  ,adPPYYba,  8b,dPPYba,  88  ,adPPYYba,  88,dPPYba,   88   ,adPPYba,  
+#  `8b     d8'  ""     `Y8  88P'   "Y8  88  ""     `Y8  88P'    "8a  88  a8P_____88  
+#   `8b   d8'   ,adPPPPP88  88          88  ,adPPPPP88  88       d8  88  8PP"""""""  
+#    `8b,d8'    88,    ,88  88          88  88,    ,88  88b,   ,a8"  88  "8b,   ,aa  
+#      "8"      `"8bbdP"Y8  88          88  `"8bbdP"Y8  8Y"Ybbd8"'   88   `"Ybbd8"'
+#               88                                                                   
+#               88                                                                   
+#               88                                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,                  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8                  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88                          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88                          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88                          
+#  88                               d8'                                              
+#  88                              d8'
+
 variable_player:
   mode_bonus_started:
     bonus_multiplier:
@@ -148,33 +167,6 @@ slide_player:
       style: small 
       number_grouping: true
 
-
-
-
-
-      
-  # wizard_bonus:
-  #   wizard_bonus:
-  #   - type: image
-  #     image: bonus_bg_cc
-  #     anchor_x: middle
-  #     anchor_y: top
-  #     x: middle
-  #     y: top
-  #   - type: text
-  #     text: (player|num_albums) ALBUMS
-  #     style: big #dmd_big
-  #     anchor_x: right
-  #     x: 67
-  #   - type: text
-  #     text: 25,000
-  #     style: big #dmd_big
-  #     anchor_x: left
-  #     x: 78
-  #   - type: text
-  #     text: x
-  #     style: medium 
-  #     x: 72
   bonus_subtotal:
     bonus_subtotal:
       - type: text

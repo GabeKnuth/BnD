@@ -9,12 +9,14 @@ mode:
   start_events: mode_base_started
   priority: 200
 
-# save for tutorial ----------------------------------------------------
-#queue_relay_player:
-#  left_vuk_hit{device.achievement_groups.missions["enabled"]}:
-#      post: start_mission
-#      wait_for: mode_hilo_stopping
-# end of save ----------------------------------------------------------
+#                          88           88                                                                                                        
+#                          88           ""                                                                                      ,d                
+#                          88                                                                                                   88                
+#  ,adPPYYba,   ,adPPYba,  88,dPPYba,   88   ,adPPYba,  8b       d8   ,adPPYba,  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,   MM88MMM  ,adPPYba,  
+#  ""     `Y8  a8"     ""  88P'    "8a  88  a8P_____88  `8b     d8'  a8P_____88  88P'   "88"    "8a  a8P_____88  88P'   `"8a    88     I8[    ""  
+#  ,adPPPPP88  8b          88       88  88  8PP"""""""   `8b   d8'   8PP"""""""  88      88      88  8PP"""""""  88       88    88      `"Y8ba,   
+#  88,    ,88  "8a,   ,aa  88       88  88  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88      88      88  "8b,   ,aa  88       88    88,    aa    ]8I  
+#  `"8bbdP"Y8   `"Ybbd8"'  88       88  88   `"Ybbd8"'      "8"       `"Ybbd8"'  88      88      88   `"Ybbd8"'  88       88    "Y888  `"YbbdP"'
 
 achievements:
   world_tour:
@@ -81,6 +83,23 @@ achievements:
     restart_after_stop_possible: true
     complete_events: play_poker_success
     enable_events: play_poker_fail, mode_mission_rotator_started
+
+#                          88           88                                                                                             
+#                          88           ""                                                                                      ,d     
+#                          88                                                                                                   88     
+#  ,adPPYYba,   ,adPPYba,  88,dPPYba,   88   ,adPPYba,  8b       d8   ,adPPYba,  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,   MM88MMM  
+#  ""     `Y8  a8"     ""  88P'    "8a  88  a8P_____88  `8b     d8'  a8P_____88  88P'   "88"    "8a  a8P_____88  88P'   `"8a    88     
+#  ,adPPPPP88  8b          88       88  88  8PP"""""""   `8b   d8'   8PP"""""""  88      88      88  8PP"""""""  88       88    88     
+#  88,    ,88  "8a,   ,aa  88       88  88  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88      88      88  "8b,   ,aa  88       88    88,    
+#  `"8bbdP"Y8   `"Ybbd8"'  88       88  88   `"Ybbd8"'      "8"       `"Ybbd8"'  88      88      88   `"Ybbd8"'  88       88    "Y888  
+#
+#   ,adPPYb,d8  8b,dPPYba,   ,adPPYba,   88       88  8b,dPPYba,   ,adPPYba,                                                           
+#  a8"    `Y88  88P'   "Y8  a8"     "8a  88       88  88P'    "8a  I8[    ""                                                           
+#  8b       88  88          8b       d8  88       88  88       d8   `"Y8ba,                                                            
+#  "8a,   ,d88  88          "8a,   ,a8"  "8a,   ,a88  88b,   ,a8"  aa    ]8I                                                           
+#   `"YbbdP"Y8  88           `"YbbdP"'    `"YbbdP'Y8  88`YbbdP"'   `"YbbdP"'                                                           
+#   aa,    ,88                                        88                                                                               
+#    "Y8bbdP"                                         88
 
 achievement_groups:
   missions:

@@ -11,6 +11,23 @@ mode:
   stop_events: mission_started, stop_mission_select
   priority: 200
 
+#             88                                                     
+#             88                                                     
+#             88                                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8           
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'           
+#   `"Y8ba,   8888     88  8b       d8   `8b  d8'`8b  d8'            
+#  aa    ]8I  8888     88  "8a,   ,a8"    `8bd8'  `8bd8'             
+#  `"YbbdP"'  8888     88   `"YbbdP"'       YP      YP               
+#
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
 show_player:
   s_rightrampopto_active:
     flash_once:
@@ -24,14 +41,59 @@ show_player:
       show_tokens:
         led: l_ramp_fire
 
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
 event_player:
     s_rightrampopto_active: enable_mission_selection
+
+#             88                                            
+#             88                          ,d                
+#             88                          88                
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM  ,adPPYba,  
+#  I8[    ""  88P'    "8a  a8"     "8a    88     I8[    ""  
+#   `"Y8ba,   88       88  8b       d8    88      `"Y8ba,   
+#  aa    ]8I  88       88  "8a,   ,a8"    88,    aa    ]8I  
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888  `"YbbdP"'  
 
 shots:
   begin_round:
     profile: begin_round
     enable_events: s_rightrampopto_active
     hit_events: shot_lower_vuk_from_playfield_hit
+
+#             88                                                                 
+#             88                          ,d                                     
+#             88                          88                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM                                  
+#  I8[    ""  88P'    "8a  a8"     "8a    88                                     
+#   `"Y8ba,   88       88  8b       d8    88                                     
+#  aa    ]8I  88       88  "8a,   ,a8"    88,                                    
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888                                  
+#                                           ad88  88  88                         
+#                                          d8"    ""  88                         
+#                                          88         88                         
+#  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   MM88MMM  88  88   ,adPPYba,  ,adPPYba,  
+#  88P'    "8a  88P'   "Y8  a8"     "8a    88     88  88  a8P_____88  I8[    ""  
+#  88       d8  88          8b       d8    88     88  88  8PP"""""""   `"Y8ba,   
+#  88b,   ,a8"  88          "8a,   ,a8"    88     88  88  "8b,   ,aa  aa    ]8I  
+#  88`YbbdP"'   88           `"YbbdP"'     88     88  88   `"Ybbd8"'  `"YbbdP"'  
+#  88                                                                            
+#  88 
 
 shot_profiles:
   begin_round:

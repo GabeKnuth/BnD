@@ -1,14 +1,5 @@
 #config_version=5
 
-#                                            88              
-#                                            88              
-#                                            88              
-#  88,dPYba,,adPYba,    ,adPPYba,    ,adPPYb,88   ,adPPYba,  
-#  88P'   "88"    "8a  a8"     "8a  a8"    `Y88  a8P_____88  
-#  88      88      88  8b       d8  8b       88  8PP"""""""  
-#  88      88      88  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  
-#  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'
-
 mode:
   priority: 500
   start_events: start_money_bags_mode
@@ -81,13 +72,14 @@ shots:
     disable_events: timer_money_bags_timer_complete, shot_spinner_to_vuk_flashing_hit, mode_money_bags_ending
     enable_events: shot_left_kicking_target_advertise_flashing_hit
 
-# shot_groups:
-#   money_bags:
-#     shots: shot_left_kicking_target, shot_spinner_to_vuk
-#     #profile: advertise # <<< todo: Where did specifying a profile go? It was in 0.50, but gone after that.
-#     rotate_left_events: shot_group_money_bags_flashing_hit
-#     disable_events: timer_money_bags_timer_complete
-#     rotate_events: money_bags_advertise_flashing_hit
+#           88                                                         
+#    ,d     ""                                                         
+#    88                                                                
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,  8b,dPPYba,  ,adPPYba,  
+#    88     88  88P'   "88"    "8a  a8P_____88  88P'   "Y8  I8[    ""  
+#    88     88  88      88      88  8PP"""""""  88           `"Y8ba,   
+#    88,    88  88      88      88  "8b,   ,aa  88          aa    ]8I  
+#    "Y888  88  88      88      88   `"Ybbd8"'  88          `"YbbdP"' 
 
 timers:
   mb_intro_timer:
@@ -312,7 +304,24 @@ variable_player:
   money_bags_hit:
     score: (current_player.money_bags_hit + 1) * 1000000
 
-
+#             88                                                                 
+#             88                          ,d                                     
+#             88                          88                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   MM88MMM                                  
+#  I8[    ""  88P'    "8a  a8"     "8a    88                                     
+#   `"Y8ba,   88       88  8b       d8    88                                     
+#  aa    ]8I  88       88  "8a,   ,a8"    88,                                    
+#  `"YbbdP"'  88       88   `"YbbdP"'     "Y888                                  
+#                                           ad88  88  88                         
+#                                          d8"    ""  88                         
+#                                          88         88                         
+#  8b,dPPYba,   8b,dPPYba,   ,adPPYba,   MM88MMM  88  88   ,adPPYba,  ,adPPYba,  
+#  88P'    "8a  88P'   "Y8  a8"     "8a    88     88  88  a8P_____88  I8[    ""  
+#  88       d8  88          8b       d8    88     88  88  8PP"""""""   `"Y8ba,   
+#  88b,   ,a8"  88          "8a,   ,a8"    88     88  88  "8b,   ,aa  aa    ]8I  
+#  88`YbbdP"'   88           `"YbbdP"'     88     88  88   `"Ybbd8"'  `"YbbdP"'  
+#  88                                                                            
+#  88 
 
 shot_profiles:
   advertise:
