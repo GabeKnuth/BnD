@@ -300,6 +300,10 @@ sound_player:
       loops: 0
     diesel_start:
       action: stop
+  slide_ramp_loop_combo_active:
+    truck_horn:
+      action: play
+      loops: 0
   
   
 
@@ -351,14 +355,15 @@ timers:
     control_events:
       - event: fade_out_base_music
         action: start
+  
   loop_timer:
-    start_value: 3
+    start_value: 4
     end_value: 0
     direction: down
     control_events:
       - event: seq_shot_right_ramp_full_loop_hit
         action: start
-      - event: seq_shot_right_ramp_full_loop_hit
+      - event: loop_combo_happened
         action: restart
       
 
@@ -390,12 +395,16 @@ counters:
     enable_events: mode_base_started
     disable_events: start_base_music_bed|1s
 #   started, mode_jukebox_hurryup_started, block_jukebox_hits
+  
   lb_ramp_loops:
     count_events: seq_shot_right_ramp_full_loop_hit
     starting_count: 0
     multiple_hit_window: 400ms
+    enable_events: timer_loop_timer_started # Will restart work w/o enable?
+    disable_events: timer_loop_timer_complete
+    reset_events: timer_loop_timer_complete
     events_when_hit: loop_combo_happened
-    restart_events: timer_loop_timer_complete 
+    #restart_events: timer_loop_timer_complete 
     
 
 #                                       88              88           88              
@@ -479,16 +488,15 @@ variable_player:
     hold_multiplier:
       int: 1
       action: set
-  seq_shot_right_ramp_full_loop_hit:
-    score: 12500
-  s_rightrampopto_active:
-    score: 1000
-  logicblock_lb_ramp_loop_updated:
-    lb_ramp_loop_score:
-      int: value * 75000
+  # seq_shot_right_ramp_full_loop_hit:
+  #   score: 12500
+  # s_rightrampopto_active:
+  #   score: 1000
+  loop_combo_happened{count>=1}:
+    ramp_loop_score:
+      int: count * 75000
       action: set
-  loop_combo_happened:
-    score: lb_ramp_loop_score
+    score: count * 75000 # same math as above, but it was doubling score if I tried to use ramp_loop_score
 
 
 #   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
@@ -1084,7 +1092,7 @@ slides:
         anchor_y: top
         y: top
       - type: text
-        text: (player|lb_ramp_loop_score)
+        text: (player|ramp_loop_score)
         style: huge
         y: top-20
         font_size: 23
@@ -1126,12 +1134,19 @@ slide_player:
       expire: 2.1s
     poker_extra_ball_stage:
       action: remove
-    loop_combo_happened:
-      ramp_loop_combo:
-        priority: 601
-        target: dmd
-        expire: 1s
-        
+  loop_combo_happened{count>=1}: #loop_combo_happened:
+    ramp_loop_combo:
+      priority: 601
+      target: dmd
+      expire: 1s
+      transition:
+        type: push
+        duration: 0.3s
+        direction: right
+      transition_out:
+        type: push
+        duration: 0.3s
+        direction: left
 
 #                             ,d                             
 #                             88                             
