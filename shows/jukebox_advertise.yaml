@@ -1,0 +1,44 @@
+#show_version=5
+
+
+- duration: 100ms
+  lights:
+    l_jukebox_left: on
+- duration: 100ms
+  lights:
+    l_jukebox_left: on
+    l_jukebox_right: on
+- duration: 100ms
+  lights:
+    l_jukebox_left: off
+    l_jukebox_right: on
+- duration: 100ms
+  lights:
+    l_jukebox_left: off
+    l_jukebox_right: off
+- duration: 100ms
+  lights:
+    l_jukebox_left: off
+    l_jukebox_right: off
+- duration: 100ms
+  lights:
+    l_jukebox_right: on
+- duration: 100ms
+  lights:
+    l_jukebox_right: on
+    l_jukebox_left: on   
+- duration: 100ms
+  lights:
+    l_jukebox_left: on
+    l_jukebox_right: off
+- duration: 100ms
+  lights:
+    l_jukebox_left: off
+    l_jukebox_right: off
+- duration: 100ms
+  lights:
+    l_jukebox_left: off
+    l_jukebox_right: off
+
+
+  

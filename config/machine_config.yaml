@@ -639,31 +639,38 @@ autofire_coils:
   left_sling:
     coil: c_leftsling
     switch: s_leftsling
-    enable_events: ball_starting
+    enable_events: ball_started, unblock_jukebox_hits
+    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
   right_sling:
     coil: c_rightsling
     switch: s_rightsling
-    enable_events: ball_starting
+    enable_events: ball_started, unblock_jukebox_hits
+    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
   left_pop:
     coil: c_leftpop
     switch: s_leftpop
-    enable_events: ball_starting
+    enable_events: ball_started, unblock_jukebox_hits
+    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
   right_pop:
     coil: c_rightpop
     switch: s_rightpop
-    enable_events: ball_starting
+    enable_events: ball_started, unblock_jukebox_hits
+    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
   bottom_pop:
     coil: c_bottompop
     switch: s_bottompop
-    enable_events: ball_starting
+    enable_events: ball_started, unblock_jukebox_hits
+    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
   top_kicking_target:
     coil: c_topkickingtarget
     switch: s_topkickingtarget
-    enable_events: ball_starting
+    enable_events: ball_started, unblock_jukebox_hits
+    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
   bottom_kicking_target:
     coil: c_bottomkickingtarget
     switch: s_bottomkickingtarget
-    enable_events: ball_starting
+    enable_events: ball_started, unblock_jukebox_hits
+    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
 
 #                                                                                
 #           88                                                                   
@@ -933,19 +940,19 @@ lights:
   l_mystery:
     number: 81
     subtype: led
-    tags: left
+    tags: left, left_hole
     default_on_color: ff9027
     type: grb
   l_begin_round:
     number: 82
     subtype: led
-    tags: left
+    tags: left, left_hole
     default_on_color: ff9027
     type: grb
   l_hi_lo:
     number: 83
     subtype: led
-    tags: left
+    tags: left, left_hole
     default_on_color: ff9027
     type: grb
   l_world_tour:
@@ -1058,19 +1065,19 @@ lights:
   l_europe:
     number: 102
     subtype: led
-    tags: center
+    tags: center, center_shot
     default_on_color: ff0000
     type: grb
   l_center_lock:
     number: 103
     subtype: led
-    tags: center
+    tags: center, center_shot
     default_on_color: ff9027
     type: grb
   l_center_longhorn:
     number: 104
     subtype: led
-    tags: center
+    tags: center, center_shot
     default_on_color: ff9027
     type: grb
   l_left_pop:

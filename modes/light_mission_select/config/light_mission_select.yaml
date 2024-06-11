@@ -75,6 +75,7 @@ shots:
     profile: begin_round
     enable_events: s_rightrampopto_active
     hit_events: shot_lower_vuk_from_playfield_hit
+    #disable_events: stop_mission_select
 
 #             88                                                                 
 #             88                          ,d                                     

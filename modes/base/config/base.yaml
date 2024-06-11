@@ -86,11 +86,11 @@ event_player:
   player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
     - start_honky_tonk_multiball
     - stop_light_lock|1s
-  ball_hold_left_vuk_held_ball{mode.mystery_lit.active}:
+  ball_hold_left_vuk_held_ball{mode.mystery_lit.active and not mode.light_metal_rodeo.active}:
     - start_mystery
-  ball_hold_left_vuk_held_ball{mode.hilo_lit.active and not mode.mystery_lit.active}:
+  ball_hold_left_vuk_held_ball{mode.hilo_lit.active and not mode.mystery_lit.active and not mode.light_metal_rodeo.active}:
     - start_hilo
-  ball_hold_left_vuk_held_ball{device.achievement_groups.missions["enabled"] and not mode.mystery_lit.active and not mode.hilo_lit.active}:
+  ball_hold_left_vuk_held_ball{device.achievement_groups.missions["enabled"] and not mode.mystery_lit.active and not mode.hilo_lit.active and not mode.light_metal_rodeo.active and not mode.metal_rodeo.active}:
     - start_mission
   ball_hold_left_vuk_held_ball{not mode.mystery_lit.active and not device.achievement_groups.missions["enabled"] and not mode.hilo_lit.active}:
     - release_left_vuk_ball
@@ -468,19 +468,19 @@ variable_player:
     score: 5320
   s_topkicker_active:
     score: 5320
-  player_quarters{value < 5}:
+  player_quarters{value < 7}:
     mr_shot_score:
       int: 1 # used to be score:
       action: set
-  player_quarters{value >= 5 and value <= 10}:
+  player_quarters{value >= 8 and value <= 14}:
     mr_shot_score:
       int: 2 # used to be score:
       action: set
-  player_quarters{value >= 11 and value <= 20}:
+  player_quarters{value >= 15 and value <= 21}:
     mr_shot_score:
       int: 3 # used to be score:
       action: set
-  player_quarters{value >= 21}:
+  player_quarters{value >= 22}:
     mr_shot_score:
       int: 5 # used to be score:
       action: set
@@ -488,10 +488,10 @@ variable_player:
     hold_multiplier:
       int: 1
       action: set
-  # seq_shot_right_ramp_full_loop_hit:
-  #   score: 12500
-  # s_rightrampopto_active:
-  #   score: 1000
+  seq_shot_right_ramp_full_loop_hit:
+    score: 12500
+  s_rightrampopto_active:
+    score: 1000
   loop_combo_happened{count>=1}:
     ramp_loop_score:
       int: count * 75000
@@ -639,7 +639,8 @@ shots:
     profile: managers_choice
     disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits, light_metal_rodeo
     enable_events: enable_managers_choice_shot 
-    reset_events: reset_managers_choice   
+    reset_events: reset_managers_choice  
+
 
 #  ,adPPYba,   ,adPPYba,   ,adPPYb,d8  88       88   ,adPPYba,  8b,dPPYba,    ,adPPYba,   ,adPPYba,  
 #  I8[    ""  a8P_____88  a8"    `Y88  88       88  a8P_____88  88P'   `"8a  a8"     ""  a8P_____88  

@@ -27,6 +27,8 @@ mode:
 #  88                              d8'
 
 event_player:
+  mode_light_metal_rodeo_started:
+    - stop_mission_select
   shot_lower_vuk_from_playfield_hit:
     - start_metal_rodeo
 

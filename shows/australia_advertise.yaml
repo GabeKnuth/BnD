@@ -1,0 +1,45 @@
+#show_version=5
+
+
+- duration: 100ms
+  lights:
+    l_australia: on
+- duration: 100ms
+  lights:
+    l_australia: on
+    l_extra_ball: on
+- duration: 100ms
+  lights:
+    l_australia: on
+    l_extra_ball: on
+    l_collect_wizard: on
+- duration: 100ms
+  lights:
+    l_australia: on
+    l_extra_ball: on
+    l_collect_wizard: on
+- duration: 100ms
+  lights:
+    l_australia: off
+    l_extra_ball: on
+    l_collect_wizard: on
+    l_right_ramp_flasher: on
+- duration: 100ms
+  lights:
+    l_australia: off
+    l_extra_ball: off
+    l_collect_wizard: on
+    l_right_ramp_flasher: on
+- duration: 100ms
+  lights:
+    l_australia: off
+    l_extra_ball: off
+    l_collect_wizard: off
+    l_right_ramp_flasher: on
+- duration: 100ms
+  lights:
+    l_australia: off
+    l_extra_ball: off
+    l_collect_wizard: off
+    l_right_ramp_flasher: off
+  

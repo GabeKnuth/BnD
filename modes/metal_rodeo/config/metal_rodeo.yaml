@@ -84,10 +84,13 @@ event_player:
     - block_jukebox_hits
     - stop_quarters_mode
     - mode_running|5s
+    - stop_mission_select
   mode_metal_rodeo_stopping:
     - fade_in_base_music
     - unblock_jukebox_hits
     - start_quarters_mode
+
+
 
 #                                   88           88  88                       88  88             
 #                                   88    ,d     ""  88                       88  88             
@@ -99,10 +102,10 @@ event_player:
 #  88      88      88   `"YbbdP'Y8  88    "Y888  88  8Y"Ybbd8"'   `"8bbdP"Y8  88  88  `"YbbdP"'  
 
 multiballs:
-  mr_launch_balls:
+  mr_multiball:
     ball_count: 4
-    shoot_again: 100
-    start_events: mr_launch_balls
+    shoot_again: 40s
+    start_events: mr_launch_balls_now
     stop_events: timer_mr_multiball_timer_complete, mode_metal_rodeo_stopping
 
 #           88                                                         
@@ -121,7 +124,7 @@ timers:
     direction: down
     control_events:
       - action: start
-        event: mr_launch_balls
+        event: mr_launch_balls_now
 
 #  88                       88  88                            
 #  88                       88  88                            
@@ -186,11 +189,33 @@ show_player:
     mr_bed_show:
       loops: -1
       sync_ms: 250
+  mr_launch_balls_now:  
+    australia_advertise:
+      priority: 2001
+      sync_ms: 100
+      loops: -1
+    europe_advertise:
+      priority: 2001
+      sync_ms: 100
+      loops: -1
+    north_america_advertise:
+      priority: 2001
+      sync_ms: 100
+      loops: -1
+    south_america_advertise:
+      priority: 2001
+      sync_ms: 100
+      loops: -1
+    left_hole_advertise:
+      priority: 2001
+      sync_ms: 100
+      loops: -1
+    double_jackpot_advertise:
+      priority: 2101
+      sync_ms: 100
+      loops: -1
+    
 
-slide_player:
- mode_metal_rodeo_started:
-   mr_stage:
-     target: stage
 
 #             88  88           88                         
 #             88  ""           88                         
@@ -290,6 +315,12 @@ slides:
         y: center-1
         font_size: 30
         style: huge 
+  mr_black_dmd:
+    widgets:
+      - type: rectangle
+        width: 128
+        height: 32
+        color: black
   unlimited_balls:
     widgets:
       - type: text
@@ -354,16 +385,19 @@ variable_player:
   seq_shot_spinner_to_vuk_hit:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000
-  shot_right_ramp_full_loop_hit:
+  seq_shot_right_ramp_full_loop_hit:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000
   shot_pops_to_vuk_hit:
-    score: (current_player.mr_shot_score * 1000000) + (current_player.wizard_score * current_player.num_albums)
+    score: (current_player.mr_shot_score * 1000000) #+ (current_player.wizard_score * current_player.num_albums)
     mr_score: current_player.mr_shot_score * 1000000
   s_leftorbit_active:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000
   shot_lower_vuk_from_playfield_hit:
+    score: current_player.mr_shot_score * 1000000
+    mr_score: current_player.mr_shot_score * 1000000
+  s_topkicker_active:
     score: current_player.mr_shot_score * 1000000
     mr_score: current_player.mr_shot_score * 1000000
 
@@ -395,7 +429,7 @@ sound_player:
     boom:
       action: play
       loops: 0
-  shot_right_ramp_full_loop_hit:
+  seq_shot_right_ramp_full_loop_hit:
     boom:
       action: play
       loops: 0
@@ -408,6 +442,10 @@ sound_player:
       action: play
       loops: 0
   shot_lower_vuk_from_playfield_hit:
+    boom:
+      action: play
+      loops: 0
+  shot_top_kicker_hit:
     boom:
       action: play
       loops: 0

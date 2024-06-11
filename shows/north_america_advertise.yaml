@@ -1,0 +1,35 @@
+#show_version=5
+
+
+- duration: 100ms
+  lights:
+    l_advance_wizard: on
+- duration: 100ms
+  lights:
+    l_advance_wizard: on
+    l_north_america: on
+- duration: 100ms
+  lights:
+    l_advance_wizard: on
+    l_north_america: on
+    l_left_music_award: on
+- duration: 100ms
+  lights:
+    l_advance_wizard: off
+    l_north_america: on
+    l_left_music_award: on
+- duration: 100ms
+  lights:
+    l_advance_wizard: off
+    l_north_america: off
+    l_left_music_award: on
+- duration: 100ms
+  lights:
+    l_advance_wizard: off
+    l_north_america: off
+    l_left_music_award: off
+- duration: 100ms
+  lights:
+    l_advance_wizard: off
+    l_north_america: off
+    l_left_music_award: off

@@ -19,6 +19,9 @@
         type: push
         duration: 250ms
         direction: right
+  sounds:
+    fire_whoosh:
+      action: play
 - time: 8.25
   slides:
     all_shots_lit:
@@ -27,6 +30,9 @@
         type: push
         duration: 250ms
         direction: right
+  sounds:
+    fire_whoosh:
+      action: play
 - time: 10.5
   slides:
     quarter_count:
@@ -35,6 +41,9 @@
         type: push
         duration: 250ms
         direction: right
+  sounds:
+    fire_whoosh:
+      action: play
 - time: 12.75
   slides:
     shot_score:
@@ -43,6 +52,11 @@
         type: push
         duration: 250ms
         direction: right
+  sounds:
+    fire_whoosh:
+      action: play
+    mr_lets_go:
+      action: play
 - time: 14
   events:
     - mr_go

@@ -7,6 +7,9 @@
     (center): off
     (left): off
     (gi): off
+  slides:
+    mr_black_dmd:
+      target: dmd
 
 # First strobe in video
 - time: 3.933
@@ -104,5 +107,8 @@
     - disable_base_left_vuk_hold
     - release_top_kicker_ball
     - disable_base_top_kicker_hold
-    - mr_launch_balls
+    - mr_launch_balls_now
+  slides:
+    mr_black_dmd:
+      action: remove
 - time: 12.000

@@ -1,0 +1,88 @@
+#show_version=5
+
+
+- duration: 100ms
+  lights:
+    l_mystery: on
+- duration: 100ms
+  lights:
+    l_mystery: on
+    l_begin_round: on
+- duration: 100ms
+  lights:
+    l_mystery: on
+    l_begin_round: on
+    l_hi_lo: on
+
+- duration: 100ms
+  lights:
+    l_mystery: on
+    l_begin_round: on
+    l_hi_lo: on
+
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: on
+    l_hi_lo: on
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: off
+    l_hi_lo: on
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: off
+    l_hi_lo: off
+
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: off
+    l_hi_lo: off
+
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: off
+    l_hi_lo: on
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: on
+    l_hi_lo: on
+- duration: 100ms
+  lights:
+    l_mystery: on
+    l_begin_round: on
+    l_hi_lo: on
+
+- duration: 100ms
+  lights:
+    l_mystery: on
+    l_begin_round: on
+    l_hi_lo: on
+
+- duration: 100ms
+  lights:
+    l_mystery: on
+    l_begin_round: on
+    l_hi_lo: off
+- duration: 100ms
+  lights:
+    l_mystery: on
+    l_begin_round: off
+    l_hi_lo: off
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: off
+    l_hi_lo: off
+
+- duration: 100ms
+  lights:
+    l_mystery: off
+    l_begin_round: off
+    l_hi_lo: off
+  

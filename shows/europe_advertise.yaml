@@ -1,0 +1,35 @@
+#show_version=5
+
+
+- duration: 100ms
+  lights:
+    l_europe: on
+- duration: 100ms
+  lights:
+    l_europe: on
+    l_center_lock: on
+- duration: 100ms
+  lights:
+    l_europe: on
+    l_center_lock: on
+    l_center_longhorn: on
+- duration: 100ms
+  lights:
+    l_europe: off
+    l_center_lock: on
+    l_center_longhorn: on
+- duration: 100ms
+  lights:
+    l_europe: off
+    l_center_lock: off
+    l_center_longhorn: on
+- duration: 100ms
+  lights:
+    l_europe: off
+    l_center_lock: off
+    l_center_longhorn: off
+- duration: 100ms
+  lights:
+    l_europe: off
+    l_center_lock: off
+    l_center_longhorn: off

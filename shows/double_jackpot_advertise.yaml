@@ -1,0 +1,22 @@
+#show_version=5
+
+
+- duration: 100ms
+  lights:
+    l_double_jackpot: on
+- duration: 100ms
+  lights:
+    l_double_jackpot: on
+    l_managers_choice: on
+- duration: 100ms
+  lights:
+    l_double_jackpot: off
+    l_managers_choice: on
+- duration: 100ms
+  lights:
+    l_double_jackpot: off
+    l_managers_choice: off
+- duration: 100ms
+  lights:
+    l_double_jackpot: off
+    l_managers_choice: off

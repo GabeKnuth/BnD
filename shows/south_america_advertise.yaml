@@ -1,0 +1,36 @@
+#show_version=5
+
+
+- duration: 100ms
+  lights:
+    l_right_music_award: on
+- duration: 100ms
+  lights:
+    l_right_music_award: on
+    l_ramp_jackpot: on
+- duration: 100ms
+  lights:
+    l_right_music_award: on
+    l_ramp_jackpot: on
+    l_south_america: on
+- duration: 100ms
+  lights:
+    l_right_music_award: off
+    l_ramp_jackpot: on
+    l_south_america: on
+- duration: 100ms
+  lights:
+    l_right_music_award: off
+    l_ramp_jackpot: off
+    l_south_america: on
+- duration: 100ms
+  lights:
+    l_right_music_award: off
+    l_ramp_jackpot: off
+    l_south_america: off
+- duration: 100ms
+  lights:
+    l_right_music_award: off
+    l_ramp_jackpot: off
+    l_south_america: off
+  
