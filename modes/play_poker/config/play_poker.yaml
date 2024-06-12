@@ -69,6 +69,7 @@ event_player:
   mode_play_poker_started:
     - fade_out_base_music
     - start_poker_music|1s
+    - mission_started
   mode_play_poker_stopping:
     - fade_in_base_music
     - enable_base_left_vuk_hold

@@ -3,6 +3,9 @@ $$ Shorter Term things
 $$$$$$$$$
 
 
+Hi/Lo voice callouts
+
+
 #########
 ## These are big picture things, for the most part. None of this is required to get the game running. 
 #########

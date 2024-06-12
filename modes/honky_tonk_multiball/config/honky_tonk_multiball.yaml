@@ -253,20 +253,18 @@ slides:
         text: BALL SAVED!
         expire: 2s
         style: huge 
-  honky_tonk_stage:
+  honky_tonk_stage: 
     widgets:
       - type: video
         video: htmb_miss_honky_tonk
         end_behavior: loop
-        animations:
-          duck:
-            - property: volume
-              value: .4
-              duration: .01s
-          unduck:
-            - property: volume
-              value: 1
-              duration: .5s
+        control_events:
+          - event: duck
+            action: volume
+            value: .4
+          - event: unduck
+            action: volume
+            value: 1.0  
   double_jackpot_slide:
     widgets:
       - type: image

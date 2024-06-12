@@ -450,12 +450,15 @@ shows:
             control_events:
               - event: stop_song
                 action: stop
-              - event: duck
-                action: volume
-                value: .4
-              - event: unduck
-                action: volume
-                value: 1.0  
+            animations:
+              duck:
+                - property: volume
+                  value: .4
+                  duration: .01s
+              unduck:
+                - property: volume
+                  value: 1
+                  duration: .5s
           target: stage
 
 #                                       88              88           88              

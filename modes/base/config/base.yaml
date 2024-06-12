@@ -63,7 +63,7 @@ event_player:
 
 
     
-  hit_jukebox{count==5}:
+  hit_jukebox{count==5 and mode_mission_select.active}:
     - start_jukebox_hurryup
   hit_jukebox{count==13}:
     - light_hilo
@@ -71,7 +71,7 @@ event_player:
     - start_jukebox_hurryup
   hit_jukebox{count==35}:
     - light_hilo
-  hit_jukebox{count==45}:
+  hit_jukebox{count==45 and mode_mission_select.active}:
     - start_jukebox_hurryup
   hit_jukebox{count%4==0}:
     - start_light_lock

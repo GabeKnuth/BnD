@@ -31,14 +31,20 @@ event_player:
     - wt_mode_running|3s
     - enable_north_america|1s
     - fade_out_base_music
+    - mission_started
   player_world_tour_world_tour_timer_tick{value == 5}:
     - slow_down_timer
   ag_world_tour_complete:
+    - light_australia
+    - duck
+    - unduck|1.7s
+    - australia_instruction|1.7s
+  wt_australia_complete:
     - world_tour_success|2.5s
-    - world_tour_fade_out|3.7s
-    - start_jukebox_two_ball|3.7s
-    - release_wt_ball|3.7s
-    - stop_world_tour|3.7s
+    - world_tour_fade_out|4.5s
+    - start_jukebox_two_ball|4.5s
+    - release_wt_ball|4.5s
+    - stop_world_tour|4.5s
   timer_world_tour_timer_complete:  # fail message QIO todo and adjust timings below
     - stop_world_tour|1s
     #- world_tour_fade_out
@@ -56,6 +62,40 @@ event_player:
     - release_top_kicker_ball
     - disable_base_top_kicker_hold
 
+
+#  88  88               88                                           
+#  88  ""               88             ,d                            
+#  88                   88             88                            
+#  88  88   ,adPPYb,d8  88,dPPYba,   MM88MMM                         
+#  88  88  a8"    `Y88  88P'    "8a    88                            
+#  88  88  8b       88  88       88    88                            
+#  88  88  "8a,   ,d88  88       88    88,                           
+#  88  88   `"YbbdP"Y8  88       88    "Y888                         
+#           aa,    ,88                                               
+#            "Y8bbdP"                                                
+#               88                                                   
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
+light_player:
+  wt_north_america_complete:
+    l_north_america: on
+  wt_europe_complete:
+    l_europe: on
+  wt_south_america_complete:
+    l_south_america: on
+  mode_world_tour_stopping:
+    l_north_america: off
+    l_europe: off
+    l_south_america: off
+
 #                          88           88                                                                                                        
 #                          88           ""                                                                                      ,d                
 #                          88                                                                                                   88                
@@ -67,10 +107,7 @@ event_player:
 
 achievements:
   wt_north_america:
-    # show_tokens:
-    #   light: l_north_america
     show_when_started: north_america_advertise
-    show_when_completed: on
     enable_events: enable_north_america
     start_events: enable_north_america
     complete_events: s_leftorbit_active
@@ -82,10 +119,7 @@ achievements:
     start_events: wt_north_america_complete
     complete_events: seq_shot_spinner_to_vuk_hit
     events_when_completed: wt_europe_complete, add_time
-    # show_tokens:
-    #   light: l_europe
     show_when_started: europe_advertise
-    show_when_completed: on
     restart_after_stop_possible: true
 
   wt_south_america:
@@ -93,22 +127,16 @@ achievements:
     start_events: wt_europe_complete
     complete_events: s_rightrampopto_active
     events_when_completed: wt_south_america_complete, add_time
-    # show_tokens:
-    #   light: l_south_america
     show_when_started: south_america_advertise
-    show_when_completed: on
     restart_after_stop_possible: true
 
   wt_australia:
-    enable_events: wt_south_america_complete
+    enable_events: light_australia
     start_events: wt_south_america_complete
     complete_events: shot_pops_to_vuk_hit
     events_when_completed: wt_australia_complete
-    # show_tokens:
-    #   light: l_australia
     show_when_started: australia_advertise
-    show_when_completed: on
-    restart_after_stop_possible: true
+    restart_after_stop_possible: false
 
 
 #                          88           88                                                                                             
@@ -155,7 +183,7 @@ ball_holds:
   wt_complete:
     balls_to_hold: 1
     hold_devices: bd_top_right_vuk
-    enable_events: wt_south_america_complete
+    enable_events: light_australia
     #request_new_balls_to_pf: false
     release_one_events: release_wt_ball
 
@@ -225,6 +253,27 @@ shows:
         (light): off
     - time: +1
 
+  wt_play_bnd_song:
+    - duration: -1
+      slides:
+        world_tour_stage:
+          widgets:
+            - type: video
+              video: wt_boot_scoot
+              end_behavior: loop
+              control_events:
+                - event: duck
+                  action: volume
+                  value: .4
+                - event: unduck
+                  action: volume
+                  value: 1.0  
+          target: stage
+
+
+
+
+
 #             88                                                     
 #             88                                                     
 #             88                                                     
@@ -263,6 +312,10 @@ show_player:
       loops: 0
     north_america_lights:
       loops: 0
+  mode_world_tour_started:
+    wt_play_bnd_song:
+      loops: -1
+  
 
 #             88  88           88                         
 #             88  ""           88                         
@@ -348,13 +401,7 @@ slides:
         anchor_x: left
         x: left
     target: dmd
-  world_tour_stage:
-    widgets:
-      - type: video
-        video: wt_boot_scoot
-        end_behavior: loop
-        animations:
-          test_event_video_fade: video_fade_out
+
 
   world_tour_dmd:
     widgets:
@@ -409,6 +456,41 @@ slides:
         y: bottom+1
         style: huge
 
+  world_tour_shoot_for_multiball:
+    widgets: 
+      - type: image
+        image: down_arrow
+        anchor_y: bottom
+        y: bottom
+        anchor_x: right
+        x: right-70
+        animations:
+          add_to_slide:
+            - property: y
+              value: 30
+              duration: 1s
+            - property: y
+              value: 0
+              duration: 1s
+              repeat: true
+      - type: text
+        text: SHOOT HERE FOR
+        style: huge 
+        font_size: 120
+        anchor_y: top
+        y: top
+        anchor_x: left
+        x: left+10
+      - type: text
+        text: MULTIBALL!
+        style: huge 
+        font_size: 150
+        anchor_y: top
+        y: top-100
+        anchor_x: left
+        x: left+10
+       
+
 #             88  88           88                                    
 #             88  ""           88                                    
 #             88               88                                    
@@ -433,17 +515,22 @@ slide_player:
   mode_world_tour_started:
     wt_intro_dmd:
       target: dmd      
-    world_tour_stage: 
-      target: stage
+    # world_tour_stage: 
+    #   target: stage
   wt_mode_running:
     world_tour_dmd:
       target: dmd
   ag_world_tour_complete:
     world_tour_complete:
       target: dmd
+  australia_instruction:  
+    world_tour_shoot_for_multiball:
+      target: stage
   world_tour_success:
     wt_complete:
       target: dmd
+    world_tour_shoot_for_multiball:
+      action: remove
 
 #                                                             88     
 #                                                             88     
@@ -466,10 +553,15 @@ slide_player:
 
 
 sound_player:
+  ag_world_tour_complete:
+    wt_shoot_australia:
+      action: play
+      loops: 0
   world_tour_success:
     slam:
       action: play
-      loops: 1
+      loops: 0
+  
 
 #                                                       ,d                                        
 #                                                       88                                        

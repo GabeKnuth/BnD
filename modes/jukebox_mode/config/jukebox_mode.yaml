@@ -54,6 +54,7 @@ event_player:
     - fade_out_base_music
     - block_jukebox_hits
     - stop_mission_select
+    - mission_started
   timer_jukebox_mode_timer_complete:
     - end_jukebox_mode|3s
     - jukebox_fail|1s
