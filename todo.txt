@@ -19,3 +19,7 @@ selection at the start of a ball in STTNG. Flipper-based selection of the missio
 but you can't collect those points until you max out the album value. At that point, it keeps the UM drop targets 
 down (I think it has knockdown coils?), and the screen comes on to say collect wizard points with whatever the total is. 
         That becomes the wizard bonus, too. So you constantly get those points.
+
+- Spot Quarter lights in return lane. How to make those light and award a quarter?
+
+- Also - Special? WTF?
