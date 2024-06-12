@@ -7,8 +7,7 @@ $$$$$$$$$
 ## These are big picture things, for the most part. None of this is required to get the game running. 
 #########
 
-
-Also, the return lanes have a "Spot Quarter" lamp. These should rotate with slings/pops/kicking targets between the
+- The return lanes have a "Spot Quarter" lamp. These should rotate with slings/pops/kicking targets between the
 lamps, but I think they shouldn't always be on. Maybe they "rotate" like: all off, left, all off, right. If hit when
 lit, they complete one of the lit quarters.
 
@@ -19,7 +18,5 @@ selection at the start of a ball in STTNG. Flipper-based selection of the missio
 but you can't collect those points until you max out the album value. At that point, it keeps the UM drop targets 
 down (I think it has knockdown coils?), and the screen comes on to say collect wizard points with whatever the total is. 
         That becomes the wizard bonus, too. So you constantly get those points.
-
-- Spot Quarter lights in return lane. How to make those light and award a quarter?
 
 - Also - Special? WTF?
