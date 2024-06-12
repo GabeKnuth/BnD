@@ -1,0 +1,66 @@
+#config_version=5
+#config_version=4 # Left for reference. Did NOT double check
+
+# this mode handles the lighting of the right ramp and the lower vuk "begin_round" shot
+
+# the mode starts when a mission is not running, and stops when a mission starts
+
+
+mode:
+  start_events: light_managers_choice
+  stop_events: mode_managers_choice_started, stop_mission_select, stop_light_managers_choice
+  priority: 200
+
+#             88                                                     
+#             88                                                     
+#             88                                                     
+#  ,adPPYba,  88,dPPYba,    ,adPPYba,   8b      db      d8           
+#  I8[    ""  88P'    "8a  a8"     "8a  `8b    d88b    d8'           
+#   `"Y8ba,   8888     88  8b       d8   `8b  d8'`8b  d8'            
+#  aa    ]8I  8888     88  "8a,   ,a8"    `8bd8'  `8bd8'             
+#  `"YbbdP"'  8888     88   `"YbbdP"'       YP      YP               
+#
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8' 
+
+show_player:
+  mode_light_managers_choice_started:
+    rainbow:
+      priority: 499
+      speed: 2.5
+      loops: -1
+      show_tokens:
+        led: l_managers_choice
+
+
+#                                                      ,d            
+#                                                      88            
+#   ,adPPYba,  8b       d8   ,adPPYba,  8b,dPPYba,   MM88MMM         
+#  a8P_____88  `8b     d8'  a8P_____88  88P'   `"8a    88            
+#  8PP"""""""   `8b   d8'   8PP"""""""  88       88    88            
+#  "8b,   ,aa    `8b,d8'    "8b,   ,aa  88       88    88,           
+#   `"Ybbd8"'   88 "8"       `"Ybbd8"'  88       88    "Y888         
+#               88                                                   
+#               88                                                   
+#  8b,dPPYba,   88  ,adPPYYba,  8b       d8   ,adPPYba,  8b,dPPYba,  
+#  88P'    "8a  88  ""     `Y8  `8b     d8'  a8P_____88  88P'   "Y8  
+#  88       d8  88  ,adPPPPP88   `8b   d8'   8PP"""""""  88          
+#  88b,   ,a8"  88  88,    ,88    `8b,d8'    "8b,   ,aa  88          
+#  88`YbbdP"'   88  `"8bbdP"Y8      Y88'      `"Ybbd8"'  88          
+#  88                               d8'                              
+#  88                              d8'
+
+event_player:
+  s_topkicker_active:
+    - start_managers_choice
+  mode_light_managers_choice_started:
+    - enable_base_top_kicker_hold
+
+
+
+

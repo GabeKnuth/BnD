@@ -41,10 +41,7 @@ timers:
 #  88                              d8'
 
 event_player:
-  mode_skill_shot_started:
-    - light_managers_choice
   timer_skill_shot_timer_complete:
-    - end_managers_choice
     - end_skill_shot
   s_topkicker_active:
     - end_skill_shot|3s

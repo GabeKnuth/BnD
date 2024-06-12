@@ -1,10 +1,11 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
 
 mode:
   priority: 600
   start_events: start_managers_choice
-  stop_events: stop_managers_choice
+  stop_events: release_top_kicker_ball, stop_managers_choice
+
+
 
 #             88                                                     
 #             88                                                     
@@ -181,3 +182,27 @@ widgets:
             duration: 300ms
 
 
+#  88                       88  88                       
+#  88                       88  88                       
+#  88                       88  88                       
+#  88,dPPYba,   ,adPPYYba,  88  88                       
+#  88P'    "8a  ""     `Y8  88  88                       
+#  88       d8  ,adPPPPP88  88  88                       
+#  88b,   ,a8"  88,    ,88  88  88                       
+#  8Y"Ybbd8"'   `"8bbdP"Y8  88  88                       
+#  88                        88           88             
+#  88                        88           88             
+#  88                        88           88             
+#  88,dPPYba,    ,adPPYba,   88   ,adPPYb,88  ,adPPYba,  
+#  88P'    "8a  a8"     "8a  88  a8"    `Y88  I8[    ""  
+#  88       88  8b       d8  88  8b       88   `"Y8ba,   
+#  88       88  "8a,   ,a8"  88  "8a,   ,d88  aa    ]8I  
+#  88       88   `"YbbdP"'   88   `"8bbdP"Y8  `"YbbdP"'
+
+# ball_holds:
+#   mc_intro_hold:
+#     balls_to_hold: 1
+#     hold_devices: bd_top_kicker
+#     enable_events: mode_managers_choice_started
+#     release_one_events: release_top_kicker_ball
+#     disable_events: mode_managers_choice_stopping

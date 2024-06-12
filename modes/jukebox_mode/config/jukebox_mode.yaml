@@ -63,6 +63,7 @@ event_player:
     - unblock_jukebox_hits
   ball_will_end:
     - jukebox_fail
+    - end_jukebox_mode|1s
   timer_jb_intro_timer_complete:
     - start_jukebox_timer
     - release_left_vuk_ball

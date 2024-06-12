@@ -39,6 +39,7 @@ event_player:
     - enable_base_left_vuk_hold
   ball_will_end:
     - money_bags_fail
+    - money_bags_done
   timer_mb_intro_timer_complete:
     - release_left_vuk_ball
     - disable_base_left_vuk_hold

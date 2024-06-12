@@ -75,6 +75,8 @@ event_player:
     - start_jukebox_hurryup
   hit_jukebox{count%4==0}:
     - start_light_lock
+  hit_jukebox{count%8==0}:
+    - light_managers_choice
   ball_ending:
     - fade_out_base_music
   drop_target_bank_drop_targets_down:
@@ -811,6 +813,9 @@ shows:
   flash_once:
     - duration: 200ms
       lights:
+        (led): on
+    - duration: 200ms
+      lights:
         (led): off
   flash_fast:
     - duration: 100ms
@@ -831,64 +836,88 @@ shows:
   eject_alert:
     - time: 0
       lights:
-        (led): on
-    - time: 300ms
+        (led): white
+    - time: +100ms
       lights:
         (led): off
-    - time: 450ms
+    - time: +100ms
       lights:
-        (led): on
-    - time: 750ms
-      lights:
-        (led): off
-    - time: 900ms
-      lights:
-        (led): on
-    - time: 1200ms
+        (led): white
+    - time: +100ms
       lights:
         (led): off
-    - time: 1350ms
+    - time: +100ms
+      lights:
+        (led): white
+    - time: +100ms
+      lights:
+        (led): off
+    - time: +100ms
+      lights:
+        (led): white
+    - time: +100ms
+      lights:
+        (led): off
+    - time: +100ms
+      lights:
+        (led): white
+    - time: +100ms
+      lights:
+        (led): off
+    - time: +1ms
       events: eject_alert_over
   top_eject_alert:
     - time: 0
       lights:
-        (led): on
-    - time: 300ms
+        (led): white
+    - time: +100ms
       lights:
         (led): off
-    - time: 450ms
+    - time: +100ms
       lights:
-        (led): on
-    - time: 750ms
-      lights:
-        (led): off
-    - time: 900ms
-      lights:
-        (led): on
-    - time: 1200ms
+        (led): white
+    - time: +100ms
       lights:
         (led): off
-    - time: 1350ms
+    - time: +100ms
+      lights:
+        (led): white
+    - time: +100ms
+      lights:
+        (led): off
+    - time: +100ms
+      lights:
+        (led): white
+    - time: +100ms
+      lights:
+        (led): off
+    - time: +100ms
+      lights:
+        (led): white
+    - time: +100ms
+      lights:
+        (led): off
+    - time: +1ms
       events: top_eject_alert_over
   rainbow:
     - duration: 150ms
       lights:
-        (leds): red
+        (led): red
     - duration: 150ms
       lights:
-        (leds): orange
+        (led): orange
     - duration: 150ms
       lights:
-        (leds): yellow
+        (led): yellow
     - duration: 150ms
       lights:
-        (leds): green
+        (led): green
     - duration: 150ms
       lights:
-        (leds): blue
+        (led): blue
     - duration: 150ms
       lights:
-        (leds): purple
+        (led): purple
 
 #             88                                                     
 #             88                                                     
@@ -942,14 +971,12 @@ show_player:
   eject_flash:
     eject_alert:
       loops: 0
-      speed: 3
       show_tokens:
         led: l_lower_left_flasher
       priority: 1000000
   top_eject_flash:
     top_eject_alert:
       loops: 0
-      speed: 3
       show_tokens:
         led: l_right_ramp_flasher
       priority: 1000000
@@ -961,27 +988,26 @@ show_player:
         led: l_center_longhorn
       priority: 1000000
       sync_ms: 0
+  
   s_leftpop_active:
     flash_once:
       loops: 0
       show_tokens:
         led: l_left_pop
       priority: 1000000
-      sync_ms: 0
   s_bottompop_active:
     flash_once:
       loops: 0
       show_tokens:
         led: l_bottom_pop
       priority: 1000000
-      sync_ms: 0
   s_rightpop_active:
     flash_once:
       loops: 0
       show_tokens:
         led: l_right_pop
       priority: 1000000
-      sync_ms: 0
+  
   disable_base_left_vuk_hold:
     off:
       key: mute_left_hole_lights
@@ -1211,7 +1237,6 @@ light_player:
   num_albums{count == 5}:
     l_quintuple_platinum: on
 
-  
   reset_album_lights:
     l_silver: off
     l_gold: off

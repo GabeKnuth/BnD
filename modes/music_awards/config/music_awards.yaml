@@ -3,7 +3,7 @@
 mode:
   priority: 500
   start_events: start_music_awards_mode
-  stop_events: music_awards_fail, mode_ma_two_ball_stopping, ball_ending
+  stop_events: music_awards_fail, mode_ma_two_ball_stopping
 
 #                                                      ,d            
 #                                                      88            
@@ -161,56 +161,56 @@ timers:
 #  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
 
 shows:
-  ma_advertise_show_left:
-    - duration: 150ms
-      lights:
-        (led3): off
-        (led1): on
-    - duration: 150ms
-      lights:
-        (led1): on
-        (led2): on
-    - duration: 150ms
-      lights:
-        (led1): off
-        (led2): on
-        (led3): on
-    - duration: 150ms
-      lights:
-        (led2): off
-    - duration: 150ms
-      lights:
-        (led3): off
-    - duration: 250ms
-      lights:
-        (led1): off
-        (led2): off
-        (led3): off
-  ma_advertise_show_right:
-    - duration: 150ms
-      lights:
-        (led3): off
-        (led1): on
-    - duration: 150ms
-      lights:
-        (led1): on
-        (led2): on
-    - duration: 150ms
-      lights:
-        (led1): off
-        (led2): on
-        (led3): on
-    - duration: 150ms
-      lights:
-        (led2): off
-    - duration: 150ms
-      lights:
-        (led3): off
-    - duration: 250ms
-      lights:
-        (led1): off
-        (led2): off
-        (led3): off
+  # ma_advertise_show_left:
+  #   - duration: 150ms
+  #     lights:
+  #       (led3): off
+  #       (led1): on
+  #   - duration: 150ms
+  #     lights:
+  #       (led1): on
+  #       (led2): on
+  #   - duration: 150ms
+  #     lights:
+  #       (led1): off
+  #       (led2): on
+  #       (led3): on
+  #   - duration: 150ms
+  #     lights:
+  #       (led2): off
+  #   - duration: 150ms
+  #     lights:
+  #       (led3): off
+  #   - duration: 250ms
+  #     lights:
+  #       (led1): off
+  #       (led2): off
+  #       (led3): off
+  # ma_advertise_show_right:
+  #   - duration: 150ms
+  #     lights:
+  #       (led3): off
+  #       (led1): on
+  #   - duration: 150ms
+  #     lights:
+  #       (led1): on
+  #       (led2): on
+  #   - duration: 150ms
+  #     lights:
+  #       (led1): off
+  #       (led2): on
+  #       (led3): on
+  #   - duration: 150ms
+  #     lights:
+  #       (led2): off
+  #   - duration: 150ms
+  #     lights:
+  #       (led3): off
+  #   - duration: 250ms
+  #     lights:
+  #       (led1): off
+  #       (led2): off
+  #       (led3): off
   ma_stage_show:
     - duration: 179s
       slides:
@@ -254,18 +254,22 @@ shows:
 
 show_player:
   mode_music_awards_started:
-    ma_advertise_show_right:
+    south_america_advertise:
       loops: -1
-      show_tokens:
-        led1: l_right_music_award
-        led2: l_ramp_jackpot
-        led3: l_south_america
-    ma_advertise_show_left:
+    north_america_advertise:
       loops: -1
-      show_tokens:
-        led1: l_advance_wizard
-        led2: l_north_america
-        led3: l_left_music_award
+    # ma_advertise_show_right:
+    #   loops: -1
+    #   show_tokens:
+    #     led1: l_right_music_award
+    #     led2: l_ramp_jackpot
+    #     led3: l_south_america
+    # ma_advertise_show_left:
+    #   loops: -1
+    #   show_tokens:
+    #     led1: l_advance_wizard
+    #     led2: l_north_america
+    #     led3: l_left_music_award
     ma_stage_show:
       loops: 1
   ma_shot_made:

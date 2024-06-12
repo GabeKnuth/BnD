@@ -49,6 +49,7 @@ event_player:
     - enable_base_left_vuk_hold
   ball_will_end:
     - world_tour_fail
+    - stop_world_tour
   timer_wt_intro_timer_complete:
     - release_left_vuk_ball
     - disable_base_left_vuk_hold
@@ -129,7 +130,7 @@ achievements:
 
 achievement_groups:
   wt_group:
-    achievements: wt_north_america, wt_europe, wt_south_america
+    achievements: wt_north_america, wt_europe, wt_south_america # Took out Australia just to complete this mission easier
     enable_events: mode_world_tour_started
     events_when_all_completed: ag_world_tour_complete
 
@@ -187,6 +188,8 @@ timers:
           - event: stop_world_tour_timer
             action: stop
           - event: balldevice_bd_lower_vuk_ball_eject_success
+            action: start
+          - event: balldevice_bd_top_kicker_ball_eject_success
             action: start
     wt_intro_timer:
         start_value: 3

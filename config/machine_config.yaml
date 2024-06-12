@@ -47,7 +47,7 @@ mpf:
   default_light_hw_update_hz: 10
 
 game:
-  balls_per_game: 10
+  balls_per_game: 5
   allow_start_with_loose_balls: True
   allow_start_with_ball_in_drain: True
   max_players: 4
@@ -218,6 +218,7 @@ modes:
   - jukebox_mode
   - jukebox_two_ball
   - light_lock
+  - light_managers_choice
   - light_metal_rodeo
   - light_mission_select
   - ma_two_ball
@@ -1645,7 +1646,7 @@ keyboard:
   e:
     event: weak_flippers_disabled
   "`":
-    event: hold_album_value
+    event: light_managers_choice
 
 
 #               88                                                   
@@ -1749,3 +1750,26 @@ widget_styles:
 machine_vars:
   master_volume:
     initial_value: 1.0
+
+#           88                                           88                                    
+#    ,d     ""                                           88                                    
+#    88                                                  88                                    
+#  MM88MMM  88  88,dPYba,,adPYba,    ,adPPYba,   ,adPPYb,88                                    
+#    88     88  88P'   "88"    "8a  a8P_____88  a8"    `Y88                                    
+#    88     88  88      88      88  8PP"""""""  8b       88                                    
+#    88,    88  88      88      88  "8b,   ,aa  "8a,   ,d88                                    
+#    "Y888  88  88      88      8888 `"Ybbd8"'   `"8bbdP"Y8                                  
+#                                                          88
+#                                 ""    ,d                 88                                  
+#                                       88                 88                                  
+#  ,adPPYba,  8b      db      d8  88  MM88MMM   ,adPPYba,  88,dPPYba,    ,adPPYba,  ,adPPYba,  
+#  I8[    ""  `8b    d88b    d8'  88    88     a8"     ""  88P'    "8a  a8P_____88  I8[    ""  
+#   `"Y8ba,    `8b  d8'`8b  d8'   88    88     8b          88       88  8PP"""""""   `"Y8ba,   
+#  aa    ]8I    `8bd8'  `8bd8'    88    88,    "8a,   ,aa  88       88  "8b,   ,aa  aa    ]8I  
+#  `"YbbdP"'      YP      YP      88    "Y888   `"Ybbd8"'  88       88   `"Ybbd8"'  `"YbbdP"'
+
+timed_switches:
+  game_cancel:
+    switch_tags: start
+    time: 5s
+    events_when_active: end_game

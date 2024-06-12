@@ -74,6 +74,7 @@ event_player:
     - enable_base_left_vuk_hold
   ball_will_end:
     - play_poker_fail
+    - play_poker_done|1s
   timer_poker_countdown_complete:
     # - play_poker_fail
     - poker_high_card # added this so that mode completes when timer ends
