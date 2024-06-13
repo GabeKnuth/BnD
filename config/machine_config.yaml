@@ -1646,7 +1646,7 @@ keyboard:
   e:
     event: weak_flippers_disabled
   "`":
-    event: light_managers_choice
+    event: light_hilo
 
 
 #               88                                                   

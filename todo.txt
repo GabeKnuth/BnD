@@ -4,6 +4,7 @@ $$$$$$$$$
 
 
 Hi/Lo voice callouts
+Hi/Lo needs a timeout to cash out, too
 
 
 #########

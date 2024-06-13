@@ -12,6 +12,7 @@ class HiLo(Mode):
         self.current_round = 0
         self.max_rounds = 3
         self.state = 'intro'
+        self.lose = 0
         self.score_values = [(125000, '125K'),
                              (250000, '250K'),
                              (500000, '500K'),
@@ -31,14 +32,18 @@ class HiLo(Mode):
     def left_flipper(self, **kwargs):
         if self.state == 'show':
             self.cash_out()
+            self.machine.events.post('play_hilo_cash_out_sound')
         elif self.state == 'gamble':
             self.guess_lower()
+            self.machine.events.post('play_hilo_guess_lower_sound')
 
     def right_flipper(self, **kwargs):
         if self.state == 'show':
             self.gamble()
+            self.machine.events.post('play_hilo_gamble_sound')
         elif self.state == 'gamble':
             self.guess_higher()
+            self.machine.events.post('play_hilo_guess_higher_sound')
 
     def show_card(self, **kwargs):
         self.state = 'show'
@@ -62,8 +67,10 @@ class HiLo(Mode):
 
     def show_gamble_slide(self, **kwargs):
         self.machine.events.post('hilo_show_gamble_slide')
+        self.machine.events.post('play_hilo_higher_lower_sound')
         self.machine.events.post('show_player_card',
                                  image=self.current_card.asset)
+        
 
     def cash_out(self, **kwargs):
         points = self.score_values[self.current_round][0]
@@ -96,13 +103,14 @@ class HiLo(Mode):
                 self.next_card.value > self.current_card.value) or
                 (bet == 'lower' and
                 self.next_card.value < self.current_card.value)):
+            self.machine.events.post('play_hilo_win_sound')
             self.gamble_win()
         else:
+            self.machine.events.post('play_hilo_lose_sound')
             self.gamble_lose()
 
     def gamble_win(self):
         self.current_round += 1
-
         if self.current_round < self.max_rounds:
             self.machine.events.post('hilo_win',
                 points=self.score_values[self.current_round][0])
@@ -115,13 +123,17 @@ class HiLo(Mode):
 
     def gamble_lose(self):
         self.machine.events.post('hilo_lose')
+        
+        self.lose = 1 # needed a way to decide if win/lose for scoring
         self.delay.add(2000, self.end)
 
     def end(self, **kwargs):
         points = self.score_values[self.current_round][0]
+        if self.lose == 1:
+            points = 0
         self.machine.events.post('hilo_total', score=points)
         self.player.score += points
-        self.delay.add(2000, self.stop)
+        self.machine.events.post('hilo_done')
 
     def get_card(self):
         card = choice(self.deck)
