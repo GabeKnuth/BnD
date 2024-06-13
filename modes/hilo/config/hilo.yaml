@@ -55,7 +55,7 @@ event_player:
 
 sound_pools:
   hilo_gamble_or_cash_out_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_gamble_or_cash_out1 # Whatcha Thinkin?
@@ -63,7 +63,7 @@ sound_pools:
       - hilo_gamble_or_cash_out3 # Feelin' Lucky?
 
   hilo_higher_lower_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_higher_lower1 # Higher or lower
@@ -71,7 +71,7 @@ sound_pools:
       - hilo_higher_lower3 # Up or down?
 
   hilo_win_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_win1 # Got me that time
@@ -80,7 +80,7 @@ sound_pools:
       - hilo_win4 # Damn, you win.
   
   hilo_lose_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_lose1 # Uh huh. I win this round
@@ -89,7 +89,7 @@ sound_pools:
       - hilo_lose4 # You can come back another time (unless you know what's good for ya)
 
   hilo_higher_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_higher1 # Let's see higher
@@ -97,7 +97,7 @@ sound_pools:
       - hilo_higher3 # You want higher? Done.
 
   hilo_lower_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_lower1 # Let's see lower
@@ -105,7 +105,7 @@ sound_pools:
       - hilo_lower3 # You want lower? Ok I guess.
 
   hilo_gamble_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_gamble1 # Hey I like you're style
@@ -113,7 +113,7 @@ sound_pools:
       - hilo_gamble3 # I hope you know what you're doin
 
   hilo_cash_out_pool:
-    type: random
+    type: random_force_all
     track: voice
     sounds:
       - hilo_cash_out1 # Callin it a day, huh?
@@ -153,45 +153,39 @@ sound_player:
     hilo_you_ready:
       action: play
 
+  play_hilo_higher_lower_sound:
+    hilo_higher_lower_pool:
+      action: play
+
   hilo_show_card:
     hilo_gamble_or_cash_out_pool:
       action: play
-  hilo_gamble:
-    hilo_gamble_pool:
-      action: play
-  hilo_cash_out:
+
+  play_hilo_cash_out_sound:
     hilo_cash_out_pool:
       action: play
-  
 
-
-
-  hilo_show_gamble_slide:
-    hilo_higher_lower_pool:
-      action: play
-  hilo_guess_higher:
-    hilo_higher_pool:
-      action: play
-  hilo_guess_lower:
+  play_hilo_guess_lower_sound:
     hilo_lower_pool:
       action: play
+    
+  play_hilo_gamble_sound:
+    hilo_gamble_pool:
+      action: play
+  
+  play_hilo_guess_higher_sound:
+    hilo_higher_pool:
+      action: play
 
-  hilo_win:
+  play_hilo_win_sound:
     hilo_win_pool:
       action: play
-    
-  hilo_lose:
+
+  play_hilo_lose_sound:
     hilo_lose_pool:
       action: play
 
-  hilo_total:
-    hilo_cash_out_pool:
-      action: play
-
-  # hilo_gamble:
-  #   hilo_gamble:
-  #     action: play
-
+  
 
 #                      88           88                                    
 #                      ""           88                             ,d     
