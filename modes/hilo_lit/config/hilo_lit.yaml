@@ -38,7 +38,7 @@ show_player:
 # to be in sync, but they should be close.
 sound_player:
   mode_hilo_lit_started:
-    shuffle:
+    hilo_lets_play:
       action: play
       loops: 0
 

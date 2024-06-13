@@ -2,6 +2,7 @@
 #config_version=4 # Left for reference. Did NOT double check
 mode:
   start_events: start_hilo
+  stop_events: stop_hilo
   priority: 1000
   code: hilo.HiLo
 
@@ -48,6 +49,79 @@ event_player:
     - fade_in_base_music
     - release_left_vuk_ball
     - disable_base_left_vuk_hold
+  hilo_done:
+    - stop_hilo|2s
+
+
+sound_pools:
+  hilo_gamble_or_cash_out_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_gamble_or_cash_out1 # Whatcha Thinkin?
+      - hilo_gamble_or_cash_out2 # What's it gonna be?
+      - hilo_gamble_or_cash_out3 # Feelin' Lucky?
+
+  hilo_higher_lower_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_higher_lower1 # Higher or lower
+      - hilo_higher_lower2 # You goin high or low?
+      - hilo_higher_lower3 # Up or down?
+
+  hilo_win_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_win1 # Got me that time
+      - hilo_win2 # Hey look at you
+      - hilo_win3 # Are you gonna let me win once in a while?
+      - hilo_win4 # Damn, you win.
+  
+  hilo_lose_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_lose1 # Uh huh. I win this round
+      - hilo_lose2 # Better luck next time
+      - hilo_lose3 # Gotcha that time
+      - hilo_lose4 # You can come back another time (unless you know what's good for ya)
+
+  hilo_higher_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_higher1 # Let's see higher
+      - hilo_higher2 # Ok higher it is buddy
+      - hilo_higher3 # You want higher? Done.
+
+  hilo_lower_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_lower1 # Let's see lower
+      - hilo_lower2 # Come on lower
+      - hilo_lower3 # You want lower? Ok I guess.
+
+  hilo_gamble_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_gamble1 # Hey I like you're style
+      - hilo_gamble2 # Let's do this
+      - hilo_gamble3 # I hope you know what you're doin
+
+  hilo_cash_out_pool:
+    type: random
+    track: voice
+    sounds:
+      - hilo_cash_out1 # Callin it a day, huh?
+      - hilo_cash_out2 # See you again soon!
+      - hilo_cash_out3 # That's all for now
+
+  
+
 
 #                                                             88     
 #                                                             88     
@@ -74,6 +148,49 @@ sound_player:
       action: play
       loops: -1
       mode_end_action: stop
+  
+  slide_hilo_intro_active:
+    hilo_you_ready:
+      action: play
+
+  hilo_show_card:
+    hilo_gamble_or_cash_out_pool:
+      action: play
+  hilo_gamble:
+    hilo_gamble_pool:
+      action: play
+  hilo_cash_out:
+    hilo_cash_out_pool:
+      action: play
+  
+
+
+
+  hilo_show_gamble_slide:
+    hilo_higher_lower_pool:
+      action: play
+  hilo_guess_higher:
+    hilo_higher_pool:
+      action: play
+  hilo_guess_lower:
+    hilo_lower_pool:
+      action: play
+
+  hilo_win:
+    hilo_win_pool:
+      action: play
+    
+  hilo_lose:
+    hilo_lose_pool:
+      action: play
+
+  hilo_total:
+    hilo_cash_out_pool:
+      action: play
+
+  # hilo_gamble:
+  #   hilo_gamble:
+  #     action: play
 
 
 #                      88           88                                    

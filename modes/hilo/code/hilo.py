@@ -58,25 +58,30 @@ class HiLo(Mode):
     def gamble(self, **kwargs):
         self.state = 'gamble'
         self.machine.events.post('hilo_gamble')
+        self.machine.events.post('play_hilo_gamble_sound')
         self.delay.add(2000, self.show_gamble_slide, 'hilo')
 
     def show_gamble_slide(self, **kwargs):
         self.machine.events.post('hilo_show_gamble_slide')
         self.machine.events.post('show_player_card',
                                  image=self.current_card.asset)
+        self.machine.events.post('play_show_player_card_sound')
 
     def cash_out(self, **kwargs):
         points = self.score_values[self.current_round][0]
         self.machine.events.post('hilo_cash_out', points=points)
+        self.machine.events.post('play_hilo_cash_out_sound')
         self.end()
 
     def guess_higher(self, **kwargs):
         self.machine.events.post('hilo_guess_higher')
         self.delay.add(2000, self.show_next_card, bet='higher')
+        self.machine.events.post('play_hilo_guess_higher_sound')
 
     def guess_lower(self, **kwargs):
         self.machine.events.post('hilo_guess_lower')
         self.delay.add(2000, self.show_next_card, bet='lower')
+        self.machine.events.post('play_hilo_guess_lower_sound')
 
     def show_next_card(self, bet, **kwargs):
         self.next_card = self.get_card()
@@ -121,7 +126,7 @@ class HiLo(Mode):
         points = self.score_values[self.current_round][0]
         self.machine.events.post('hilo_total', score=points)
         self.player.score += points
-        self.delay.add(2000, self.stop)
+        self.machine.events.post('hilo_done')
 
     def get_card(self):
         card = choice(self.deck)
