@@ -201,7 +201,7 @@ sound_pools:
 timers:
   video_timer:
     start_value: 0
-    end_value: 480
+    end_value: 600
     direction: up
     tick_interval: 1s
     start_running: true
@@ -209,6 +209,100 @@ timers:
     control_events:
       - event: flipper_cancel
         action: stop
+
+random_event_player:
+  timer_video_timer_complete:
+    force_all: true
+    events:
+      - play_jb_hurry_up_foggy_mountain
+      - play_how_long_gone
+      - play_htmb_miss_honky_tonk
+      - play_full_stand_by_your_man
+      - play_full_bed_of_roses
+      - play_full_achy_breaky
+      - play_full_convoy
+      - play_full_every_little_thing
+      - play_full_boots_are_made_for_walkin
+      - play_full_hello_darlin
+      - play_full_louisiana_woman
+      - play_full_rhinestone_cowboy
+      - play_my_maria
+      - play_jb_hard_workin_man
+      - play_mb_beer_thirty
+      - play_wt_boot_scoot
+      - play_pp_honky_tonk_stomp
+      - play_mr_bed
+      - play_ma_12many_full
+      - play_qmb_put_a_girl_in_it
+      
+
+      
+
+show_player:
+  play_jb_hurry_up_foggy_mountain:
+    jb_hurry_up_foggy_mountain:
+      loops: 0
+  play_how_long_gone: 
+    how_long_gone:
+      loops: 0
+  play_htmb_miss_honky_tonk:  
+    htmb_miss_honky_tonk:
+      loops: 0
+  play_full_stand_by_your_man: 
+    full_stand_by_your_man:
+      loops: 0
+  play_full_bed_of_roses: 
+    full_bed_of_roses:
+      loops: 0
+  play_full_achy_breaky:  
+    full_achy_breaky:
+      loops: 0
+  play_full_convoy:  
+    full_convoy:
+      loops: 0
+  play_full_every_little_thing:  
+    full_every_little_thing:
+      loops: 0
+  play_full_boots_are_made_for_walkin: 
+    full_boots_are_made_for_walkin:
+      loops: 0
+  play_full_hello_darlin:  
+    full_hello_darlin:
+      loops: 0
+  play_full_louisiana_woman:  
+    full_louisiana_woman:
+      loops: 0
+  play_full_rhinestone_cowboy:  
+    full_rhinestone_cowboy:
+      loops: 0
+  play_my_maria: 
+    ma_my_maria:
+      loops: 0
+  play_jb_hard_workin_man:  
+    jb_hard_workin_man:
+      loops: 0
+  play_mb_beer_thirty:  
+    mb_beer_thirty:
+      loops: 0
+  play_wt_boot_scoot: 
+    wt_boot_scoot:
+      loops: 0
+  play_pp_honky_tonk_stomp: 
+    pp_honky_tonk_stomp:
+      loops: 0
+  play_mr_bed:  
+    mr_bed:
+      loops: 0
+  play_ma_12many_full: 
+    ma_12many_full:
+      loops: 0
+  play_qmb_put_a_girl_in_it: 
+    qmb_put_a_girl_in_it:
+      loops: 0
+    
+
+    
+    
 
 #             88                                                       
 #             88                                                       

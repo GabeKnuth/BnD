@@ -53,6 +53,18 @@ event_player:
     - stop_hilo|2s
 
 
+timers:
+  time_out:
+    start_value: 10
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_hilo_started
+      - action: restart
+        event: reset_timer
+    
+
 sound_pools:
   hilo_gamble_or_cash_out_pool:
     type: random_force_all
