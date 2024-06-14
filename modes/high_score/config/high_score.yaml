@@ -22,6 +22,9 @@ high_score:
     quarters:
       - JON: 5
 
+
+
+
 #                                                             88     
 #                                                             88     
 #                                                             88     
@@ -82,3 +85,100 @@ sound_pools:
       - hs_amazing
       - hs_congratulations
       - hs_nice_work
+
+
+slide_player:
+  _overwrite: True
+  high_score_enter_initials: 
+    high_score_enter_initials:
+      target: dmd
+      action: play 
+
+
+  high_score_award_display: 
+    high_score_award_display:
+      target: dmd
+      action: play 
+
+slides:
+  _overwrite: True
+  high_score_enter_initials:
+  #PLAYER X #
+  - type: text
+    text: PLAYER (player_num)
+    color: white
+    x: center  
+    y: top
+    anchor_y: top
+    style: medium
+  # AWARD
+  - type: text
+    text: (award)
+    color: gold
+    x: center
+    y: top-8
+    anchor_y: top
+    style: small
+
+  #INPUT
+  - type: text_input
+    key: high_score   
+    max_chars: 3
+    x: center          
+    y: middle-6
+    shift_left_event: s_leftflipper_active
+    shift_right_event: s_rightflipper_active  #sw_lower_right_Flipper
+    select_event: s_start_active  #sw_start
+    color: red
+    
+  - type: text
+    text: ""
+    key: high_score   
+    x: center
+    y: middle-6
+    color: white
+    animations:
+      show_slide:
+      - property: opacity
+        value: 1
+        duration: 0.3s
+        easing: in_out_quint
+      - property: opacity
+        value: 0
+        duration: 0.3s
+        repeat: true
+        easing: in_out_quint
+        
+  high_score_award_display:
+  - type: text
+    text: (award) 
+    anchor_x: center
+    x: center
+    anchor_y: top
+    y: top+4
+    color: red
+    style: huge 
+  - type: text
+    text: (award) 
+    anchor_x: center
+    x: center+1
+    anchor_y: top
+    y: top+3
+    color: white 
+    style: huge 
+  - type: text
+    text: (player_name)
+    color: white
+    style: huge
+    anchor_y: bottom
+    anchor_x: middle
+    x: center
+    y: bottom-3
+  - type: text
+    text: (player_name)
+    color: red
+    style: huge
+    anchor_y: bottom
+    anchor_x: middle
+    x: center+1
+    y: bottom-4
