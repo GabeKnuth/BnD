@@ -24,6 +24,7 @@ class HiLo(Mode):
         self.add_mode_event_handler('sw_left_flipper', self.left_flipper)
         self.add_mode_event_handler('sw_right_flipper', self.right_flipper)
         self.add_mode_event_handler('flipper_cancel', self.both_flippers)
+        self.add_mode_event_handler('timer_time_out_complete', self.gamble_lose)
 
     def both_flippers(self, **kwargs):
         if self.state == 'intro':
@@ -33,20 +34,25 @@ class HiLo(Mode):
         if self.state == 'show':
             self.cash_out()
             self.machine.events.post('play_hilo_cash_out_sound')
+            self.machine.events.post('reset_timer')
         elif self.state == 'gamble':
             self.guess_lower()
             self.machine.events.post('play_hilo_guess_lower_sound')
+            self.machine.events.post('reset_timer')
 
     def right_flipper(self, **kwargs):
         if self.state == 'show':
             self.gamble()
             self.machine.events.post('play_hilo_gamble_sound')
+            self.machine.events.post('reset_timer')
         elif self.state == 'gamble':
             self.guess_higher()
             self.machine.events.post('play_hilo_guess_higher_sound')
+            self.machine.events.post('reset_timer')
 
     def show_card(self, **kwargs):
         self.state = 'show'
+        self.machine.events.post('reset_timer')
 
         if self.next_card:
             self.current_card = self.next_card
@@ -62,10 +68,12 @@ class HiLo(Mode):
 
     def gamble(self, **kwargs):
         self.state = 'gamble'
+        self.machine.events.post('reset_timer')
         self.machine.events.post('hilo_gamble')
         self.delay.add(2000, self.show_gamble_slide, 'hilo')
 
     def show_gamble_slide(self, **kwargs):
+        self.machine.events.post('reset_timer')
         self.machine.events.post('hilo_show_gamble_slide')
         self.machine.events.post('play_hilo_higher_lower_sound')
         self.machine.events.post('show_player_card',
@@ -87,6 +95,7 @@ class HiLo(Mode):
 
     def show_next_card(self, bet, **kwargs):
         self.next_card = self.get_card()
+        self.machine.events.post('reset_timer')
         # make sure the next card is not a tie, just to keep things simple
         while self.next_card.value == self.current_card.value:
             self.next_card = self.get_card()
@@ -99,6 +108,7 @@ class HiLo(Mode):
         self.delay.add(2000, self.gamble_result, bet=bet)
 
     def gamble_result(self, bet, **kwargs):
+        self.machine.events.post('reset_timer')
         if ((bet == 'higher' and
                 self.next_card.value > self.current_card.value) or
                 (bet == 'lower' and
@@ -111,6 +121,7 @@ class HiLo(Mode):
 
     def gamble_win(self):
         self.current_round += 1
+        self.machine.events.post('reset_timer')
         if self.current_round < self.max_rounds:
             self.machine.events.post('hilo_win',
                 points=self.score_values[self.current_round][0])
@@ -121,7 +132,7 @@ class HiLo(Mode):
                 points=self.score_values[self.current_round][0])
             self.delay.add(2000, self.end)
 
-    def gamble_lose(self):
+    def gamble_lose(self, **kwargs):
         self.machine.events.post('hilo_lose')
         
         self.lose = 1 # needed a way to decide if win/lose for scoring

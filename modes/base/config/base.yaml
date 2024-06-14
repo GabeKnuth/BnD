@@ -205,7 +205,14 @@ sound_pools:
       - jackpot5
       - jackpot6
       - jackpot7
-
+  ball_save_pool:
+    type: random
+    track: voice
+    sounds:
+      - ball_save1
+      - ball_save2
+      - ball_save3
+      - ball_save4
       
 
 
@@ -228,6 +235,10 @@ sound_pools:
 #  88                              d8' 
 
 sound_player:
+  ball_save_main_saving_ball:
+    ball_save_pool:
+      action: play
+      loops: 0
   light_poker_extra_ball: 
     get_the_extra_ball:
       action: play
@@ -766,7 +777,7 @@ ball_saves:
     hurry_up_time: 2s
     grace_period: 2s
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
-    timer_start_events: playfield_active
+    timer_start_events: succesful_eject
   mystery:
     active_time: 15s
     hurry_up_time: 2s
@@ -774,8 +785,8 @@ ball_saves:
     enable_events: start_mys_ball_saver
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
     timer_start_events: balldevice_bd_lower_vuk_ball_eject_success
-  vuk_eject:
-    active_time: 1s
+  vuk_eject: # Call it a phantom...just sometimes the ball drains right out of the vuk...and that sucks.
+    active_time: 1.5s
     enable_events: balldevice_bd_lower_vuk_ejecting_ball
     early_ball_save_events: s_drain_active # I want this instant, not when the ball device thinks it's got a ball
     disable_events: s_leftsling_active, s_rightsling_active
@@ -821,10 +832,10 @@ shows:
   #           end_behavior: stop
   #         target: dmd
   flash_once:
-    - duration: 200ms
+    - duration: 100ms
       lights:
         (led): on
-    - duration: 200ms
+    - duration: 100ms
       lights:
         (led): off
   flash_fast:
@@ -835,11 +846,11 @@ shows:
       lights:
         (led): off
   flash_jukebox:
-    - duration: 125ms
+    - duration: 100ms
       lights:
         l_jukebox_left: on
         l_jukebox_right: off
-    - duration: 125ms
+    - duration: 100ms
       lights:
         l_jukebox_left: off
         l_jukebox_right: on
@@ -950,6 +961,7 @@ shows:
 show_player:
   light_poker_extra_ball:
     rainbow:
+      sync_ms: 100
       show_tokens:
         led: l_extra_ball
   #   poker_extra_ball:
@@ -981,12 +993,14 @@ show_player:
   eject_flash:
     eject_alert:
       loops: 0
+      sync_ms: 100
       show_tokens:
         led: l_lower_left_flasher
       priority: 1000000
   top_eject_flash:
     top_eject_alert:
       loops: 0
+      sync_ms: 100
       show_tokens:
         led: l_right_ramp_flasher
       priority: 1000000
@@ -1002,18 +1016,21 @@ show_player:
   s_leftpop_active:
     flash_once:
       loops: 0
+      sync_ms: 100
       show_tokens:
         led: l_left_pop
       priority: 1000000
   s_bottompop_active:
     flash_once:
       loops: 0
+      sync_ms: 100
       show_tokens:
         led: l_bottom_pop
       priority: 1000000
   s_rightpop_active:
     flash_once:
       loops: 0
+      sync_ms: 100
       show_tokens:
         led: l_right_pop
       priority: 1000000
@@ -1053,12 +1070,14 @@ show_player:
       show_tokens:
         lights: l_shoot, l_again
       key: ball_save
+      sync_ms: 100
   ball_save_main_hurry_up:
     flash:
       show_tokens:
         lights: l_shoot, l_again
       key: ball_save
       speed: 2
+      sync_ms: 0
   ball_save_main_disabled:
       ball_save: stop
   ball_save_mystery_enabled:
@@ -1066,12 +1085,14 @@ show_player:
       show_tokens:
         lights: l_shoot, l_again
       key: ball_save
+      sync_ms: 100
   ball_save_mystery_hurry_up:
     flash:
       show_tokens:
         lights: l_shoot, l_again
       key: ball_save
       speed: 2
+      sync_ms: 0
   ball_save_mystery_disabled:
       ball_save: stop
 

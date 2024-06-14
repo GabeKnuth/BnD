@@ -22,6 +22,7 @@ achievements:
   world_tour:
     show_tokens:
       lights: l_world_tour
+    sync_ms: 100
     show_when_selected: flash
     show_when_started: flash
     show_when_completed: on
@@ -36,6 +37,7 @@ achievements:
     show_tokens:
       lights: l_money_bags
     show_when_selected: flash
+    sync_ms: 100
     show_when_started: flash
     show_when_completed: on
     events_when_started: start_money_bags_mode, mission_started
@@ -49,6 +51,7 @@ achievements:
     show_tokens:
       lights: l_music_awards
     show_when_selected: flash
+    sync_ms: 100
     show_when_started: flash
     show_when_completed: on
     events_when_started: start_music_awards_mode, mission_started
@@ -62,6 +65,7 @@ achievements:
     show_tokens:
       lights: l_jukebox_insert
     show_when_selected: flash
+    sync_ms: 100
     show_when_started: flash
     show_when_completed: on
     events_when_started: start_jukebox_mode, mission_started
@@ -75,6 +79,7 @@ achievements:
     show_tokens:
       lights: l_play_poker
     show_when_selected: flash
+    sync_ms: 100
     show_when_started: flash
     show_when_completed: on
     events_when_started: start_play_poker_mode, mission_started
@@ -114,6 +119,7 @@ achievement_groups:
       lights:
         l_begin_round
     show_when_enabled: flash
+    sync_ms: 100
     enable_while_no_achievement_started: false
     events_when_all_completed: light_metal_rodeo
 
