@@ -2,7 +2,6 @@ $$$$$$$$$
 $$ Shorter Term things
 $$$$$$$$$
 
-
 Ball save callout
 Album difficulty should increase. Silver & Gold is dropping everything once. Plat = 3 times, Double = 4 times, Quint - 5
 before getting album bumped up
@@ -15,7 +14,14 @@ Can we fix attract finally to play a random video?
 
 Also, JB 2 ball mode ended on a drain, but a ball was ejected right before it ended. Check order of events.
 
+Can we fix attract finally to play a random video?
+
+Also, JB 2 ball mode ended on a drain, but a ball was ejected right before it ended. Check order of events.
+
 Hi/Lo needs a timeout to cash out, too
+
+
+
 
 #########
 ## These are big picture things, for the most part. None of this is required to get the game running. 
