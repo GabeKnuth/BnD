@@ -98,6 +98,12 @@ event_player:
     - release_left_vuk_ball
   
 
+
+  
+##### TESTING
+  hs_test:
+    - end_game|1s
+
 #                                                88                                   
 #                                                88                                   
 #                                                88                                   
@@ -500,6 +506,10 @@ variable_player:
       action: set
     score: count * 75000 # same math as above, but it was doubling score if I tried to use ramp_loop_score
 
+
+####### TESTING
+  hs_test:
+    score: 55000000
 
 #   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
 #  a8"    `Y88  88       88  a8P_____88  88       88  a8P_____88     

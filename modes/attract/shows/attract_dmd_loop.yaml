@@ -9,8 +9,8 @@
       min_digits: 2
       style: small 
       anchor_y: top
-      anchor_x: right
-      x: right-80
+      anchor_x: left
+      x: left+1
       y: top-1
     - type: text
       text: (machine|player2_score)
@@ -27,8 +27,8 @@
       min_digits: 2
       style: small 
       anchor_y: bottom
-      anchor_x: right
-      x: right-80
+      anchor_x: left
+      x: left+1
       y: bottom+10
     - type: text
       text: (machine|player4_score)

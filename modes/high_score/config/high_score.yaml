@@ -1,5 +1,4 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
 
 high_score:
   _overwrite: True
@@ -23,31 +22,8 @@ high_score:
     quarters:
       - JON: 5
 
-#                                                             88  
-#                                                             88  
-#                                                             88  
-#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88  
-#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88  
-#   `"Y8ba,   8b       d8  88       88  8888     88  8b       88  
-#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  8888     88  "8a,   ,d88  
-#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  8888     88   `"8bbdP"Y8  
-#
-#  8b,dPPYba,    ,adPPYba,    ,adPPYba,   88  ,adPPYba,           
-#  88P'    "8a  a8"     "8a  a8"     "8a  88  I8[    ""           
-#  88       d8  8b       d8  8b       d8  88   `"Y8ba,            
-#  88b,   ,a8"  "8a,   ,a8"  "8a,   ,a8"  88  aa    ]8I           
-#  88`YbbdP"'    `"YbbdP"'    `"YbbdP"'   88  `"YbbdP"'           
-#  88                                                             
-#  88
 
-sound_pools:
-  congrats:
-    type: random
-    track: voice
-    sounds:
-      - hs_congratulations
-      - hs_amazing
-      - hs_nice_work
+
 
 #                                                             88     
 #                                                             88     
@@ -69,13 +45,140 @@ sound_pools:
 #  88                              d8'
 
 sound_player:
+  slide_high_score_enter_initials_active:
+    high_score_pool:
+      action: play
   mode_high_score_started:
     bonus_bed:
       action: play
       loops: -1
-    congrats:
-      action: play
-      loops: 0
   mode_high_score_stopping:
     bonus_bed:
       action: stop
+
+#                                                             88  
+#                                                             88  
+#                                                             88  
+#  ,adPPYba,   ,adPPYba,   88       88  8b,dPPYba,    ,adPPYb,88  
+#  I8[    ""  a8"     "8a  88       88  88P'   `"8a  a8"    `Y88  
+#   `"Y8ba,   8b       d8  88       88  8888     88  8b       88  
+#  aa    ]8I  "8a,   ,a8"  "8a,   ,a88  8888     88  "8a,   ,d88  
+#  `"YbbdP"'   `"YbbdP"'    `"YbbdP'Y8  8888     88   `"8bbdP"Y8  
+#
+#  8b,dPPYba,    ,adPPYba,    ,adPPYba,   88  ,adPPYba,           
+#  88P'    "8a  a8"     "8a  a8"     "8a  88  I8[    ""           
+#  88       d8  8b       d8  8b       d8  88   `"Y8ba,            
+#  88b,   ,a8"  "8a,   ,a8"  "8a,   ,a8"  88  aa    ]8I           
+#  88`YbbdP"'    `"YbbdP"'    `"YbbdP"'   88  `"YbbdP"'           
+#  88                                                             
+#  88 
+
+sound_pools:
+  high_score_pool:
+    type: random_force_all
+    track: voice
+    sounds:
+      - hs_great_score1
+      - hs_great_score2
+      - hs_great_score3
+      - hs_great_score4
+      - hs_amazing
+      - hs_congratulations
+      - hs_nice_work
+
+
+slide_player:
+  _overwrite: True
+  high_score_enter_initials: 
+    high_score_enter_initials:
+      target: dmd
+      action: play 
+
+
+  high_score_award_display: 
+    high_score_award_display:
+      target: dmd
+      action: play 
+
+slides:
+  _overwrite: True
+  high_score_enter_initials:
+  #PLAYER X #
+  - type: text
+    text: PLAYER (player_num)
+    color: white
+    x: center  
+    y: top
+    anchor_y: top
+    style: medium
+  # AWARD
+  - type: text
+    text: (award)
+    color: gold
+    x: center
+    y: top-8
+    anchor_y: top
+    style: small
+
+  #INPUT
+  - type: text_input
+    key: high_score   
+    max_chars: 3
+    x: center          
+    y: middle-6
+    shift_left_event: s_leftflipper_active
+    shift_right_event: s_rightflipper_active  #sw_lower_right_Flipper
+    select_event: s_start_active  #sw_start
+    color: red
+    
+  - type: text
+    text: ""
+    key: high_score   
+    x: center
+    y: middle-6
+    color: white
+    animations:
+      show_slide:
+      - property: opacity
+        value: 1
+        duration: 0.3s
+        easing: in_out_quint
+      - property: opacity
+        value: 0
+        duration: 0.3s
+        repeat: true
+        easing: in_out_quint
+        
+  high_score_award_display:
+  - type: text
+    text: (award) 
+    anchor_x: center
+    x: center
+    anchor_y: top
+    y: top+4
+    color: red
+    style: huge 
+  - type: text
+    text: (award) 
+    anchor_x: center
+    x: center+1
+    anchor_y: top
+    y: top+3
+    color: white 
+    style: huge 
+  - type: text
+    text: (player_name)
+    color: white
+    style: huge
+    anchor_y: bottom
+    anchor_x: middle
+    x: center
+    y: bottom-3
+  - type: text
+    text: (player_name)
+    color: red
+    style: huge
+    anchor_y: bottom
+    anchor_x: middle
+    x: center+1
+    y: bottom-4
