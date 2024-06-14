@@ -1646,7 +1646,7 @@ keyboard:
   e:
     event: weak_flippers_disabled
   "`":
-    event: light_hilo
+    event: test_accelerate
 
 
 #               88                                                   

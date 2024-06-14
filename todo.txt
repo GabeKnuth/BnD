@@ -7,10 +7,16 @@ Album difficulty should increase. Silver & Gold is dropping everything once. Pla
 before getting album bumped up
 
 Selected mission flashing is really slow. So is the fire whoosh flashing thing. And shoot again. Speed up that show.
+        Thought I did that, but still seems slow. Will have to check on real game.
 
 Can we fix attract finally to play a random video?
+        try video_pool? Need to get audio to work, and to have events that turn back on normal attrac mode music.
+        https://github.com/missionpinball/mpf-mc/blob/0.56.x/mpfmc/assets/video.py
 
 Also, JB 2 ball mode ended on a drain, but a ball was ejected right before it ended. Check order of events.
+
+(If I get caught up thinking that I couldn't start a game after entering a high score, remember that it was because I
+hot-wired the game to end and the machine was collecting balls. It's not a real problem.)
 
 
 #########
