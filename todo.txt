@@ -6,7 +6,15 @@ $$$$$$$$$
 Selected mission flashing is really slow. So is the fire whoosh flashing thing. And shoot again. Speed up that show.
         Thought I did that, but still seems slow. Will have to check on real game.
 
-Also, JB 2 ball mode ended on a drain, but a ball was ejected right before it ended. Check order of events.
+Also, JB 2 ball mode ended on a drain, but a ball was ejected right before it actually ended. Check order of events.
+
+
+
+##### Things to do before sending this to Mike
+
+Change filesystem to Read Only
+Auto-start script so game just launches
+Tie up all cables/wires
 
 
 
@@ -15,8 +23,11 @@ Also, JB 2 ball mode ended on a drain, but a ball was ejected right before it en
 #########
 
 - The return lanes have a "Spot Quarter" lamp. These should rotate with slings/pops/kicking targets between the
-lamps, but I think they shouldn't always be on. Maybe they "rotate" like: all off, left, all off, right. If hit when
-lit, they complete one of the lit quarters.
+lamps, but I think they shouldn't always be on. 
+        Let's do this: Every 10 hits on either kicking target lights "Spot Quarter," and then the lights move from side
+        to side on sw_toggle. After you collect that, or the ball ends, we wait for another 10 shots on kicking targets.
+        This also can't happen during a mission, since getting a quarter could result in a multiball.
+        It also can't happen in a multiball.
 
 - Also the top kicker, Manager's Choice. That's something right now, but I think it should be more like manual mission
 selection at the start of a ball in STTNG. Flipper-based selection of the mission, rather than random.
