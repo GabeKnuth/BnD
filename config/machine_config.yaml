@@ -94,6 +94,8 @@ sound_system:
       simultaneous_sounds: 1
       volume: 0.0
       
+
+
 #                                                             88             
 #                                                             88             
 #                                                             88             
@@ -291,104 +293,104 @@ switches:
     number: 16
   s_rightbankbottom:
     number: 17
-    tags: skill_shot_fail, quarter, qmb, playfield_active
+    tags: skill_shot_fail, quarter, qmb, playfield_active, start_main_ball_save
   s_trough_enter:
     number: 18
   s_rightoutlane:
     number: 19
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_leftoutlane:
     number: 20
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_drain:
     number: 21
     tags: drain
   s_leftinlane:
     number: 22
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_rightinlane:
     number: 24
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_rightsling:
     number: 25
-    tags: skill_shot_fail, toggle
+    tags: skill_shot_fail, toggle, start_main_ball_save
   s_rightbanktop:
     number: 26
-    tags: skill_shot_fail, quarter, qmb, playfield_active
+    tags: skill_shot_fail, quarter, qmb, playfield_active, start_main_ball_save
   s_toprightstandup:
     number: 27
-    tags: skill_shot_fail, quarter, qmb, playfield_active
+    tags: skill_shot_fail, quarter, qmb, playfield_active, start_main_ball_save
   s_jukeboxopto:
     number: 40
     type: NC
     ignore_window_ms: 500
-    tags: jukebox, skill_shot_fail, jukebox_hit
+    tags: jukebox, skill_shot_fail, jukebox_hit, start_main_ball_save
   s_topkickingtarget:
     number: 41
-    tags: skill_shot_fail, toggle, qmb
+    tags: skill_shot_fail, toggle, qmb, start_main_ball_save
   s_subwayopto:
     number: 42
-    tags: subway, skill_shot_fail, jukebox_hit, playfield_active
+    tags: subway, skill_shot_fail, jukebox_hit, playfield_active, start_main_ball_save
     type: NC
   s_lowervukopto:
     number: 43
     type: NC
-    tags: skill_shot_fail
+    tags: skill_shot_fail, start_main_ball_save
   s_leftsling:
     number: 44
-    tags: skill_shot_fail, toggle
+    tags: skill_shot_fail, toggle, start_main_ball_save
   s_leftrampopto:
     number: 45
     type: NC
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_bottomkickingtarget:
     number: 46
-    tags: skill_shot_fail, toggle, qmb
+    tags: skill_shot_fail, toggle, qmb, start_main_ball_save
   s_leftorbit:
     number: 47
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_droptarget1:
     number: 64
-    tags: skill_shot_fail
+    tags: skill_shot_fail, start_main_ball_save
   s_droptarget2:
     number: 65
-    tags: skill_shot_fail
+    tags: skill_shot_fail, start_main_ball_save
   s_droptarget3:
     number: 66
-    tags: skill_shot_fail
+    tags: skill_shot_fail, start_main_ball_save
   s_droptarget4:
     number: 67
-    tags: skill_shot_fail
+    tags: skill_shot_fail, start_main_ball_save
   s_droptarget5:
     number: 68
-    tags: skill_shot_fail
+    tags: skill_shot_fail, start_main_ball_save
   s_toprightvuk:
     number: 69
-    tags: skill_shot_fail
+    tags: skill_shot_fail, start_main_ball_save
   s_rightrampopto:
     number: 72
     type: NC
-    tags: playfield_active, playfield_active
+    tags: playfield_active, start_main_ball_save
   s_rightlane:
     number: 73
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_leftlane:
     number: 74
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_topkicker:
     number: 75
   s_spinner:
     number: 76
-    tags: skill_shot_fail, playfield_active
+    tags: skill_shot_fail, playfield_active, start_main_ball_save
   s_leftpop:
     number: 77
-    tags: skill_shot_fail, toggle
+    tags: skill_shot_fail, toggle, start_main_ball_save
   s_rightpop:
     number: 78
-    tags: skill_shot_fail, toggle
+    tags: skill_shot_fail, toggle, start_main_ball_save
   s_bottompop:
     number: 79
-    tags: skill_shot_fail, toggle
+    tags: skill_shot_fail, toggle, start_main_ball_save
 
 #                           88  88             
 #                           ""  88             
@@ -1646,7 +1648,7 @@ keyboard:
   e:
     event: weak_flippers_disabled
   "`":
-    event: test_accelerate
+    event: hold_album_value
 
 
 #               88                                                   

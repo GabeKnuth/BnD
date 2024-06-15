@@ -104,6 +104,9 @@ event_player:
   hs_test:
     - end_game|1s
 
+
+
+
 #                                                88                                   
 #                                                88                                   
 #                                                88                                   
@@ -777,7 +780,7 @@ ball_saves:
     hurry_up_time: 2s
     grace_period: 2s
     early_ball_save_events: s_rightoutlane_active, s_leftoutlane_active
-    timer_start_events: succesful_eject
+    timer_start_events: sw_start_main_ball_save
   mystery:
     active_time: 15s
     hurry_up_time: 2s
@@ -1257,15 +1260,15 @@ extra_balls:
 
 
 light_player:
-  num_albums{count == 1}:
+  num_albums{count >= 1}:
     l_silver: on
-  num_albums{count == 2}:
+  num_albums{count >= 2}:
     l_gold: on
-  num_albums{count == 3}:
+  num_albums{count >= 4}:
     l_single_platinum: on
-  num_albums{count == 4}:
+  num_albums{count >= 7}:
     l_double_platinum: on
-  num_albums{count == 5}:
+  num_albums{count >= 12}:
     l_quintuple_platinum: on
 
   reset_album_lights:

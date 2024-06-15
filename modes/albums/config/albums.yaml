@@ -20,6 +20,7 @@ counters:
     count_events: drop_target_bank_drop_targets_down
     events_when_hit: num_albums
     persist_state: false
+    count_complete_value: 20
     starting_count: current_player.temp_num_albums
     
 #                                                      ,d            
@@ -40,8 +41,8 @@ counters:
 #  88                              d8'
 
 
-event_player:
-  player_num_albums: show_album_slide|.1s
+# event_player:
+#   player_num_albums: show_album_slide|.1s
 
 #                                       88              88           88              
 #                                       ""              88           88              
@@ -79,6 +80,12 @@ variable_player:
     temp_num_albums: # Used to help preserve album status when multiplier is held. See base mode code.
       int: 1
       action: set
+    temp_next_album_name:
+      string: GOLD
+      action: set
+    temp_next_album_num_albums_count:
+      int: 2
+      action: set
   
   
 
@@ -96,9 +103,15 @@ variable_player:
     temp_num_albums:
       int: 2
       action: set
+    temp_next_album_name:
+      string: PLATINUM
+      action: set
+    temp_next_album_num_albums_count:
+      int: 4
+      action: set
 
 
-  num_albums{count==3}:
+  num_albums{count==4}:
     album_value:
       int: 100000
       action: set
@@ -110,10 +123,16 @@ variable_player:
       int: 4
       action: set
     temp_num_albums:
-      int: 3
+      int: 4
+      action: set
+    temp_next_album_name:
+      string: DOUBLE PLATINUM
+      action: set
+    temp_next_album_num_albums_count:
+      int: 7
       action: set
 
-  num_albums{count==4}:
+  num_albums{count==7}:
     album_value:
       int: 200000
       action: set
@@ -125,11 +144,16 @@ variable_player:
       int: 5
       action: set
     temp_num_albums:
-      int: 4
+      int: 7
+      action: set
+    temp_next_album_name:
+      string: QUINTUPLE PLATINUM
+      action: set
+    temp_next_album_num_albums_count:
+      int: 12
       action: set
 
-
-  num_albums{count==5}:
+  num_albums{count==12}:
     album_value:
       int: 500000
       action: set
@@ -141,11 +165,17 @@ variable_player:
       int: 6
       action: set
     temp_num_albums:
-      int: 5
+      int: 12
+      action: set
+    temp_next_album_name:
+      string: OFF THE CHARTS
+      action: set
+    temp_next_album_num_albums_count:
+      int: 20
       action: set
 
 
-  num_albums{count>=6}:  # beyond 6 we don't increase anymore
+  num_albums{count==20}:  # beyond 20 we don't increase anymore
     album_value:
       int: 2500000
       action: set
@@ -159,8 +189,20 @@ variable_player:
       int: 9
       action: set
     temp_num_albums:
-      int: 6
+      int: 20
       action: set
+
+  # To get current_num_albums_difference, need to know temp_next_album_num_albums_count and the value of the albums counter.
+
+  num_albums{count>=1}:
+    current_num_albums_count:
+      int: count
+      action: set
+    
+    current_num_albums_difference:
+      int: current_player.temp_next_album_num_albums_count - current_player.current_num_albums_count
+      action: set
+
 
 #             88  88           88                                    
 #             88  ""           88                                    
@@ -185,21 +227,39 @@ slide_player:
   num_albums{count == 1}:
     album_silver:
       expire: 2s
+      priority: 160
   num_albums{count == 2}:
       album_gold:
         expire: 2s
-  num_albums{count == 3}:
-      album_platinum:
-        expire: 2s
+        priority: 160
   num_albums{count == 4}:
       album_platinum:
         expire: 2s
-  num_albums{count == 5}:
+        priority: 160
+  num_albums{count == 7}:
       album_platinum:
         expire: 2s
-  num_albums{count >= 6}:
+        priority: 160
+  num_albums{count == 12}:
+      album_platinum:
+        expire: 2s
+        priority: 160
+  num_albums{count >= 20}:
       album_off_the_charts:
         expire: 2s
+        priority: 160
+  num_albums{count == 3}:
+    knockdowns_to_go:
+      expire: 2s
+      priority: 160
+  num_albums{current_player.current_num_albums_difference >= 2}:
+    knockdowns_to_go:
+      expire: 2s
+      priority: 158
+  num_albums{current_player.current_num_albums_difference == 1}:
+    one_knockdown_to_go:
+      expire: 2s
+      priority: 159
 
 
 #             88  88           88                         
@@ -212,6 +272,87 @@ slide_player:
 #  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
+  one_knockdown_to_go:
+    widgets:
+      - type: text
+        text: (player|current_num_albums_difference)
+        #text: 17
+        anchor_y: top
+        anchor_x: left
+        y: top-1
+        x: left+18
+        style: big
+        color: white
+      - type: text
+        text: "ALBUM UNTIL"
+        color: white
+        style: big
+        anchor_y: top
+        anchor_x: left
+        y: top-1
+        x: left+33
+      - type: text
+        text: (player|temp_next_album_name)
+        style: huge 
+        anchor_y: bottom
+        y: bottom-3
+        color: white
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 250ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 250ms
+            repeat: true
+            easing: in_quint
+      - type: rectangle
+        width: 128
+        height: 32
+        color: 444444  
+  knockdowns_to_go:
+    widgets:
+      - type: text
+        text: (player|current_num_albums_difference)
+        #text: 17
+        anchor_y: top
+        anchor_x: left
+        y: top-1
+        x: left+18
+        style: big
+        color: white
+      - type: text
+        text: "ALBUMS UNTIL"
+        color: white
+        style: big
+        anchor_y: top
+        anchor_x: left
+        y: top-1
+        x: left+33
+      - type: text
+        text: (player|temp_next_album_name)
+        style: huge 
+        anchor_y: bottom
+        y: bottom-3
+        color: white
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 250ms
+            easing: in_quint
+          - property: opacity
+            value: 1
+            duration: 250ms
+            repeat: true
+            easing: in_quint
+      - type: rectangle
+        width: 128
+        height: 32
+        color: 444444
+
   album_silver:
     widgets:
       - type: text
@@ -343,19 +484,19 @@ sound_player:
     ma_gold:
       action: play
       loops: 0
-  num_albums{count == 3}:
+  num_albums{count == 4}:
     ma_platinum:
       action: play
       loops: 0
-  num_albums{count == 4}:
+  num_albums{count == 7}:
     ma_double_platinum:
       action: play
       loops: 0
-  num_albums{count == 5}:
+  num_albums{count == 12}:
     ma_quintuple_platinum:
       action: play
       loops: 0
-  num_albums{count >= 6}:
+  num_albums{count >= 20}:
     ma_off_the_charts:
       action: play
       loops: 0
