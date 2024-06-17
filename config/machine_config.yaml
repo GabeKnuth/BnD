@@ -158,13 +158,13 @@ logging:
     # bcp_interface: full
     # bcp_server: full
 
-    event_manager: full
-    device_manager: full
-    machine_controller: full
-    platforms: full
-    service_controller: full
-    settings_controller: full
-    show_controller: full
+    event_manager: basic
+    device_manager: basic
+    machine_controller: basic
+    platforms: basic
+    service_controller: none
+    settings_controller: none
+    show_controller: basic
 
 #                                                                    
 #                                                  ,d                
