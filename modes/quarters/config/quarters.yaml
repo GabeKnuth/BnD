@@ -1,5 +1,5 @@
 #config_version=5
-#config_version=4 # Left for reference. Did NOT double check
+
 
 # todo spot quarter feature
 # QIO for quarter_25m
@@ -16,8 +16,8 @@
 #  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'
 
 mode:
-  start_events: mode_base_started, start_quarters_mode
-  stop_events: stop_quarters_mode
+  start_events: mode_base_started, start_quarters_mode, start_mission_select
+  stop_events: stop_quarters_mode, stop_mission_select
   priority: 110
 
 #                                                             88     

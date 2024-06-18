@@ -29,7 +29,7 @@ config:
 event_player:
   mode_base_started:
     - jukebox_up
-    - light_mission_select
+    # - light_mission_select
   #light_mission_select_started:
     #- light_mystery
     #- enable_managers_choice_shot # commenting out since not sure what starting this will actually do.
@@ -355,7 +355,7 @@ track_player:
   unduck_base:
     music:
       action: set_volume
-      volume: 0.8
+      volume: 0.7
       fade: 0.1s
 
 

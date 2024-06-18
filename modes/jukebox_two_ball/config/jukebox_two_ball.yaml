@@ -172,6 +172,9 @@ slide_player:
   enable_jb_super_jackpot:
     jb2b_dmd_shoot_under_stage:
       target: dmd
+    jb2b_stage_shoot_under_stage:
+      target: stage
+
       
   # double_jackpot_complete:
   #   jb2b_dmd_shoot_ramp:
@@ -221,6 +224,24 @@ sound_player:
       loops: 0
       events_when_played: duck
       events_when_stopped: unduck
+  enable_jb_super_jackpot:
+    shoot_under_the_stage:
+      action: play
+      loops: 0 
+      events_when_played: duck
+      events_when_stopped: unduck
+  enable_jb_double_jackpot:
+    shoot_the_right_ramp:
+      action: play
+      loops: 0 
+      events_when_played: duck
+      events_when_stopped: unduck
+  enable_jb_single_jackpot:
+    hit_the_jukebox:
+      action: play
+      loops: 0 
+      events_when_played: duck
+      events_when_stopped: unduck
 
 
 #             88  88           88                         
@@ -233,6 +254,48 @@ sound_player:
 #  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
+  jb2b_stage_shoot_under_stage:
+    widgets:
+      - type: image
+        image: down_arrow
+        anchor_y: bottom
+        y: bottom
+        anchor_x: right
+        x: right-70
+        animations:
+          add_to_slide:
+            - property: y
+              value: 30
+              duration: .25s
+            - property: opacity
+              value: 1
+              duration: .5s
+              timing: with_previous
+            - property: y
+              value: 0
+              duration: .25s
+              repeat: true
+            - property: opacity
+              value: 0
+              duration: .5s
+              timing: with_previous  
+      - type: text
+        text: SUPER
+        style: huge 
+        font_size: 200
+        anchor_y: top
+        anchor_x: left
+        x: left+60
+        y: top-60
+      - type: text
+        text: JACKPOT
+        style: huge 
+        font_size: 200
+        anchor_y: top
+        anchor_x: left
+        x: left
+        y: top-240
+
   jb2b_dmd_shoot_under_stage:
     widgets:
       - type: text
