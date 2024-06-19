@@ -3,7 +3,7 @@
 mode:
   priority: 500
   start_events: start_music_awards_mode
-  stop_events: music_awards_fail, mode_ma_two_ball_stopping
+  stop_events: music_awards_fail, mode_ma_two_ball_stopped
 
 #                                                      ,d            
 #                                                      88            
