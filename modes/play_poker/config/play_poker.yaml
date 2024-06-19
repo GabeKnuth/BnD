@@ -27,9 +27,8 @@
 # Royal Flush = 10,000,000, Extra Ball, Special, Complete BROOKS N DUNN (does that mode even work?)
 
 # todo: 
-# 4 of a kind slide shows on the stage, but I want it to show OVER the chips video.
-# Tried One Pair - chips video doesn't even play, but it says "one pair" and ends the mode with nothing on the stage. Maybe it ended too fast?
-# Countdown on stage needs to be removed. Tried with one pair and it didn't work. 
+# This mode is so cool, but so SLOW. How can I speed this up? Any shot besides spinner locks in the card?
+# That might work. Or a time out to lock in a card before moving on to the next one?
 
 
 
@@ -70,6 +69,7 @@ event_player:
     - fade_out_base_music
     - start_poker_music|1s
     - mission_started
+    - stop_mission_select
   mode_play_poker_stopping:
     - fade_in_base_music
     - enable_base_left_vuk_hold
