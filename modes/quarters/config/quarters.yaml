@@ -20,6 +20,17 @@ mode:
   stop_events: stop_quarters_mode, stop_mission_select
   priority: 110
 
+sound_pools:
+  quarter_award:
+    type: random
+    track: voice
+    sounds:
+      - quarter1|4
+      - quarter2|4
+      - quarter_travis|1
+      - quarter_jodee|1
+
+
 #                                                             88     
 #                                                             88     
 #                                                             88     
@@ -41,11 +52,11 @@ mode:
 
 sound_player:
   quarters_lit_hit:
-      quarter:
+      quarter_award:
           action: play
           loops: 0
   quarters_collected_hit:
-      beats:
+      quarter:
         action: play
         loops: 0
 
