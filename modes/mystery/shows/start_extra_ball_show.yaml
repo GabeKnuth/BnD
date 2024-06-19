@@ -13,4 +13,6 @@
     - award_extra_ball
 - duration: 1ms
   events:
+    - release_left_vuk_ball
+    - disable_base_left_vuk_hold
     - mys_done

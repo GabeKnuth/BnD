@@ -238,6 +238,14 @@ sound_pools:
 #  88                              d8' 
 
 sound_player:
+  top_eject_flash:
+    top_eject:
+      action: play
+      loops: 0
+  eject_flash:
+    lower_left_eject:
+      action: play
+      loops: 0
   ball_save_main_saving_ball:
     ball_save_pool:
       action: play
@@ -324,6 +332,18 @@ sound_player:
       action: stop
   slide_ramp_loop_combo_active:
     truck_horn:
+      action: play
+      loops: 0
+  play_left_orbit_sound:
+    shoot_the_left_orbit:
+      action: play
+      loops: 0
+  play_spinner_sound:
+    spinner:
+      action: play
+      loops: 0
+  play_right_ramp_sound:
+    shoot_the_right_ramp:
       action: play
       loops: 0
   
@@ -520,10 +540,6 @@ variable_player:
       action: set
     score: count * 75000 # same math as above, but it was doubling score if I tried to use ramp_loop_score
 
-
-####### TESTING
-  hs_test:
-    score: 55000000
 
 #   ,adPPYb,d8  88       88   ,adPPYba,  88       88   ,adPPYba,     
 #  a8"    `Y88  88       88  a8P_____88  88       88  a8P_____88     

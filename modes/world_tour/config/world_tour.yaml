@@ -61,6 +61,13 @@ event_player:
     - disable_base_left_vuk_hold
     - release_top_kicker_ball
     - disable_base_top_kicker_hold
+  enable_north_america:
+    - play_left_orbit_sound|1s
+  wt_north_america_complete:
+    - play_spinner_sound|1s
+  wt_europe_complete:
+    - play_right_ramp_sound|1s
+  
 
 
 #  88  88               88                                           
@@ -561,6 +568,20 @@ sound_player:
     slam:
       action: play
       loops: 0
+  wt_south_america_complete:
+    wt_south_america:
+      action: play
+      loops: 0  
+  wt_north_america_complete:
+    wt_usa:
+      action: play
+      loops: 0
+  wt_europe_complete:
+    wt_honky_tonk_in_europe:
+      action: play
+      loops: 0
+
+
   
 
 #                                                       ,d                                        
