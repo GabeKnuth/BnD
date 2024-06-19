@@ -49,10 +49,9 @@ event_player:
     - light_mission_select
   mode_quarters_multiball_stopped:
     - light_mission_select
-    
-  world_tour_fail:
+  mode_money_bags_stopped:
     - light_mission_select
-  money_bags_fail:
+  world_tour_fail:
     - light_mission_select
   music_awards_fail: #made
     - light_mission_select
@@ -243,7 +242,7 @@ sound_player:
       action: play
       loops: 0
   eject_flash:
-    lower_left_eject:
+    top_eject:
       action: play
       loops: 0
   ball_save_main_saving_ball:
@@ -346,6 +345,10 @@ sound_player:
     shoot_the_right_ramp:
       action: play
       loops: 0
+  play_left_longhorn_sound:
+    hit_left_longhorn:
+      action: play
+      loops: 0
   
   
 
@@ -421,14 +424,12 @@ timers:
 counters:
   lb_jukebox_counter:
     count_events: sw_jukebox_hit
-    events_when_hit: hit_jukebox #hook the "count" parameter of this event ?? can i do that in config?
+    events_when_hit: hit_jukebox 
     starting_count: 0
-#      count_complete_value: 100
     direction: up
-    # brian: i think there is no max to this? just keep counting
-#      events_when_complete: jukebox_maxed #maybe this lights everything for 15 secs. extra ball, super jets, special, etc...
     disable_events: mission_started, mode_jukebox_hurryup_started, block_jukebox_hits
     enable_events: mode_base_started, end_jukebox_mode, money_bags_done, music_awards_done, play_poker_done, stop_world_tour, jukebox_hurryup_done, unblock_jukebox_hits
+  
   lb_music_gate:
     count_events: s_plungerlane_inactive
     starting_count: 0
@@ -436,7 +437,6 @@ counters:
     events_when_complete: start_base_music_bed
     enable_events: mode_base_started
     disable_events: start_base_music_bed|1s
-#   started, mode_jukebox_hurryup_started, block_jukebox_hits
   
   lb_ramp_loops:
     count_events: seq_shot_right_ramp_full_loop_hit
@@ -446,7 +446,6 @@ counters:
     disable_events: timer_loop_timer_complete
     reset_events: timer_loop_timer_complete
     events_when_hit: loop_combo_happened
-    #restart_events: timer_loop_timer_complete 
     
 
 #                                       88              88           88              

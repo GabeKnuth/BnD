@@ -303,6 +303,7 @@ slides:
   qmb_stage:
     widgets:
       - type: video
+        volume: 0.4
         video: qmb_put_a_girl_in_it
         end_behavior: loop
         animations:

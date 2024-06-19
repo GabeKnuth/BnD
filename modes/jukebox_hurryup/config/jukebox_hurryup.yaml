@@ -243,6 +243,7 @@ slides:
               duration: 800ms
               repeat: true
       - type: video
+        volume: 0.4
         video: jb_hurry_up_foggy_mountain
         end_behavior: loop
         animations:

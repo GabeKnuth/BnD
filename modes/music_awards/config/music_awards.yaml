@@ -108,7 +108,7 @@ track_player:
   add_vocals:
     ma_vocal_track:
       action: set_volume
-      volume: 0.8
+      volume: 1.0
   reset_track_volume:
     ma_bass_track:
       action: set_volume

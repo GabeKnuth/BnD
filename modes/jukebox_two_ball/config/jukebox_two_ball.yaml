@@ -508,6 +508,7 @@ shows:
         jb_play_bnd_song:
           widgets:
           - type: video
+            volume: 0.4
             video: jb_hard_workin_man
             end_behavior: loop
             control_events:

@@ -46,6 +46,29 @@ event_player:
     - disable_base_left_vuk_hold
     - release_top_kicker_ball
     - disable_base_top_kicker_hold
+  shot_left_kicking_target_advertise_flashing_hit:
+    - play_mb_sound
+    - play_spinner_sound|2s
+  shot_spinner_to_vuk_advertise_flashing_hit:
+    - play_mb_sound
+    - play_left_longhorn_sound|2s
+
+sound_pools:
+  mb_sounds:
+    type: random_force_all
+    track: voice
+    sounds:
+      - money_bags1
+      - money_bags2
+      - money_bags3
+      - money_bags4
+
+sound_player:
+  play_mb_sound:
+    mb_sounds:
+      action: play
+      loops: 0
+
 
 #             88                                            
 #             88                          ,d                
@@ -73,6 +96,8 @@ shots:
       light: l_center_longhorn
     disable_events: timer_money_bags_timer_complete, shot_spinner_to_vuk_flashing_hit, mode_money_bags_ending
     enable_events: shot_left_kicking_target_advertise_flashing_hit
+
+
 
 #           88                                                         
 #    ,d     ""                                                         
@@ -201,6 +226,7 @@ slides:
   money_bags_stage:
     widgets:
       - type: video
+        volume: 0.4
         video: mb_beer_thirty
         end_behavior: loop
         animations:

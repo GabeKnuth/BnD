@@ -256,6 +256,7 @@ slides:
   honky_tonk_stage: 
     widgets:
       - type: video
+        volume: 0.4
         video: htmb_miss_honky_tonk
         end_behavior: loop
         control_events:

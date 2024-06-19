@@ -63,10 +63,10 @@ event_player:
     - disable_base_top_kicker_hold
   enable_north_america:
     - play_left_orbit_sound|1s
-  wt_north_america_complete:
-    - play_spinner_sound|1s
-  wt_europe_complete:
-    - play_right_ramp_sound|1s
+  # wt_north_america_complete:
+  #   - play_spinner_sound|1s
+  # wt_europe_complete:
+  #   - play_right_ramp_sound|1s
   
 
 
@@ -119,7 +119,8 @@ achievements:
     start_events: enable_north_america
     complete_events: s_leftorbit_active
     events_when_completed: wt_north_america_complete, add_time
-    restart_after_stop_possible: true
+    restart_after_stop_possible: false
+    reset_events: world_tour_fail
 
   wt_europe:
     enable_events: wt_north_america_complete
@@ -127,7 +128,8 @@ achievements:
     complete_events: seq_shot_spinner_to_vuk_hit
     events_when_completed: wt_europe_complete, add_time
     show_when_started: europe_advertise
-    restart_after_stop_possible: true
+    restart_after_stop_possible: false
+    reset_events: world_tour_fail
 
   wt_south_america:
     enable_events: wt_europe_complete
@@ -135,7 +137,8 @@ achievements:
     complete_events: s_rightrampopto_active
     events_when_completed: wt_south_america_complete, add_time
     show_when_started: south_america_advertise
-    restart_after_stop_possible: true
+    restart_after_stop_possible: false
+    reset_events: world_tour_fail
 
   wt_australia:
     enable_events: light_australia
@@ -266,6 +269,7 @@ shows:
         world_tour_stage:
           widgets:
             - type: video
+              volume: 0.4
               video: wt_boot_scoot
               end_behavior: loop
               control_events:
@@ -312,16 +316,21 @@ show_player:
   wt_europe_complete:
     europe:
       loops: 0
+      events_when_completed:
+        - play_right_ramp_sound
     europe_lights:
       loops: 0
   wt_north_america_complete:
     north_america:
       loops: 0
+      events_when_completed:
+        - play_spinner_sound
     north_america_lights:
       loops: 0
   mode_world_tour_started:
     wt_play_bnd_song:
       loops: -1
+
   
 
 #             88  88           88                         
