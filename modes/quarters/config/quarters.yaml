@@ -16,7 +16,7 @@
 #  88      88      88   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'
 
 mode:
-  start_events: mode_base_started, start_quarters_mode, start_mission_select
+  start_events: mode_base_started, start_quarters_mode, light_mission_select
   stop_events: stop_quarters_mode, stop_mission_select, mission_started
   priority: 110
 

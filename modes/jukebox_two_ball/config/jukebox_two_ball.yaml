@@ -497,7 +497,7 @@ slides:
             - property: opacity
               value: 100
       - type: video
-        volume: 0.4
+        volume: 0.3
         video: jb_hard_workin_man
         end_behavior: loop
 

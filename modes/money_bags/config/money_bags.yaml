@@ -49,9 +49,12 @@ event_player:
   shot_left_kicking_target_advertise_flashing_hit:
     - play_mb_sound
     - play_spinner_sound|2s
+  shot_left_kicking_target_enabled:
+    - play_left_longhorn_sound
   shot_spinner_to_vuk_advertise_flashing_hit:
     - play_mb_sound
-    - play_left_longhorn_sound|2s
+  shot_spinner_to_vuk_enabled:
+    - play_spinner_sound
 
 sound_pools:
   mb_sounds:
@@ -94,7 +97,7 @@ shots:
     profile: advertise
     show_tokens:
       light: l_center_longhorn
-    disable_events: timer_money_bags_timer_complete, shot_spinner_to_vuk_flashing_hit, mode_money_bags_ending
+    disable_events: timer_money_bags_timer_complete, shot_spinner_to_vuk_flashing_hit, mode_money_bags_ending, logicblock_money_bags_counter_complete
     enable_events: shot_left_kicking_target_advertise_flashing_hit
 
 
@@ -226,7 +229,7 @@ slides:
   money_bags_stage:
     widgets:
       - type: video
-        volume: 0.4
+        volume: 0.5
         video: mb_beer_thirty
         end_behavior: loop
         animations:

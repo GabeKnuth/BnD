@@ -424,7 +424,7 @@ shows:
         bed_of_roses:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_bed_of_roses
             end_behavior: loop
             control_events:
@@ -438,7 +438,7 @@ shows:
         bed_of_roses:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_achy_breaky
             end_behavior: loop
             control_events:
@@ -452,7 +452,7 @@ shows:
         bed_of_roses:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_convoy
             end_behavior: loop
             control_events:
@@ -466,7 +466,7 @@ shows:
         bed_of_roses:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_every_little_thing
             end_behavior: loop
             control_events:
@@ -480,7 +480,7 @@ shows:
         jb_boots_are_made_for_walkin:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_boots_are_made_for_walkin
             end_behavior: loop
             control_events:
@@ -494,7 +494,7 @@ shows:
         jb_hello_darlin:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_hello_darlin
             end_behavior: loop
             control_events:
@@ -508,7 +508,7 @@ shows:
         jb_louisiana_woman:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_louisiana_woman
             end_behavior: loop
             control_events:
@@ -522,7 +522,7 @@ shows:
         jb_rhinestone_cowboy:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_rhinestone_cowboy
             end_behavior: loop
             control_events:
@@ -536,7 +536,7 @@ shows:
         jb_stand_by_your_man:
           widgets:
           - type: video
-            volume: 0.4
+            volume: 0.6
             video: jb_stand_by_your_man
             end_behavior: loop
             control_events:
