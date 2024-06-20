@@ -38,9 +38,9 @@ event_player:
     - light_australia
     - duck
     - unduck|1.7s
+    - world_tour_success|2.5s
     - australia_instruction|1.7s
   wt_australia_complete:
-    - world_tour_success|2.5s
     - world_tour_fade_out|4.5s
     - start_jukebox_two_ball|4.5s
     - release_wt_ball|4.5s
@@ -67,6 +67,13 @@ event_player:
   #   - play_spinner_sound|1s
   # wt_europe_complete:
   #   - play_right_ramp_sound|1s
+  wt_north_america_complete:
+    - play_wt_north_america|3s
+  wt_europe_complete:
+    - play_wt_europe|3s
+  wt_south_america_complete:
+    - play_wt_south_america|3s
+    - play_wt_shoot_australia|6s
   
 
 
@@ -263,23 +270,23 @@ shows:
         (light): off
     - time: +1
 
-  wt_play_bnd_song:
-    - duration: -1
-      slides:
-        world_tour_stage:
-          widgets:
-            - type: video
-              volume: 0.4
-              video: wt_boot_scoot
-              end_behavior: loop
-              control_events:
-                - event: duck
-                  action: volume
-                  value: .4
-                - event: unduck
-                  action: volume
-                  value: 1.0  
-          target: stage
+  # wt_play_bnd_song:
+  #   - duration: -1
+  #     slides:
+  #       world_tour_stage:
+  #         widgets:
+  #           - type: video
+  #             volume: 0.4
+  #             video: wt_boot_scoot
+  #             end_behavior: loop
+  #             control_events:
+  #               - event: duck
+  #                 action: volume
+  #                 value: .4
+  #               - event: unduck
+  #                 action: volume
+  #                 value: 1.0  
+  #         target: stage
 
 
 
@@ -316,20 +323,20 @@ show_player:
   wt_europe_complete:
     europe:
       loops: 0
-      events_when_completed:
-        - play_right_ramp_sound
+      # events_when_completed:
+      #   - play_right_ramp_sound|6s
     europe_lights:
       loops: 0
   wt_north_america_complete:
     north_america:
       loops: 0
-      events_when_completed:
-        - play_spinner_sound
+      # events_when_completed:
+      #   - play_spinner_sound|6s
     north_america_lights:
       loops: 0
-  mode_world_tour_started:
-    wt_play_bnd_song:
-      loops: -1
+  # mode_world_tour_started:
+  #   wt_play_bnd_song:
+  #     loops: -1
 
   
 
@@ -471,8 +478,67 @@ slides:
         anchor_y: bottom
         y: bottom+1
         style: huge
+  world_tour_complete2:
+    widgets:      
+      - type: text
+        text: Shoot Australia For
+        anchor_y: top
+        style: small 
+        y: top-4
+        anchor_x: right
+        x: right
+      - type: text
+        text: MULTIBALL!
+        number_grouping: true
+        min_digits: 2
+        anchor_x: right
+        x: right-10
+        anchor_y: bottom
+        y: bottom+1
+        style: huge
+      - type: video
+        video: wt_spinny_globe_dmd
+        end_behavior: loop
+        anchor_x: left
+        x: left
 
-  world_tour_shoot_for_multiball:
+  # world_tour_shoot_for_multiball:
+  #   target: stage
+  #   widgets: 
+  #     - type: image
+  #       image: down_arrow
+  #       anchor_y: bottom
+  #       y: bottom
+  #       anchor_x: right
+  #       x: right-70
+  #       animations:
+  #         add_to_slide:
+  #           - property: y
+  #             value: 20
+  #             duration: 500ms
+  #           - property: y
+  #             value: 0
+  #             duration: 500ms
+  #             repeat: true
+  #     - type: text
+  #       text: SHOOT HERE FOR
+  #       style: huge 
+  #       font_size: 120
+  #       anchor_y: top
+  #       y: top
+  #       anchor_x: left
+  #       x: left+60
+  #     - type: text
+  #       text: MULTIBALL!
+  #       style: huge 
+  #       font_size: 150
+  #       anchor_y: top
+  #       y: top-100
+  #       anchor_x: left
+  #       x: left+55
+    
+  world_tour_stage:
+    target: stage
     widgets: 
       - type: image
         image: down_arrow
@@ -480,15 +546,18 @@ slides:
         y: bottom
         anchor_x: right
         x: right-70
+        opacity: 0
         animations:
-          add_to_slide:
+          australia_instruction:
             - property: y
-              value: 30
-              duration: 1s
+              value: 20
+              duration: 500ms
             - property: y
               value: 0
-              duration: 1s
+              duration: 500ms
               repeat: true
+            - property: opacity
+              value: 100
       - type: text
         text: SHOOT HERE FOR
         style: huge 
@@ -496,7 +565,12 @@ slides:
         anchor_y: top
         y: top
         anchor_x: left
-        x: left+10
+        x: left+60
+        opacity: 0
+        animations:
+          australia_instruction:
+            - property: opacity
+              value: 100
       - type: text
         text: MULTIBALL!
         style: huge 
@@ -504,8 +578,21 @@ slides:
         anchor_y: top
         y: top-100
         anchor_x: left
-        x: left+10
-       
+        x: left+55
+        opacity: 0
+        animations:
+          australia_instruction:
+            - property: opacity
+              value: 100
+      - type: video
+        volume: 0.4
+        video: wt_boot_scoot
+        end_behavior: loop
+
+
+
+    
+
 
 #             88  88           88                                    
 #             88  ""           88                                    
@@ -527,12 +614,11 @@ slides:
 #  88                              d8' 
 
 slide_player:
-  #mode_world_tour_starting:
   mode_world_tour_started:
     wt_intro_dmd:
-      target: dmd      
-    # world_tour_stage: 
-    #   target: stage
+      target: dmd   
+    world_tour_stage:
+      target: stage    
   wt_mode_running:
     world_tour_dmd:
       target: dmd
@@ -540,13 +626,16 @@ slide_player:
     world_tour_complete:
       target: dmd
   australia_instruction:  
-    world_tour_shoot_for_multiball:
-      target: stage
-  world_tour_success:
-    wt_complete:
+    # world_tour_shoot_for_multiball:
+    #   target: stage
+    world_tour_complete2:
       target: dmd
-    world_tour_shoot_for_multiball:
-      action: remove
+
+  # world_tour_success:
+  #   wt_complete:
+  #     target: dmd
+  #   world_tour_shoot_for_multiball:
+  #     action: remove
 
 #                                                             88     
 #                                                             88     
@@ -569,7 +658,7 @@ slide_player:
 
 
 sound_player:
-  ag_world_tour_complete:
+  play_wt_shoot_australia:
     wt_shoot_australia:
       action: play
       loops: 0
@@ -577,18 +666,30 @@ sound_player:
     slam:
       action: play
       loops: 0
-  wt_south_america_complete:
+  play_wt_south_america:
     wt_south_america:
       action: play
       loops: 0  
-  wt_north_america_complete:
+  play_wt_north_america:
     wt_usa:
       action: play
       loops: 0
-  wt_europe_complete:
+      events_when_stopped:
+        - play_spinner_sound
+  play_wt_europe:
     wt_honky_tonk_in_europe:
       action: play
       loops: 0
+      events_when_stopped:
+        - play_right_ramp_sound
+  # play_spinner_sound:
+  #   spinner:
+  #     action: play
+  #     loops: 0
+  # play_right_ramp_sound:
+  #   shoot_the_right_ramp:
+  #     action: play
+  #     loops: 0
 
 
   

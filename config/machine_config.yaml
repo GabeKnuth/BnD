@@ -1648,7 +1648,7 @@ keyboard:
   e:
     event: weak_flippers_disabled
   "`":
-    event: hold_album_value
+    event: start_jukebox_two_ball
 
 
 #               88                                                   

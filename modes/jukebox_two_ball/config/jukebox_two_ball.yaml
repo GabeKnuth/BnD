@@ -53,17 +53,17 @@ event_player:
     - disable_jb_single_jackpot
   jb_double_jackpot_hit:
     - enable_jb_super_jackpot
-    - start_jb_super_jackpot_timer
+    #- start_jb_super_jackpot_timer
     - disable_jb_double_jackpot
   jb_super_jackpot_hit:
     - enable_jb_single_jackpot
     - disable_jb_super_jackpot
     - stop_jb_super_jackpot_timer
-    - reset_jb_super_jackpot_timer|0.1s
+    - reset_jb_super_jackpot_timer|1s
   timer_jb_super_jackpot_timer_complete:
     - enable_jb_single_jackpot
     - disable_jb_super_jackpot
-    - reset_jb_super_jackpot_timer|0.1s
+    - reset_jb_super_jackpot_timer|1s
   multiball_jukebox_two_ball_ending:
     - disable_jb_single_jackpot
     - disable_jb_double_jackpot
@@ -82,7 +82,7 @@ event_player:
 
 shots:
   jb_single_jackpot:
-    hit_events: sw_jukebox_hit
+    hit_events: sw_jukebox
     disable_events: disable_jb_single_jackpot
     enable_events: enable_jb_single_jackpot 
     delay_switch: 
@@ -109,7 +109,7 @@ shots:
 
 timers:
   jb_super_jackpot_timer:
-    start_value: 6
+    start_value: 9
     end_value: 0
     direction: down
     tick_interval: 1s
@@ -160,9 +160,8 @@ slide_player:
     jb2b_dmd_intro:
       expire: 3s
       target: dmd
-  slide_jb2b_dmd_intro_removed:
-    jb2b_dmd_shoot_ramp:
-      target: dmd
+    jb2b_stage:
+      target: stage
   enable_jb_single_jackpot:
     jb2b_dmd_shoot_jukebox:
       target: dmd
@@ -172,16 +171,6 @@ slide_player:
   enable_jb_super_jackpot:
     jb2b_dmd_shoot_under_stage:
       target: dmd
-    jb2b_stage_shoot_under_stage:
-      target: stage
-
-      
-  # double_jackpot_complete:
-  #   jb2b_dmd_shoot_ramp:
-  #     target: dmd
-  # jackpot_complete:
-  #   jb2b_dmd_shoot_loop:
-  #     target: dmd
 
 #                                                             88     
 #                                                             88     
@@ -207,41 +196,33 @@ sound_player:
     jackpot:
       action: play
       loops: 0
-      events_when_played: duck
-      events_when_stopped: unduck
   jb_double_jackpot_hit:
     double_jackpot2:
       action: play
       loops: 0
-      events_when_played: duck
     woo_baby:
       action: play
       loops: 0
-      events_when_stopped: unduck
+      events_when_stopped:
+        - play_shoot_under_the_stage
   jb_super_jackpot_hit:
     super_jackpot:
       action: play
       loops: 0
-      events_when_played: duck
-      events_when_stopped: unduck
-  enable_jb_super_jackpot:
+  play_shoot_under_the_stage:
     shoot_under_the_stage:
       action: play
       loops: 0 
-      events_when_played: duck
-      events_when_stopped: unduck
+      events_when_stopped:
+        - start_jb_super_jackpot_timer
   enable_jb_double_jackpot:
     shoot_the_right_ramp:
       action: play
       loops: 0 
-      events_when_played: duck
-      events_when_stopped: unduck
   enable_jb_single_jackpot:
     hit_the_jukebox:
       action: play
       loops: 0 
-      events_when_played: duck
-      events_when_stopped: unduck
 
 
 #             88  88           88                         
@@ -254,47 +235,47 @@ sound_player:
 #  `"YbbdP"'  88  88   `"8bbdP"Y8   `"Ybbd8"'  `"YbbdP"'
 
 slides:
-  jb2b_stage_shoot_under_stage:
-    widgets:
-      - type: image
-        image: down_arrow
-        anchor_y: bottom
-        y: bottom
-        anchor_x: right
-        x: right-70
-        animations:
-          add_to_slide:
-            - property: y
-              value: 30
-              duration: .25s
-            - property: opacity
-              value: 1
-              duration: .5s
-              timing: with_previous
-            - property: y
-              value: 0
-              duration: .25s
-              repeat: true
-            - property: opacity
-              value: 0
-              duration: .5s
-              timing: with_previous  
-      - type: text
-        text: SUPER
-        style: huge 
-        font_size: 200
-        anchor_y: top
-        anchor_x: left
-        x: left+60
-        y: top-60
-      - type: text
-        text: JACKPOT
-        style: huge 
-        font_size: 200
-        anchor_y: top
-        anchor_x: left
-        x: left
-        y: top-240
+  # jb2b_stage_shoot_under_stage:
+  #   widgets:
+  #     - type: image
+  #       image: down_arrow
+  #       anchor_y: bottom
+  #       y: bottom
+  #       anchor_x: right
+  #       x: right-70
+  #       animations:
+  #         add_to_slide:
+  #           - property: y
+  #             value: 30
+  #             duration: .25s
+  #           - property: opacity
+  #             value: 1
+  #             duration: .5s
+  #             timing: with_previous
+  #           - property: y
+  #             value: 0
+  #             duration: .25s
+  #             repeat: true
+  #           - property: opacity
+  #             value: 0
+  #             duration: .5s
+  #             timing: with_previous  
+  #     - type: text
+  #       text: SUPER
+  #       style: huge 
+  #       font_size: 200
+  #       anchor_y: top
+  #       anchor_x: left
+  #       x: left+60
+  #       y: top-60
+  #     - type: text
+  #       text: JACKPOT
+  #       style: huge 
+  #       font_size: 200
+  #       anchor_y: top
+  #       anchor_x: left
+  #       x: left
+  #       y: top-240
 
   jb2b_dmd_shoot_under_stage:
     widgets:
@@ -313,11 +294,34 @@ slides:
         y: bottom+1
         anchor_x: right
         x: right-1
+      - type: text
+        text: Time #(jukebox_two_ball_jb_super_jackpot_timer)
+        anchor_y: top
+        style: small 
+        y: top-2
+        anchor_x: left
+        x: left+31
+      - type: text
+        text: left #(jukebox_two_ball_jb_super_jackpot_timer)
+        anchor_y: top
+        style: small 
+        y: top-9
+        anchor_x: left
+        x: left+31
+      - type: text
+        text: (jukebox_two_ball_jb_super_jackpot_timer_tick)
+        anchor_y: top
+        style: medium 
+        y: top-16
+        anchor_x: left
+        x: left+37
+        color: red
       - type: video
         video: jb2b_jukebox
         anchor_x: left
         x: left
         end_behavior: loop
+
   jb2b_dmd_shoot_jukebox:
     widgets:
       - type: text
@@ -446,6 +450,57 @@ slides:
         expire: 2s
         style: huge 
 
+  jb2b_stage:
+    widgets: 
+      - type: image
+        image: down_arrow
+        anchor_y: bottom
+        y: bottom
+        anchor_x: right
+        x: right-70
+        opacity: 0
+        animations:
+          enable_jb_super_jackpot:
+            - property: y
+              value: 20
+              duration: 500ms
+            - property: y
+              value: 0
+              duration: 500ms
+              repeat: true
+            - property: opacity
+              value: 100
+      - type: text
+        text: SUPER
+        style: huge 
+        font_size: 200
+        anchor_y: top
+        anchor_x: left
+        x: left+60
+        y: top-60
+        opacity: 0
+        animations:
+          enable_jb_super_jackpot:
+            - property: opacity
+              value: 100
+      - type: text
+        text: JACKPOT
+        style: huge 
+        font_size: 200
+        anchor_y: top
+        anchor_x: left
+        x: left
+        y: top-240
+        opacity: 0
+        animations:
+          enable_jb_super_jackpot:
+            - property: opacity
+              value: 100
+      - type: video
+        volume: 0.4
+        video: jb_hard_workin_man
+        end_behavior: loop
+
 #             88                                                       
 #             88                                                       
 #             88                                                       
@@ -466,9 +521,9 @@ slides:
 #  88                              d8' 
 
 show_player:
-  mode_jukebox_two_ball_started:
-    jb_play_bnd_song:
-      key: jb_active_video
+  # mode_jukebox_two_ball_started:
+  #   jb_play_bnd_song:
+  #     key: jb_active_video
   enable_jb_single_jackpot:  
     flash_jukebox:
       action: play
@@ -501,26 +556,26 @@ show_player:
 #  aa    ]8I  88       88  "8a,   ,a8"    `8bd8'  `8bd8'    aa    ]8I  
 #  `"YbbdP"'  88       88   `"YbbdP"'       YP      YP      `"YbbdP"' 
 
-shows:
-  jb_play_bnd_song:
-    - duration: -1
-      slides:
-        jb_play_bnd_song:
-          widgets:
-          - type: video
-            volume: 0.4
-            video: jb_hard_workin_man
-            end_behavior: loop
-            control_events:
-              - event: stop_song
-                action: stop
-              - event: duck
-                action: volume
-                value: .4
-              - event: unduck
-                action: volume
-                value: 1.0  
-          target: stage
+# shows:
+#   jb_play_bnd_song:
+#     - duration: -1
+#       slides:
+#         jb_play_bnd_song:
+#           widgets:
+#           - type: video
+#             volume: 0.4
+#             video: jb_hard_workin_man
+#             end_behavior: loop
+#             control_events:
+#               - event: stop_song
+#                 action: stop
+#               - event: duck
+#                 action: volume
+#                 value: .4
+#               - event: unduck
+#                 action: volume
+#                 value: 0.7  
+#           target: stage
 
 #                                       88              88           88              
 #                                       ""              88           88              
