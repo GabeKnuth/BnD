@@ -94,36 +94,36 @@ track_player:
   music_awards_quick_fade_out:
     ma_bass_track:
       action: set_volume
-      volume: 0.2
+      volume: 0.1
       fade: .5s
     ma_drums_track:
       action: set_volume
-      volume: 0.2
+      volume: 0.1
       fade: .5s
     ma_vocal_track:
       action: set_volume
-      volume: 0.2
+      volume: 0.1
       fade: .5s
     ma_other_track:
       action: set_volume
-      volume: 0.2
+      volume: 0.1
       fade: .5s
   music_awards_quick_fade_in:
     ma_bass_track:
       action: set_volume
-      volume: 1.0
+      volume: 0.3
       fade: .5s
     ma_drums_track:
       action: set_volume
-      volume: 1.0
+      volume: 0.3
       fade: .5s
     ma_vocal_track:
       action: set_volume
-      volume: 1.0
+      volume: 0.3
       fade: .5s
     ma_other_track:
       action: set_volume
-      volume: 1.0
+      volume: 0.3
       fade: .5s
 
 #             88  88           88                                    
