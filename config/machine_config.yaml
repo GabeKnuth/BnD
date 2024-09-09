@@ -642,38 +642,38 @@ autofire_coils:
   left_sling:
     coil: c_leftsling
     switch: s_leftsling
-    enable_events: ball_started, unblock_jukebox_hits
-    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
+    enable_events: ball_started, enable_autofires
+    disable_events: ball_will_end, service_mode_entered, disable_autofires
   right_sling:
     coil: c_rightsling
     switch: s_rightsling
-    enable_events: ball_started, unblock_jukebox_hits
-    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
+    enable_events: ball_started, enable_autofires
+    disable_events: ball_will_end, service_mode_entered, disable_autofires
   left_pop:
     coil: c_leftpop
     switch: s_leftpop
-    enable_events: ball_started, unblock_jukebox_hits
-    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
+    enable_events: ball_started, enable_autofires
+    disable_events: ball_will_end, service_mode_entered, disable_autofires
   right_pop:
     coil: c_rightpop
     switch: s_rightpop
-    enable_events: ball_started, unblock_jukebox_hits
-    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
+    enable_events: ball_started, enable_autofires
+    disable_events: ball_will_end, service_mode_entered, disable_autofires
   bottom_pop:
     coil: c_bottompop
     switch: s_bottompop
-    enable_events: ball_started, unblock_jukebox_hits
-    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
+    enable_events: ball_started, enable_autofires
+    disable_events: ball_will_end, service_mode_entered, disable_autofires
   top_kicking_target:
     coil: c_topkickingtarget
     switch: s_topkickingtarget
-    enable_events: ball_started, unblock_jukebox_hits
-    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
+    enable_events: ball_started, enable_autofires
+    disable_events: ball_will_end, service_mode_entered, disable_autofires
   bottom_kicking_target:
     coil: c_bottomkickingtarget
     switch: s_bottomkickingtarget
-    enable_events: ball_started, unblock_jukebox_hits
-    disable_events: ball_will_end, service_mode_entered, block_jukebox_hits
+    enable_events: ball_started, enable_autofires
+    disable_events: ball_will_end, service_mode_entered, disable_autofires
 
 #                                                                                
 #           88                                                                   

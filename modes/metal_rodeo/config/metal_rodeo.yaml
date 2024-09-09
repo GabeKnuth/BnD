@@ -81,14 +81,17 @@ event_player:
     - fade_out_base_music
     - mission_started
     - play_intro
-    - block_jukebox_hits
+    - disable_autofires
+    - block_jukebox_hits # Why? Oh - because we don't want to count jukebox hits while mode is active
     - stop_quarters_mode
     - mode_running|5s
     - stop_mission_select
   mode_metal_rodeo_stopping:
     - fade_in_base_music
-    - unblock_jukebox_hits
+    - unblock_jukebox_hits # Why? Because now we want to start counting jukebox hits again
     - start_quarters_mode
+  mr_go:
+    - enable_autofires
 
 
 
