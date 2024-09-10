@@ -100,15 +100,15 @@ track_player:
   add_bass:
     ma_bass_track:
       action: set_volume
-      volume: 0.3
+      volume: 0.7
   add_other:
     ma_other_track: 
       action: set_volume
-      volume: 0.3
+      volume: 0.7
   add_vocals:
     ma_vocal_track:
       action: set_volume
-      volume: 0.3
+      volume: 0.7
   reset_track_volume:
     ma_bass_track:
       action: set_volume
