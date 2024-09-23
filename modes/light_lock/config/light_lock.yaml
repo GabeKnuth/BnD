@@ -121,6 +121,10 @@ sound_player:
       action: play
       loops: 0
       events_when_stopped: play_lock_slide
+  play_lock_slide:
+    lock_is_lit_pool:
+      loops: 0
+      action: play
   play_ball_locked_slide:
     slam:
       action: play

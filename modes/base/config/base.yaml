@@ -215,6 +215,15 @@ sound_pools:
       - ball_save2
       - ball_save3
       - ball_save4
+  lock_is_lit_pool:
+    type: random
+    track: voice
+    sounds:
+      - lock_is_lit_1
+      - lock_is_lit_2
+      - lock_is_lit_3
+      - lock_is_lit_4
+      - lock_is_lit_5
       
 
 
