@@ -1646,7 +1646,7 @@ keyboard:
   w:
     event: weak_flippers_enabled
   e:
-    event: weak_flippers_disabled
+    event: s_tilt_active
   "`":
     event: start_jukebox_two_ball
 

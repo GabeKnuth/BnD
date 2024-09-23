@@ -4,24 +4,52 @@
   slides:
     stage_attract_1:
       widgets:
-      - type: text
-        #font_name: big_noodle_titling
-        text: MISSION PINBALL FRAMEWORK
-        style: huge
-        anchor_y: top
-        y: top-3
-        font_size: 30
-        color: white
-      - type: text
-        #font_name: big_noodle_titling
-        text: "Brooks n Dunn"
-        style: huge
-        font_size: 30
-        anchor_x: center
-        anchor_y: middle-15
-        color: red
-      - type: image
-        image: bnd_background
-        anchor_x: center
-        anchor_y: middle
+        - type: text
+          #font_name: big_noodle_titling
+          text: MISSION PINBALL FRAMEWORK
+          style: huge
+          anchor_y: top
+          y: top-3
+          font_size: 70
+          color: white
+        - type: text
+          #font_name: big_noodle_titling
+          text: FAST PINBALL
+          style: huge
+          anchor_y: bottom
+          y: bottom-5
+          font_size: 70
+          color: white
+        - type: text
+          font_name: american_western
+          text: "Brooks"
+          style: huge
+          font_size: 130
+          anchor_x: center
+          anchor_y: middle
+          y: middle+90
+          color: yellow
+        - type: text
+          font_name: american_western
+          text: "&"
+          style: huge
+          font_size: 130
+          anchor_x: center
+          anchor_y: middle
+          y: middle
+          color: brown
+        - type: text
+          font_name: american_western
+          text: "Dunn"
+          style: huge
+          font_size: 130
+          anchor_x: center
+          anchor_y: middle
+          y: middle-110
+          color: yellow
+        - type: image
+          image: bnd_background
+          anchor_x: center
+          anchor_y: middle
       target: stage
+
