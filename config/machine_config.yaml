@@ -289,6 +289,10 @@ switches:
   s_tilt:
     number: 5
     tags: tilt_warning
+  s_eos_left:
+    number: 6
+  s_eos_lower_right:
+    number: 7
   s_plungerlane:
     number: 16
   s_rightbankbottom:
@@ -492,14 +496,14 @@ flippers:
     activation_switch: s_leftflipper
     enable_events: ball_starting, weak_flippers_disabled
     disable_events: ball_will_end, weak_flippers_enabled
-    use_eos: false
+    eos_switch: s_eos_left
   right_flipper:
     main_coil: c_rightflippermain
     hold_coil: c_rightflipperhold
     activation_switch: s_rightflipper
     enable_events: ball_starting, weak_flippers_disabled
     disable_events: ball_will_end, weak_flippers_enabled
-    use_eos: false
+    eos_switch: s_eos_lower_right
   upper_right_flipper:
     main_coil: c_upperrightflippermain
     hold_coil: c_upperrightflipperhold
@@ -511,38 +515,38 @@ flippers:
 
 # Some day I want to make this work as a mystery award. They can't all be fun, right? :)
 
-# Weak Flippers
-  weak_left_flipper:   
-    main_coil: c_leftflippermain
-    main_coil_overwrite:
-      pulse_ms: 17
-    hold_coil: c_leftflipperhold
-    activation_switch: s_leftflipper
-    enable_events: weak_flippers_enabled
-    disable_events: weak_flippers_disabled, ball_starting
-    use_eos: false
-    debug: true
-  weak_right_flipper:
-    main_coil: c_rightflippermain
-    main_coil_overwrite:
-      pulse_ms: 17
-    hold_coil: c_rightflipperhold
-    activation_switch: s_rightflipper
-    enable_events: weak_flippers_enabled
-    disable_events: weak_flippers_disabled, ball_starting
-    use_eos: false
-    debug: true
-  weak_upper_right_flipper:
-    main_coil: c_upperrightflippermain
-    main_coil_overwrite:
-      pulse_ms: 7
-    hold_coil: c_upperrightflipperhold
-    activation_switch: s_rightflipper
-    enable_events: weak_flippers_enabled
-    disable_events: weak_flippers_disabled, ball_starting
-    use_eos: false
-    include_in_ball_search: true
-    debug: true
+# # Weak Flippers
+#   weak_left_flipper:   
+#     main_coil: c_leftflippermain
+#     main_coil_overwrite:
+#       pulse_ms: 17
+#     hold_coil: c_leftflipperhold
+#     activation_switch: s_leftflipper
+#     enable_events: weak_flippers_enabled
+#     disable_events: weak_flippers_disabled, ball_starting
+#     use_eos: false
+#     debug: true
+#   weak_right_flipper:
+#     main_coil: c_rightflippermain
+#     main_coil_overwrite:
+#       pulse_ms: 17
+#     hold_coil: c_rightflipperhold
+#     activation_switch: s_rightflipper
+#     enable_events: weak_flippers_enabled
+#     disable_events: weak_flippers_disabled, ball_starting
+#     use_eos: false
+#     debug: true
+#   weak_upper_right_flipper:
+#     main_coil: c_upperrightflippermain
+#     main_coil_overwrite:
+#       pulse_ms: 7
+#     hold_coil: c_upperrightflipperhold
+#     activation_switch: s_rightflipper
+#     enable_events: weak_flippers_enabled
+#     disable_events: weak_flippers_disabled, ball_starting
+#     use_eos: false
+#     include_in_ball_search: true
+#     debug: true
 
 #  88                       88  88                                              
 #  88                       88  88                                              
