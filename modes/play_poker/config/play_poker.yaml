@@ -281,10 +281,10 @@ sound_player:
 
 timers:
     poker_countdown:
-      start_value: 30
+      start_value: 20
       direction: down
       end_value: 0
-      max_value: 40
+      max_value: 30
       control_events:
         - event: poker_card_locked
           action: add
