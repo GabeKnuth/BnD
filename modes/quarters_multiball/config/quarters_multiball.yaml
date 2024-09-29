@@ -63,7 +63,6 @@ event_player:
     - enable_base_left_vuk_hold
     - qmb_fade_out
     - enable_jukebox_hits
-    - start_quarters_mode
 
 #                                                88                                   
 #                                                88                                   
