@@ -95,7 +95,8 @@ event_player:
     - start_mission
   ball_hold_left_vuk_held_ball{not mode.mystery_lit.active and not device.achievement_groups.missions["enabled"] and not mode.hilo_lit.active}:
     - release_left_vuk_ball
-  
+  ball_hold_left_vuk_held_ball{mode.mystery_lit.active and mode.quarters_multiball.active}:
+    - release_left_vuk_ball
 
 #                                                88                                   
 #                                                88                                   
