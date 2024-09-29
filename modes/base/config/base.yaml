@@ -87,7 +87,7 @@ event_player:
   player_htmb_balls_locked{current_player.htmb_balls_locked == 3}:
     - start_honky_tonk_multiball
     - stop_light_lock|1s
-  ball_hold_left_vuk_held_ball{mode.mystery_lit.active and not mode.light_metal_rodeo.active}:
+  ball_hold_left_vuk_held_ball{mode.mystery_lit.active and not mode.light_metal_rodeo.active and not mode.quarters_multiball.active}:
     - start_mystery
   ball_hold_left_vuk_held_ball{mode.hilo_lit.active and not mode.mystery_lit.active and not mode.light_metal_rodeo.active}:
     - start_hilo
@@ -96,15 +96,6 @@ event_player:
   ball_hold_left_vuk_held_ball{not mode.mystery_lit.active and not device.achievement_groups.missions["enabled"] and not mode.hilo_lit.active}:
     - release_left_vuk_ball
   
-
-
-  
-##### TESTING
-  hs_test:
-    - end_game|1s
-
-
-
 
 #                                                88                                   
 #                                                88                                   

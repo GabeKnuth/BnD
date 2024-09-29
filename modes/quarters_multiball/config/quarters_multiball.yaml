@@ -56,12 +56,14 @@ event_player:
     - block_jukebox_hits
     - disable_base_left_vuk_hold
     - stop_mission_select
+    - stop_quarters_mode
   mode_quarters_multiball_stopping:
     - start_quarters_mode
     - fade_in_base_music
     - enable_base_left_vuk_hold
     - qmb_fade_out
     - enable_jukebox_hits
+    - start_quarters_mode
 
 #                                                88                                   
 #                                                88                                   
