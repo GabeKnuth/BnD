@@ -1249,6 +1249,8 @@ extra_balls:
     light_events: light_mystery_extra_ball
     award_events: shot_pops_to_vuk_hit
     enabled: false
+  generic:
+    award_events: award_extra_ball
 
 
 
