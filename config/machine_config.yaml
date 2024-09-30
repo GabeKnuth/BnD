@@ -47,7 +47,7 @@ mpf:
   default_light_hw_update_hz: 10
 
 game:
-  balls_per_game: 5
+  balls_per_game: 3
   allow_start_with_loose_balls: True
   allow_start_with_ball_in_drain: True
   max_players: 4
