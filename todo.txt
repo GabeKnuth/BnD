@@ -38,3 +38,11 @@ down (I think it has knockdown coils?), and the screen comes on to say collect w
         That becomes the wizard bonus, too. So you constantly get those points.
 
 - Also - Special? What to do?
+
+- Figure out weak flippers mode. I got weak flippers working, and there are enable/disable events for it,
+  but nothing else after that. 
+
+    - Can we slow down music with code so we don't lose the spot in the track?
+      Worst case, we can cross-fade to the next track, but that's a lot of work.
+
+    - Mode should double all scores during mode (not bonus, in case the ball drains) 
