@@ -1,0 +1,195 @@
+#config_version=5
+
+mode:
+  priority: 500
+  start_events: start_honky_tonk_hustle
+  stop_events: stop_honky_tonk_hustle
+
+event_player:
+  mode_honky_tonk_hustle_started:
+    - fade_out_base_music
+    - mission_started
+    - play_intro
+    - mode_running|5s
+    - stop_mission_select
+  mode_honky_tonk_hustle_stopping:
+    - fade_in_base_music
+    - enable_base_left_vuk_hold
+  hth_complete:
+    - stop_honky_tonk_hustle|2s
+  ball_will_end:
+    - hth_fail
+    - stop_honky_tonk_hustle
+
+sound_pools:
+  hth_voice_sounds:
+    type: random_force_all
+    track: voice
+    sounds:
+      - shoot_the_right_ramp
+      - shoot_the_left_orbit
+      - hit_left_longhorn
+      - super_jackpot
+
+sound_player:
+  mode_honky_tonk_hustle_started:
+    shoot_the_right_ramp:
+      action: play
+      loops: 0
+      track: voice
+    ramp:
+      action: play
+      loops: 0
+      track: sfx
+  hth_ramp_hit:
+    shoot_the_left_orbit:
+      action: play
+      loops: 0
+      track: voice
+    left_loop:
+      action: play
+      loops: 0
+      track: sfx
+  hth_left_loop_hit:
+    hit_left_longhorn:
+      action: play
+      loops: 0
+      track: voice
+    lower_left_eject:
+      action: play
+      loops: 0
+      track: sfx
+  hth_complete:
+    super_jackpot:
+      action: play
+      loops: 0
+      track: voice
+    applause_1:
+      action: play
+      loops: 0
+      track: sfx
+
+show_player:
+  play_intro:
+    hth_intro_show:
+      loops: 0
+      show_tokens:
+        left: left
+        center: center
+        right: right
+        gi: gi
+  mode_running:
+    hth_mode_sweep:
+      loops: -1
+    hth_music_lights_show:
+      loops: 0
+      sync_ms: 250
+      show_tokens:
+        left: left
+        center: center
+        right: right
+        gi: gi
+  hth_ramp_hit:
+    hth_ramp_hit_show:
+      loops: 0
+  hth_left_loop_hit:
+    hth_left_loop_hit_show:
+      loops: 0
+  hth_left_vuk_hit:
+    hth_left_vuk_hit_show:
+      loops: 0
+  hth_complete:
+    hth_complete_show:
+      loops: 0
+
+timers:
+  hth_timer:
+    start_value: 30
+    end_value: 0
+    direction: down
+    tick_interval: 1.25s
+    control_events:
+      - action: start
+        event: mode_running
+      - action: reset
+        event: hth_hit
+      - action: stop
+        event: hth_complete
+
+counters:
+  hth_counter:
+    enable_events: mode_honky_tonk_hustle_started
+    disable_events: mode_honky_tonk_hustle_ended
+    count_events: hth_ramp_hit, hth_left_loop_hit, hth_left_vuk_hit
+    persist_state: true
+    events_when_hit: hth_hit
+    count_complete_value: 3
+    starting_count: 0
+    direction: up
+
+variable_player:
+  hth_score_ramp:
+    score: 500000
+  hth_score_left_loop:
+    score: 500000
+  hth_score_left_vuk:
+    score: 500000
+  hth_score_complete:
+    score: 1000000
+
+slides:
+  hth_sl_intro:
+    widgets:
+      - type: text
+        text: HONKY TONK HUSTLE
+        style: huge
+        color: yellow
+        font_size: 1
+        animations:
+          show_slide:
+            - property: font_size
+              value: 25
+  hth_sl_ramp_hit:
+    widgets:
+      - type: text
+        text: RAMP HIT!
+        style: huge
+        color: red
+        font_size: 1
+        animations:
+          show_slide:
+            - property: font_size
+              value: 25
+  hth_sl_left_loop_hit:
+    widgets:
+      - type: text
+        text: LEFT LOOP HIT!
+        style: huge
+        color: blue
+        font_size: 1
+        animations:
+          show_slide:
+            - property: font_size
+              value: 25
+  hth_sl_left_vuk_hit:
+    widgets:
+      - type: text
+        text: LEFT VUK HIT!
+        style: huge
+        color: green
+        font_size: 1
+        animations:
+          show_slide:
+            - property: font_size
+              value: 25
+  hth_sl_complete:
+    widgets:
+      - type: text
+        text: HUSTLE COMPLETE!
+        style: huge
+        color: yellow
+        font_size: 1
+        animations:
+          show_slide:
+            - property: font_size
+              value: 25 

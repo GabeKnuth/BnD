@@ -1,0 +1,21 @@
+#show_version=5
+
+- duration: 1500ms
+  slides:
+    hth_sl_ramp_hit:
+      target: dmd
+  events:
+    - hth_score_ramp
+    - hth_left_loop_hit
+  lights:
+    l_ramp:
+      color: red
+      fade: 100ms
+    l_left_loop:
+      color: blue
+      fade: 500ms
+    l_left_vuk:
+      color: off
+- duration: 1ms
+  events:
+    - hth_reset_timer 

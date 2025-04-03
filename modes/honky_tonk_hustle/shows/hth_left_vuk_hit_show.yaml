@@ -1,0 +1,20 @@
+#show_version=5
+
+- duration: 1500ms
+  slides:
+    hth_sl_left_vuk_hit:
+      target: dmd
+  events:
+    - hth_score_left_vuk
+    - hth_complete
+  lights:
+    l_ramp:
+      color: off
+    l_left_loop:
+      color: off
+    l_left_vuk:
+      color: green
+      fade: 100ms
+- duration: 1ms
+  events:
+    - hth_reset_timer 
